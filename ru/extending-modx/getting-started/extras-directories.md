@@ -1,6 +1,7 @@
 ---
 title: "Директории дополнений"
 translation: "extending-modx/getting-started/extras-directories"
+description: "Куда extra устанавливают свои файлы: core/components и assets/components"
 ---
 
 Дополнения чаще всего хранятся в 2 каталогах, когда они установлены:
@@ -12,7 +13,7 @@ translation: "extending-modx/getting-started/extras-directories"
 
 ## Смотрите также
 
-1. [Введение для разработчиков](developing-in-modx/overview-of-modx-development/developer-introduction)
+1. [Введение для разработчиков](extending-modx/getting-started/developer-introduction)
 2. [Начало работы Разработка](extending-modx/getting-started)
-3. [Директории дополнений](developing-in-modx/overview-of-modx-development/extras-directories)
-4. [Начало работы Настройка среды разработки](developing-in-modx/overview-of-modx-development/setting-up-a-development-environment)
+3. [Директории дополнений](extending-modx/getting-started/extras-directories)
+4. [Начало работы Настройка среды разработки](extending-modx/development-environment)

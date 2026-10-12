@@ -1,131 +1,97 @@
 ---
 title: "Часть 3"
 translation: "extending-modx/getting-started/tutorial/part-3"
-note: 'Некоторые подробности о коннекторах и процессорах относятся к MODX раньше 2.3.'
+description: "Как устроены процессоры MODX, на примере процессора создания Chunk"
 ---
 
-В MODX обработка форм осуществляется процессорами, которые представляют собой изолированные файлы, расположенные в основном каталоге MODX. Доступ к ним осуществляется через «коннекторы», которые обрабатывают запросы AJAX из пользовательского интерфейса (UI), для которых требуется переменная REQUEST с именем «action», указывающая, какой процессор отправлять. Процессоры отправляют очищенные данные REQUEST, а затем по окончании отвечают сообщением JSON обратно в браузер. Это позволяет быстро и легко выполнять запросы, снижающие нагрузку на сервер и браузер. В этом методе вы также можете сделать несколько асинхронных запросов к процессорам.
+В MODX обработка форм осуществляется **процессорами** — PHP-классами в ядре, которые загружают, проверяют и сохраняют данные. Доступ к ним осуществляется через **коннекторы**, которые обрабатывают запросы AJAX из пользовательского интерфейса (UI). В запросе есть переменная REQUEST с именем `action`, указывающая, какой процессор запустить. Процессор работает с очищенными данными запроса и отвечает сообщением JSON обратно в браузер. Это позволяет быстро и легко выполнять запросы, снижая нагрузку на сервер и браузер. Асинхронных запросов к процессорам может быть несколько.
 
-Вы можете думать о процессорах как модели в среде MVC. У MODX есть «модель», но в ней преобладают классы, которые обрабатывают слой ORM - другими словами, это не традиционный уровень модели. Процессоры часто постукивают, чтобы заполнить пробел.
+Процессоры можно представить как модели в MVC-фреймворке. У MODX есть «модель», но она в основном состоит из классов слоя ORM — то есть это не традиционный слой моделей. Процессоры часто заполняют этот пробел.
 
-Мы подробно рассмотрим процессор для создания чанка и покажем, как работают процессоры MODX.
+Разберём подробно процессор создания Chunk и посмотрим, как устроены процессоры MODX.
 
-Прежде всего, давайте предположим, что мы отправляем следующие данные в массив POST в соединитель, в котором переменная REQUEST «action» установлена ​​в «create», загружая соответствующую переменную create.php. В JS разъем `MODX.config.connectors_url+'element/chunk.php`, который разрешает (в нашей настройке по умолчанию):
+## Как запрос доходит до процессора
 
-> /modx/connectors/element/chunk.php
+Начиная с 2.3 отдельных файлов-коннекторов на элементы нет. Все запросы к коннектору идут во фронт-контроллер:
 
-Оттуда коннектор проверит запрос, а затем отправит его соответствующему процессору по адресу:
+> /connectors/index.php
 
-> /modx/core/model/modx/processors/element/chunk/create.php
+В JS URL коннектора — `MODX.config.connector_url` (это `connectors/index.php`). Запрос создания Chunk выглядит так:
 
-А теперь перейдем к процессору:
+``` javascript
+MODx.Ajax.request({
+    url: MODx.config.connector_url
+    ,params: {
+        action: 'element/chunk/create'
+        ,name: 'MyChunk'
+        ,snippet: '[[+php]]'
+    }
+    ,listeners: {
+        success: {fn:function(r) { /* ... */ },scope:this}
+    }
+});
+```
+
+Строка `action` вида `element/chunk/create` отображается в класс:
+
+> core/src/Revolution/Processors/Element/Chunk/Create.php
+> (`MODX\Revolution\Processors\Element\Chunk\Create`)
+
+Этот же класс вызывается на стороне PHP через `$modx->runProcessor('element/chunk/create', $props)` — runProcessor собирает имя класса из action (`Processors\` + ucfirst каждого сегмента через `/`). Процессор отвечает JSON `{success, message, total, object}`.
+
+## Внутри процессора Chunk Create
+
+Сам класс небольшой — большая часть работы в его родителях:
 
 ``` php
 <?php
-/**
- * @package modx
- * @subpackage processors.element.chunk
- */
-$modx->lexicon->load('chunk');
+namespace MODX\Revolution\Processors\Element\Chunk;
+
+use MODX\Revolution\modChunk;
+
+class Create extends \MODX\Revolution\Processors\Element\Create
+{
+    public $classKey = modChunk::class;
+    public $languageTopics = ['chunk', 'category', 'element'];
+    public $permission = 'new_chunk';
+    public $objectType = 'chunk';
+    public $beforeSaveEvent = 'OnBeforeChunkFormSave';
+    public $afterSaveEvent = 'OnChunkFormSave';
+}
 ```
 
-Прежде всего, мы включаем корневой файл index.php для процессоров, который выполняет небольшую проверку переменных и включает лицензирование. Затем мы загружаем соответствующую тему лексики. В MODX Revolution языковые файлы i18n разделены на более мелкие файлы по темам (ранее называвшиеся фокусами). Здесь мы хотим, чтобы все языковые строки были в теме 'chunk'. Это экономит вычислительную мощность, загружая только соответствующие строки i18n.
+Каждое свойство управляет одной частью общего алгоритма создания:
 
-**О темах**
-Лексика _topics_ похожа на то, как популярный [gettext](http://www.gnu.org/software/gettext/) в структуре перевода _контекстов_ различает значения и предоставляет подмножества файлов перевода. Мы упоминаем об этом только для новичков, которые могут быть знакомы с системами, использующими gettext (например, WordPress): помните, что контексты в MODX сильно отличаются.
+| Свойство | Что делает |
+| --- | --- |
+| `$classKey` | Какой класс модели создаётся (`$modx->newObject($classKey)`) |
+| `$languageTopics` | Топики лексикона, загружаемые до работы процессора (строки i18n разбиты по топикам; не путайте с контекстами gettext) |
+| `$permission` | Ключ права, проверяемый заранее; нет права → ответ `permission_denied` |
+| `$beforeSaveEvent` / `$afterSaveEvent` | Системные события вокруг `$object->save()` (`OnBeforeChunkFormSave`, `OnChunkFormSave`), с `mode` и `id` в параметрах |
 
-``` php
-if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
-```
+Базовые классы (`Processors\Model\CreateProcessor` → `Processors\Model\Processor`) затем выполняют стандартную последовательность: проверка прав → загрузка лексиконов → `newObject($classKey, $properties)` → валидация → `beforeSave()` → `save()` → событие после сохранения → `logManagerAction()` → `clearCache()` → `success($message, $object)`.
 
-Это проверка, чтобы убедиться, что пользователь имеет правильные разрешения для запуска этого процессора. Если нет, то он отправляет ответ об ошибке обратно в браузер через `$modx->error->failure()`. Ответ представляет собой строковое сообщение, переведенное через лексикон.
+Именно поэтому процедурные шаги из старых материалов — загрузка лексикона, проверка прав, поиск категории, `newObject`, события, журнал, кеш, `$modx->error->success()` — исчезли из пользовательского кода: теперь это фреймворк.
 
-``` php
-// значение по умолчанию
-if ($_POST['name'] == '') $_POST['name'] = $modx->lexicon('chunk_untitled');
+`$modx->error->success()` и `$modx->error->failure()` по-прежнему существуют (`MODX\Revolution\Error\modError`), если вы пишете процессор вручную; параметры `success()`:
 
-// избавиться от недействительных символов
-$_POST['name'] = str_replace('>','',$_POST['name']);
-$_POST['name'] = str_replace('<','',$_POST['name']);
+1: $message — строковое сообщение в ответ. Используется для деталей успеха (или отказа).
+2: $object — `xPDOObject` или массив полей данных, который сериализуется в JSON и возвращается в браузер.
 
-// если имя для этого чанка уже существует, отправьте сообщение об ошибке
-$name_exists = $modx->getObject('modChunk',array('name' => $_POST['name']));
-if ($name_exists != null) return $modx->error->failure($modx->lexicon('chunk_err_exists_name'));
-```
-
-Теперь обратите внимание, как мы очищаем переменные и проверяем, нет ли уже чанка с этим именем.
+Точечная настройка процессора создания обычно означает переопределение `beforeSave()` (дополнительные проверки, правка свойств) и `cleanup()` (дополнительные поля ответа) — как делает класс Chunk для статических чанков:
 
 ``` php
-// категория
-$category = $modx->getObject('modCategory',array('id' => $_POST['category']));
-if ($category == null) {
-    $category = $modx->newObject('modCategory');
-    if (empty($_POST['category'])) {
-            $category->set('id',0);
-    } else {
-            $category->set('category',$_POST['category']);
-            $category->save();
+public function beforeSave()
+{
+    $isStatic = intval($this->getProperty('static', 0));
+    if ($isStatic == 1) {
+        $staticFile = $this->getProperty('static_file');
+        if (empty($staticFile)) {
+            $this->addFieldError('static_file', $this->modx->lexicon('static_file_ns'));
         }
+    }
+    return parent::beforeSave();
 }
 ```
 
-Хорошо, здесь мы разрешаем создание динамической категории. Если указанная категория существует, она будет позже присвоена этой категории. Если нет, то он создает категорию в базе данных и подготавливает ее для последующего подключения к чанку.
-
-``` php
-// вызвать событие OnBeforeChunkFormSave
-$modx->invokeEvent('OnBeforeChunkFormSave',array(
-    'mode'  => modSystemEvent::MODE_NEW,
-    'id'    => $_POST['id'],
-));
-```
-
-События в Revolution почти такие же, как и в 096, но они более оптимизированы в своей загрузке.
-
-``` php
-$chunk = $modx->newObject('modChunk', $_POST);
-$chunk->set('locked',isset($_POST['locked']));
-$chunk->set('snippet',$_POST['chunk']);
-$chunk->set('category',$category->get('id'));
-if ($chunk->save() === false) {
-    return $modx->error->failure($modx->lexicon('chunk_err_save'));
-}
-```
-
-Важно: обратите внимание на 2-й параметр метода `newObject()`. В основном это то же самое, что и `$obj->fromArray()` - оно позволяет вам указать массив пар ключ-значение для назначения новому объекту.
-
-``` php
-// вызвать событие OnChunkFormSave
-$modx->invokeEvent('OnChunkFormSave',array(
-   'mode' => modSystemEvent::MODE_NEW,
-   'id' => $chunk->get('id'),
-));
-```
-
-Опять же, больше событий.
-
-``` php
-// действие диспетчера журналов
-$modx->logManagerAction('chunk_create','modChunk',$chunk->get('id'));
-```
-
-Теперь, как действия менеджера работают в Revolution, немного по-другому. Здесь хранится лексиконный строковый ключ (`chunk_create`), ключ класса изменяемого объекта и фактический идентификатор объекта. Это позволяет более подробные отчеты о действиях менеджера.
-
-``` php
-$cacheManager= $modx->getCacheManager();
-$cacheManager->clearCache();
-```
-
-Давайте просто и легко очистим кеш. Довольно легко, да?
-
-``` php
-return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
-```
-
-Теперь отправьте успешный ответ обратно в браузер. Параметры `$modx->error->success()` следующие:
-
-1: $message - Строковое сообщение для отправки назад. Используется для сообщения подробностей об успехе (или неудаче).
-2: $object - `xPDOObject` или массив полей данных для преобразования в JSON и отправки обратно в браузер.
-
-Итак, в основном, здесь, мы отправляем обратно информацию о чанке - за исключением контента, который может быть большим, ненужным и сложным для отправки. Это позволит пользовательскому интерфейсу правильно обрабатывать создание.
-
-Далее мы поговорим о том, как создавать свои собственные схемы и динамически добавлять их в инфраструктуру MODX без необходимости изменять ядро.
+Далее мы поговорим о том, как создать собственные схемы и добавить их в каркас MODX без изменения ядра.

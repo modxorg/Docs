@@ -1,6 +1,7 @@
 ---
 title: "Начало работы с PHP в MODX"
 translation: "extending-modx/getting-started/tutorial"
+description: "Работа с xPDO: объекты, коллекции и схема базы данных в MODX"
 ---
 
 Многие спрашивают о новой кодовой базе. Удобна ли она для разработчиков? Сильно ли отличается от 0.9.6/Evolution? Поддерживает ли OOP-проекты? Быстрее ли она? Легко ли её освоить?
@@ -30,6 +31,8 @@ if ($modx->db->getRecordCount($res))
 }
 return $users;
 ```
+
+Этот блок — история, оставлена для чтения старого кода: `$modx->getDocument()` и `$modx->db` в MODX 3 не существуют. `$modx->getChunk()` по-прежнему работает, но современный API — `getObject()`/`getCollection()` из примеров ниже.
 
 Больше нет. Всё проще. Вам понадобится всего несколько функций. Примеры:
 
@@ -62,7 +65,7 @@ $document = $modx->getObject('modResource',array(
 Например, `modChunk`:
 
 ``` xml
-<object class="modChunk" table="site_htmlsnippets" extends="modElement">
+<object class="modChunk" table="site_htmlsnippets" extends="MODX\Revolution\modElement">
     <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
     <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default="Chunk" />
     <field key="editor_type" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
@@ -70,14 +73,14 @@ $document = $modx->getObject('modResource',array(
     <field key="cache_type" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
     <field key="snippet" dbtype="mediumtext" phptype="string" />
     <field key="locked" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
-    <aggregate alias="Category" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
+    <aggregate alias="Category" class="MODX\Revolution\modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 </object>
 ```
 
 Вы также можете определить собственные схемы для компонентов и добавить их как пакеты. Об этом в следующей статье. Разберём схему:
 
 ``` xml
-<object class="modChunk" table="site_htmlsnippets" extends="modElement">
+<object class="modChunk" table="site_htmlsnippets" extends="MODX\Revolution\modElement">
 ```
 
 Свойство _class_ задаёт имя класса. _table_ показывает таблицу MySQL. _extends_ указывает родительский класс. `modElement` это базовый класс для всех элементов MODX: сниппетов, модулей, чанков, шаблонов и т.д.
@@ -89,7 +92,7 @@ $document = $modx->getObject('modResource',array(
 Этот тег описывает столбец БД. Большинство атрибутов очевидны.
 
 ``` xml
-<aggregate alias="modCategory" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
+<aggregate alias="Category" class="MODX\Revolution\modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 ```
 
 Здесь начинаются связи БД. **Aggregate** это связь, при которой удаление чанка не удаляет связанную категорию. При **Composite** связи удаление затронуло бы связанный объект. В Composite есть зависимость от другого объекта. Пример: получить все `modContextSettings` для `modContext`:

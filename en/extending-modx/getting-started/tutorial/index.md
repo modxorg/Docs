@@ -2,17 +2,14 @@
 title: "Getting started with PHP in MODX"
 _old_id: "1116"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i"
+description: "Working with xPDO: objects, collections and the database schema in MODX"
 ---
 
-So, a lot of people have been asking about the codebase. Is it coder-friendly? Does it support OOP projects? Is it faster? Will it be easy to learn?
-
-In these tutorials, we plan to answer those questions with YES.
-
-The codebase in Revolution has switched to [xPDO](http://www.xpdo.org/ "xPDO Homepage"), an object relational bridge modeling tool built by Jason Coward. In layman's terms, this means that all the database tables are now represented by PHP objects (as is common with any ORM). Chunks are represented by 'modChunk' objects, snippets by 'modSnippet' objects and so on.
+Revolution's data layer is [xPDO](http://www.xpdo.org/ "xPDO Homepage"), an object relational bridge by Jason Coward. Every database table is a PHP object: Chunks are `modChunk`, Snippets are `modSnippet`, and so on.
 
 ## The Simple How
 
-So, how does one actually get an object in the new modx? Well, you used to have to rely on a handful of different functions:
+The current API is a handful of methods. MODX 1.x and earlier needed a separate function per case:
 
 ``` php
 // The old way of doing things in MODx 1.x and earlier
@@ -32,7 +29,9 @@ if ($modx->db->getRecordCount($res))
 return $users;
 ```
 
-Not anymore. Things are much simpler, and there's really only a few functions you'll need. Lets look at some examples:
+This block is history, kept for reading old code: `$modx->getDocument()` and `$modx->db` do not exist in MODX 3. `$modx->getChunk()` still works, but the modern API is `getObject()`/`getCollection()` below.
+
+The same jobs with the current API:
 
 ``` php
 // getting a chunk with ID 43
@@ -58,42 +57,51 @@ $document = $modx->getObject('modResource',array(
 
 ## The Model
 
-So, you're probably asking, Where is the list of table names to object names map? It can be found in "core/model/schema/modx.mysql.schema.xml". (You'll note the 'mysql' - yes, this means that MODX will in the near future support other databases) From there you can view an XML representation of all the MODX DB tables.
-
-For example, modChunk:
+The class-to-table map lives in `core/model/schema/modx.mysql.schema.xml`, which lists every MODX table as XML. For example, modChunk:
 
 ``` xml
-<object class="modChunk" table="site_htmlsnippets" extends="modElement">
+<object class="modChunk" table="site_htmlsnippets" extends="MODX\Revolution\modElement">
     <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
     <field key="description" dbtype="varchar" precision="255" phptype="string" null="false" default="Chunk" />
     <field key="editor_type" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
-    <field key="category" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+    <field key="category" dbtype="int" precision="11" phptype="integer" null="false" default="0" index="fk" />
     <field key="cache_type" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
     <field key="snippet" dbtype="mediumtext" phptype="string" />
-    <field key="locked" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" />
-    <aggregate alias="Category" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
+    <field key="locked" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+    <field key="properties" dbtype="text" phptype="array" null="true" />
+    <field key="static" dbtype="tinyint" precision="1" attributes="unsigned" phptype="boolean" null="false" default="0" index="index" />
+    <field key="static_file" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
+
+    <alias key="content" field="snippet" />
+
+    <aggregate alias="Category" class="MODX\Revolution\modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 </object>
 ```
 
-You can also define your own schemas for your own components and add them as packages - more on that in a future article. Lets go into the schema:
+An Extra defines a schema of its own and registers it as a package. The `<object>` tag maps one class to one table:
 
 ``` xml
-<object class="modChunk" table="site_htmlsnippets" extends="modElement">
+<object class="modChunk" table="site_htmlsnippets" extends="MODX\Revolution\modElement">
 ```
 
-The _class_ property tells you what the name of the class will be. The _table_ property shows the actual MySQL table, and _extends_ shows what object it extends. modElement is a base class for all Elements in MODX - snippets, modules, chunks, templates, etc.
+`class` is the PHP class name, `table` the MySQL table, `extends` the parent class (`MODX\Revolution\modElement` in 3.x — the base class of all Elements: Snippets, Chunks, Templates and the rest).
 
 ``` xml
 <field key="name" dbtype="varchar" precision="50" phptype="string" null="false" default="" index="unique" />
 ```
 
-This tag represents a column in the database. Most of these attributes are pretty straightforward.
+Each `<field>` tag maps one table column: `key` is the column, `dbtype` and `precision` the database type, `phptype` the PHP type, `index` the index to build.
 
 ``` xml
-<aggregate alias="modCategory" class="modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
+<aggregate alias="Category" class="MODX\Revolution\modCategory" key="id" local="category" foreign="id" cardinality="one" owner="foreign" />
 ```
 
-Okay, this is where we get into DB relationships. An **Aggregate** relationship is a relationship where, in laymans terms, if you were to delete this chunk, it wouldn't delete the Category that it's related to. If it were a **Composite** relationship, it would. There is "dependence" in the Composite relationship that is related to the other object. For an example, let's get all the modContextSettings for a modContext:
+Relations between objects come in two kinds:
+
+- **Aggregate** — the related object outlives this one: deleting the Chunk does not delete the Category.
+- **Composite** — the related objects are owned and, when the relation is dependent, deleted with this one.
+
+As an aggregate example, all ContextSettings of a Context:
 
 ``` php
 $context = $modx->getObject('modContext','web');
@@ -104,7 +112,7 @@ foreach ($settings as $setting) {
 }
 ```
 
-Pretty easy, huh? We'll get into creating and removing objects, as well as more complex queries, such as inner joins, limits, sorting and others, in the [next article](extending-modx/getting-started/tutorial/part-2).
+Creating and removing objects, joins, limits and sorting are covered in [the next article](extending-modx/getting-started/tutorial/part-2).
 
 ## See Also
 

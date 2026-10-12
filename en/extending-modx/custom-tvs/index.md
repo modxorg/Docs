@@ -2,21 +2,22 @@
 title: "Custom Template Variables"
 _old_id: "1047"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/adding-a-custom-tv-type-modx-2.2"
+description: "Register a custom TV input and output type in a namespace extra"
 ---
 
-This tutorial is for MODX Revolution 2.2 and 3.x.
+This tutorial is for MODX Revolution 3.x.
 
 ## What are Custom TV Input Types?
 
-MODX Revolution lets you add your own TV input types (beside textbox, radio, textarea, richtext, and the rest) for [Template Variables](building-sites/elements/template-variables). This example loads a Template dropdown in the Manager, then on the frontend prints the selected Template ID in a `div`. We call the type `templateselect` and keep the files in an Extra at `core/components/ourtvs/`.
+This example adds a TV input type named `templateselect` for [Template Variables](building-sites/elements/template-variables): the Manager shows a Template dropdown, and the frontend prints the selected Template ID in a `div`. The files live in an Extra at `core/components/ourtvs/`. Built-in type keys (`text`, `option`, `textarea`, `richtext`, …) are listed in `core/lexicon/en/tv_input_types.inc.php`.
 
-If the custom renderer is missing, MODX draws a **plain text field**. That is the fallback in `modTemplateVar::getRender()`, not a broken combo. The usual cause is skipping the pathing plugin below.
+If the custom renderer never loads, MODX draws a **plain text field** — the fallback in `modTemplateVar::getRender()`, not a broken combo. The usual cause is skipping the pathing plugin below.
 
 ## Create a Namespace
 
 Create a Namespace named `ourtvs` with path `{core_path}components/ourtvs/`.
 
-In 3.x, MODX also scans `{namespace_path}/tv/input/` when it **lists** input types in the TV editor. That list is not the same as **rendering** the TV on a Resource. Rendering still uses the plugin events in the next step.
+In 3.x, MODX also scans `{namespace_path}/tv/input/` when it **lists** input types in the TV editor, and `{namespace_path}/tv/output/` when it lists output types. Listing is not rendering: a TV on a Resource is still rendered through the plugin events in the next step.
 
 ## Creating the Pathing Plugin
 
@@ -49,9 +50,14 @@ switch ($modx->event->name) {
 }
 ```
 
-Those handlers add include paths. Trailing slashes matter. After you save the plugin, clear the Manager cache.
+The path returned from the plugin is used as-is — any directory name works. Two caveats:
 
-If you skip this plugin, the TV type may still appear in the Input Type dropdown (3.x Namespace scan), but the Resource form falls back to a text field.
+- The namespace auto-scan for **properties** looks only in `{namespace_path}/tv/inputproperties/` and `{namespace_path}/tv/properties/`. The example uses `tv/inputoptions/`, which still works because the plugin's path wins over the scan.
+- A trailing slash is required for `OnTVInputPropertiesList` and `OnTVOutputRenderPropertiesList` — the path is concatenated as-is. `OnTVInputRenderList` and `OnTVOutputRenderList` normalize the path in 3.x, so the slash does not matter there.
+
+In 3.x the plugin events take effect as soon as you save the plugin — no Manager cache clear needed.
+
+Skip the plugin and the type may still appear in the Input Type dropdown (3.x namespace scan), but the Resource form falls back to a text field.
 
 ## Creating the Input Controller
 
@@ -77,6 +83,8 @@ return 'TemplateSelectInputRender';
 
 On 3.x, `modTemplateVarInputRender` is `MODX\Revolution\modTemplateVarInputRender`. The global name still works while deprecated class aliases are on (default). You can add `use MODX\Revolution\modTemplateVarInputRender;` at the top if you prefer the namespaced class.
 
+Built-in input renders live in `core/src/Revolution/Processors/Element/TemplateVar/Renders/mgr/input/`, their templates in `manager/templates/default/element/tv/renders/input/`. Copy `listbox-single.tpl` as the pattern — it wraps the widget in `Ext.onReady` and registers it in the resource form (`Ext.getCmp('modx-panel-resource').getForm().add(fld)`). Custom types are searched after the built-ins, so they cannot override a built-in name.
+
 `getTemplate()` points at a Smarty file. Put it here:
 
 > `core/components/ourtvs/tv/input/tpl/templateselect.tpl`
@@ -86,24 +94,29 @@ On 3.x, `modTemplateVarInputRender` is `MODX\Revolution\modTemplateVarInputRende
 <script type="text/javascript">
 // <![CDATA[
 {literal}
-MODx.load({
+Ext.onReady(function() {
+    const fld = MODx.load({
 {/literal}
-    xtype: 'modx-combo-template'
-    ,name: 'tv{$tv->id}'
-    ,hiddenName: 'tv{$tv->id}'
-    ,transform: 'tv{$tv->id}'
-    ,id: 'tv{$tv->id}'
-    ,width: 300
-    ,value: '{$tv->value}'
+        xtype: 'modx-combo-template'
+        ,name: 'tv{$tv->id}'
+        ,hiddenName: 'tv{$tv->id}'
+        ,transform: 'tv{$tv->id}'
+        ,id: 'tv{$tv->id}'
+        ,width: 300
+        ,value: '{$tv->value}'
 {literal}
-    ,listeners: { 'select': { fn:MODx.fireResourceFormChange, scope:this}}
+        ,listeners: { 'select': { fn:MODx.fireResourceFormChange, scope:this}}
+    });
+    Ext.getCmp('modx-panel-resource').getForm().add(fld);
 });
 {/literal}
 // ]]>
 </script>
 ```
 
-You do not have to use ExtJS. A plain HTML control is fine. The control must use the name `tv{$tv->id}`.
+`Ext.onReady` and `getForm().add(fld)` come from the built-in renders: without registering the field in the resource form it may render but stay out of the form's validation and change tracking.
+
+ExtJS is optional — a plain HTML control works too, as long as its name is `tv{$tv->id}`.
 
 Create a Template Variable, set Input Type to `templateselect`, assign it to a Template, then edit a Resource. You should get a Template dropdown:
 
@@ -129,25 +142,17 @@ if (!class_exists('TemplateSelectOutputRender')) {
 return 'TemplateSelectOutputRender';
 ```
 
-On the frontend this prints the selected Template ID inside a `div`.
+On the frontend this prints the selected Template ID inside a `div` — but only when the TV uses your output type. The render is looked up in the TV's **Output Type** field (`display`); when that field is empty, MODX outputs plain `text` and the `div` never appears. So: open the TV, set **Output Type** to `templateselect`, save, then check the frontend.
+
+## Other TV Events
+
+The four events above cover rendering. The TV editor and processors also fire `OnTVFormPrerender`, `OnTVFormRender`, `OnTVFormSave`, `OnTVFormDelete`, `OnTemplateVarBeforeSave`, `OnTemplateVarSave`, `OnTemplateVarBeforeRemove`, and `OnTemplateVarRemove` — use them when you need to hook into the TV lifecycle rather than its rendering.
 
 ## See Also
 
-1. [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
-2. [Bindings](building-sites/elements/template-variables/bindings)
-     1. [CHUNK Binding](building-sites/elements/template-variables/bindings/chunk-binding)
-     2. [DIRECTORY Binding](building-sites/elements/template-variables/bindings/directory-binding)
-     3. [FILE Binding](building-sites/elements/template-variables/bindings/file-binding)
-     4. [INHERIT Binding](building-sites/elements/template-variables/bindings/inherit-binding)
-     5. [RESOURCE Binding](building-sites/elements/template-variables/bindings/resource-binding)
-     6. [SELECT Binding](building-sites/elements/template-variables/bindings/select-binding)
-3. [Template Variable Input Types](building-sites/elements/template-variables/input-types)
-4. [Template Variable Output Types](building-sites/elements/template-variables/output-types)
-     1. [Date TV Output Type](building-sites/elements/template-variables/output-types/date)
-     2. [Delimiter TV Output Type](building-sites/elements/template-variables/output-types/delimiter)
-     3. [HTML Tag TV Output Type](building-sites/elements/template-variables/output-types/html)
-     4. [Image TV Output Type](building-sites/elements/template-variables/output-types/image)
-     5. [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
-5. [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
-6. [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
-7. [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
+- [Creating a Template Variable](building-sites/elements/template-variables/step-by-step)
+- [Template Variable Input Types](building-sites/elements/template-variables/input-types)
+- [Template Variable Output Types](building-sites/elements/template-variables/output-types) (including [date](building-sites/elements/template-variables/output-types/date), [delimiter](building-sites/elements/template-variables/output-types/delimiter), [HTML tag](building-sites/elements/template-variables/output-types/html), [image](building-sites/elements/template-variables/output-types/image), [URL](building-sites/elements/template-variables/output-types/url))
+- [Bindings](building-sites/elements/template-variables/bindings) (including [CHUNK](building-sites/elements/template-variables/bindings/chunk-binding), [DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding), [FILE](building-sites/elements/template-variables/bindings/file-binding), [INHERIT](building-sites/elements/template-variables/bindings/inherit-binding), [RESOURCE](building-sites/elements/template-variables/bindings/resource-binding), [SELECT](building-sites/elements/template-variables/bindings/select-binding))
+- [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
+- [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)
