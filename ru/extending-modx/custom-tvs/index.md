@@ -4,11 +4,11 @@ translation: "extending-modx/custom-tvs"
 description: "Создание собственных типов ввода для TV"
 ---
 
-Это руководство для MODX Revolution 2.2 и 3.x.
+Это руководство для MODX Revolution 3.x.
 
 ## Что такое настраиваемые типы ввода TV?
 
-MODX Revolution позволяет добавлять свои типы ввода для [TV](building-sites/elements/template-variables) рядом с `textbox`, `radio`, `textarea`, `richtext` и остальными. Этот пример показывает выпадающий список шаблонов в менеджере, а на фронтенде печатает ID выбранного шаблона в `div`. Тип называется `templateselect`. Файлы лежат в Extra по пути `core/components/ourtvs/`.
+MODX Revolution позволяет добавлять свои типы ввода для [TV](building-sites/elements/template-variables) рядом с `text`, `option`, `textarea`, `richtext` и остальными (ключи типов лежат в `core/lexicon/ru/tv_input_types.inc.php`). Этот пример показывает выпадающий список шаблонов в менеджере, а на фронтенде печатает ID выбранного шаблона в `div`. Тип называется `templateselect`. Файлы лежат в Extra по пути `core/components/ourtvs/`.
 
 Если кастомный рендерер не найден, MODX рисует **обычное текстовое поле**. Это запасной вариант в `modTemplateVar::getRender()`, а не сломанный combo. Чаще всего забыли плагин путей ниже.
 
@@ -16,7 +16,7 @@ MODX Revolution позволяет добавлять свои типы ввод
 
 Создайте Namespace с именем `ourtvs` и путём `{core_path}components/ourtvs/`.
 
-В 3.x MODX ещё смотрит `{namespace_path}/tv/input/`, когда **перечисляет** типы ввода в редакторе TV. Список типов и **отрисовка** TV на ресурсе это разные шаги. Для отрисовки нужен плагин из следующего шага.
+В 3.x MODX ещё смотрит `{namespace_path}/tv/input/`, когда **перечисляет** типы ввода в редакторе TV, и `{namespace_path}/tv/output/` — когда перечисляет типы вывода. Эти списки и **отрисовка** TV на ресурсе — разные шаги. Для отрисовки нужен плагин из следующего шага.
 
 ## Создайте плагин путей
 
@@ -49,7 +49,9 @@ switch ($modx->event->name) {
 }
 ```
 
-Обработчики добавляют пути для include. Слеш в конце пути нужен. После сохранения плагина очистите кеш менеджера.
+Путь из плагина используется как есть — имя каталога может быть любым. Две конвенции на выбор: автоскан неймспейсов для **свойств** ищет только в `{namespace_path}/tv/inputproperties/` и `{namespace_path}/tv/properties/`, а плагин выше отдаёт `tv/inputoptions/` — это работает, потому что путь плагина важнее скана.
+
+Обработчики добавляют пути для include. Для `OnTVInputPropertiesList` и `OnTVOutputRenderPropertiesList` слеш в конце обязателен — путь склеивается как есть. Для `OnTVInputRenderList` и `OnTVOutputRenderList` в 3.x путь нормализуется, слеш там не важен. В 3.x события плагина подхватываются сразу после сохранения плагина — очищать кеш менеджера не нужно.
 
 Без плагина тип может появиться в списке Input Type (в 3.x его подхватывает Namespace), но на форме ресурса останется текстовое поле.
 
@@ -77,6 +79,8 @@ return 'TemplateSelectInputRender';
 
 В 3.x класс называется `MODX\Revolution\modTemplateVarInputRender`. Глобальное имя работает, пока включены deprecated class aliases (так по умолчанию). Можно написать `use MODX\Revolution\modTemplateVarInputRender;` в начале файла, если хотите namespaced-класс.
 
+Встроенные рендеры ввода лежат в `core/src/Revolution/Processors/Element/TemplateVar/Renders/mgr/input/`, их шаблоны — в `manager/templates/default/element/tv/renders/input/`. Копируйте `listbox-single.tpl` как образец: он оборачивает виджет в `Ext.onReady` и регистрирует поле в форме ресурса (`Ext.getCmp('modx-panel-resource').getForm().add(fld)`). Кастомные типы ищутся после встроенных, поэтому перекрыть встроенный тип они не могут.
+
 `getTemplate()` указывает на Smarty-файл. Положите его сюда:
 
 > `core/components/ourtvs/tv/input/tpl/templateselect.tpl`
@@ -86,22 +90,27 @@ return 'TemplateSelectInputRender';
 <script type="text/javascript">
 // <![CDATA[
 {literal}
-MODx.load({
+Ext.onReady(function() {
+    const fld = MODx.load({
 {/literal}
-    xtype: 'modx-combo-template'
-    ,name: 'tv{$tv->id}'
-    ,hiddenName: 'tv{$tv->id}'
-    ,transform: 'tv{$tv->id}'
-    ,id: 'tv{$tv->id}'
-    ,width: 300
-    ,value: '{$tv->value}'
+        xtype: 'modx-combo-template'
+        ,name: 'tv{$tv->id}'
+        ,hiddenName: 'tv{$tv->id}'
+        ,transform: 'tv{$tv->id}'
+        ,id: 'tv{$tv->id}'
+        ,width: 300
+        ,value: '{$tv->value}'
 {literal}
-    ,listeners: { 'select': { fn:MODx.fireResourceFormChange, scope:this}}
+        ,listeners: { 'select': { fn:MODx.fireResourceFormChange, scope:this}}
+    });
+    Ext.getCmp('modx-panel-resource').getForm().add(fld);
 });
 {/literal}
 // ]]>
 </script>
 ```
+
+`Ext.onReady` и `getForm().add(fld)` — то же делают встроенные рендеры: без регистрации поля в форме ресурса оно может отрисоваться, но не участвовать в проверке и отслеживании изменений формы.
 
 ExtJS не обязателен. Подойдёт обычный HTML. У контрола должно быть имя `tv{$tv->id}`.
 
@@ -129,7 +138,11 @@ if (!class_exists('TemplateSelectOutputRender')) {
 return 'TemplateSelectOutputRender';
 ```
 
-На фронтенде это выведет ID выбранного шаблона внутри `div`.
+На фронтенде это выведет ID выбранного шаблона внутри `div` — но только если у TV выбран ваш тип вывода. Рендер вывода ищется по полю **Output Type** (`display`) TV; когда оно пустое, MODX печатает значение обычным `text` и вашего `div` не будет. Поэтому после создания контроллера вывода: откройте TV, в Output Type укажите `templateselect`, сохраните и проверьте фронтенд.
+
+## Другие события TV
+
+Четыре события выше покрывают отрисовку. Редактор TV и процессоры также вызывают `OnTVFormPrerender`, `OnTVFormRender`, `OnTVFormSave`, `OnTVFormDelete`, `OnTemplateVarBeforeSave`, `OnTemplateVarSave`, `OnTemplateVarBeforeRemove` и `OnTemplateVarRemove` — используйте их, когда нужен хук на жизненный цикл TV, а не на отрисовку.
 
 ## Смотрите также
 
@@ -148,6 +161,5 @@ return 'TemplateSelectOutputRender';
 13. [TV тип вывода - HTML тег](building-sites/elements/template-variables/output-types/html)
 14. [TV тип вывода - изображение](building-sites/elements/template-variables/output-types/image)
 15. [TV тип вывода - ссылка](building-sites/elements/template-variables/output-types/url)
-16. [Добавление произвольного TV - MODX 2.2](extending-modx/custom-tvs)
-17. [Создание поля множественного выбора для страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
-18. [Доступ к значениям TV переменных шаблона через API](extending-modx/snippets/accessing-tvs)
+16. [Создание поля множественного выбора для страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
+17. [Доступ к значениям TV переменных шаблона через API](extending-modx/snippets/accessing-tvs)

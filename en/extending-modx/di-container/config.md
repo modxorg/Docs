@@ -1,10 +1,16 @@
 ---
 title: Config
+description: "The config service: the core configuration array of MODX"
 ---
 
-The core configuration is available via the `config` service in the [dependency injection container](extending-modx/di-container). 
+The core configuration is available via the `config` service in the [dependency injection container](extending-modx/di-container):
 
-When requested, it returns an array of options used for initialising the MODX class. For example:
+```php
+$config = $modx->services->get('config');
+echo $config['table_prefix'];
+```
+
+The service returns an array of the options used to initialize the MODX class, for example:
 
 ```
   'cache_key' => string 'default' (length=7)
@@ -18,20 +24,20 @@ When requested, it returns an array of options used for initialising the MODX cl
   'validate_on_save' => boolean true
   'cache_system_settings' => boolean true
   'cache_system_settings_key' => string 'system_settings' (length=15)
-  'connection_init' => 
-    array (size=1)
-      'connection_mutable' => boolean true
+  'load_deprecated_global_class_aliases' => boolean true
   'connections' => 
     array (size=1)
       0 => 
         array (size=5)
-          'dsn' => string 'mysql:host=localhost;dbname=your-db-name;charset=utf8' (length=52)
+          'dsn' => string 'mysql:host=localhost;dbname=your-db-name;charset=utf8mb4' (length=55)
           'username' => string '' (length=0)
           'password' => string '' (length=0)
           'options' => 
             array (size=1)
-              ...
+              'connection_mutable' => boolean true
           'driverOptions' => 
             array (size=0)
               ...
 ```
+
+This dump is an illustration — exact values depend on your installation, and keys can be overridden via `$config_options` in `core/config/config.inc.php`. Note that `connection_mutable` lives inside `connections[0]['options']`; a top-level `connection_init` array appears only if you set `xPDO::OPT_CONN_INIT` yourself in `$config_options`.

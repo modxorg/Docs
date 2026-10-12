@@ -2,131 +2,93 @@
 title: "Getting Started Part 3: Processors"
 _old_id: "1118"
 _old_uri: "2.x/case-studies-and-tutorials/php-coding-in-modx-revolution,-pt.-i/php-coding-in-modx-revolution,-pt.-iii"
-note: 'Some of the details about connectors and processors relate to MODX before 2.3.'
+description: "How MODX processors work, walked through on the Chunk create processor"
 ---
 
-In MODX, form processing is handled by 'Processors', which are isolated files located in the MODX core directory. They are accessed through 'Connectors', which handle AJAX requests from the User Interface (UI), which require a REQUEST variable named 'action' that specifies which processor to send to. Processors are sent the sanitized REQUEST data, and then when finished respond with a JSON message back to the browser. This allows for quick, easy requests that reduce the load on the server and the browser. You can also do multiple, asynchronous requests to processors in this method.
+Form processing runs in **Processors** — PHP classes in the core that load, validate and save data. The UI calls them through **Connectors**: a request carries an `action` parameter naming the processor, which works with sanitized request data and answers with JSON. Several such requests can run at once, asynchronous to the page.
 
-You can think of processors a bit like models in an MVC framework. MODX has a "model", but it is dominated by the classes that handle the ORM layer -- it's not a traditional model layer in other words. Processors are often tapped to fill the gap.
+Processors fill the role of the write side in an MVC model: the model layer here is mostly ORM classes, so the business logic of a form lives in the processor.
 
-We'll look in-depth at the processor for creating a Chunk, and show you how MODX processors work.
+## How a request reaches the processor
 
-First off, let's assume that we're sending the following data into the POST array to the connector, which has the REQUEST "action" variable set to 'create', loading the proper create.php variable. In the JS, the connector is `MODX.config.connectors_url+'element/chunk.php`, which resolves to (in our default setup):
+Since 2.3 there are no per-element connector files. All connector requests go to a single front controller:
 
-> /modx/connectors/element/chunk.php
+> /connectors/index.php
 
-From there the connector will verify the request, and then send it to the proper processor, at:
+In JS, the connector URL is `MODX.config.connector_url` (which is `connectors/index.php`). The Chunk-create request looks like:
 
-> /modx/core/model/modx/processors/element/chunk/create.php
+``` javascript
+MODx.Ajax.request({
+    url: MODx.config.connector_url
+    ,params: {
+        action: 'element/chunk/create'
+        ,name: 'MyChunk'
+        ,snippet: '[[+php]]'
+    }
+    ,listeners: {
+        success: {fn:function(r) { /* ... */ },scope:this}
+    }
+});
+```
 
-And now on to the processor:
+The `action` string `element/chunk/create` maps to the class:
+
+> core/src/Revolution/Processors/Element/Chunk/Create.php
+> (`MODX\Revolution\Processors\Element\Chunk\Create`)
+
+The same class is what `$modx->runProcessor('element/chunk/create', $props)` calls on the PHP side — runProcessor builds the class name from the action (`Processors\` + ucfirst of each `/` segment). The processor responds with JSON `{success, message, total, object}`.
+
+## Inside the Chunk Create processor
+
+The class itself is small — most of the work lives in its parents:
 
 ``` php
 <?php
-/**
- * @package modx
- * @subpackage processors.element.chunk
- */
-$modx->lexicon->load('chunk');
+namespace MODX\Revolution\Processors\Element\Chunk;
+
+use MODX\Revolution\modChunk;
+
+class Create extends \MODX\Revolution\Processors\Element\Create
+{
+    public $classKey = modChunk::class;
+    public $languageTopics = ['chunk', 'category', 'element'];
+    public $permission = 'new_chunk';
+    public $objectType = 'chunk';
+    public $beforeSaveEvent = 'OnBeforeChunkFormSave';
+    public $afterSaveEvent = 'OnChunkFormSave';
+}
 ```
 
-First off, we include the root index.php file for the processors, which does some slight variable checking and includes licensing. Then, we load the proper lexicon topic. In MODX Revolution, i18n language files are separated into smaller files by topic, (formerly called foci). Here, we want all language strings within the 'chunk' topic. This saves processing power by only loading relevant i18n strings.
+Each property drives one concern of the generic create workflow:
 
-**About Topics**
-The lexicon _topics_ are similar to how the popular [gettext](http://www.gnu.org/software/gettext/) translation framework employs _contexts_ to distinguish meanings and provide subsets of translation files. We mention this only for newcomers who may be familiar with systems that use gettext (e.g. WordPress): remember that contexts are something very different in MODX.
+| Property | What it does |
+| --- | --- |
+| `$classKey` | Which model class is created (`$modx->newObject($classKey)`) |
+| `$languageTopics` | Lexicon topics loaded before the processor runs (i18n strings are split by topic; do not confuse these with gettext contexts) |
+| `$permission` | Permission key checked up front; missing right → failure response with `permission_denied` |
+| `$beforeSaveEvent` / `$afterSaveEvent` | System events invoked around `$object->save()` (`OnBeforeChunkFormSave`, `OnChunkFormSave`), with `mode` and `id` in the params |
 
-``` php
-if (!$modx->hasPermission('new_chunk')) $modx->error->failure($modx->lexicon('permission_denied'));
-```
+The base classes (`Processors\Model\CreateProcessor` → `Processors\Model\Processor`) then run the standard sequence: check permission → load lexicons → `newObject($classKey, $properties)` → run validation → `beforeSave()` → `save()` → invoke after-save event → `logManagerAction()` → `clearCache()` → `success($message, $object)`.
 
-This checks to make sure the user has the correct permissions to run this processor. If not, then it sends a failure response back to the browser via `$modx->error->failure()`. The response is a string message translated via the lexicon.
+Older tutorials walked these steps by hand — lexicon load, permission check, category lookup, `newObject`, events, log, cache, `$modx->error->success()`. In current MODX they run inside the base classes.
 
-``` php
-// default values
-if ($_POST['name'] == '') $_POST['name'] = $modx->lexicon('chunk_untitled');
+`$modx->error->success()` and `$modx->error->failure()` still exist (`MODX\Revolution\Error\modError`) if you write a processor by hand; both take:
 
-// get rid of invalid chars
-$_POST['name'] = str_replace('>','',$_POST['name']);
-$_POST['name'] = str_replace('<','',$_POST['name']);
+1. `$message` — a string returned to the client, success or failure alike.
+2. `$object` — an `xPDOObject` or an array of fields, converted to JSON.
 
-// if the name already exists for this chunk, send back an error
-$name_exists = $modx->getObject('modChunk',array('name' => $_POST['name']));
-if ($name_exists != null) return $modx->error->failure($modx->lexicon('chunk_err_exists_name'));
-```
-
-Note now how we're sanitizing variables, and checking to make sure there already isn't a Chunk with this name.
+Customizing a create processor usually means overriding `beforeSave()` (extra checks, fixing properties) and `cleanup()` (extra fields in the response) — as the Chunk class does for static chunks:
 
 ``` php
-// category
-$category = $modx->getObject('modCategory',array('id' => $_POST['category']));
-if ($category == null) {
-        $category = $modx->newObject('modCategory');
-        if (empty($_POST['category'])) {
-                $category->set('id',0);
-        } else {
-                $category->set('category',$_POST['category']);
-                $category->save();
+public function beforeSave()
+{
+    $isStatic = intval($this->getProperty('static', 0));
+    if ($isStatic == 1) {
+        $staticFile = $this->getProperty('static_file');
+        if (empty($staticFile)) {
+            $this->addFieldError('static_file', $this->modx->lexicon('static_file_ns'));
         }
+    }
+    return parent::beforeSave();
 }
 ```
-
-Okay, here, we allow dynamic Category creation. If the category specified exists, it will later assign it to that category. If not, then it creates the category in the database and prepares it for later association to the Chunk.
-
-``` php
-// invoke OnBeforeChunkFormSave event
-$modx->invokeEvent('OnBeforeChunkFormSave',array(
-    'mode'  => modSystemEvent::MODE_NEW,
-    'id'    => $_POST['id'],
-));
-```
-
-Events are pretty much the same invoke-wise in Revolution as they were in 096 - however they are more optimized in their loading.
-
-``` php
-$chunk = $modx->newObject('modChunk', $_POST);
-$chunk->set('locked',isset($_POST['locked']));
-$chunk->set('snippet',$_POST['chunk']);
-$chunk->set('category',$category->get('id'));
-if ($chunk->save() === false) {
-    return $modx->error->failure($modx->lexicon('chunk_err_save'));
-}
-```
-
-Important: note the 2nd parameter of the `newObject()` method. This is basically the same as `$obj->fromArray()` - it allows you to specify an array of key-value pairs to assign to the new object.
-
-``` php
-// invoke OnChunkFormSave event
-$modx->invokeEvent('OnChunkFormSave',array(
-   'mode' => modSystemEvent::MODE_NEW,
-   'id' => $chunk->get('id'),
-));
-```
-
-Again, more event invoking.
-
-``` php
-// log manager action
-$modx->logManagerAction('chunk_create','modChunk',$chunk->get('id'));
-```
-
-Now, how manager actions work in Revolution is a little different. This stores a lexicon string key ('chunk\_create'), the class key of the object being modified, and the actual ID of the object. This allows for more detailed manager action reporting.
-
-``` php
-$cacheManager= $modx->getCacheManager();
-$cacheManager->clearCache();
-```
-
-Let's simply and easily clear the cache. Pretty easy, huh?
-
-``` php
-return $modx->error->success('',$chunk->get(array('id', 'name', 'description', 'locked', 'category')));
-```
-
-Now, send a success response back to the browser. The parameters of `$modx->error->success()` are as follows:
-
-1: $message - A string message to send back. Used to report details about a success (or failure).
-2: $object - An `xPDOObject` or array of data fields to convert into JSON and send back to the browser.
-
-So basically, here, we're sending back the Chunk information - minus the content, which could be big and unnecessary and complicated to send. This will allow the UI to handle the creation properly.
-
-Next, we'll talk about how to create your own schemas and add them dynamically into the MODX framework, without having to modify the core.
