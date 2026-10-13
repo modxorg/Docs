@@ -1,5 +1,6 @@
 ---
 title: "modX.sendRedirect"
+description: "Отправляет перенаправление на указанный URL-адрес с помощью указанного метода."
 translation: "extending-modx/modx-class/reference/modx.sendredirect"
 ---
 
@@ -7,28 +8,25 @@ translation: "extending-modx/modx-class/reference/modx.sendredirect"
 
 Отправляет перенаправление на указанный URL-адрес с помощью указанного метода.
 
-## Syntax
-
-API Doc: [modX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
+## Синтаксис
 
 ``` php
-void sendRedirect (string $url, [array $options = false], [string $type = ''], [string $responseCode])
+void sendRedirect (string $url, [array|boolean $options = false], [string $type = ''], [string $responseCode = ''])
 ```
 
-Обратите внимание, что `$type` и `$responseCode` устарели и, скорее всего, будут удалены в следующем выпуске. **Не полагайтесь на них**.
+`$url` должен быть корректным URL-адресом — его можно построить с помощью [modX::makeUrl](extending-modx/modx-class/reference/modx.makeurl "modX.makeUrl"). Пустой URL не перенаправляется: метод пишет ошибку в лог и возвращается, не отправляя заголовок.
 
-`$url` должен быть правильным url-адресом,который может быть сгенерирован с помощью `modX::makeUrl` для перенаправления.
-`$options` принимает массив с одной или несколькими из следующих пар ключ/значение:
+`$type` и `$responseCode` устарели с версии 2.0.5 — вместо них используйте ключи `type` и `responseCode` в `$options`. В 3.x они по-прежнему принимаются, но каждый вызов пишет в лог запись об устаревании; передавайте значения в массиве `$options`.
 
-- `type`, введите одно из следующих значений (по умолчанию используется `REDIRECT_HEADER`):
+`$options` принимает массив (или логическое значение, которое трактуется как флаг `count_attempts`) с одной или несколькими из следующих пар ключ/значение:
+
+- `type`, одно из следующих значений (по умолчанию `REDIRECT_HEADER`):
     - `REDIRECT_REFRESH` - использует метод обновления заголовка
     - `REDIRECT_META` - отправляет на выход тег META HTTP-EQUIV="Refresh"
     - `REDIRECT_HEADER` - использует метод расположения заголовка
-- `responseCode`, который должен быть правильным ответом HTTP, так что не только "301" или "302". По умолчанию "HTTP/1.1 302 перемещается временно", но вы можете установить его в "HTTP/1.1 301 перемещается постоянно" для перенаправления в стиле 301.
-- `count_attempts` указывает количество попыток перенаправления перед остановкой.
-
-$type, который является устаревшим и не должен использоваться, совпадает с типом ключа массива $options.
-$responseCode, который является устаревшим и не должен использоваться, совпадает с ключом массива responseCode $options
+- `responseCode` — полная строка статуса HTTP, а не просто `301` или `302`. По умолчанию `HTTP/1.1 302 Moved Temporarily`; для постоянного перенаправления передавайте `HTTP/1.1 301 Moved Permanently`.
+- `count_attempts` _(boolean)_ добавляет к URL счётчик `?err=N`, чтобы разорвать циклы перенаправления. После 3 попыток — предел жёстко зашит в код — перенаправление считается фатальным: в лог пишется запись уровня FATAL и отправляется страница фатальной ошибки.
+- `preserve_request` _(boolean)_ если задан, текущий запрос сохраняется (см. `modRequest::preserveRequest`) перед перенаправлением, чтобы сохранить referer.
 
 ## Примеры
 

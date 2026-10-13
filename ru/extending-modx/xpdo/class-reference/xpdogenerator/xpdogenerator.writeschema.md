@@ -1,5 +1,6 @@
 ---
 title: "xPDOGenerator.writeSchema"
+description: "Анализирует существующую базу данных и генерирует из нее XML-схему XPDO."
 translation: "extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.writeschema"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.wr
 Анализирует существующую базу данных и генерирует из нее XML-схему XPDO.
 
 ## Синтаксис
-
-API Docs: [xPDOGenerator::writeSchema()](https://api.modx.com/revolution/2.0/xpdo/om-mysql/xPDOGenerator_mysql.html#writeSchema)
 
 ```php
 boolean writeSchema (

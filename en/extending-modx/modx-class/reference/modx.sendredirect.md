@@ -1,5 +1,6 @@
 ---
 title: "modX.sendRedirect"
+description: "Sends a redirect to the specified URL using the specified method."
 _old_id: "1103"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.sendredirect"
 ---
@@ -10,43 +11,41 @@ Sends a redirect to the specified URL using the specified method.
 
 ## Syntax
 
-API Doc: [modX::sendRedirect()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendRedirect())
-
 ``` php
-void sendRedirect (string $url, [array $options = false], [string $type = ''], [string $responseCode])
+void sendRedirect (string $url, [array|boolean $options = false], [string $type = ''], [string $responseCode = ''])
 ```
 
-Please note that the $type and $responseCode have been deprecated and will likely be removed in an upcoming release. **Do not rely on those**.
+`$url` must be a valid URL — [modX::makeUrl](extending-modx/modx-class/reference/modx.makeurl "modX.makeUrl") builds one. An empty URL is not redirected: the method writes an error to the log and returns without sending a header.
 
-`$url` needs to be a proper url, which could be generated using `modX::makeUrl`, to redirect to.
-`$options` accepts an array with one or more of the following key/value pairs:
+`$type` and `$responseCode` are deprecated since 2.0.5 in favour of the `type` and `responseCode` keys of `$options`. 3.x still accepts them, but each use writes a deprecation record to the log — pass the values in the `$options` array instead.
+
+`$options` accepts an array (or a boolean, treated as the `count_attempts` flag) with one or more of the following key/value pairs:
 
 - `type`, one of the following (`REDIRECT_HEADER` is the default):
     - `REDIRECT_REFRESH` - Uses the header refresh method
-    - `REDIRECT_META` - Sends a a META HTTP-EQUIV="Refresh" tag to the output
+    - `REDIRECT_META` - Sends a META HTTP-EQUIV="Refresh" tag to the output
     - `REDIRECT_HEADER` - Uses the header location method
-- `responseCode` which needs to be the proper HTTP response, so not just "301" or "302". It defaults to HTTP/1.1 302 Moved Temporarily, but you could set it to "HTTP/1.1 301 Moved Permanently" for a 301-style redirect.
-- `count_attempts` indicates the number of attempts to redirect before halting.
+- `responseCode` the full HTTP status line, not just `301` or `302`. Defaults to `HTTP/1.1 302 Moved Temporarily`; pass `HTTP/1.1 301 Moved Permanently` for a permanent redirect.
+- `count_attempts` _(boolean)_ appends an `?err=N` counter to the URL to break redirect loops. After 3 attempts — the limit is hard-coded — the redirect is treated as fatal: a FATAL entry is logged and a fatal error page is sent.
+- `preserve_request` _(boolean)_ when set, the current request is preserved (see `modRequest::preserveRequest`) before the redirect, so the referrer survives.
 
-`$type`, which is deprecated and should not be used, is the same as the type $options array key.
-`$responseCode`, which is deprecated and should not be used, is the same as the responseCode $options array key.
 
 ## Examples
 
-Send a redirection request to the Resource with ID 54.
+Redirect to the Resource with ID 54.
 
 ``` php
 $url = $modx->makeUrl(54);
 $modx->sendRedirect($url);
 ```
 
-Send a redirect to modx.com. Do so via the META HTTP-EQUIV refresh tag.
+Send a redirect to modx.com via the META HTTP-EQUIV refresh tag.
 
 ``` php
 $modx->sendRedirect('https://modx.com',array('type' => 'REDIRECT_META'));
 ```
 
-Send a 301 Moved Permanently response code instead of the default 302 Moved Temporarily response code.
+Send the 301 Moved Permanently response code instead of the default 302 Moved Temporarily.
 
 ``` php
 $modx->sendRedirect('https://modx.com',array('responseCode' => 'HTTP/1.1 301 Moved Permanently'));

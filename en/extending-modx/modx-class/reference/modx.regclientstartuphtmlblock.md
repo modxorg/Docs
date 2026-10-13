@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientStartupHTMLBlock"
+description: "Register HTML to be injected before the closing HEAD tag."
 _old_id: "1093"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartuphtmlblock"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Register HTML to be injected before the closing HEAD tag.
 
 ## Syntax
-
-API Doc: [modX::regClientStartupHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupHTMLBlock())
 
 ``` php
 void regClientStartupHTMLBlock (string $html)

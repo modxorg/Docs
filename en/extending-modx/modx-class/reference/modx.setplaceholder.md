@@ -1,5 +1,6 @@
 ---
 title: "modX.setPlaceholder"
+description: "Sets a Placeholder value, corresponding to the \"+\" syntax."
 _old_id: "1106"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.setplaceholder"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Sets a Placeholder value, corresponding to the "+" syntax.
 
 ## Syntax
-
-API Doc: [modX::setPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholder())
 
 ``` php
 void setPlaceholder (string $key, mixed $value)

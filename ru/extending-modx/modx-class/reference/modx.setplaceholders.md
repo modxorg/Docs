@@ -1,5 +1,6 @@
 ---
 title: "modX.setPlaceholders"
+description: "Устанавливает коллекцию плейсхолдеров, хранящихся в массиве или в виде объектных переменных."
 translation: "extending-modx/modx-class/reference/modx.setplaceholders"
 ---
 
@@ -12,13 +13,13 @@ translation: "extending-modx/modx-class/reference/modx.setplaceholders"
 
 ## Синтаксис
 
-API Doc: [modX::setPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholders())
-
 ``` php
 void setPlaceholders (array|object  $placeholders, [string $namespace = ''])
 ```
 
-В отличие от `getChunk`, массив `$placeholder` может не быть глубоко вложенным. Это должен быть простой ассоциативный массив.
+Разделитель не вставляется — ни между пространством имен и ключом, ни между уровнями вложенного массива. Поэтому `setPlaceholders(['a' => ['b' => 1]])` с пустым пространством имен устанавливает один плейсхолдер с именем `ab`.
+
+Вложенные массивы объединяются так же: `getChunk` и `toPlaceholders` вставляют точку между уровнями, а `setPlaceholders` — нет. Для многомерных массивов и объектов со значениями, отличными от скалярных, используйте [modX.toPlaceholders](extending-modx/modx-class/reference/modx.toplaceholders "modX.toPlaceholders"), который разделяет каждый уровень разделителем (по умолчанию точкой).
 
 ## Пример
 

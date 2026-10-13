@@ -1,5 +1,6 @@
 ---
 title: "xPDOGenerator.writeSchema"
+description: "Parses an existing database and generates a XPDO XML schema from it."
 _old_id: "1277"
 _old_uri: "2.x/class-reference/xpdogenerator/xpdogenerator.writeschema"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdogenerator/xpdogenerator.writeschema"
 Parses an existing database and generates a XPDO XML schema from it.
 
 ## Syntax
-
-API Docs: [xPDOGenerator::writeSchema()](https://api.modx.com/revolution/2.0/xpdo/om-mysql/xPDOGenerator_mysql.html#writeSchema)
 
 ``` php
 boolean writeSchema (

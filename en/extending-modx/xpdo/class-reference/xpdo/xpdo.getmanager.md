@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getManager"
+description: "Gets the manager class for this xPDO connection."
 _old_id: "1244"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getmanager"
 ---
@@ -11,8 +12,6 @@ Gets the manager class for this xPDO connection.
 The manager class can perform operations such as creating or altering table structures, creating data containers, generating custom persistence classes, and other advanced operations that do not need to be loaded frequently.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getManager()>
 
 ``` php
 object|null getManager ()

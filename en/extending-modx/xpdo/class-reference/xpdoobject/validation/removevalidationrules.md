@@ -1,5 +1,6 @@
 ---
 title: "removeValidationRules"
+description: "Remove one or more validation rules from this instance."
 _old_id: "1205"
 _old_uri: "2.x/class-reference/xpdoobject/validation/removevalidationrules"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/validation/removevalidationrules"
 Remove one or more validation rules from this instance.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::removeValidationRules()>
 
 ``` php
 void removeValidationRules ([string $field = null], [array $rules = array()])

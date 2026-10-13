@@ -1,23 +1,25 @@
 ---
 title: "modX.getVersionData"
+description: "Возвращает данные версии ядра modX."
 translation: "extending-modx/modx-class/reference/modx.getversiondata"
 ---
 
 ## modX::getVersionData
 
-Возвращает данные версии ядра modX. Массив содержит следующие ключи (примеры для версии " MODX Revolution 2.0.0-beta-3"):
+Возвращает данные версии ядра modX. Массив содержит следующие ключи (примеры для версии "MODX Revolution 3.3.0-dev"):
 
-- `version` - Текущий номер версии, например: 2
-- `major_version` - Текущий основной номер версии, например: 0
-- `minor_version` - Текущий номер младшей версии, например: 0
-- `patch_level` - Текущий уровень выпуска, например: 'beta-3'
-- `code_name` - Кодовое название продукта, например: 'Revolution'
-- `full_version` - Скомпилированное полное имя версии, например: '2.0.0-beta-3'
-- `full_appname` - Полное имя версии, например: 'MODX Revolution 2.0.0-beta-3'
+| Ключ | Пример | Значение |
+|---|---|---|
+| `version` | `'3'` | Текущий номер версии |
+| `major_version` | `'3'` | Текущий основной номер версии |
+| `minor_version` | `'0'` | Текущий номер младшей версии |
+| `patch_level` | `'dev'` | Текущий уровень выпуска |
+| `code_name` | `'Revolution'` | Кодовое название продукта |
+| `distro` | `'@git@'` | Маркер дистрибутива сборки; для выпущенного пакета — имя дистрибутива |
+| `full_version` | `'3.3.0-dev'` | Скомпилированное полное имя версии |
+| `full_appname` | `'MODX Revolution 3.3.0-dev (git)'` | Полное имя версии |
 
 ## Синтаксис
-
-API Doc: [modX::getVersionData()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getVersionData())
 
 ``` php
 array getVersionData ()

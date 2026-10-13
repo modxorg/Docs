@@ -1,5 +1,6 @@
 ---
 title: "xPDOValidator.validate"
+description: "Executes validation against the object attached to this validator."
 _old_id: "1310"
 _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.validate"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.validate"
 Executes validation against the object attached to this validator. May also accept an array of parameters to pass to the validation rule.
 
 ## Syntax
-
-API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html>
 
 ``` php
 boolean validate ([array $parameters = array()])

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getOption"
+description: "Получает значение параметра конфигурации xPDO по ключу."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getoption"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getoption"
 Получает значение параметра конфигурации xPDO по ключу.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getOption()>
 
 ```php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )

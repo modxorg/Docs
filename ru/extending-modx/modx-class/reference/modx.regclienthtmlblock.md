@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientHTMLBlock"
+description: "Регистрирует HTML, который будет введен перед закрывающим тегом BODY."
 translation: "extending-modx/modx-class/reference/modx.regclienthtmlblock"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.regclienthtmlblock"
 Регистрирует HTML, который будет введен перед закрывающим тегом BODY.
 
 ## Синтаксис
-
-API Doc: [modX::regClientHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientHTMLBlock())
 
 ``` php
 void regClientHTMLBlock (string $html)

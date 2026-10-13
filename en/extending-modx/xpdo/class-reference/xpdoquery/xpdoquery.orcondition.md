@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.orCondition"
+description: "Add an OR condition to the WHERE statement in the query."
 _old_id: "1295"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.orcondition"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.orcondition"
 Add an OR condition to the WHERE statement in the query.
 
 ## Syntax
-
-API Docs: [xPDOQuery::orCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::orCondition())
 
 ``` php
 void orCondition ( $conditions, [ $binding = null], [ $group = 0])

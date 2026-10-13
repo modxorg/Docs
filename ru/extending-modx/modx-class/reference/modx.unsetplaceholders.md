@@ -1,5 +1,6 @@
 ---
 title: "modX.unsetPlaceholders"
+description: "Удаляет несколько плейсхолдеров по префиксу или массиву ключей."
 translation: "extending-modx/modx-class/reference/modx.unsetplaceholders"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.unsetplaceholders"
 Удаляет несколько плейсхолдеров по префиксу или массиву ключей.
 
 ## Синтаксис
-
-API Doc: [modX::unsetPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholders())
 
 ``` php
 void unsetPlaceholders (string|array $keys)

@@ -1,5 +1,6 @@
 ---
 title: "fromArray"
+description: "Sets object fields from an associative array of key => value pairs."
 _old_id: "1166"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/fromarray"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/field-accessors/fromarray"
 Sets object fields from an associative array of key => value pairs.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::fromArray()>
 
 ``` php
 void fromArray(

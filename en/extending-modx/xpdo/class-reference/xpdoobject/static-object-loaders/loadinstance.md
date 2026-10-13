@@ -1,5 +1,6 @@
 ---
 title: "_loadInstance"
+description: "This function is responsible for turning a result set row into an xPDOObject instance of the proper class."
 _old_id: "1141"
 _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadinstance"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadinstance"
 This function is responsible for turning a result set row into an xPDOObject instance of the proper class.
 
 ## Syntax
-
-API Doc: [_loadInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadInstance)
 
 ``` php
 static xPDOObject _loadInstance(

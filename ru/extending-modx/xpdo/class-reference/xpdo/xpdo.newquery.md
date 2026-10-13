@@ -1,5 +1,6 @@
 ---
 title: "xPDO.newQuery"
+description: "Создает новый xPDOQuery для указанного класса xPDOObject."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.newquery"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.newquery"
 Создает новый `xPDOQuery` для указанного класса `xPDOObject`.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::newQuery()>
 
 ```php
 xPDOQuery newQuery (string $class, [mixed $criteria = null], [boolean|integer $cacheFlag = true])

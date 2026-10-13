@@ -1,5 +1,6 @@
 ---
 title: "xPDOGenerator.parseSchema"
+description: "Parses an XPDO XML schema and generates classes and map files from it."
 _old_id: "1276"
 _old_uri: "2.x/class-reference/xpdogenerator/xpdogenerator.parseschema"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdogenerator/xpdogenerator.parseschema"
 Parses an XPDO XML schema and generates classes and map files from it.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdogenerator.class.html#\xPDOGenerator::parseSchema()>
 
 ``` php
 boolean parseSchema (string $schemaFile, [string $outputDir = ''], [boolean $compile = false])

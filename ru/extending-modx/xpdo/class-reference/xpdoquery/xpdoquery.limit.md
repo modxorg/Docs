@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.limit"
+description: "Добавьте к запросу предложение LIMIT/OFFSET."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.limit"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.limit"
 Добавьте к запросу предложение `LIMIT`/`OFFSET`.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::limit()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::limit()>)
 
 ```php
 xPDOQuery limit (integer $limit, [integer $offset = 0])

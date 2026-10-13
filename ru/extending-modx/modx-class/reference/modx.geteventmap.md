@@ -1,5 +1,6 @@
 ---
 title: "modX.getEventMap"
+description: "Возвращает карту событий и зарегистрированных плагинов для указанного контекста."
 translation: "extending-modx/modx-class/reference/modx.geteventmap"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.geteventmap"
 Возвращает карту событий и зарегистрированных плагинов для указанного контекста.
 
 ## Синтаксис
-
-API Doc: [modX::getEventMap()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getEventMap())
 
 ``` php
 array getEventMap (string $contextKey)
@@ -20,7 +19,7 @@ array getEventMap (string $contextKey)
 Получить карту событий для текущего контекста.
 
 ``` php
-$map = $modx->getEventMap();
+$map = $modx->getEventMap($modx->context->get('key'));
 ```
 
 ## Смотрите также

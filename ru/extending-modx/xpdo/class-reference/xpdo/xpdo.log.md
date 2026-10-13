@@ -10,8 +10,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.log"
 
 ## Синтаксис
 
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::log()>
-
 ```php
 $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 ```

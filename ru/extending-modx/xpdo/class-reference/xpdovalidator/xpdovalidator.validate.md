@@ -1,5 +1,6 @@
 ---
 title: "xPDOValidator.validate"
+description: "Выполняет проверку для объекта, прикрепленного к этому валидатору."
 translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.validate"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.va
 Выполняет проверку для объекта, прикрепленного к этому валидатору. Может также принимать массив параметров для передачи в правило проверки.
 
 ## Синтаксис
-
-API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html>
 
 ```php
 boolean validate ([array $parameters = array()])

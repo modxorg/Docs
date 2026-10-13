@@ -1,5 +1,6 @@
 ---
 title: "modX.getRegisteredClientScripts"
+description: "Возвращает все зарегистрированные блоки JavaScript и HTML."
 translation: "extending-modx/modx-class/reference/modx.getregisteredclientscripts"
 ---
 
@@ -9,15 +10,13 @@ translation: "extending-modx/modx-class/reference/modx.getregisteredclientscript
 
 ## Синтаксис
 
-API Doc: [modX::getRegisteredClientScripts()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getRegisteredClientScripts())
-
 ``` php
 string getRegisteredClientScripts ()
 ```
 
 ## Пример
 
-Соберите все зарегистрированные скрипты в массив.
+Получить все зарегистрированные скрипты одной HTML-строкой (записи, объединённые переводами строки).
 
 ``` php
 $scripts = $modx->getRegisteredClientScripts();

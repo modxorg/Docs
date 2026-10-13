@@ -1,5 +1,6 @@
 ---
 title: "xPDO.newQuery"
+description: "Creates an new xPDOQuery for a specified xPDOObject class."
 _old_id: "1252"
 _old_uri: "2.x/class-reference/xpdo/xpdo.newquery"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.newquery"
 Creates an new `xPDOQuery` for a specified `xPDOObject` class.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::newQuery()>
 
 ``` php
 xPDOQuery newQuery (string $class, [mixed $criteria = null], [boolean|integer $cacheFlag = true])

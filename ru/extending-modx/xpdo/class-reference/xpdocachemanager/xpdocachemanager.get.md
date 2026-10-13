@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.get"
+description: "Получает значение от поставщика кеша по ключу."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.get"
 ---
 
@@ -13,8 +14,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `removeIfEmpty` - если установлено значение `true`, файл кэша будет удален, если он пуст. Это действие по умолчанию.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::get()>
 
 ```php
 mixed get (string $key, [array $options = array()])

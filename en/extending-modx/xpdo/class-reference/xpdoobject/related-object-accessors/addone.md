@@ -1,5 +1,6 @@
 ---
 title: "addOne"
+description: "Adds an object related to this instance by a foreign key relationship."
 _old_id: "1145"
 _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addone"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addone"
 Adds an object related to this instance by a foreign key relationship.
 
 ## Syntax
-
-API Docs: [xPDOObject::addOne()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addOne())
 
 ``` php
 boolean addOne (

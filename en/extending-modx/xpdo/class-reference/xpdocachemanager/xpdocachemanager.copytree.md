@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.copyTree"
+description: "Recursively copies a directory tree from a source directory to a target directory."
 _old_id: "1261"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree"
 ---
@@ -14,8 +15,6 @@ Recursively copies a directory tree from a source directory to a target director
 - `copy_exclude_patterns` - An array or string of patterns to exclude by.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::copyTree()>
 
 ``` php
 array|boolean copyTree (string $source, string $target, [array $options = array()])

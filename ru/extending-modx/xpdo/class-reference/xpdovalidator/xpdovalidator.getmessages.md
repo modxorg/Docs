@@ -1,5 +1,6 @@
 ---
 title: "xPDOValidator.getMessages"
+description: "Получить сообщения проверки, сгенерированные validate(), если таковые существуют."
 translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.getmessages"
 ---
 
@@ -14,8 +15,6 @@ translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.ge
 -   `message` - Возвращаемое сообщение об ошибке.
 
 ## Синтаксис
-
-API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::getMessages()>
 
 ```php
 array getMessages ()

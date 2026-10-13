@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getCollection"
+description: "Retrieves a collection of xPDOObjects by the specified xPDOCriteria."
 _old_id: "1238"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getcollection"
 ---
@@ -11,8 +12,6 @@ Retrieves a collection of `xPDOObjects` by the specified `xPDOCriteria`.
 If none are found, returns an empty array.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCollection()>
 
 ``` php
 array getCollection (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

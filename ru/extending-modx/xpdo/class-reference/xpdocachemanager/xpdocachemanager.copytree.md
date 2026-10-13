@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.copyTree"
+description: "Рекурсивно копирует дерево каталогов из исходного каталога в целевой каталог."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.copytree"
 ---
 
@@ -13,8 +14,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `copy_exclude_patterns` - массив или строка шаблонов, которые нужно исключить.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::copyTree()>
 
 ```php
 array|boolean copyTree (string $source, string $target, [array $options = array()])

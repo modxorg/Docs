@@ -1,5 +1,6 @@
 ---
 title: "modX.getChunk"
+description: "Обрабатывает и возвращает выходные данные из чанка HTML по имени."
 _old_id: "1062"
 translation: "extending-modx/modx-class/reference/modx.getchunk"
 ---
@@ -10,11 +11,9 @@ translation: "extending-modx/modx-class/reference/modx.getchunk"
 
 **getChunk** фактически устанавливает свойства, которые вы передаете (и которые выбираются из свойств по умолчанию и/или набора свойств) в качестве плейсхолдера (сохраняя любые с тем же ключом и восстанавливая их после завершения обработки), и позволяет классу modChunk обрабатывать их (наряду с любыми другими тегами, фильтрами и т. д.).
 
-**getChunk** будет выполняться парсер MODX, поэтому вы можете использовать выходные фильтры, а массив `$properties` может быть многомерным (т.е. больше, чем просто пары ключ/значение). Если это больше, чем вам нужно, используйте это [modX.parseChunk](extending-modx/modx-class/reference/modx.parsechunk "modX.parseChunk").
+В **getChunk** выполняется парсер MODX, поэтому работают выходные фильтры и вложенные массивы `$properties`. Для простой подстановки плейсхолдеров достаточно `str_replace`. [modX.parseChunk](extending-modx/modx-class/reference/modx.parsechunk "modX.parseChunk") устарел с версии 3.0 и будет удалён в MODX 4.0.
 
 ## Синтаксис
-
-API Doc: [modX::getChunk()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChunk())
 
 ``` php
 string getChunk (string $chunkName, [array $properties = array ()])
@@ -86,7 +85,7 @@ return $output;
 ``` php
 $output = $modx->getChunk('UserLink',array(
    'user' => array('id' => 123)
-);
+));
 return $output;
 ```
 
@@ -105,7 +104,7 @@ return $output;
 Затем в вашем сниппете:
 
 ``` php
-$userlist = $modx->getCollection('modUser');
+$userlist = $modx->getCollection(modUser::class);
 
 $output = '';
 foreach ($userlist as $user) {
@@ -128,7 +127,7 @@ $props = array('name' => 'Bob');
 
 // Создание временного чанка
 $uniqid = uniqid();
-$chunk = $modx->newObject('modChunk', array('name' => "{tmp}-{$uniqid}"));
+$chunk = $modx->newObject(modChunk::class, ['name' => "{tmp}-{$uniqid}"]);
 $chunk->setCacheable(false);
 
 $output = $chunk->process($props, $tpl);

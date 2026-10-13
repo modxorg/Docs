@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientScript"
+description: "Register JavaScript to be injected before the closing BODY tag."
 _old_id: "1092"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientscript"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Register JavaScript to be injected before the closing BODY tag.
 
 ## Syntax
-
-API Doc: [modX::regClientScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientScript())
 
 ``` php
 void regClientScript (string $src, [boolean $plaintext = false])

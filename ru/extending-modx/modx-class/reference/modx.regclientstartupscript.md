@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientStartupScript"
+description: "Регистрирует JavaScript для внедрения в тег HEAD ресурса."
 translation: "extending-modx/modx-class/reference/modx.regclientstartupscript"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.regclientstartupscript"
 Регистрирует JavaScript для внедрения в тег HEAD ресурса.
 
 ## Синтаксис
-
-API Doc: [modX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
 
 ``` php
 void regClientStartupScript (string $src, [boolean $plaintext = false])
@@ -24,11 +23,7 @@ $modx->regClientStartupScript('assets/js/onload.js');
 ```
 
 ``` php
-$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-```
-
-``` php
-$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
+$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
 
 ## Смотрите также

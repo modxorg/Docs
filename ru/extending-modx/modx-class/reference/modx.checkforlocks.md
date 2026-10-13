@@ -1,5 +1,6 @@
 ---
 title: "modX.checkForLocks"
+description: "Проверяет наличие блокировки на странице."
 translation: "extending-modx/modx-class/reference/modx.checkforlocks"
 ---
 
@@ -9,18 +10,25 @@ translation: "extending-modx/modx-class/reference/modx.checkforlocks"
 
 ## Синтаксис
 
-API Doc: [modX::checkForLocks()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkForLocks())
-
 ``` php
-void checkForLocks (integer $id, string $action, string $type)
+string|false checkForLocks (integer $id, string $action, string $type)
 ```
+
+- `$id` _(integer)_ ID пользователя, проверяющего блокировку; если пусто или `0`, используется текущий вошедший пользователь
+- `$action` _(string)_ Действие, по которому определяется, что заблокировано
+- `$type` _(string)_ Сообщение, указывающий тип проверяемой блокировки
+
+Возвращает переведённую строку лексикона `lock_msg` (с указанием пользователя, удерживающего блокировку), если страница заблокирована, или `false`, если нет.
 
 ## Пример
 
-Проверьте наличие блокировок в действии `edit_chunk`.
+Проверка блокировок для действия `edit_chunk`.
 
 ``` php
-if ($modx->checkForLocks($modx->getLoginUserID(),'edit_chunk','edit');
+$msg = $modx->checkForLocks($modx->getLoginUserID(), 'edit_chunk', 'edit');
+if ($msg) {
+    echo $msg;
+}
 ```
 
 ## Смотрите также

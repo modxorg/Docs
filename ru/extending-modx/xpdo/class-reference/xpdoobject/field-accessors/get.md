@@ -1,5 +1,6 @@
 ---
 title: "get"
+description: "Получает значение поля (или набор значений) по ключу (ключам) поля или по имени/именам."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/get"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/get
 Получает значение поля (или набор значений) по ключу (ключам) поля или по имени/именам.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::get()>
 
 ```php
 mixed get(

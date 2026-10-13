@@ -1,5 +1,6 @@
 ---
 title: "remove"
+description: "Удаляет постоянный экземпляр объекта навсегда."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/remove"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/persistence-methods
 Удаляет постоянный экземпляр объекта навсегда. Это удаляет строки из базы данных.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::remove()>
 
 ```php
 boolean remove ([array $ancestors = array ()])

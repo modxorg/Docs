@@ -1,5 +1,6 @@
 ---
 title: "fromJSON"
+description: "Устанавливает поля объекта из строки объекта JSON."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromjson"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fro
 Устанавливает поля объекта из строки объекта JSON.
 
 ## Синтаксис
-
-API Docs: [https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html)
 
 ```php
 void fromJSON (

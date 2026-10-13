@@ -1,5 +1,6 @@
 ---
 title: "modX.getRegisteredClientStartupScripts"
+description: "Returns all registered startup CSS, JavaScript, or HTML blocks."
 _old_id: "1072"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getregisteredclientstartupscripts"
 ---
@@ -10,15 +11,13 @@ Returns all registered startup CSS, JavaScript, or HTML blocks.
 
 ## Syntax
 
-API Doc: [modX::getRegisteredClientStartupScripts()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getRegisteredClientStartupScripts())
-
 ``` php
 string getRegisteredClientStartupScripts ()
 ```
 
 ## Example
 
-Get all registered startup scripts into an array.
+Get all registered startup scripts as a single string (CSS/JS/HTML entries joined with newlines).
 
 ``` php
 $startupScripts = $modx->getRegisteredClientStartupScripts();

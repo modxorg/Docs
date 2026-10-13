@@ -1,5 +1,6 @@
 ---
 title: "xPDOTransport.uninstall"
+description: "Uninstall vehicles in the package from the sponsor xPDO instance."
 _old_id: "1305"
 _old_uri: "2.x/class-reference/xpdotransport/xpdotransport.uninstall"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdotransport/xpdotransport.uninstall"
 Uninstall vehicles in the package from the sponsor xPDO instance.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::uninstall()>
 
 ``` php
 boolean uninstall ([array $options = array ()])

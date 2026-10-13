@@ -1,25 +1,27 @@
 ---
 title: "Loading MODX Externally"
+description: "Bootstrap MODX from an external script: config file, autoloader and instance registry."
 _old_id: "171"
 _old_uri: "2.x/developing-in-modx/other-development-resources/loading-modx-externally"
 ---
 
 ## Loading the modX Object
 
-Using the modX object (and all of its respective classes) is quite simple. All you need is this code:
+Load MODX with the config file, the autoloader and an instance from the registry:
 
 ``` php
 require_once '/absolute/path/to/modx/config.core.php';
 require_once MODX_CORE_PATH . 'vendor/autoload.php';
-$modx = new \MODX\Revolution\modX();
+$modx = \MODX\Revolution\modX::getInstance();
 $modx->initialize('web');
 ```
 
-This will initialize the MODX object into the 'web' [Context](building-sites/contexts "Contexts"). Now, if you want to access it under a different context (and thereby changing its access permissions, policies, etc), you'll need to change 'web' to whatever [Context](building-sites/contexts "Contexts") you want to load. 
+This initializes MODX into the 'web' [Context](building-sites/contexts "Contexts"). To work with a different Context — with its own access permissions and policies — replace `'web'` with that Context's key.
 
-From there, you can use any MODX methods, functions, or classes.
+Create the object with [modX.getInstance](extending-modx/modx-class/reference/modx.getinstance "modX.getInstance") rather than `new \MODX\Revolution\modX()`: only `getInstance()` registers it in the shared instance registry. An unregistered object is silently duplicated by the next `getInstance()` call.
 
 ## See Also
 
+- [modX.getInstance](extending-modx/modx-class/reference/modx.getinstance "modX.getInstance")
 - [Developer Introduction](extending-modx/getting-started/developer-introduction "Developer Introduction")
-- [xPDO](extending-modx/xpdo "Home"), the db-layer for Revolution
+- [xPDO](extending-modx/xpdo "Home"), the database layer of Revolution

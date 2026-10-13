@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.deleteTree"
+description: "Рекурсивно удаляет дерево каталогов файлов."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.deletetree"
 ---
 
@@ -16,8 +17,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `delete_exclude_patterns` - массив или строка шаблонов, по которым нужно исключить.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::deleteTree()>
 
 ```php
 boolean deleteTree (string $dirname, [array $options = array(

@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.getCachePath"
+description: "Get the absolute path to the current writable directory for storing cache files."
 _old_id: "1267"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.getcachepath"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.getcachepath"
 Get the absolute path to the current writable directory for storing cache files.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::getCachePath()>
 
 ``` php
 string getCachePath ()

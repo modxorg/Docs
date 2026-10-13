@@ -1,5 +1,6 @@
 ---
 title: "xPDOManager.removeObjectContainer"
+description: "Drops a table if it exists."
 _old_id: "1281"
 _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.removeobjectcontainer"
 ---
@@ -11,8 +12,6 @@ Drops a table if it exists.
 This will only work if there is a corresponding xPDO class for the table and its package has been loaded. MODX will not drop the table if the ORM layer has not defined the table.
 
 ## Syntax
-
-API Docs: [removeObjectContainer](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::removeObjectContainer())
 
 ``` php
 int removeObjectContainer (string $className)

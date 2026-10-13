@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.leftJoin"
+description: "Добавляет предложение LEFT JOIN к запросу."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.leftjoin"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.leftjoin"
 Добавляет предложение `LEFT JOIN` к запросу.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::leftJoin()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::leftJoin()>)
 
 ```php
 void leftJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])

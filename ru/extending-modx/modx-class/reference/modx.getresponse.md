@@ -1,26 +1,28 @@
 ---
 title: "modX.getResponse"
+description: "Попробуйте загрузить класс обработчика ответа, если он еще не загружен."
 translation: "extending-modx/modx-class/reference/modx.getresponse"
 ---
 
 ## modX::getResponse
 
-Попробуйте загрузить класс обработчика ответа, если он еще не загружен. По умолчанию `modResponse`.
+Попробуйте загрузить класс обработчика ответа, если он еще не загружен. По умолчанию — `MODX\Revolution\modResponse`.
 
 ## Синтаксис
 
-API Doc: [modX::getResponse()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getResponse())
-
 ``` php
-boolean getResponse ([$string $class = 'modResponse'], [$path $path = ''])
+boolean getResponse ([string $class = MODX\Revolution\modResponse], [string $path = ''])
 ```
+
+- `$class` _(string)_ Имя класса загружаемого обработчика ответа. Игнорируется, если задана системная настройка `modResponse.class` — настройка имеет приоритет.
+- `$path` _(string)_ В `modX` не используется: класс определяется через автозагрузчик, путь не читается.
+
+Возвращает `true`, если корректный объект обработчика ответа был загружен при этом или любом предыдущем вызове, иначе — `false`.
 
 ## Пример
 
-Загрузите пользовательский класс обработчика ответов с именем 'myResponse' из '/path/to/myresponse.class.php':
-
 ``` php
-$modx->getResponse('myResponse','/path/to/');
+$modx->response; // текущий экземпляр обработчика ответа
 ```
 
 ## Смотрите также

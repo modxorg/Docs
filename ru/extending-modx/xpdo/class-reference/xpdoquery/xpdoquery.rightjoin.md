@@ -1,13 +1,12 @@
 ---
 title: "xPDOQuery.rightJoin"
+description: "Добавляет оператор RIGHT JOIN в запрос."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.rightjoin"
 ---
 
 ## xPDOQuery::rightJoin
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::rightJoin()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::rightJoin()>)
 
 ```php
 void rightJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])

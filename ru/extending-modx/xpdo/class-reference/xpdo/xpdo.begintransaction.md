@@ -1,5 +1,6 @@
 ---
 title: "xPDO.beginTransaction"
+description: "Смотри <http://php.net/manual/en/function.pdo-begintransaction.php>"
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.begintransaction"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.begintransaction"
 Смотри <http://php.net/manual/en/function.pdo-begintransaction.php>
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::beginTransaction()>
 
 ```php
 void beginTransaction ()

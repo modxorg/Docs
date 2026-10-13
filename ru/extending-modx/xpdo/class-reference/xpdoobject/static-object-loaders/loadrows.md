@@ -1,5 +1,6 @@
 ---
 title: "_loadRows"
+description: "Эта функция отвечает за загрузку набора результатов из базы данных и возврат объекта PDOStatement, представляющего набор результатов."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/loadrows"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/static-object-loade
 Эта функция отвечает за загрузку набора результатов из базы данных и возврат объекта `PDOStatement`, представляющего набор результатов.
 
 ## Синтаксис
-
-API Doc: [\_loadRows](http://api.modx.com/xpdo/om/xPDOObject.html#_loadRows)
 
 ```php
 static PDOStatement|null _loadRows(

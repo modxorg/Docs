@@ -1,5 +1,6 @@
 ---
 title: "xPDO.log"
+description: "Log a message with details about where and when an event occurs."
 _old_id: "1250"
 _old_uri: "2.x/class-reference/xpdo/xpdo.log"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.log"
 Log a message with details about where and when an event occurs.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::log()>
 
 ``` php
 $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
@@ -22,7 +21,6 @@ $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 - `$def` (string) The name of a defining structure (such as a class) to help identify the log event source.
 - `$file` (string) A filename in which the log event occurred. Usually you would use the \_\_FILE\_\_ constant.
 - `$line` (string) A line number to help locate the source of the event. Usually you would use the \_\_LINE\_\_ constant
-
 
 ``` php
 void log (integer $level, string $msg, [string $target = ''], [string $def = ''], [string $file = ''], [string $line = ''])

@@ -1,5 +1,6 @@
 ---
 title: "isNew"
+description: "Указывает, является ли экземпляр новым и еще не сохранен."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isnew"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isn
 Указывает, является ли экземпляр новым и еще не сохранен.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isNew()>
 
 ```php
 boolean isNew ()

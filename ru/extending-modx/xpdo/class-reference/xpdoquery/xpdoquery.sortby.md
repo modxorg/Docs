@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.sortby"
+description: "Добавьте в запрос предложение ORDER BY."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.sortby"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.sortby"
 Добавьте в запрос предложение `ORDER BY`.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::sortby()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::sortby()>)
 
 ```php
 xPDOQuery sortby (string $column, [string $direction = 'ASC'])

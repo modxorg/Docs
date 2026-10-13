@@ -1,5 +1,6 @@
 ---
 title: "modX.getChildIds"
+description: "Получает все дочерние идентификаторы ресурса для данного ресурса."
 translation: "extending-modx/modx-class/reference/modx.getchildids"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.getchildids"
 Получает все дочерние идентификаторы ресурса для данного ресурса.
 
 ## Синтаксис
-
-API Doc: [modX::getChildIds()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getChildIds())
 
 ``` php
 array getChildIds ([integer $id = null], [integer $depth = 10], [array $options = array()])

@@ -1,5 +1,6 @@
 ---
 title: "modX.unsetPlaceholder"
+description: "Unsets a placeholder value by key."
 _old_id: "1112"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholder"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Unsets a placeholder value by key.
 
 ## Syntax
-
-API Doc: [modX::unsetPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholder())
 
 ``` php
 void unsetPlaceholder (string $key)

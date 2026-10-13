@@ -1,5 +1,6 @@
 ---
 title: "modX.getContext"
+description: "Извлечение контекста по имени, не инициализируя его."
 translation: "extending-modx/modx-class/reference/modx.getcontext"
 ---
 
@@ -15,10 +16,8 @@ $modx->context->key;
 
 ## Синтаксис
 
-API Doc: [modX::getContext()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getContext())
-
 ``` php
-&$modContext getContext (string $contextKey)
+modContext getContext (string $contextKey)
 ```
 
 ## Пример

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.toJSON"
+description: "Преобразует массив PHP в строку в кодировке JSON."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.tojson"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.tojson"
 Преобразует массив PHP в строку в кодировке JSON.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::toJSON()>
 
 ```php
 string toJSON (array $array)

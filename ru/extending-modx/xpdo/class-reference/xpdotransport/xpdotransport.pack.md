@@ -1,5 +1,6 @@
 ---
 title: "xPDOTransport.pack"
+description: "Упакуйте xPDOTransport экземпляр в процессе подготовки к распространению."
 translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.pack"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.pa
 Упакуйте [xPDOTransport](extending-modx/xpdo/class-reference/xpdotransport "xPDOTransport") экземпляр в процессе подготовки к распространению. Это упакует транспорт в zip-файл в целевой директории.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::pack()>
 
 ```php
 boolean pack ()

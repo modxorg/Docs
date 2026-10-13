@@ -1,5 +1,6 @@
 ---
 title: "modX.handleRequest"
+description: "Initialize, cleanse, and process a request made to a modX site."
 _old_id: "1082"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.handlerequest"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Initialize, cleanse, and process a request made to a modX site.
 
 ## Syntax
-
-API Doc: [modX::handleRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::handleRequest())
 
 ``` php
 mixed handleRequest ()

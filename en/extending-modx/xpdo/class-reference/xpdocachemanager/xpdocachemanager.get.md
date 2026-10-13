@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.get"
+description: "Get a value from a cache provider by key."
 _old_id: "1266"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.get"
 ---
@@ -14,8 +15,6 @@ Also allows for an array of options to be passed. The current available values a
 - `removeIfEmpty` - If set to true, will remove the cache file if it's empty. This is the default action.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::get()>
 
 ``` php
 mixed get (string $key, [array $options = array()])

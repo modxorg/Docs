@@ -1,5 +1,6 @@
 ---
 title: "addMany"
+description: "Добавляет объект или коллекцию объектов, связанных с этим классом."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-acce
 Добавляет объект или коллекцию объектов, связанных с этим классом.
 
 ## Синтаксис
-
-API Docs: [xPDOObject::addMany()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addMany()>)
 
 ```php
 boolean addMany (

@@ -1,5 +1,6 @@
 ---
 title: "modX.invokeEvent"
+description: "Вызывает указанное событие с необязательным массивом параметров."
 translation: "extending-modx/modx-class/reference/modx.invokeevent"
 ---
 
@@ -9,19 +10,19 @@ translation: "extending-modx/modx-class/reference/modx.invokeevent"
 
 ## Синтаксис
 
-API Doc: [modX::invokeEvent()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::invokeEvent())
-
 ``` php
-void invokeEvent (string $eventName, [array $params = array ()])
+boolean|array invokeEvent (string $eventName, [array $params = array ()])
 ```
+
+Возвращает `false`, если имя события пустое или событие не существует. В остальных случаях возвращает массив результатов плагинов, зарегистрированных для события.
 
 ## Пример
 
-Вызвать событие `OnChunkRender`:
+Вызвать событие `OnWebPagePrerender`:
 
 ``` php
-$modx->invokeEvent('OnChunkRender',array(
-   'id' => $chunk->get('id'),
+$results = $modx->invokeEvent('OnWebPagePrerender', array(
+   'uri' => $_SERVER['REQUEST_URI'],
 ));
 ```
 

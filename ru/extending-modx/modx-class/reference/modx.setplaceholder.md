@@ -1,5 +1,6 @@
 ---
 title: "modX.setPlaceholder"
+description: "Устанавливает значение плейсхолдера, соответствующее синтаксису \"+\"."
 _old_id: "1106"
 translation: "extending-modx/modx-class/reference/modx.setplaceholder"
 ---
@@ -9,8 +10,6 @@ translation: "extending-modx/modx-class/reference/modx.setplaceholder"
 Устанавливает значение плейсхолдера, соответствующее синтаксису "+".
 
 ## Синтаксис
-
-API Doc: [modX::setPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setPlaceholder())
 
 ``` php
 void setPlaceholder (string $key, mixed $value)

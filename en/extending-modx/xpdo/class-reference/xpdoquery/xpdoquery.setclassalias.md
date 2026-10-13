@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.setClassAlias"
+description: "Sets a SQL alias for the table represented by the main class."
 _old_id: "1298"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.setclassalias"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.setclassalias"
 Sets a SQL alias for the table represented by the main class.
 
 ## Syntax
-
-API Docs: [xPDOQuery::setClassAlias()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::setClassAlias())
 
 ``` php
 xPDOQuery setClassAlias ([string $alias = ''])

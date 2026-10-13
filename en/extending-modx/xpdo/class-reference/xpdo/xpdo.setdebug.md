@@ -1,5 +1,6 @@
 ---
 title: "xPDO.setDebug"
+description: "Sets the debug state for the XPDO connection."
 _old_id: "1254"
 _old_uri: "2.x/class-reference/xpdo/xpdo.setdebug"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.setdebug"
 Sets the debug state for the XPDO connection.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setDebug()>
 
 ``` php
 void setDebug ([boolean $v = true])

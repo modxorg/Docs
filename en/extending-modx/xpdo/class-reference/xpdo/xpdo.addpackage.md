@@ -1,5 +1,6 @@
 ---
 title: "xPDO.addPackage"
+description: "Loads the xPDO ORM mapping classes that define your package's objects."
 _old_id: "1233"
 _old_uri: "2.x/class-reference/xpdo/xpdo.addpackage"
 ---
@@ -11,8 +12,6 @@ Loads the xPDO ORM mapping classes that define your package's objects. By MODX c
 xPDO keys off `metadata.{dbtype}.php` inside the package directory (`$path` + `$pkg`), for example `metadata.mysql.php`. That file lists active class names and which classes extend core classes. The effect is similar to an autoloader for the package models.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO:addPackage()>
 
 ``` php
 boolean addPackage (

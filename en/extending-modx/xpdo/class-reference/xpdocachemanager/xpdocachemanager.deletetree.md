@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.deleteTree"
+description: "Recursively deletes a directory tree of files."
 _old_id: "1263"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.deletetree"
 ---
@@ -17,8 +18,6 @@ The options array has the following parameters available:
 - `delete_exclude_patterns` - An array or string of patterns to exclude by.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::deleteTree()>
 
 ``` php
 boolean deleteTree (string $dirname, [array $options = array(

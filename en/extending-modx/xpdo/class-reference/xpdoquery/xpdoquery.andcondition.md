@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.andCondition"
+description: "Add an AND condition to the WHERE clause."
 _old_id: "1290"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.andcondition"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.andcondition"
 Add an AND condition to the WHERE clause.
 
 ## Syntax
-
-API Docs: [xPDOQuery::andCondition()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::andCondition())
 
 ``` php
 void andCondition ( $conditions, [ $binding = null], [ $group = 0])

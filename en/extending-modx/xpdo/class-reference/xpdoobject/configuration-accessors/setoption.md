@@ -1,5 +1,6 @@
 ---
 title: "setOption"
+description: "Sets an option value for this instance of an xPDOObject."
 _old_id: "1210"
 _old_uri: "2.x/class-reference/xpdoobject/configuration-accessors/setoption"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/configuration-accessors/setoption"
 Sets an option value for this instance of an `xPDOObject`.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::setOption()>
 
 ``` php
 void setOption(

@@ -13,16 +13,14 @@ URL-адреса в мультиконтекстных сайтах принуд
 
 ## Синтаксис
 
-API Doc: [modX::makeUrl()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::makeUrl())
-
 ``` php
-string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1], [array $options = null])
+string makeUrl (integer $id, [string $context = ''], [string|array $args = ''], [mixed $scheme = -1], [array $options = array()])
 ```
 
 - `$id` _(integer)_ ID ресурса,к которому создается ссылка. **обязателен**
 - `$context` _(string)_ Задает контекст для ограничения создания URL-адресов. 
 - `$args` _(string|array)_ Строка запроса, добавляемая к сгенерированному URL-адресу. 
-- `$scheme` _(mixed)_ Схема показывает, в каком формате создается URL-адрес:
+- `$scheme` _(mixed)_ Схема показывает, в каком формате создается URL-адрес — целочисленная константа или строка:
     - `-1`: (значение по умолчанию) URL-адрес относительно `site_url`
     - `0`: смотри http
     - `1`: смотри https

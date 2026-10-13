@@ -1,5 +1,6 @@
 ---
 title: "getMany"
+description: "Получает коллекцию объектов, связанных агрегатными или составными отношениями."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-acce
 Получает коллекцию объектов, связанных агрегатными или составными отношениями.
 
 ## Синтаксис
-
-API Docs: [xPDOObject::getMany()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getMany()>)
 
 ```php
 array &getMany (

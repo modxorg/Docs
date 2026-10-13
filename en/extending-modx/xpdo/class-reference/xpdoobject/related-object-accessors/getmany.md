@@ -1,5 +1,6 @@
 ---
 title: "getMany"
+description: "Gets a collection of objects related by aggregate or composite relations."
 _old_id: "1175"
 _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/getmany"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/getmany"
 Gets a collection of objects related by aggregate or composite relations.
 
 ## Syntax
-
-API Docs: [xPDOObject::getMany()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getMany())
 
 ``` php
 array &getMany (

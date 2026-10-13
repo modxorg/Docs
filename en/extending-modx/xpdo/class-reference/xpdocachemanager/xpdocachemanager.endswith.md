@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.endsWith"
+description: "Sees if a string ends with a specific pattern or set of patterns."
 _old_id: "1264"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.endswith"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.endswith"
 Sees if a string ends with a specific pattern or set of patterns. Useful for checking file extensions.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::endsWith()>
 
 ``` php
 boolean endsWith (string $string, string|array $pattern)

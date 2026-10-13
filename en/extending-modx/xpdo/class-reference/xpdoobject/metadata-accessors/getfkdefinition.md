@@ -1,5 +1,6 @@
 ---
 title: "getFKDefinition"
+description: "Get a foreign key definition for a specific classname."
 _old_id: "1174"
 _old_uri: "2.x/class-reference/xpdoobject/metadata-accessors/getfkdefinition"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/metadata-accessors/getfkdefinition"
 Get a foreign key definition for a specific classname. This is generally used to lookup classes in a one-to-many relationship with the current object.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getFKDefinition()>
 
 ``` php
 array getFKDefinition (string $alias)

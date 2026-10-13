@@ -1,5 +1,6 @@
 ---
 title: "getOne"
+description: "Gets an object related to this instance by a foreign key relationship."
 _old_id: "1176"
 _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/getone"
 ---
@@ -11,8 +12,6 @@ Gets an object related to this instance by a foreign key relationship.
 Use this for 1:? (one:zero-or-one) or 1:1 relationships, which you can distinguish by setting the nullability of the field representing the foreign key.
 
 ## Syntax
-
-API Docs: [xPDOObject::getOne()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getOne())
 
 ``` php
 xPDOObject|null &getOne (

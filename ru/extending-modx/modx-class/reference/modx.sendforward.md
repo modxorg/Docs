@@ -10,22 +10,19 @@ description: "modX.sendForward перенаправляет запрос на д
 
 ## Синтаксис
 
-API Doc: [modX::sendForward()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendForward())
-
 ``` php
-void sendForward (integer $id, [string|array $options = null])
+void sendForward (integer $id, [string|array $options = null], [boolean $sendErrorPage = true])
 ```
 
-- `$id` это идентификатор ресурса (вы не можете перенаправить на URL адрес - если вам нужно передать какое-то значение, используйте `modX::setPlaceholder` и вызовите его на целевом ресурсе).
-- `$options` предполагается, что это правильный код ответа HTTP, когда он является строкой, например "HTTP/1.1 301 Moved Permanently". Если это массив, вы можете использовать следующие параметры:
+- `$id` _(integer)_ Цель — идентификатор ресурса, а не URL — чтобы передать значение на целевой ресурс, установите плейсхолдер через [modX.setPlaceholder](extending-modx/modx-class/reference/modx.setplaceholder "modX.setPlaceholder") и прочитайте его там.
+- `$options` _(string|array)_ Строка трактуется как код ответа HTTP, например `HTTP/1.1 301 Moved Permanently`. Массив принимает следующие ключи:
     - `response_code`: код ответа
-    - `error_type`: тип ошибки, смотрите пример ниже, но, например, 404
-    - `error_header`: Значение поля "Header" страницы ошибки
-    - `error_pagetitle`: Имя заголовка страницы ошибки
-    - `error_message`: Сообщение об ошибке
-    - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource` с целевым ресурсом. `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` значения исключаются вместе со значением системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes). Я не уверен, что это должно использоваться из ядра, и, вероятно, есть лучшие способы объединить данные (например, `setPlaceholder`), а затем объединить.
-- `$sendErrorPage` Следует ли пропустить выполнение [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage") если ресурс не существует.
-   
+    - `error_type`: тип кода ответа, например `404`
+    - `error_header`: значение поля "Header"
+    - `error_pagetitle`: заголовок страницы ошибки
+    - `error_message`: сообщение об ошибке
+    - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource`, с целевым ресурсом. Значения `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` исключаются, а также значение системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes).
+- `$sendErrorPage` _(boolean)_ Пропускать ли вызов [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage"), если ресурс не существует.
 ## Примеры
 
 Отправьте пользователя на ресурс с идентификатором 234, фактически не меняя URL.
@@ -39,13 +36,13 @@ $modx->sendForward(234);
 
 ``` php
 $options = array(
-   'response_code' => '404 Страница не найдена',
+   'response_code' => '404 Not Found',
    'error_type' => '404',
-   'error_header' => '404 Не найдена',
+   'error_header' => '404 Not Found',
    'error_pagetitle' => 'Ошибка 404: Страница не найдена',
    'error_message' => '<h1>Страница не найдена</h1><p>Запрошенная вами страница не найдена.</p>'
 );
-$this->sendForward($this->getOption('error_page', $options, $this->getOption('site_start')), $options, false);
+$modx->sendForward($modx->getOption('error_page', $options, $modx->getOption('site_start')), $options, false);
 ```
 
 Выдайте заменяющую страницу, сохранив оригинальные `pagetitle`, `introtext` и другие поля. Для этого нужно просто указать дополнительный массив с ключами:
@@ -56,13 +53,10 @@ $options = array(
 	// список оригинальных полей, которые нужно исключить из результата
 	'forward_merge_excludes' => 'id,template,type,published,class_key'
 );
-$this->sendForward(15, $options);
+$modx->sendForward(15, $options);
 ```
 
-Ключ [forward_merge_excludes](building-sites/settings/forward_merge_excludes) заведует полями исходной страницы, которые нужно исключить из результатов. К эти полям обязательно будут прибавлены еще `content,pub_date,unpub_date,richtext`
-
 Такой способ полезен, если вы хотите закрывать какие-то разделы сайта, оставляя `pagetitle` и `description` для посетителей и поисковиков.
-
 
 ## Смотрите также
 

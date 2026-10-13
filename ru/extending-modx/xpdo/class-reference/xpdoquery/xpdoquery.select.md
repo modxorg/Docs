@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.select"
+description: "Укажите столбцы для возврата из запроса SQL."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.select"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.select"
 Укажите столбцы для возврата из запроса SQL.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::select()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::select()>)
 
 ```php
 getSelectColumns($className, $tableAlias= '', $columnPrefix= '', $columns= array (), $exclude= false)

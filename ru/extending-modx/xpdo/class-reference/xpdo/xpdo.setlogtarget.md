@@ -1,5 +1,6 @@
 ---
 title: "xPDO.setLogTarget"
+description: "Устанавливает цель журнала для вызовов xPDO::_log()."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setlogtarget"
 ---
 
@@ -17,8 +18,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setlogtarget"
 Возвращает ранее установленную цель журнала.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setLogTarget()>
 
 ```php
 mixed setLogTarget ([string $target = 'ECHO'], mixed 1)

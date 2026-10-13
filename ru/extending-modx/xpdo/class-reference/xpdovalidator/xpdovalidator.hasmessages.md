@@ -1,5 +1,6 @@
 ---
 title: "xPDOValidator.hasMessages"
+description: "Указывает, что сообщения проверки были сгенерированы validate()."
 translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.hasmessages"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.ha
 Указывает, что сообщения проверки были сгенерированы [validate()](extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.validate "xPDOValidator.validate").
 
 ## Синтаксис
-
-API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::hasMessages()>
 
 ```php
 boolean hasMessages ()

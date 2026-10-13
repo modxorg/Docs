@@ -1,5 +1,6 @@
 ---
 title: "fromJSON"
+description: "Sets the object fields from a JSON object string."
 _old_id: "1167"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/fromjson"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/field-accessors/fromjson"
 Sets the object fields from a JSON object string.
 
 ## Syntax
-
-API Docs: [https://api.modx.com/revolution/2.2/db\_core\_xpdo\_om\_xpdoobject.class.html](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html)
 
 ``` php
 void fromJSON (

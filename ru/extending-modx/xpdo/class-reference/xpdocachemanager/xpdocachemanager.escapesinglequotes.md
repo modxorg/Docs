@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.escapeSingleQuotes"
+description: "Экранирует все одинарные кавычки в строке."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.escapesinglequotes"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Экранирует все одинарные кавычки в строке.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::escapeSingleQuotes()>
 
 ```php
 string escapeSingleQuotes (string $s)

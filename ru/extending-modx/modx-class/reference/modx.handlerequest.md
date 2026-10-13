@@ -1,5 +1,6 @@
 ---
 title: "modX.handleRequest"
+description: "Инициализация, очистка и обработка запроса сайта в MODX."
 translation: "extending-modx/modx-class/reference/modx.handlerequest"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.handlerequest"
 Инициализация, очистка и обработка запроса сайта в MODX.
 
 ## Синтаксис
-
-API Doc: [modX::handleRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::handleRequest())
 
 ``` php
 mixed handleRequest ()

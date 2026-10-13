@@ -1,5 +1,6 @@
 ---
 title: "modX.getAuthenticatedUser"
+description: "Gets the user authenticated in the specified context."
 _old_id: "1059"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getauthenticateduser"
 ---
@@ -10,11 +11,11 @@ Gets the user authenticated in the specified context.
 
 ## Syntax
 
-API Doc: [modX::getAuthenticatedUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getAuthenticatedUser())
-
 ``` php
-unknown getAuthenticatedUser ([string $contextKey = ''])
+modUser|null getAuthenticatedUser ([string $contextKey = ''])
 ```
+
+Returns the `modUser` object authenticated in the given context, or `null` if no user is logged in there. Without an argument the current context is used.
 
 ## Example
 
@@ -27,4 +28,4 @@ $user = $modx->getAuthenticatedUser('sports');
 ## See Also
 
 - [modX](extending-modx/core-model/modx "modX")
-- [modx.getUser](extending-modx/modx-class/reference/modx.getuser)
+- [modX.getUser](extending-modx/modx-class/reference/modx.getuser)

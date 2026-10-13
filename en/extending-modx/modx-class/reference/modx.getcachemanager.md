@@ -1,5 +1,6 @@
 ---
 title: "modX.getCacheManager"
+description: "Get an extended xPDOCacheManager instance responsible for MODX caching."
 _old_id: "1060"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getcachemanager"
 ---
@@ -12,14 +13,14 @@ Overrides `xPDO::getCacheManager`.
 
 ## Syntax
 
-API Doc: [modX::getCacheManager()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getCacheManager())
-
 ``` php
-object getCacheManager([string $class = ''], [[array $options = array('path' => XPDO_CORE_PATH, 'ignorePkg' => true)]])
+modCacheManager getCacheManager([string $class = 'xPDO\Cache\xPDOCacheManager'], [array $options = array('path' => XPDO_CORE_PATH, 'ignorePkg' => true)])
 ```
 
-- `$class` _(string)_ The class name of the cache manager to load
-- `$options` _(array)_ An array of options to send to the cache manager instance
+- `$class` _(string)_ Ignored in `modX`: the class comes from the `modCacheManager.class` system setting (default `MODX\Revolution\modCacheManager`)
+- `$options` _(array)_ Ignored in `modX`; both arguments only affect the parent `xPDO::getCacheManager`
+
+The method returns the shared `modCacheManager` instance registered for this `modX` object, creating it on first use.
 
 ## Example
 
@@ -32,5 +33,5 @@ $cacheManager->set('testcachefile','test123');
 
 ## See Also
 
-- [Caching](extending-modx/xpdo/caching "Caching") – the full options are documented on the xPDO caching page.
+- [Caching](extending-modx/xpdo/caching "Caching")
 - [modX](extending-modx/core-model/modx "modX")

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getIterator"
+description: "Извлекает xPDOIterator, представляющий итеративную коллекцию xPDOObjects по указанному xPDOCriteria."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator"
 Используйте `xPDOIterator` для циклического перебора больших наборов результатов и работы с одним экземпляром за раз. Это значительно уменьшает использование памяти при одновременной загрузке всей коллекции объектов в память. Это также немного быстрее.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getIterator()>
 
 ```php
 xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

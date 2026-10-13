@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.groupby"
+description: "Add a GROUP BY clause to the query."
 _old_id: "1291"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.groupby"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.groupby"
 Add a GROUP BY clause to the query.
 
 ## Syntax
-
-API Docs: [xPDOQuery::groupby()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::groupby())
 
 ``` php
 xPDOQuery groupby (string $column, [string $direction = ''])

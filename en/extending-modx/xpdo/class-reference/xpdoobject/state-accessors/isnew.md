@@ -1,5 +1,6 @@
 ---
 title: "isNew"
+description: "Indicates if the instance is new, and has not yet been persisted."
 _old_id: "1188"
 _old_uri: "2.x/class-reference/xpdoobject/state-accessors/isnew"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/state-accessors/isnew"
 Indicates if the instance is new, and has not yet been persisted.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isNew()>
 
 ``` php
 boolean isNew ()

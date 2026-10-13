@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.delete"
+description: "Delete a key-value pair from a cache provider."
 _old_id: "1262"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.delete"
 ---
@@ -11,8 +12,6 @@ Delete a key-value pair from a cache provider. Also allows for extra options:
 - `cache_ext` - Defaults to '.cache.php'. Useful if you're wanting to delete non-cache files from the cache/ directory.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::delete()>
 
 ``` php
 boolean delete (string $key, [array $options = array()])

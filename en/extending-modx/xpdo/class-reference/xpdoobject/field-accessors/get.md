@@ -1,5 +1,6 @@
 ---
 title: "get"
+description: "Get a field value (or a set of values) by the field key(s) or name(s)."
 _old_id: "1170"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/get"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/field-accessors/get"
 Get a field value (or a set of values) by the field key(s) or name(s).
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::get()>
 
 ``` php
 mixed get(

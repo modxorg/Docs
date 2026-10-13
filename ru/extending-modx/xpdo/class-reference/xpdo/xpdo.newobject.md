@@ -1,5 +1,6 @@
 ---
 title: "xPDO.newObject"
+description: "Создает новый экземпляр указанного класса."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.newobject"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.newobject"
 Все новые объекты, созданные с помощью этого метода, являются временными до [xPDOObject::save()](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/save "save") вызывается в первый раз и отражается свойством `xPDOObject::$_new`.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::newObject()>
 
 ```php
 object|null newObject (string $className, [array $fields = array ()])

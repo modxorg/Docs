@@ -1,5 +1,6 @@
 ---
 title: "xPDOManager.removeSourceContainer"
+description: "Удаляет физический контейнер данных, если он существует."
 translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.removesourcecontainer"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.remove
 Удаляет физический контейнер данных, если он существует.
 
 ## Синтаксис
-
-API Docs: [removeSourceContainer](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::removeSourceContainer())
 
 ```php
 int removeSourceContainer (string $dsn, string $username, string $password)

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.loadClass"
+description: "Включите класс по полному имени."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.loadclass"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.loadclass"
 Включите класс по полному имени. Это удобный способ выполнить операцию `include_once` для включения файла `.class.php`. Если файл не найден, возвращается `false` и записывается предупреждение. Это включает в себя только класс: он не создает экземпляр этого экземпляра.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::loadClass()>
 
 ```php
 string|boolean loadClass (string $fqn, [ $path = ''], [ $ignorePkg = false], [ $transient = false])

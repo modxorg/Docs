@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getCollectionGraph"
+description: "Извлекает коллекцию xPDOObjects и связанных объектов по указанномуxPDOCriteria."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph"
 Если ничего не найдено, возвращает пустой массив.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCollectionGraph()>
 
 ```php
 array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

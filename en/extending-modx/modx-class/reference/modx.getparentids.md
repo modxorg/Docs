@@ -1,5 +1,6 @@
 ---
 title: "modX.getParentIds"
+description: "Gets all of the parent resource ids for a given resource."
 _old_id: "1068"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getparentids"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Gets all of the parent resource ids for a given resource.
 
 ## Syntax
-
-API Doc: [modX::getParentIds()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getParentIds())
 
 ``` php
 array getParentIds ([integer $id = null], [integer $height = 10], [array $options = array()] )

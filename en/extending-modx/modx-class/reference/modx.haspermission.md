@@ -1,5 +1,6 @@
 ---
 title: "modX.hasPermission"
+description: "Returns true if user has the specified policy permission in the current context ($modx->context)."
 _old_id: "1083"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.haspermission"
 ---
@@ -11,8 +12,6 @@ Returns true if user has the specified policy permission in the **current** cont
 So `$modx->hasPermission('publish_document')` in manager code only sees Context Access policies attached to **`mgr`**. A policy that grants the same key on another context does not satisfy this check. See [ACLs: Manager publishing and multiple groups](building-sites/client-proofing/security/policies/acls#manager-publishing-and-multiple-groups).
 
 ## Syntax
-
-API Doc: [modX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
 
 ``` php
 boolean hasPermission (string|array $pm)

@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.writeTree"
+description: "Рекурсивно записывает дерево каталогов файлов в файловую систему."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.writetree"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Рекурсивно записывает дерево каталогов файлов в файловую систему.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::writeTree()>
 
 ```php
 boolean writeTree (string $dirname, [array $options = array()])

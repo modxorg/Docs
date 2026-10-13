@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getObjectGraph"
+description: "Retrieves a single object instance and related objects defined by a graph, by the specified criteria."
 _old_id: "1246"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getobjectgraph"
 ---
@@ -16,8 +17,6 @@ The criteria can be a primary key value, an array of primary key values (for mul
 In order to use `getObjectGraph` effectively, you need to understand the data model behind your object. It pays to keep one finger on the XML schema file that defines your objects and their relations. If you attempt to join on another object when that relationship does not exist, this method will fail!
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getObjectGraph()>
 
 ``` php
 xPDOObject|null getObjectGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

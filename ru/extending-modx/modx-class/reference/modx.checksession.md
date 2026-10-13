@@ -1,5 +1,6 @@
 ---
 title: "modX.checkSession"
+description: "Проверяет, есть ли у пользователя сеанс в указанном контексте."
 translation: "extending-modx/modx-class/reference/modx.checksession"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.checksession"
 Проверяет, есть ли у пользователя сеанс в указанном контексте.
 
 ## Синтаксис
-
-API Doc: [modX::checkSession()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkSession())
 
 ``` php
 boolean checkSession ([string $sessionContext = 'web'])

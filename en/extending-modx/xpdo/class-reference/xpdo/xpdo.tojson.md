@@ -1,5 +1,6 @@
 ---
 title: "xPDO.toJSON"
+description: "Converts a PHP array into a JSON encoded string."
 _old_id: "1258"
 _old_uri: "2.x/class-reference/xpdo/xpdo.tojson"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.tojson"
 Converts a PHP array into a JSON encoded string.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::toJSON()>
 
 ``` php
 string toJSON (array $array)

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.loadClass"
+description: "Include a class by fully qualified name."
 _old_id: "1249"
 _old_uri: "2.x/class-reference/xpdo/xpdo.loadclass"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.loadclass"
 Include a class by fully qualified name. This is a handy way to perform an `include_once` operation to include a `.class.php` file. If the file is not found, `false` is returned and a warning is logged. This only includes the class: it does not instantiate an instance of it.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::loadClass()>
 
 ``` php
 string|boolean loadClass (string $fqn, [ $path = ''], [ $ignorePkg = false], [ $transient = false])

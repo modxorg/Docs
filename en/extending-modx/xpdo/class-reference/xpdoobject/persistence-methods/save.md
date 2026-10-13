@@ -1,5 +1,6 @@
 ---
 title: "save"
+description: "Persist new or changed objects to the database container."
 _old_id: "1208"
 _old_uri: "2.x/class-reference/xpdoobject/persistence-methods/save"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/persistence-methods/save"
 Persist new or changed objects to the database container. Will also cascade and save any objects that have been added to it via related object addition methods (addOne, addMany).
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::save()>
 
 ``` php
 boolean save ([boolean|integer $cacheFlag = null])

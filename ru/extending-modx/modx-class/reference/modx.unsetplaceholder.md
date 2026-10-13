@@ -1,5 +1,6 @@
 ---
 title: "modX.unsetPlaceholder"
+description: "Сбрасывает значение плейсхолдера по ключу."
 translation: "extending-modx/modx-class/reference/modx.unsetplaceholder"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.unsetplaceholder"
 Сбрасывает значение плейсхолдера по ключу.
 
 ## Синтаксис
-
-API Doc: [modX::unsetPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholder())
 
 ``` php
 void unsetPlaceholder (string $key)

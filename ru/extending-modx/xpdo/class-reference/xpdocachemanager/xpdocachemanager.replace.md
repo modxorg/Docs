@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.replace"
+description: "Заменяет пару ключ-значение в поставщике кэша."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.replace"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Заменяет пару ключ-значение в поставщике кэша.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::replace()>
 
 ```php
 boolean replace (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])

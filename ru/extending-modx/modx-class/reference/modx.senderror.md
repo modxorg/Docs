@@ -1,21 +1,27 @@
 ---
 title: "modX.sendError"
+description: "Отправьте пользователя на типовую страницу ошибки ядра и остановите выполнение PHP."
 translation: "extending-modx/modx-class/reference/modx.senderror"
 ---
 
 ## modX::sendError
 
-Отправьте пользователя на типовую страницу ошибки ядра и остановите выполнение PHP.
-
-Параметр 'type' может быть любым полем, которое загрузит файл шаблона в `core/error`. MODX поставляется с двумя страницами ошибок по умолчанию: они «недоступны» (по умолчанию) и "фатальны".
+Отправляет пользователя на типовую страницу ошибки ядра и останавливает выполнение PHP. MODX поставляет две такие страницы: `unavailable` (по умолчанию) и `fatal`.
 
 ## Синтаксис
-
-API Doc: [modX::sendError()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::sendError())
 
 ``` php
 void sendError ([string $type = ''], [array $options = array()])
 ```
+
+- `$type` _(string)_ Имя шаблона ошибки в `core/error/{type}.include.php`. Если пусто, значение берётся из ключа `error_type` массива `$options`, по умолчанию `unavailable`.
+- `$options` _(array)_ Значения, используемые для построения страницы ошибки:
+    - `error_pagetitle` — тег `<title>` страницы (по умолчанию `Error 503: Service temporarily unavailable`)
+    - `error_message` — HTML-содержимое страницы (по умолчанию `<p>Site temporarily unavailable.</p>`)
+    - `error_header` — передаваемая строка заголовка HTTP (по умолчанию `HTTP/1.1 503 Service Unavailable`)
+    - `error_type` — значение на случай пустого `$type`
+
+Метод очищает буферы вывода, отправляет заголовок, печатает страницу, закрывает сессию и вызывает `exit()` — после него ничего не выполняется.
 
 ## Примеры
 

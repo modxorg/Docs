@@ -1,5 +1,6 @@
 ---
 title: "_loadCollectionInstance"
+description: "This function is responsible for loading an xPDOObject instance into a collection."
 _old_id: "1140"
 _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadcollectioninstance"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadcollectionin
 This function is responsible for loading an xPDOObject instance into a collection.
 
 ## Syntax
-
-API Doc: [_loadCollectionInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadCollectionInstance)
 
 ``` php
 static boolean _loadCollectionInstance(

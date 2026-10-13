@@ -1,20 +1,21 @@
 ---
 title: "modX.getLoginUserID"
+description: "Returns the current user ID for the current or specified context."
 _old_id: "1066"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getloginuserid"
 ---
 
 ## modX::getLoginUserID
 
-Returns the current user ID, for the current or specified context.
+Returns the current user ID for the current or specified context.
 
 ## Syntax
 
-API Doc: [modX::getLoginUserID()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getLoginUserID())
-
 ``` php
-string getLoginUserID ([string $context = ''])
+integer getLoginUserID ([string $context = ''])
 ```
+
+Returns the user id as an integer; `0` if no user is logged in for the context.
 
 ## Example
 

@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.setClassAlias"
+description: "Устанавливает псевдоним SQL для таблицы, представленной основным классом."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.setclassalias"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.setclassal
 Устанавливает псевдоним SQL для таблицы, представленной основным классом.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::setClassAlias()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::setClassAlias()>)
 
 ```php
 xPDOQuery setClassAlias ([string $alias = ''])

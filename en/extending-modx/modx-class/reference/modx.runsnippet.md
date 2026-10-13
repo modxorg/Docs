@@ -9,15 +9,12 @@ Process and return the output from a PHP snippet by name.
 
 ## Syntax
 
-API Doc: [modX::runSnippet()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::runSnippet())
-
 ``` php
 string runSnippet (string $snippetName, [array $params = array ()])
 ```
 
 - `$snippetName` _(string)_ The name of the Snippet you wish to call. **required**
 - `$params` _(array)_ An associative array of properties to pass to the snippet
-
 
 ## Example
 

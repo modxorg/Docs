@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.orCondition"
+description: "Добавьте условие OR в операторWHERE в запросе."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.orcondition"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.orconditio
 Добавьте условие `OR` в оператор`WHERE` в запросе.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::orCondition()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::orCondition()>)
 
 ```php
 void orCondition ( $conditions, [ $binding = null], [ $group = 0])

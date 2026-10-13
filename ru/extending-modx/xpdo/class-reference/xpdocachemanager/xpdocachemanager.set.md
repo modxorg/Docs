@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.set"
+description: "Устанавливает пару ключ-значение в поставщике кэша."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.set"
 ---
 
@@ -12,8 +13,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `format` - если равно `XPDO_CACHE_JSON`, будет указывать строку как единственные данные в файле (а не как возвращение строки). Это полезно, если вы хотите более правильный синтаксический анализ данных JSON.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::set()>
 
 ```php
 boolean set (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])
