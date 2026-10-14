@@ -12,10 +12,10 @@ Fires after a Category is removed, in `modCategory::remove()`.
 
 ## Event Parameters
 
-| Name      | Description                                             |
-| --------- | ------------------------------------------------------- |
-| category  | A reference to the modCategory object.                  |
-| ancestors | An array of ancestors passed to the remove() method.    |
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| category  | A reference to the modCategory object.               |
+| ancestors | An array of ancestors passed to the remove() method. |
 
 
 ## See Also

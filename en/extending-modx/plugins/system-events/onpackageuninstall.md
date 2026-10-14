@@ -12,9 +12,9 @@ Fires after a package is uninstalled via the package manager.
 
 ## Event Parameters
 
-| Name    | Description                                                                     |
-| ------- | ------------------------------------------------------------------------------- |
-| package | A reference to the modTransportPackage instance that was uninstalled.          |
+| Name    | Description                                                           |
+| ------- | --------------------------------------------------------------------- |
+| package | A reference to the modTransportPackage instance that was uninstalled. |
 
 
 ## See Also

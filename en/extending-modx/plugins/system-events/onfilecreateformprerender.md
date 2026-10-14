@@ -12,10 +12,10 @@ Fires before the create file form is rendered in the manager.
 
 ## Event Parameters
 
-| Name      | Description                                            |
-| --------- | ------------------------------------------------------ |
-| mode      | Always 'new' (`modSystemEvent::MODE_NEW`).               |
-| directory | The directory the new file will be created in.         |
+| Name      | Description                                    |
+| --------- | ---------------------------------------------- |
+| mode      | Always 'new' (`modSystemEvent::MODE_NEW`).     |
+| directory | The directory the new file will be created in. |
 
 
 ## See Also

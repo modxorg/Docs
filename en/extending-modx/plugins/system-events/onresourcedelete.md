@@ -12,11 +12,11 @@ Fires immediately after deleting a Resource, from the `Resource\Delete` processo
 
 ## Event Parameters
 
-| Name     | Description                                          |
-| -------- | ---------------------------------------------------- |
-| id       | The ID of the deleted Resource.                      |
+| Name     | Description                                                                                                             |
+| -------- | ----------------------------------------------------------------------------------------------------------------------- |
+| id       | The ID of the deleted Resource.                                                                                         |
 | children | An array of IDs of the child Resources that were deleted with it. Not passed when deleting from the Resource edit form. |
-| resource | A reference to the deleted modResource object.       |
+| resource | A reference to the deleted modResource object.                                                                          |
 
 
 ## See Also

@@ -12,11 +12,11 @@ Fires after a Category is saved, in `modCategory::save()`.
 
 ## Event Parameters
 
-| Name      | Description                                                     |
-| --------- | --------------------------------------------------------------- |
+| Name      | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
 | mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| category  | A reference to the modCategory object.                          |
-| cacheFlag | The cacheFlag argument passed to the save() method.             |
+| category  | A reference to the modCategory object.                           |
+| cacheFlag | The cacheFlag argument passed to the save() method.              |
 
 
 ## See Also

@@ -14,10 +14,10 @@ Fires after a User is removed, in `modUser::remove()`.
 
 ## Event Parameters
 
-| Name      | Description                                                |
-| --------- | ---------------------------------------------------------- |
-| user      | A reference to the modUser object.                         |
-| ancestors | An array of ancestors passed to `remove()`.       |
+| Name      | Description                                 |
+| --------- | ------------------------------------------- |
+| user      | A reference to the modUser object.          |
+| ancestors | An array of ancestors passed to `remove()`. |
 
 
 ## See Also

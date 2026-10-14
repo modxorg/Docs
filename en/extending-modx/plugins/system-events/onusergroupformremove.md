@@ -12,11 +12,11 @@ Fires after a User Group is removed through the Remove User Group processor in t
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| id | The ID of the removed User Group. |
-| user_group | A reference to the modUserGroup object. |
-| object | The same modUserGroup object as `user_group`. |
+| Name       | Description                                   |
+| ---------- | --------------------------------------------- |
+| id         | The ID of the removed User Group.             |
+| user_group | A reference to the modUserGroup object.       |
+| object     | The same modUserGroup object as `user_group`. |
 
 
 ## See Also

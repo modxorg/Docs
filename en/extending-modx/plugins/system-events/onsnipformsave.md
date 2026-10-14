@@ -12,12 +12,12 @@ Fires after a Snippet is created or updated in the Manager.
 
 ## Event Parameters
 
-| Name    | Description                             |
-| ------- | --------------------------------------- |
+| Name    | Description                                                      |
+| ------- | ---------------------------------------------------------------- |
 | mode    | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| id      | The ID of the Snippet.                  |
-| snippet | A reference to the modSnippet object.   |
-| object  | Alias of `snippet` — a reference to the same object. |
+| id      | The ID of the Snippet.                                           |
+| snippet | A reference to the modSnippet object.                            |
+| object  | Alias of `snippet` — a reference to the same object.             |
 
 
 ## See Also

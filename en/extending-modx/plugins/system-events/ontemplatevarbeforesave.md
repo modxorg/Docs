@@ -14,19 +14,19 @@ Fires right before a TV is saved, in `modTemplateVar::save()`.
 
 ## Event Parameters
 
-| Name        | Description                                                                            |
-| ----------- | -------------------------------------------------------------------------------------- |
-| mode        | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                        |
-| templateVar | A reference to the modTemplateVar object.                                              |
+| Name        | Description                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------- |
+| mode        | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                          |
+| templateVar | A reference to the modTemplateVar object.                                                 |
 | cacheFlag   | Whether the saved TV should be cached; optionally, an integer sets the expiry in seconds. |
 
 ## Remarks
 
-| Next event | [OnTemplateVarSave](extending-modx/plugins/system-events/ontemplatevarsave "OnTemplateVarSave") |
-| ---------- | ------------------------------------------------------------------------------------------------ |
+| Next event | [OnTemplateVarSave](extending-modx/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                                 |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | File       | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php) |
-| Class      | MODX\Revolution\modTemplateVar                                                                    |
-| Method     | `public function save($cacheFlag = null)`                                                        |
+| Class      | MODX\Revolution\modTemplateVar                                                                                                  |
+| Method     | `public function save($cacheFlag = null)`                                                                                       |
 
 ## Example
 

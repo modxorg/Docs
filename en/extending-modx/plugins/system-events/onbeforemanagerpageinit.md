@@ -14,23 +14,23 @@ Fires right before a Manager controller runs, after the permission check.
 
 ## Event Parameters
 
-| Name     | Description                                                             |
-| -------- | ----------------------------------------------------------------------- |
-| action   | The route or action to load in the current namespace                    |
-| controller | The same value as `action`                                            |
-| namespace | The namespace (as a string) for the current namespace                  |
-| namespace_path | The core path for the namespace                                   |
+| Name           | Description                                           |
+| -------------- | ----------------------------------------------------- |
+| action         | The route or action to load in the current namespace  |
+| controller     | The same value as `action`                            |
+| namespace      | The namespace (as a string) for the current namespace |
+| namespace_path | The core path for the namespace                       |
 
 On Manager error pages these keys are absent from the controller config — the Error controller is created with a `message` (and `errors`) only. Check them with `isset()` before use.
 
 ## Remarks
 
-| Previous event | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                                    |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
+| Previous event | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                             |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Next event     | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                     |
 | File           | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
-| Class          | abstract class MODX\Revolution\modManagerController                                                                                                                |
-| Method         | public function render()                                                                                                                           |
+| Class          | abstract class MODX\Revolution\modManagerController                                                                                         |
+| Method         | public function render()                                                                                                                    |
 
 ## Example
 

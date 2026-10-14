@@ -14,12 +14,12 @@ Fires inside the `foreach` loop over `$_FILES`, before any file is uploaded.
 
 ## Event Parameters
 
-| Name      | Description                                                                                   |
-| --------- | --------------------------------------------------------------------------------------------- |
-| files     | All files from the PHP $\_FILES array.                                                        |
-| file      | The current file in the $\_FILES loop.                                                        |
-| directory | Target directory, relative to the media source root, to upload into.                        |
-| source    | Contains the modMediaSource object.                                                            |
+| Name      | Description                                                          |
+| --------- | -------------------------------------------------------------------- |
+| files     | All files from the PHP $\_FILES array.                               |
+| file      | The current file in the $\_FILES loop.                               |
+| directory | Target directory, relative to the media source root, to upload into. |
+| source    | Contains the modMediaSource object.                                  |
 
 
 ## See Also

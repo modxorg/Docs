@@ -14,14 +14,14 @@ Fires when a User changes their password.
 
 ## Event Parameters
 
-| Name         | Description                                    |
-| ------------ | ---------------------------------------------- |
-| user         | A reference to the modUser object.                   |
-| newpassword  | The new password being set.                    |
-| oldpassword  | The old password being overridden.             |
-| userid       | The ID of the User. (deprecated)          |
-| username     | The username of the User. (deprecated)         |
-| userpassword | The new password being set. (deprecated)       |
+| Name         | Description                              |
+| ------------ | ---------------------------------------- |
+| user         | A reference to the modUser object.       |
+| newpassword  | The new password being set.              |
+| oldpassword  | The old password being overridden.       |
+| userid       | The ID of the User. (deprecated)         |
+| username     | The username of the User. (deprecated)   |
+| userpassword | The new password being set. (deprecated) |
 
 ## Example
 

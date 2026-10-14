@@ -14,8 +14,8 @@ Fires after a Resource is loaded from the cache. If the Resource is not cached, 
 
 ## Event Parameters
 
-| Name     | Description                                                                |
-| -------- | -------------------------------------------------------------------------- |
+| Name     | Description                                                                               |
+| -------- | ----------------------------------------------------------------------------------------- |
 | resource | A reference to the modResource instance restored from the cache. **Passed by reference.** |
 
 ## Notes

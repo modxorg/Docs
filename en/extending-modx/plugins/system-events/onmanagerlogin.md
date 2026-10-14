@@ -14,14 +14,14 @@ Fires after a user logs into the manager, once the authentication checks have pa
 
 ## Event Parameters
 
-| Name       | Description                                                                      |
-| ---------- | -------------------------------------------------------------------------------- |
-| user       | The `modUser` that just logged in.                                               |
-| attributes | An array with:                                                                  |
-|            | - rememberme — whether the user asked to remember the login                     |
-|            | - lifetime — session cookie lifetime for this login                             |
-|            | - loginContext — context key for this login                                     |
-|            | - addContexts — extra contexts that also received a session                     |
+| Name       | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| user       | The `modUser` that just logged in.                          |
+| attributes | An array with:                                              |
+|            | - rememberme — whether the user asked to remember the login |
+|            | - lifetime — session cookie lifetime for this login         |
+|            | - loginContext — context key for this login                 |
+|            | - addContexts — extra contexts that also received a session |
 
 ## Event Login Workflow
 

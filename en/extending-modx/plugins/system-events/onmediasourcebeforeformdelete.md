@@ -12,11 +12,11 @@ Fires right before a Media Source is deleted.
 
 ## Event Parameters
 
-| Name   | Description                                 |
-| ------ | ------------------------------------------- |
-| id     | The ID of the Media Source.                 |
-| source | A reference to the modMediaSource object.   |
-| object | A reference to the modMediaSource object.   |
+| Name   | Description                               |
+| ------ | ----------------------------------------- |
+| id     | The ID of the Media Source.               |
+| source | A reference to the modMediaSource object. |
+| object | A reference to the modMediaSource object. |
 
 ## See Also
 

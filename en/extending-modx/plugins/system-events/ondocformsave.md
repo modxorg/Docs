@@ -18,11 +18,11 @@ Anything you return from this event is written to the error log.
 
 ## Event Parameters
 
-| Name       | Description                                                                                |
-| ---------- | ------------------------------------------------------------------------------------------ |
-| mode       | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                           |
-| id         | The ID of the Resource, even for new Resources.                                            |
-| resource   | A reference to the modResource object.                                                     |
+| Name       | Description                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| mode       | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                            |
+| id         | The ID of the Resource, even for new Resources.                                             |
+| resource   | A reference to the modResource object.                                                      |
 | reloadOnly | Only on creation: `true` when the processor just reloads the form after a validation error. |
 | object     | Only on update: alias of `resource` — a reference to the same object.                       |
 

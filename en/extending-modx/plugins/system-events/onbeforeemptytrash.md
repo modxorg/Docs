@@ -14,9 +14,9 @@ Fires before the trash is emptied for the site. Also fired by the `resources/tra
 
 ## Event Parameters
 
-| Name | Description                                                                        |
-| ---- | ---------------------------------------------------------------------------------- |
-| ids  | An array of Resource IDs that will be permanently deleted.                          |
+| Name      | Description                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| ids       | An array of Resource IDs that will be permanently deleted.                     |
 | resources | An array of the modResource objects that will be deleted. Passed by reference. |
 
 ## Examples

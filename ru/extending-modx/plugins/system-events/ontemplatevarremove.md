@@ -13,19 +13,19 @@ description: "Срабатывает после удаления ТВ, в modTem
 
 ## Параметры события
 
-| Имя         | Описание                                                                                                                                                                                      |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| templateVar | Экземпляр класса modTemplateVar.                                                                                                                                                              |
-| cacheFlag   | Всегда `true` — ядро передаёт фиксированное значение при вызове события.                              |
+| Имя         | Описание                                                                 |
+| ----------- | ------------------------------------------------------------------------ |
+| templateVar | Экземпляр класса modTemplateVar.                                         |
+| cacheFlag   | Всегда `true` — ядро передаёт фиксированное значение при вызове события. |
 
 ## Замечания
 
-| Предыдущее событие | [OnTemplateVarBeforeRemove](extending-modx/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove")                |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | —                                                                                                                                     |
-| File               | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php)         |
-| Class              | MODX\Revolution\modTemplateVar                                                                                                         |
-| Method             | public function remove(array $ancestors= array ())                                                                                     |
+| Предыдущее событие | [OnTemplateVarBeforeRemove](extending-modx/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove")         |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | —                                                                                                                               |
+| File               | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php) |
+| Class              | MODX\Revolution\modTemplateVar                                                                                                  |
+| Method             | public function remove(array $ancestors= array ())                                                                              |
 
 ## Пример
 

@@ -12,11 +12,11 @@ Fires right before a Template is saved, in `modTemplate::save()`.
 
 ## Event Parameters
 
-| Name      | Description                                                    |
-| --------- | -------------------------------------------------------------- |
+| Name      | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
 | mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| template  | A reference to the modTemplate object.                         |
-| cacheFlag | The `cacheFlag` argument passed to the `save()` method.        |
+| template  | A reference to the modTemplate object.                           |
+| cacheFlag | The `cacheFlag` argument passed to the `save()` method.          |
 
 
 ## See Also

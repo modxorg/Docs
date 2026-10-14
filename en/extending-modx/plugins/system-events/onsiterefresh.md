@@ -14,9 +14,9 @@ Fires after the cache for the entire site is cleared.
 
 ## Event Parameters
 
-| Name       | Description                                                                                                                       |
-| ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| results    | An array of results of the cache refresh.                                                                                         |
+| Name       | Description                                                                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| results    | An array of results of the cache refresh.                                                                                                                      |
 | partitions | An array of refreshed cache partitions. Passed only from the Clear Cache processor; from the `system/refresh_site` controller the event has **no parameters**. |
 
 ## Example

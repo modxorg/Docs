@@ -14,12 +14,12 @@ Fires after a User is created or updated through the user form in the Manager.
 
 ## Event Parameters
 
-| Name   | Description                                                                                                                            |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| user   | A reference to the modUser object.                                                                                                     |
-| id     | The ID of the User.                                                                                                                    |
-| mode   | `modSystemEvent::MODE_NEW` (`new`) for a new object, `modSystemEvent::MODE_UPD` (`upd`) for an existing one.                            |
-| object | A reference to the saved User — the same object as `user`.                                                                            |
+| Name   | Description                                                                                                  |
+| ------ | ------------------------------------------------------------------------------------------------------------ |
+| user   | A reference to the modUser object.                                                                           |
+| id     | The ID of the User.                                                                                          |
+| mode   | `modSystemEvent::MODE_NEW` (`new`) for a new object, `modSystemEvent::MODE_UPD` (`upd`) for an existing one. |
+| object | A reference to the saved User — the same object as `user`.                                                   |
 
 
 ## See Also

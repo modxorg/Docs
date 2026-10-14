@@ -14,11 +14,11 @@ Fires right before a Plugin is saved.
 
 ## Event Parameters
 
-| Name      | Description                                                        |
-| --------- | ------------------------------------------------------------------ |
-| mode      | Either 'new' or 'upd', depending on the circumstance.              |
-| plugin    | A reference to the modPlugin object.                               |
-| cacheFlag | The cache flag passed to the save operation.                       |
+| Name      | Description                                           |
+| --------- | ----------------------------------------------------- |
+| mode      | Either 'new' or 'upd', depending on the circumstance. |
+| plugin    | A reference to the modPlugin object.                  |
+| cacheFlag | The cache flag passed to the save operation.          |
 
 
 ## See Also

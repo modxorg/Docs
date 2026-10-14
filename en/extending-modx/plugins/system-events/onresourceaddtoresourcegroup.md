@@ -12,11 +12,11 @@ Fires after a Resource is added to a Resource Group.
 
 ## Event Parameters
 
-| Name         | Description                                                                                                                                                  |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| mode         | The operation that caused the event: 'resource-create', 'resource-update', or 'resource-group-tree-drag'.                                                     |
-| resource     | A reference to the modResource object.                                                                                                                       |
-| resourceGroup | A reference to the modResourceGroup object.                                                                                                                  |
+| Name          | Description                                                                                               |
+| ------------- | --------------------------------------------------------------------------------------------------------- |
+| mode          | The operation that caused the event: 'resource-create', 'resource-update', or 'resource-group-tree-drag'. |
+| resource      | A reference to the modResource object.                                                                    |
+| resourceGroup | A reference to the modResourceGroup object.                                                               |
 
 
 ## See Also

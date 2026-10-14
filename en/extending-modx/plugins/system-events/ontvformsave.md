@@ -12,12 +12,12 @@ Fires after a TV is created or updated in the Manager.
 
 ## Event Parameters
 
-| Name   | Description                               |
-| ------ | ----------------------------------------- |
+| Name   | Description                                                      |
+| ------ | ---------------------------------------------------------------- |
 | mode   | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| id     | The ID of the TV.                         |
-| tv     | A reference to the modTemplateVar object. |
-| object | Alias of `tv` — a reference to the same object. |
+| id     | The ID of the TV.                                                |
+| tv     | A reference to the modTemplateVar object.                        |
+| object | Alias of `tv` — a reference to the same object.                  |
 
 
 ## See Also

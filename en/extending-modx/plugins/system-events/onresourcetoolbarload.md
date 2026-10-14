@@ -12,9 +12,9 @@ Fires when the Resource tree toolbar is loaded in the manager, allowing plugins 
 
 ## Event Parameters
 
-| Name  | Description                                                 |
-| ----- | ----------------------------------------------------------- |
-| items | An array of toolbar items, passed by reference.             |
+| Name  | Description                                     |
+| ----- | ----------------------------------------------- |
+| items | An array of toolbar items, passed by reference. |
 
 ## See Also
 

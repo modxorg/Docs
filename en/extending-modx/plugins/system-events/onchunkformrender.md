@@ -14,11 +14,11 @@ Fires during the rendering of the Chunk form. Use it to insert HTML straight int
 
 ## Event Parameters
 
-| Name  | Description                                                     |
-| ----- | --------------------------------------------------------------- |
+| Name  | Description                                                      |
+| ----- | ---------------------------------------------------------------- |
 | mode  | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| id    | The ID of the Chunk. This will be 0 for new Chunks.             |
-| chunk | A reference to the modChunk object. `null` for new Chunks.      |
+| id    | The ID of the Chunk. This will be 0 for new Chunks.              |
+| chunk | A reference to the modChunk object. `null` for new Chunks.       |
 
 ## Examples
 

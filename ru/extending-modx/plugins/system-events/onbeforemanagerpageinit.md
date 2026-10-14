@@ -24,12 +24,12 @@ description: "Событие запускается непосредственн
 
 ## Замечания
 
-| Предыдущее событие | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
+| Предыдущее событие | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                     |
 | File               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
-| Class              | abstract class MODX\Revolution\modManagerController                                                                                               |
-| Method             | public function render()                                                                                                                           |
+| Class              | abstract class MODX\Revolution\modManagerController                                                                                         |
+| Method             | public function render()                                                                                                                    |
 
 ## Пример
 

@@ -11,25 +11,25 @@ System Events are points in the MODX code where [Plugins](extending-modx/plugins
 
 The system events table is `{table_prefix}_system_eventnames` with these fields:
 
-| Field | Description |
-| --- | --- |
-| id | Unique ID of the event. |
-| name | Event name, referenced in code via [modX.invokeEvent](extending-modx/modx-class/reference/modx.invokeevent "modX.invokeEvent"). |
-| service | Type of system event. |
-| groupname | Used by user interfaces to filter, group, and sort events. The MODX model does not use it. |
+| Field     | Description                                                                                                                     |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| id        | Unique ID of the event.                                                                                                         |
+| name      | Event name, referenced in code via [modX.invokeEvent](extending-modx/modx-class/reference/modx.invokeevent "modX.invokeEvent"). |
+| service   | Type of system event.                                                                                                           |
+| groupname | Used by user interfaces to filter, group, and sort events. The MODX model does not use it.                                      |
 
 ### Service Types
 
 The `service` field holds a number that identifies the type of event:
 
-| Value | Service |
-| --- | --- |
-| 1 | Parser Service Events |
-| 2 | Manager Access Events |
-| 3 | Web Access Service Events |
-| 4 | Cache Service Events |
-| 5 | Template Service Events |
-| 6 | User Defined Events |
+| Value | Service                   |
+| ----- | ------------------------- |
+| 1     | Parser Service Events     |
+| 2     | Manager Access Events     |
+| 3     | Web Access Service Events |
+| 4     | Cache Service Events      |
+| 5     | Template Service Events   |
+| 6     | User Defined Events       |
 
 Service 3 does not fire in the `mgr` Context; Service 2 fires only there.
 
@@ -294,11 +294,11 @@ The events below are grouped by the `groupname` shown in the Manager's event lis
 
 No GUI exists for custom events yet — create them through the API. Events have these attributes:
 
-| Attribute | Description |
-| --- | --- |
-| name | The unique event name. |
-| service | A loose grouping of events by area. Services 1, 2, 4, 5 and 6 load inside the Manager; services 1, 3, 4, 5 and 6 load outside it (see `getEventMap()`). |
-| groupname | Groups the events visually in the MODX Manager, where it appears as a Plugin tab. |
+| Attribute | Description                                                                                                                                             |
+| --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name      | The unique event name.                                                                                                                                  |
+| service   | A loose grouping of events by area. Services 1, 2, 4, 5 and 6 load inside the Manager; services 1, 3, 4, 5 and 6 load outside it (see `getEventMap()`). |
+| groupname | Groups the events visually in the MODX Manager, where it appears as a Plugin tab.                                                                       |
 
 Create an event through the MODX API:
 

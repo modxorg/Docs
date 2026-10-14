@@ -12,10 +12,10 @@ Fires after a package is successfully installed or upgraded via the package mana
 
 ## Event Parameters
 
-| Name    | Description                                                                                                                              |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Name    | Description                                                                                                                             |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | package | A reference to the modTransportPackage instance that was installed. Use `$package->get('package_name')` to get the name of the package. |
-| action  | One of `xPDOTransport::ACTION_UPGRADE` or `xPDOTransport::ACTION_INSTALL`, indicating whether it was an upgrade or a first install.      |
+| action  | One of `xPDOTransport::ACTION_UPGRADE` or `xPDOTransport::ACTION_INSTALL`, indicating whether it was an upgrade or a first install.     |
 
 
 ## See Also

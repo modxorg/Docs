@@ -14,10 +14,10 @@ Fires before a Snippet is deleted in the Manager.
 
 ## Event Parameters
 
-| Name    | Description                           |
-| ------- | ------------------------------------- |
-| snippet | A reference to the modSnippet object. |
-| id      | The ID of the Snippet.                |
+| Name    | Description                                          |
+| ------- | ---------------------------------------------------- |
+| snippet | A reference to the modSnippet object.                |
+| id      | The ID of the Snippet.                               |
 | object  | Alias of `snippet` — a reference to the same object. |
 
 ## Example

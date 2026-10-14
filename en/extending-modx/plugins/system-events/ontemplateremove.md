@@ -12,10 +12,10 @@ Fires after a Template is removed, in `modTemplate::remove()`.
 
 ## Event Parameters
 
-| Name      | Description                                              |
-| --------- | -------------------------------------------------------- |
-| template  | A reference to the modTemplate object.                   |
-| ancestors | An array of ancestors passed to the `remove()` method.   |
+| Name      | Description                                            |
+| --------- | ------------------------------------------------------ |
+| template  | A reference to the modTemplate object.                 |
+| ancestors | An array of ancestors passed to the `remove()` method. |
 
 
 ## See Also

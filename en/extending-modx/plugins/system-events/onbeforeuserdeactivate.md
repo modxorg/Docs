@@ -12,10 +12,10 @@ Fires before a User is deactivated. It runs when the `active` status is switched
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| id   | The ID of the User being deactivated. |
-| user | A reference to the modUser object. |
+| Name | Description                                                                                                |
+| ---- | ---------------------------------------------------------------------------------------------------------- |
+| id   | The ID of the User being deactivated.                                                                      |
+| user | A reference to the modUser object.                                                                         |
 | mode | `modSystemEvent::MODE_UPD` when a single User is edited, or `multiple` when Users are deactivated in bulk. |
 
 

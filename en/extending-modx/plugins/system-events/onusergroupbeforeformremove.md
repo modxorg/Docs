@@ -12,11 +12,11 @@ Fires before a User Group is removed through the Remove User Group processor in 
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| id | The ID of the User Group being removed. |
-| user_group | A reference to the modUserGroup object. |
-| object | The same modUserGroup object as `user_group`. |
+| Name       | Description                                   |
+| ---------- | --------------------------------------------- |
+| id         | The ID of the User Group being removed.       |
+| user_group | A reference to the modUserGroup object.       |
+| object     | The same modUserGroup object as `user_group`. |
 
 A non-empty message from the Plugin prevents the User Group from being removed.
 

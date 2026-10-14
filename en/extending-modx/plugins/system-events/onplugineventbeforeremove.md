@@ -12,9 +12,9 @@ Fires right before a Plugin is disassociated from an event.
 
 ## Event Parameters
 
-| Name        | Description                                            |
-| ----------- | ------------------------------------------------------ |
-| pluginEvent | A reference to the modPluginEvent object.              |
+| Name        | Description                                             |
+| ----------- | ------------------------------------------------------- |
+| pluginEvent | A reference to the modPluginEvent object.               |
 | ancestors   | An array of ancestors for the remove cascade operation. |
 
 

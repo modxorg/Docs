@@ -12,10 +12,10 @@ Fires right before a Context is removed, in `modContext::remove()`.
 
 ## Event Parameters
 
-| Name      | Description                                             |
-| --------- | ------------------------------------------------------- |
-| context   | A reference to the modContext object.                   |
-| ancestors | An array of ancestors passed to the remove() method.    |
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| context   | A reference to the modContext object.                |
+| ancestors | An array of ancestors passed to the remove() method. |
 
 
 ## See Also

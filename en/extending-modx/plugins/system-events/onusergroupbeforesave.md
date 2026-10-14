@@ -12,11 +12,11 @@ Fires right before a User Group is saved, in `modUserGroup::save()`.
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| mode | `modSystemEvent::MODE_NEW` when creating a User Group, or `modSystemEvent::MODE_UPD` when updating one. |
-| usergroup | A reference to the modUserGroup object. |
-| cacheFlag | The `cacheFlag` argument passed to `save()`. |
+| Name      | Description                                                                                             |
+| --------- | ------------------------------------------------------------------------------------------------------- |
+| mode      | `modSystemEvent::MODE_NEW` when creating a User Group, or `modSystemEvent::MODE_UPD` when updating one. |
+| usergroup | A reference to the modUserGroup object.                                                                 |
+| cacheFlag | The `cacheFlag` argument passed to `save()`.                                                            |
 
 
 ## See Also

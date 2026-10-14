@@ -14,11 +14,11 @@ Fires after the trash is emptied for the site. Also fires from the `resources/tr
 
 ## Event Parameters
 
-| Name         | Description                                                                            |
-| ------------ | -------------------------------------------------------------------------------------- |
-| ids          | An array of the IDs of the Resources that were successfully permanently deleted.       |
-| resources    | An array of the modResource objects that were deleted. **Passed by reference.**        |
-| num\_deleted | The number of Resources actually deleted.                                              |
+| Name         | Description                                                                      |
+| ------------ | -------------------------------------------------------------------------------- |
+| ids          | An array of the IDs of the Resources that were successfully permanently deleted. |
+| resources    | An array of the modResource objects that were deleted. **Passed by reference.**  |
+| num\_deleted | The number of Resources actually deleted.                                        |
 
 
 ## See Also

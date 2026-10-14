@@ -12,11 +12,11 @@ Fires after a file or directory is moved to a new location.
 
 ## Event Parameters
 
-| Name     | Description                                                                       |
-| -------- | --------------------------------------------------------------------------------- |
-| from     | The path the file or directory is moved from.                                     |
-| to       | The path the file or directory is moved to.                                       |
-| source   | The modMediaSource object that the file was moved from.                           |
+| Name     | Description                                                                                      |
+| -------- | ------------------------------------------------------------------------------------------------ |
+| from     | The path the file or directory is moved from.                                                    |
+| to       | The path the file or directory is moved to.                                                      |
+| source   | The modMediaSource object that the file was moved from.                                          |
 | toSource | The modMediaSource object the file was moved to, or `false` if not moving between media sources. |
 
 

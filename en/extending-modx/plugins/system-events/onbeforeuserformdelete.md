@@ -14,10 +14,10 @@ Fires before a User is deleted in the Manager.
 
 ## Event Parameters
 
-| Name | Description                        |
-| ---- | ---------------------------------- |
-| user | A reference to the modUser object. |
-| id   | The ID of the User.                |
+| Name   | Description                                       |
+| ------ | ------------------------------------------------- |
+| user   | A reference to the modUser object.                |
+| id     | The ID of the User.                               |
 | object | Alias of `user` — a reference to the same object. |
 
 

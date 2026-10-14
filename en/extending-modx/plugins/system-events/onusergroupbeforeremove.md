@@ -12,9 +12,9 @@ Fires right before a User Group is removed, in `modUserGroup::remove()`.
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| usergroup | A reference to the modUserGroup object. |
+| Name      | Description                                    |
+| --------- | ---------------------------------------------- |
+| usergroup | A reference to the modUserGroup object.        |
 | ancestors | An array of ancestor IDs passed to `remove()`. |
 
 

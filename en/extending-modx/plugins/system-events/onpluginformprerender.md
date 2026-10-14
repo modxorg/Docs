@@ -14,10 +14,10 @@ Fires before the Plugin modification form is rendered, but after the JS is regis
 
 ## Event Parameters
 
-| Name   | Description                                                     |
-| ------ | --------------------------------------------------------------- |
-| mode   | Either 'new' or 'upd', depending on the circumstance.           |
-| id     | The ID of the Plugin. Will be 0 for new Plugins.                |
+| Name   | Description                                                      |
+| ------ | ---------------------------------------------------------------- |
+| mode   | Either 'new' or 'upd', depending on the circumstance.            |
+| id     | The ID of the Plugin. Will be 0 for new Plugins.                 |
 | plugin | A reference to the modPlugin object. Not passed for new Plugins. |
 
 

@@ -12,12 +12,12 @@ Fires after a Chunk is created or updated in the Manager, from the `Element\Chun
 
 ## Event Parameters
 
-| Name   | Description                                                     |
-| ------ | --------------------------------------------------------------- |
+| Name   | Description                                                      |
+| ------ | ---------------------------------------------------------------- |
 | mode   | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| id     | The ID of the Chunk.                                            |
-| chunk  | A reference to the modChunk object.                             |
-| object | Alias of `chunk` — a reference to the same object.              |
+| id     | The ID of the Chunk.                                             |
+| chunk  | A reference to the modChunk object.                              |
+| object | Alias of `chunk` — a reference to the same object.               |
 
 ## Example
 

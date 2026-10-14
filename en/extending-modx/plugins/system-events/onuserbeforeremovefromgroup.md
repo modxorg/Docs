@@ -12,10 +12,10 @@ Fires before a User is removed from a User Group and its membership record is re
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| user | A reference to the modUser object. |
-| usergroup | A reference to the modUserGroup object. |
+| Name       | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| user       | A reference to the modUser object.                          |
+| usergroup  | A reference to the modUserGroup object.                     |
 | membership | A reference to the modUserGroupMember object being removed. |
 
 A non-empty message from the Plugin prevents the User from being removed.

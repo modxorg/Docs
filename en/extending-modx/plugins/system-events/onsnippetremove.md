@@ -12,10 +12,10 @@ Fires after a Snippet is removed, in `modSnippet::remove()`.
 
 ## Event Parameters
 
-| Name      | Description                                             |
-| --------- | ------------------------------------------------------- |
-| snippet   | A reference to the modSnippet object.                   |
-| ancestors | An array of ancestors passed to the `remove()` method.  |
+| Name      | Description                                            |
+| --------- | ------------------------------------------------------ |
+| snippet   | A reference to the modSnippet object.                  |
+| ancestors | An array of ancestors passed to the `remove()` method. |
 
 
 ## See Also

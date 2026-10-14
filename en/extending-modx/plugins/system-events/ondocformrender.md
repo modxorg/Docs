@@ -12,11 +12,11 @@ Fires after a Resource editing form is loaded in the Manager. Use it to insert H
 
 ## Event Parameters
 
-| Name     | Description                                                                                                  |
-| -------- | ------------------------------------------------------------------------------------------------------------ |
-| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                                             |
-| id       | The ID of the Resource. This will be 0 for new Resources.                                                    |
-| resource | A reference to the modResource object. Since 2.4 an empty object for new Resources; before 2.4 `null`.       |
+| Name     | Description                                                                                            |
+| -------- | ------------------------------------------------------------------------------------------------------ |
+| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                                       |
+| id       | The ID of the Resource. This will be 0 for new Resources.                                              |
+| resource | A reference to the modResource object. Since 2.4 an empty object for new Resources; before 2.4 `null`. |
 
 ## Setting Default Resource Values
 

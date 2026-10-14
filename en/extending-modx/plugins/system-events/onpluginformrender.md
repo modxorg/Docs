@@ -14,10 +14,10 @@ Fires during the rendering of the Plugin form. Useful for inserting HTML straigh
 
 ## Event Parameters
 
-| Name   | Description                                                       |
-| ------ | ----------------------------------------------------------------- |
-| mode   | Either 'new' or 'upd', depending on the circumstance.             |
-| id     | The ID of the Plugin. This will be 0 for new Plugins.             |
+| Name   | Description                                                      |
+| ------ | ---------------------------------------------------------------- |
+| mode   | Either 'new' or 'upd', depending on the circumstance.            |
+| id     | The ID of the Plugin. This will be 0 for new Plugins.            |
 | plugin | A reference to the modPlugin object. Not passed for new Plugins. |
 
 

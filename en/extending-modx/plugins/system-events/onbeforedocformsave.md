@@ -35,14 +35,14 @@ To **stop** the save and show a message in the Manager, pass text to `$modx->eve
 
 ## Event Parameters
 
-| Name | Description |
-| --- | --- |
-| mode | `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`) |
-| resource | Reference to the `modResource` object (passed by reference) |
-| id | Resource ID. `0` for new Resources that are not saved yet |
+| Name       | Description                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------ |
+| mode       | `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`)                                                     |
+| resource   | Reference to the `modResource` object (passed by reference)                                                  |
+| id         | Resource ID. `0` for new Resources that are not saved yet                                                    |
 | reloadOnly | Create path only: `true` when the processor just reloads the form after a validation error instead of saving |
-| data | Update path only: the current fields of the Resource as an array (`$resource->toArray()`) |
-| object | Update path only: alias of `resource` — a reference to the same object |
+| data       | Update path only: the current fields of the Resource as an array (`$resource->toArray()`)                    |
+| object     | Update path only: alias of `resource` — a reference to the same object                                       |
 
 ## Examples
 

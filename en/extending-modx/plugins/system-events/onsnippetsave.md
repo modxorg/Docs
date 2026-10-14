@@ -12,11 +12,11 @@ Fires after a Snippet is saved, in `modSnippet::save()`.
 
 ## Event Parameters
 
-| Name      | Description                                                    |
-| --------- | -------------------------------------------------------------- |
+| Name      | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
 | mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| snippet   | A reference to the modSnippet object.                          |
-| cacheFlag | The `cacheFlag` argument passed to the `save()` method.        |
+| snippet   | A reference to the modSnippet object.                            |
+| cacheFlag | The `cacheFlag` argument passed to the `save()` method.          |
 
 
 ## See Also

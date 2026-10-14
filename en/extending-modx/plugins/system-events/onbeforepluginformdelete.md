@@ -14,10 +14,10 @@ Fires before a Plugin is deleted in the Manager.
 
 ## Event Parameters
 
-| Name   | Description                          |
-| ------ | ------------------------------------ |
-| plugin | A reference to the modPlugin object. |
-| id     | The ID of the Plugin.                |
+| Name   | Description                                         |
+| ------ | --------------------------------------------------- |
+| plugin | A reference to the modPlugin object.                |
+| id     | The ID of the Plugin.                               |
 | object | Alias of `plugin` — a reference to the same object. |
 
 ## Example

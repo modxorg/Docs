@@ -12,11 +12,11 @@ Fires after a Chunk is saved, in `modChunk::save()`.
 
 ## Event Parameters
 
-| Name      | Description                                                     |
-| --------- | --------------------------------------------------------------- |
+| Name      | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
 | mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| chunk     | A reference to the modChunk object.                             |
-| cacheFlag | The cacheFlag argument passed to the save() method.             |
+| chunk     | A reference to the modChunk object.                              |
+| cacheFlag | The cacheFlag argument passed to the save() method.              |
 
 
 ## See Also

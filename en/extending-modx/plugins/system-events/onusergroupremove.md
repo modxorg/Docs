@@ -12,9 +12,9 @@ Fires after a User Group is removed and its ACL entries are deleted, in `modUser
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| usergroup | A reference to the modUserGroup object. |
+| Name      | Description                                    |
+| --------- | ---------------------------------------------- |
+| usergroup | A reference to the modUserGroup object.        |
 | ancestors | An array of ancestor IDs passed to `remove()`. |
 
 

@@ -12,11 +12,11 @@ Fires after a Context is saved, in `modContext::save()`.
 
 ## Event Parameters
 
-| Name      | Description                                                     |
-| --------- | --------------------------------------------------------------- |
-| context   | A reference to the modContext object.                           |
+| Name      | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
+| context   | A reference to the modContext object.                            |
 | mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| cacheFlag | The cacheFlag argument passed to the save() method.             |
+| cacheFlag | The cacheFlag argument passed to the save() method.              |
 
 
 ## See Also

@@ -14,13 +14,13 @@ Fires after a user is logged out of the manager and their context session is rem
 
 ## Event Parameters
 
-| Name               | Description                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| **&** user         | A reference to the modUser object of the user. **Passed by reference**               |
-| userid             | The user ID of the user.                                                             |
-| username           | The username of the user.                                                            |
-| **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
-| **&** addContexts  | Additional contexts in which the logout also occurs. **Passed by reference**                  |
+| Name               | Description                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| **&** user         | A reference to the modUser object of the user. **Passed by reference**       |
+| userid             | The user ID of the user.                                                     |
+| username           | The username of the user.                                                    |
+| **&** loginContext | The context key this logout is occurring in. **Passed by reference**         |
+| **&** addContexts  | Additional contexts in which the logout also occurs. **Passed by reference** |
 
 ## `$modx->getUser()` during OnManagerLogout
 

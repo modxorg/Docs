@@ -12,11 +12,11 @@ Fires before the file editor form is rendered in the manager.
 
 ## Event Parameters
 
-| Name | Description                                                                                          |
-| ---- | ---------------------------------------------------------------------------------------------------- |
-| mode | Always 'upd' (`modSystemEvent::MODE_UPD`).                                                             |
-| file | The path of the file being edited.                                                                   |
-| fa   | An array of information about the file, including the ID of the Media Source the file belongs to.     |
+| Name | Description                                                                                       |
+| ---- | ------------------------------------------------------------------------------------------------- |
+| mode | Always 'upd' (`modSystemEvent::MODE_UPD`).                                                        |
+| file | The path of the file being edited.                                                                |
+| fa   | An array of information about the file, including the ID of the Media Source the file belongs to. |
 
 
 ## See Also

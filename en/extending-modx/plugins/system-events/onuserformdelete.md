@@ -14,11 +14,11 @@ Fires after a User is deleted in the Manager, and for each User in a bulk delete
 
 ## Event Parameters
 
-| Name   | Description                                                      |
-| ------ | ---------------------------------------------------------------- |
-| user   | A reference to the modUser object.                               |
-| id     | The ID of the User.                                              |
-| object | A reference to the deleted User — the same object as `user`.     |
+| Name   | Description                                                  |
+| ------ | ------------------------------------------------------------ |
+| user   | A reference to the modUser object.                           |
+| id     | The ID of the User.                                          |
+| object | A reference to the deleted User — the same object as `user`. |
 
 
 ## See Also

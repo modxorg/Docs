@@ -12,11 +12,11 @@ Fires after a Plugin-Event binding is saved.
 
 ## Event Parameters
 
-| Name        | Description                                                                                                       |
-| ----------- | ----------------------------------------------------------------------------------------------------------------- |
+| Name        | Description                                                                                                                          |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
 | mode        | Either 'new' (`modSystemEvent::MODE_NEW`) or 'upd' (`modSystemEvent::MODE_UPD`), depending on whether the object is new or existing. |
-| pluginEvent | A reference to the modPluginEvent object.                                                                         |
-| cacheFlag   | The cache flag passed to the save operation.                                                                      |
+| pluginEvent | A reference to the modPluginEvent object.                                                                                            |
+| cacheFlag   | The cache flag passed to the save operation.                                                                                         |
 
 
 ## See Also

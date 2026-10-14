@@ -12,8 +12,8 @@ Fires immediately after auto-publishing.
 
 ## Event Parameters
 
-| Name    | Description                                                                                                                                                                                                                                   |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Name    | Description                                                                                                                                                                                                                                      |
+| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | results | An array of auto-publishing results: `published` and `unpublished` (number of Resources affected), `published_resources` and `unpublished_resources` (arrays of Resource rows), and `errors`. Only fires if at least one Resource changed state. |
 
 

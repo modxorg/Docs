@@ -14,13 +14,13 @@ Fires after a form is submitted but before a Chunk is saved in the Manager.
 
 ## Event Parameters
 
-| Name  | Description                                           |
-| ----- | ----------------------------------------------------- |
-| mode  | Either 'upd' or 'new', depending on the circumstance. |
-| chunk | A reference to the modChunk object.                   |
-| id    | The ID of the chunk. Will be 0 for new chunks.        |
-| data  | The current fields of the Chunk as an array.          |
-| object | Alias of `chunk` — a reference to the same object.   |
+| Name   | Description                                           |
+| ------ | ----------------------------------------------------- |
+| mode   | Either 'upd' or 'new', depending on the circumstance. |
+| chunk  | A reference to the modChunk object.                   |
+| id     | The ID of the chunk. Will be 0 for new chunks.        |
+| data   | The current fields of the Chunk as an array.          |
+| object | Alias of `chunk` — a reference to the same object.    |
 
 ## Examples
 

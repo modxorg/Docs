@@ -14,8 +14,8 @@ Fires each time the Element tags are parsed. This can happen many times during t
 
 ## Event Parameters
 
-| Name    | Description                                                                                          |
-| ------- | ---------------------------------------------------------------------------------------------------- |
+| Name    | Description                                                                                        |
+| ------- | -------------------------------------------------------------------------------------------------- |
 | content | The document content being parsed, passed by reference. Also available as `$modx->documentOutput`. |
 
 

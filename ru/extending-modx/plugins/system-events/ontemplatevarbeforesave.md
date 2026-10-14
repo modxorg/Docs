@@ -13,20 +13,20 @@ description: "Срабатывает прямо перед сохранение�
 
 ## Параметры события
 
-| Имя         | Описание                                                                                                                     |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| mode        | 'new' или 'upd', в зависимости от обстоятельств.                                                                             |
-| templateVar | Экземпляр класса modTemplateVar.                                                                                             |
+| Имя         | Описание                                                                                                                                     |
+| ----------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| mode        | 'new' или 'upd', в зависимости от обстоятельств.                                                                                             |
+| templateVar | Экземпляр класса modTemplateVar.                                                                                                             |
 | cacheFlag   | Указывает, следует ли сохранять в кэше сохранённый TV и, необязательно, указав целочисленное значение, за сколько секунд до истечения срока. |
 
 ## Замечания
 
-| Предыдущее событие | —                                                                                                                                     |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | [OnTemplateVarSave](extending-modx/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                                        |
-| File               | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php)         |
-| Class              | MODX\Revolution\modTemplateVar                                                                                                         |
-| Method             | public function save($cacheFlag = null)                                                                                                |
+| Предыдущее событие | —                                                                                                                               |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | [OnTemplateVarSave](extending-modx/plugins/system-events/ontemplatevarsave "OnTemplateVarSave")                                 |
+| File               | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php) |
+| Class              | MODX\Revolution\modTemplateVar                                                                                                  |
+| Method             | public function save($cacheFlag = null)                                                                                         |
 
 ## Пример
 

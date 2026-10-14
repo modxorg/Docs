@@ -12,10 +12,10 @@ Fires after a TV is deleted in the Manager.
 
 ## Event Parameters
 
-| Name   | Description                             |
-| ------ | --------------------------------------- |
-| id     | The ID of the deleted TV.               |
-| tv     | A reference to the modTemplateVar object. |
+| Name   | Description                                     |
+| ------ | ----------------------------------------------- |
+| id     | The ID of the deleted TV.                       |
+| tv     | A reference to the modTemplateVar object.       |
 | object | Alias of `tv` — a reference to the same object. |
 
 

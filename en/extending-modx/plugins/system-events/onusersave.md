@@ -14,11 +14,11 @@ Fires after a User is saved, in `modUser::save()`.
 
 ## Event Parameters
 
-| Name | Description                                                                                                                            |
-| ---- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| user | A reference to the modUser object.                                                                                                     |
-| mode | `modSystemEvent::MODE_NEW` (`new`) for a new object, `modSystemEvent::MODE_UPD` (`upd`) for an existing one. |
-| cacheFlag | The `cacheFlag` argument passed to `save()`. |
+| Name      | Description                                                                                                  |
+| --------- | ------------------------------------------------------------------------------------------------------------ |
+| user      | A reference to the modUser object.                                                                           |
+| mode      | `modSystemEvent::MODE_NEW` (`new`) for a new object, `modSystemEvent::MODE_UPD` (`upd`) for an existing one. |
+| cacheFlag | The `cacheFlag` argument passed to `save()`.                                                                 |
 
 
 ## See Also

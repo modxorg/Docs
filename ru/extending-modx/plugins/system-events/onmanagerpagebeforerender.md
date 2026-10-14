@@ -19,12 +19,12 @@ description: "Событие запускается в контроллере м
 
 ## Примечания
 
-| Предыдущее событие | [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")                                  |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender "OnManagerPageAfterRender")                               |
-| Файл               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php)        |
-| Класс              | abstract class `modManagerController`                                                                                                              |
-| Метод              | public function render()                                                                                                                           |
+| Предыдущее событие | [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender "OnManagerPageAfterRender")                        |
+| Файл               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
+| Класс              | abstract class `modManagerController`                                                                                                       |
+| Метод              | public function render()                                                                                                                    |
 
 ## Пример
 

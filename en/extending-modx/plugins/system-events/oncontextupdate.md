@@ -12,10 +12,10 @@ Fires after a Context is saved in the Manager, from the `Context\Update` and `Co
 
 ## Event Parameters
 
-| Name       | Description                                       |
-| ---------- | ------------------------------------------------- |
-| context    | A reference to the modContext object.             |
-| properties | An array of the submitted processor properties.  |
+| Name       | Description                                     |
+| ---------- | ----------------------------------------------- |
+| context    | A reference to the modContext object.           |
+| properties | An array of the submitted processor properties. |
 
 
 ## See Also

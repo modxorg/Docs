@@ -16,10 +16,10 @@ Fires before a membership record is saved and a User is added to a User Group. I
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| user | A reference to the modUser object. |
-| usergroup | A reference to the modUserGroup object. |
+| Name       | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| user       | A reference to the modUser object.                          |
+| usergroup  | A reference to the modUserGroup object.                     |
 | membership | A reference to the modUserGroupMember object being created. |
 
 A non-empty message from the Plugin prevents the User from being added to the User Group.

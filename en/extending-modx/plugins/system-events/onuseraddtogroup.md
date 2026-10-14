@@ -16,10 +16,10 @@ Fires after a membership record is saved and a User is added to a User Group. It
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| user | A reference to the modUser object. |
-| usergroup | A reference to the modUserGroup object. |
+| Name       | Description                                   |
+| ---------- | --------------------------------------------- |
+| user       | A reference to the modUser object.            |
+| usergroup  | A reference to the modUserGroup object.       |
 | membership | A reference to the modUserGroupMember object. |
 
 

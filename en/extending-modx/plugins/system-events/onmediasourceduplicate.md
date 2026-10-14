@@ -12,11 +12,11 @@ Fires after a Media Source is duplicated in the manager.
 
 ## Event Parameters
 
-| Name        | Description                                                    |
-| ----------- | -------------------------------------------------------------- |
-| newResource | A reference to the newly created modMediaSource object.        |
-| oldResource | A reference to the original modMediaSource object.             |
-| newName     | The name of the newly created Media Source.                    |
+| Name        | Description                                             |
+| ----------- | ------------------------------------------------------- |
+| newResource | A reference to the newly created modMediaSource object. |
+| oldResource | A reference to the original modMediaSource object.      |
+| newName     | The name of the newly created Media Source.             |
 
 ## See Also
 

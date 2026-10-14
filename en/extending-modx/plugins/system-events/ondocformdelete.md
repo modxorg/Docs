@@ -12,11 +12,11 @@ Fires after a Resource is deleted in the Manager, from the `Resource\Delete` pro
 
 ## Event Parameters
 
-| Name     | Description                                          |
-| -------- | ---------------------------------------------------- |
-| id       | The ID of the Resource.                              |
-| children | IDs of the child Resources deleted with it.          |
-| resource | A reference to the modResource object.               |
+| Name     | Description                                 |
+| -------- | ------------------------------------------- |
+| id       | The ID of the Resource.                     |
+| children | IDs of the child Resources deleted with it. |
+| resource | A reference to the modResource object.      |
 
 ## Example
 

@@ -22,9 +22,9 @@ Fires when the MODX object is initialized.
 ## Remarks
 
 | File   | [core/src/Revolution/modX.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modX.php) |
-| ------ | --------------------------------------------------------------------------------------------------------- |
-| Class  | MODX\Revolution\modX                                                                                       |
-| Method | `public function initialize($contextKey = 'web', $options = null)`                                         |
+| ------ | ----------------------------------------------------------------------------------------------------------- |
+| Class  | MODX\Revolution\modX                                                                                        |
+| Method | `public function initialize($contextKey = 'web', $options = null)`                                          |
 
 
 ## See Also

@@ -14,16 +14,16 @@ Fires when a user is not found during login. Use it for external authentication.
 
 ## Event Parameters
 
-| Name       | Description                                                                                      |
-| ---------- | ------------------------------------------------------------------------------------------------ |
+| Name       | Description                                                                                                                                                                                                |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | user       | A reference to the modUser object, passed by reference. Return a `modUser` (or a class extending it) in the event output — directly or as one index of an array — or assign it here to continue the login. |
-| username   | The specified username.                                                                          |
-| password   | The specified password.                                                                          |
-| attributes | An array with:                                                                                   |
-|            | - rememberme — Boolean set if the user wants the password to be remembered                       |
-|            | - lifetime — the session cookie lifetime for this login                                          |
-|            | - loginContext — the context key this login is occurring in                                      |
-|            | - addContexts — additional contexts in which the login is also occurring                         |
+| username   | The specified username.                                                                                                                                                                                    |
+| password   | The specified password.                                                                                                                                                                                    |
+| attributes | An array with:                                                                                                                                                                                             |
+|            | - rememberme — Boolean set if the user wants the password to be remembered                                                                                                                                 |
+|            | - lifetime — the session cookie lifetime for this login                                                                                                                                                    |
+|            | - loginContext — the context key this login is occurring in                                                                                                                                                |
+|            | - addContexts — additional contexts in which the login is also occurring                                                                                                                                   |
 
 The `lifetime`, `loginContext` and `addContexts` values exist only inside the `attributes` array — they are not separate top-level parameters.
 

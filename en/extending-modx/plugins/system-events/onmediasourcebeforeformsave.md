@@ -12,13 +12,13 @@ Fires right before a Media Source is saved.
 
 ## Event Parameters
 
-| Name   | Description                                                                                                       |
-| ------ | ----------------------------------------------------------------------------------------------------------------- |
+| Name   | Description                                                                                                                            |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
 | mode   | Either 'new' (modSystemEvent::MODE\_NEW) or 'upd' (modSystemEvent::MODE\_UPD) depending on whether is a new object or an existing one. |
-| data   | An array of the data of the Media Source object.                                                                  |
-| id     | The ID of the Media Source.                                                                                       |
-| source | A reference to the modMediaSource object.                                                                         |
-| object | A reference to the modMediaSource object.                                                                         |
+| data   | An array of the data of the Media Source object.                                                                                       |
+| id     | The ID of the Media Source.                                                                                                            |
+| source | A reference to the modMediaSource object.                                                                                              |
+| object | A reference to the modMediaSource object.                                                                                              |
 
 ## See Also
 

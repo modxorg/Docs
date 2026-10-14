@@ -16,14 +16,14 @@ If the output is `true`, MODX treats the user as logged in and skips the passwor
 
 ## Event Parameters
 
-| Name               | Description                                                                         |
-| ------------------ | ----------------------------------------------------------------------------------- |
-| **&** user         | A reference to the modUser object. **Passed by reference**                          |
-| password           | The provided password.                                                              |
-| rememberme         | Whether or not to remember the user via cookie.                                     |
-| lifetime           | The lifetime of the session cookie.                                                 |
-| **&** loginContext | The context key this login is occurring in. **Passed by reference**                 |
-| **&** addContexts  | Additional contexts in which the login also occurs. **Passed by reference**         |
+| Name               | Description                                                                 |
+| ------------------ | --------------------------------------------------------------------------- |
+| **&** user         | A reference to the modUser object. **Passed by reference**                  |
+| password           | The provided password.                                                      |
+| rememberme         | Whether or not to remember the user via cookie.                             |
+| lifetime           | The lifetime of the session cookie.                                         |
+| **&** loginContext | The context key this login is occurring in. **Passed by reference**         |
+| **&** addContexts  | Additional contexts in which the login also occurs. **Passed by reference** |
 
 ## Event Login Workflow
 

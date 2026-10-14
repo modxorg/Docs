@@ -14,18 +14,18 @@ Fires after a TV is removed, in `modTemplateVar::remove()`.
 
 ## Event Parameters
 
-| Name        | Description                                                                            |
-| ----------- | -------------------------------------------------------------------------------------- |
-| templateVar | A reference to the modTemplateVar object.                                              |
-| cacheFlag   | Always `true` — the core passes a hard-coded flag when firing this event.                             |
+| Name        | Description                                                               |
+| ----------- | ------------------------------------------------------------------------- |
+| templateVar | A reference to the modTemplateVar object.                                 |
+| cacheFlag   | Always `true` — the core passes a hard-coded flag when firing this event. |
 
 ## Remarks
 
-| Previous event | [OnTemplateVarBeforeRemove](extending-modx/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove") |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Previous event | [OnTemplateVarBeforeRemove](extending-modx/plugins/system-events/ontemplatevarbeforeremove "OnTemplateVarBeforeRemove")         |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | File           | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php) |
-| Class          | MODX\Revolution\modTemplateVar                                                                                          |
-| Method         | `public function remove(array $ancestors = array())`                                                                   |
+| Class          | MODX\Revolution\modTemplateVar                                                                                                  |
+| Method         | `public function remove(array $ancestors = array())`                                                                            |
 
 ## Example
 

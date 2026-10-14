@@ -14,11 +14,11 @@ Fires after a User is activated — from the user form in the Manager or in bulk
 
 ## Event Parameters
 
-| Name | Description                                                                                                                 |
-| ---- | --------------------------------------------------------------------------------------------------------------------------- |
-| id   | The ID of the activated User.                                                                                               |
-| user | A reference to the modUser object.                                                                                          |
-| mode | `modSystemEvent::MODE_UPD` when a single User is edited via the user form, or `multiple` when Users are activated in bulk.  |
+| Name | Description                                                                                                                |
+| ---- | -------------------------------------------------------------------------------------------------------------------------- |
+| id   | The ID of the activated User.                                                                                              |
+| user | A reference to the modUser object.                                                                                         |
+| mode | `modSystemEvent::MODE_UPD` when a single User is edited via the user form, or `multiple` when Users are activated in bulk. |
 
 
 ## See Also

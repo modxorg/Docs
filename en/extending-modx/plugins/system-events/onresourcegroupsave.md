@@ -14,11 +14,11 @@ Fires after a Resource Group is saved.
 
 ## Event Parameters
 
-| Name         | Description                                                        |
-| ------------ | ------------------------------------------------------------------ |
-| mode         | Either 'new' or 'upd', depending on the circumstance.              |
-| resourceGroup | A reference to the modResourceGroup object.                       |
-| cacheFlag    | The cache flag passed to the save operation.                       |
+| Name          | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| mode          | Either 'new' or 'upd', depending on the circumstance. |
+| resourceGroup | A reference to the modResourceGroup object.           |
+| cacheFlag     | The cache flag passed to the save operation.          |
 
 When a Resource Group is created through the `Security\ResourceGroup\Create` processor, this event fires twice — once from the model's `save()` (with the keys listed above) and once from the processor (with `mode`, `id`, `resource_group` and `object` keys). `OnResourceGroupBeforeSave` behaves the same way.
 

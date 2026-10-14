@@ -14,13 +14,13 @@ Fires after a form is submitted but before a TV is saved in the Manager.
 
 ## Event Parameters
 
-| Name | Description                                           |
-| ---- | ----------------------------------------------------- |
-| mode | Either 'upd' or 'new', depending on the circumstance. |
-| tv   | A reference to the modTemplateVar object.             |
-| id   | The ID of the TV. Will be 0 for new TVs.              |
-| data | The current fields of the TV as an array.             |
-| object | Alias of `tv` — a reference to the same object.     |
+| Name   | Description                                           |
+| ------ | ----------------------------------------------------- |
+| mode   | Either 'upd' or 'new', depending on the circumstance. |
+| tv     | A reference to the modTemplateVar object.             |
+| id     | The ID of the TV. Will be 0 for new TVs.              |
+| data   | The current fields of the TV as an array.             |
+| object | Alias of `tv` — a reference to the same object.       |
 
 
 ## See Also

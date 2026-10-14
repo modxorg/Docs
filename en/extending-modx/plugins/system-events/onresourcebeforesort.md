@@ -12,10 +12,10 @@ Fires just before the Resource tree is sorted.
 
 ## Event Parameters
 
-| Name     | Description                                                                                                              |
-| -------- | ------------------------------------------------------------------------------------------------------------------------ |
-| nodes    | An array of nodes about to be sorted; each node has `id`, `context`, `parent` and `order` keys.                          |
-| contexts | An array of context keys affected by the sort.                                                                           |
+| Name     | Description                                                                                     |
+| -------- | ----------------------------------------------------------------------------------------------- |
+| nodes    | An array of nodes about to be sorted; each node has `id`, `context`, `parent` and `order` keys. |
+| contexts | An array of context keys affected by the sort.                                                  |
 
 
 ## See Also

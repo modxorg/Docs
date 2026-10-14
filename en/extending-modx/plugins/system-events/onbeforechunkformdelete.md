@@ -14,10 +14,10 @@ Fires before a Chunk is deleted.
 
 ## Event Parameters
 
-| Name  | Description                         |
-| ----- | ----------------------------------- |
-| chunk | A reference to the modChunk object. |
-| id    | The ID of the Chunk.                |
+| Name   | Description                                        |
+| ------ | -------------------------------------------------- |
+| chunk  | A reference to the modChunk object.                |
+| id     | The ID of the Chunk.                               |
 | object | Alias of `chunk` — a reference to the same object. |
 
 ## Example

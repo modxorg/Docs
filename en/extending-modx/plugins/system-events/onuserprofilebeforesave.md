@@ -14,11 +14,11 @@ The profile row holds the email, full name, phone, blocked flags, `extended` JSO
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| userprofile | A reference to the `modUserProfile` object about to be saved. |
-| mode | `modSystemEvent::MODE_NEW` (`new`) or `modSystemEvent::MODE_UPD` (`upd`), depending on whether the profile is new. |
-| cacheFlag | The `$cacheFlag` value passed into `save()`. |
+| Name        | Description                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| userprofile | A reference to the `modUserProfile` object about to be saved.                                                      |
+| mode        | `modSystemEvent::MODE_NEW` (`new`) or `modSystemEvent::MODE_UPD` (`upd`), depending on whether the profile is new. |
+| cacheFlag   | The `$cacheFlag` value passed into `save()`.                                                                       |
 
 
 ## See Also

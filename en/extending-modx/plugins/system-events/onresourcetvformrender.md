@@ -12,13 +12,13 @@ Fires when the Template Variables tab is rendered in the Resource editor (both w
 
 ## Event Parameters
 
-| Name     | Description                                                                                              |
-| -------- | -------------------------------------------------------------------------------------------------------- |
-| categories | An array of the TV categories, passed by reference.                                                    |
-| template | The ID of the Resource's Template.                                                                       |
-| resource | The ID of the Resource being edited.                                                                     |
-| tvCounts | An array with the count of TVs per category, passed by reference.                                        |
-| hidden   | Whether the TV tab is hidden, passed by reference.                                                       |
+| Name       | Description                                                       |
+| ---------- | ----------------------------------------------------------------- |
+| categories | An array of the TV categories, passed by reference.               |
+| template   | The ID of the Resource's Template.                                |
+| resource   | The ID of the Resource being edited.                              |
+| tvCounts   | An array with the count of TVs per category, passed by reference. |
+| hidden     | Whether the TV tab is hidden, passed by reference.                |
 
 ## See Also
 

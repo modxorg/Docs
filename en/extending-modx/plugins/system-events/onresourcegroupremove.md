@@ -14,10 +14,10 @@ Fires after a Resource Group is removed. The event is invoked even if the remova
 
 ## Event Parameters
 
-| Name         | Description                                             |
-| ------------ | ------------------------------------------------------- |
-| resourceGroup | A reference to the modResourceGroup object.            |
-| ancestors    | An array of ancestors for the remove cascade operation. |
+| Name          | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| resourceGroup | A reference to the modResourceGroup object.             |
+| ancestors     | An array of ancestors for the remove cascade operation. |
 
 
 ## See Also

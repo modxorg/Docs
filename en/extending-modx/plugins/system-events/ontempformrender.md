@@ -12,11 +12,11 @@ Fires in the Template create/update controller while the page placeholders are b
 
 ## Event Parameters
 
-| Name     | Description                                                                        |
-| -------- | ---------------------------------------------------------------------------------- |
-| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                    |
-| id       | The ID of the Template. This will be 0 for new Templates.                          |
-| template | A reference to the modTemplate object. Not passed when creating a new Template.    |
+| Name     | Description                                                                     |
+| -------- | ------------------------------------------------------------------------------- |
+| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                |
+| id       | The ID of the Template. This will be 0 for new Templates.                       |
+| template | A reference to the modTemplate object. Not passed when creating a new Template. |
 
 
 ## See Also

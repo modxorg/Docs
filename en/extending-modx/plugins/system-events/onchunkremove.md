@@ -12,10 +12,10 @@ Fires after a Chunk is removed, in `modChunk::remove()`.
 
 ## Event Parameters
 
-| Name      | Description                                             |
-| --------- | ------------------------------------------------------- |
-| chunk     | A reference to the modChunk object.                     |
-| ancestors | An array of ancestors passed to the remove() method.    |
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| chunk     | A reference to the modChunk object.                  |
+| ancestors | An array of ancestors passed to the remove() method. |
 
 
 ## See Also

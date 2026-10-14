@@ -12,11 +12,11 @@ Fires before the Chunk form is rendered in the Manager. The controller has loade
 
 ## Event Parameters
 
-| Name  | Description                                                     |
-| ----- | --------------------------------------------------------------- |
+| Name  | Description                                                      |
+| ----- | ---------------------------------------------------------------- |
 | mode  | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
-| id    | The ID of the Chunk. This will be 0 for new Chunks.             |
-| chunk | A reference to the modChunk object. `null` for new Chunks.      |
+| id    | The ID of the Chunk. This will be 0 for new Chunks.              |
+| chunk | A reference to the modChunk object. `null` for new Chunks.       |
 
 ## Example
 

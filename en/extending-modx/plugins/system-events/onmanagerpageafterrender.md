@@ -14,18 +14,18 @@ Fires in the manager controller after content is processed and right before the 
 
 ## Event Parameters
 
-| Name       | Description                                        |
-| ---------- | -------------------------------------------------- |
-| controller | The current manager page controller.                                          |
+| Name       | Description                          |
+| ---------- | ------------------------------------ |
+| controller | The current manager page controller. |
 
 ## Remarks
 
-| Previous event | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | —                                                                                                                                                 |
+| Previous event | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Next event     | —                                                                                                                                           |
 | File           | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
-| Class          | abstract class `modManagerController`                                                                                                                |
-| Method         | public function render()                                                                                                                           |
+| Class          | abstract class `modManagerController`                                                                                                       |
+| Method         | public function render()                                                                                                                    |
 
 
 ## See Also

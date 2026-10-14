@@ -14,10 +14,10 @@ Fires before a User's `active` status is switched on in the Manager. It runs in 
 
 ## Event Parameters
 
-| Name | Description                                                                       |
-| ---- | --------------------------------------------------------------------------------- |
-| id   | The ID of the User.                                                               |
-| user | A reference to the modUser object. **Passed by reference**                        |
+| Name | Description                                                                                |
+| ---- | ------------------------------------------------------------------------------------------ |
+| id   | The ID of the User.                                                                        |
+| user | A reference to the modUser object. **Passed by reference**                                 |
 | mode | Either `upd` (single User in `security/user/update`) or `multiple` (bulk activation only). |
 
 

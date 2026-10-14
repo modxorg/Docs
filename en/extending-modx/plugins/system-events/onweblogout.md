@@ -14,12 +14,12 @@ Fires after the logout processor removes the user's session contexts for a non-`
 
 ## Event Parameters
 
-| Name               | Description                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| **&** user         | A reference to the modUser object. **Passed by reference**                  |
+| Name               | Description                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| **&** user         | A reference to the modUser object. **Passed by reference**                   |
 | userid             | The ID of the User.                                                          |
 | username           | The username of the User.                                                    |
-| **&** loginContext | The context key this logout is occurring in. **Passed by reference**        |
+| **&** loginContext | The context key this logout is occurring in. **Passed by reference**         |
 | **&** addContexts  | Additional contexts in which the logout also occurs. **Passed by reference** |
 
 ## `$modx->getUser()` during OnWebLogout

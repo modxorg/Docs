@@ -19,12 +19,12 @@ description: "Событие запускается в контроллере м
 
 ## Примечания
 
-| Предыдущее событие | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | —                                                                                                                                                 |
-| Файл               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php)        |
-| Класс              | abstract class modManagerController                                                                                                                |
-| Метод              | public function render()                                                                                                                           |
+| Предыдущее событие | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | —                                                                                                                                           |
+| Файл               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
+| Класс              | abstract class modManagerController                                                                                                         |
+| Метод              | public function render()                                                                                                                    |
 
 ## Смотри также
 

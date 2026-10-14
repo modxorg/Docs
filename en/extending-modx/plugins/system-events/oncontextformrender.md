@@ -12,11 +12,11 @@ Fires after the Context editing form loads, only from the Context **update** for
 
 ## Event Parameters
 
-| Name    | Description                                        |
-| ------- | -------------------------------------------------- |
-| key     | The key of the Context.                            |
-| context | A reference to the modContext object.              |
-| mode    | Always `upd` (`modSystemEvent::MODE_UPD`).         |
+| Name    | Description                                |
+| ------- | ------------------------------------------ |
+| key     | The key of the Context.                    |
+| context | A reference to the modContext object.      |
+| mode    | Always `upd` (`modSystemEvent::MODE_UPD`). |
 
 
 ## See Also

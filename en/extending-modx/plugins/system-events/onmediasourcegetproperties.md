@@ -12,9 +12,9 @@ Fires after the properties of a Media Source are collected, allowing them to be 
 
 ## Event Parameters
 
-| Name       | Description                                                     |
-| ---------- | --------------------------------------------------------------- |
-| properties | An array of the Media Source properties.                        |
+| Name       | Description                              |
+| ---------- | ---------------------------------------- |
+| properties | An array of the Media Source properties. |
 
 ## See Also
 

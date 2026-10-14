@@ -16,10 +16,10 @@ Fires when the MODX Browser is initialized for a custom RTE. Return a JavaScript
 
 Request properties of the browser controller; at minimum:
 
-| Name   | Description                                                 |
-| ------ | ----------------------------------------------------------- |
+| Name   | Description                                                  |
+| ------ | ------------------------------------------------------------ |
 | ctx    | The context key the browser operates in (defaults to `web`). |
-| source | The Media Source ID to browse.                              |
+| source | The Media Source ID to browse.                               |
 
 
 ## See Also

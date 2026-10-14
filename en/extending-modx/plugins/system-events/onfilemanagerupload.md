@@ -14,11 +14,11 @@ Fires after files are uploaded via the manager.
 
 ## Event Parameters
 
-| Name      | Description                                                                                   |
-| --------- | --------------------------------------------------------------------------------------------- |
-| files     | An array of files from the PHP $\_FILES array.                                                |
-| directory | Target directory, relative to the media source root, the files were uploaded to.             |
-| source    | The modMediaSource object that the file was uploaded to.                                      |
+| Name      | Description                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| files     | An array of files from the PHP $\_FILES array.                                   |
+| directory | Target directory, relative to the media source root, the files were uploaded to. |
+| source    | The modMediaSource object that the file was uploaded to.                         |
 
 
 ## See Also

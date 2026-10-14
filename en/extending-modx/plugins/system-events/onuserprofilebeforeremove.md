@@ -12,10 +12,10 @@ Fires right before a User Profile is removed, in `modUserProfile::remove()`.
 
 ## Event Parameters
 
-| Name | Description |
-| ---- | ----------- |
-| userprofile | A reference to the modUserProfile object. |
-| ancestors | An array of ancestor IDs passed to `remove()`. |
+| Name        | Description                                    |
+| ----------- | ---------------------------------------------- |
+| userprofile | A reference to the modUserProfile object.      |
+| ancestors   | An array of ancestor IDs passed to `remove()`. |
 
 
 ## See Also

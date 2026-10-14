@@ -12,12 +12,12 @@ Fires after a media source is saved in the manager.
 
 ## Event Parameters
 
-| Name   | Description                                       |
-| ------ | ------------------------------------------------- |
+| Name   | Description                                                                                                                            |
+| ------ | -------------------------------------------------------------------------------------------------------------------------------------- |
 | mode   | Either 'new' (modSystemEvent::MODE\_NEW) or 'upd' (modSystemEvent::MODE\_UPD) depending on whether is a new object or an existing one. |
-| id     | The ID of the Media Source.                       |
-| source | A reference to the modMediaSource object.         |
-| object | A reference to the modMediaSource object.         |
+| id     | The ID of the Media Source.                                                                                                            |
+| source | A reference to the modMediaSource object.                                                                                              |
+| object | A reference to the modMediaSource object.                                                                                              |
 
 ## See Also
 

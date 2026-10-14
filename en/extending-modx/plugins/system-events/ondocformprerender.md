@@ -12,11 +12,11 @@ Fires before a Resource editing form is loaded in the Manager.
 
 ## Event Parameters
 
-| Name     | Description                                                            |
-| -------- | ---------------------------------------------------------------------- |
-| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).       |
-| id       | The ID of the Resource. This will be 0 for new Resources.              |
-| resource | A reference to the modResource object. Not passed for new Resources.   |
+| Name     | Description                                                          |
+| -------- | -------------------------------------------------------------------- |
+| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).     |
+| id       | The ID of the Resource. This will be 0 for new Resources.            |
+| resource | A reference to the modResource object. Not passed for new Resources. |
 
 For a new Resource the `resource` parameter is absent from the event data; before 2.4 it was `null`. Check with `isset($resource)`, not `$resource === null`.
 

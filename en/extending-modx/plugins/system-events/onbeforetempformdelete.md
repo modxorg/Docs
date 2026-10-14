@@ -14,10 +14,10 @@ Fires before a Template is deleted in the Manager.
 
 ## Event Parameters
 
-| Name     | Description                            |
-| -------- | -------------------------------------- |
-| template | A reference to the modTemplate object. |
-| id       | The ID of the Template.                |
+| Name     | Description                                           |
+| -------- | ----------------------------------------------------- |
+| template | A reference to the modTemplate object.                |
+| id       | The ID of the Template.                               |
 | object   | Alias of `template` — a reference to the same object. |
 
 

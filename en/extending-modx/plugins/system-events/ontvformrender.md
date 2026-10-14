@@ -12,11 +12,11 @@ Fires in the TV create/update controller while the page placeholders are built. 
 
 ## Event Parameters
 
-| Name | Description                                                                     |
-| ---- | ------------------------------------------------------------------------------- |
-| mode | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                 |
-| id   | The ID of the TV. This will be 0 for new TVs.                                   |
-| tv   | A reference to the modTemplateVar object. Not passed when creating a new TV.    |
+| Name | Description                                                                  |
+| ---- | ---------------------------------------------------------------------------- |
+| mode | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).             |
+| id   | The ID of the TV. This will be 0 for new TVs.                                |
+| tv   | A reference to the modTemplateVar object. Not passed when creating a new TV. |
 
 
 ## See Also

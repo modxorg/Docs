@@ -12,11 +12,11 @@ Fires after a Chunk is deleted in the Manager, from the `Element\Chunk\Remove` p
 
 ## Event Parameters
 
-| Name   | Description                                                         |
-| ------ | ------------------------------------------------------------------- |
-| id     | The ID of the Chunk.                                                |
-| chunk  | A reference to the modChunk object.                                 |
-| object | Alias of `chunk` — a reference to the same object.                  |
+| Name   | Description                                        |
+| ------ | -------------------------------------------------- |
+| id     | The ID of the Chunk.                               |
+| chunk  | A reference to the modChunk object.                |
+| object | Alias of `chunk` — a reference to the same object. |
 
 ## Example
 

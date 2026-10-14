@@ -14,11 +14,11 @@ Fires right after a Property Set is saved.
 
 ## Event Parameters
 
-| Name        | Description                                                        |
-| ----------- | ------------------------------------------------------------------ |
-| mode        | Either 'new' or 'upd', depending on the circumstance.              |
-| propertySet | A reference to the modPropertySet object.                          |
-| cacheFlag   | The cache flag passed to the save operation.                       |
+| Name        | Description                                           |
+| ----------- | ----------------------------------------------------- |
+| mode        | Either 'new' or 'upd', depending on the circumstance. |
+| propertySet | A reference to the modPropertySet object.             |
+| cacheFlag   | The cache flag passed to the save operation.          |
 
 
 ## See Also

@@ -12,10 +12,10 @@ Fires after a Context is successfully initialized.
 
 ## Event Parameters
 
-| Name       | Description                                             |
-| ---------- | ------------------------------------------------------- |
-| contextKey | The key of the Context that was initialized.            |
-| options    | An array of options used to initialize the Context.     |
+| Name       | Description                                         |
+| ---------- | --------------------------------------------------- |
+| contextKey | The key of the Context that was initialized.        |
+| options    | An array of options used to initialize the Context. |
 
 
 ## See Also

@@ -12,8 +12,8 @@ Fires after a Resource's cached page is cleared.
 
 ## Event Parameters
 
-| Name | Description                             |
-| ---- | --------------------------------------- |
+| Name | Description                                     |
+| ---- | ----------------------------------------------- |
 | id   | The ID of the Resource whose cache was cleared. |
 
 

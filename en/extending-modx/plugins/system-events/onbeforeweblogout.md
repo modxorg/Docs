@@ -14,12 +14,12 @@ Fires right before a user logs out of a non-`mgr` Context.
 
 ## Event Parameters
 
-| Name               | Description                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| **&** user         | A reference to the modUser object of the user. **Passed by reference**               |
-| userid             | The user ID of the user. (deprecated)                                                |
-| username           | The username of the user. (deprecated)                                               |
-| **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
+| Name               | Description                                                                           |
+| ------------------ | ------------------------------------------------------------------------------------- |
+| **&** user         | A reference to the modUser object of the user. **Passed by reference**                |
+| userid             | The user ID of the user. (deprecated)                                                 |
+| username           | The username of the user. (deprecated)                                                |
+| **&** loginContext | The context key this logout is occurring in. **Passed by reference**                  |
 | **&** addContexts  | Additional contexts in which the logout is also occurring in. **Passed by reference** |
 
 ## Example
