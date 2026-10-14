@@ -23,6 +23,7 @@ void sendForward (integer $id, [string|array $options = null], [boolean $sendErr
     - `error_message`: сообщение об ошибке
     - `merge`: способ объединения ресурса, находящегося в данный момент в `$modx->resource`, с целевым ресурсом. Значения `content`, `pub_date`, `unpub_date`, `richtext`, `_content` и `_processed` исключаются, а также значение системного параметра [forward_merge_excludes](building-sites/settings/forward_merge_excludes).
 - `$sendErrorPage` _(boolean)_ Пропускать ли вызов [sendErrorPage](extending-modx/modx-class/reference/modx.senderrorpage "modX.sendErrorPage"), если ресурс не существует.
+
 ## Примеры
 
 Отправьте пользователя на ресурс с идентификатором 234, фактически не меняя URL.
