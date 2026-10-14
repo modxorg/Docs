@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getCollection"
+description: "Извлекает коллекцию xPDOObjects по указанному xPDOCriteria."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection"
 Если ничего не найдено, возвращает пустой массив.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCollection()>
 
 ```php
 array getCollection (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

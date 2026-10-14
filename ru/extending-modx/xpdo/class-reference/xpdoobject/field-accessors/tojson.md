@@ -1,5 +1,6 @@
 ---
 title: "toJSON"
+description: "Возвращает JSON-представление объекта."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/tojson"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/toj
 Возвращает JSON-представление объекта.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::toJSON()>
 
 ```php
 string toJSON (

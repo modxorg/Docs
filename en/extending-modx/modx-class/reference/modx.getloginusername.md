@@ -1,5 +1,6 @@
 ---
 title: "modX.getLoginUserName"
+description: "Returns the current user name, for the current or specified context."
 _old_id: "1067"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getloginusername"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Returns the current user name, for the current or specified context.
 
 ## Syntax
-
-API Doc: [modX::getLoginUserName()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getLoginUserName())
 
 ``` php
 string getLoginUserName ([string $context = ''])

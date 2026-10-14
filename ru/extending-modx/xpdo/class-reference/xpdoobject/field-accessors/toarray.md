@@ -1,5 +1,6 @@
 ---
 title: "toArray"
+description: "Копирует поля объекта и соответствующие значения в ассоциативный массив."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/toarray"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors/toa
 Копирует поля объекта и соответствующие значения в ассоциативный массив.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::toArray()>
 
 ```php
 array toArray(

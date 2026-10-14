@@ -1,5 +1,6 @@
 ---
 title: "xPDO.fromJSON"
+description: "Преобразует исходную строку JSON в эквивалентное представление PHP."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.fromjson"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.fromjson"
 Преобразует исходную строку JSON в эквивалентное представление PHP.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::fromJSON()>
 
 ```php
 mixed fromJSON (string $src, [boolean $asArray = true])

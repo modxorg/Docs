@@ -1,5 +1,6 @@
 ---
 title: "modX.getAuthenticatedUser"
+description: "Возвращает пользователя, прошедшего аутентификацию в указанном контексте."
 translation: "extending-modx/modx-class/reference/modx.getauthenticateduser"
 ---
 
@@ -9,11 +10,11 @@ translation: "extending-modx/modx-class/reference/modx.getauthenticateduser"
 
 ## Синтаксис
 
-API Doc: [modX::getAuthenticatedUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getAuthenticatedUser())
-
 ``` php
-unknown getAuthenticatedUser ([string $contextKey = ''])
+modUser|null getAuthenticatedUser ([string $contextKey = ''])
 ```
+
+Возвращает объект `modUser`, аутентифицированный в указанном контексте, или `null`, если там никто не вошёл. Без аргумента используется текущий контекст.
 
 ## Пример
 

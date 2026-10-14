@@ -1,26 +1,28 @@
 ---
 title: "modX.getRequest"
+description: "Попробуйте загрузить класс обработчика запросов, если он еще не загружен."
 translation: "extending-modx/modx-class/reference/modx.getrequest"
 ---
 
 ## modX::getRequest
 
-Попробуйте загрузить класс обработчика запросов, если он еще не загружен. По умолчанию используется запрос mod.
+Попробуйте загрузить класс обработчика запросов, если он еще не загружен. По умолчанию — `MODX\Revolution\modRequest`.
 
 ## Синтаксис
 
-API Doc: [modX::getRequest()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getRequest())
-
 ``` php
-boolean getRequest ([$string $class = 'modRequest'], [$path $path = ''])
+boolean getRequest ([string $class = MODX\Revolution\modRequest], [string $path = ''])
 ```
+
+- `$class` _(string)_ Имя класса загружаемого обработчика запросов. Игнорируется, если задана системная настройка `modRequest.class` — настройка имеет приоритет.
+- `$path` _(string)_ В `modX` не используется: класс определяется через автозагрузчик, путь не читается.
+
+Возвращает `true`, если корректный объект обработчика запросов был загружен при этом или любом предыдущем вызове, иначе — `false`.
 
 ## Пример
 
-Загрузить пользовательский запрос класса обработчика под названием 'myrequest' из '/path/to/myrequest.class.php':
-
 ``` php
-$modx->getRequest('myRequest','/path/to/');
+$modx->request; // текущий обработчик запросов, в менеджере это экземпляр MODX\Revolution\modManagerRequest
 ```
 
 ## Смотрите также

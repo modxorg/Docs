@@ -1,6 +1,6 @@
 ---
 title: "modX.addEventListener"
-description: "modX.addEventListener adds a plugin to the eventMap within the current execution cycle"
+description: "Adds a plugin to the eventMap within the current execution cycle"
 ---
 
 ## modX::addEventListener
@@ -8,8 +8,6 @@ description: "modX.addEventListener adds a plugin to the eventMap within the cur
 Add a plugin to the `eventMap` within the current execution cycle.
 
 ## Syntax
-
-API Doc: [modX::addEventListener()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::addEventListener())
 
 ``` php
 boolean addEventListener (string $event, integer $pluginId, [string $propertySetName = ''])
@@ -19,13 +17,16 @@ boolean addEventListener (string $event, integer $pluginId, [string $propertySet
 - `$pluginId` _(integer)_ Plugin identifier to add to the event. **required**
 - `$propertySetName` _(string)_ The name of property set bound to the plugin
 
+
 ## Example
 
-Add a Plugin with ID 2 to the Event `OnChunkPrerender`:
+Add a Plugin with ID 12 to the Event `OnChunkFormPrerender`:
 
 ``` php
-$modx->addEventListener('OnChunkPrerender', 12);
+$modx->addEventListener('OnChunkFormPrerender', 12);
 ```
+
+The event name is not validated, so a listener registered for a misspelled or non-existent event fails silently.
 
 ## See Also
 

@@ -1,5 +1,6 @@
 ---
 title: "addMany"
+description: "Adds an object or collection of objects related to this class."
 _old_id: "1144"
 _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addmany"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/related-object-accessors/addmany"
 Adds an object or collection of objects related to this class.
 
 ## Syntax
-
-API Docs: [xPDOObject::addMany()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::addMany()>)
 
 ```php
 boolean addMany (

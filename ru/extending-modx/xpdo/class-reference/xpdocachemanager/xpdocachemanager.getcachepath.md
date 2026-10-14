@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.getCachePath"
+description: "Получает абсолютный путь к текущему каталогу для записи для хранения файлов кэша."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.getcachepath"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Получает абсолютный путь к текущему каталогу для записи для хранения файлов кэша.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::getCachePath()>
 
 ```php
 string getCachePath ()

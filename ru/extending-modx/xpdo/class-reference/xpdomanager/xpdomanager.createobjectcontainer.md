@@ -1,5 +1,6 @@
 ---
 title: "xPDOManager.createObjectContainer"
+description: "Создает контейнер для постоянного объекта данных."
 translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createobjectcontainer"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.create
 Создает контейнер для постоянного объекта данных. В этой реализации контейнер источника является синонимом таблицы базы данных MySQL. Имя таблицы будет сгенерировано схемой, однако связанные таблицы **не будут** созданы.
 
 ## Синтаксис
-
-API Docs: [createObjectContainer](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::createObjectContainer())
 
 ```php
 void createObjectContainer (string $className)

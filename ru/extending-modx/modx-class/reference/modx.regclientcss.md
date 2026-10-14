@@ -10,8 +10,6 @@ description: "Регистрирует CSS для внедрения внутр�
 
 ## Синтаксис
 
-API Doc: [modX::regClientCSS()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientCSS())
-
 ``` php
 void regClientCSS (string $src, [string $media = null])
 ```

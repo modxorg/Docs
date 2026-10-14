@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.where"
+description: "Добавьте условие WHERE в запрос."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where"
 ---
 
@@ -26,8 +27,6 @@ array('attribute:operator' => 'value')
 | Is Null                  | IS       | `$query->where(array('width:IS' => null));`                   |
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::where()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::where()>)
 
 ```php
 xPDOQuery where ([mixed $conditions = ''],

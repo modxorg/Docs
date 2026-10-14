@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.innerJoin"
+description: "Add an INNER JOIN clause to the query."
 _old_id: "1292"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.innerjoin"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.innerjoin"
 Add an INNER JOIN clause to the query.
 
 ## Syntax
-
-API Docs: [xPDOQuery::innerJoin()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::innerJoin())
 
 ``` php
 void innerJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])

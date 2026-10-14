@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.set"
+description: "Set a key-value pair in a cache provider."
 _old_id: "1271"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.set"
 ---
@@ -13,8 +14,6 @@ Also allows for an array of options to be passed. The current available values a
 - `format` - If equals `XPDO_CACHE_JSON`, will set the string as the only data in file (rather than a return of the string. This is useful if you want more proper parsing of JSON data.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::set()>
 
 ``` php
 boolean set (string $key, mixed &$var, [integer $lifetime = 0], [array $options = array()])

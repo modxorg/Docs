@@ -1,5 +1,6 @@
 ---
 title: "getFKDefinition"
+description: "Получить определение внешнего ключа для определенного имени класса."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/getfkdefinition"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/
 Получить определение внешнего ключа для определенного имени класса. Это обычно используется для поиска классов в отношении «один ко многим» с текущим объектом.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getFKDefinition()>
 
 ```php
 array getFKDefinition (string $alias)

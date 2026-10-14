@@ -1,5 +1,6 @@
 ---
 title: "xPDO.setOption"
+description: "Устанавливает значение параметра конфигурации xPDO."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setoption"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setoption"
 Устанавливает значение параметра конфигурации xPDO.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setOption()>
 
 ```php
 void setOption (string $key, mixed $value)

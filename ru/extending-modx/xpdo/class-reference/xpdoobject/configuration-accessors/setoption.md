@@ -1,5 +1,6 @@
 ---
 title: "setOption"
+description: "Устанавливает значение параметра для этого экземпляра xPDOObject."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/setoption"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/configuration-acces
 Устанавливает значение параметра для этого экземпляра `xPDOObject`.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::setOption()>
 
 ```php
 void setOption(

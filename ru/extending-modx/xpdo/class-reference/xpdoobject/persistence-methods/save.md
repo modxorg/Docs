@@ -1,5 +1,6 @@
 ---
 title: "save"
+description: "Сохраняет новые или измененные объекты в контейнере базы данных."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/save"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/persistence-methods
 Сохраняет новые или измененные объекты в контейнере базы данных. Также будет каскадно и сохранять любые объекты, которые были добавлены к нему с помощью методов добавления связанных объектов (addOne, addMany).
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::save()>
 
 ```php
 boolean save ([boolean|integer $cacheFlag = null])

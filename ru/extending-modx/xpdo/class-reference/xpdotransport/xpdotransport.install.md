@@ -1,5 +1,6 @@
 ---
 title: "xPDOTransport.install"
+description: "Установите vehicles в упаковке в экземпляр xPDO спонсора."
 translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.install"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.in
 Возвращает `true` в случае успеха.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::install()>
 
 ```php
 boolean install ([array $options = array ()])

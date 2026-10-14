@@ -1,5 +1,6 @@
 ---
 title: "isLazy"
+description: "Indicates if the object or specified field is lazy."
 _old_id: "1187"
 _old_uri: "2.x/class-reference/xpdoobject/state-accessors/islazy"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/state-accessors/islazy"
 Indicates if the object or specified field is lazy.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isLazy()>
 
 ``` php
 boolean isLazy ([string $key = ''])

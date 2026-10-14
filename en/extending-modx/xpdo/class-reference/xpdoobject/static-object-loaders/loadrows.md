@@ -1,5 +1,6 @@
 ---
 title: "_loadRows"
+description: "This function is responsible for loading a result set from the database and returning a PDOStatement object representing the result set."
 _old_id: "1142"
 _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadrows"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/static-object-loaders/loadrows"
 This function is responsible for loading a result set from the database and returning a PDOStatement object representing the result set.
 
 ## Syntax
-
-API Doc: [_loadRows](http://api.modx.com/xpdo/om/xPDOObject.html#_loadRows)
 
 ``` php
 static PDOStatement|null _loadRows(

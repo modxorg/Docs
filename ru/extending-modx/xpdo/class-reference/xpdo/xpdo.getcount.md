@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getCount"
+description: "Извлекает количество xPDOObjects по указанному массиву или xPDOCriteria."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcount"
 ---
 
@@ -11,8 +12,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getcount"
 `getCount()` - это ярлык, который автоматически заменяет ваш `select()` на `COUNT (DISTINCT primaryKeyField)`, основываясь на определении первичного ключа указанного вами класса. Группировка по должна работать, если это имеет смысл с условием выбора `COUNT (DISTINCT primaryKeyField)`.
 
 ### Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCount()>
 
 ```php
 integer getCount (string $className, [mixed $criteria = null])

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.setLogLevel"
+description: "Устанавливает состояние уровня ведения журнала для экземпляра XPDO."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setloglevel"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.setloglevel"
 Устанавливает состояние уровня ведения журнала для экземпляра XPDO.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setLogLevel()>
 
 ## Пример
 

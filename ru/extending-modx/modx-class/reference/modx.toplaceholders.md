@@ -1,5 +1,6 @@
 ---
 title: "modX.toPlaceholders"
+description: "Устанавливает плейсхолдеры из значений, хранящихся в массивах и объектах."
 translation: "extending-modx/modx-class/reference/modx.toplaceholders"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/modx-class/reference/modx.toplaceholders"
 Каждый рекурсивный уровень в массиве `$placeholder` добавляет префикс, создавая путь доступа с использованием необязательного разделителя.
 
 ## Синтаксис
-
-API Doc: [modX::toPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholders())
 
 ``` php
 array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])

@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.copyFile"
+description: "Копирует файл из исходного файла в целевой каталог."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.copyfile"
 ---
 
@@ -15,8 +16,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `new_file_permissions` - Разрешения для установки нового файла, если `copy_preserve_permissions` равно `false`. По умолчанию `0664`.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::copyFile()>
 
 ```php
 boolean|array copyFile (string $source, string $target, [array $options = array()])

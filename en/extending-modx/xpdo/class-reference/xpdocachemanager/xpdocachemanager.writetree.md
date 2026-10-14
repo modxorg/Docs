@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.writeTree"
+description: "Recursively writes a directory tree of files to the filesystem."
 _old_id: "1273"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.writetree"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.writetree"
 Recursively writes a directory tree of files to the filesystem.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::writeTree()>
 
 ``` php
 boolean writeTree (string $dirname, [array $options = array()])

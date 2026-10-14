@@ -1,5 +1,6 @@
 ---
 title: "isDirty"
+description: "Показывает, изменено ли поле объекта (или объект ещё ни разу не сохраняли)."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isdirty"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isd
 Показывает, изменено ли **поле** объекта (или объект ещё ни разу не сохраняли). Имя поля обязательно. Перегрузки «грязный ли весь объект» нет.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isDirty()>
 
 ```php
 boolean isDirty (string $key)

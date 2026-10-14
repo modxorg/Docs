@@ -1,5 +1,6 @@
 ---
 title: "xPDOManager.createSourceContainer"
+description: "Создает физический контейнер данных, представленный источником данных."
 translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.createsourcecontainer"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.create
 Создает физический контейнер данных, представленный источником данных.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::createSourceContainer()>
 
 ```php
 void createSourceContainer (

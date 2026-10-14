@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientStartupHTMLBlock"
+description: "Регистрирует HTML, который будет введен перед закрывающим тегом HEAD."
 translation: "extending-modx/modx-class/reference/modx.regclientstartuphtmlblock"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.regclientstartuphtmlblock
 Регистрирует HTML, который будет введен перед закрывающим тегом HEAD.
 
 ## Синтаксис
-
-API Doc: [modX::regClientStartupHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupHTMLBlock())
 
 ``` php
 void regClientStartupHTMLBlock (string $html)

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getObject"
+description: "Извлекает один экземпляр объекта по заданным критериям."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getobject"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getobject"
 Критериями могут быть значения первичного ключа, массив значений первичного ключа (для нескольких объектов первичного ключа) или объект `xPDOCriteria`. Если параметр `$ criterts` не указан, класс не найден или объект не может быть найден по предоставленным критериям, возвращается значение null.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getObject()>
 
 ```php
 xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

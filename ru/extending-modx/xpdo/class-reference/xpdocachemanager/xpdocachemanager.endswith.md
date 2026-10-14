@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.endsWith"
+description: "Видит, заканчивается ли строка определенным шаблоном или набором шаблонов."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.endswith"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Видит, заканчивается ли строка определенным шаблоном или набором шаблонов. Полезно для проверки расширений файлов.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::endsWith()>
 
 ```php
 boolean endsWith (string $string, string|array $pattern)

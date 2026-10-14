@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getFields"
+description: "Получает список полей (или столбцов) для объекта по имени класса."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getfields"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getfields"
 Это включает значения по умолчанию для каждого поля и используется самими объектами для создания своих начальных атрибутов на основе наследования классов.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getFields()>
 
 ```php
 array getFields (string $className)

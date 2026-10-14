@@ -1,5 +1,6 @@
 ---
 title: "getSelectColumns"
+description: "Получает набор имен столбцов из xPDOObject для использования в запросах SQL."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/getselectcolumns"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/
 Получает набор имен столбцов из `xPDOObject` для использования в запросах SQL.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getSelectColumns()>
 
 ```php
 static string getSelectColumns (

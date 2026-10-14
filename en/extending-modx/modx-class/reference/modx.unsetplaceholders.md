@@ -1,5 +1,6 @@
 ---
 title: "modX.unsetPlaceholders"
+description: "Unset multiple placeholders, either by prefix or an array of keys."
 _old_id: "1113"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.unsetplaceholders"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Unset multiple placeholders, either by prefix or an array of keys.
 
 ## Syntax
-
-API Doc: [modX::unsetPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::unsetPlaceholders())
 
 ``` php
 void unsetPlaceholders (string|array $keys)

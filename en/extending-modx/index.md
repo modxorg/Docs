@@ -1,5 +1,6 @@
 ---
 title: "Extending MODX"
+description: "This section contains information on starting development in MODX."
 sortorder: 3
 _old_id: "99"
 _old_uri: "2.x/developing-in-modx"
@@ -16,4 +17,5 @@ This section contains information on starting development in MODX.
     - [Creating Components](extending-modx/creating-components)
     - [Transport Packages](extending-modx/transport-packages)
 3. [Advanced Development](extending-modx/tutorials)
-4. [Other Development Resources](index#other-resources)
+4. [The modX Class](extending-modx/modx-class)
+5. [Other Development Resources](index#other-resources)

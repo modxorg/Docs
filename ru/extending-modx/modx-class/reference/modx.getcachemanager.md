@@ -1,5 +1,6 @@
 ---
 title: "modX.getCacheManager"
+description: "Получите расширенный экземпляр xPDOCacheManager, отвечающий за кэширование MODX."
 translation: "extending-modx/modx-class/reference/modx.getcachemanager"
 ---
 
@@ -11,14 +12,14 @@ translation: "extending-modx/modx-class/reference/modx.getcachemanager"
 
 ## Синтаксис
 
-API Doc: [modX::getCacheManager()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getCacheManager())
-
 ``` php
-object getCacheManager([string $class = ''], [[array $options = array('path' => XPDO_CORE_PATH, 'ignorePkg' => true)]])
+modCacheManager getCacheManager([string $class = 'xPDO\Cache\xPDOCacheManager'], [array $options = array('path' => XPDO_CORE_PATH, 'ignorePkg' => true)])
 ```
 
-- `$class` _(string)_ Имя класса кеш-менеджера для загрузки 
-- `$options` _(array)_ Массив параметров для отправки экземпляру диспетчера кеша 
+- `$class` _(string)_ В `modX` игнорируется: класс берётся из системной настройки `modCacheManager.class` (по умолчанию `MODX\Revolution\modCacheManager`)
+- `$options` _(array)_ В `modX` игнорируется; оба аргумента влияют только на родительский `xPDO::getCacheManager`
+
+Метод возвращает общий экземпляр `modCacheManager`, зарегистрированный для этого объекта `modX`, создавая его при первом обращении.
 
 ## Пример
 

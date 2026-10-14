@@ -1,5 +1,6 @@
 ---
 title: "getOne"
+description: "Получает объект, связанный с этим экземпляром посредством отношения внешнего ключа."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-acce
 Используйте это для 1:? (one:zero-or-one) или отношения 1:1, которые можно различить, установив обнуляемость поля, представляющего внешний ключ.
 
 ## Синтаксис
-
-API Docs: [xPDOObject::getOne()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#%5CxPDOObject::getOne()>)
 
 ```php
 xPDOObject|null &getOne (

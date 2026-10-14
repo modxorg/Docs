@@ -1,5 +1,6 @@
 ---
 title: "toArray"
+description: "Copies the object fields and corresponding values to an associative array."
 _old_id: "1217"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/toarray"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/field-accessors/toarray"
 Copies the object fields and corresponding values to an associative array.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::toArray()>
 
 ``` php
 array toArray(

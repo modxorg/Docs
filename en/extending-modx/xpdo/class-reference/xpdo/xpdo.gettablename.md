@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getTableName"
+description: "Gets the actual run-time table name from a specified class name."
 _old_id: "1248"
 _old_uri: "2.x/class-reference/xpdo/xpdo.gettablename"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.gettablename"
 Gets the actual run-time table name from a specified class name.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getTableName()>
 
 ``` php
 string getTableName (string $className, [boolean $includeDb = false])

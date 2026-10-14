@@ -1,5 +1,6 @@
 ---
 title: "isLazy"
+description: "Указывает, является ли объект или указанное поле lazy."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/islazy"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isl
 Указывает, является ли объект или указанное поле lazy.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isLazy()>
 
 ```php
 boolean isLazy ([string $key = ''])

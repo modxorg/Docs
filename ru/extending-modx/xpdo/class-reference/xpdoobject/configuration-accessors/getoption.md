@@ -1,5 +1,6 @@
 ---
 title: "getOption"
+description: "Получает значение параметра для этого экземпляра xPDOObject, используя параметры xPDO, если не существует конкретного параметра."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/configuration-acces
 Получает значение параметра для этого экземпляра `xPDOObject`, используя параметры xPDO, если не существует конкретного параметра.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getOption()>
 
 ```php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )

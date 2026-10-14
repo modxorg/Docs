@@ -1,5 +1,6 @@
 ---
 title: "xPDOGenerator.parseSchema"
+description: "Анализирует XML-схему XPDO и создает из нее классы и файлы карт."
 translation: "extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.parseschema"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdogenerator/xpdogenerator.pa
 Анализирует XML-схему XPDO и создает из нее классы и файлы карт.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdogenerator.class.html#\xPDOGenerator::parseSchema()>
 
 ```php
 boolean parseSchema (string $schemaFile, [string $outputDir = ''], [boolean $compile = false])

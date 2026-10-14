@@ -1,5 +1,6 @@
 ---
 title: "xPDO.query"
+description: "Executes an SQL statement, returning a result set as a PDOStatement object."
 _old_id: "1253"
 _old_uri: "2.x/class-reference/xpdo/xpdo.query"
 ---
@@ -12,8 +13,6 @@ Executes an SQL statement, returning a result set as a PDOStatement object.
 This can be a good way to issue reporting queries without having to worry about the complex syntax normally required by xPDO.
 
 ## Syntax
-
-API Docs: see <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::query()>
 
 ```php
 xPDOObject|false query (string $statement)

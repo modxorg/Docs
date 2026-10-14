@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.matches"
+description: "Checks whether a string matches the given pattern."
 _old_id: "1269"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.matches"
 ---
@@ -7,8 +8,6 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.matches"
 ## xPDOCacheManager::matches
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::matches()>
 
 ``` php
 boolean matches (string $string, string|array $pattern)

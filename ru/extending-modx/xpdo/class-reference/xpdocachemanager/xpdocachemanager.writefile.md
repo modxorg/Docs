@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.writeFile"
+description: "Записывает файл в файловую систему."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.writefile"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Записывает файл в файловую систему.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::writeFile()>
 
 ```php
 boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])

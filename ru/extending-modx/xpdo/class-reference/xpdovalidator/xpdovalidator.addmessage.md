@@ -1,5 +1,6 @@
 ---
 title: "xPDOValidator.addMessage"
+description: "Добавить сообщение проверки в стек."
 translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.addmessage"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdovalidator/xpdovalidator.ad
 Добавить сообщение проверки в стек.
 
 ## Синтаксис
-
-API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::addMessage()>
 
 ```php
 void addMessage (string $field, string $name, [mixed $message = null])

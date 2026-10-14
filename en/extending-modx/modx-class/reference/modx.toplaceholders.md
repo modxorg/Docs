@@ -1,5 +1,6 @@
 ---
 title: "modX.toPlaceholders"
+description: "Sets placeholders from values stored in arrays and objects."
 _old_id: "1110"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholders"
 ---
@@ -11,8 +12,6 @@ Sets placeholders from values stored in arrays and objects.
 Each recursive level in the **$placeholders** array adds to the prefix, building an access path using an optional separator.
 
 ## Syntax
-
-API Doc: [modX::toPlaceholders()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholders())
 
 ``` php
 array toPlaceholders (array|object  $subject, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])

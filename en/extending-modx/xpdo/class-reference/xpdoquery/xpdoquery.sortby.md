@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.sortby"
+description: "Add an ORDER BY clause to the query."
 _old_id: "1299"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.sortby"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.sortby"
 Add an ORDER BY clause to the query.
 
 ## Syntax
-
-API Docs: [xPDOQuery::sortby()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::sortby())
 
 ``` php
 xPDOQuery sortby (string $column, [string $direction = 'ASC'])

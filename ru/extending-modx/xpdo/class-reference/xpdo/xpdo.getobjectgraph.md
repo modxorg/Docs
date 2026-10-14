@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getObjectGraph"
+description: "Извлекает один экземпляр объекта и связанные объекты, определенные графиком, по заданным критериям."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph"
 ---
 
@@ -15,8 +16,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph"
 Чтобы эффективно использовать `getObjectGraph`, вам необходимо понять модель данных, лежащую в основе вашего объекта. Стоит быть внимательным с файлом схемы XML, который определяет ваши объекты и их отношения. Если вы попытаетесь присоединиться к другому объекту, когда такого отношения не существует, этот метод завершится ошибкой!
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getObjectGraph()>
 
 ```php
 xPDOObject|null getObjectGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

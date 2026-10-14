@@ -1,5 +1,6 @@
 ---
 title: "xPDO.query"
+description: "Выполняет инструкцию SQL, возвращая набор результатов в виде объекта PDOStatement."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.query"
 ---
 
@@ -11,8 +12,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.query"
 Это может быть хорошим способом создания отчетов, не беспокоясь о сложном синтаксисе, обычно требуемом xPDO.
 
 ## Синтаксис
-
-API Docs: Смотри <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::query()>
 
 ```php
 xPDOObject|false query (string $statement)

@@ -1,5 +1,6 @@
 ---
 title: "modX.hasPermission"
+description: "Возвращает true, если у пользователя есть указанное разрешение политики в текущем контексте ($modx->context)."
 translation: "extending-modx/modx-class/reference/modx.haspermission"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/modx-class/reference/modx.haspermission"
 Значит `$modx->hasPermission('publish_document')` в коде менеджера видит только Context Access на **`mgr`**. Та же выдача на другом контексте эту проверку не закрывает. См. [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
 
 ## Синтаксис
-
-API Doc: [modX::hasPermission()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::hasPermission())
 
 ``` php
 boolean hasPermission (string|array $pm)

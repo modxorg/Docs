@@ -1,5 +1,6 @@
 ---
 title: "toJSON"
+description: "Returns a JSON representation of the object."
 _old_id: "1218"
 _old_uri: "2.x/class-reference/xpdoobject/field-accessors/tojson"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/field-accessors/tojson"
 Returns a JSON representation of the object.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::toJSON()>
 
 ``` php
 string toJSON (

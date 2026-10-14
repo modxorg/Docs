@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.select"
+description: "Specify columns to return from the SQL query."
 _old_id: "1297"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.select"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.select"
 Specify columns to return from the SQL query.
 
 ## Syntax
-
- API Docs: [xPDOQuery::select()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::select())
 
 ``` php
 getSelectColumns($className, $tableAlias= '', $columnPrefix= '', $columns= array (), $exclude= false)

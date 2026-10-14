@@ -1,5 +1,6 @@
 ---
 title: "modX.checkSession"
+description: "Checks to see if the user has a session in the specified context."
 _old_id: "1054"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.checksession"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Checks to see if the user has a session in the specified context.
 
 ## Syntax
-
-API Doc: [modX::checkSession()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::checkSession())
 
 ``` php
 boolean checkSession ([string $sessionContext = 'web'])

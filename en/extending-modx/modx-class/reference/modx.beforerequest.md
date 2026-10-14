@@ -5,9 +5,11 @@ description: "Removes database placeholders before the web request continues"
 
 ## modX::beforeRequest
 
-`modRequest::handleRequest()` calls it after the Resource identifier is resolved and before `OnWebPageInit` fires. The method drops the `+username`, `+password`, `+dbname` and `+host` placeholders that `initialize()` copied from the config.
+`modRequest::handleRequest()` calls it after the Resource identifier is resolved and before `OnWebPageInit` fires. The method removes the `+username`, `+password`, `+dbname` and `+host` placeholders.
 
-With `filter_config_placeholders` enabled (the default), `initialize()` already dropped the first three. This call drops `+host` as well and runs regardless of the setting. Only front-end requests reach it; manager and connector requests never call it.
+`initialize()` copies config values into `+`-prefixed placeholders. With `filter_config_placeholders` enabled (the default), the credentials (`username`, `password`, `dbname`, …) are stripped from the config before that copy. `+username`, `+password` and `+dbname` therefore only appear when the setting is disabled; `beforeRequest()` removes them either way.
+
+The 3.x config has no `host` key (only `http_host`), so `initialize()` never creates `+host`. The call guards against it being set elsewhere, as in the example below. Only front-end requests reach `beforeRequest()` — manager and connector requests never call it.
 
 ## Syntax
 

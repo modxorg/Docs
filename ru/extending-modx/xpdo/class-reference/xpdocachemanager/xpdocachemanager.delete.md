@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.delete"
+description: "Удаление пары ключ-значение из провайдера кэша."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.delete"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `cache_ext` - По умолчанию используется `.cache.php`. Полезно, если вы хотите удалить не кеш-файлы из каталога `cache/`.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::delete()>
 
 ```php
 boolean delete (string $key, [array $options = array()])

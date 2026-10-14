@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.andCondition"
+description: "Добавьте условие AND в предложение WHERE."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.andcondition"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.andconditi
 Добавьте условие `AND` в предложение `WHERE`.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::andCondition()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::andCondition()>)
 
 ```php
 void andCondition ( $conditions, [ $binding = null], [ $group = 0])

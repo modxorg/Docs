@@ -1,5 +1,6 @@
 ---
 title: "modX.getParentIds"
+description: "Получает все идентификаторы родительского ресурса для данного ресурса."
 translation: "extending-modx/modx-class/reference/modx.getparentids"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.getparentids"
 Получает все идентификаторы родительского ресурса для данного ресурса.
 
 ## Синтаксис
-
-API Doc: [modX::getParentIds()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getParentIds())
 
 ``` php
 array getParentIds ([integer $id = null], [integer $height = 10], [array $options = array()] )

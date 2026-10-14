@@ -10,8 +10,6 @@ description: "Получение текущего аутентифицирова
 
 ## Синтаксис
 
-API Doc: [modX::getUser()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getUser())
-
 ``` php
 modUser getUser ([string $contextKey = ''], [bool $forceLoadSettings = false])
 ```

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getOption"
+description: "Get an xPDO configuration option value by key."
 _old_id: "1247"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getoption"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getoption"
 Get an xPDO configuration option value by key.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getOption()>
 
 ``` php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )

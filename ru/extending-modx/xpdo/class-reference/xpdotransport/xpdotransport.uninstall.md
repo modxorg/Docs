@@ -1,5 +1,6 @@
 ---
 title: "xPDOTransport.uninstall"
+description: "Удалите vehicles в пакете из экземпляра спонсора xPDO."
 translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.uninstall"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdotransport/xpdotransport.un
 Удалите vehicles в пакете из экземпляра спонсора xPDO.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_transport_xpdotransport.class.html#\xPDOTransport::uninstall()>
 
 ```php
 boolean uninstall ([array $options = array ()])

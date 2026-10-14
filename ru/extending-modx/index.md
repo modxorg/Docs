@@ -22,4 +22,5 @@ sortorder: 3
     - [Создание компонентов](extending-modx/creating-components)
     - [Транспортные пакеты](extending-modx/transport-packages)
 3. [Продвинутая разработка](extending-modx/tutorials)
-4. [Другие ресурсы для разработки](index#other-resources)
+4. [Класс modX](extending-modx/modx-class)
+5. [Другие ресурсы для разработки](index#other-resources)

@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientStartupScript"
+description: "Register JavaScript to be injected inside the HEAD tag of a resource."
 _old_id: "1094"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclientstartupscript"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Register JavaScript to be injected inside the HEAD tag of a resource.
 
 ## Syntax
-
-API Doc: [modX::regClientStartupScript()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientStartupScript())
 
 ``` php
 void regClientStartupScript (string $src, [boolean $plaintext = false])
@@ -25,11 +24,7 @@ $modx->regClientStartupScript('assets/js/onload.js');
 ```
 
 ``` php
-$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-```
-
-``` php
-$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
+$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
 
 ## See Also

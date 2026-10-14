@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getCollectionGraph"
+description: "Retrieves a collection of xPDOObjects and related objects by the specified xPDOCriteria."
 _old_id: "1239"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getcollectiongraph"
 ---
@@ -11,8 +12,6 @@ Retrieves a collection of `xPDOObjects` and related objects by the specified `xP
 If none are found, returns an empty array.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getCollectionGraph()>
 
 ``` php
 array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

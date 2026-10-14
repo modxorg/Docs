@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.getCacheProvider"
+description: "Получает экземпляр поставщика, который реализует интерфейс xPDOCache."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.getcacheprovider"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 Получает экземпляр поставщика, который реализует интерфейс `xPDOCache`. По умолчанию используется `xPDOFileCache`.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::getCacheProvider()>
 
 ```php
 void &getCacheProvider ([ $key = ''], [ $options = array()])

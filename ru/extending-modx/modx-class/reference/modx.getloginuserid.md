@@ -1,5 +1,6 @@
 ---
 title: "modX.getLoginUserID"
+description: "Возвращает текущий идентификатор пользователя для текущего или указанного контекста."
 translation: "extending-modx/modx-class/reference/modx.getloginuserid"
 ---
 
@@ -9,11 +10,11 @@ translation: "extending-modx/modx-class/reference/modx.getloginuserid"
 
 ## Синтаксис
 
-API Doc: [modX::getLoginUserID()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getLoginUserID())
-
 ``` php
-string getLoginUserID ([string $context = ''])
+integer getLoginUserID ([string $context = ''])
 ```
+
+Возвращает ID пользователя как целое число; `0`, если в контексте никто не вошёл.
 
 ## Пример
 

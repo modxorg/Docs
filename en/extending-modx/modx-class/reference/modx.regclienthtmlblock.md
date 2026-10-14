@@ -1,5 +1,6 @@
 ---
 title: "modX.regClientHTMLBlock"
+description: "Register HTML to be injected before the closing BODY tag."
 _old_id: "1091"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.regclienthtmlblock"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Register HTML to be injected before the closing BODY tag.
 
 ## Syntax
-
-API Doc: [modX::regClientHTMLBlock()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientHTMLBlock())
 
 ``` php
 void regClientHTMLBlock (string $html)

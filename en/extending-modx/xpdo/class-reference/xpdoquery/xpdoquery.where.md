@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.where"
+description: "Add a WHERE condition to the query."
 _old_id: "1300"
 _old_uri: "2.x/class-reference/xpdoquery/xpdoquery.where"
 ---
@@ -27,8 +28,6 @@ array('attribute:operator' => 'value')
 | Is Null                  | IS       | `$query->where(array('width:IS' => null));`                   |
 
 ## Syntax
-
-API Docs: [xPDOQuery::where()](http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::where())
 
 ``` php
 xPDOQuery where ([mixed $conditions = ''],

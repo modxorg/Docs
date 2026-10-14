@@ -1,5 +1,6 @@
 ---
 title: "modX.getRegisteredClientStartupScripts"
+description: "Возвращает все зарегистрированные блоки запуска CSS, JavaScript или HTML."
 translation: "extending-modx/modx-class/reference/modx.getregisteredclientstartupscripts"
 ---
 
@@ -9,15 +10,13 @@ translation: "extending-modx/modx-class/reference/modx.getregisteredclientstartu
 
 ## Синтаксис
 
-API Doc: [modX::getRegisteredClientStartupScripts()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getRegisteredClientStartupScripts())
-
 ``` php
 string getRegisteredClientStartupScripts ()
 ```
 
 ## Пример
 
-Соберите все зарегистрированные скрипты в массив.
+Получить все зарегистрированные стартовые скрипты одной строкой (записи CSS/JS/HTML, объединённые переводами строки).
 
 ``` php
 $startupScripts = $modx->getRegisteredClientStartupScripts();

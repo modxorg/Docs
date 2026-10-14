@@ -1,35 +1,36 @@
 ---
 title: "modX.lexicon"
-description: "lexicon() grabs a processed Lexicon Entry"
+description: "Returns a processed Lexicon entry"
 ---
 
 ## modX::lexicon
 
-Grabs a processed Lexicon Entry.
+Returns a processed Lexicon entry.
 
-This may also be a `modLexicon` object as well, if the Lexicon has been loaded. PHP supports having objects and methods with the same name.
+The method itself always returns a string or `null`. The property `$modx->lexicon` of the same name holds the `modLexicon` service object — PHP allows a property and a method to share a name.
 
 ## Syntax
 
-API Doc: [modX::lexicon()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::lexicon())
-
 ``` php
-string lexicon (string $key, [array $params = array()], [$language = ''])
+string|null lexicon (string $key, [array $params = array()], [string $language = ''])
 ```
 
 - `$key` _(string)_ lexicon key. **required**
-- `$params` _(array)_ array of additional parameters for passing values into the record, see second example below
-- `$language` _(string)_ language key, `cultureKey` value will be used by default.
+- `$params` _(array)_ values substituted into the placeholders of the entry
+- `$language` _(string)_ language key; the `cultureKey` value is used by default.
+
+Returns the translated string. Returns `null` if the entry does not exist or the lexicon service has not been initialized. In that case the log gets a "Culture not initialized; cannot use lexicon." error.
+
 
 ## Example
 
-Output the translation of the 'welcome\_message' Entry, and sets the 'name' Placeholder in it.
+Output the translation of the `welcome_message` entry with the `name` Placeholder filled in:
 
 ``` php
 echo $modx->lexicon('welcome_message', array('name' => 'John'), 'en');
 ```
 
-The above example assumes a message that contains a placeholder for "name", e.g.
+The example assumes a lexicon entry with a `name` placeholder:
 
 ``` php
 $_lang['welcome_message'] = 'Hello [[+name]]!  How are you today?';

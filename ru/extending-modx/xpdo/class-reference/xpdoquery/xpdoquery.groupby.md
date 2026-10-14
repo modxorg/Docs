@@ -1,5 +1,6 @@
 ---
 title: "xPDOQuery.groupby"
+description: "Добавьте предложение GROUP BY к запросу."
 translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.groupby"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.groupby"
 Добавьте предложение `GROUP BY` к запросу.
 
 ## Синтаксис
-
-API Docs: [xPDOQuery::groupby()](<http://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoquery.class.html#xPDOQuery::groupby()>)
 
 ```php
 xPDOQuery groupby (string $column, [string $direction = ''])

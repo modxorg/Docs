@@ -1,5 +1,6 @@
 ---
 title: "addValidationRule"
+description: "Добавяет правило проверки в поле объекта для этого экземпляра."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/addvalidationrule"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/addvalid
 Добавяет правило проверки в поле объекта для этого экземпляра.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::addValidationRule()>
 
 ```php
 void addValidationRule (

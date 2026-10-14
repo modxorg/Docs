@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getDebug"
+description: "Возвращает состояние отладки для соединения XPDO."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getdebug"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getdebug"
 Возвращает состояние отладки для соединения XPDO.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getDebug()>
 
 ```php
 boolean getDebug ()

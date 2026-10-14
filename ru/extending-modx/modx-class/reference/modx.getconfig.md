@@ -1,5 +1,6 @@
 ---
 title: "modX.getConfig"
+description: "Получение конфигурации для сайта."
 translation: "extending-modx/modx-class/reference/modx.getconfig"
 ---
 
@@ -9,11 +10,11 @@ translation: "extending-modx/modx-class/reference/modx.getconfig"
 
 ## Синтаксис
 
-API Doc: [modX::getConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getConfig())
-
 ``` php
-array getConfig ()
+array|null getConfig ()
 ```
+
+Возвращает конфигурацию в виде ассоциативного массива или `null`, если основную конфигурацию не удалось загрузить (это также пишется в лог как фатальная ошибка).
 
 ## Пример
 

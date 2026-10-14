@@ -1,5 +1,6 @@
 ---
 title: "xPDO.addPackage"
+description: "Загружает классы ORM-отображения xPDO, которые описывают объекты вашего пакета."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.addpackage"
 xPDO опирается на файл `metadata.{dbtype}.php` в каталоге пакета (`$path` + `$pkg`), например `metadata.mysql.php`. В нём перечислены активные классы и то, какие из них расширяют ядро. По смыслу это похоже на автозагрузку моделей пакета.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::addPackage()>
 
 ```php
 boolean addPackage (

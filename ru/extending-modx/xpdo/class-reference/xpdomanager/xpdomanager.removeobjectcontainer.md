@@ -1,5 +1,6 @@
 ---
 title: "xPDOManager.removeObjectContainer"
+description: "Удаляет таблицу, если она существует."
 translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.removeobjectcontainer"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdomanager/xpdomanager.remove
 Это будет работать только в том случае, если для таблицы существует соответствующий класс xPDO и его пакет загружен. MODX не удалит таблицу, если слой ORM не определил таблицу.
 
 ## Синтаксис
-
-API Docs: [removeObjectContainer](https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::removeObjectContainer())
 
 ```php
 int removeObjectContainer (string $className)

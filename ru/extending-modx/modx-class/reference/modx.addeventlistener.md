@@ -22,11 +22,13 @@ boolean addEventListener (string $event, integer $pluginId, [string $propertySet
 
 ## Пример
 
-Добавить плагин с идентификатором 2 к событию `OnChunkPrerender`:
+Добавить плагин с идентификатором 12 к событию `OnChunkFormPrerender`:
 
 ``` php
-$modx->addEventListener('OnChunkPrerender', 12);
+$modx->addEventListener('OnChunkFormPrerender', 12);
 ```
+
+Имя события не проверяется, поэтому слушатель, зарегистрированный для несуществующего или ошибочно написанного события, молча не сработает.
 
 ## Смотрите также
 

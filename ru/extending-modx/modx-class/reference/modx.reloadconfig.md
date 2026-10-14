@@ -1,5 +1,6 @@
 ---
 title: "modX.reloadConfig"
+description: "Перезагружает настройки конфигурации."
 translation: "extending-modx/modx-class/reference/modx.reloadconfig"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.reloadconfig"
 Перезагружает настройки конфигурации. Полезно в тех случаях, когда вы загружали некоторые настройки динамически.
 
 ## Синтаксис
-
-API Doc: [modX::reloadConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::reloadConfig())
 
 ``` php
 array reloadConfig ()

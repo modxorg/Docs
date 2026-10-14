@@ -12,15 +12,15 @@ description: "lexicon() получает обработанную запись �
 
 ## Синтаксис
 
-API Doc: [modX::lexicon()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::lexicon())
-
 ``` php
-string lexicon (string $key, [array $params = array()], [$language = ''])
+string|null lexicon (string $key, [array $params = array()], [string $language = ''])
 ```
 
 - `$key` _(string)_ ключ словаря. **обязателен**
-- `$params` _(array)_ массив дополнительных параметров для передачи значений внутрь записи, смотрите второй пример ниже.
+- `$params` _(array)_ значения, подставляемые в плейсхолдеры записи
 - `$language` _(string)_ ключ языка, иначе значение `cultureKey` будет использовано по умолчанию.
+
+Возвращает переведённую строку. Возвращает `null`, если записи нет или служба лексикона не инициализирована. В этом случае в лог попадает ошибка "Culture not initialized; cannot use lexicon."
 
 ## Пример
 

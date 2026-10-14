@@ -1,5 +1,6 @@
 ---
 title: "xPDOManager.createSourceContainer"
+description: "Creates the physical data container represented by a data source."
 _old_id: "1280"
 _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.createsourcecontainer"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdomanager/xpdomanager.createsourcecontainer"
 Creates the physical data container represented by a data source.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdomanager.class.html#\xPDOManager::createSourceContainer()>
 
 ``` php
 void createSourceContainer (

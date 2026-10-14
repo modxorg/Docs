@@ -1,5 +1,6 @@
 ---
 title: "isDirty"
+description: "Indicates if an object field has been modified (or the object has never been saved)."
 _old_id: "1186"
 _old_uri: "2.x/class-reference/xpdoobject/state-accessors/isdirty"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/state-accessors/isdirty"
 Indicates if an object **field** has been modified (or the object has never been saved). You must pass the field name. There is no overload that checks the whole object.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::isDirty()>
 
 ``` php
 boolean isDirty (string $key)

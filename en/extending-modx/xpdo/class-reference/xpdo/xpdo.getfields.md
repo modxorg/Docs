@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getFields"
+description: "Gets a list of fields (or columns) for an object by class name."
 _old_id: "1242"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getfields"
 ---
@@ -11,8 +12,6 @@ Gets a list of fields (or columns) for an object by class name.
 This includes default values for each field and is used by the objects themselves to build their initial attributes based on class inheritance.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getFields()>
 
 ``` php
 array getFields (string $className)

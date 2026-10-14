@@ -1,13 +1,12 @@
 ---
 title: "xPDOCacheManager.matches"
+description: "Проверяет, соответствует ли строка заданному шаблону."
 translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.matches"
 ---
 
 ## xPDOCacheManager::matches
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::matches()>
 
 ```php
 boolean matches (string $string, string|array $pattern)

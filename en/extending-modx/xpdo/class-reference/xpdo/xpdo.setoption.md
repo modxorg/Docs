@@ -1,5 +1,6 @@
 ---
 title: "xPDO.setOption"
+description: "Sets an xPDO configuration option value."
 _old_id: "1257"
 _old_uri: "2.x/class-reference/xpdo/xpdo.setoption"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.setoption"
 Sets an xPDO configuration option value.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setOption()>
 
 ``` php
 void setOption (string $key, mixed $value)

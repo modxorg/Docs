@@ -1,5 +1,6 @@
 ---
 title: "_loadInstance"
+description: "Эта функция отвечает за превращение строки набора результатов в экземпляр xPDOObject соответствующего класса."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/loadinstance"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/static-object-loade
 Эта функция отвечает за превращение строки набора результатов в экземпляр `xPDOObject` соответствующего класса.
 
 ## Синтаксис
-
-API Doc: [\_loadInstance](http://api.modx.com/xpdo/om/xPDOObject.html#_loadInstance)
 
 ```php
 static xPDOObject _loadInstance(

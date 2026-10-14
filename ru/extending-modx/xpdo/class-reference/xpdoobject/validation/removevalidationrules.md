@@ -1,5 +1,6 @@
 ---
 title: "removeValidationRules"
+description: "Удаляет одно или несколько правил проверки из этого экземпляра."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/removevalidationrules"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/removeva
 Удаляет одно или несколько правил проверки из этого экземпляра.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::removeValidationRules()>
 
 ```php
 void removeValidationRules ([string $field = null], [array $rules = array()])

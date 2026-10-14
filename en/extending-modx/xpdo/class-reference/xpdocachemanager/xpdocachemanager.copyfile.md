@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.copyFile"
+description: "Copies a file from a source file to a target directory."
 _old_id: "1260"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.copyfile"
 ---
@@ -16,8 +17,6 @@ Copies a file from a source file to a target directory. Takes the following opti
 - `new_file_permissions` - The permissions to set the new file to if  `copy_preserve_permissions` is false. Defaults to 0664.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::copyFile()>
 
 ``` php
 boolean|array copyFile (string $source, string $target, [array $options = array()])

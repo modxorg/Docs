@@ -1,5 +1,6 @@
 ---
 title: "xPDOCacheManager.writeFile"
+description: "Writes a file to the filesystem."
 _old_id: "1272"
 _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.writefile"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.writefile"
 Writes a file to the filesystem.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_cache_xpdocachemanager.class.html#\xPDOCacheManager::writeFile()>
 
 ``` php
 boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])

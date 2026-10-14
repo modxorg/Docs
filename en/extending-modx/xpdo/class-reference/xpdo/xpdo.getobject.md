@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getObject"
+description: "Retrieves a single object instance by the specified criteria."
 _old_id: "1245"
 _old_uri: "2.x/class-reference/xpdo/xpdo.getobject"
 ---
@@ -13,8 +14,6 @@ The criteria can be a primary key value, an array of primary key values (for mul
 > **Important:** do not pass untrusted input into the criteria parameter. **Always sanitize the value, cast the value to integer for a primary key, or provide it in array form** if it comes from any sort of user input to prevent potential SQL injections or returning data not supposed to be accessible. xPDO attempts to identify and prevent SQL injections, however as it also supports providing raw SQL criteria, not sanitizing the criteria may make your code vulnerable. 
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getObject()>
 
 ``` php
 xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])

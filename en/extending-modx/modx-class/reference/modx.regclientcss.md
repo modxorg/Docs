@@ -9,15 +9,12 @@ Register CSS to be injected inside the HEAD tag of a resource.
 
 ## Syntax
 
-API Doc: [modX::regClientCSS()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::regClientCSS())
-
 ``` php
 void regClientCSS (string $src, [string $media = null])
 ```
 
 - `$src` _(string)_ The CSS to be injected before the closing HEAD tag in an HTML response. **required**
 - `$media` _(string)_ Possible values are: `all`, `aural`, `braille`, `embossed`, `handheld`, `print`, `projection`, `screen`, `tty`, `tv` 
-
 
 ## Example
 

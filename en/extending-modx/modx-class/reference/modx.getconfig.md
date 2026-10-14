@@ -1,5 +1,6 @@
 ---
 title: "modX.getConfig"
+description: "Get the configuration for the site."
 _old_id: "1063"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.getconfig"
 ---
@@ -10,11 +11,11 @@ Get the configuration for the site.
 
 ## Syntax
 
-API Doc: [modX::getConfig()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::getConfig())
-
 ``` php
-array getConfig ()
+array|null getConfig ()
 ```
+
+Returns the configuration as an associative array, or `null` if the core configuration could not be loaded (this is also logged as a fatal error).
 
 ## Example
 

@@ -1,5 +1,6 @@
 ---
 title: "xPDO.getManager"
+description: "Получает класс менеджера для этого соединения xPDO."
 translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getmanager"
 ---
 
@@ -10,8 +11,6 @@ translation: "extending-modx/xpdo/class-reference/xpdo/xpdo.getmanager"
 Класс `Manager` может выполнять такие операции, как создание или изменение табличных структур, создание контейнеров данных, создание пользовательских классов персистентности и другие расширенные операции, которые не нужно загружать часто.
 
 ## Синтаксис
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::getManager()>
 
 ```php
 object|null getManager ()

@@ -1,5 +1,6 @@
 ---
 title: "modX.toPlaceholder"
+description: "Recursively validates and sets placeholders appropriate to the value type passed."
 _old_id: "1109"
 _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/modx/modx.toplaceholder"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/developing-in-modx/other-development-resources/class-reference/mo
 Recursively validates and sets placeholders appropriate to the value type passed.
 
 ## Syntax
-
-API Doc: [modX::toPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholder())
 
 ``` php
 array toPlaceholder (string $key, mixed $value, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])

@@ -1,6 +1,6 @@
 ---
 title: "modX.setDebug"
-description: "modX.setDebug for debug level set"
+description: "Sets the MODX debug level"
 ---
 
 ## modX::setDebug
@@ -9,22 +9,22 @@ Sets the debugging features of the modX instance.
 
 ## Syntax
 
-API Doc: [modX::setDebug()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::setDebug())
-
 ``` php
 boolean|int setDebug ([boolean|int $debug = true])
 ```
 
-- `$debug` _(string)_ Boolean or bitwise integer describing the debug state and/or PHP error reporting level
+- `$debug` _(boolean|int)_ Boolean or bitwise integer describing the debug state and/or PHP error reporting level. The strings `'true'`, `'false'`, `'0'`, `'-1'` and constant names such as `'E_ALL'` are accepted as well.
+
+Returns the **previous** debug value, so the caller can restore it later.
 
 ## Example
 
-Turn debug mode on, and tell the process to stop if Notices occur:
+Turn debug mode on: log messages from `LOG_LEVEL_DEBUG` and enable full PHP error reporting.
 
 ``` php
-$modx->setDebug(true);
+$oldDebug = $modx->setDebug(true);
 ```
 
 ## See Also
 
-[log_level](building-sites/settings/log_level)
+- [log_level](building-sites/settings/log_level)

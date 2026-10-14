@@ -1,5 +1,6 @@
 ---
 title: "xPDO.newObject"
+description: "Creates a new instance of a specified class."
 _old_id: "1251"
 _old_uri: "2.x/class-reference/xpdo/xpdo.newobject"
 ---
@@ -10,8 +11,6 @@ Creates a new instance of a specified class.
 All new objects created with this method are transient until [xPDOObject::save()](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/save "save") is called the first time and is reflected by the xPDOObject::$\_new property.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::newObject()>
 
 ``` php
 object|null newObject (string $className, [array $fields = array ()])

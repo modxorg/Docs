@@ -1,5 +1,6 @@
 ---
 title: "getOption"
+description: "Get an option value for this instance of an xPDOObject, using xPDO options if no instance specific option exists."
 _old_id: "1177"
 _old_uri: "2.x/class-reference/xpdoobject/configuration-accessors/getoption"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdoobject/configuration-accessors/getoption"
 Get an option value for this instance of an xPDOObject, using xPDO options if no instance specific option exists.
 
 ## Syntax
-
-API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_om_xpdoobject.class.html#\xPDOObject::getOption()>
 
 ``` php
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )

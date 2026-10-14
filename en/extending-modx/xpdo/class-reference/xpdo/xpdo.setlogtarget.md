@@ -1,5 +1,6 @@
 ---
 title: "xPDO.setLogTarget"
+description: "Sets the log target for xPDO::_log() calls."
 _old_id: "1256"
 _old_uri: "2.x/class-reference/xpdo/xpdo.setlogtarget"
 ---
@@ -18,8 +19,6 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.setlogtarget"
 Returns the formerly set log target.
 
 ## Syntax
-
- API Docs: <https://api.modx.com/revolution/2.2/db_core_xpdo_xpdo.class.html#\xPDO::setLogTarget()>
 
 ``` php
 mixed setLogTarget ([string $target = 'ECHO'], mixed 1)

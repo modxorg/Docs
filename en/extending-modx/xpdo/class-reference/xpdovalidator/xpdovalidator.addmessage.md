@@ -1,5 +1,6 @@
 ---
 title: "xPDOValidator.addMessage"
+description: "Add a validation message to the stack."
 _old_id: "1307"
 _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.addmessage"
 ---
@@ -9,8 +10,6 @@ _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.addmessage"
 Add a validation message to the stack.
 
 ## Syntax
-
-API Doc: <https://api.modx.com/revolution/2.2/db_core_xpdo_validation_xpdovalidator.class.html#\xPDOValidator::addMessage()>
 
 ``` php
 void addMessage (string $field, string $name, [mixed $message = null])

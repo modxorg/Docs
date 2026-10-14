@@ -1,5 +1,6 @@
 ---
 title: "modX.toPlaceholder"
+description: "Рекурсивно проверяет и устанавливает плейсхолдеры, соответствующие типу передаваемого значения."
 translation: "extending-modx/modx-class/reference/modx.toplaceholder"
 ---
 
@@ -8,8 +9,6 @@ translation: "extending-modx/modx-class/reference/modx.toplaceholder"
 Рекурсивно проверяет и устанавливает плейсхолдеры, соответствующие типу передаваемого значения.
 
 ## Синтаксис
-
-API Doc: [modX::toPlaceholder()](http://api.modx.com/revolution/2.2/db_core_model_modx_modx.class.html#%5CmodX::toPlaceholder())
 
 ``` php
 array toPlaceholder (string $key, mixed $value, [string $prefix = ''], [string $separator = '.'], [boolean $restore = false])
