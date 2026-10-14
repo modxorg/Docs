@@ -1,21 +1,23 @@
 ---
 title: "OnChunkBeforeSave"
-_old_id: "406"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkbeforesave"
+description: "Fires right before a Chunk is saved, in modChunk::save()."
 ---
 
 ## Event: OnChunkBeforeSave
 
-Fires right before a Chunk is saved.
+Fires right before a Chunk is saved, in `modChunk::save()`.
 
 - Service: 1 - Parser Service Events
-- Group: modChunk
+- Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                         |
-| ----- | ----------------------------------- |
-| chunk | A reference to the modChunk object. |
+| Name      | Description                                                     |
+| --------- | --------------------------------------------------------------- |
+| mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| chunk     | A reference to the modChunk object.                             |
+| cacheFlag | The cacheFlag argument passed to the save() method.             |
+
 
 ## See Also
 

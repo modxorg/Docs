@@ -1,12 +1,13 @@
 ---
 title: "OnBeforeTempFormDelete"
+description: "Fires before a Template is deleted in the Manager."
 _old_id: "391"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforetempformdelete"
 ---
 
 ## Event: OnBeforeTempFormDelete
 
-Fires before a Template is deleted in the manager.
+Fires before a Template is deleted in the Manager.
 
 - Service: 1 - Parser Service Events
 - Group: Templates
@@ -17,6 +18,8 @@ Fires before a Template is deleted in the manager.
 | -------- | -------------------------------------- |
 | template | A reference to the modTemplate object. |
 | id       | The ID of the Template.                |
+| object   | Alias of `template` — a reference to the same object. |
+
 
 ## See Also
 

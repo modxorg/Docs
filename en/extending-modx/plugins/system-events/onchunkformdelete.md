@@ -1,26 +1,24 @@
 ---
 title: "OnChunkFormDelete"
-_old_id: "407"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkformdelete"
+description: "Fires after a Chunk is deleted in the Manager."
 ---
 
 ## Event: OnChunkFormDelete
 
-Fires after a chunk is deleted.
+Fires after a Chunk is deleted in the Manager, from the `Element\Chunk\Remove` processor.
 
 - Service: 1 - Parser Service Events
 - Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                         |
-| ----- | ----------------------------------- |
-| chunk | A reference to the modChunk object. |
-| id    | The ID of the Chunk.                |
+| Name   | Description                                                         |
+| ------ | ------------------------------------------------------------------- |
+| id     | The ID of the Chunk.                                                |
+| chunk  | A reference to the modChunk object.                                 |
+| object | Alias of `chunk` — a reference to the same object.                  |
 
 ## Example
-
-Such a plugin will write the id and name of the remote chunk to the "Error log":
 
 ``` php
 <?php

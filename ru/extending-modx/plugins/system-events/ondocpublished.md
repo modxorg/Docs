@@ -1,14 +1,15 @@
 ---
 title: "OnDocPublished"
 translation: "extending-modx/plugins/system-events/ondocpublished"
+description: "Событие запускается, когда ресурс публикуется через контекстное меню публикации."
 ---
 
 ## Событие: OnDocPublished
 
-Вызывается, когда ресурс публикуется через контекстное меню публикации.
+Вызывается, когда ресурс публикуется через контекстное меню публикации, из процессора `Resource\Publish`. Установка галочки «Опубликован» при редактировании ресурса событие не вызывает.
 
-Служба: 5 - Template Service Events
-Группа: Нет
+- Служба: 5 - Template Service Events
+- Group: Resources
 
 ## Параметры события
 
@@ -18,28 +19,16 @@ translation: "extending-modx/plugins/system-events/ondocpublished"
 | id       | Идентификатор публикуемого ресурса.              |
 | resource | Ссылка на публикуемый объект modResource.        |
 
-
-## Важно! Перед использование этого события нужно знать
-
-Событие срабатывает только при публикации ресурса через контекстное меню документа в дереве ресурсов. Если вы поставите галочку опубликован при редактировании документа на странице самого документа, ничего не произойдет.
-
 ## Пример
 
-Такой плагин выведет в "Журнал ошибок" массив публикуемого ресурса, а на экран сообщение об успехе:
+Такой плагин запишет публикацию в журнал ошибок. Ответ этого события не обрабатывается процессором — отменить или изменить публикацию он не может:
 
 ``` php
 <?php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnDocPublished':
-        $response = array(
-        	'success' => false,
-        	'message' => 'Публикация прошла успешно!',
-        	'data' => array(),
-        );
-        echo $modx->toJSON($response);
-        exit; 
-        $modx->log(modX::LOG_LEVEL_ERROR, print_r($resource->toArray(),true));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Resource '.$id.' was published');
         break;
 }
 ```

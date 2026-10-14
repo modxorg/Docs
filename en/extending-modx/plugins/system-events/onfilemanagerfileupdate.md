@@ -1,5 +1,6 @@
 ---
 title: "OnFileManagerFileUpdate"
+description: "Fires after updating a file via the media manager."
 _old_id: "1745"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfilemanagerfileupdate"
 ---
@@ -9,14 +10,15 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 Fires after updating a file via the manager.
 
 - Service: 1 - Parser Service Events
-- Group: None
+- Group: System
 
 ## Event Parameters
 
 | Name   | Description                                 |
 | ------ | ------------------------------------------- |
 | path   | Contains the full path to the updated file. |
-| source | Contains the mediasource object.            |
+| source | Contains the modMediaSource object.         |
+
 
 ## See Also
 

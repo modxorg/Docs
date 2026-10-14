@@ -1,14 +1,15 @@
 ---
 title: "OnChunkFormRender"
 translation: "extending-modx/plugins/system-events/onchunkformrender"
+description: "Событие запускается в процессе отрисовки формы."
 ---
 
 ## Событие: OnChunkFormRender
 
 Запускается во время рендеринга формы. Полезно для рендеринга HTML прямо в форму Chunk.
 
-Служба: 1 - Parser Service Events
-Группа: Chunks
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
@@ -20,6 +21,8 @@ translation: "extending-modx/plugins/system-events/onchunkformrender"
 
 
 ## Примеры
+
+### Сохранить содержимое
 
 Такой плагин добавит контент чанку и сохранит его:
 
@@ -39,6 +42,8 @@ switch($eventName) {
 }
 ```
                 
+### Сохранить содержимое только если оно пустое
+
 Такой плагин добавит контент чанку если у него нет контента и сохранит его:
 
 ```php
@@ -61,6 +66,8 @@ switch($eventName) {
 }
 ```
                 
+### Изменить содержимое без сохранения
+
 Такой плагин добавит контент чанку но не сохранит его:
 
 ```php

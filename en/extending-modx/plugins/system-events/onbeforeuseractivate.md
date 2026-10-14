@@ -1,19 +1,25 @@
 ---
 title: "OnBeforeUserActivate"
+description: "Fires before a User is activated in the manager."
 _old_id: "395"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforeuseractivate"
 ---
 
 ## Event: OnBeforeUserActivate
 
-Never fired in MODX core; can be used by 3rd Party Components (such as [Login](/extras/login "Login")) when a User is being activated.
+Fires before a User's `active` status is switched on in the Manager. It runs in `security/user/update` when the status changes while editing a User, and in `security/user/activatemultiple` for bulk activation. A non-empty message from the Plugin prevents the change.
 
 - Service: 1 - Parser Service Events
-- Group: modUser
+- Group: Users
 
 ## Event Parameters
 
-Depends on implementation.
+| Name | Description                                                                       |
+| ---- | --------------------------------------------------------------------------------- |
+| id   | The ID of the User.                                                               |
+| user | A reference to the modUser object. **Passed by reference**                        |
+| mode | Either `upd` (single User in `security/user/update`) or `multiple` (bulk activation only). |
+
 
 ## See Also
 

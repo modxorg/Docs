@@ -1,21 +1,23 @@
 ---
 title: "OnChunkSave"
-_old_id: "412"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunksave"
+description: "Fires after a Chunk is saved, in modChunk::save()."
 ---
 
 ## Event: OnChunkSave
 
-Happens after a chunk is saved.
+Fires after a Chunk is saved, in `modChunk::save()`.
 
-- Service: 2 - Manager Access Events
-- Group: modChunk
+- Service: 1 - Parser Service Events
+- Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                         |
-| ----- | ----------------------------------- |
-| chunk | A reference to the modChunk object. |
+| Name      | Description                                                     |
+| --------- | --------------------------------------------------------------- |
+| mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| chunk     | A reference to the modChunk object.                             |
+| cacheFlag | The cacheFlag argument passed to the save() method.             |
+
 
 ## See Also
 

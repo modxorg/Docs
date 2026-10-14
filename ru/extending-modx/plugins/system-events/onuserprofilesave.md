@@ -1,6 +1,7 @@
 ---
 title: "OnUserProfileSave"
 translation: "extending-modx/plugins/system-events/onuserprofilesave"
+description: "Срабатывает после успешного сохранения `modUserProfile`."
 ---
 
 ## Событие: OnUserProfileSave
@@ -10,7 +11,7 @@ translation: "extending-modx/plugins/system-events/onuserprofilesave"
 Вызывается из `modUserProfile::save()` только если `parent::save()` вернул true.
 
 - Служба: 1 - Parser Service Events
-- Группа: User Profiles
+- Group: User Profiles
 
 ## Параметры события
 

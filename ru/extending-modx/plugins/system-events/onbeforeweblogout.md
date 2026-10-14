@@ -1,14 +1,15 @@
 ---
 title: "OnBeforeWebLogout"
 translation: "extending-modx/plugins/system-events/onbeforeweblogout"
+description: "Событие запускается непосредственно перед выходом пользователя из не-mgr контекста."
 ---
 
 ## Событие: OnBeforeWebLogout
 
-Запускается перед тем как пользователь разлогиниться.
+Событие запускается непосредственно перед тем, как пользователь выйдет из не-mgr контекста. Выход ещё не произошёл.
 
-Служба: 3 - Web Access Service Events
-Группа: Нет
+- Служба: 3 - Web Access Service Events
+- Group: Security
 
 ## Параметры события
 
@@ -30,7 +31,7 @@ $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnBeforeWebLogout':
         $u = $user->get('id');
-        $modx->log(modX::LOG_LEVEL_ERROR, 'Пользователь с id '.$u.' разлогинился в контексте '.$loginContext.' и еще вот в этих'.print_r($addContexts));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Пользователь с id '.$u.' разлогинился в контексте '.$loginContext.' и еще вот в этих'.print_r($addContexts, true));
         break;
 }
 ``` 

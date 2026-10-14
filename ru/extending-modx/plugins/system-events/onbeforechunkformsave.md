@@ -1,14 +1,15 @@
 ---
 title: "OnBeforeChunkFormSave"
 translation: "extending-modx/plugins/system-events/onbeforechunkformsave"
+description: "Событие запускается после отправки формы, но перед сохранением чанка в менеджере."
 ---
 
 ## Событие: OnBeforeChunkFormSave
 
-Запускается после отправки формы, но перед тем как сохранить чанк.
+Событие запускается после отправки формы, но перед тем, как чанк будет сохранён в менеджере.
 
-Служба: 1 - Parser Service Events
-Группа: Chunks
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
@@ -17,6 +18,8 @@ translation: "extending-modx/plugins/system-events/onbeforechunkformsave"
 | mode  | Либо 'upd' или 'new', в зависимости от обстоятельств. |
 | chunk | Ссылка на объект modChunk.                            |
 | id    | Идентификатор чанка. Будет 0 для новых чанков.        |
+| data  | Текущие поля чанка в виде массива.                    |
+| object | Псевдоним `chunk` — ссылка на тот же объект.         |
 
 ## Примеры
 

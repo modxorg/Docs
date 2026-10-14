@@ -1,20 +1,23 @@
 ---
 title: "OnCategorySave"
 translation: "extending-modx/plugins/system-events/oncategorysave"
+description: "Событие запускается после сохранения категории, в modCategory::save()."
 ---
 
 ## Событие: OnCategorySave
 
-Происходит после сохранения категории.
+Событие запускается после сохранения категории, в `modCategory::save()`.
 
-Служба: 2 - Manager Access Events
-Group: modCategory
+- Служба: 1 - Parser Service Events
+- Group: Categories
 
 ## Параметры события
 
-| Имя      | Описание                      |
-| -------- | ----------------------------- |
-| category | Ссылка на объект modCategory. |
+| Имя       | Описание                                                 |
+| --------- | -------------------------------------------------------- |
+| mode      | Либо 'new' или 'upd', в зависимости от обстоятельств.    |
+| category  | Ссылка на объект modCategory.                            |
+| cacheFlag | Аргумент cacheFlag, переданный в метод save().           |
 
 ## Смотри также
 

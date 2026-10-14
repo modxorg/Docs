@@ -1,21 +1,22 @@
 ---
 title: "OnCategoryBeforeRemove"
-_old_id: "401"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncategorybeforeremove"
+description: "Fires right before a Category is removed, in modCategory::remove()."
 ---
 
 ## Event: OnCategoryBeforeRemove
 
-Happens right before a category is removed.
+Fires right before a Category is removed, in `modCategory::remove()`.
 
-- Service: 2 - Manager Access Events
+- Service: 1 - Parser Service Events
 - Group: Categories
 
 ## Event Parameters
 
-| Name     | Description                            |
-| -------- | -------------------------------------- |
-| category | A reference to the modCategory object. |
+| Name      | Description                                             |
+| --------- | ------------------------------------------------------- |
+| category  | A reference to the modCategory object.                  |
+| ancestors | An array of ancestors passed to the remove() method.    |
+
 
 ## See Also
 

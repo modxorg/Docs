@@ -1,21 +1,22 @@
 ---
 title: "OnChunkRemove"
-_old_id: "411"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkremove"
+description: "Fires after a Chunk is removed, in modChunk::remove()."
 ---
 
 ## Event: OnChunkRemove
 
-Happens after a chunk is removed.
+Fires after a Chunk is removed, in `modChunk::remove()`.
 
-- Service: 2 - Manager Access Events
-- Group: modChunk
+- Service: 1 - Parser Service Events
+- Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                         |
-| ----- | ----------------------------------- |
-| chunk | A reference to the modChunk object. |
+| Name      | Description                                             |
+| --------- | ------------------------------------------------------- |
+| chunk     | A reference to the modChunk object.                     |
+| ancestors | An array of ancestors passed to the remove() method.    |
+
 
 ## See Also
 

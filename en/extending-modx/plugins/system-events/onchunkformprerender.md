@@ -1,12 +1,11 @@
 ---
 title: "OnChunkFormPrerender"
-_old_id: "408"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkformprerender"
+description: "Fires before the Chunk form is rendered in the Manager."
 ---
 
 ## Event: OnChunkFormPrerender
 
-Occurs before the chunk modification form is rendered, but after the JS is registered. Can be used to render custom Javascript for the mgr.
+Fires before the Chunk form is rendered in the Manager. The controller has loaded its custom CSS/JS (`loadCustomCssJs()`); the page CSS/JS is not registered yet (`registerCssJs()`). Use it to render custom JavaScript in the `mgr` Context.
 
 - Service: 1 - Parser Service Events
 - Group: Chunks
@@ -15,13 +14,11 @@ Occurs before the chunk modification form is rendered, but after the JS is regis
 
 | Name  | Description                                                     |
 | ----- | --------------------------------------------------------------- |
-| mode  | Either 'new' or 'upd', depending on the circumstance.           |
-| id    | The ID of the Chunk. This will be 0 for new chunks.             |
-| chunk | A reference to the modChunk object. Will be null in new chunks. |
+| mode  | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| id    | The ID of the Chunk. This will be 0 for new Chunks.             |
+| chunk | A reference to the modChunk object. `null` for new Chunks.      |
 
 ## Example
-
-Such a plugin loads `style` in` head` and makes the text in `.x-form-text` red:
 
 ``` php
 <?php

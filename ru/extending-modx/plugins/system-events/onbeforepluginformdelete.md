@@ -1,14 +1,15 @@
 ---
 title: "OnBeforePluginFormDelete"
 translation: "extending-modx/plugins/system-events/onbeforepluginformdelete"
+description: "Событие запускается перед удалением плагина в менеджере."
 ---
 
 ## Событие: OnBeforePluginFormDelete
 
-Запускается до удаления плагина в панеле управления.
+Событие запускается перед удалением плагина в менеджере.
 
-Служба: 1 - Parser Service Events
-Группа: Plugins
+- Служба: 1 - Parser Service Events
+- Group: Plugins
 
 ## Параметры события
 
@@ -16,6 +17,8 @@ translation: "extending-modx/plugins/system-events/onbeforepluginformdelete"
 | ------ | --------------------------- |
 | plugin | Ссылка на объект modPlugin. |
 | id     | Идентификатор плагина.      |
+| object | Псевдоним `plugin` — ссылка на тот же объект. |
+
 
 ## Пример
 

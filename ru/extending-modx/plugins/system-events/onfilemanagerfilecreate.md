@@ -1,23 +1,24 @@
 ---
 title: "OnFileManagerFileCreate"
 translation: "extending-modx/plugins/system-events/onfilemanagerfilecreate"
+description: "Событие запускается после создания нового файла через медиаменеджер."
 ---
 
 ## Событие: OnFileManagerFileCreate
 
-Запускается после создания нового файла через менеджер.
+Событие запускается после создания нового файла через менеджер.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: System
 
 ## Параметры события
 
 | Имя    | Описание                                       |
 | ------ | ---------------------------------------------- |
 | path   | Содержит полный путь к вновь созданному файлу. |
-| source | Содержит объект медиаресурса.                  |
+| source | Содержит объект `modMediaSource`.              |
 
 ## Смотри также
 
--   [Системные события](extending-modx/plugins/system-events)
--   [Plugins](extending-modx/plugins)
+- [Системные события](extending-modx/plugins/system-events)
+- [Плагины](extending-modx/plugins)

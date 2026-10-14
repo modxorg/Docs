@@ -1,36 +1,38 @@
 ---
 title: "OnManagerLogin"
+description: "Fires after a user successfully logs into the manager."
 _old_id: "432"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmanagerlogin"
 ---
 
 ## Event: OnManagerLogin
 
-Fires anytime a user successfully logs into the manager after performing any autentification checks successfully. Doesn't affect the autentification process.
+Fires after a user logs into the manager, once the authentication checks have passed. The event does not affect the authentication process.
 
 - Service: 2 - Manager Access Events
-- Group: None
+- Group: Security
 
 ## Event Parameters
 
 | Name       | Description                                                                      |
 | ---------- | -------------------------------------------------------------------------------- |
-| user       | A reference to the modUser object.                                               |
-| attributes | An array of: - rememberme - Boolean set if user wants password to be remembered. |
-|            | - lifetime - The session cookie lifetime for this login.                         |
-|            | - loginContext - The context key this login is occurring in.                     |
-|            | - addContexts - Additional contexts in which the login is also occuring in.      |
+| user       | The `modUser` that just logged in.                                               |
+| attributes | An array with:                                                                  |
+|            | - rememberme — whether the user asked to remember the login                     |
+|            | - lifetime — session cookie lifetime for this login                             |
+|            | - loginContext — context key for this login                                     |
+|            | - addContexts — extra contexts that also received a session                     |
 
 ## Event Login Workflow
 
-1. _[_OnBeforeWebLogin_](extending-modx/plugins/system-events/onbeforeweblogin)_ || _[OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin)_ - Inside this event the developer can check for erroneous parameters which will **disallow** further logging in process. If plugins executed by this event return something except true, the logging in will be aborted with the specified error.
-2. _[OnUserNotFound](extending-modx/plugins/system-events/onusernotfound)_ - This event is executed only if the provided username is not found inside MODX database. The developer can provide it's own modUser object in the event output to continue the login process.
-3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Inside this event the developer can check for parameters which will **override the default checking by password** and **allow** further logging in process. If one of the plugins executed from this event return true, the user is considered verified and logged in.
-4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || **_OnManagerLogin_** - This event is fired after the logging in process has finished and the user is considered logged in. It **doesn't change** the logging in process **behaviour**.
+1. [OnBeforeWebLogin](extending-modx/plugins/system-events/onbeforeweblogin) || [OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin) — a non-`true` output aborts the login with that message.
+2. [OnUserNotFound](extending-modx/plugins/system-events/onusernotfound) — runs only when the username is missing from the MODX database. A Plugin may supply its own `modUser` to continue.
+3. [OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication) || [OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication) — overrides the default password check. A `true` output marks the user as verified and logged in.
+4. [OnWebLogin](extending-modx/plugins/system-events/onweblogin) || **OnManagerLogin** — fires after the login has finished. It does **not change** the login outcome.
 
 ## Example
 
-Such a plugin will write to the "Error log" who logged in and where:
+Log who logged in and with which attributes:
 
 ```php
 <?php
@@ -38,7 +40,7 @@ $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnManagerLogin':
         $id = $user->get('id');
-        $modx->log(modX::LOG_LEVEL_ERROR, 'User logged in with id '.$id.print_r($attributes));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'User logged in with id '.$id.' '.print_r($attributes, true));
         break;
 }
 ```

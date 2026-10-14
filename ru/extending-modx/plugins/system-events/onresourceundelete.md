@@ -1,22 +1,30 @@
 ---
 title: "OnResourceUndelete"
 translation: "extending-modx/plugins/system-events/onresourceundelete"
-description: "Событие OnResourceUndelete срабатывает сразу после восстановления ресурса"
+description: "Срабатывает сразу после восстановления ресурса из корзины."
 ---
 
 ## Событие: OnResourceUndelete
 
-Срабатывает сразу после восстановления ресурса 
+Срабатывает сразу после восстановления ресурса.
 
--   Служба: 1 - Parser Service Events
--   Группа: Resources
+- Служба: 1 - Parser Service Events
+- Group: Resources
 
 ## Параметры события
 
-| Имя    | Описание                                            |
-| ------ | --------------------------------------------------- |
-| `id` | ссылка на объект modResourceUnDeleteProcessor         |
-| `resource` | ссылка на объект modResourceUnDeleteProcessor   |
+| Имя       | Описание                                                 |
+| --------- | -------------------------------------------------------- |
+| `id`      | ID восстановленного ресурса.                             |
+| `resource` | Ссылка на восстановленный объект modResource.           |
+
+## Замечания
+
+Событие вызывается из трёх мест:
+
+-   процессора восстановления (`Resource/Undelete`),
+-   восстановления ресурса из сетки корзины (`Resource/Trash/Restore`),
+-   процессора обновления ресурса, когда удалённый ресурс снова публикуется (`Resource/Update`).
 
 ## Смотрите также
 

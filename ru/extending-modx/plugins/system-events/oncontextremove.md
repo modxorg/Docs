@@ -1,20 +1,22 @@
 ---
 title: "OnContextRemove"
 translation: "extending-modx/plugins/system-events/oncontextremove"
+description: "Событие запускается после удаления контекста, в modContext::remove()."
 ---
 
 ## Событие: OnContextRemove
 
-Происходит после удаления контекста.
+Событие запускается после удаления контекста, в `modContext::remove()`.
 
-Служба: 2 - Manager Access Events
-Группа: modContext
+- Служба: 1 - Parser Service Events
+- Group: Contexts
 
 ## Параметры события
 
-| Имя     | Описание                     |
-| ------- | ---------------------------- |
-| context | Ссылка на объект modContext. |
+| Имя       | Описание                                         |
+| --------- | ------------------------------------------------ |
+| context   | Ссылка на объект modContext.                     |
+| ancestors | Массив предков, переданный в метод remove().     |
 
 ## Смотри также
 

@@ -1,12 +1,13 @@
 ---
 title: "OnBeforeChunkFormSave"
+description: "Fires after a form is submitted but before a Chunk is saved in the Manager."
 _old_id: "379"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforechunkformsave"
 ---
 
 ## Event: OnBeforeChunkFormSave
 
-Fires after a form is submitted but before a Chunk is saved in the manager.
+Fires after a form is submitted but before a Chunk is saved in the Manager.
 
 - Service: 1 - Parser Service Events
 - Group: Chunks
@@ -18,10 +19,10 @@ Fires after a form is submitted but before a Chunk is saved in the manager.
 | mode  | Either 'upd' or 'new', depending on the circumstance. |
 | chunk | A reference to the modChunk object.                   |
 | id    | The ID of the chunk. Will be 0 for new chunks.        |
+| data  | The current fields of the Chunk as an array.          |
+| object | Alias of `chunk` — a reference to the same object.   |
 
-## Examples of
-
-Such a plugin will display a message if the description field is not filled:
+## Examples
 
 ```php
 <?php
@@ -38,8 +39,6 @@ switch($eventName) {
         break;
 }
 ```
-                
-Such a plugin will write to the "Error log" whether a new chunk was created or an existing one was updated:
 
 ```php
 <?php

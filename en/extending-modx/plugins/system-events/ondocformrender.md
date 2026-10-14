@@ -1,47 +1,44 @@
 ---
 title: "OnDocFormRender"
-_old_id: "421"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocformrender"
+description: "Fires after a Resource editing form is loaded in the Manager."
 ---
 
 ## Event: OnDocFormRender
 
-Fires after a Resource editing form is loaded in the manager. Useful for inserting HTML into forms, and as of 2.4 for setting several default values on new resources
+Fires after a Resource editing form is loaded in the Manager. Use it to insert HTML straight into the form.
 
 - Service: 1 - Parser Service Events
-- Group: Documents
+- Group: Resources
 
 ## Event Parameters
 
-| Name     | Description                                                                                                                                               |
-| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mode     | Either 'new' or 'upd', depending on the circumstance.                                                                                                     |
-| resource | A reference to the modResource object. Since 2.4, this will contain an empty resource object when creating a new resource. Before 2.4 this would be null. |
-| id       | The ID of the Resource. Will be 0 for new Resources.                                                                                                      |
+| Name     | Description                                                                                                  |
+| -------- | ------------------------------------------------------------------------------------------------------------ |
+| mode     | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                                             |
+| id       | The ID of the Resource. This will be 0 for new Resources.                                                    |
+| resource | A reference to the modResource object. Since 2.4 an empty object for new Resources; before 2.4 `null`.       |
 
 ## Setting Default Resource Values
 
-As of Revolution 2.4.0, you can use a plugin OnDocFormRender for setting a value for one of the following fields:
+Since Revolution 2.4.0, a plugin on OnDocFormRender can set a value for one of the following fields:
 
-- pagetitle
-- longtitle
-- description
-- introtext
-- content
-- link\_attributes
-- alias
-- menutitle
+- `pagetitle`
+- `longtitle`
+- `description`
+- `introtext`
+- `content`
+- `link_attributes`
+- `alias`
+- `menutitle`
 
-It is advised to only do this on new resources, as any values you set **will** override existing resource values.
-
-Here is how you might use it:
+Do this only on new Resources: on existing ones, the values you set **will** override the current ones.
 
 ``` php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnDocFormRender':
         if ($mode == modSystemEvent::MODE_NEW) {
-            //устанавливаем значения по умолчанию
+            // set default values
             $resource->set('pagetitle', 'Heading');
             $resource->set('description', 'Description');
             $resource->set('content', 'Content');
@@ -50,7 +47,7 @@ switch($eventName) {
 }
 ```
 
-See Also
+## See Also
 
 - [System Events](extending-modx/plugins/system-events "System Events")
 - [Plugins](extending-modx/plugins "Plugins")

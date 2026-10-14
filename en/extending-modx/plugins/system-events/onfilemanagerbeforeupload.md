@@ -1,24 +1,26 @@
 ---
 title: "OnFileManagerBeforeUpload"
+description: "Fires before a file is uploaded via the manager, inside the upload loop."
 _old_id: "1738"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfilemanagerbeforeupload"
 ---
 
 ## Event: OnFileManagerBeforeUpload
 
-Fires before any files are uploaded via the manager and is fired inside a foreach loop that loops throught the `$_FILES` array.
+Fires inside the `foreach` loop over `$_FILES`, before any file is uploaded.
 
 - Service: 1 - Parser Service Events
-- Group: None
+- Group: System
 
 ## Event Parameters
 
-| Name      | Description                                                                  |
-| --------- | ---------------------------------------------------------------------------- |
-| files     | An array of files from the PHP $\_FILES array.                               |
-| file      | An array of the current file looping through the PHP $\_FILES array.         |
-| directory | A reference to the modDirectory object that the files are being uploaded to. |
-| source    | Contains mediasource object.                                                 |
+| Name      | Description                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------- |
+| files     | All files from the PHP $\_FILES array.                                                        |
+| file      | The current file in the $\_FILES loop.                                                        |
+| directory | Target directory, relative to the media source root, to upload into.                        |
+| source    | Contains the modMediaSource object.                                                            |
+
 
 ## See Also
 

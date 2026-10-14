@@ -1,20 +1,22 @@
 ---
 title: "OnContextBeforeRemove"
 translation: "extending-modx/plugins/system-events/oncontextbeforeremove"
+description: "Событие запускается непосредственно перед удалением контекста, в modContext::remove()."
 ---
 
 ## Событие: OnContextBeforeRemove
 
-Происходит прямо перед удалением контекста.
+Событие запускается непосредственно перед удалением контекста, в `modContext::remove()`.
 
-Служба: 2 - Manager Access Events
-Группа: modContext
+- Служба: 1 - Parser Service Events
+- Group: Contexts
 
 ## Параметры события
 
-| Имя     | Описание                     |
-| ------- | ---------------------------- |
-| context | Ссылка на объект modContext. |
+| Имя       | Описание                                         |
+| --------- | ------------------------------------------------ |
+| context   | Ссылка на объект modContext.                     |
+| ancestors | Массив предков, переданный в метод remove().     |
 
 ## Смотри также
 

@@ -1,14 +1,15 @@
 ---
 title: "OnContextFormRender"
 translation: "extending-modx/plugins/system-events/oncontextformrender"
+description: "Событие запускается после отрисовки формы редактирования контекста в менеджере."
 ---
 
 ## Событие: OnContextFormRender
 
-Запускается после загрузки формы редактирования контекста.
+Событие запускается после загрузки формы редактирования контекста. Событие вызывается только из формы **редактирования** контекста, поэтому `mode` всегда 'upd'.
 
-Служба: 2 - Manager Access Events
-Группа: modContext
+- Служба: 2 - Manager Access Events
+- Group: Contexts
 
 ## Параметры события
 
@@ -16,7 +17,7 @@ translation: "extending-modx/plugins/system-events/oncontextformrender"
 | ------- | ------------------------------------------------ |
 | key     | Ключ контекста.                                  |
 | context | Ссылка на объект modContext.                     |
-| mode    | Либо 'upd' или 'new', в зависимости от ситуации. |
+| mode    | Всегда 'upd' (modSystemEvent::MODE\_UPD).        |
 
 ## Смотри также
 

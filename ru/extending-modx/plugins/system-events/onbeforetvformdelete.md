@@ -1,14 +1,15 @@
 ---
 title: "OnBeforeTVFormDelete"
 translation: "extending-modx/plugins/system-events/onbeforetvformdelete"
+description: "Событие запускается перед удалением TV в менеджере."
 ---
 
 ## Событие: OnBeforeTVFormDelete
 
-Срабатывает перед удалением TVа в менеджере.
+Событие запускается перед удалением TV в менеджере.
 
-Служба: 1 - Parser Service Events
-Group: Template Variables
+- Служба: 1 - Parser Service Events
+- Group: Template Variables
 
 ## Параметры события
 
@@ -16,6 +17,7 @@ Group: Template Variables
 | --- | -------------------------------- |
 | tv  | Ссылка на объект modTemplateVar. |
 | id  | Идентификатор TV.                |
+| object | Псевдоним `tv` — ссылка на тот же объект. |
 
 ## Смотри также
 

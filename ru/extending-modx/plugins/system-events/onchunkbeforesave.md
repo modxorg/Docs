@@ -1,20 +1,23 @@
 ---
 title: "OnChunkBeforeSave"
 translation: "extending-modx/plugins/system-events/onchunkbeforesave"
+description: "Событие запускается непосредственно перед сохранением чанка, в modChunk::save()."
 ---
 
 ## Событие: OnChunkBeforeSave
 
-Срабатывает прямо перед сохранением чанка.
+Событие запускается непосредственно перед сохранением чанка, в `modChunk::save()`.
 
-Служба: 1 - Parser Service Events
-Group: modChunk
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
-| Имя   | Описание                   |
-| ----- | -------------------------- |
-| chunk | Ссылка на объект modChunk. |
+| Имя       | Описание                                                 |
+| --------- | -------------------------------------------------------- |
+| mode      | Либо 'new' или 'upd', в зависимости от обстоятельств.    |
+| chunk     | Ссылка на объект modChunk.                               |
+| cacheFlag | Аргумент cacheFlag, переданный в метод save().           |
 
 ## Смотри также
 

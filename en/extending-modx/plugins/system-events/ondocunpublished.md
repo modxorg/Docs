@@ -1,45 +1,33 @@
 ---
 title: "OnDocUnPublished"
-_old_id: "424"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocunpublished"
+description: "Fires when a Resource is unpublished via the Unpublish context menu."
 ---
 
 ## Event: OnDocUnPublished
 
-Called when a Resource is unpublished via the Unpublish context menu.
+Fires when a Resource is unpublished via the Unpublish context menu, from the `Resource\Unpublish` processor. Unchecking the Published box while editing the Resource does not fire it.
 
 - Service: 5 - Template Service Events
-- Group: None
+- Group: Resources
 
 ## Event Parameters
 
 | Name     | Description                                              |
 | -------- | -------------------------------------------------------- |
-| docid    | The ID of the resource being unpublished. (deprecated)   |
-| id       | The ID of the resource being unpublished.                |
+| docid    | The ID of the Resource being unpublished. (deprecated)   |
+| id       | The ID of the Resource being unpublished.                |
 | resource | A reference to the modResource object being unpublished. |
-
-## Important! Before using this event, you need to know
-
-The event fires only when the resource is unpublished via the document context menu in the resource tree. If you uncheck the published checkbox while editing a document on the document page itself, nothing happens.
 
 ## Example
 
-Such a plugin will display an array of the unpublished resource in the "Error log", and a success message on the screen:
+This plugin logs the unpublication to the error log. The response of this event is not processed by the processor — it cannot cancel or change the unpublication:
 
 ```php
 <?php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnDocUnPublished':
-        $response = array(
-        	'success' => false,
-        	'message' => 'Resource removed from publication!',
-        	'data' => array(),
-        );
-        echo $modx->toJSON($response);
-        exit; 
-        $modx->log(modX::LOG_LEVEL_ERROR, print_r($resource->toArray(),true));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Resource '.$id.' was unpublished');
         break;
 }
 ```

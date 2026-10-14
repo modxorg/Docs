@@ -1,19 +1,23 @@
 ---
 title: "OnParseDocument"
+description: "Fires each time the Element tags are parsed."
 _old_id: "441"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onparsedocument"
 ---
 
 ## Event: OnParseDocument
 
-Fires on each time the Element tags are parsed. This can happen many times during the loading of a Resource. To reference the content of the Resource, use $modx->documentOutput.
+Fires each time the Element tags are parsed. This can happen many times during the loading of a Resource.
 
-- Service: 1 - Parser Service Events
-- Group: None
+- Service: 5 - Template Service Events
+- Group: System
 
 ## Event Parameters
 
-None.
+| Name    | Description                                                                                          |
+| ------- | ---------------------------------------------------------------------------------------------------- |
+| content | The document content being parsed, passed by reference. Also available as `$modx->documentOutput`. |
+
 
 ## See Also
 

@@ -1,22 +1,25 @@
 ---
 title: "OnPluginSave"
 translation: "extending-modx/plugins/system-events/onpluginsave"
+description: "Событие запускается сразу после изменения базы данных."
 ---
 
 ## Событие: OnPluginSave
 
-Срабатывает сразу после изменения базы данных
+Событие запускается сразу после изменения базы данных.
 
-Служба: 2 - Manager Access Events
-Группа: modPlugin
+- Служба: 1 - Parser Service Events
+- Group: Plugins
 
 ## Параметры события
 
-| Имя    | Описание                    |
-| ------ | --------------------------- |
-| plugin | Ссылка на объект modPlugin. |
+| Имя       | Описание                                                     |
+| --------- | ------------------------------------------------------------ |
+| mode      | `'new'` или `'upd'` в зависимости от ситуации.               |
+| plugin    | Ссылка на объект `modPlugin`.                                |
+| cacheFlag | Флаг кэша, переданный в операцию сохранения.                 |
 
 ## Смотри также
 
--   [Системные события](extending-modx/plugins/system-events "Системные события")
--   [Плагины](extending-modx/plugins "Плагины")
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Плагины](extending-modx/plugins "Плагины")

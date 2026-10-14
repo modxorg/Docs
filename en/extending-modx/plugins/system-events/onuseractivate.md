@@ -1,21 +1,25 @@
 ---
 title: "OnUserActivate"
+description: "Fires after a User is activated, from the manager user form or bulk activation."
 _old_id: "468"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuseractivate"
 ---
 
 ## Event: OnUserActivate
 
-Can be used by 3rd Party Components (such as [Login](/extras/login "Login")) when a User is being activated.
-
-Also fired when a user is set to "active" from within the manager
+Fires after a User is activated — from the user form in the Manager or in bulk. Third-party Components such as [Login](/extras/login "Login") use this event.
 
 - Service: 1 - Parser Service Events
-- Group: modUser
+- Group: Users
 
 ## Event Parameters
 
-Depends on implementation.
+| Name | Description                                                                                                                 |
+| ---- | --------------------------------------------------------------------------------------------------------------------------- |
+| id   | The ID of the activated User.                                                                                               |
+| user | A reference to the modUser object.                                                                                          |
+| mode | `modSystemEvent::MODE_UPD` when a single User is edited via the user form, or `multiple` when Users are activated in bulk.  |
+
 
 ## See Also
 

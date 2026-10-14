@@ -1,14 +1,15 @@
 ---
 title: "OnBeforeSnipFormDelete"
 translation: "extending-modx/plugins/system-events/onbeforesnipformdelete"
+description: "Событие запускается перед удалением сниппета в менеджере."
 ---
 
 ## Событие: OnBeforeSnipFormDelete
 
-Запускается до удаления сниппета.
+Событие запускается перед удалением сниппета в менеджере.
 
-Служба: 1 - Parser Service Events
-Group: Snippets
+- Служба: 1 - Parser Service Events
+- Group: Snippets
 
 ## Параметры события
 
@@ -16,6 +17,7 @@ Group: Snippets
 | ------- | ---------------------------- |
 | snippet | Ссылка на объект modSnippet. |
 | id      | Идентификатор сниппета.      |
+| object  | Псевдоним `snippet` — ссылка на тот же объект. |
 
 ## Пример
 

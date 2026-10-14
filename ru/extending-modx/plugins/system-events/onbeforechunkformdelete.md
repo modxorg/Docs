@@ -1,14 +1,15 @@
 ---
 title: "OnBeforeChunkFormDelete"
 translation: "extending-modx/plugins/system-events/onbeforechunkformdelete"
+description: "Событие запускается перед удалением чанка."
 ---
 
 ## Событие: OnBeforeChunkFormDelete
 
-Запускается до удаления сниппета.
+Событие запускается перед удалением чанка.
 
-Сервис: 1 - Парсер Сервис событий
-Группа: Chunks
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
@@ -16,6 +17,7 @@ translation: "extending-modx/plugins/system-events/onbeforechunkformdelete"
 | ----- | -------------------------- |
 | chunk | Ссылка на объект modChunk. |
 | id    | Идентификатор чанка.       |
+| object | Псевдоним `chunk` — ссылка на тот же объект. |
 
 ## Пример
 

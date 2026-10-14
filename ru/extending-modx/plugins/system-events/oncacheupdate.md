@@ -1,14 +1,15 @@
 ---
 title: "OnCacheUpdate"
 translation: "extending-modx/plugins/system-events/oncacheupdate"
+description: "Событие запускается после очистки кэша сайта."
 ---
 
 ## Событие: OnCacheUpdate
 
-Запускается после того, как кэш очищен.
+Событие запускается после очистки кэша сайта, в `modCacheManager::clean()` и `modCacheManager::refresh()`.
 
-Служба: 4 - Cache Service Events
-Группа: Нет
+- Служба: 4 - Cache Service Events
+- Group: System
 
 ## Параметры события
 
@@ -23,13 +24,13 @@ translation: "extending-modx/plugins/system-events/oncacheupdate"
 Такой плагин выведет на экран и запишет в "Журнал ошибок" результат выполнения:
 
 ```php
-<?php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnCacheUpdate':
-        $modx->log(modX::LOG_LEVEL_ERROR, print_r($results));
+        $modx->log(modX::LOG_LEVEL_ERROR, print_r($results, true));
         break;
 }
+```
 
 ## Смотри также
 

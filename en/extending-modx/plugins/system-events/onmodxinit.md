@@ -1,12 +1,13 @@
 ---
 title: "OnMODXInit"
+description: "Fires when the MODX object is initialized."
 _old_id: "1732"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onmodxinit"
 ---
 
 ## Event: OnMODXInit
 
-Invoked upon initialization of the MODX object.
+Fires when the MODX object is initialized.
 
 - Service: 5 - Template Service Events
 - Group: System
@@ -20,12 +21,11 @@ Invoked upon initialization of the MODX object.
 
 ## Remarks
 
-| Previous event | ?                                                                                                                  |
-| -------------- | ------------------------------------------------------------------------------------------------------------------ |
-| Next event     | ?                                                                                                                  |
-| File           | [core/model/modx/modx.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modx.class.php) |
-| Class          | class modx                                                                                                         |
-| Method         | public function initialize($contextKey= 'web', $options = null)                                                    |
+| File   | [core/src/Revolution/modX.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modX.php) |
+| ------ | --------------------------------------------------------------------------------------------------------- |
+| Class  | MODX\Revolution\modX                                                                                       |
+| Method | `public function initialize($contextKey = 'web', $options = null)`                                         |
+
 
 ## See Also
 

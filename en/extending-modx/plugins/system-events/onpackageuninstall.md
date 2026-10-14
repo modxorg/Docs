@@ -1,11 +1,23 @@
 ---
 title: "OnPackageUninstall"
-_old_id: "1760"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpackageuninstall"
+description: "Fires after a package is uninstalled via the package manager."
 ---
 
-Fired after a package is successfully uninstalled via the package manager. Added in MODX Revolution 2.6.
+## Event: OnPackageUninstall
 
-## Available Variables
+Fires after a package is uninstalled via the package manager.
 
-- `$package`: the modTransportPackage instance that was installed. For example `$package->get('package_name')` to get the name of the package.
+- Service: 2 - Manager Access Events
+- Group: Package Manager
+
+## Event Parameters
+
+| Name    | Description                                                                     |
+| ------- | ------------------------------------------------------------------------------- |
+| package | A reference to the modTransportPackage instance that was uninstalled.          |
+
+
+## See Also
+
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

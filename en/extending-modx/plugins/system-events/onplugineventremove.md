@@ -1,5 +1,6 @@
 ---
 title: "OnPluginEventRemove"
+description: "Fires after a plugin is disassociated directly from an event."
 _old_id: "444"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplugineventremove"
 ---
@@ -9,14 +10,15 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onplug
 Fires after a plugin is disassociated directly from an event.
 
 - Service: 1 - Parser Service Events
-- Group: None
+- Group: Plugin Events
 
 ## Event Parameters
 
-| Name        | Description                              |
-| ----------- | ---------------------------------------- |
-| id          | The id of the modPluginEvent object      |
-| pluginEvent | A reference to the modPluginEvent object |
+| Name        | Description                                             |
+| ----------- | ------------------------------------------------------- |
+| pluginEvent | A reference to the modPluginEvent object.               |
+| ancestors   | An array of ancestors for the remove cascade operation. |
+
 
 ## See Also
 

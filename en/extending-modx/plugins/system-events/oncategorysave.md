@@ -1,21 +1,23 @@
 ---
 title: "OnCategorySave"
-_old_id: "404"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncategorysave"
+description: "Fires after a Category is saved, in modCategory::save()."
 ---
 
 ## Event: OnCategorySave
 
-Happens after a category is saved.
+Fires after a Category is saved, in `modCategory::save()`.
 
-- Service: 2 - Manager Access Events
-- Group: modCategory
+- Service: 1 - Parser Service Events
+- Group: Categories
 
 ## Event Parameters
 
-| Name     | Description                            |
-| -------- | -------------------------------------- |
-| category | A reference to the modCategory object. |
+| Name      | Description                                                     |
+| --------- | --------------------------------------------------------------- |
+| mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| category  | A reference to the modCategory object.                          |
+| cacheFlag | The cacheFlag argument passed to the save() method.             |
+
 
 ## See Also
 

@@ -1,20 +1,21 @@
 ---
 title: "OnBeforeCacheUpdate"
 translation: "extending-modx/plugins/system-events/onbeforecacheupdate"
+description: "Событие запускается перед очисткой кэша сайта."
 ---
 
 ## Событие: OnBeforeCacheUpdate
 
-Запускается перед обновлением кэша.
+Событие запускается перед очисткой всего кэша сайта.
 
-Сервис: 4 - События сервиса кэша
-Группа: Нет
+- Служба: 4 - Cache Service Events
+- Group: System
 
 ## Параметры события
 
 Нет.
 
-## Example
+## Пример
 
 ```php
 <?php

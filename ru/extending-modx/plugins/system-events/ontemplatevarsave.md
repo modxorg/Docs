@@ -1,30 +1,31 @@
 ---
 title: "OnTemplateVarSave"
 translation: "extending-modx/plugins/system-events/ontemplatevarsave"
+description: "Срабатывает после сохранения ТВ, в modTemplateVar::save()."
 ---
 
 ## Событие: OnTemplateVarSave
 
-Загружается сразу после успешного сохранения шаблона переменной в базе.
+Загружается сразу после успешного сохранения переменной шаблона в базе.
 
-Служба: 1 - Parser Service Events
-Group: Template Variables
+- Служба: 1 - Parser Service Events
+- Group: Template Variables
 
 ## Параметры события
 
-| Имя         | Описание                                                                                                                                                                        |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| mode        | Either 'new' or 'upd', depending on the circumstances.                                                                                                                          |
-| templateVar | Экземпляр класса modTemplateVar.                                                                                                                                                |
-| cacheFlag   | Указывает, следует ли сохранять в кэше сохраненный TV и, необязательно, указав целочисленное значение за сколько секунд до истечения срока действия. Всегда возвращается 'true' |
+| Имя         | Описание                                                                                                                     |
+| ----------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| mode        | 'new' или 'upd', в зависимости от обстоятельств.                                                                             |
+| templateVar | Экземпляр класса modTemplateVar.                                                                                             |
+| cacheFlag   | Указывает, следует ли сохранять в кэше сохранённый TV и, необязательно, указав целочисленное значение, за сколько секунд до истечения срока. |
 
-## Remarks
+## Замечания
 
 | Предыдущее событие | [OnTemplateVarBeforeSave](extending-modx/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave")                      |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Следующее событие  | —                                                                                                                                     |
-| File               | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
-| Class              | modTemplateVar                                                                                                                         |
+| File               | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php)         |
+| Class              | MODX\Revolution\modTemplateVar                                                                                                         |
 | Method             | public function save($cacheFlag = null)                                                                                                |
 
 ## Пример

@@ -1,23 +1,22 @@
 ---
 title: "OnBeforeSaveWebPageCache"
+description: "Fires before a cacheable Resource page is written to the cache."
 _old_id: "388"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforesavewebpagecache"
 ---
 
 ## Event: OnBeforeSaveWebPageCache
 
-Fired after the Resource is loaded and before the Resource is cached. If the Resource is not cacheable, this event will not fire.
+Fires after the Resource loads and before it is cached. The event only runs when the page was generated successfully. It also requires the `cache_resource` system setting (default `1`) and `cacheable = 1` on the Resource. Otherwise nothing is written to the cache and the event does not run.
 
-- Service: 4 - Cache Service Events 
-- Group: None
+- Service: 4 - Cache Service Events
+- Group: System
 
 ## Event Parameters
 
-None. The resource can be referenced via $modx->resource.
+None. The Resource is available as `$modx->resource`.
 
 ## Example
-
-Such a plugin will write to the "Error log" id of the loaded resource:
 
 ```php
 <?php

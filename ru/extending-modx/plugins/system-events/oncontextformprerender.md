@@ -1,14 +1,15 @@
 ---
 title: "OnContextFormPrerender"
 translation: "extending-modx/plugins/system-events/oncontextformprerender"
+description: "Событие запускается перед отрисовкой формы редактирования контекста в менеджере."
 ---
 
 ## Событие: OnContextFormPrerender
 
-Запускается до загрузки формы редактирования контекста. Полезно для запуска пользовательского JavaScript.
+Событие запускается перед загрузкой формы редактирования контекста. Полезно для запуска пользовательского JavaScript. Событие вызывается только из формы **редактирования** контекста, поэтому `mode` всегда 'upd'.
 
-Служба: 2 - Manager Access Events
-Группа: modContext
+- Служба: 2 - Manager Access Events
+- Group: Contexts
 
 ## Параметры события
 
@@ -16,7 +17,7 @@ translation: "extending-modx/plugins/system-events/oncontextformprerender"
 | ------- | ------------------------------------------------ |
 | key     | Ключ контекста.                                  |
 | context | Ссылка на объект modContext.                     |
-| mode    | Либо 'upd' или 'new', в зависимости от ситуации. |
+| mode    | Всегда 'upd' (modSystemEvent::MODE\_UPD).        |
 
 ## Смотри также
 

@@ -1,19 +1,22 @@
 ---
 title: "OnPropertySetRemove"
 translation: "extending-modx/plugins/system-events/onpropertysetremove"
+description: "Событие запускается после удаления набора свойств."
 ---
 
 ## Событие: OnPropertySetRemove
 
-Срабатывает после удаления набора свойств.
+Событие запускается после удаления набора свойств.
 
-Служба: 1 - Parser Service Events
+- Служба: 1 - Parser Service Events
+- Group: Property Sets
 
 ## Параметры события
 
-| Имя         | Описание                         |
-| ----------- | -------------------------------- |
-| propertySet | Ссылка на объект modPropertySet. |
+| Имя         | Описание                                             |
+| ----------- | ---------------------------------------------------- |
+| propertySet | Ссылка на объект `modPropertySet`.                   |
+| ancestors   | Массив предков для каскадной операции удаления.      |
 
 ## Смотри также
 

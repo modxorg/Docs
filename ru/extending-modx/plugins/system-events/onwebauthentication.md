@@ -1,6 +1,7 @@
 ---
 title: "OnWebAuthentication"
 translation: "extending-modx/plugins/system-events/onwebauthentication"
+description: "Срабатывает непосредственно перед аутентификацией пользователя или добавлением его сеанса в любом контексте вне менеджера."
 ---
 
 ## Событие: OnWebAuthentication
@@ -9,8 +10,8 @@ translation: "extending-modx/plugins/system-events/onwebauthentication"
 
 Если его вывод равен true, или массив, в котором хотя бы один индекс установлен в true, MODX будет считать, что пользователь успешно вошел в систему, и пропустит аутентификацию по умолчанию с помощью пароля.
 
-Служба: 3 - Web Access Events
-Группа: Нет
+- Служба: 3 - Web Access Service Events
+- Group: Security
 
 ## Параметры события
 
@@ -27,8 +28,8 @@ translation: "extending-modx/plugins/system-events/onwebauthentication"
 
 1. _[_OnBeforeWebLogin_](extending-modx/plugins/system-events/onbeforeweblogin)_ || _[OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin)_ - Внутри этого события разработчик может проверить наличие ошибочных параметров, которые **будут запрещать** дальнейшую регистрацию в процессе. Если плагины, выполненные этим событием, возвращают что-то, кроме true, вход в систему будет прерван с указанной ошибкой.
 2. _[OnUserNotFound](extending-modx/plugins/system-events/onusernotfound)_ - Это событие выполняется, только если указанное имя пользователя не найдено в базе данных MODX. Разработчик может предоставить свой собственный объект modUser в выходных данных события, чтобы продолжить процесс входа в систему.
-3. **_OnWebAuthentication_** || _[OnManagerAuthentication](hextending-modx/plugins/system-events/onmanagerauthentication)_ - Внутри этого события разработчик может проверить параметры, которые **отменят проверку по умолчанию паролем** и **позволят** продолжить вход в систему. Если один из плагинов, выполненных из этого события, возвращает true, пользователь считается проверенным и вошел в систему.
-4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - Это событие вызывается после завершения процесса входа в систему и считается, что пользователь вошел в систему. Оно **не меняет **процесс входа в систему **поведение**.
+3. **_OnWebAuthentication_** || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Внутри этого события разработчик может проверить параметры, которые **отменят проверку по умолчанию паролем** и **позволят** продолжить вход в систему. Если один из плагинов, выполненных из этого события, возвращает true, пользователь считается проверенным и вошел в систему.
+4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - Это событие вызывается после завершения процесса входа в систему и считается, что пользователь вошел в систему. Оно **не меняет поведение** процесса входа в систему.
 
 ## Смотри также
 

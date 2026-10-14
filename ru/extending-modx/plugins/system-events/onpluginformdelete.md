@@ -1,21 +1,23 @@
 ---
 title: "OnPluginFormDelete"
 translation: "extending-modx/plugins/system-events/onpluginformdelete"
+description: "Событие запускается после удаления плагина в менеджере."
 ---
 
 ## Событие: OnPluginFormDelete
 
-Запускается после удаления плагина.
+Событие запускается после удаления плагина.
 
-Служба: 1 - Parser Service Events
-Группа: Plugins
+- Служба: 1 - Parser Service Events
+- Group: Plugins
 
 ## Параметры события
 
-| Имя   | Описание                    |
-| ----- | --------------------------- |
-| chunk | Ссылка на объект modPlugin. |
-| id    | ID плагина.                 |
+| Имя    | Описание                                                         |
+| ------ | ---------------------------------------------------------------- |
+| id     | Идентификатор плагина.                                           |
+| plugin | Ссылка на объект `modPlugin`.                                    |
+| object | Ссылка на объект `modPlugin` — тот же экземпляр, что и `plugin`. |
 
 ## Смотри также
 

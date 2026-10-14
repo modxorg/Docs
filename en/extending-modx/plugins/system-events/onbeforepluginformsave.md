@@ -1,15 +1,16 @@
 ---
 title: "OnBeforePluginFormSave"
+description: "Fires before a Plugin is saved in the Manager."
 _old_id: "387"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforepluginformsave"
 ---
 
 ## Event: OnBeforePluginFormSave
 
-Fires after a form is submitted but before a Plugin is saved in the manager.
+Fires after a form is submitted but before a Plugin is saved in the Manager.
 
 - Service: 1 - Parser Service Events
-- Group: Plugin
+- Group: Plugins
 
 ## Event Parameters
 
@@ -18,10 +19,10 @@ Fires after a form is submitted but before a Plugin is saved in the manager.
 | mode   | Either 'upd' or 'new', depending on the circumstance. |
 | plugin | A reference to the modPlugin object.                  |
 | id     | The ID of the plugin. Will be 0 for new plugins.      |
+| data   | The current fields of the Plugin as an array.         |
+| object | Alias of `plugin` — a reference to the same object.   |
 
-## Examples of
-
-Such a plugin displays a message stating that the field is not filled `description`:
+## Examples
 
 ``` php
 <?php
@@ -34,8 +35,6 @@ switch($eventName) {
         break;
 }
 ```
-                
-Such a plugin will prevent the user from creating new plugins with `id=1`:
 
 ``` php
 <?php
@@ -50,7 +49,7 @@ switch($eventName) {
         }
         break;
 }
-``` 
+```
 
 ## See Also
 

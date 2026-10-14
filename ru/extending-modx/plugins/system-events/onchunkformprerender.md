@@ -1,14 +1,15 @@
 ---
 title: "OnChunkFormPrerender"
 translation: "extending-modx/plugins/system-events/onchunkformprerender"
+description: "Событие запускается перед отрисовкой формы чанка в менеджере."
 ---
 
 ## Событие: OnChunkFormPrerender
 
-Запускается до изменения чанка, но JS подгружается. Можно использовать для визуализации пользовательских JavaScript в mgr.
+Событие запускается перед отрисовкой формы чанка в менеджере: после того, как контроллер загрузил свои пользовательские CSS/JS (`loadCustomCssJs()`), но до регистрации CSS/JS страницы (`registerCssJs()`). Можно использовать для вывода пользовательского JavaScript в mgr.
 
-Служба: 1 - Parser Service Events
-Группа: Chunks
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
@@ -18,7 +19,7 @@ translation: "extending-modx/plugins/system-events/onchunkformprerender"
 | id    | Идентификатор Чанка. Это будет 0 для новых чанков.       |
 | chunk | Ссылка на объект modChunk. Будет нулевым в новых чанках. |
 
-## Example
+## Пример
 
 Такой плагин подгружает `style` в `head` и сделает текст в `.x-form-text` красным:
 

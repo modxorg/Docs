@@ -1,5 +1,6 @@
 ---
 title: "OnPluginFormSave"
+description: "Fires after a Plugin is saved in the manager."
 _old_id: "448"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpluginformsave"
 ---
@@ -13,11 +14,13 @@ Fires after a Plugin is saved in the manager.
 
 ## Event Parameters
 
-| Name  | Description                                           |
-| ----- | ----------------------------------------------------- |
-| mode  | Either 'upd' or 'new', depending on the circumstance. |
-| chunk | A reference to the modPlugin object.                  |
-| id    | The ID of the plugin.                                 |
+| Name   | Description                                                         |
+| ------ | ------------------------------------------------------------------- |
+| mode   | Either 'new' or 'upd', depending on the circumstance.               |
+| id     | The ID of the Plugin.                                               |
+| plugin | A reference to the modPlugin object.                                |
+| object | A reference to the modPlugin object, the same instance as `plugin`. |
+
 
 ## See Also
 

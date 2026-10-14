@@ -1,19 +1,23 @@
 ---
 title: "OnPropertySetSave"
 translation: "extending-modx/plugins/system-events/onpropertysetsave"
+description: "Событие запускается сразу после сохранения набора свойств."
 ---
 
 ## Событие: OnPropertySetSave
 
-Срабатывает сразу после сохранения набора свойств.
+Событие запускается сразу после сохранения набора свойств.
 
-Служба: 1 - Parser Service Events
+- Служба: 1 - Parser Service Events
+- Group: Property Sets
 
 ## Параметры события
 
-| Имя         | Описание                         |
-| ----------- | -------------------------------- |
-| propertySet | Ссылка на объект modPropertySet. |
+| Имя         | Описание                                                     |
+| ----------- | ------------------------------------------------------------ |
+| mode        | `'new'` или `'upd'` в зависимости от ситуации.               |
+| propertySet | Ссылка на объект `modPropertySet`.                           |
+| cacheFlag   | Флаг кэша, переданный в операцию сохранения.                 |
 
 ## Смотри также
 

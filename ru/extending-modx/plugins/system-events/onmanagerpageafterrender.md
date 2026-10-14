@@ -1,14 +1,15 @@
 ---
 title: "OnManagerPageAfterRender"
 translation: "extending-modx/plugins/system-events/onmanagerpageafterrender"
+description: "Событие запускается в контроллере менеджера после обработки контента, непосредственно перед возвратом ответа."
 ---
 
 ## Событие: OnManagerPageAfterRender
 
-Запускается в менеджере контролерра, после обработки контента и до его возврата. Последнее событие до получения ответа.
+Событие запускается в контроллере менеджера после обработки контента и до его возврата. Последнее событие перед получением ответа.
 
-Служба: 2 - Manager Access Events
-Группа: System
+- Служба: 2 - Manager Access Events
+- Group: System
 
 ## Параметры события
 
@@ -16,14 +17,14 @@ translation: "extending-modx/plugins/system-events/onmanagerpageafterrender"
 | ---------- | ------------------------------------------------- |
 | controller | Экземпляр контроллера текущей страницы менеджера. |
 
-## Remarks
+## Примечания
 
 | Предыдущее событие | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Следующее событие  | —                                                                                                                                                 |
-| File               | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |
-| Class              | абстрактный класс modManagerController                                                                                                             |
-| Method             | public function render()                                                                                                                           |
+| Файл               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php)        |
+| Класс              | abstract class modManagerController                                                                                                                |
+| Метод              | public function render()                                                                                                                           |
 
 ## Смотри также
 

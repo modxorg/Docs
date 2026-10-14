@@ -1,14 +1,15 @@
 ---
 title: "OnSiteSettingsRender"
 translation: "extending-modx/plugins/system-events/onsitesettingsrender"
+description: "Срабатывает до отрисовки страницы системных настроек."
 ---
 
 ## Событие: OnSiteSettingsRender
 
-Запускается до отображения страницы настроек системы. Полезно для добавления пользовательского HTML на страницу настроек системы.
+Срабатывает до отрисовки страницы системных настроек. Полезно для добавления пользовательского HTML на страницу настроек системы.
 
-Служба: 1 - Parser Service Events
-Группа: System Settings
+- Служба: 1 - Parser Service Events
+- Group: Settings
 
 ## Параметры события
 

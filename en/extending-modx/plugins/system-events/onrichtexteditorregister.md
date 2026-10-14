@@ -1,21 +1,23 @@
 ---
 title: "OnRichTextEditorRegister"
+description: "Fires whenever a dropdown of available richtext editors is rendered."
 _old_id: "461"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onrichtexteditorregister"
 ---
 
 ## Event: OnRichTextEditorRegister
 
-Renders during any dropdown or select for available richtext editors for MODX.
+Fires whenever a dropdown of available richtext editors is rendered.
 
-If you are developing a custom RTE, simply return the name of the RTE that you are developing. This will then be matched to the System Setting 'which\_editor', which will allow users to select your RTE to use.
+When developing a custom RTE, return its name. MODX matches it against the `which_editor` System Setting, so users can select the RTE.
 
 - Service: 1 - Parser Service Events
-- Group: Richtext Editor
+- Group: RichText Editor
 
 ## Event Parameters
 
 None.
+
 
 ## See Also
 

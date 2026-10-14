@@ -1,36 +1,33 @@
 ---
 title: "OnTemplateVarBeforeRemove"
+description: "Fires right before a TV is removed, in modTemplateVar::remove()."
 _old_id: "464"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemplatevarbeforeremove"
 ---
 
 ## Event: OnTemplateVarBeforeRemove
 
-Loaded right before removing a template variable.
+Fires right before a TV is removed, in `modTemplateVar::remove()`.
 
 - Service: 1 - Parser Service Events
 - Group: Template Variables
 
 ## Event Parameters
 
-| Name        | Description                                                                                                                                            |
-| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| templateVar | The instance of modTemplateVar class.                                                                                                                  |
-| cacheFlag   | Indicates if the saved TV should be cached and optionally, by specifying an integer value, for how many seconds before expiring. Returns always 'true' |
+| Name        | Description                                                                            |
+| ----------- | -------------------------------------------------------------------------------------- |
+| templateVar | A reference to the modTemplateVar object.                                              |
+| cacheFlag   | Always `true` — the core passes a hard-coded flag when firing this event.                             |
 
 ## Remarks
 
-| Previous event | —                                                                                                                                     |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | [OnTemplateVarRemove](extending-modx/plugins/system-events/ontemplatevarremove "OnTemplateVarRemove")                                  |
-| File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
-| Class          | modTemplateVar                                                                                                                         |
-| Method         | public function remove(array $ancestors= array ())                                                                                     |
-
+| Next event | [OnTemplateVarRemove](extending-modx/plugins/system-events/ontemplatevarremove "OnTemplateVarRemove") |
+| ---------- | ----------------------------------------------------------------------------------------------------- |
+| File       | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php) |
+| Class      | MODX\Revolution\modTemplateVar                                                                         |
+| Method     | `public function remove(array $ancestors = array())`                                                  |
 
 ## Example
-
-Such a plugin will display the remote TV data in the "Error log":
 
 ```php
 <?php

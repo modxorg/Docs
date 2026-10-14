@@ -1,22 +1,25 @@
 ---
 title: "OnDocFormPrerender"
 translation: "extending-modx/plugins/system-events/ondocformprerender"
+description: "Событие запускается перед загрузкой формы редактирования ресурса в менеджере."
 ---
 
 ## Событие: OnDocFormPrerender
 
-Запускается до загрузки формы редактирования ресурса в менеджере.
+Событие запускается перед загрузкой формы редактирования ресурса в менеджере.
 
-Служба: 1 - Parser Service Events
-Группа: Documents
+- Служба: 1 - Parser Service Events
+- Group: Resources
 
 ## Параметры события
 
-| Имя      | Описание                                                        |
-| -------- | --------------------------------------------------------------- |
-| mode     | Либо 'new' либо 'upd', в зависимости от обстоятельств.          |
-| resource | Ссылка на объект modResource. Будет нулевым для новых ресурсов. |
-| id       | Идентификатор ресурса. Будет 0 для новых ресурсов.              |
+| Имя      | Описание                                                      |
+| -------- | ------------------------------------------------------------- |
+| mode     | Либо 'new' либо 'upd', в зависимости от обстоятельств.        |
+| id       | Идентификатор ресурса. Будет 0 для новых ресурсов.            |
+| resource | Ссылка на объект modResource. Для новых ресурсов не передаётся. |
+
+Параметр `resource` передаётся только при редактировании существующего ресурса. При создании нового ресурса его в данных события нет вовсе (до 2.4 он был равен `null`), поэтому проверяйте через `isset($resource)`, а не через `$resource === null`.
 
 ## Пример
 
@@ -29,18 +32,16 @@ switch($eventName) {
     case 'OnDocFormPrerender':
         $modx->regClientStartupHTMLBlock('
         <script type="text/javascript">
-    		Ext.onReady(function() {
-                var pagetitle = Ext.select("#modx-resource-pagetitle");
-                pagetitle.on("click",function(node,e){
-                    Ext.MessageBox.alert("Внимание","Ты только что нажал на pagetitle.");
-                    
-                },pagetitle);
-    		});
-    	</script>');
-    	$modx->event->output('<h2 style="padding: 50px 0 0 15px;">Привет дружище!</h2>');
+        Ext.onReady(function() {
+            Ext.select("#modx-resource-pagetitle").on("click", function() {
+                Ext.MessageBox.alert("Attention", "You just clicked on pagetitle.");
+            });
+        });
+        </script>');
+        $modx->event->output('<h2>Hello my friend!</h2>');
         break;
 }
-```  
+```
 
 ## Смотри также
 

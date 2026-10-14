@@ -1,21 +1,23 @@
 ---
 title: "OnContextBeforeSave"
-_old_id: "414"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncontextbeforesave"
+description: "Fires right before a Context is saved, in modContext::save()."
 ---
 
 ## Event: OnContextBeforeSave
 
-Happens right before a context is saved.
+Fires right before a Context is saved, in `modContext::save()`.
 
-- Service: 2 - Manager Access Events
+- Service: 1 - Parser Service Events
+- Group: Contexts
 
 ## Event Parameters
 
-| Name    | Description                                                                                                                            |
-| ------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| context | A reference to the modContext object.                                                                                                  |
-| mode    | Either 'new' (modSystemEvent::MODE\_NEW) or 'upd' (modSystemEvent::MODE\_UPD) depending on whether is a new object or an existing one. |
+| Name      | Description                                                     |
+| --------- | --------------------------------------------------------------- |
+| context   | A reference to the modContext object.                           |
+| mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| cacheFlag | The cacheFlag argument passed to the save() method.             |
+
 
 ## See Also
 

@@ -1,20 +1,23 @@
 ---
 title: "OnChunkSave"
 translation: "extending-modx/plugins/system-events/onchunksave"
+description: "Событие запускается после сохранения чанка, в modChunk::save()."
 ---
 
 ## Событие: OnChunkSave
 
-Происходит после сохранения чанка.
+Событие запускается после сохранения чанка, в `modChunk::save()`.
 
-Служба: 2 - Manager Access Events
-Group: modChunk
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
-| Имя   | Описание                   |
-| ----- | -------------------------- |
-| chunk | Ссылка на объект modChunk. |
+| Имя       | Описание                                                 |
+| --------- | -------------------------------------------------------- |
+| mode      | Либо 'new' или 'upd', в зависимости от обстоятельств.    |
+| chunk     | Ссылка на объект modChunk.                               |
+| cacheFlag | Аргумент cacheFlag, переданный в метод save().           |
 
 ## Смотри также
 

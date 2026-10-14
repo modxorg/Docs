@@ -1,20 +1,22 @@
 ---
 title: "OnCategoryBeforeRemove"
 translation: "extending-modx/plugins/system-events/oncategorybeforeremove"
+description: "Событие запускается непосредственно перед удалением категории, в modCategory::remove()."
 ---
 
 ## Событие: OnCategoryBeforeRemove
 
-Происходит прямо перед удалением категории.
+Событие запускается непосредственно перед удалением категории, в `modCategory::remove()`.
 
-Служба: 2 - Manager Access Events
-Group: Categories
+- Служба: 1 - Parser Service Events
+- Group: Categories
 
 ## Параметры события
 
-| Имя      | Описание                      |
-| -------- | ----------------------------- |
-| category | Ссылка на объект modCategory. |
+| Имя       | Описание                                           |
+| --------- | -------------------------------------------------- |
+| category  | Ссылка на объект modCategory.                      |
+| ancestors | Массив предков, переданный в метод remove().       |
 
 ## Смотри также
 

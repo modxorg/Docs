@@ -1,14 +1,15 @@
 ---
 title: "OnWebLogin"
 translation: "extending-modx/plugins/system-events/onweblogin"
+description: "Срабатывает после успешной аутентификации пользователя в контексте вне `mgr` и добавления session contexts."
 ---
 
 ## Событие: OnWebLogin
 
 Вызывается после успешной аутентификации пользователя во фронтенд-контексте (не `mgr`) и после добавления session contexts. Плагины не меняют результат входа.
 
-- Служба: 3 - Web Access Events
-- Группа: Нет
+- Служба: 3 - Web Access Service Events
+- Group: Security
 
 ## Параметры события
 

@@ -1,12 +1,13 @@
 ---
 title: "OnBeforeSnipFormSave"
+description: "Fires before a Snippet is saved in the Manager."
 _old_id: "390"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforesnipformsave"
 ---
 
 ## Event: OnBeforeSnipFormSave
 
-Fires after a form is submitted but before a Snippet is saved in the manager.
+Fires after a form is submitted but before a Snippet is saved in the Manager.
 
 - Service: 1 - Parser Service Events
 - Group: Snippets
@@ -18,10 +19,10 @@ Fires after a form is submitted but before a Snippet is saved in the manager.
 | mode    | Either 'upd' or 'new', depending on the circumstance. |
 | snippet | A reference to the modSnippet object.                 |
 | id      | The ID of the Snippet. Will be 0 for new Snippets.    |
+| data    | The current fields of the Snippet as an array.        |
+| object  | Alias of `snippet` — a reference to the same object.  |
 
-## Examples of
-
-Such a plugin will display a message stating that the field is not filled `description`:
+## Examples
 
 ``` php
 <?php
@@ -34,15 +35,13 @@ switch($eventName) {
         break;
 }
 ```
-                
-Such a plugin will prevent the user from creating new snippets with `id=1`:
 
 ``` php
 <?php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnBeforeSnipFormSave':
-        //если это новый сниппет
+        // if it's a new snippet
         if ($mode == modSystemEvent::MODE_NEW){
             if ($modx->user->get('id') == 1){
                 $modx->event->output("You are not allowed to create new snippets!");
@@ -50,7 +49,7 @@ switch($eventName) {
         }
         break;
 }
-```           
+```
 
 ## See Also
 

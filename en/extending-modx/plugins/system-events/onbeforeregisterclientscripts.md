@@ -1,17 +1,19 @@
 ---
 title: "OnBeforeRegisterClientScripts"
+description: "Fires before the registered client scripts are added to the web page output."
 ---
 
 ## Event: OnBeforeRegisterClientScripts
 
-Fired before the registered client scripts are added to the web page output.
+Fires before the registered client scripts are added to the web page output. It only fires for `text/html` responses; binary and other content types are skipped.
 
 - Service: 5 - Template Service Events
-- Group: None
+- Group: System
 
 ## Event Parameters
 
 None.
+
 
 ## See Also
 

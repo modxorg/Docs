@@ -1,32 +1,34 @@
 ---
 title: "OnBeforeManagerPageInit"
 translation: "extending-modx/plugins/system-events/onbeforemanagerpageinit"
+description: "Событие запускается непосредственно перед запуском контроллера менеджера."
 ---
 
 ## Событие: OnBeforeManagerPageInit
 
 Загружается прямо перед запуском контроллера менеджера и после проверки разрешений.
 
-Служба: 2 - Manager Access Events
-Группа: System
+- Служба: 2 - Manager Access Events
+- Group: System
 
 ## Параметры события
-
-Обратите внимание, что параметры события для этого события изменились в 3.0.0-alpha2.
 
 | Имя            | Описание                                                         |
 | -------------- | ---------------------------------------------------------------- |
 | action         | Маршрут или действие для загрузки в текущем пространстве имен    |
+| controller     | То же значение, что и `action`                                   |
 | namespace      | Пространство имен (в виде строки) для текущего пространства имен |
 | namespace_path | Основной путь для пространства имен                              |
+
+На страницах ошибок менеджера этих ключей нет в конфиге контроллера — контроллер Error создаётся только с `message` (и `errors`). Проверяйте их через `isset()` перед использованием.
 
 ## Замечания
 
 | Предыдущее событие | [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit "OnManagerPageInit")                                                    |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Следующее событие  | [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender "OnManagerPageBeforeRender")                            |
-| File               | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |
-| Class              | абстрактный класс modManagerController                                                                                                             |
+| File               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
+| Class              | abstract class MODX\Revolution\modManagerController                                                                                               |
 | Method             | public function render()                                                                                                                           |
 
 ## Пример
@@ -45,5 +47,5 @@ switch($eventName) {
 
 ## Смотри также
 
--   [System Events](extending-modx/plugins/system-events "System Events")
--   [Плагины](extending-modx/plugins "Плагины")
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Плагины](extending-modx/plugins "Плагины")

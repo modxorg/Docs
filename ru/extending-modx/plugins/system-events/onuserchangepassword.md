@@ -1,14 +1,15 @@
 ---
 title: "OnUserChangePassword"
 translation: "extending-modx/plugins/system-events/onuserchangepassword"
+description: "Срабатывает каждый раз, когда пользователь корректно меняет свой пароль."
 ---
 
 ## Событие: OnUserChangePassword
 
-Запускается каждый раз, когда пользователь меняет пароль.
+Срабатывает каждый раз, когда пользователь корректно меняет свой пароль.
 
-Служба: 3 - Template Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: Users
 
 ## Параметры события
 
@@ -16,7 +17,7 @@ translation: "extending-modx/plugins/system-events/onuserchangepassword"
 | ------------ | ------------------------------------------ |
 | user         | Ссылка на объект modUser пользователя.     |
 | newpassword  | Устанавливаемый новый пароль.              |
-| oldpassword  | Старый пароль перезаписываемый.            |
+| oldpassword  | Старый пароль перезаписываемый.             |
 | userid       | Идентификатор пользователя. (Устаревшее)   |
 | username     | Имя username пользователя. (Устаревшее)    |
 | userpassword | Устанавливаемый новый пароль. (Устаревшее) |

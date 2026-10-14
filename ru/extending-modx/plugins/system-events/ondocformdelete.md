@@ -1,52 +1,40 @@
 ---
 title: "OnDocFormDelete"
 translation: "extending-modx/plugins/system-events/ondocformdelete"
+description: "Событие запускается после удаления ресурса в менеджере."
 ---
 
 ## Событие: OnDocFormDelete
 
-Запускается после удаления ресурса
+Событие запускается после удаления ресурса в менеджере, из процессора `Resource\Delete`.
 
-Служба: 1 - Parser Service Events
-Группа: Documents
+- Служба: 1 - Parser Service Events
+- Group: Resources
 
 ## Параметры события
 
 | Имя      | Описание                                                                       |
 | -------- | ------------------------------------------------------------------------------ |
-| resource | Ссылка на объект modResource.                                                  |
 | id       | Идентификатор ресурса.                                                         |
 | children | Массив идентификаторов дочерних элементов этого ресурса, которые были удалены. |
+| resource | Ссылка на объект modResource.                                                  |
 
 ## Пример
 
-Такой плагин отправит на почту список удаленных ресурсов:
+Такой плагин запишет в журнал ошибок удалённый ресурс вместе с его дочерними ресурсами:
 
 ``` php
 <?php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnDocFormDelete':
-        $modx->getService('mail', 'mail.modPHPMailer');
-        $modx->mail->set(modMail::MAIL_FROM, $modx->getOption('emailsender'));
-        $modx->mail->set(modMail::MAIL_FROM_NAME, $modx->getOption('site_name'));
-        //Адрес получателя
-        $modx->mail->address('to', 'mail@pitrooo.ru');
-        //Заголовок
-        $modx->mail->set(modMail::MAIL_SUBJECT, 'Были удалены ресурсы');
-        //тело письма
-        foreach ($children as $value) {
-            $resource = $modx->getObject('modResource', $value);
-            $name .= '<br>'.$resource->get('pagetitle');
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Resource '.$id.' was deleted');
+        foreach ($children as $childId) {
+            $child = $modx->getObject('modResource', $childId);
+            if ($child) {
+                $modx->log(modX::LOG_LEVEL_ERROR, 'Child deleted: '.$child->get('pagetitle'));
+            }
         }
-        $contentbody = 'Были удален ресурс с id '.$id.' а вместе с ним '.$name;
-        $modx->mail->set(modMail::MAIL_BODY, $contentbody);
-        //Отправляем
-        $modx->mail->setHTML(true);
-        if (!$modx->mail->send()) {
-            $modx->log(modX::LOG_LEVEL_ERROR,'Произошла ошибка при попытке отправки сообщения электронной почты: '.$modx->mail->mailer->ErrorInfo);
-        }
-        $modx->mail->reset();
         break;
 }
 ```

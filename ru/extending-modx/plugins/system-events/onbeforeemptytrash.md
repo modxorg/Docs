@@ -1,20 +1,22 @@
 ---
 title: "OnBeforeEmptyTrash"
 translation: "extending-modx/plugins/system-events/onbeforeemptytrash"
+description: "Событие запускается перед очисткой корзины на сайте."
 ---
 
 ## Событие: OnBeforeEmptyTrash
 
-Загружается перед тем, как корзина очистится.
+Событие запускается перед очисткой корзины на сайте. Также его вызывает процессор `resources/trash/purge` при окончательном удалении ресурсов, уже перемещённых в корзину.
 
-Служба: 1 - Parser Service Events
-Группа: Documents
+- Служба: 1 - Parser Service Events
+- Group: Resources
 
 ## Параметры события
 
 | Имя | Описание                                            |
 | --- | --------------------------------------------------- |
 | ids | Массив ID ресурсов, которые будут навсегда удалены. |
+| resources | Массив объектов modResource, которые будут удалены. Передаётся по ссылке. |
 
 ## Примеры
 

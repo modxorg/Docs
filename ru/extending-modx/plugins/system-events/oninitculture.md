@@ -1,14 +1,15 @@
 ---
 title: "OnInitCulture"
 translation: "extending-modx/plugins/system-events/oninitculture"
+description: "Событие запускается после инициализации Culture и Lexicon."
 ---
 
 ## Событие: OnInitCulture
 
-Запускается после того, как Culture и Lexicon были инициализированы.
+Событие запускается после того, как Culture и Lexicon были инициализированы.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: Internationalization
 
 ## Параметры события
 

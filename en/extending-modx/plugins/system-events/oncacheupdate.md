@@ -1,15 +1,14 @@
 ---
 title: "OnCacheUpdate"
-_old_id: "400"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncacheupdate"
+description: "Fires after the site cache is cleared."
 ---
 
 ## Event: OnCacheUpdate
 
-Fired after the cache is cleared at any time.
+Fires after the site cache is cleared, in `modCacheManager::clean()` and `modCacheManager::refresh()`.
 
 - Service: 4 - Cache Service Events
-- Group: None
+- Group: System
 
 ## Event Parameters
 
@@ -21,13 +20,11 @@ Fired after the cache is cleared at any time.
 
 ## Example
 
-Such a plugin will display and write the result of execution to the "Error log":
-
 ```php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnCacheUpdate':
-        $modx->log(modX::LOG_LEVEL_ERROR, print_r($results));
+        $modx->log(modX::LOG_LEVEL_ERROR, print_r($results, true));
         break;
 }
 ```

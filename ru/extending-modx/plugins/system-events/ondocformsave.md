@@ -1,29 +1,35 @@
 ---
 title: "OnDocFormSave"
 translation: "extending-modx/plugins/system-events/ondocformsave"
+description: "Событие запускается после сохранения ресурса в менеджере."
 ---
 
 ## Событие: OnDocFormSave
 
-Запускается после сохранения ресурса в менеджере через форму редактирования.
+Событие запускается после сохранения ресурса в менеджере через процессор создания или обновления (`Resource\Create`, `Resource\Update`). Оно также срабатывает при inline-редактировании удалённого ресурса в сетке корзины (`Resource\UpdateFromGrid`).
 
-Служба: 1 - Parser Service Events
-Группа: Documents
+- Служба: 1 - Parser Service Events
+- Group: Resources
 
-**TVs Лучше всего модифицировать здесь**
-Если вам нужно изменить значения TV, лучше изменить их здесь, а не во время [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").
+**TVs лучше всего изменять здесь.** Если вам нужно изменить значения TV, лучше изменить их здесь, а не во время [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"). В отличие от [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), это событие не поддерживает метод `$modx->event->output()`.
 
-В отличие от [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), это событие не поддерживает метод `$modx->event->output()`.
+**Сохранение происходит автоматически.** Не нужно вызывать `$resource->save()`.
+
+Всё, что вы вернёте из этого события, записывается в журнал ошибок.
 
 ## Параметры события
 
-| Имя      | Описание                                               |
-| -------- | ------------------------------------------------------ |
-| mode     | Either 'new' or 'upd', depending on the circumstances. |
-| resource | Ссылка на объект modResource.                          |
-| id       | The ID of the Resource (even for new resources)        |
+| Имя        | Описание                                                                              |
+| ---------- | ------------------------------------------------------------------------------------- |
+| mode       | Либо 'new' или 'upd', в зависимости от обстоятельств.                                 |
+| id         | Идентификатор ресурса (даже для новых ресурсов)                                       |
+| resource   | Ссылка на объект modResource.                                                         |
+| reloadOnly | Только при создании: true, если процессор лишь перезагружает форму после ошибки валидации. |
+| object     | Только при обновлении: ссылка на объект modResource, тот же экземпляр, что и resource. |
 
 ## Примеры
+
+### Чтение идентификатора ресурса
 
 Чтобы сделать что-то с идентификатором страницы (например, чтобы обновить связанную пользовательскую таблицу), вы можете прочитать это из объекта **$resource** (даже если вы создаете новый ресурс):
 
@@ -43,48 +49,7 @@ else {
 }
 ```
 
-Все, что вы вернете из этого события, будет записано в журналы, например,
-
-``` php
-return "Help I'm a bug!";
-```
-
-Результатом будет сообщение журнала, подобное следующему:
-
-``` php
- [2012-06-22 13:00:28] (ERROR @ /connectors/resource/index.php) [OnDocFormSave]Help I'm a bug!
-```
-
-### Вычисление значения TV
-
-``` php
-switch ($modx->event->name) {
-
-        // Documents
-        case 'OnDocFormSave':
-            if ($resource->get('template') == 8) {  
-                if(!$resource->setTVValue('my_tv', 'Some Value')) {
-                    $modx->log(modX::LOG_LEVEL_ERROR, 'There was a problem setting the TV value.');
-                }
-            }
-
-        break;
-}
-```
-
-Такой плагин выведет в "Журнал ошибок" массив сохраняемого ресурса:
-
-```php
-<?php
-$eventName = $modx->event->name;
-switch($eventName) {
-    case 'OnDocFormSave':
-        $modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
-        break;
-}
-```
-
-Такой плагин установит значение ТВ price текущего ресурса равным 128, при ошибке в "Журнал ошибок" добавится запись:
+### Значение TV
 
 ```php
 <?php
@@ -103,9 +68,6 @@ switch($eventName) {
 ```
 
 И не важно заполнено ли поле price перед сохранением, или нет. Плагин запишет 128.
-
-**Автоматическое сохранение**
-Нет необходимости запускать `$resource->save()` метод, так как это происходит автоматически.
 
 ## Смотри также
 

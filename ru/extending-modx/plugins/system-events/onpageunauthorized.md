@@ -1,14 +1,15 @@
 ---
 title: "OnPageUnauthorized"
 translation: "extending-modx/plugins/system-events/onpageunauthorized"
+description: "Событие запускается непосредственно перед перенаправлением пользователя на страницу «не авторизовано» при попытке просмотреть недоступный ресурс."
 ---
 
 ## Событие: OnPageUnauthorized
 
 Запускается непосредственно перед тем, как пользователь перенаправляется на неавторизованную страницу при попытке просмотреть недоступный Ресурс.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: Security
 
 ## Параметры события
 
