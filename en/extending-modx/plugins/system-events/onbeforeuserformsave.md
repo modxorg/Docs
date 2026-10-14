@@ -1,23 +1,27 @@
 ---
 title: "OnBeforeUserFormSave"
+description: "Fires after a form is submitted but before a User is saved in the manager."
 _old_id: "397"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforeuserformsave"
 ---
 
 ## Event: OnBeforeUserFormSave
 
-Fires after a form is submitted but before a User is saved in the manager.
+Fires after a form is submitted but before a User is saved in the Manager.
 
 - Service: 1 - Parser Service Events
 - Group: Users
 
 ## Event Parameters
 
-| Name | Description                                           |
-| ---- | ----------------------------------------------------- |
-| mode | Either 'upd' or 'new', depending on the circumstance. |
-| user | A reference to the modUser object.                    |
-| id   | The ID of the User. Will be 0 for new Users.          |
+| Name   | Description                                           |
+| ------ | ----------------------------------------------------- |
+| mode   | Either 'upd' or 'new', depending on the circumstance. |
+| user   | A reference to the modUser object.                    |
+| id     | The ID of the User. Will be 0 for new Users.          |
+| data   | The current fields of the User as an array.           |
+| object | Alias of `user` — a reference to the same object.     |
+
 
 ## See Also
 

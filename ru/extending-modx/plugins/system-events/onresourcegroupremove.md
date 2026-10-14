@@ -1,19 +1,22 @@
 ---
 title: "OnResourceGroupRemove"
 translation: "extending-modx/plugins/system-events/onresourcegroupremove"
+description: "Событие запускается после удаления группы ресурсов."
 ---
 
 ## Событие: OnResourceGroupRemove
 
-Запускается после удаления группы ресурсов.
+Событие запускается после удаления группы ресурсов. Событие вызывается даже в том случае, если само удаление не удалось — результат вызова remove() не проверяется.
 
-Служба: 1 - Parser Service Events
+- Служба: 1 - Parser Service Events
+- Group: Security
 
 ## Параметры события
 
-| Имя   | Описание                           |
-| ----- | ---------------------------------- |
-| group | Ссылка на объект modResourceGroup. |
+| Имя           | Описание                                        |
+| ------------- | ----------------------------------------------- |
+| resourceGroup | Ссылка на объект `modResourceGroup`.            |
+| ancestors     | Массив предков для каскадной операции удаления. |
 
 ## Смотри также
 

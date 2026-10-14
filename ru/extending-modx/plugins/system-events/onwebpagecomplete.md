@@ -1,14 +1,15 @@
 ---
 title: "OnWebPageComplete"
 translation: "extending-modx/plugins/system-events/onwebpagecomplete"
+description: "Срабатывает после загрузки ресурса, отправки ответа, сохранения кеша (если применимо) и завершения выполнения."
 ---
 
 ## Событие: OnWebPageComplete
 
-Срабатывает после загрузки ресурса, отправки ответа, хранения кеша (если применимо) и выполнения завершено.translation: "extending-modx/plugins/system-events/onwebpagecomplete"
+Срабатывает после загрузки ресурса, отправки ответа, хранения кеша (если применимо) и завершения выполнения.
 
-Служба: 2 - Template Service Events
-Группа: Нет
+- Служба: 5 - Template Service Events
+- Group: System
 
 ## Параметры события
 

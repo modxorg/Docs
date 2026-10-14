@@ -1,32 +1,34 @@
 ---
 title: "OnDocFormSave"
-_old_id: "422"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ondocformsave"
+description: "Fires after a Resource is saved in the Manager."
 ---
 
 ## Event: OnDocFormSave
 
-Fires after a Resource is saved in the manager via the editing form.
+Fires after a Resource is saved in the Manager through the `Resource\Create` and `Resource\Update` processors. Also fires when a deleted Resource is edited inline in the trash grid (`Resource\UpdateFromGrid`).
 
 - Service: 1 - Parser Service Events
-- Group: Documents
+- Group: Resources
 
-**TVs are best Modified Here**
-If you need to modify TV values, it's best to modify them here and not during [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave").
+**Change TVs here.** To change TV values, do it here, not in [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"). Unlike that event, this one does not support `$modx->event->output()`.
 
-Unlike [OnBeforeDocFormSave](extending-modx/plugins/system-events/onbeforedocformsave "OnBeforeDocFormSave"), this event does not support the $modx->event->output() method.
+**Saving happens automatically.** You do not need to call `$resource->save()`.
+
+Anything you return from this event is written to the error log.
 
 ## Event Parameters
 
-| Name     | Description                                            |
-| -------- | ------------------------------------------------------ |
-| mode     | Either 'new' or 'upd', depending on the circumstances. |
-| resource | A reference to the modResource object.                 |
-| id       | The ID of the Resource (even for new resources)        |
+| Name       | Description                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| mode       | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                            |
+| id         | The ID of the Resource, even for new Resources.                                             |
+| resource   | A reference to the modResource object.                                                      |
+| reloadOnly | Only on creation: `true` when the processor just reloads the form after a validation error. |
+| object     | Only on update: alias of `resource` — a reference to the same object.                       |
 
 ## Examples
 
-To do something with the page ID (e.g. to update a related custom table), you can read this out of the **$resource** object (even if you are creating a new resource):
+### Read the Resource ID
 
 ``` php
 // Log all available properties of the $resource
@@ -44,48 +46,7 @@ else {
 }
 ```
 
-Anything you return from this event will be written to the logs, e.g.
-
-``` php
-return "Help I'm a bug!";
-```
-
-Will result in a log message like the following:
-
-``` php
- [2012-06-22 13:00:28] (ERROR @ /connectors/resource/index.php) [OnDocFormSave]Help I'm a bug!
-```
-
-### Calculating a TV Value
-
-``` php
-switch ($modx->event->name) {
-
-        // Documents
-        case 'OnDocFormSave':
-            if ($resource->get('template') == 8) {  
-                if(!$resource->setTVValue('my_tv', 'Some Value')) {
-                    $modx->log(modX::LOG_LEVEL_ERROR, 'There was a problem setting the TV value.');
-                }
-            }
-
-        break;
-}
-```
-
-Such a plugin will display an array of the saved resource in the "Error log":
-
-```php
-<?php
-$eventName = $modx->event->name;
-switch($eventName) {
-    case 'OnDocFormSave':
-        $modx->log(MODX_LOG_LEVEL_ERROR, print_r($resource->toArray(),true) );
-        break;
-}
-```
-
-Such a plugin will set the value of the TV price of the current resource equal to 128, in case of an error an entry will be added to the "Error log":
+### Set a TV value
 
 ```php
 <?php
@@ -93,7 +54,7 @@ $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnDocFormSave':
         //if the resource has a template=5
-        if ($resource->get('template') == 5) {  
+        if ($resource->get('template') == 5) {
             // after saving the TV value price=128
             if(!$resource->setTVValue('price', '128')) {
                 $modx->log(modX::LOG_LEVEL_ERROR, 'Having problems setting the TV value.');
@@ -103,10 +64,7 @@ switch($eventName) {
 }
 ```
 
-It doesn't matter if the price field is filled in before saving or not. The plugin will write 128.
-
-**Saving Happens Automatically**
-No need to run the `$resource->save()` method as that happens automatically.
+Whether the `price` TV was filled in before saving does not matter: the plugin writes 128.
 
 ## See Also
 

@@ -1,14 +1,15 @@
 ---
 title: "OnBeforeDocFormDelete"
 translation: "extending-modx/plugins/system-events/onbeforedocformdelete"
+description: "Событие запускается перед удалением ресурса через менеджер."
 ---
 
 ## Событие: OnBeforeDocFormDelete
 
-Запускается перед удалением ресурса.
+Событие запускается перед удалением ресурса через менеджер.
 
-Служба: 1 - Parser Service Events
-Группа: Documents
+- Служба: 1 - Parser Service Events
+- Group: Resources
 
 ## Параметры события
 
@@ -49,10 +50,9 @@ switch($eventName) {
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnBeforeDocFormDelete':
-        if (count($childrenIds) > 0) {
-            $children = $childrenIds;
+        if (count($children) > 0) {
+            $modx->log(modX::LOG_LEVEL_ERROR, 'Был удален ресурс '.$resource->get('pagetitle').print_r($children, true));
         }
-        $modx->log(modX::LOG_LEVEL_ERROR, 'Был удален ресурс '.$resource->get('pagetitle').print_r($children));
         break;
 }
 ```

@@ -1,31 +1,31 @@
 ---
 title: "OnUserChangePassword"
+description: "Fires anytime the user properly changes their password."
 _old_id: "471"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuserchangepassword"
 ---
 
 ## Event: OnUserChangePassword
 
-Fires anytime the user properly changes their password.
+Fires when a User changes their password.
 
 - Service: 1 - Parser Service Events
-- Group: None
+- Group: Users
 
 ## Event Parameters
 
-| Name         | Description                                    |
-| ------------ | ---------------------------------------------- |
-| user         | A reference to the modUser object of the user. |
-| newpassword  | The new password being set.                    |
-| oldpassword  | The old password being overridden.             |
-| userid       | The user ID of the user. (deprecated)          |
-| username     | The username of the user. (deprecated)         |
-| userpassword | The new password being set. (deprecated)       |
-
+| Name         | Description                              |
+| ------------ | ---------------------------------------- |
+| user         | A reference to the modUser object.       |
+| newpassword  | The new password being set.              |
+| oldpassword  | The old password being overridden.       |
+| userid       | The ID of the User. (deprecated)         |
+| username     | The username of the User. (deprecated)   |
+| userpassword | The new password being set. (deprecated) |
 
 ## Example
 
-Such a plugin will display in the Error Log "who changed the password, what was his password and what he changed it to:
+Log the password change to the error log:
 
 ```php
 <?php

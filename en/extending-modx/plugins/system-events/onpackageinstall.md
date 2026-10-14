@@ -1,12 +1,24 @@
 ---
 title: "OnPackageInstall"
-_old_id: "1759"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onpackageinstall"
+description: "Fires after a package is successfully installed or upgraded via the package manager."
 ---
 
-Fired after a package is successfully installed via the package manager. Added in MODX Revolution 2.6.
+## Event: OnPackageInstall
 
-## Available Variables
+Fires after a package is successfully installed or upgraded via the package manager.
 
-- `$package`: the modTransportPackage instance that was installed. For example `$package->get('package_name')` to get the name of the package.
-- `$action`: one of `xPDOTransport::ACTION_UPGRADE` or `xPDOTransport::ACTION_INSTALL` to indicate if it was the first install, or an upgrade.
+- Service: 2 - Manager Access Events
+- Group: Package Manager
+
+## Event Parameters
+
+| Name    | Description                                                                                                                             |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| package | A reference to the modTransportPackage instance that was installed. Use `$package->get('package_name')` to get the name of the package. |
+| action  | One of `xPDOTransport::ACTION_UPGRADE` or `xPDOTransport::ACTION_INSTALL`, indicating whether it was an upgrade or a first install.     |
+
+
+## See Also
+
+- [System Events](extending-modx/plugins/system-events "System Events")
+- [Plugins](extending-modx/plugins "Plugins")

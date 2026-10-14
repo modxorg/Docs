@@ -1,23 +1,24 @@
 ---
 title: "OnFileManagerDirCreate"
 translation: "extending-modx/plugins/system-events/onfilemanagerdircreate"
+description: "Событие запускается после создания нового каталога в медиаменеджере."
 ---
 
 ## Событие: OnFileManagerDirCreate
 
-Запускается после создания нового каталога в диспетчере.
+Событие запускается после создания нового каталога в менеджере.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: System
 
 ## Параметры события
 
 | Имя       | Описание                                          |
 | --------- | ------------------------------------------------- |
 | directory | Содержит полный путь к вновь созданному каталогу. |
-| source    | Содержит объект медиаресурса.                     |
+| source    | Содержит объект `modMediaSource`.                 |
 
 ## Смотри также
 
--   [Системные события](extending-modx/plugins/system-events)
--   [Plugins](extending-modx/plugins)
+- [Системные события](extending-modx/plugins/system-events)
+- [Плагины](extending-modx/plugins)

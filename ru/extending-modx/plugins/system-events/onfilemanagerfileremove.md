@@ -1,23 +1,28 @@
 ---
 title: "OnFileManagerFileRemove"
 translation: "extending-modx/plugins/system-events/onfilemanagerfileremove"
+description: "Событие запускается после удаления файла через менеджер."
 ---
 
 ## Событие: OnFileManagerFileRemove
 
-Срабатывает после удаления файла через менеджер.
+Событие запускается после удаления файла через менеджер.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: System
 
 ## Параметры события
 
-| Имя    | Описание                                          |
-| ------ | ------------------------------------------------- |
-| path   | Содержит полный путь к файлу, который был удален. |
-| source | Содержит объект медиаресурса.                     |
+| Имя       | Описание                                 |
+| --------- | ---------------------------------------- |
+| directory | Содержит полный путь к удалённому файлу. |
+| source    | Содержит объект `modMediaSource`.        |
+
+::: tip Примечание
+В отличие от других событий семейства OnFileManager\*, в этом событии параметр с путём называется `directory`, а не `path`.
+:::
 
 ## Смотри также
 
--   [Системные события](extending-modx/plugins/system-events)
--   [Plugins](extending-modx/plugins)
+- [Системные события](extending-modx/plugins/system-events)
+- [Плагины](extending-modx/plugins)

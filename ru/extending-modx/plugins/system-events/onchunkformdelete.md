@@ -1,21 +1,23 @@
 ---
 title: "OnChunkFormDelete"
 translation: "extending-modx/plugins/system-events/onchunkformdelete"
+description: "Событие запускается после удаления чанка в менеджере."
 ---
 
 ## Событие: OnChunkFormDelete
 
-Запускается после удаления чанка.
+Событие запускается после удаления чанка в менеджере, из процессора `Element\Chunk\Remove`.
 
-Служба: 1 - Parser Service Events
-Группа: Chunks
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
-| Имя   | Описание                   |
-| ----- | -------------------------- |
-| chunk | Ссылка на объект modChunk. |
-| id    | Идентификатор Чанка.       |
+| Имя    | Описание                                                  |
+| ------ | --------------------------------------------------------- |
+| id     | Идентификатор чанка.                                      |
+| chunk  | Ссылка на объект modChunk.                                |
+| object | Ссылка на объект modChunk, тот же экземпляр, что и chunk. |
 
 ## Пример
 

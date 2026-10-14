@@ -1,21 +1,22 @@
 ---
 title: "OnContextBeforeRemove"
-_old_id: "413"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncontextbeforeremove"
+description: "Fires right before a Context is removed, in modContext::remove()."
 ---
 
 ## Event: OnContextBeforeRemove
 
-Happens right before a context is removed.
+Fires right before a Context is removed, in `modContext::remove()`.
 
-- Service: 2 - Manager Access Events
-- Group: modContext
+- Service: 1 - Parser Service Events
+- Group: Contexts
 
 ## Event Parameters
 
-| Name    | Description                           |
-| ------- | ------------------------------------- |
-| context | A reference to the modContext object. |
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| context   | A reference to the modContext object.                |
+| ancestors | An array of ancestors passed to the remove() method. |
+
 
 ## See Also
 

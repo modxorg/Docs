@@ -1,14 +1,15 @@
 ---
 title: "OnManagerPageBeforeRender"
 translation: "extending-modx/plugins/system-events/onmanagerpagebeforerender"
+description: "Событие запускается в контроллере менеджера перед обработкой контента страницы."
 ---
 
 ## Событие: OnManagerPageBeforeRender
 
-Запускается в контроллере менеджера, перед оформлением контента.
+Событие запускается в контроллере менеджера перед обработкой контента.
 
-Служба: 2 - Manager Access Events
-Группа: System
+- Служба: 2 - Manager Access Events
+- Group: System
 
 ## Параметры события
 
@@ -16,18 +17,18 @@ translation: "extending-modx/plugins/system-events/onmanagerpagebeforerender"
 | ---------- | ------------------------------------------------- |
 | controller | Экземпляр контроллера текущей страницы менеджера. |
 
-## Замечания
+## Примечания
 
-| Предыдущее событие | [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")                                  |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender "OnManagerPageAfterRender")                               |
-| File               | [core/model/modx/modmanagercontroller.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagercontroller.class.php) |
-| Class              | абстрактный класс `modManagerController`                                                                                                             |
-| Method             | public function render()                                                                                                                           |
+| Предыдущее событие | [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender "OnManagerPageAfterRender")                        |
+| Файл               | [core/src/Revolution/modManagerController.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerController.php) |
+| Класс              | abstract class `modManagerController`                                                                                                       |
+| Метод              | public function render()                                                                                                                    |
 
 ## Пример
 
-Такой плагин выведет в "Журнал ошибок" какой контроллер запущен:
+Такой плагин выведет в журнал ошибок, какой контроллер запущен:
 
 ```php
 <?php
@@ -40,37 +41,32 @@ switch($eventName) {
         break;
 }
 ```
-                
-Такой плагин выведет на экран "Доступ запрещен" пользователям, у которых в системных настройках указаны id ресурсов в параметре `allow_to_update`:
+
+Запретить редактирование ресурса, чей id отсутствует в настройке `allow_to_update`:
 
 ```php
 <?php
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnManagerPageBeforeRender':
-        switch($scriptProperties['controller']->config['controller']){
-            //Проверяем права на редактирование документов
-            case 'resource/update':
-                // Проверяем наличие настройки allow_to_update (задается в настройках пользователя)
-                // В ней мы перечисляем, какие документы пользователю можно редактировать
-                // Если настройка задана, но id документа отсутствует в перечисленных разрешенных,
-                // То возвращаем ошибку доступа 
-                if($allow_to_update = $modx->getOption('allow_to_update')){
-                    if(!is_array($allow_to_update)){
-                        $allow_to_update = explode(",", $allow_to_update);
-                        $allow_to_update = array_map('trim', $allow_to_update);
-                    }
-                    if(in_array($scriptProperties['controller']->scriptProperties['id'], $allow_to_update)){
-                        $scriptProperties['controller']->failure('Доступ запрещен');
-                        return;
-                    }
-                }
-                break;
+        $controller = $scriptProperties['controller'];
+        if ($controller->config['controller'] !== 'resource/update') {
+            break;
+        }
+        $allow_to_update = $modx->getOption('allow_to_update');
+        if (empty($allow_to_update)) {
+            break;
+        }
+        if (!is_array($allow_to_update)) {
+            $allow_to_update = array_map('trim', explode(',', $allow_to_update));
+        }
+        if (!in_array($controller->scriptProperties['id'], $allow_to_update)) {
+            $controller->failure('Access is denied');
         }
         break;
 }
 ```
-                
+
 Такой плагин подключит нужный нам js на страницы админки:
 
 ```php

@@ -1,21 +1,22 @@
 ---
 title: "OnChunkBeforeRemove"
-_old_id: "405"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkbeforeremove"
+description: "Fires right before a Chunk is removed, in modChunk::remove()."
 ---
 
 ## Event: OnChunkBeforeRemove
 
-Fires right before a Chunk is removed.
+Fires right before a Chunk is removed, in `modChunk::remove()`.
 
 - Service: 1 - Parser Service Events
-- Group: modChunk
+- Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                         |
-| ----- | ----------------------------------- |
-| chunk | A reference to the modChunk object. |
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| chunk     | A reference to the modChunk object.                  |
+| ancestors | An array of ancestors passed to the remove() method. |
+
 
 ## See Also
 

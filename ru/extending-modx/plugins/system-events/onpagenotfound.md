@@ -1,14 +1,15 @@
 ---
 title: "OnPageNotFound"
 translation: "extending-modx/plugins/system-events/onpagenotfound"
+description: "Событие запускается непосредственно перед перенаправлением пользователя на страницу ошибки при попытке просмотреть несуществующий ресурс."
 ---
 
 ## Событие: OnPageNotFound
 
 Срабатывает непосредственно перед тем, как пользователь перенаправляется на страницу ошибки при попытке просмотра несуществующего Ресурса.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: System
 
 ## Параметры события
 

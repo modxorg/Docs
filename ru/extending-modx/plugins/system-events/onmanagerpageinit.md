@@ -1,29 +1,31 @@
 ---
 title: "OnManagerPageInit"
 translation: "extending-modx/plugins/system-events/onmanagerpageinit"
+description: "Событие запускается в обработчике запросов менеджера после определения действия запроса и перед загрузкой страницы менеджера."
 ---
 
 ## Событие: OnManagerPageInit
 
-Запускается в обработчике запросов менеджера до загрузки ответа страницы менеджера и после определения действия запроса.
+Событие запускается в обработчике запросов менеджера до загрузки ответа страницы менеджера и после определения действия запроса.
 
-Служба: 2 - Manager Access Events
-Группа: System
+- Служба: 2 - Manager Access Events
+- Group: System
 
 ## Параметры события
 
-| Имя    | Описание                             |
-| ------ | ------------------------------------ |
-| action | Идентификатор загружаемого действия. |
+| Имя       | Описание                                                           |
+| --------- | ------------------------------------------------------------------ |
+| action    | Идентификатор загружаемого действия.                               |
+| namespace | Ключ пространства имён загружаемого действия. По умолчанию `core`. |
 
-## Remarks
+## Примечания
 
-| Предыдущее событие | [OnHandleRequest](extending-modx/plugins/system-events/onhandlerequest "OnHandleRequest")                                                    |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Следующее событие  | [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")                            |
-| File               | [core/model/modx/modmanagerrequest.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modmanagerrequest.class.php) |
-| Class              | class modManagerRequest                                                                                                                      |
-| Method             | public function handleRequest()                                                                                                              |
+| Предыдущее событие | [OnHandleRequest](extending-modx/plugins/system-events/onhandlerequest "OnHandleRequest")                                             |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Следующее событие  | [OnBeforeManagerPageInit](extending-modx/plugins/system-events/onbeforemanagerpageinit "OnBeforeManagerPageInit")                     |
+| Файл               | [core/src/Revolution/modManagerRequest.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modManagerRequest.php) |
+| Класс              | class modManagerRequest                                                                                                               |
+| Метод              | public function handleRequest()                                                                                                       |
 
 ## Смотри также
 

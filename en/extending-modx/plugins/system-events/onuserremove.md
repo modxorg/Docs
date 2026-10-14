@@ -1,21 +1,24 @@
 ---
 title: "OnUserRemove"
+description: "Fires after a User is removed, in modUser::remove()."
 _old_id: "475"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onuserremove"
 ---
 
 ## Event: OnUserRemove
 
-Fires after a User is removed.
+Fires after a User is removed, in `modUser::remove()`.
 
 - Service: 1 - Parser Service Events
-- Group: modUser
+- Group: Users
 
 ## Event Parameters
 
-| Name | Description                        |
-| ---- | ---------------------------------- |
-| user | A reference to the modUser object. |
+| Name      | Description                                 |
+| --------- | ------------------------------------------- |
+| user      | A reference to the modUser object.          |
+| ancestors | An array of ancestors passed to `remove()`. |
+
 
 ## See Also
 

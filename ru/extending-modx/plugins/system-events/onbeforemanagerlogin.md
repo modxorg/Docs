@@ -1,22 +1,22 @@
 ---
 title: "OnBeforeManagerLogin"
 translation: "extending-modx/plugins/system-events/onbeforemanagerlogin"
+description: "Событие запускается перед началом процесса входа пользователя в контекст менеджера."
 ---
 
 ## Событие: OnBeforeManagerLogin
 
-Запускается перед тем, как процесс входа в систему запускается для пользователя, при входе в админ панель. Можно использовать для запрета на вход.
-
-Чтобы разрешить вход при использовании этого события, пожалуйста, используйте:
+Событие запускается перед началом процесса входа пользователя в контекст менеджера. По умолчанию вход разрешён. Чтобы запретить его, плагин должен установить непустой вывод события, отличный от `true`, — обычно сообщение об ошибке:
 
 ``` php
-$modx->event->output(true);
-// before Revo 2.3.0 you should use instead:
-$modx->event->_output = true;
+// запретить вход и передать причину
+$modx->event->output('Вход не разрешён.');
 ```
 
-Служба: 2 - Manager Access Events
-Группа: Нет
+После этого вход прерывается с этим сообщением. Если ни один плагин не установил вывод, или вывод равен `true`, вход продолжается. Значение, возвращённое из кода плагина, не блокирует вход — оно пишется в журнал ошибок.
+
+- Служба: 2 - Manager Access Events
+- Group: Security
 
 ## Параметры события
 
@@ -32,10 +32,10 @@ $modx->event->_output = true;
 
 ## Рабочий процесс входа в систему
 
-1. _[_OnBeforeWebLogin_](extending-modx/plugins/system-events/onbeforeweblogin)_ || **_OnBeforeManagerLogin_** - Внутри этого события разработчик может проверить наличие ошибочных параметров, которые **будут запрещать** дальнейшую регистрацию в процессе. Если плагины, выполненные этим событием, возвращают что-то, кроме true, вход в систему будет прерван с указанной ошибкой.
+1. _[_OnBeforeWebLogin_](extending-modx/plugins/system-events/onbeforeweblogin)_ || **_OnBeforeManagerLogin_** - Внутри этого события разработчик может проверить наличие ошибочных параметров, которые **будут запрещать** дальнейший процесс входа в систему. Если плагин передаст через `$modx->event->output()` непустое значение, отличное от `true`, вход в систему будет прерван с указанным сообщением.
 2. _[OnUserNotFound](extending-modx/plugins/system-events/onusernotfound)_ - Это событие выполняется, только если указанное имя пользователя не найдено в базе данных MODX. Разработчик может предоставить свой собственный объект modUser в выходных данных события, чтобы продолжить процесс входа в систему.
-3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](hextending-modx/plugins/system-events/onmanagerauthentication)_ - Внутри этого события разработчик может проверить параметры, которые **отменят проверку по умолчанию паролем** и **позволят** продолжить вход в систему. Если один из плагинов, выполненных из этого события, возвращает true, пользователь считается проверенным и вошел в систему.
-4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - Это событие вызывается после завершения процесса входа в систему и считается, что пользователь вошел в систему. Оно **не меняет **процесс входа в систему **поведение**.
+3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Внутри этого события разработчик может проверить параметры, которые **отменят проверку по умолчанию паролем** и **позволят** продолжить вход в систему. Если один из плагинов, выполненных из этого события, возвращает true, пользователь считается проверенным и вошел в систему.
+4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - Это событие вызывается после завершения процесса входа в систему и считается, что пользователь вошел в систему. Оно **не меняет поведение** процесса входа в систему.
 
 ## Примеры
 
@@ -46,7 +46,7 @@ $modx->event->_output = true;
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnBeforeManagerLogin':
-        $modx->log(modX::LOG_LEVEL_ERROR, 'Пытался войти пользователь с именем '.$username.' и паролем '.$password.print_r($attributes));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Пытался войти пользователь с именем '.$username.' и паролем '.$password.print_r($attributes, true));
         break;
 }
 ```

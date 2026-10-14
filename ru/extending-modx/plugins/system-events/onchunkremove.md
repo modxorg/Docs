@@ -1,20 +1,22 @@
 ---
 title: "OnChunkRemove"
 translation: "extending-modx/plugins/system-events/onchunkremove"
+description: "Событие запускается после удаления чанка, в modChunk::remove()."
 ---
 
 ## Событие: OnChunkRemove
 
-Бывает после того, как чанк удален.
+Событие запускается после удаления чанка, в `modChunk::remove()`.
 
-Служба: 2 - Manager Access Events
-Group: modChunk
+- Служба: 1 - Parser Service Events
+- Group: Chunks
 
 ## Параметры события
 
-| Имя   | Описание                   |
-| ----- | -------------------------- |
-| chunk | Ссылка на объект modChunk. |
+| Имя       | Описание                                     |
+| --------- | -------------------------------------------- |
+| chunk     | Ссылка на объект modChunk.                   |
+| ancestors | Массив предков, переданный в метод remove(). |
 
 ## Смотри также
 

@@ -1,35 +1,39 @@
 ---
 title: "OnUserNotFound"
+description: "Fires when a user is not found during login, allowing plugins to provide their own modUser."
 _old_id: "474"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onusernotfound"
 ---
 
 ## Event: OnUserNotFound
 
-Fires when a user is not found during login.
+Fires when a user is not found during login. Use it for external authentication.
 
-Can be used to provide external authentication by returning an array, where one of the indexes in the array is an instance of (or extending) a modUser object.
-
-- Service: 6 - User Defined Events
-- Group: modUser
+- Service: 1 - Parser Service Events
+- Group: Users
 
 ## Event Parameters
 
-| Name         | Description                                                                      |
-| ------------ | -------------------------------------------------------------------------------- |
-| username     | The specified username.                                                          |
-| password     | The specified password.                                                          |
-| attributes   | An array of: - rememberme - Boolean set if user wants password to be remembered. |
-| lifetime }   | The session cookie lifetime for this login.                                      |
-| loginContext | The context key this login is occurring in.                                      |
-| addContexts  | Additional contexts in which the login is also occuring in.                      |
+| Name       | Description                                                                                                                                                                                                |
+| ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| user       | A reference to the modUser object, passed by reference. Return a `modUser` (or a class extending it) in the event output — directly or as one index of an array — or assign it here to continue the login. |
+| username   | The specified username.                                                                                                                                                                                    |
+| password   | The specified password.                                                                                                                                                                                    |
+| attributes | An array with:                                                                                                                                                                                             |
+|            | - rememberme — Boolean set if the user wants the password to be remembered                                                                                                                                 |
+|            | - lifetime — the session cookie lifetime for this login                                                                                                                                                    |
+|            | - loginContext — the context key this login is occurring in                                                                                                                                                |
+|            | - addContexts — additional contexts in which the login is also occurring                                                                                                                                   |
+
+The `lifetime`, `loginContext` and `addContexts` values exist only inside the `attributes` array — they are not separate top-level parameters.
 
 ## Event Login Workflow
 
-1. _[_OnBeforeWebLogin_](extending-modx/plugins/system-events/onbeforeweblogin)_ || _[OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin)_ - Inside this event the developer can check for erroneous parameters which will **disallow** further logging in process. If plugins executed by this event return something except true, the logging in will be aborted with the specified error.
-2. **_OnUserNotFound_** - This event is executed only if the provided username is not found inside MODX database. The developer can provide it's own modUser object in the event output to continue the login process.
-3. _[OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication)_ || _[OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication)_ - Inside this event the developer can check for parameters which will **override the default checking by password** and **allow** further logging in process. If one of the plugins executed from this event return true, the user is considered verified and logged in.
-4. _[OnWebLogin](extending-modx/plugins/system-events/onweblogin)_ || _[OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin)_ - This event is fired after the logging in process has finished and the user is considered logged in. It **doesn't change** the logging in process **behaviour**.
+1. [OnBeforeWebLogin](extending-modx/plugins/system-events/onbeforeweblogin) || [OnBeforeManagerLogin](extending-modx/plugins/system-events/onbeforemanagerlogin) — a non-`true` output aborts the login with that message.
+2. **OnUserNotFound** — runs only when the username is missing from the MODX database. A Plugin may supply its own `modUser` to continue.
+3. [OnWebAuthentication](extending-modx/plugins/system-events/onwebauthentication) || [OnManagerAuthentication](extending-modx/plugins/system-events/onmanagerauthentication) — overrides the default password check. A `true` output marks the user as verified and logged in.
+4. [OnWebLogin](extending-modx/plugins/system-events/onweblogin) || [OnManagerLogin](extending-modx/plugins/system-events/onmanagerlogin) — fires after the login has finished. It does **not change** the login outcome.
+
 
 ## See Also
 

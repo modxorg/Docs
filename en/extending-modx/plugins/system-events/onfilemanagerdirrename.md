@@ -1,5 +1,6 @@
 ---
 title: "OnFileManagerDirRename"
+description: "Fires after renaming a directory via the media manager."
 _old_id: "1741"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfilemanagerdirrename"
 ---
@@ -9,14 +10,15 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onfile
 Fires after renaming a directory via the manager. The old directory name can be retrieved using the $\_POST variable.
 
 - Service: 1 - Parser Service Events
-- Group: None
+- Group: System
 
 ## Event Parameters
 
 | Name      | Description                                      |
 | --------- | ------------------------------------------------ |
 | directory | Contains the full path to the renamed directory. |
-| source    | Contains mediasource object.                     |
+| source    | Contains the modMediaSource object.              |
+
 
 ## See Also
 

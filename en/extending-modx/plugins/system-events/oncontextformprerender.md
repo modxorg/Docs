@@ -1,23 +1,23 @@
 ---
 title: "OnContextFormPrerender"
-_old_id: "415"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncontextformprerender"
+description: "Fires before the Context editing form loads in the Manager."
 ---
 
 ## Event: OnContextFormPrerender
 
-Fires prior to the context editing form loading. Useful for running custom javascript.
+Fires before the Context editing form loads, only from the Context **update** form. Use it to run custom JavaScript.
 
 - Service: 2 - Manager Access Events
-- Group: modContext
+- Group: Contexts
 
 ## Event Parameters
 
-| Name    | Description                                        |
-| ------- | -------------------------------------------------- |
-| key     | The key of the context.                            |
-| context | A reference to the modContext object.              |
-| mode    | Either 'upd' or 'new', depending on the situation. |
+| Name    | Description                                |
+| ------- | ------------------------------------------ |
+| key     | The key of the Context.                    |
+| context | A reference to the modContext object.      |
+| mode    | Always `upd` (`modSystemEvent::MODE_UPD`). |
+
 
 ## See Also
 

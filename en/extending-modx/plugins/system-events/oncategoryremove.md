@@ -1,21 +1,22 @@
 ---
 title: "OnCategoryRemove"
-_old_id: "403"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncategoryremove"
+description: "Fires after a Category is removed, in modCategory::remove()."
 ---
 
 ## Event: OnCategoryRemove
 
-Happens after a category is removed.
+Fires after a Category is removed, in `modCategory::remove()`.
 
-- Service: 2 - Manager Access Events
-- Group: modCategory
+- Service: 1 - Parser Service Events
+- Group: Categories
 
 ## Event Parameters
 
-| Name     | Description                            |
-| -------- | -------------------------------------- |
-| category | A reference to the modCategory object. |
+| Name      | Description                                          |
+| --------- | ---------------------------------------------------- |
+| category  | A reference to the modCategory object.               |
+| ancestors | An array of ancestors passed to the remove() method. |
+
 
 ## See Also
 

@@ -1,36 +1,34 @@
 ---
 title: "OnTemplateVarSave"
+description: "Fires after a TV is saved, in modTemplateVar::save()."
 _old_id: "467"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/ontemplatevarsave"
 ---
 
 ## Event: OnTemplateVarSave
 
-Loaded right after successful saving a template variable to database.
+Fires after a TV is saved, in `modTemplateVar::save()`.
 
 - Service: 1 - Parser Service Events
 - Group: Template Variables
 
 ## Event Parameters
 
-| Name        | Description                                                                                                                      |
-| ----------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| mode        | Either 'new' or 'upd', depending on the circumstances.                                                                           |
-| templateVar | The instance of modTemplateVar class.                                                                                            |
-| cacheFlag   | Indicates if the saved TV should be cached and optionally, by specifying an integer value, for how many seconds before expiring. |
+| Name        | Description                                                                               |
+| ----------- | ----------------------------------------------------------------------------------------- |
+| mode        | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`).                          |
+| templateVar | A reference to the modTemplateVar object.                                                 |
+| cacheFlag   | Whether the saved TV should be cached; optionally, an integer sets the expiry in seconds. |
 
 ## Remarks
 
-| Previous event | [OnTemplateVarBeforeSave](extending-modx/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave")                      |
-| -------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Next event     | —                                                                                                                                     |
-| File           | [core/model/modx/modtemplatevar.class.php](https://github.com/modxcms/revolution/blob/master/core/model/modx/modtemplatevar.class.php) |
-| Class          | modTemplateVar                                                                                                                         |
-| Method         | public function save($cacheFlag = null)                                                                                                |
+| Previous event | [OnTemplateVarBeforeSave](extending-modx/plugins/system-events/ontemplatevarbeforesave "OnTemplateVarBeforeSave")               |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| File           | [core/src/Revolution/modTemplateVar.php](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modTemplateVar.php) |
+| Class          | MODX\Revolution\modTemplateVar                                                                                                  |
+| Method         | `public function save($cacheFlag = null)`                                                                                       |
 
 ## Example
-
-Such a plugin will display the data of the saved TV in the "Error log":
 
 ```php
 <?php

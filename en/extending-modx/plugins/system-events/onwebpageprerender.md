@@ -1,17 +1,16 @@
 ---
 title: "OnWebPagePrerender"
+description: "Fires after a Resource is parsed, but before it is rendered."
 _old_id: "482"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebpageprerender"
 ---
 
 ## Event: OnWebPagePrerender
 
-Fired after a Resource is parsed, but before it is rendered.
+Fires after a Resource is parsed, before it is rendered. Content-Type headers are not sent yet and the output is not flushed.
 
-Content Type headers have not yet been sent, nor has the output been flushed.
-
--   Service: 5 - Template Service Events
--   Group: None
+- Service: 5 - Template Service Events
+- Group: System
 
 ## Event Parameters
 
@@ -19,8 +18,7 @@ None.
 
 ## Example
 
-**Description:** Filter words from a document before it's displayed on the web
-**System Events:** OnWebPagePrerender
+Filter words from the output before it is displayed:
 
 ```php
 $words = array("snippet", "template"); // words to filter
@@ -28,25 +26,7 @@ $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
 ```
 
-Be careful if your OnWebPagePrerender plugin is a static element and it includes or requires files using _relative paths_. The plugin code executes from its cached file, e.g. `core/cache/includes/elements/modplugin/7.include.cache.php`, not from the original static element file. See [Bug 11129](https://github.com/modxcms/revolution/issues/11129)
-
-## Example
-
-Such a plugin will replace the words on pages:
-
-```php
-<?php
-switch($eventName) {
-    case 'OnWebPagePrerender': 
-        // words to be replaced
-        $words = array("Product", "Price");
-        // get access to the page content
-        $output = &$modx->resource->_output;
-        // we replace words
-        $output = str_replace($words,"changed",$output); 
-        break;
-}
-```
+**Static Plugins and relative paths.** If the Plugin is a static element and includes or requires files by _relative paths_, it does not run from the original file. Its code executes from the cached copy — for example `core/cache/includes/elements/modplugin/7.include.cache.php`. See [Bug 11129](https://github.com/modxcms/revolution/issues/11129).
 
 ## See Also
 

@@ -1,6 +1,7 @@
 ---
 title: "OnUserProfileBeforeSave"
 translation: "extending-modx/plugins/system-events/onuserprofilebeforesave"
+description: "Срабатывает прямо перед сохранением `modUserProfile`."
 ---
 
 ## Событие: OnUserProfileBeforeSave
@@ -10,15 +11,15 @@ translation: "extending-modx/plugins/system-events/onuserprofilebeforesave"
 Вызывается из `modUserProfile::save()` в MODX Revolution 3.x.
 
 - Служба: 1 - Parser Service Events
-- Группа: User Profiles
+- Group: User Profiles
 
 ## Параметры события
 
-| Имя | Описание |
-| --- | -------- |
-| userprofile | Ссылка на объект `modUserProfile`, который сейчас сохранят. |
-| mode | `modSystemEvent::MODE_NEW` (`new`) или `modSystemEvent::MODE_UPD` (`upd`), в зависимости от того, новый ли профиль. |
-| cacheFlag | Значение `$cacheFlag`, переданное в `save()`. |
+| Имя         | Описание                                                                                                            |
+| ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| userprofile | Ссылка на объект `modUserProfile`, который сейчас сохранят.                                                         |
+| mode        | `modSystemEvent::MODE_NEW` (`new`) или `modSystemEvent::MODE_UPD` (`upd`), в зависимости от того, новый ли профиль. |
+| cacheFlag   | Значение `$cacheFlag`, переданное в `save()`.                                                                       |
 
 ## Смотрите также
 

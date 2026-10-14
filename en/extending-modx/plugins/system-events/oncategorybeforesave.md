@@ -1,22 +1,25 @@
 ---
 title: "OnCategoryBeforeSave"
-_old_id: "402"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncategorybeforesave"
+description: "Fires right before a Category is saved, in modCategory::save()."
 ---
 
 ## Event: OnCategoryBeforeSave
 
-Happens right before a category is saved.
+Fires right before a Category is saved, in `modCategory::save()`.
 
-- Service: 2 - Manager Access Events
+- Service: 1 - Parser Service Events
 - Group: Categories
 
 ## Event Parameters
 
-| Name     | Description                            |
-| -------- | -------------------------------------- |
-| id       | The ID of the modCategory object.      |
-| category | A reference to the modCategory object. |
+| Name      | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
+| mode      | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| category  | A reference to the modCategory object.                           |
+| cacheFlag | The cacheFlag argument passed to the save() method.              |
+
+The Category ID is not passed as a separate parameter; use `$category->get('id')`.
+
 
 ## See Also
 

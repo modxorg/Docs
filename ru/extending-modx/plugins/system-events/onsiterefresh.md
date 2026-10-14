@@ -1,20 +1,22 @@
 ---
 title: "OnSiteRefresh"
 translation: "extending-modx/plugins/system-events/onsiterefresh"
+description: "Срабатывает после очистки кеша всего сайта."
 ---
 
 ## Событие: OnSiteRefresh
 
-Запускается после очиски кеша для всего сайта.
+Срабатывает после очистки кеша всего сайта.
 
-Служба: 1 - Parser Service Events
-Группа: Нет
+- Служба: 1 - Parser Service Events
+- Group: System
 
 ## Параметры события
 
-| Имя     | Описание            |
-| ------- | ------------------- |
-| results | Массив результатов. |
+| Имя        | Описание                                                                                                                                                                                |
+| ---------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| results    | Массив результатов обновления кеша.                                                                                                                                                     |
+| partitions | Массив обновлённых разбиений кеша. Передаётся только когда событие вызывается из процессора очистки кеша; при вызове из контроллера `system/refresh_site` у события **нет параметров**. |
 
 ## Пример
 
@@ -25,10 +27,10 @@ translation: "extending-modx/plugins/system-events/onsiterefresh"
 $eventName = $modx->event->name;
 switch($eventName) {
     case 'OnSiteRefresh':
-        $modx->log(modX::LOG_LEVEL_ERROR, 'Кэш очищен '.print_r($partitions));
+        $modx->log(modX::LOG_LEVEL_ERROR, 'Кэш очищен '.print_r($partitions, true));
         break;
 }
-```  
+```
 
 ## Смотри также
 

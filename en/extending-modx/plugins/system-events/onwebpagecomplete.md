@@ -1,5 +1,6 @@
 ---
 title: "OnWebPageComplete"
+description: "Fires after the Resource is loaded, response is sent, cache is stored (if applicable) and execution is completed."
 _old_id: "480"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebpagecomplete"
 ---
@@ -9,11 +10,12 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebp
 Fires after the Resource is loaded, response is sent, cache is stored (if applicable) and execution is completed.
 
 - Service: 5 - Template Service Events
-- Group: None
+- Group: System
+
 
 ## Event Parameters
 
-None. The resource can be referenced via $modx->resource.
+None. The Resource is available as `$modx->resource`.
 
 ## See Also
 

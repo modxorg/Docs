@@ -1,5 +1,6 @@
 ---
 title: "OnWebLogout"
+description: "Fires after the logout processor removes the user's session contexts for a non-`mgr` context."
 _old_id: "479"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onweblogout"
 ---
@@ -8,24 +9,24 @@ _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onwebl
 
 Fires after the logout processor removes the user's session contexts for a non-`mgr` context. Plugins cannot change whether the logout already happened.
 
-- Service: 3 - Web Access Events
-- Group: None
+- Service: 3 - Web Access Service Events
+- Group: Security
 
 ## Event Parameters
 
-| Name               | Description                                                                          |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| **&** user         | A reference to the modUser object of the user. **Passed by reference**               |
-| userid             | The user ID of the user. (deprecated)                                                |
-| username           | The username of the user. (deprecated)                                               |
-| **&** loginContext | The context key this logout is occurring in. **Passed by reference**                 |
-| **&** addContexts  | Additional contexts in which the logout is also occuring in. **Passed by reference** |
+| Name               | Description                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| **&** user         | A reference to the modUser object. **Passed by reference**                   |
+| userid             | The ID of the User.                                                          |
+| username           | The username of the User.                                                    |
+| **&** loginContext | The context key this logout is occurring in. **Passed by reference**         |
+| **&** addContexts  | Additional contexts in which the logout also occurs. **Passed by reference** |
 
 ## `$modx->getUser()` during OnWebLogout
 
 The logout processor removes session contexts **before** it invokes `OnWebLogout`. For that context, `$modx->user->isAuthenticated($loginContext)` is already false.
 
-It does **not** clear or reload `$modx->user` before the event. `$modx->getUser()` short-circuits on the cached object and still returns the user who just logged out (same id). Code that calls `$modx->getUser()` (or fires other plugins that do) can look "still logged in" even though the session context is gone.
+It does **not** clear or reload `$modx->user` before the event. `$modx->getUser()` short-circuits on the cached object and still returns the user who just logged out (same id). Code that calls `$modx->getUser()` — directly or through other Plugins — can still look logged in even though the session context is gone.
 
 Use the event `$user` parameter (or `$scriptProperties['user']`) for who logged out. Do not treat `$modx->getUser()` as the current session user during this event.
 

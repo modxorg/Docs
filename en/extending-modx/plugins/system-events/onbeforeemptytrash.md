@@ -1,25 +1,25 @@
 ---
 title: "OnBeforeEmptyTrash"
+description: "Fires before the trash is emptied for the site."
 _old_id: "382"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforeemptytrash"
 ---
 
 ## Event: OnBeforeEmptyTrash
 
-Fires before the trash is emptied for the site.
+Fires before the trash is emptied for the site. Also fired by the `resources/trash/purge` processor when purging already-trashed Resources.
 
 - Service: 1 - Parser Service Events
-- Group: Documents
+- Group: Resources
 
 ## Event Parameters
 
-| Name | Description                                                |
-| ---- | ---------------------------------------------------------- |
-| ids  | An array of Resource IDs that will be permanently deleted. |
+| Name      | Description                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| ids       | An array of Resource IDs that will be permanently deleted.                     |
+| resources | An array of the modResource objects that will be deleted. Passed by reference. |
 
-## Examples of
-
-Such a plugin will display the id of remote resources in the "Error log":
+## Examples
 
 ``` php
 <?php
@@ -31,8 +31,6 @@ switch($eventName) {
         break;
 }
 ```
-                
-Such a plugin will display a message stating that there is an important document in the shopping cart and it cannot be deleted:
 
 ``` php
 <?php

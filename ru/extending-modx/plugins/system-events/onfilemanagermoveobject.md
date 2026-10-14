@@ -1,24 +1,26 @@
 ---
 title: "OnFileManagerMoveObject"
-description: "Fires when we need to move a file or folder to a specific location"
+translation: "extending-modx/plugins/system-events/onfilemanagermoveobject"
+description: "Событие запускается после перемещения файла или папки в новое место в медиаменеджере."
 ---
 
-## Event: OnFileManagerMoveObject
+## Событие: OnFileManagerMoveObject
 
-Fires when we need to move a file or folder to a specific location.
+Событие запускается при перемещении файла или папки в новое место.
 
-- Service: 1 - Parser Service Events
-- Group: None
+- Служба: 1 - Parser Service Events
+- Group: System
 
-## Event Parameters
+## Параметры события
 
-| Name      | Description                                                                  |
-| --------- | ---------------------------------------------------------------------------- |
-| from      | Location from which the transfer is made                                     |
-| to        | The location where the file or directory is moved to                         |
-| source    | Contains mediasource object.                                                 |
+| Имя      | Описание                                                                                                                         |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| from     | Путь, откуда перемещается файл или каталог.                                                                                      |
+| to       | Путь, куда перемещается файл или каталог.                                                                                        |
+| source   | Объект `modMediaSource`, из которого был перемещён файл.                                                                         |
+| toSource | Объект `modMediaSource`, в который был перемещён файл, или `false`, если перемещение выполняется в пределах одного медиаресурса. |
 
-## See Also
+## Смотри также
 
-- [System Events](extending-modx/plugins/system-events)
-- [Plugins](extending-modx/plugins)
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Плагины](extending-modx/plugins "Плагины")

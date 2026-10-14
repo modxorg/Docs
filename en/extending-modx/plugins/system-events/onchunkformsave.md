@@ -1,27 +1,25 @@
 ---
 title: "OnChunkFormSave"
-_old_id: "410"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkformsave"
+description: "Fires after a Chunk is created or updated in the Manager."
 ---
 
 ## Event: OnChunkFormSave
 
-Fires after a Chunk is saved in the manager.
+Fires after a Chunk is created or updated in the Manager, from the `Element\Chunk\Create` and `Update` processors.
 
 - Service: 1 - Parser Service Events
 - Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                                           |
-| ----- | ----------------------------------------------------- |
-| mode  | Either 'upd' or 'new', depending on the circumstance. |
-| chunk | A reference to the modChunk object.                   |
-| id    | The ID of the chunk.                                  |
+| Name   | Description                                                      |
+| ------ | ---------------------------------------------------------------- |
+| mode   | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| id     | The ID of the Chunk.                                             |
+| chunk  | A reference to the modChunk object.                              |
+| object | Alias of `chunk` — a reference to the same object.               |
 
 ## Example
-
-Such a plugin will write the id of the saved chunk (new or just created) to the "Error log":
 
 ```php
 <?php

@@ -1,27 +1,26 @@
 ---
 title: "OnBeforePluginFormDelete"
+description: "Fires before a Plugin is deleted in the Manager."
 _old_id: "386"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onbeforepluginformdelete"
 ---
 
 ## Event: OnBeforePluginFormDelete
 
-Fires before a plugin is deleted in the manager.
+Fires before a Plugin is deleted in the Manager.
 
 - Service: 1 - Parser Service Events
 - Group: Plugins
 
 ## Event Parameters
 
-| Name   | Description                          |
-| ------ | ------------------------------------ |
-| plugin | A reference to the modPlugin object. |
-| id     | The ID of the Plugin.                |
-
+| Name   | Description                                         |
+| ------ | --------------------------------------------------- |
+| plugin | A reference to the modPlugin object.                |
+| id     | The ID of the Plugin.                               |
+| object | Alias of `plugin` — a reference to the same object. |
 
 ## Example
-
-Such a plugin displays a message stating that the plugin cannot be removed:
 
 ``` php
 <?php
@@ -34,6 +33,7 @@ switch($eventName) {
         }
         break;
 }
+```
 
 ## See Also
 

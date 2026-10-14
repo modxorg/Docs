@@ -1,6 +1,7 @@
 ---
 title: "OnRichTextBrowserInit"
 translation: "extending-modx/plugins/system-events/onrichtextbrowserinit"
+description: "Срабатывает при инициализации файлового браузера MODX для пользовательского RTE: плагин может вернуть Javascript-колбэк для выбранного файла."
 ---
 
 ## Событие: OnRichTextBrowserInit
@@ -9,12 +10,19 @@ translation: "extending-modx/plugins/system-events/onrichtextbrowserinit"
 
 Просто передайте функцию Javascript, которая будет обрабатывать возвращаемый URL для файла, выбранного из MODx.Browser, в ваш RTE.
 
-Служба: 1 - Parser Service Events
-Group: Richtext Editor
+- Служба: 1 - Parser Service Events
+- Group: RichText Editor
 
 ## Параметры события
 
-Нет.
+Событие получает свойства запроса контроллера браузера. Как минимум:
+
+| Имя    | Описание                                                         |
+| ------ | ---------------------------------------------------------------- |
+| ctx    | Ключ контекста, в котором работает браузер (по умолчанию `web`). |
+| source | ID медиа-источника для просмотра.                                |
+
+Суммарные возвращаемые значения плагинов попадают в плейсхолдер страницы `rtecallback`.
 
 ## Смотри также
 

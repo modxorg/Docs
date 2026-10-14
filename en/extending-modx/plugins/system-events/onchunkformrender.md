@@ -1,27 +1,28 @@
 ---
 title: "OnChunkFormRender"
+description: "Fires during the rendering of the Chunk form."
 _old_id: "409"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/onchunkformrender"
 ---
 
 ## Event: OnChunkFormRender
 
-Fires during the rendering of a form. Useful for rendering HTML straight into the Chunk form.
+Fires during the rendering of the Chunk form. Use it to insert HTML straight into the form.
 
 - Service: 1 - Parser Service Events
 - Group: Chunks
 
 ## Event Parameters
 
-| Name  | Description                                                     |
-| ----- | --------------------------------------------------------------- |
-| mode  | Either 'new' or 'upd', depending on the circumstance.           |
-| id    | The ID of the Chunk. This will be 0 for new chunks.             |
-| chunk | A reference to the modChunk object. Will be null in new chunks. |
+| Name  | Description                                                      |
+| ----- | ---------------------------------------------------------------- |
+| mode  | Either `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`). |
+| id    | The ID of the Chunk. This will be 0 for new Chunks.              |
+| chunk | A reference to the modChunk object. `null` for new Chunks.       |
 
-## Examples of
+## Examples
 
-Such a plugin will add content to the chunk and save it:
+### Set content and save it
 
 ```php
 <?php
@@ -38,8 +39,8 @@ switch($eventName) {
         break;
 }
 ```
-                
-Such a plugin will add content to the chunk if it has no content and will save it:
+
+### Set content only when it is empty
 
 ```php
 <?php
@@ -60,8 +61,8 @@ switch($eventName) {
         break;
 }
 ```
-                
-Such a plugin will add content to the chunk but will not save it:
+
+### Change content without saving
 
 ```php
 <?php

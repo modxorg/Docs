@@ -1,6 +1,7 @@
 ---
 title: "OnUserProfileSave"
 translation: "extending-modx/plugins/system-events/onuserprofilesave"
+description: "Срабатывает после успешного сохранения `modUserProfile`."
 ---
 
 ## Событие: OnUserProfileSave
@@ -10,15 +11,15 @@ translation: "extending-modx/plugins/system-events/onuserprofilesave"
 Вызывается из `modUserProfile::save()` только если `parent::save()` вернул true.
 
 - Служба: 1 - Parser Service Events
-- Группа: User Profiles
+- Group: User Profiles
 
 ## Параметры события
 
-| Имя | Описание |
-| --- | -------- |
-| userprofile | Ссылка на сохранённый объект `modUserProfile`. |
-| mode | `modSystemEvent::MODE_NEW` (`new`) или `modSystemEvent::MODE_UPD` (`upd`), в зависимости от того, был ли профиль новым. |
-| cacheFlag | Значение `$cacheFlag`, переданное в `save()`. |
+| Имя         | Описание                                                                                                                |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| userprofile | Ссылка на сохранённый объект `modUserProfile`.                                                                          |
+| mode        | `modSystemEvent::MODE_NEW` (`new`) или `modSystemEvent::MODE_UPD` (`upd`), в зависимости от того, был ли профиль новым. |
+| cacheFlag   | Значение `$cacheFlag`, переданное в `save()`.                                                                           |
 
 ## Смотрите также
 

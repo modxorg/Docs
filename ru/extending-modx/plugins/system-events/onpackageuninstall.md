@@ -1,10 +1,23 @@
 ---
 title: "OnPackageUninstall"
 translation: "extending-modx/plugins/system-events/onpackageuninstall"
+description: "Срабатывает после удаления (uninstall) пакета через менеджер пакетов."
 ---
 
-Запускается после успешного удаления пакета через менеджер пакетов. Добавлено в MODX Revolution 2.6.
+## Событие: OnPackageUninstall
 
-## Доступные значения
+Срабатывает после удаления (uninstall) пакета через менеджер пакетов.
 
-- `$package`: экземпляр modTransportPackage, который был установлен. Например `$package->get('package_name')` чтобы получить название пакета.
+- Служба: 2 - Manager Access Events
+- Group: Package Manager
+
+## Параметры события
+
+| Имя     | Описание                                                                   |
+| ------- | -------------------------------------------------------------------------- |
+| package | Ссылка на экземпляр modTransportPackage, который был удалён (uninstalled). |
+
+## Смотри также
+
+- [Системные события](extending-modx/plugins/system-events "Системные события")
+- [Плагины](extending-modx/plugins "Плагины")

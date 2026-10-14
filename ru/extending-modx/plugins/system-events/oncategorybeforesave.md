@@ -1,21 +1,25 @@
 ---
 title: "OnCategoryBeforeSave"
 translation: "extending-modx/plugins/system-events/oncategorybeforesave"
+description: "Событие запускается непосредственно перед сохранением категории, в modCategory::save()."
 ---
 
 ## Событие: OnCategoryBeforeSave
 
-Происходит прямо перед сохранением категории.
+Событие запускается непосредственно перед сохранением категории, в `modCategory::save()`.
 
-Служба: 2 - Manager Access Events
-Group: Categories
+- Служба: 1 - Parser Service Events
+- Group: Categories
 
 ## Параметры события
 
-| Имя      | Описание                           |
-| -------- | ---------------------------------- |
-| id       | Идентификатор объекта modCategory. |
-| category | Ссылка на объект modCategory.      |
+| Имя       | Описание                                              |
+| --------- | ----------------------------------------------------- |
+| mode      | Либо 'new' или 'upd', в зависимости от обстоятельств. |
+| category  | Ссылка на объект modCategory.                         |
+| cacheFlag | Аргумент cacheFlag, переданный в метод save().        |
+
+ID категории не передаётся отдельным параметром; используйте `$category->get('id')`.
 
 ## Смотри также
 

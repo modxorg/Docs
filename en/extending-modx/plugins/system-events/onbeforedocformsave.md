@@ -10,7 +10,7 @@ description: "Plugin event fired before the Manager Resource create/update proce
 Fires in the Manager **before** the Resource create or update processor persists the Resource. Use it to change fields on the `$resource` object, or to block the save.
 
 - Service: 1 - Parser Service Events
-- Group: Documents
+- Group: Resources
 
 Fired from `MODX\Revolution\Processors\Resource\Create` and `Update` (also `UpdateFromGrid`). Flow in those processors:
 
@@ -20,25 +20,29 @@ Fired from `MODX\Revolution\Processors\Resource\Create` and `Update` (also `Upda
 4. After-save work runs (TVs on update, resource groups, and so on)
 5. `OnDocFormSave` runs
 
+
 ### Changing fields vs calling `save()`
 
-For Resource fields, call `$resource->set(...)`. You do **not** need `$resource->save()` in the plugin. The processor saves after your plugin returns.
+For Resource fields, call `$resource->set(...)`. The processor saves after your plugin returns, so the plugin needs no `$resource->save()`.
 
-Do **not** call `$resource->save()` here unless you have a rare reason to persist early. An early `save()` can write the row before Template Variables and related after-save steps run, and it muddies create vs update timing. Prefer [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave) for TV changes (`setTVValue`).
+An early `$resource->save()` is the exception: it writes the row before Template Variables and other after-save steps run, and it blurs create-versus-update timing. For TV changes use [OnDocFormSave](extending-modx/plugins/system-events/ondocformsave) with `setTVValue`.
 
 ### Blocking the save
 
-Plugins should return nothing (or an empty value) on success. A non-empty return value is treated as an error message and is logged; depending on how it is returned it may still allow the save to continue.
+Plugins should return nothing (or an empty value) on success. A non-empty return value is treated as an error message and is logged. Depending on how it is returned, the save may still continue.
 
 To **stop** the save and show a message in the Manager, pass text to `$modx->event->output(...)`. That text must be plain text (no HTML), or the modal can hang.
 
 ## Event Parameters
 
-| Name | Description |
-| --- | --- |
-| mode | `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`) |
-| resource | Reference to the `modResource` object (passed by reference) |
-| id | Resource ID. `0` for new Resources that are not saved yet |
+| Name       | Description                                                                                                  |
+| ---------- | ------------------------------------------------------------------------------------------------------------ |
+| mode       | `new` or `upd` (`modSystemEvent::MODE_NEW` / `MODE_UPD`)                                                     |
+| resource   | Reference to the `modResource` object (passed by reference)                                                  |
+| id         | Resource ID. `0` for new Resources that are not saved yet                                                    |
+| reloadOnly | Create path only: `true` when the processor just reloads the form after a validation error instead of saving |
+| data       | Update path only: the current fields of the Resource as an array (`$resource->toArray()`)                    |
+| object     | Update path only: alias of `resource` — a reference to the same object                                       |
 
 ## Examples
 
@@ -59,9 +63,7 @@ if ((int) $resource->get('parent') === 123) {
 }
 ```
 
-No `$resource->save()` here. The create/update processor saves next.
-
-### Block create, or updates missing introtext
+### Block creation or updates without introtext
 
 ``` php
 <?php
@@ -73,19 +75,6 @@ switch ($modx->event->name) {
             }
         } elseif ($mode == modSystemEvent::MODE_NEW) {
             $modx->event->output("You cannot create resources!");
-        }
-        break;
-}
-```
-
-### Force a template for root resources
-
-``` php
-<?php
-switch ($modx->event->name) {
-    case 'OnBeforeDocFormSave':
-        if ((int) $resource->get('parent') === 0) {
-            $resource->set('template', 1);
         }
         break;
 }

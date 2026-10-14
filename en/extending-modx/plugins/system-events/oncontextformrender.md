@@ -1,23 +1,23 @@
 ---
 title: "OnContextFormRender"
-_old_id: "416"
-_old_uri: "2.x/developing-in-modx/basic-development/plugins/system-events/oncontextformrender"
+description: "Fires after the Context editing form loads in the Manager."
 ---
 
 ## Event: OnContextFormRender
 
-Fires after the context editing form has loaded.
+Fires after the Context editing form loads, only from the Context **update** form.
 
 - Service: 2 - Manager Access Events
-- Group: modContext
+- Group: Contexts
 
 ## Event Parameters
 
-| Name    | Description                                        |
-| ------- | -------------------------------------------------- |
-| key     | The key of the context.                            |
-| context | A reference to the modContext object.              |
-| mode    | Either 'upd' or 'new', depending on the situation. |
+| Name    | Description                                |
+| ------- | ------------------------------------------ |
+| key     | The key of the Context.                    |
+| context | A reference to the modContext object.      |
+| mode    | Always `upd` (`modSystemEvent::MODE_UPD`). |
+
 
 ## See Also
 
