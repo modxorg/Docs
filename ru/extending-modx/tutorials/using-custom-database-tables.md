@@ -9,11 +9,13 @@ translation: "extending-modx/tutorials/using-custom-database-tables"
 
 MODX 3 приносит пространства имён PHP в XML-схему и файлы классов, а также новую функциональность bootstrap для загрузки зависимостей. Меняется и структура map-файлов MySQL в генерируемой модели. Пройдём простой пример как отправную точку. Дальше можно усложнять: конфигурационные файлы, вспомогательные функции. Сначала посмотрим минимум для создания пользовательской таблицы и покажем, что из неё можно читать и писать.
 
+::: warning
+Эта методология не обратно совместима с MODX 2.x. Руководство рассчитано на MODX 3. Эквивалент для 2.x: [Using Custom Database Tables](https://docs.modx.com/revolution/2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables"). Краткий чеклист апгрейда (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`): [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
+:::
+
 **ПРИМЕЧАНИЕ**: материал переработан из прежнего примера StoreFinder.
 
-**ЕЩЁ ПРИМЕЧАНИЕ**: эта методология не обратно совместима с MODX 2.x. Руководство рассчитано на MODX 3. Эквивалент для 2.x: [Using Custom Database Tables](/2.x/en/extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables"). Краткий чеклист апгрейда (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`): [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
-
-## Ключевые термины и стандарты
+## Ключевые термины и стандарты {#terminology}
 
 По итогам недавних обсуждений зафиксируем терминологию и то, к чему она относится. Это же стандартные практики для единообразия.
 
@@ -66,11 +68,7 @@ project1/
         bootstrap.php
 ```
 
-Создайте эти каталоги, кроме `Model/`. Каталог модели создаст скрипт `build.tables.php`.
-
----
-
-Если бы мы делали Custom Manager Page (CMP), понадобилась бы папка assets. Здесь фокус на данных в части 1, поэтому CMP и assets пока опускаем.
+Создайте эти каталоги, кроме `src/Model/`: его создаст скрипт сборки схемы `build.schema.php`. Если бы мы делали Custom Manager Page (CMP), понадобилась бы папка `assets`. Здесь фокус на данных, поэтому CMP и assets пока опускаем.
 
 Также в списке есть `bootstrap.php`. Подробности: в документации, ниже разберём на примере.
 
@@ -78,7 +76,7 @@ project1/
 
 Отсюда можно инициализировать сервисный класс и добавить его в DI-контейнер MODX. Сервис будет доступен по всей системе: плагины, события, сниппеты и т.д.
 
-> Подробнее: [Namespaces and Bootstrapping Services](extending-modx/namespaces#bootstrapping-services "Namespaces | Bootstrapping Services")
+> Подробнее: [Namespaces and Bootstrapping Services](extending-modx/namespaces "Namespaces")
 
 ## Данные и таблицы
 
@@ -86,13 +84,10 @@ project1/
 
 Родительская таблица ***To-Do List*** и дочерняя ***To-Do Tasks***. От списка к задачам: связь один ко многим.
 
-* Имя таблицы: `modx_td_list`, поля:
-    * `name`
-    * `description`
-* Имя таблицы: `modx_td_task`, поля:
-    * `short_description`
-    * `due_date`
-    * `completed` (boolean)
+| Таблица | Поля |
+| --- | --- |
+| `modx_td_list` | `name`, `short_description` |
+| `modx_td_task` | `list` — внешний ключ на родительский список, `task_description`, `due_date` |
 
 После определения структуры создадим файл схемы модели. Схема: XML-представление таблиц БД. xPDO разбирает его в PHP-карты: массивы схемы и связей.
 
@@ -102,9 +97,11 @@ project1/
 
 ### Расположение файлов MODX и xPDO
 
+Оба дерева зеркалят структуру «класс — каталог», поэтому любой класс ищется по пути.
+
 Префикс `MODX` соответствует `core/src/` и дальше зеркалит структуру. Путь к modElement: `core/src/Revolution/modElement.php`. Если класс неочевиден, смотрите документацию и структуру каталогов.
 
-xPDO лежит в `core/vendor/xpdo/src/xPDO/`, дальше: как у класса. Путь к `xPDOSimpleObject`: `core/vendor/xpdo/src/xPDO/Om/xPDOSimpleObject.php`.
+xPDO лежит в `core/vendor/xpdo/xpdo/src/xPDO/`, дальше: как у класса. Путь к `xPDOSimpleObject`: `core/vendor/xpdo/xpdo/src/xPDO/Om/xPDOSimpleObject.php`.
 
 ### Содержимое файла схемы
 
@@ -144,26 +141,31 @@ xPDO лежит в `core/vendor/xpdo/src/xPDO/`, дальше: как у кла�
 </model>
 ```
 
-**Примечание**: в MODX 3 в aggregate и composite атрибут `class` ***должен содержать полное имя класса с namespace***.
+::: warning
+В MODX 3 в aggregate и composite атрибут `class` ***должен содержать полное имя класса с namespace***.
+:::
 
 Тег model и атрибуты задают свойства компонента/Extra:
 
-*   **package**: PHP namespace пакета xPDO. Важное изменение MODX 3. Как уже сказано, *это значение попадает в PHP-файлы как **namespace***.
-*   **baseClass**: базовый класс для всех определений. Если не планируете своё расширение `xPDOObject`, оставьте по умолчанию.
-*   **platform**: MySQL (mysql).
-*   **defaultEngine**: движок таблиц по умолчанию, обычно InnoDB или MyISAM. MODX рекомендует InnoDB.
-*   **phpdoc-package**: MODX напрямую не использует, но можно в Documentation Blocks. Ожидается PHP namespace в MODX 3. Если не задать, MODX подставит сам. В docblock классов будет `@package MyComponent\Model`.
-*   **phpdoc-subpackage**: по [phpDocumentor](https://docs.phpdoc.org/guide/references/phpdoc/tags/subpackage.html) устарело. Namespace уже объединяет package и subpackage.
+| Атрибут | Значение |
+| --- | --- |
+| `package` | PHP namespace пакета xPDO. Важное изменение MODX 3: это значение попадает в PHP-файлы модели как объявление `namespace`. |
+| `baseClass` | Базовый класс для всех определений. Если не планируете своё расширение `xPDOObject`, оставьте по умолчанию. |
+| `platform` | MySQL (`mysql`). |
+| `defaultEngine` | Движок таблиц по умолчанию, InnoDB или MyISAM. MODX рекомендует InnoDB. |
+| `version` | Оставьте `3.0`. Это не косметика: начиная с `3.0` генератор пишет `Model/metadata.mysql.php` с картой классов, и только модель с этой картой доходит до PSR-4 автозагрузчика. С `version="1.0"` классы генерируются, но `addPackage()` их не подхватывает. |
+| `phpdoc-package` | MODX напрямую не использует, но можно в Documentation Blocks. Ожидается PHP namespace в MODX 3. Если не задать, MODX подставит сам. В docblock классов будет `@package MyComponent\Model`. |
+| `phpdoc-subpackage` | По [phpDocumentor](https://docs.phpdoc.org/guide/references/phpdoc/tags/subpackage.html) устарело. Namespace уже объединяет package и subpackage. |
 
 ---
 
-> Подробнее о схемах MODX: [Defining a Schema | Database and Tables](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables#defining-tables)). Дополнительно про атрибуты Class, Table, Extends и примеры.
+> Подробнее о схемах MODX: [Defining a Schema | Database and Tables](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables), где разобраны атрибуты Class, Table и Extends.
 > 
-> О путях: [Namespaces | Usage](extending-modx/namespaces#usage).
+> О путях: [Namespaces | Usage](extending-modx/namespaces).
 
 ## Запись namespace компонента в менеджере
 
-Данные записи namespace компонента те же, что в MODX 2. Не путайте с PHP namespace. Имя и пути: в нижнем регистре. MODX 3 добавляет ещё одно применение namespace компонента, об этом в следующем разделе.
+Данные записи namespace компонента те же, что в MODX 2 — см. раздел о [терминах](#terminology). MODX 3 добавляет ещё одно применение namespace компонента, об этом в следующем разделе.
 
 Откройте Namespaces и создайте новую запись.
 
@@ -171,7 +173,7 @@ xPDO лежит в `core/vendor/xpdo/src/xPDO/`, дальше: как у кла�
 alt="Create the Namespace Entry in the Manager"
 width="400px" />
 
-Заполните поля как на скриншоте и сохраните. *(Пути должны заканчиваться слэшем.)*
+Заполните поля и сохраните запись. Имя «Name» и оба пути должны быть в нижнем регистре, оба пути — заканчиваться слэшем.
 
 > **Name**: todo<br/>
 > **Core Path**: {base_path}project1/core/components/todo/<br/>
@@ -190,6 +192,10 @@ width="600" />
 ### Дополнительно для любознательных :)
 
 В index вызывается initialize с контекстом «web»: `$modx->initialize('web')`. В `modX.php` initialize вызывает `_initNamespaces()`. Функция читает namespace из кеша, перебирает записи и подключает `bootstrap.php`, если файл есть и читается.
+
+::: warning
+`bootstrap.php` подключается до `_initContext()`, поэтому внутри него контекста ещё нет: `$modx->getContext()` вернёт `null`, а настройки контекста ещё не в конфигурации. Ограничивайтесь самим `$modx` и данными namespace в файле bootstrap — всё остальное ждёт своего момента в запросе.
+:::
 
 <img src="img/init-namespaces-function.png" 
 alt="The initNamespaces function"
@@ -280,7 +286,13 @@ MODX 3 по-прежнему вызывает `addPackage`, формат чут�
 $modx->addPackage('ToDo\Model', $namespace['path'] . 'src/', null, 'ToDo\\');
 ```
 
-**Предупреждение**: `bootstrap.php` легко «ломает» менеджер. Опечатка в PHP, неверное имя класса или echo в файле: менеджер перестанет загружаться. Уберите лишний вывод, и всё заработает снова.
+::: warning
+Запустите `build.schema.php` до того, как начнёте полагаться на этот файл. `addPackage()` читает `src/Model/metadata.mysql.php`, и когда файла нет, молча выходит без ошибки PHP — единственный след, предупреждение `Could not load package metadata` в журнале MODX, после чего все классы компонента дальше по запросу «не найдены».
+:::
+
+::: danger
+`bootstrap.php` выполняется до того, как менеджер закончит загрузку. Опечатка в PHP, неверное имя класса или любой `echo` в этом файле ломают менеджер, и он перестаёт загружаться. Уберите лишний вывод, и всё заработает снова.
+:::
 
 ## Скрипт создания таблиц
 
@@ -357,11 +369,7 @@ foreach ($classes as $class) {
 
 **ПРИМЕЧАНИЕ**: повторная загрузка с параметром action добавит дубликаты с новыми id.
 
-Вторая половина читает данные и собирает строку. Подробнее о чтении и записи:
-
-* [Creating Objects](https://docs.modx.com/3.x/en/extending-modx/xpdo/creating-objects "Creating Objects")
-* [Retrieving Objects](https://docs.modx.com/3.x/en/extending-modx/xpdo/retrieving-objects "Retrieving Objects")
-* [Add Many | Adding multiple child records with one "save"](https://docs.modx.com/3.x/en/extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "Adding multiple child records with one save")
+Вторая половина читает данные и собирает строку. Подробнее о чтении и записи: [Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects"), [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects"), [Add Many](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "Add Many").
 
 ```php
 <?php
@@ -382,8 +390,8 @@ if ($action === 'generate') {
             "name" => "Grocery List",
             "short_description" => "Things to buy at the store",
             "tasks" => [
-                ["task_description" => "Eggs"],
-                ["task_description" => "Cheese"],
+                ["task_description" => "Eggs", "due_date" => "2026-10-17"],
+                ["task_description" => "Cheese", "due_date" => "2026-10-17"],
                 ["task_description" => "Kale Chips"]
             ]
         ],
@@ -391,7 +399,7 @@ if ($action === 'generate') {
             "name" => "House Projects",
             "short_description" => "Items to complete around the house",
             "tasks" => [
-                ["task_description" => "Fix the bathroom sink leak"],
+                ["task_description" => "Fix the bathroom sink leak", "due_date" => "2026-10-20"],
                 ["task_description" => "Figure out how to fix the front door"],
                 ["task_description" => "Rake up the leaves? Maybe?"]
             ]
@@ -411,6 +419,9 @@ if ($action === 'generate') {
             // Get a task object and set the values
             $newTask = $modx->newObject($namespace.'tdTask');
             $newTask->set('task_description', $createTask['task_description']);
+            if (!empty($createTask['due_date'])) {
+                $newTask->set('due_date', $createTask['due_date']);
+            }
             
             // Add the task object to the array
             $newTaskArr[] = $newTask;
@@ -449,6 +460,9 @@ if ($lists) {
             foreach ($tasks as $task) {
                 // Add the task to the output
                 $output .= PHP_EOL."    > " . $task->get('task_description');
+                if ($task->get('due_date')) {
+                    $output .= ' (' . $task->get('due_date') . ')';
+                }
             }
         }
     }
@@ -468,7 +482,4 @@ width="600" />
 
 * [Generating the xPDO Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 * [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
-*[Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
-* [Creating Objects](extending-modx/xpdo/creating-objects)
-* [Retrieving Objects](extending-modx/xpdo/retrieving-objects)
-* [Add Many | Adding multiple child records with one "save"](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany)
+* [Reverse Engineer xPDO Classes from Existing Database Table](extending-modx/xpdo/custom-models/generating-the-model/reverse-engineer "Reverse Engineer xPDO Classes from Existing Database Table")
