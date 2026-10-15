@@ -341,7 +341,6 @@ $menu->fromArray(array(
     'text' => 'doodles',
     'parent' => 'components',
     'description' => 'doodles.desc',
-    'permissions' => 'doodles_view',
     'icon' => '<i class="icon-cube icon"></i>',
     'menuindex' => 0,
     'params' => '',
@@ -353,10 +352,13 @@ $menu->fromArray(array(
 return $menu;
 ```
 
-The array keys are the columns of the menu table. `action` and `namespace` are what tell MODX which controller to load on click — there is no separate Action object in MODX 3. Two of them need a second look:
+The array keys are the columns of the menu table. `action` and `namespace` are what tell MODX which controller to load on click — there is no separate Action object in MODX 3. The **icon** is written into the menu as raw HTML, so it takes a tag such as `<i class="icon-cube icon"></i>`; a file name ends up printed as broken text.
 
--   **permissions** — a comma-separated list of permission names. An empty list is not "no check": the item stays visible to everyone who can reach the manager, which is why one is set here. Users without it neither see the item nor reach the page.
--   **icon** — written into the menu as raw HTML, so it takes a tag such as `<i class="icon-cube icon"></i>`. A file name ends up printed as broken text.
+The table also has a **permissions** column, left empty here. It takes a comma-separated list of permission names, and MODX checks it in two places: the Manager skips the menu entry for users who lack the permission, and a direct hit on the route raises an access error. An empty list is not "restricted" — the item simply stays visible to everyone who can reach the Manager, which is the right default for an Extra that ships its own settings.
+
+::: warning
+A name in that column has to exist before it can be granted. Creating it is a separate step in the Manager: **Access → Permissions**, where the permission is added to a policy template, and that policy is then granted to a User Group. Fill the column in on a site where no such permission exists yet and the menu entry disappears for everyone — including the administrator who just installed the package.
+:::
 
 ## Adding a Resolver
 
