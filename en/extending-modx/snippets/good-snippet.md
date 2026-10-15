@@ -98,8 +98,6 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
 Never print or echo values in your Snippet; Snippets return data. Echoed output is not lost — MODX buffers it and prepends it to the value you return — but mixing the two makes the result order unpredictable: duplicates, stray whitespace, output in front of an error return. Gather the output into a string such as `$output` and return that.
 
-<!-- MEDIA: diagram | nice | What happens to echoed text: MODX buffers it, puts it in front of the string you return, and the page gets both parts in an order you do not control | Draw it from the paragraph above -->
-
 ## Consistency
 
 Be consistent: one variable naming style and one indent style throughout the Snippet.
@@ -117,8 +115,6 @@ You can also log debugging info, which is useful for users who are debugging thi
 ``` php
 $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following properties: '.print_r($scriptProperties,true));
 ```
-
-<!-- MEDIA: output | nice | Two error-log lines produced by the calls above: one at error level for a missing property, one at debug level with the properties printed | Run both calls on a test installation with log_level set to include debug, then copy the lines -->
 
 ## See Also
 

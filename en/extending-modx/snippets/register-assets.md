@@ -5,8 +5,6 @@ description: "Learning How to Register CSS and JS"
 
 Register CSS and JavaScript from a Snippet instead of a Template Variable you would otherwise edit on every Resource.
 
-<!-- MEDIA: diagram | must | Where each call lands in the page: regClientCSS, regClientStartupScript and regClientStartupHTMLBlock go to the HEAD in call order, regClientScript and regClientHTMLBlock go just before the closing BODY tag, a repeated URL is registered once | Draw it from the two section headings and the method descriptions below -->
-
 ## Adding to the HEAD
 
 These methods append CSS and/or JavaScript to the HEAD of the current page in the order you call them, so call them in the order the assets should appear. Registration is de-duplicated by URL: calling a method twice with the same `$src` keeps only the first registration, so an asset's position is fixed by its first call.

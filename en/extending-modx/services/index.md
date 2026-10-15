@@ -17,8 +17,6 @@ $modx->services->add('twitter', function($c) use ($modx) {
 $modx->services->get('twitter')->tweet('Success!');
 ```
 
-<!-- MEDIA: diagram | nice | The container: services registered while MODX starts, add() placing your own service, get() retrieving it, and getService() shown as the retired 2.x path | Draw it from this section and the dependency injection page -->
-
 ## What are the Default Included Services?
 
 A few services are registered in the container during MODX initialization:
@@ -32,8 +30,6 @@ Other core services are part of the distribution but are loaded on demand via `$
 
 - [modFileHandler](extending-modx/services/modfilehandler)
 - [modMail](extending-modx/services/modmail)
-
-<!-- MEDIA: table | must | Every default service: its container key, when it is registered, and what it is for — registry, the seven PSR HTTP services, modManagerDateFormatter, lexicon, error, parser, modFileHandler, modMail | Collect the keys and the registration moment from the two lists above and from the pages they link to -->
 
 ## See Also
 

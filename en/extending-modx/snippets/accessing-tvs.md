@@ -40,8 +40,6 @@ else {
 return '';
 ```
 
-<!-- MEDIA: diagram | must | How getTVValue finds the value: a cached value comes from the cache, a cleared cache sends the read to the database, a missing record falls back to the TV default | Draw the three paths described in this section -->
-
 ## setTVValue
 
 Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
@@ -60,8 +58,6 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
 }
 ```
-
-<!-- MEDIA: diagram | nice | What a save does: a value equal to the TV default removes the record so the default applies, any other value writes the record at once, the resource cache stays untouched | Draw it from the two paragraphs above -->
 
 ## See Also
 

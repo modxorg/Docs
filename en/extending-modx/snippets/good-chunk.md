@@ -39,8 +39,6 @@ If your Chunks look like this, stop now: rethink the problem and move the logic 
 3. Unlike PHP, Output Modifier errors are not shown in the page output: they are written to the MODX error log (without a line number pointing into your Chunk), so it's much, _much_ harder to debug errors!
 4. Output Modifiers do not use brackets, and it's impossible to match back-ticks in a text editor, so it's very easy to make syntax errors in your code.
 
-<!-- MEDIA: output | nice | One error-log line written by a broken Output Modifier: date, level and the message with no line number pointing into the Chunk | Compose it from point 3 above; use invented data -->
-
 If you really do need them, [this article](https://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/) shows how to use Output Modifiers as conditionals with a minimum of overhead.
 
 ## The Right Way to Do It

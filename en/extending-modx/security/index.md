@@ -20,8 +20,6 @@ The connector accepts the token through three equivalent channels:
 
 The connector validates the token in `modConnectorResponse::outputContent()`: an empty or mismatched token gets a 401 response. The `Login` (and `Security/Login`) action is exempt, so logging in does not require a token yet. Inside a processor, `HTTP_MODAUTH` is stripped from `$scriptProperties`, so your processor code never sees it.
 
-<!-- MEDIA: diagram | must | The token's path: logging into a context stores a token in the session; a manager request carries it as a POST parameter, a GET parameter or the ModAuth header; the connector checks it and either answers 401 or lets the request through, with HTTP_MODAUTH removed before the processor runs | Draw the flow from the three channels above and the validation paragraph; check class and key names against the text -->
-
 The token belongs to a user and their current context. Sessions are tied to a user the same way, which is why token code lives in the `modUser` class; by default, tokens apply only to a logged-in user. `modUser::generateToken()` creates the token (format: `uniqid(site_id . '_' . user id, true)`) and stores it in the session under the key `modx.{context}.user.token` when the user logs into a context via `modUser::addSessionContext()`.
 
 For example, here's how you might test a form that was posted from somewhere in the manager.
@@ -45,4 +43,3 @@ The tokens used by the MODX manager are session related, so as long as you are l
 
 Example: load a manager form, leave for 12 hours, then come back. A nonce-signed form probably fails, because nonces have short lifetimes. A token-signed form probably still submits, because your session is probably still alive (by default MODX ships with `session_cookie_lifetime` set to 604800 seconds, i.e. 7 days; the value is configurable via system setting).
 
-<!-- MEDIA: diagram | nice | A timeline: the form loads, 12 hours pass, the submit goes out — the nonce has expired while the token still works because the session lives | Build it from the example above; keep the 12 hours and the 604800-second session lifetime -->

@@ -10,8 +10,6 @@ modRegistry is a message queue service in the MODX core. It ships with a file-ba
 
 A registry holds any number of registers. Within a register you subscribe to topics, then send messages to a topic and read them from it.
 
-<!-- MEDIA: diagram | must | The message path: a registry holds registers, a register holds topics, a subscriber subscribes to a topic, then sends messages to it and reads them back | Draw it from the two paragraphs above -->
-
 ## Choosing a modRegister implementation
 
 MODX ships with two modRegister implementations: one file-based, one backed by database tables.
@@ -44,8 +42,6 @@ $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modDbRegister', array('directory' => 'food'));
 ```
 
-<!-- MEDIA: table | nice | The two modRegister implementations side by side: where each stores messages, the traffic it suits, and its limits — the file register loses messages when you clear core/cache by hand | Pull the criteria from the two subsections above -->
-
 ## Using the Registry API
 
 ### Registry service methods
@@ -69,8 +65,6 @@ Each modRegister instance (file or database) provides, beyond `connect()`, `subs
 - `begin($transactionKey)`, `commit($transactionKey)`, `abort($transactionKey)` — group sends into a transaction;
 - `acknowledge($messageKey, $transactionKey)` — acknowledge a message within a transaction;
 - `getKey()` — the register's key.
-
-<!-- MEDIA: table | must | The service methods and the register methods as reference tables: signature, arguments, purpose | Turn the two bullet lists above into tables -->
 
 ### Connecting
 
@@ -262,8 +256,6 @@ This example uses two plugins to refresh caches across web nodes that each run t
 The first plugin, on `OnWebPageComplete`, registers its server instance for 20 minutes and then polls for a `clearCache` command. The second plugin, on `OnSiteRefresh`, broadcasts `clearCache` to every registered instance when you refresh the cache in the manager. The 20-minute TTL suits environments where instances launch and stop on demand; remove it to skip the overhead of writing those messages every 20 minutes.
 
 In practice, keep the manager on its own instance (a separate subdomain, for example), away from the public web nodes. Heavy manager traffic then stays isolated, and changes reach the web nodes only when someone runs Refresh site.
-
-<!-- MEDIA: diagram | must | Two web nodes and the manager around one database register: each node publishes its instance with a limited lifetime, a cache refresh in the manager writes a clearCache command for every instance, each node reads its command and refreshes its local cache | Draw the flow described above; take the register and topic names from the plugin code below -->
 
 The remotecommands plugin (`OnWebPageComplete`):
 

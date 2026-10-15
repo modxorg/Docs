@@ -18,8 +18,6 @@ modFile make (string $path, array $options = array(), string $overrideClass = ''
 
 When passed a path, `make()` inspects the filesystem: if the path is an existing directory it returns a `modDirectory` object, otherwise it returns a `modFile` object — including for paths that do not exist yet. The optional `$overrideClass` parameter forces the returned class regardless of the path, which is how you create a `modDirectory` object for a not-yet-existing directory.
 
-<!-- MEDIA: diagram | must | How make() chooses the class: an existing directory gives modDirectory, any other path gives modFile, an explicit $overrideClass forces the class whatever the path | Follow the decision described above; keep the parameter and class names from the signature -->
-
 In MODX 3 the class lives in the `MODX\Revolution\File` namespace and there is no global alias, so load it with its FQCN:
 
 ``` php
@@ -70,4 +68,3 @@ Beyond `make()`, the handler offers path helpers; `modFile` and `modDirectory` p
 - **modDirectory**: `create($mode = '')`, `remove($options = array())`, `getList($options = array())` — `getList()` returns the directory contents as arrays (files and subdirectories).
 - **modFileSystemResource** (common base): `getPath()`, `exists()`, `isReadable()`, `isWritable()`, `isLink()`, `chmod($mode)`, `chown($owner)`, `chgrp($grp)`, `rename($newPath)`, `move($newPath)`, `getParentDirectory()`, `getGroup()`, `setGroup($grp)`.
 
-<!-- MEDIA: table | must | The four classes of the service and their methods: modFileHandler, modFile, modDirectory, modFileSystemResource — one row per method with its arguments and purpose | Turn the four lists above into a table -->

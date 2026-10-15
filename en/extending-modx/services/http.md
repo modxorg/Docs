@@ -30,8 +30,6 @@ The general approach does not depend on the implementation:
 4. Tell the Client to send the request with `$client->sendRequest($request)`
 5. Use the given Response
 
-<!-- MEDIA: diagram | must | The request path: the services container hands out the client and the factory, the factory builds the request, the client sends it, the response body is read and decoded | Draw it from the five steps above and the snippet below; name only the PSR interfaces shown on this page -->
-
 A snippet that asks the ipinfo.io API for JSON:
 
 ```php
@@ -84,8 +82,6 @@ $body = json_decode($response->getBody()->getContents());
 return print_r($body, true);
 ```
 
-<!-- MEDIA: output | nice | The JSON answer of the test service to the POST above: status, id and creation time fields with invented values | Send the request once from a test installation and copy the response body -->
-
 Instead of writing to the existing stream, you can create a fresh one with the `StreamFactoryInterface` service and set it as the body:
 
 ```php 
@@ -117,6 +113,4 @@ $modx->services->add(\Psr\Http\Client\ClientInterface::class, function ($c) {
     return new MyCustomClient();
 });
 ```
-
-<!-- MEDIA: diagram | nice | The swap behind the interface: code asks the container for ClientInterface, add() binds the interface to your own class, every caller goes through the new class without changes | Draw it from the snippet above and the dependency injection page -->
 

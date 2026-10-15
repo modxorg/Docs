@@ -63,8 +63,6 @@ if ($response->responseError) {
 }
 ```
 
-<!-- MEDIA: output | nice | The text $response->responseError holds when the service is down or answers after the timeout | Run the request above once against a stopped service on a test installation and copy the message -->
-
 ## Login
 
 For HTTP authorization, set the `username` and `password` options:
@@ -130,8 +128,6 @@ The `modRest` constructor accepts a config array (the `$params` argument of `get
 - `defaultParameters` — parameters merged into every request;
 - `suppressSuffix` — do not append `.json`/`.xml` suffixes;
 - `userAgent` — default `MODX RestClient/1.0.0`.
-
-<!-- MEDIA: table | must | Every constructor option: key, meaning, default value — format, header, headers, username, password, timeout, baseUrl, addMethodParameter, defaultParameters, suppressSuffix, userAgent and the curl keys named next to timeout | Collect the bullet list above; take the default values from the source file named at the end of the section -->
 
 Beyond `get()` and `post()` shown above, the client provides `put($url, $parameters, $headers)`, `delete($url, $parameters, $headers)` and the generic `request($method, $url, $parameters, $headers)`.
 

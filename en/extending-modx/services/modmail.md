@@ -12,8 +12,6 @@ modMail is an abstract class you extend to provide mail services in MODX. It can
 
 modPHPMailer is a class that extends modMail to provide an implementation for the open source PHPMailer class.
 
-<!-- MEDIA: diagram | nice | The class chain: modMail is the abstract base, modPHPMailer extends it, PHPMailer does the sending, and a class of your own plugs in the same way | Draw it from the two paragraphs above -->
-
 ## Usage
 
 The example below sends a Chunk as an HTML email through the bundled modPHPMailer:
@@ -44,6 +42,8 @@ $modx->mail->address('to','user@example.com');
 $modx->mail->address('to','mom@example.org');
 ```
 
+The example above writes to the error log when the mail is not sent, which usually means a server misconfiguration.
+
 ## Placeholders in your Chunk
 
 The body can come from anywhere. The example above uses [modX.getChunk](extending-modx/modx-class/reference/modx.getchunk "modX.getChunk") (see its optional second argument there); you can also pass a static string to **modMail::MAIL\_BODY**. Which placeholders appear in the body is up to you.
@@ -51,8 +51,6 @@ The body can come from anywhere. The example above uses [modX.getChunk](extendin
 ## What if I want to use another email class?
 
 Extend `modMail` with that class and load it with [getService](extending-modx/modx-class/reference/modx.getservice "modX.getService"). You get all modMail functionality and provide the wrapper class yourself, as modPHPMailer does.
-
-<!-- MEDIA: snippet-code | nice | A small wrapper class extending modMail and the getService() call that loads it, the same pattern modPHPMailer uses | Write it from the paragraph above; do not invent methods beyond the ones listed on this page -->
 
 ## API and settings
 

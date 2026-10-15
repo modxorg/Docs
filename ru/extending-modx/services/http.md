@@ -101,9 +101,7 @@ $request = $factory->createRequest('POST', 'https://reqres.in/api/users')
 
 ## ServerRequest или Request?
 
-Для исходящих запросов обычно берут Request и RequestFactoryInterface.
-
-ServerRequest ближе к обработке _входящих_ запросов. MODX пока не использует PSR-стандарты для входящих запросов.
+Для исходящих запросов берут `RequestFactoryInterface`. `ServerRequest` описывает _входящие_ запросы, которые MODX пока не обрабатывает через PSR.
 
 ## Переопределение HTTP-сервисов
 
@@ -114,3 +112,4 @@ $modx->services->add(\Psr\Http\Client\ClientInterface::class, function ($c) {
     return new MyCustomClient();
 });
 ```
+

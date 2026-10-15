@@ -66,3 +66,4 @@ return 'File and directory written.';
 - **modFile**: `create($content = '', $mode = 'w+')`, `write($content, $mode)`, `save($content, $mode)`, `setContent($content)`, `getContents()`, `remove()`, `unpack($to, $options)`, `download($options)`, `getSize()`, `getExtension()`, `getBaseName()`, `getLastAccessed()`, `getLastModified()`.
 - **modDirectory**: `create($mode = '')`, `remove($options = array())`, `getList($options = array())` — `getList()` возвращает содержимое каталога в виде массивов (файлы и подкаталоги).
 - **modFileSystemResource** (общий базовый класс): `getPath()`, `exists()`, `isReadable()`, `isWritable()`, `isLink()`, `chmod($mode)`, `chown($owner)`, `chgrp($grp)`, `rename($newPath)`, `move($newPath)`, `getParentDirectory()`, `getGroup()`, `setGroup($grp)`.
+
