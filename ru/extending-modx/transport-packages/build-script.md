@@ -4,11 +4,7 @@ description: "Создание скрипта сборки"
 translation: "extending-modx/transport-packages/build-script"
 ---
 
-Пользователи, использующие `Revolution 2.0.0-beta-4` или более раннюю версию, должны учитывать, что определения различаются в `beta5` и последующих версиях. Пример: `xPDOTransport::UNIQUE_KEYS` в `beta5+` эквивалентна `XPDO_TRANSPORT_UNIQUE_KEYS` в `beta4` и ранее. MODX рекомендует просто обновиться до `beta5/SVN`.
-
-## Скрипт сборки - что это?
-
-Это суть процесса упаковки; вот где ваш Компонент фактически помещается в красивый, изящный транспортный пакет `.zip`, который вы найдете на `modx.com` или в разделе управления пакетами Revolution.
+Что же такое скрипт сборки? Это суть процесса упаковки; вот где ваш Компонент фактически помещается в красивый, изящный транспортный пакет `.zip`, который вы найдете на `modx.com` или в разделе управления пакетами Revolution.
 
 В этом руководстве вы узнаете, как создать один из этих сценариев. Мы будем использовать образец компонента под названием `Quip`, который содержит `modAction`, несколько пунктов меню, несколько Чанков и Сниппет, Лексиконы, Параметры установки, лицензию, файл `readme` и Cистемные настройки. По сути, это быстрый и простой просмотр всех основ создания базового скрипта сборки. 
 
@@ -87,16 +83,23 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 ```
 
-Дальше - больше! Давайте сначала воспользуемся `$modx->loadClass` для загрузки класса `modPackageBuilder`. Затем мы создадим его экземпляр и создадим пакет. 
+Дальше - больше! В MODX 3 классы сборки загружает Composer-автозагрузчик, который уже настроен через `modx.class.php`, так что вызова `$modx->loadClass()` не нужно — создайте экземпляр билдера по его имени в пространстве имён (или добавьте `use MODX\Revolution\Transport\modPackageBuilder;` в начало скрипта, если предпочитаете короткое имя):
 
 ``` php
-$modx->loadClass('transport.modPackageBuilder','',false, true);
-$builder = new modPackageBuilder($modx);
+$builder = new \MODX\Revolution\Transport\modPackageBuilder($modx);
 $builder->createPackage('quip','0.1','alpha7');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 ```
 
 Функция `modPackageBuilder::createPackage` имеет 3 параметра: `name`, `version` и `release`. У нас это будет `quip-0.1-alpha7`, продолжаем.
+
+Ещё полезные методы билдера:
+
+- `setWorkspace($workspace_id)` - переключает рабочее пространство, в которое собирается пакет; готовый файл оказывается в `packages/` этого workspace. Возвращает `modWorkspace` или `false` при неверном id.
+- `setAutoSelects(array $classes)` - задаёт, какие классы `pack()` автоматически собирает в контейнеры по значению namespace (внутренне используется, когда `registerNamespace()` вызван с `$autoincludes`).
+- `getSignature()` - возвращает сигнатуру пакета, который сейчас собирается.
+- `buildSchema($model, $schema)` - запускает генератор модели xPDO для XML-схемы, записывая классы в каталог `$model`.
+- У `registerNamespace()` есть пятый необязательный параметр `$assetsPath` после `$path` - он задаёт assets_path пространства имен для компонентов, держащих файлы вне `core/`.
 
 Затем мы зарегистрируем [Пространство имен](extending-modx/namespaces) в этом пакете. Не всем пакетам требуются [Пространства имен](extending-modx/namespaces); но все сторонние компоненты делают. По сути, пространство имен - это инструмент организации для MODX, чтобы MODX мог знать, какие объекты привязаны к какому пакету. Это пригодится позже, если мы захотим удалить наш пакет; мы бы хотели, чтобы он удалил объекты, которые мы устанавливаем.
 
@@ -104,7 +107,7 @@ $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 
 ## Упаковка объектов
 
-Объекты упакованы в [Контейнеры](getting-started/glossary#transportnyy-konteyner); в основном думайте о транспортном Контейнере как о некой системе хранения, которая переносит данные и/или файлы в zip-архиве. [Транспортные пакеты](getting-started/glossary#transportnyy-paket) могут содержать много транспортных контейнеров. Контейнеры могут содержать множество объектов или файлов, однако контейнеры, содержащие объект, должны иметь только один ссылочный объект (или родительский объект, в зависимости от того, что вы предпочитаете), на котором основан Контейнер.
+Объекты упакованы в [Контейнеры](getting-started/glossary#transportnyy-konteyner); в основном думайте о транспортном Контейнере как о некой системе хранения, которая переносит данные и/или файлы в zip-архиве. [Транспортные пакеты](getting-started/glossary#transportnyy-paket) могут содержать много транспортных контейнеров. Контейнеры могут содержать множество объектов или файлов, однако контейнеры, содержащие объект, должны иметь только один ссылочный объект (или родительский объект, в зависимости от того, что вы предпочитаете), на котором основан Контейнер. `$builder->createVehicle()` возвращает объект `modTransportVehicle` - тот же объект, у которого вы позже вызываете `resolve()` и который вы передаёте в `putVehicle()`; у него также есть `validate()`, `compile()` и `fetch()`.
 
 Давайте рассмотрим несколько примеров создания Транспортного контейнера, прежде чем углубляться в наш скрипт сборки. Этот первый пример упаковывается в простой объект с некоторыми параметрами: 
 
@@ -119,12 +122,12 @@ $vehicle = $builder->createVehicle($snippet,array(
 ));
 ```
 
-Во-первых, мы создали объект [Сниппета](getting-started/glossary#snippet). Обратите внимание, что вам нужно будет указать для него произвольный идентификатор, даже если мы не будем хранить его позже. Это обязательно. Затем мы использовали функцию `createVehicle` в `modPackageBuilder` для создания объекта Контейнера. Параметры атрибутов:
+Во-первых, мы создали объект [Сниппета](getting-started/glossary#snippet). Обратите внимание, что мы указали для него произвольный идентификатор, хотя позже не будем его хранить. При заданном `UNIQUE_KEY` xPDO ищет существующую строку по этому ключу и не использует ID; без `UNIQUE_KEY` именно ID идентифицирует объект, и он обязателен. Затем мы использовали функцию `createVehicle` в `modPackageBuilder` для создания объекта Контейнера. Параметры атрибутов:
 
 - **xPDOTransport::UNIQUE\_KEY** _(string/array)_ - уникальный ключ объекта. По нему MODX ищет `modSnippet` с `name`, равным упакованному имени (здесь `Test`), при обновлении или удалении. Для большинства объектов это `name`. Иногда нужен другой ключ или массив из двух и более полей.
 - **xPDOTransport::UPDATE\_OBJECT** _(boolean)_ - если `true`, MODX обновляет объект при совпадении по `UNIQUE_KEY` во время установки или обновления. Если `false`, существующая строка не трогается. Этот флаг также влияет на удаление пакета: xPDO удаляет объект только при `UPDATE_OBJECT => true` (и если `UNINSTALL_OBJECT` не равен `false`). Ставьте `UPDATE_OBJECT => false`, когда обновление не должно затирать правки пользователя. Тогда объект останется и после uninstall.
 - **xPDOTransport::UNINSTALL\_OBJECT** _(boolean)_ - если `false`, объект остаётся в БД при удалении пакета. Если атрибут не задан, по умолчанию считается `true`. Для удаления строки всё равно нужен `UPDATE_OBJECT => true`. Оба условия должны выполниться.
-- **xPDOTransport::PRESERVE\_KEYS** _(boolean)_ - если `true`, MODX подставляет значения первичного ключа из пакета при загрузке объекта. Ставьте `true` для натуральных или строковых PK (например, `key` у Context), чтобы записалось значение из пакета. Для обычных autoincrement ID ставьте `false`, чтобы БД выдала новый ID при вставке. Если объект уже есть, это работает только вместе с `UPDATE_OBJECT => true`.
+- **xPDOTransport::PRESERVE\_KEYS** _(boolean)_ - действует только при вставке нового объекта: если `true`, значения первичного ключа из пакета записываются при вставке; если `false`, их назначает БД. Ставьте `true` для натуральных или строковых PK (например, `key` у Context), `false` для обычных autoincrement ID. Если совпадающая строка уже есть, её первичный ключ сохраняется в любом случае, независимо от этого флага и от `UPDATE_OBJECT`; флаг проверяется только на пути вставки новой строки.
 - **xPDOTransport::ABORT\_INSTALL\_ON\_VEHICLE\_FAIL** _(boolean)_ - если `true` у этого контейнера и установка контейнера падает, MODX прерывает установку всего пакета.
 - **xPDOTransport::PREEXISTING\_MODE** _(integer)_ - как обрабатывать объекты (и цели file-резолверов), которые уже есть на сайте. Одно из значений ниже.
 
@@ -138,22 +141,14 @@ $vehicle = $builder->createVehicle($snippet,array(
 
 В примере ищем Сниппет с именем `Test` и обновляем его, если он есть, либо создаём, если нет. `PRESERVE_KEYS` равен `false`, поэтому autoincrement PK из пакета не навязывается.
 
-А что насчет связанных объектов? Что, если я хочу упаковать свой `modMenu` вместе с его действием, связанным с `modMenu`? Вот немного более сложный сценарий: 
+Упакуем также `modMenu`:
 
 ``` php
-$action= $modx->newObject('modAction');
-$action->fromArray(array(
-    'id' => 1,
-    'namespace' => 'quip',
-    'parent' => '0',
-    'controller' => 'index',
-    'haslayout' => '1',
-    'lang_topics' => 'quip:default,file',
-    'assets' => '',
-),'',true,true);
 $menu= $modx->newObject('modMenu');
 $menu->fromArray(array(
     'text' => 'quip',
+    'namespace' => 'quip',
+    'action' => 'index',
     'parent' => 'components',
     'description' => 'quip_desc',
     'icon' => 'images/icons/plugin.gif',
@@ -161,76 +156,23 @@ $menu->fromArray(array(
     'params' => '',
     'handler' => '',
 ),'',true,true);
-$menu->addOne($action);
 $vehicle= $builder->createVehicle($menu,array (
     xPDOTransport::PRESERVE_KEYS => true,
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::UNIQUE_KEY => 'text',
-    xPDOTransport::RELATED_OBJECTS => true,
-    xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
-        'Action' => array (
-            xPDOTransport::PRESERVE_KEYS => false,
-            xPDOTransport::UPDATE_OBJECT => true,
-            xPDOTransport::UNIQUE_KEY => array ('namespace','controller'),
-        ),
-    ),
 ));
 ```
 
-Мы вводим 2 новых параметра: 
+## Связанные объекты
 
-- **xPDOTransport::RELATED\_OBJECTS** _(boolean)_ - Либо true, либо false, это сообщант MODX, что мы хотим искать объекты, связанные с этим объектом. Это должно быть установлено для работы следующего параметра. 
-- **xPDOTransport::RELATED\_OBJECT\_ATTRIBUTES** _(array)_ - Это определяет типы и подробности связанных объектов, которые мы хотим захватить. Если вы заметили, формат представляет собой просто ассоциативный массив атрибутов, аналогичный атрибутам родительского объекта, где ключ является "псевдонимом"(`alias`) связанного объекта, который мы хотим захватить. Псевдонимы можно найти в Cхеме, расположенной в `core/model/schema/modx.mysql.schema.xml`.
+При упаковке связанных объектов нужны 2 новых параметра:
 
-Наш пример выше говорит нам о `modAction` (найденном при поиске `modAction` с Пространством имен `quip` и Контроллером `index`), чтобы включить связанный объект `modAction`, который мы упаковываем. Мы упаковали их вручную, используя `addOne` функцию xPDO в `modAction`.
+- **xPDOTransport::RELATED\_OBJECTS** _(boolean)_ - если `true`, MODX ищет объекты, связанные с этим объектом. Без него следующий параметр не работает.
+- **xPDOTransport::RELATED\_OBJECT\_ATTRIBUTES** _(array)_ - типы и подробности связанных объектов, которые нужно упаковать. Формат - обычный ассоциативный массив атрибутов (аналогично атрибутам родительского объекта), где ключ - это "псевдоним" (`alias`) связанного объекта. Псевдонимы можно найти в схеме `core/model/schema/modx.mysql.schema.xml`.
 
-Кроме того, если бы мы хотели упаковать объекты, связанные с объектами `modAction`, нам просто нужно было бы определить это в атрибутах `Action` и `addMany` (или `addOne`) для этого действия. Вы можете сколько угодно углубляться во вложенность.
+Перед вызовом `$builder->createVehicle` связанные объекты нужно привязать к родителю функциями `addOne` или `addMany`. Вложенность может быть любой.
 
-Итак, вернемся к нашему сценарию. Напомним, что на данный момент у нас есть: 
-
-``` php
-<?php
-/**
- * Quip скрипт сборки
- *
- * @package quip
- * @subpackage build
- */
-$mtime = microtime();
-$mtime = explode(" ", $mtime);
-$mtime = $mtime[1] + $mtime[0];
-$tstart = $mtime;
-set_time_limit(0);
-
-$root = dirname(dirname(__FILE__)).'/';
-$sources= array (
-    'root' => $root,
-    'build' => $root .'_build/',
-    'lexicon' => $root . '_build/lexicon/',
-    'resolvers' => $root . '_build/resolvers/',
-    'data' => $root . '_build/data/',
-    'source_core' => $root.'core/components/quip',
-    'source_assets' => $root.'assets/components/quip',
-    'docs' => $root.'core/components/quip/docs/',
-);
-unset($root);
-
-/* переопределите своими собственными определениями здесь (смотрите build.config.sample.php) */
-require_once dirname(__FILE__) . '/build.config.php';
-require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
-
-$modx= new modX();
-$modx->initialize('mgr');
-$modx->setLogLevel(modX::LOG_LEVEL_INFO);
-$modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
-
-$modx->loadClass('transport.modPackageBuilder','',false, true);
-$builder = new modPackageBuilder($modx);
-$builder->createPackage('quip','0.1','alpha5');
-$builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
-```
-
-Итак, давайте сначала упакуем наши `modActions` и `modMenus` для нашего бэкэнда: 
+Упакуем меню для бэкэнда:
 
 ``` php
 /* загружаем action/menu */
@@ -240,17 +182,9 @@ $vehicle= $builder->createVehicle($menu,array (
     xPDOTransport::PRESERVE_KEYS => true,
     xPDOTransport::UPDATE_OBJECT => true,
     xPDOTransport::UNIQUE_KEY => 'text',
-    xPDOTransport::RELATED_OBJECTS => true,
-    xPDOTransport::RELATED_OBJECT_ATTRIBUTES => array (
-        'Action' => array (
-            xPDOTransport::PRESERVE_KEYS => false,
-            xPDOTransport::UPDATE_OBJECT => true,
-            xPDOTransport::UNIQUE_KEY => array ('namespace','controller'),
-        ),
-    ),
 ));
 $builder->putVehicle($vehicle);
-unset($vehicle,$action); /* бережем память */
+unset($vehicle,$menu); /* бережем память */
 ```
 
 Минутку! Обратите внимание, как мы помещаем данные `action` в другой файл? Вам не обязательно этого делать - это полностью личное предпочтение, но это сохраняет наш скрипт сборки в порядке и изолирует наши `actions`/`menus` в отдельный файл для упрощения управления.
@@ -290,7 +224,7 @@ $snippet= $modx->newObject('modSnippet');
 $snippet->set('id',0);
 $snippet->set('name', 'Quip');
 $snippet->set('description', 'Простой компонент для комментариев');
-$snippet->set('snippet',file_get_contents($sources['source_core'].'/snippet.quip.php');
+$snippet->set('snippet',file_get_contents($sources['source_core'].'/snippet.quip.php'));
 ```
 
 Чудесно! Обратите внимание, как здесь мы используем функцию `file_get_contents()`, чтобы получить содержимое Сниппета из нашей среды разработки и разместить его здесь. Это упрощает запуск сборки в будущих итерациях; нет необходимости постоянно обновлять этот вызов - просто обновите этот файл.
@@ -303,7 +237,7 @@ $snippet->setProperties($properties);
 $category->addMany($snippet);
 ```
 
-Здесь мы используем метод `addMany`, а не `addOne`. То, что вам нужно использовать, зависит не столько от количества объектов, которые вы связываете (в данном случае только один Сниппет), сколько от "мощности"(cardinality) отношения. Это может показаться сложным, но количество элементов просто означает, является ли это отношением "один к одному" или "один ко многим". В нашем случае категория имеет отношение "один ко многим" со Сниппетами (в одной категории может быть много Сниппетов), и это означает, что вам придется использовать метод `addMany`. Вы можете передать этому методу массив объектов или только один объект, но какой из них вы используете, зависит от количества элементов. Узнайте больше об [отношениях](extending-modx/xpdo/custom-models/defining-a-schema/Relations "Определение отношений"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") и [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
+Здесь мы используем метод `addMany`, а не `addOne`. То, что вам нужно использовать, зависит не столько от количества объектов, которые вы связываете (в данном случае только один Сниппет), сколько от "мощности"(cardinality) отношения. Это может показаться сложным, но количество элементов просто означает, является ли это отношением "один к одному" или "один ко многим". В нашем случае категория имеет отношение "один ко многим" со Сниппетами (в одной категории может быть много Сниппетов), и это означает, что вам придется использовать метод `addMany`. Вы можете передать этому методу массив объектов или только один объект, но какой из них вы используете, зависит от количества элементов. Узнайте больше об [отношениях](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Определение отношений"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") и [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
 
 Вы будете использовать функцию `setProperties` из `modSnippet` для передачи в массив множества свойств. Итак, давайте взглянем на этот файл `properties.inc.php`: 
 
@@ -407,7 +341,7 @@ $builder->putVehicle($vehicle);
 
 Хорошо, обо всем по порядку. У файловых Резольверов есть два варианта: 
 
-- **source** - Это целевой каталог или сценарий. Если это файловый Резольвер, он не должен заканчиваться косой чертой и должен быть допустимым каталогом. Если это PHP Резольвер, это должен быть действительный и доступный файл. 
+- **source** - Это каталог (или сценарий для PHP Резольвера), из которого копируются файлы. Для файлового Резольвера это должен быть допустимый каталог (задавайте путь без завершающей косой черты); для PHP Резольвера - действительный и доступный файл. 
 - **target** - Применимо только к файловым Резольверам, это сообщает MODX, где установить исходные файлы. Здесь используется оператор `eval()`, поэтому его необходимо использовать, как в примере. Вам доступны стандартные определения MODX; используйте их, чтобы захватить базовые пути к цели. 
 
 В наших примерах мы просто перемещаем все исходные файлы из нашего каталога `core` в `modx/core/components/quip/` (поскольку наш каталог, который мы перемещаем, называется `quip`), а все файлы из каталога `assets` - в `modx/assets/components/quip/`.
@@ -428,7 +362,7 @@ $builder->putVehicle($vehicle);
 
 Как видите, у нас есть подкаталог `en`, IANA код для английского языка. Затем у нас есть `default.inc.php` - это файл темы лексикона по умолчанию. Если бы мы хотели создать отдельные темы лексикона, мы назвали бы их `topicname.inc.php`.
 
-Начиная с MODX Revolution RC-2, MODX автоматически найдет словари в вашем каталоге `lexicon`, предполагая, что вы поместите их в эту структуру в следующее место: `{namespace_path}/lexicon/`, где путь к пространству имен `{namespace_path}`- это путь, который вы задали для вашего пространства имен ранее. Вам вообще не нужно напрямую встраивать лексиконы; MODX проанализирует это за вас.
+MODX автоматически находит лексиконы в вашем каталоге `lexicon`, предполагая, что вы поместите их в эту структуру в следующее место: `{namespace_path}/lexicon/`, где путь к пространству имен `{namespace_path}`- это путь, который вы задали для вашего пространства имен ранее. Вам вообще не нужно напрямую встраивать лексиконы; MODX проанализирует это за вас.
 
 Это связано с тем, что лексиконы сначала кэшируются из ваших файлов, а затем любые переопределения из БД объединяются и кэшируются. Это позволяет людям "переопределить" ваши лексиконы с помощью Управления лексиконами в Менеджере, если они захотят, не нарушая их путь обновления для вашего Компонента. 
 
@@ -581,7 +515,17 @@ return $success;
 
 ``` php
 $builder->pack();
+```
 
+По умолчанию `pack()` сжимает пакет через ZipArchive; если расширение недоступно, используется PclZip. Опция `xPDOTransport::ARCHIVE_WITH` (читается при pack) делает выбор явным:
+
+- **xPDOTransport::ARCHIVE\_WITH\_DEFAULT** _(0)_ - значение по умолчанию: использовать ZipArchive, если расширение доступно, иначе PclZip.
+- **xPDOTransport::ARCHIVE\_WITH\_PCLZIP** _(1)_ - использовать PclZip, даже если ZipArchive доступен.
+- **xPDOTransport::ARCHIVE\_WITH\_ZIPARCHIVE** _(2)_ - использовать ZipArchive, если расширение установлено.
+
+Затем обёртка с замером времени:
+
+``` php
 $mtime= microtime();
 $mtime= explode(" ", $mtime);
 $mtime= $mtime[1] + $mtime[0];
@@ -594,8 +538,6 @@ $modx->log(modX::LOG_LEVEL_INFO,"\nСоздание пакета.\nВремя в
 session_write_close();
 exit();
 ```
-
-Great, we're done! You'll only need to run this script now, and viola! A fully zipped transport package file will appear in your core/packages directory.
 
 Отлично, мы закончили! Вам нужно только запустить этот скрипт, и вуаля! Полностью заархивированный файл транспортного пакета появится в вашем каталоге `core/packages`.
 
