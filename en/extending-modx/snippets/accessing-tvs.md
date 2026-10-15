@@ -4,9 +4,7 @@ _old_id: "8"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/accessing-template-variable-values-via-the-api"
 ---
 
-## Accessing Template Variable Values via the API
-
-Like just about everything in the MODX GUI, you can access Template Variables and their values via the MODX API. This relies on the xPDO method [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and related functions, but we demonstrate some examples here because it relates directly to Template Variables.
+Read and write TV values through the resource API; the examples below rely on the xPDO method [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and related functions.
 
 ## getTVValue
 
@@ -14,18 +12,18 @@ Like just about everything in the MODX GUI, you can access Template Variables an
 string|null getTVValue (str|integer $tv_name OR ID of TV)
 ```
 
-See **core/model/modx/modresource.class.php**
+See **core/src/Revolution/modResource.php** (methods `getTVValue()` and `setTVValue()`)
 
 ### getTVValue Usage
 
-Let's say we have a TV named 'bio', and we're going to retrieve page id 123 that uses this TV. Here's what our Snippet might look like:
+Read the TV `bio` from resource 123:
 
 ``` php
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('bio');
 ```
 
-getTVValue fetches values from the resource cache when available. These caches are normally cleared when saving a resource, however if you are updating TV values using the setTVValue method below, these values will not be reflected directly because of the cache. If you absolutely need the latest data, you could bypass the cache by going straight for the data and using getObject to get the TV value record.
+getTVValue reads the resource cache when a cached value exists. Saving a resource normally clears that cache, but `setTVValue` below does not, so a value it just wrote may stay invisible to `getTVValue`. When you need the current data, bypass the cache and read the TV value record with getObject:
 
 ``` php
 $tvr = $modx->getObject('modTemplateVarResource', array(
@@ -42,6 +40,8 @@ else {
 return '';
 ```
 
+<!-- MEDIA: diagram | must | How getTVValue finds the value: a cached value comes from the cache, a cleared cache sends the read to the database, a missing record falls back to the TV default | Draw the three paths described in this section -->
+
 ## setTVValue
 
 Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API methods, this method stores values to the database immediately, so you do not need to invoke a separate call to a **save()** method. This method does not clear the resource cache.
@@ -50,7 +50,7 @@ Use **setTVValue** to save a new value to a TV. Unlike some other xPDO API metho
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
 ```
 
-Note that when using setTVValue, it is possible for an immediate getTVValue to return a cached value.
+If the new value equals the TV's `default_text`, setTVValue does not write a row — it **removes** the existing `modTemplateVarResource` record instead, so the TV falls back to its default. An immediate getTVValue after setTVValue may still return a cached value.
 
 ### setTVValue Usage
 
@@ -60,6 +60,8 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
 }
 ```
+
+<!-- MEDIA: diagram | nice | What a save does: a value equal to the TV default removes the record so the default applies, any other value writes the record at once, the resource cache stays untouched | Draw it from the two paragraphs above -->
 
 ## See Also
 
@@ -80,4 +82,3 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
     - [URL TV Output Type](building-sites/elements/template-variables/output-types/url)
 - [Adding a Custom TV Type - MODX 2.2](extending-modx/custom-tvs)
 - [Creating a multi-select box for related pages in your template](building-sites/tutorials/multiselect-related-pages)
-- [Accessing Template Variable Values via the API](extending-modx/snippets/accessing-tvs)

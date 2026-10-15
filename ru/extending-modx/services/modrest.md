@@ -18,11 +18,7 @@ $response = $client->post('POST запрос');
 $array = $response->process();
 ```
 
-Ниже перечислены способы работы с клиентом.
-
 ## Отправка запроса c параметрами
-
-Записываем параметры которые хотим отправить нашему сервису
 
 ```php
 $url = 'http://site.ru/rest/products';
@@ -37,13 +33,13 @@ $data = $response->process(); // Вернет массив
 
 ## Проверка доступности метода
 
-Чтобы проверить существование метода или хотите узнать существование какой то страницы, мы можем проверить код статуса страница в переменной `responseInfo`:
+Чтобы проверить существование метода или узнать существование какой-то страницы, можно проверить код статуса в переменной `responseInfo`. Заголовки ответа собираются по умолчанию (опция `header` включена из коробки), поэтому ничего дополнительно настраивать не нужно:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
-$client->setOption('header', true); // Возвращать заголовок
+// $client->setOption('header', false); // передайте false, если заголовки не нужны
 $response = $client->get($url);
 if (property_exists($response->responseInfo, 'scalar')) {
     $code = $response->responseInfo->scalar;
@@ -85,20 +81,19 @@ if (property_exists($response->responseInfo, 'scalar')) {
 echo $code; // 200 - авторизованы, 403 - авторизация не пройдена
 ```
 
-## Чтение header
+## Чтение заголовков ответа
 
-Чтобы сервис вернул заголовки, перед отправкой запроса нужно указать `$client->setOption('header', true);` тогда в переменной `$response->responseHeaders` мы увидим заголовки ответа от сервиса
+Заголовки ответа собираются по умолчанию; после запроса они доступны в `$response->responseHeaders`. Передайте опции `header` значение `false`, если они вам не нужны:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
-$client->setOption('header', true);
 $response = $client->get($url);
-echo '<pre>' . print_r($response->responseHeaders, true) . '</pre>;
+echo '<pre>' . print_r($response->responseHeaders, true) . '</pre>';
 ```
 
-## Запись в header
+## Отправка заголовков запроса
 
 Чтобы послать сервису наши параметры в заголовках:
 
@@ -110,28 +105,29 @@ $headers=  array(
     'Authorization' => 'OAuth НАШ TOKEN' // Авторизация через заголовки
 );
 
-// передаем наши заголовки сразу в класс
+// передаем заголовки 4-м аргументом getService ($params):
 /* @var modRest $client */
-$client = $this->modx->getService('rest', 'rest.modRest', array('headers' => $headers);
+$client = $modx->getService('rest', 'rest.modRest', '', array('headers' => $headers));
 
 # или записываем заголовки в запрос
-`$response = $client->get($url, array(), $headers);`
+$response = $client->get($url, array(), $headers);
 ```
 
-## Для компонентов
+## Опции конфигурации и другие методы
 
-Если возникает ошибка в консоле в виде:
+Конструктор `modRest` принимает массив конфигурации (аргумент `$params` у `getService`). Распознаваемые ключи:
 
-```php
-modRestClient::__construct is deprecated since version 2.3.0. Use the modRest classes instead.
-```
+- `format` — формат ответа для `process()`: `json` или `xml`;
+- `header` — собирать заголовки ответа (по умолчанию `true`);
+- `headers` — заголовки по умолчанию, добавляемые в каждый запрос;
+- `username` / `password` — HTTP-аутентификация;
+- `timeout` — таймаут curl в секундах (по умолчанию `240`), плюс `connectTimeout`, `sslVerifypeer`, `sslVerifyhost`, `cookie`, `cookieFile`, `encoding`, `referer`, `userAgent`, `followLocation`, `maxRedirs` и другие curl-опции;
+- `baseUrl` — базовый URL, добавляемый к путям запросов;
+- `addMethodParameter` — если включено, `put()`/`delete()` передают `_method=PUT`/`DELETE` параметром (для серверов, принимающих только GET/POST);
+- `defaultParameters` — параметры, объединяемые с каждым запросом;
+- `suppressSuffix` — не добавлять суффиксы `.json`/`.xml`;
+- `userAgent` — по умолчанию `MODX RestClient/1.0.0`.
 
-То необходимо использовать:
+Помимо `get()` и `post()`, показанных выше, клиент предоставляет `put($url, $parameters, $headers)`, `delete($url, $parameters, $headers)` и универсальный `request($method, $url, $parameters, $headers)`.
 
-```php
-$client = $this->modx->getService('rest', 'rest.modRest');
-```
-
-так как `modRestClient` устаревшая функция
-
-За подробной информацией о всех возможностях класса смотрите файл: `core/model/modx/rest/modrest.class.php`
+За подробной информацией о всех возможностях класса смотрите исходный файл: `core/src/Revolution/Rest/modRest.php`

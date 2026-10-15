@@ -3,21 +3,11 @@ title: "Добавление CSS и JS"
 translation: "extending-modx/snippets/register-assets"
 ---
 
-## Учимся регистрировать CSS и JS
-
-Итак, у вас есть сниппет, который вы пишете, и вы хотите добавить CSS и/или JavaScript на свои страницы, но вам не нужно настраивать пользовательскую переменную шаблона и редактировать ее на каждом ресурсе, который используется в вашем сниппете. Ты хочешь, чтобы Сниппет сделал это! На самом деле это довольно просто, используя некоторые методы MODX API.
-
-**Другие CMS**
-Это общая потребность в любой CMS, поэтому, если вы переходите с другой платформы, вот некоторые из связанных функций, например **WordPress** использует функции:
-
-- `wp_enqueue_script`,
-- `wp_register_script`,
-- `wp_enqueue_style`,
-- `wp_register_style`.
+Регистрируйте CSS и JavaScript из сниппета вместо переменной шаблона, которую иначе пришлось бы править на каждом ресурсе.
 
 ## Добавление к HEAD
 
-Существует несколько методов, которые автоматически добавляют CSS и/или JavaScript в HEAD текущей страницы. Они будут работать в том порядке, в котором они были добавлены, поэтому, если они вам нужны в определенном порядке, убедитесь, что вы выполняете методы также в этом порядке.
+Существует несколько методов, которые автоматически добавляют CSS и/или JavaScript в HEAD текущей страницы. Они будут работать в том порядке, в котором они были добавлены, поэтому, если они вам нужны в определенном порядке, убедитесь, что вы выполняете методы также в этом порядке. Регистрация дедуплицируется по URL: повторный вызов метода с тем же `$src` сохраняет только первую регистрацию, поэтому позиция ассета определяется первым вызовом.
 
 ### regClientCSS
 
@@ -33,6 +23,14 @@ $modx->regClientCSS('assets/css/my-custom.css');
 $modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
 ```
 
+Необязательный второй аргумент добавляет атрибут `media` в генерируемый тег `<link>`:
+
+``` php
+$modx->regClientCSS(MODX_ASSETS_URL.'css/print.css', 'print');
+```
+
+Если строка уже содержит `<style` или `<link`, она вставляется как есть, без оборачивания в тег `<link>`.
+
 ### regClientStartupScript
 
 Эта функция позволяет зарегистрировать любой произвольный JavaScript-код для HEAD документа:
@@ -42,12 +40,10 @@ $modx->regClientStartupScript('assets/js/site.js');
 ```
 
 ``` php
-$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
+$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
 
-``` php
-$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
-```
+Если строка уже содержит `<script`, она вставляется как есть; необязательный второй аргумент `$plaintext = true` принудительно включает такое «сырое» поведение (именно так работает `regClientStartupHTMLBlock` внутри).
 
 ### regClientStartupHTMLBlock
 
@@ -73,13 +69,7 @@ var myCustomJSVar = 123;
 $modx->regClientScript('assets/js/footer.js');
 ```
 
-``` php
-$modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-```
-
-``` php
-$modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
-```
+Как и у `regClientStartupScript`, строка с `<script` вставляется как есть, а `$plaintext = true` принудительно включает такое поведение.
 
 ### regClientHTMLBlock
 
@@ -93,14 +83,8 @@ runAnalytics();
 </script>');
 ```
 
-## Вывод
-
-MODX предлагает разработчикам дополнительных возможностей множество способов вставки пользовательских CSS/JS в их страницы на уровне фрагмента. 
-Тем не менее, MODX также рекомендует в любых распространяемых вами дополнениях, чтобы убедиться, что вставка CSS или JS в страницу является переключаемой опцией, так что пользователь может настроить контент или инфраструктуру JavaScript, если они того пожелают.
-
 ## Смотрите также
 
 1. [Создание шаблонов сниппетов](extending-modx/snippets/templating)
-2. [Добавление CSS и JS на ваши страницы через сниппеты](extending-modx/snippets/register-assets)
-3. [Как написать хороший Сниппет](extending-modx/snippets/good-snippet)
-4. [Как написать хороший чанк](extending-modx/snippets/good-chunk)
+2. [Как написать хороший Сниппет](extending-modx/snippets/good-snippet)
+3. [Как написать хороший чанк](extending-modx/snippets/good-chunk)

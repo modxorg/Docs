@@ -4,8 +4,6 @@ _old_id: "160"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets/how-to-write-a-good-snippet"
 ---
 
-For some, writing a MODX snippet might be their first foray into coding. Here are some tips for newbies and experienced developers alike.
-
 ## Our Example Snippet
 
 ``` php
@@ -32,10 +30,6 @@ For some, writing a MODX snippet might be their first foray into coding. Here ar
 $x = (int) $modx->getOption('x', $scriptProperties);
 $y = (int) $modx->getOption('y', $scriptProperties);
 $z = (int) $modx->getOption('z', $scriptProperties, 1);
-// For debugging:
-$modx->log(modX::LOG_LEVEL_DEBUG
-    , '[mySnippet] called on page '. $modx->resource->id . ' with the following properties: '
-    .print_r($scriptProperties, true));
 // Verify Inputs
 if (!isset($scriptProperties['x']) || !isset($scriptProperties['y'])) {
     $modx->log(modX::LOG_LEVEL_ERROR, '[mySnippet] missing required properties &x and &y!');
@@ -47,7 +41,7 @@ return $x * $y * $z;
 
 ## A Good Name
 
-Give your Snippet a name that makes sense to someone who is not familiar with it. A good name is easy to remember.
+Pick a name that makes sense to someone who has not seen the Snippet before; a good name is easy to remember.
 
 ## Description
 
@@ -55,17 +49,15 @@ _Always_ include a brief description that explains what your Snippet does. It sh
 
 ## Comment Block
 
-_Always_ include a comment block in your Snippet! This is probably the single most important part of your Snippet! Even if you are not a coder, you can spot a good developer simply by the quality of their documentation and comments.
-
-Your comment block should include the following items:
+_Always_ include a comment block in your Snippet; treat it as its most important part. It covers three things:
 
 ### DESCRIPTION
   
-This is where you can describe your code in more detail.
+Describe your code in more detail here.
   
 ### PROPERTIES
   
-Detail exactly which properties can be passed to your Snippet _and_ what type of data each property accepts. You should also specify whether the property is required or whether there is a default value. Here are some examples:
+List every property the Snippet accepts, its data type, and whether it is required or has a default. Examples:
   
 `&day` integer a number from 0 (Sunday) to 6 (Saturday) representing the day of the week. (required)
 `&is_secure` boolean 1 will force an HTTPS connection; 0 uses an HTTP connection. Default: 1
@@ -73,7 +65,7 @@ Detail exactly which properties can be passed to your Snippet _and_ what type of
 
 ### USAGE
   
-_Always_ include some examples of how to use your Snippet. These should be examples that users can literally copy and paste into their pages to see how your Snippet works.
+Give examples users can copy and paste into their pages to see the Snippet work.
 
 ## Set Default Properties
 
@@ -85,7 +77,7 @@ $headTpl = $modx->getOption('headTpl', $scriptProperties, 'myHeadTpl');
 
 ## Do not include HTML
 
-Your Snippet should be as clean from HTML as possible. If you need to format the output, use a Chunk to format the output. This is an important architectural principle!
+Keep HTML out of your Snippet and format the output with a Chunk instead — that separation is the point of the architecture:
 
 ``` php
 $props = array(
@@ -104,13 +96,13 @@ A cow says "[[+cow]]" and a pig says "[[+pig]]".
 
 ## Do not Print or Echo
 
-Never print or echo values in your Snippet. Snippets are like functions: they should _return_ data. While using print or echo statements may appear to work, they can have unexpected results. Always gather your output into a variable string such as $output and return that variable string.
+Never print or echo values in your Snippet; Snippets return data. Echoed output is not lost — MODX buffers it and prepends it to the value you return — but mixing the two makes the result order unpredictable: duplicates, stray whitespace, output in front of an error return. Gather the output into a string such as `$output` and return that.
+
+<!-- MEDIA: diagram | nice | What happens to echoed text: MODX buffers it, puts it in front of the string you return, and the page gets both parts in an order you do not control | Draw it from the paragraph above -->
 
 ## Consistency
 
-**Variable Names:** Whatever your coding style, be consistent. If you want to use camelCase variable names, then make sure all your variables use that style.
-
-**Indents:** Use the same indenting style throughout.
+Be consistent: one variable naming style and one indent style throughout the Snippet.
 
 ## Log Errors and Info
 
@@ -126,9 +118,10 @@ You can also log debugging info, which is useful for users who are debugging thi
 $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] was called with the following properties: '.print_r($scriptProperties,true));
 ```
 
+<!-- MEDIA: output | nice | Two error-log lines produced by the calls above: one at error level for a missing property, one at debug level with the properties printed | Run both calls on a test installation with log_level set to include debug, then copy the lines -->
+
 ## See Also
 
 1. [Templating Your Snippets](extending-modx/snippets/templating)
 2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
-3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
-4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
+3. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)

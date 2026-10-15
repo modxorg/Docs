@@ -18,11 +18,17 @@ $modx->services->get('twitter')->tweet('Success!');
 
 ## Какие сервисы включены по умолчанию?
 
-Список основных сервисов MODX выглядит следующим образом:
+Несколько сервисов регистрируются в контейнере при инициализации MODX:
 
-1. [modFileHandler](extending-modx/services/modfilehandler)
-2. [modMail](extending-modx/services/modmail)
-3. [modRegistry](developing-in-modx/advanced-development/modx-services/modregistry)
+- `registry` — [modRegistry](extending-modx/services/modregistry), создается сразу при завершении `modX::initialize()`;
+- семь PSR HTTP-сервисов, перечисленных на странице [HTTP-сервисы](extending-modx/services/http) (`ClientInterface`, `ServerRequestFactoryInterface`, `RequestFactoryInterface`, `StreamFactoryInterface`, `ResponseFactoryInterface`, `UploadedFileFactoryInterface`, `UriFactoryInterface`);
+- `modManagerDateFormatter` (зарегистрированный под именем своего класса), используемый менеджером;
+- `lexicon`, `error` и `parser` также попадают в контейнер по ходу инициализации.
+
+Остальные сервисы поставляются с ядром, но загружаются по требованию через `$modx->getService`, а не предрегистрируются:
+
+- [modFileHandler](extending-modx/services/modfilehandler)
+- [modMail](extending-modx/services/modmail)
 
 ## Смотрите также
 

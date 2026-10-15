@@ -3,8 +3,6 @@ title: "Доступ к TV данным"
 translation: "extending-modx/snippets/accessing-tvs"
 ---
 
-## Доступ к значениям переменных шаблона через API
-
 Как и все в графическом интерфейсе MODX, вы можете получить доступ к переменным шаблона и их значениям через API MODX. Это зависит от метода xPDO [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") и связанных функций, но мы демонстрируем некоторые примеры здесь, потому что это напрямую связано с переменными шаблона.
 
 ## getTVValue
@@ -13,7 +11,7 @@ translation: "extending-modx/snippets/accessing-tvs"
 string|null getTVValue (str|integer $tv_name OR ID of TV)
 ```
 
-Смотри **core/model/modx/modresource.class.php**
+Смотри **core/src/Revolution/modResource.php** (методы `getTVValue()` и `setTVValue()`)
 
 ### Использование getTVValue
 
@@ -50,7 +48,7 @@ return '';
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
 ```
 
-Обратите внимание, что при использовании `setTVValue` возможно немедленное получение `getTVValue` для возврата кэшированного значения.
+Одна важная деталь: если новое значение равно `default_text` TV, `setTVValue` не записывает строку — он **удаляет** существующую запись `modTemplateVarResource`, и TV возвращается к значению по умолчанию. Обратите внимание, что при использовании `setTVValue` возможно немедленное получение `getTVValue` для возврата кэшированного значения.
 
 ### Использование setTVValue
 
@@ -81,4 +79,3 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
     -   [URL TV тип вывода](building-sites/elements/template-variables/output-types/url)
 -   [Добавление пользовательского типа TV - MODX 2.2](extending-modx/custom-tvs)
 -   [Создание поля множественного выбора для связанных страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
--   [Доступ к значениям переменных шаблона через API](extending-modx/snippets/accessing-tvs)

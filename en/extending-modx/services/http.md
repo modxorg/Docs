@@ -2,22 +2,27 @@
 title: "HTTP Services"
 ---
 
-As of 3.0.0-beta1, MODX integrates with ecosystem-standard tools for making outgoing HTTP requests. This replaces modRest and modRestClient implementations and is more in line with what's being used in the wider PHP ecosystem.
+Since 3.0.0-beta1, MODX makes outgoing HTTP requests through ecosystem-standard PSR services. The legacy `modRest` client still ships but is deprecated; `modRestClient` has been removed. New code should use the PSR services below.
 
-MODX makes sure to provide a default implementation for these services (using Guzzle), however it is possible to override those from a component. So long as you stick to what is provided by the PSR interfaces, your implementing code will not be affected by such changes. 
+The default implementation uses Guzzle, but a component can override it. Code that depends only on the PSR interfaces is unaffected by such a swap.
 
-This means you can make ask the services container for any of the following services covering PSR-7 (HTTP messages), PSR-17 (HTTP factories) and PSR-18 (HTTP client):
+You can ask the services container for any of these PSR-7 (messages), PSR-17 (factories) and PSR-18 (client) services:
 
-- `\Psr\Http\Client\ClientInterface`: the PSR-18 compatible HTTP Client itself, used for sending a PSR-7 request. Provides a fresh `\GuzzleHttp\Client` instance on each call with the default options.
-- `\Psr\Http\Message\ServerRequestFactoryInterface`, a PSR-17 compatible ServerRequestFactory, which is used to create new PSR-7 ServerRequest instances. By default provides a `\Http\Factory\Guzzle\ServerRequestFactory` shared instance [1]
-- `\Psr\Http\Message\RequestFactoryInterface`, a PSR-17 compatible RequestFactory, which is used to create new PSR-7 Request instances. By default provides a `\Http\Factory\Guzzle\RequestFactory` shared instance [1]
-- `\Psr\Http\Message\StreamFactoryInterface`, a PSR-7 compatible StreamFactory implementation, typically used to create a body for requests/responses. By default provides a `\Http\Factory\Guzzle\StreamFactory` shared instance.
+| Service (interface) | Standard | Default implementation |
+|---|---|---|
+| `\Psr\Http\Client\ClientInterface` | PSR-18 client that sends a PSR-7 request | a fresh `\GuzzleHttp\Client` per call, default options |
+| `\Psr\Http\Message\ServerRequestFactoryInterface` | PSR-17 factory for ServerRequest instances | shared `\GuzzleHttp\Psr7\HttpFactory` |
+| `\Psr\Http\Message\RequestFactoryInterface` | PSR-17 factory for Request instances | shared `\GuzzleHttp\Psr7\HttpFactory` |
+| `\Psr\Http\Message\StreamFactoryInterface` | PSR-17 factory for request/response bodies | shared `\GuzzleHttp\Psr7\HttpFactory` |
+| `\Psr\Http\Message\ResponseFactoryInterface` | PSR-17 factory for Response instances | shared `\GuzzleHttp\Psr7\HttpFactory` |
+| `\Psr\Http\Message\UploadedFileFactoryInterface` | PSR-17 factory for uploaded files | shared `\GuzzleHttp\Psr7\HttpFactory` |
+| `\Psr\Http\Message\UriFactoryInterface` | PSR-17 factory for URIs | shared `\GuzzleHttp\Psr7\HttpFactory` |
 
-[1] These will be updated soon to the `\GuzzleHttp\Psr7\HttpFactory` provided by `guzzlehttp/psr7` v2; there's currently a dependency conflict so for starters we settled on http-interop's fine work.
+The default Guzzle client reads the `proxy_host`, `proxy_port`, `proxy_username` and `proxy_password` system settings and applies them to every request sent through the `ClientInterface` service, unless you override the service yourself.
 
-## Sending a HTTP GET Request
+## Sending an HTTP GET Request
 
-Regardless of specific implementation, the general approach for sending a request is as follows:
+The general approach does not depend on the implementation:
 
 1. Get a `Client` instance
 2. Get either a `ServerRequestFactory` or `RequestFactory` instance
@@ -25,7 +30,9 @@ Regardless of specific implementation, the general approach for sending a reques
 4. Tell the Client to send the request with `$client->sendRequest($request)`
 5. Use the given Response
 
-For example, put the following in a snippet to send a GET request to the ipinfo.io API with an Accept header to indicate we want JSON:
+<!-- MEDIA: diagram | must | The request path: the services container hands out the client and the factory, the factory builds the request, the client sends it, the response body is read and decoded | Draw it from the five steps above and the snippet below; name only the PSR interfaces shown on this page -->
+
+A snippet that asks the ipinfo.io API for JSON:
 
 ```php
 <?php
@@ -45,10 +52,10 @@ try {
 
 $body = json_decode($response->getBody()->getContents());
 
-return '<pre>' . $response->getStatusCode() . ' : ' . print_r($body, true) . '</pre>';
+return print_r($body, true);
 ```
 
-## Sending a HTTP POST request (JSON body)
+## Sending an HTTP POST request (JSON body)
 
 To send a POST request with a JSON body, create a request indicating `POST` and write to the body stream:
 
@@ -74,10 +81,12 @@ try {
 
 $body = json_decode($response->getBody()->getContents());
 
-return '<pre>' . $response->getStatusCode() . ' : ' . print_r($body, true) . '</pre>';
+return print_r($body, true);
 ```
 
-You'll notice we're writing directly to the existing streaming body on the request. It's also possible to use the StreamFactoryInterface service to create a fresh stream and to set that as the body. For example:
+<!-- MEDIA: output | nice | The JSON answer of the test service to the POST above: status, id and creation time fields with invented values | Send the request once from a test installation and copy the response body -->
+
+Instead of writing to the existing stream, you can create a fresh one with the `StreamFactoryInterface` service and set it as the body:
 
 ```php 
 <?php
@@ -93,15 +102,21 @@ $request = $factory->createRequest('POST', 'https://reqres.in/api/users')
     ->withBody($stream);
 ```
 
-This is functionally equivalent to writing to the existing buffer, however there may be cases where you want to make sure the stream is empty, or where you'd like to use the `createStreamFromFile`/`createStreamFromResource` methods if your body is already in a file/php resource.
+Both ways produce the same request. Use a factory when you must be sure the stream is empty, or use `createStreamFromFile`/`createStreamFromResource` when the body already lives in a file or a PHP resource.
 
 ## ServerRequest or Request?
 
-Typically when sending a request, you'd use a Request and thus the RequestFactoryInterface implementation. 
-
-ServerRequests are more geared towards handling _incoming_ requests, which MODX currently does not use PSR standards for.
+Use `RequestFactoryInterface` for outgoing requests. `ServerRequest` models an _incoming_ request, which MODX does not handle via PSR yet.
 
 ## Overwriting HTTP services
 
-To overwrite one or more of the HTTP services, use the [dependency injection introduced in 3.0] to `set()` the relevant interface to your own callable. 
+To overwrite one or more of the HTTP services, use the [dependency injection introduced in 3.0](extending-modx/di-container) to `add()` the relevant interface to your own callable:
+
+```php
+$modx->services->add(\Psr\Http\Client\ClientInterface::class, function ($c) {
+    return new MyCustomClient();
+});
+```
+
+<!-- MEDIA: diagram | nice | The swap behind the interface: code asks the container for ClientInterface, add() binds the interface to your own class, every caller goes through the new class without changes | Draw it from the snippet above and the dependency injection page -->
 

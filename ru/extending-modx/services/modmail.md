@@ -55,6 +55,35 @@ $modx->mail->address('to','mom@example.org');
 
 Просто - просто расширьте `modMail` этим классом, затем загрузите свой класс через [getService](extending-modx/modx-class/reference/modx.getservice "modX.getService"). Вы получите всю функциональность `modMail`, но для этого вам потребуется предоставить класс-оболочку (например, `modPHPMailer`).
 
+## API и настройки
+
+### Методы
+
+Помимо методов `set()`, `address()`, `send()` и `reset()`, использованных выше, реализация modPHPMailer предоставляет:
+
+- `header($header)` — добавить «сырой» заголовок в сообщение;
+- `attach($file, $name = '', $encoding = 'base64', $type = 'application/octet-stream')` — прикрепить файл;
+- `embedImage($image, $cid, $name = '', $encoding = 'base64', $type = 'application/octet-stream')` — встроить картинку (на нее ссылается `$cid` в HTML-теле);
+- `clearEmbeddedImages()` / `clearAttachments()` — удалить ранее добавленные картинки/вложения перед повторным использованием объекта;
+- `setHTML($toggle)` — переключить режим plain-text/HTML (использован в примере выше);
+- `hasError()` / `getError()` — проверить наличие и прочитать ошибку почтового движка;
+- `getDefaultAttributes()` — резолвленные атрибуты по умолчанию (см. ниже).
+
+### Константы атрибутов
+
+`set()` и `get()` принимают ключи, определенные константами класса `modMail`: `MAIL_BODY`, `MAIL_BODY_TEXT`, `MAIL_CHARSET`, `MAIL_CONTENT_TYPE`, `MAIL_ENCODING`, `MAIL_ENGINE`, `MAIL_ENGINE_PATH`, `MAIL_ERROR_INFO`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_HOSTNAME`, `MAIL_LANGUAGE`, `MAIL_PRIORITY`, `MAIL_READ_TO`, `MAIL_SENDER`, `MAIL_SERVICE`, `MAIL_SUBJECT`, SMTP-набор (`MAIL_SMTP_AUTH`, `MAIL_SMTP_HELO`, `MAIL_SMTP_HOSTS`, `MAIL_SMTP_KEEPALIVE`, `MAIL_SMTP_PASS`, `MAIL_SMTP_PORT`, `MAIL_SMTP_SECURE`, `MAIL_SMTP_AUTOTLS`, `MAIL_SMTP_SINGLE_TO`, `MAIL_SMTP_TIMEOUT`, `MAIL_SMTP_USER`) и DKIM-набор (`MAIL_DKIM_SELECTOR`, `MAIL_DKIM_IDENTITY`, `MAIL_DKIM_DOMAIN`, `MAIL_DKIM_PRIVATEKEYFILE`, `MAIL_DKIM_PRIVATEKEYSTRING`, `MAIL_DKIM_PASSPHRASE`).
+
+### Системные настройки
+
+`getDefaultAttributes()` читает значения по умолчанию из системных настроек, поэтому почтовый движок настраивается на сайте без кода:
+
+- `mail_use_smtp` — если включена, вместо PHP `mail()` заполняются SMTP-атрибуты ниже;
+- `mail_smtp_auth`, `mail_smtp_helo`, `mail_smtp_hosts` (по умолчанию `localhost`), `mail_smtp_keepalive`, `mail_smtp_pass`, `mail_smtp_port` (по умолчанию `25`), `mail_smtp_secure`, `mail_smtp_autotls` (по умолчанию `true`), `mail_smtp_single_to`, `mail_smtp_timeout` (по умолчанию `10`), `mail_smtp_user`;
+- `mail_dkim_selector`, `mail_dkim_identity`, `mail_dkim_domain`, `mail_dkim_privatekeyfile`, `mail_dkim_privatekeystring`, `mail_dkim_passphrase`;
+- `mail_charset` (по умолчанию `UTF-8`), `mail_encoding` (по умолчанию `8bit`).
+
+Смотрите [Отправка почты](building-sites/sending-mail) для настройки этих опций в менеджере.
+
 ## Смотрите также
 
 - [MODX Services](extending-modx/services "MODX Сервисы")
