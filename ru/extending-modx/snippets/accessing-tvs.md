@@ -3,23 +3,21 @@ title: "Доступ к TV данным"
 translation: "extending-modx/snippets/accessing-tvs"
 ---
 
-## Доступ к значениям переменных шаблона через API
-
 Как и все в графическом интерфейсе MODX, вы можете получить доступ к переменным шаблона и их значениям через API MODX. Это зависит от метода xPDO [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") и связанных функций, но мы демонстрируем некоторые примеры здесь, потому что это напрямую связано с переменными шаблона.
 
 ## getTVValue
 
-```php
+``` php
 string|null getTVValue (str|integer $tv_name OR ID of TV)
 ```
 
-Смотри **core/model/modx/modresource.class.php**
+Смотри **core/src/Revolution/modResource.php** (методы `getTVValue()` и `setTVValue()`)
 
 ### Использование getTVValue
 
 Допустим, у нас есть TV с именем «био», и мы собираемся получить идентификатор страницы 123, который использует этот TV. Вот как может выглядеть наш сниппет:
 
-```php
+``` php
 $page = $modx->getObject('modResource', 123);
 return $page->getTVValue('bio');
 ```
@@ -27,7 +25,7 @@ return $page->getTVValue('bio');
 `getTVValue` извлекает значения из кэша ресурсов, когда они доступны. Эти кэши обычно очищаются при сохранении ресурса, однако, если вы обновляете значения TV с помощью метода `setTVValue`, приведенного ниже, эти значения не будут отражаться напрямую из-за кэша.
 Если вам абсолютно необходимы последние данные, вы можете обойти кеш, перейдя прямо к данным и используя `getObject`, чтобы получить запись значения TV.
 
-```php
+``` php
 $tvr = $modx->getObject('modTemplateVarResource', array(
   'tmplvarid' => $tvId,
   'contentid' => $resourceId
@@ -46,15 +44,15 @@ return '';
 
 Используйте **setTVValue**, чтобы сохранить новое значение в TV. В отличие от некоторых других методов API xPDO, этот метод немедленно сохраняет значения в базе данных, поэтому вам не нужно вызывать отдельный вызов метода **save()**. Этот метод не очищает кэш ресурсов.
 
-```php
+``` php
 boolean setTVValue (str|integer $tv_name OR ID of TV, string $value)
 ```
 
-Обратите внимание, что при использовании `setTVValue` возможно немедленное получение `getTVValue` для возврата кэшированного значения.
+Одна важная деталь: если новое значение равно `default_text` TV, `setTVValue` не записывает строку — он **удаляет** существующую запись `modTemplateVarResource`, и TV возвращается к значению по умолчанию. Обратите внимание, что при использовании `setTVValue` возможно немедленное получение `getTVValue` для возврата кэшированного значения.
 
 ### Использование setTVValue
 
-```php
+``` php
 $page = $modx->getObject('modResource', 123);
 if (!$page->setTVValue('bio', 'This is my new bio...')) {
     $modx->log(xPDO::LOG_LEVEL_ERROR, 'There was a problem saving your TV...');
@@ -67,7 +65,6 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
 -   [Привязки](building-sites/elements/template-variables/bindings)
     -   [CHUNK привязка](building-sites/elements/template-variables/bindings/chunk-binding)
     -   [DIRECTORY привязка](building-sites/elements/template-variables/bindings/directory-binding)
-    -   [EVAL привязка](building-sites/elements/template-variables/bindings/eval-binding)
     -   [FILE привязка](building-sites/elements/template-variables/bindings/file-binding)
     -   [INHERIT привязка](building-sites/elements/template-variables/bindings/inherit-binding)
     -   [RESOURCE привязка](building-sites/elements/template-variables/bindings/resource-binding)
@@ -81,4 +78,3 @@ if (!$page->setTVValue('bio', 'This is my new bio...')) {
     -   [URL TV тип вывода](building-sites/elements/template-variables/output-types/url)
 -   [Добавление пользовательского типа TV - MODX 2.2](extending-modx/custom-tvs)
 -   [Создание поля множественного выбора для связанных страниц в вашем шаблоне](building-sites/tutorials/multiselect-related-pages)
--   [Доступ к значениям переменных шаблона через API](extending-modx/snippets/accessing-tvs)

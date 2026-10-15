@@ -3,46 +3,47 @@ title: "Adding CSS and JS"
 description: "Learning How to Register CSS and JS"
 ---
 
-## Learning How to Register CSS and JS
-
-So, you've got a Snippet that you've been writing and want to add CSS and/or JavaScript to your pages, but don't want to have to setup a custom Template Variable and edit it on every Resource your Snippet is used on. You want the Snippet to do it, dagnabbit! Well, it's pretty easy, actually, using some MODX API methods.
-
-**Other CMSs**
-This is a common need in any CMS, so if you're coming from another platform, here are some of the related functions. - **WordPress** – uses its _wp\_enqueue\_script_, _wp\_register\_script_, _wp\_enqueue\_style_, _wp\_register\_style_ functions.
+Register CSS and JavaScript from a Snippet instead of a Template Variable you would otherwise edit on every Resource.
 
 ## Adding to the HEAD
 
-There are a few methods that automatically add CSS and/or JavaScript to the HEAD of the current page. They will run in the order that they're added, so if you need them in a certain order, make sure you execute the methods in that order as well.
+These methods append CSS and/or JavaScript to the HEAD of the current page in the order you call them, so call them in the order the assets should appear. Registration is de-duplicated by URL: calling a method twice with the same `$src` keeps only the first registration, so an asset's position is fixed by its first call.
 
 ### regClientCSS
 
-This function lets you register any CSS file to the HEAD of the content by providing the URL in the method:
+Register a CSS file by passing its URL:
 
 ``` php
 $modx->regClientCSS('assets/css/my-custom.css');
 ```
 
-Or, more correctly, you would use the **MODX\_ASSETS\_URL** constant so your Snippet or plugin would work even on a site that was configured to use a non-standard assets location.
+Prefer the **MODX\_ASSETS\_URL** constant so the Snippet keeps working when the assets location is non-standard:
 
 ``` php
 $modx->regClientCSS(MODX_ASSETS_URL.'css/my-custom.css');
 ```
 
+An optional second argument adds a `media` attribute to the generated `<link>` tag:
+
+``` php
+$modx->regClientCSS(MODX_ASSETS_URL.'css/print.css', 'print');
+```
+
+If the string already contains `<style` or `<link`, it is inserted as-is instead of being wrapped in a `<link>` tag.
+
 ### regClientStartupScript
 
-This function lets you register any custom JavaScript to the HEAD of the document:
+Register a script for the HEAD:
 
 ``` php
 $modx->regClientStartupScript('assets/js/site.js');
 ```
 
 ``` php
-$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
+$modx->regClientStartupScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js');
 ```
 
-``` php
-$modx->regClientStartupScript('http://code.jquery.com/jquery-latest.min.js');
-```
+If the string already contains `<script`, it is inserted as-is; the optional second argument `$plaintext = true` forces this raw-insert behavior (this is how `regClientStartupHTMLBlock` works under the hood).
 
 ### regClientStartupHTMLBlock
 
@@ -58,7 +59,7 @@ var myCustomJSVar = 123;
 
 ## Adding Before the BODY End
 
-There are also methods that can be used to insert Javascript or HTML at the end of every page, right before the BODY tag closes. They are often useful for custom analytics scripts, or JS that needs to be run at the body-level rather than in the HEAD.
+These methods insert JavaScript or HTML just before the BODY tag closes — typical for analytics or for scripts that must run at body level rather than in the HEAD.
 
 ### regClientScript
 
@@ -68,17 +69,11 @@ Similar to [regClientStartupScript](extending-modx/modx-class/reference/modx.reg
 $modx->regClientScript('assets/js/footer.js');
 ```
 
-``` php
-$modx->regClientScript('//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"');
-```
-
-``` php
-$modx->regClientScript('http://code.jquery.com/jquery-latest.min.js');
-```
+As with `regClientStartupScript`, a string containing `<script` is inserted raw, and `$plaintext = true` forces raw insertion.
 
 ### regClientHTMLBlock
 
-Similar to [regClientStartupHTMLBlock](extending-modx/modx-class/reference/modx.regclienthtmlblock) except that it runs before the closing BODY tag:
+Similar to [regClientStartupHTMLBlock](extending-modx/modx-class/reference/modx.regclientstartuphtmlblock) except that it runs before the closing BODY tag:
 
 ``` php
 $modx->regClientHTMLBlock('
@@ -88,13 +83,10 @@ runAnalytics();
 </script>');
 ```
 
-## Conclusion
-
-MODX offers Extras developers many options on how to insert custom CSS/JS into their pages at the Snippet level. However, MODX also recommends in any Extras you are distributing, to make sure inserting CSS or JS into a page is a toggleable option, so that the user can customize the content or javascript framework should they so choose.
+In an Extra you distribute, make CSS/JS insertion a toggle, so the user can switch it off or replace the content.
 
 ## See Also
 
 1. [Templating Your Snippets](extending-modx/snippets/templating)
-2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
-3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
-4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
+2. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+3. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)

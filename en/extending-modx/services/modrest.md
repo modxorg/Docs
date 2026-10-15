@@ -7,9 +7,7 @@ translation: "extending-modx/services/modrest"
 > 
 > It's strongly encouraged to use the [PSR HTTP Services](extending-modx/services/http) provided since MODX 3.0.0-beta1. 
 
-Built-in curl client for sending requests to third-party services (RESTful and others)
-
-Since third-party services are increasingly being used in the daily development of sites, for these purposes MODX has a built-in client with which you can send requests:
+modRest is a built-in curl client for requests to third-party services:
 
 ```php
 /* @var modRest $client */
@@ -22,11 +20,7 @@ $response = $client->post('POST request');
 $array = $response->process();
 ```
 
-The following are ways to work with the client.
-
 ## Sending a request with parameters
-
-We write down the parameters that we want to send to our service
 
 ```php
 $url = 'http://site.ru/rest/products';
@@ -40,13 +34,13 @@ $data = $response->process(); // Will return an array
 
 ## Checking Method Availability
 
-To check the existence of a method or want to know the existence of a page, we can check the status code of the page in a variable `responseInfo`:
+Check the status code in `$response->responseInfo->scalar`. Response headers are collected by default (the `header` option is enabled out of the box), so no extra setup is needed:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
-$client->setOption('header', true); // Return title
+// $client->setOption('header', false); // pass false to skip collecting headers
 $response = $client->get($url);
 if (property_exists($response->responseInfo, 'scalar')) {
     $code = $response->responseInfo->scalar;
@@ -56,7 +50,7 @@ echo $code; // 200 - method is available, 404 - method or page does not exist
 
 ## Checking Service Availability
 
-Sometimes services fall or respond too long, for this there is a variable `responseError` where errors are written.
+If the service is down or answers too slowly, `$response->responseError` holds the error:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
@@ -71,7 +65,7 @@ if ($response->responseError) {
 
 ## Login
 
-For authorization in the service by means `CURLOPT_HTTPHEADER`, must specify in options `username` and `password`
+For HTTP authorization, set the `username` and `password` options:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
@@ -88,22 +82,21 @@ if (property_exists($response->responseInfo, 'scalar')) {
 echo $code; // 200 - authorized, 403 - authorization failed
 ```
 
-## Read header
+## Reading Response Headers
 
-For the service to return the headers, you must specify before sending the request `$client->setOption('header', true);` then in the variable `$response->responseHeaders` we will see response headers from the service
+Response headers are collected by default; after the request they are available in `$response->responseHeaders`. Pass `false` to the `header` option if you don't need them:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
 /* @var modRest $client */
 $client = $modx->getService('rest', 'rest.modRest');
-$client->setOption('header', true);
 $response = $client->get($url);
-echo '<pre>' . print_r($response->responseHeaders, true) . '</pre>;
+echo '<pre>' . print_r($response->responseHeaders, true) . '</pre>';
 ```
 
-## Record in header
+## Sending Request Headers
 
-To send the service our parameters in the headers:
+Send your own headers with the request two ways:
 
 ```php
 $url = 'http://site.ru/rest/mymethod';
@@ -113,28 +106,29 @@ $headers=  array(
     'Authorization' => 'OAuth OUR TOKEN' // Authorization through headers
 );
 
-// we pass our headers immediately to the class
+// pass headers as the 4th argument of getService ($params):
 /* @var modRest $client */
-$client = $this->modx->getService('rest', 'rest.modRest', array('headers' => $headers));
+$client = $modx->getService('rest', 'rest.modRest', '', array('headers' => $headers));
 
 # or write headers in the request
-`$response = $client->get($url, array(), $headers);`
+$response = $client->get($url, array(), $headers);
 ```
 
-## For components
+## Configuration options and other methods
 
-If an error occurs in the console in the form
+The `modRest` constructor accepts a config array (the `$params` argument of `getService`). Recognized keys:
 
-```php
-modRestClient::__construct is deprecated since version 2.3.0. Use the modRest classes instead.
-```
+- `format` — response format for `process()`: `json` or `xml`;
+- `header` — collect response headers (default `true`);
+- `headers` — default headers added to every request;
+- `username` / `password` — HTTP authentication;
+- `timeout` — curl timeout in seconds (default `240`), plus `connectTimeout`, `sslVerifypeer`, `sslVerifyhost`, `cookie`, `cookieFile`, `encoding`, `referer`, `userAgent`, `followLocation`, `maxRedirs` and other curl options;
+- `baseUrl` — base URL prepended to request paths;
+- `addMethodParameter` — when true, `put()`/`delete()` pass `_method=PUT`/`DELETE` as a parameter (for servers that only accept GET/POST);
+- `defaultParameters` — parameters merged into every request;
+- `suppressSuffix` — do not append `.json`/`.xml` suffixes;
+- `userAgent` — default `MODX RestClient/1.0.0`.
 
-the following class has to be used in the code
+Beyond `get()` and `post()` shown above, the client provides `put($url, $parameters, $headers)`, `delete($url, $parameters, $headers)` and the generic `request($method, $url, $parameters, $headers)`.
 
-```php
-$client = $this->modx->getService('rest', 'rest.modRest');
-```
-
-because `modRestClient` is a deprecated class.
-
-For more information about all the features of the class, see the file: `core/model/modx/rest/modrest.class.php`
+For more information about all the features of the class, see the source file: `core/src/Revolution/Rest/modRest.php`
