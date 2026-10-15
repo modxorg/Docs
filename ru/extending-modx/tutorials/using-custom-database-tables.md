@@ -15,36 +15,21 @@ MODX 3 приносит пространства имён PHP в XML-схему 
 
 **ПРИМЕЧАНИЕ**: материал переработан из прежнего примера StoreFinder.
 
-## Ключевые термины и стандарты {#terminology}
+## Термины {#terminology}
 
-По итогам недавних обсуждений зафиксируем терминологию и то, к чему она относится. Это же стандартные практики для единообразия.
+Ниже повторяются три имени. Каждое задаётся в своём месте и имеет своё правило регистра:
 
-### Пространство имён PHP
+| Имя | Где задаётся | Регистр |
+| --- | --- | --- |
+| PHP Namespace | Атрибут `package` схемы. MODX подставляет объявление в начало каждого сгенерированного файла класса в `src/Model/`. | PascalCase |
+| Namespace компонента | Запись namespace, которую вы создаёте в менеджере. Из неё MODX берёт Core Path и Assets Path, а пункты меню используют её, чтобы направить запрос на нужную страницу менеджера. | нижний регистр |
+| Имена файлов и каталогов | Ваше собственное дерево исходников. | нижний регистр, кроме каталогов под `src/`, которые зеркалят имена классов |
 
-   1. В MODX 3 модели и процессоры используют пространства имён PHP и автозагружаются.
-   2. Например, в начале файлов классов Model MODX генерирует объявление namespace:
+Путь файла и соответствующий namespace совпадают по именам:
 
-      ```php
-	  <?php
-
-	  namespace MyComponent\Model\MyClass
-	  ```
-
-### Пространство имён компонента
-
-   1. В менеджере создаётся запись namespace: это не PHP namespace, имя должно быть в нижнем регистре. По нему определяются пути к компоненту: Core Path и Assets Path.
-   2. Пункты меню указывают этот namespace в нижнем регистре. MODX направляет запрос менеджера на нужную страницу.
-
-### Атрибут package в XML-схеме
-
-   1. В MODX 3 атрибут package: это ваш PHP namespace. Значение попадает в начало PHP-файлов модели и должно быть в CamelCase/PascalCase.
-
-### Структура каталогов и регистр
-
-   1. Все каталоги в нижнем регистре, кроме тех, что внутри `src/`. В `src/` пути зеркалят регистр классов (camelCase или PascalCase).
-      1. Пример пути: `{core_path}/components/mycomponent/src/Model/MyClass.php`
-      2. Соответствующий PHP namespace: `MyComponent\Model\MyClass`
-      3. Префикс `MyComponent` соответствует каталогу `mycomponent/src/`. Всё дальше повторяется и в структуре каталогов, и в регистре.
+| Файл | PHP Namespace |
+| --- | --- |
+| `{core_path}/components/mycomponent/src/Model/MyClass.php` | `MyComponent\Model\MyClass` |
 
 ## Изменения в структуре каталогов
 
@@ -152,7 +137,7 @@ xPDO лежит в `core/vendor/xpdo/xpdo/src/xPDO/`, дальше: как у к
 | `package` | PHP namespace пакета xPDO. Важное изменение MODX 3: это значение попадает в PHP-файлы модели как объявление `namespace`. |
 | `baseClass` | Базовый класс для всех определений. Если не планируете своё расширение `xPDOObject`, оставьте по умолчанию. |
 | `platform` | MySQL (`mysql`). |
-| `defaultEngine` | Движок таблиц по умолчанию, InnoDB или MyISAM. MODX рекомендует InnoDB. |
+| `defaultEngine` | Движок таблиц по умолчанию, InnoDB или MyISAM. Сам MODX использует InnoDB. |
 | `version` | Оставьте `3.0`. Это не косметика: начиная с `3.0` генератор пишет `Model/metadata.mysql.php` с картой классов, и только модель с этой картой доходит до PSR-4 автозагрузчика. С `version="1.0"` классы генерируются, но `addPackage()` их не подхватывает. |
 | `phpdoc-package` | MODX напрямую не использует, но можно в Documentation Blocks. Ожидается PHP namespace в MODX 3. Если не задать, MODX подставит сам. В docblock классов будет `@package MyComponent\Model`. |
 | `phpdoc-subpackage` | По [phpDocumentor](https://docs.phpdoc.org/guide/references/phpdoc/tags/subpackage.html) устарело. Namespace уже объединяет package и subpackage. |
@@ -189,9 +174,9 @@ width="600" />
 
 С MODX 3 core path в записи namespace: место, где MODX ищет `bootstrap.php`. Bootstrap подключает классы, автозагрузчик, сервисы и другие задачи при старте.
 
-### Дополнительно для любознательных :)
+### Когда выполняется bootstrap.php
 
-В index вызывается initialize с контекстом «web»: `$modx->initialize('web')`. В `modX.php` initialize вызывает `_initNamespaces()`. Функция читает namespace из кеша, перебирает записи и подключает `bootstrap.php`, если файл есть и читается.
+`index.php` вызывает функцию инициализации с ключом контекста `web`, если только `config.context.php` в корне установки не вернёт другой. Эта функция в `modX.php` сначала вызывает `_initNamespaces()`, а затем `_initContext()`. `_initNamespaces()` читает записи namespace из кеша, перебирает их и подключает каждый найденный `bootstrap.php`.
 
 ::: warning
 `bootstrap.php` подключается до `_initContext()`, поэтому внутри него контекста ещё нет: `$modx->getContext()` вернёт `null`, а настройки контекста ещё не в конфигурации. Ограничивайтесь самим `$modx` и данными namespace в файле bootstrap — всё остальное ждёт своего момента в запросе.
