@@ -5,119 +5,126 @@ description: "A Transport Package is a collection of objects and files"
 
 ## What is a Transport Package?
 
-A Transport Package is a collection of objects and files that can be used to "transport" data from one MODX installation to another; or even to transport 3rd-Party Components in a simple, easily-manageable format. In other words, Transport Packages can transport nearly _anything_ - from database data, files and even scripts to run during its install.
+A Transport Package carries objects and files from one MODX installation to another. It can hold database rows, files, and scripts that run during install — a whole 3rd-Party Component in one archive.
 
-Transport Packages also allow for versioning, in that they match based on a simple format, complying with PHP version number standards:
+File names follow a versioned format that matches PHP version numbering:
 
 > packagename-version-release.transport.zip
 
-So, an example Transport Package might be "myextra-1.0-rc1.transport.zip". If you were to upload a "myextra-1.0-rc2.transport.zip", MODX would then interpret this as part of the same "package" but a newer version of it. It would then behave in "upgrade" mode.
-
-Transport packages are stored in .zip files, ending with ".transport.zip". They can be uploaded and installed anywhere there is a MODX Revolution instance - regardless of the server configuration.
+Uploading `myextra-1.0-rc2.transport.zip` over `myextra-1.0-rc1.transport.zip` tells MODX that it is the same package at a newer version, so it installs in upgrade mode.
 
 ### The Internals of a Transport Package
 
-MODX Revolution automatically "unpacks", or unzips, your transport packages for you. Once done, a subdirectory in your _core/packages_ directory will appear with the name of the zip file (minus ".transport.zip"). This directory will contain:
+MODX unpacks every package into `core/packages/<name>`, using the zip file name without `.transport.zip`. The directory contains:
 
--   A manifest.php file
--   Subdirectories of each Vehicle (more on those later)
-
-It may also contain a "preserved.php" file, if the package is an upgrade from a prior package, which contains the metadata for the install to be restored. And finally, there might be a 'setup-options.php' file if the package has packaged one inside.
+-   `manifest.php`
+-   a subdirectory per Vehicle
+-   `preserved.php`, if the package upgrades a previous one; it holds the install metadata to restore
+-   `setup-options.php`, if the package included one
 
 ### The manifest.php file
 
-The manifest basically stores all the relevant information for the package, including the locations of files and information about them. If you open the manifest.php file, you'll see that it contains a giant PHP array being returned. Within that are some keys you might be interested in:
+`manifest.php` returns one array with the package metadata and file locations:
 
--   **manifest-version** - This tells us what version the manifest definition is. MODX uses it to determine how to interpret the manifest and make it easier for future MODX versions to be backwards-compatible.
-
--   **manifest-attributes** - These are any custom attributes that were set on the package when it was being built. The most common are 'license', 'readme' and 'setup-options', which MODX interprets during install time.
-
--   **manifest-vehicles** - These are the Vehicles metadata, in array format.
+-   **manifest-version** — version of the manifest definition. MODX uses it to pick the right interpretation and stay compatible with future versions.
+-   **manifest-attributes** — custom attributes set when the package was built. The usual ones are `license`, `readme` and `setup-options`, read during install.
+-   **manifest-vehicles** — the metadata of every Vehicle, as an array.
 
 ### Okay, what are these Vehicles?
 
-Transport Vehicles are the parts of a Transport Package. A package can contain as many Vehicles as it likes. Vehicles also come in different types; the currently available ones are:
+Vehicles are the parts of a Transport Package; a package holds as many as it needs. The available types:
 
--   xPDOObjectVehicle - For transporting database data
--   xPDOFileVehicle - For transporting files
+-   xPDOObjectVehicle — database data
+-   xPDOFileVehicle — files
+-   xPDOScriptVehicle — a script to run; rare in component builds
 
-In the 'manifest-vehicles' array, you'll see these keys for each vehicle:
+In the `manifest-vehicles` array, each vehicle has these keys:
 
--   **vehicle_package** - This tells us what type of package is holding these vehicles. Currently the only type is 'transport'.
--   **vehicle_class** - The class name of the type of Vehicle this is.
--   **class** - The class name of the DB object being transported, or `xPDOFileVehicle` if it's a file vehicle.
--   **guid** - A randomly generated GUID for the vehicle.
--   **native_key** - If the vehicle is a database object, this will be its primary key by which it is identified.
--   **filename** - Where the vehicle's source file can be found within the transport package's folder.
--   **namespace** - Certain packages use the 'namespace' field to group vehicles and other objects to make them uniquely identifiable within a MODX installation.
-
-So now that we've seen what the vehicles represent in the manifest, let's open up a Vehicle by looking a filename and diving in.
+-   **vehicle_package** — package type that holds the vehicles. In MODX 3 packages the field is empty (`''`); the legacy value `'transport'` is written only for vehicle classes without a namespace.
+-   **vehicle_class** — the Vehicle class name.
+-   **class** — the class of the transported DB object, or `xPDOFileVehicle` for a file vehicle.
+-   **guid** — random GUID of the vehicle.
+-   **native_key** — for a database object, the primary key that identifies it.
+-   **filename** — path of the vehicle's source file inside the package folder.
+-   **namespace** — groups vehicles and objects so they stay unique within a MODX installation.
 
 #### Inside a Vehicle's Source
 
-Vehicles can actually have a few different files grouped with them, but we'll first concern ourselves with the main vehicle file, which is specified in the manifest and often ends with '.vehicle'.
+A Vehicle groups several files; the manifest points at the main one, which usually ends in `.vehicle`.
 
-Again, it looks like a big PHP array, with similar keys. It has some extra keys though, which are important. `xPDOFileVehicle` and `xPDOObjectVehicle` can have different keys. Let's go over the common ones:
+The file returns an array with the manifest's keys plus some of its own. `xPDOFileVehicle` and `xPDOObjectVehicle` differ; the common keys:
 
--   **class** - Similar to the manifest, the class type of the vehicle.
--   **object** - An array that contains the object information. For DB objects this will most likely be a JSON array representation of the DB table. For files, it will be a PHP array with the source, target and name of the vehicle.
--   **vehicle_class** - Similar to the manifest, the class name of the vehicle.
--   **vehicle_package** - Similar to the manifest, the transport type of the vehicle.
--   **guid** - Similar to the manifest, a unique identifier for the vehicle.
--   **package** - Only applicable to xPDOObjectVehicles, this will most likely be 'modx' or blank.
--   **signature** - The filename signature for this vehicle.
--   **native_key** - Similar to the manifest. If the vehicle is a database object, this will be its primary key by which it is identified.
+-   **class** — the vehicle class type, as in the manifest.
+-   **object** — object data: for DB objects a JSON representation of the table row; for files a PHP array with source, target and name.
+-   **vehicle_class** — the vehicle class name, as in the manifest.
+-   **vehicle_package** — the transport type, as in the manifest.
+-   **guid** — the unique vehicle identifier, as in the manifest.
+-   **package** — the package name of the transported object. Always empty (`''`) in MODX 3 packages, because modern vehicle classes are namespaced; `'modx'` appears only with legacy classes without a namespace.
+-   **signature** — the filename signature of this vehicle.
+-   **native_key** — for a database object, its primary key, as in the manifest.
 
-The xPDOObjectVehicle, or database vehicles, often have these extra keys (build scripts set them via `xPDOTransport::*` constants; see [Creating a Build Script](extending-modx/transport-packages/build-script)):
+Database vehicles (`xPDOObjectVehicle`) often carry extra keys. Build scripts set them with `xPDOTransport::*` constants; see [Creating a Build Script](extending-modx/transport-packages/build-script):
 
--   **preserve_keys** - If true, primary key values from the package are applied when loading the object. Use this for natural or string keys (such as a Context key). For typical autoincrement IDs, leave this false so the database assigns a new ID.
--   **update_object** - If true, the vehicle updates the object when a matching row already exists. If false, that row is skipped. Uninstall also depends on this flag: xPDO removes the object only when update is allowed (and **uninstall_object** is not false).
--   **uninstall_object** - If false, the object stays in the database when the package is uninstalled. Default is true when omitted. Removal still requires **update_object** to be true.
--   **unique_key** - The column name by which the database object can be uniquely identified - often this is not the primary key, as auto-incrementing fields often do not match across different databases.
--   **preexisting_mode** - How to treat objects that already exist on the site (`preserve_preexisting`, `remove_preexisting`, or `restore_preexisting`). Can be set on the vehicle or passed at install/uninstall. Details are on the build-script page.
--   **abort_install_on_vehicle_fail** - If true and this vehicle fails to install, the package install stops.
--   **resolve_files** / **resolve_files_remove** / **resolve_php** - Toggle file and PHP resolvers, and whether file resolvers delete their targets on uninstall.
--   **install_files** / **uninstall_files** - For `xPDOFileVehicle`: skip copying files on install, or leave files in place on uninstall.
--   **related_objects** - A complex array of any related objects to this vehicle's main database object. Sometimes, it may be necessary to package in "related" objects to achieve the desired end result. A great example is if the packager wants to put all of his Snippets in a Category. He would make the vehicle's object be the Category, and then add related objects - the snippets - to it.
--   **related_object_attributes** - The attributes for the above related objects.
--   **namespace** - Similar to the manifest; a grouping value for the objects in a transport package.
+-   **preserve_keys** — when true, primary key values from the package are applied on load. Use it for natural or string keys (a Context `key`). For autoincrement IDs leave it false so the database assigns a new ID.
+-   **update_object** — when true, an existing row that matches the unique key is updated; when false, it is skipped. Uninstall follows the same flag: xPDO removes the object only when update is allowed and **uninstall_object** is not false.
+-   **uninstall_object** — when false, the object stays in the database after uninstall (default: true). Removal still requires **update_object**.
+-   **unique_key** — the column that identifies the database object. Often not the primary key, because auto-increment values rarely match across databases.
+-   **preexisting_mode** — how objects that already exist on the site are handled (`preserve_preexisting`, `remove_preexisting`, `restore_preexisting`). Set it on the vehicle or pass it at install/uninstall; details are in the [build script tutorial](extending-modx/transport-packages/build-script).
+-   **abort_install_on_vehicle_fail** — when true and this vehicle fails to install, the package install stops.
+-   **resolve_files** / **resolve_files_remove** / **resolve_php** — turn file and PHP resolvers on or off, and whether file resolvers delete their targets on uninstall.
+-   **install_files** / **uninstall_files** — for `xPDOFileVehicle`: skip copying files on install, or keep files on uninstall.
+-   **related_objects** — an array of objects related to the vehicle's main database object — for example, Snippets added to a packaged Category.
+-   **related_object_attributes** — attributes for those related objects.
+-   **namespace** — grouping value for the objects in the package, as in the manifest.
 
-There are also some optional ones, which may or may not be set:
+Optional keys:
 
--   **validate** - An array of arrays which contain validators, explained later.
--   **resolve** - An array of arrays which contain resolvers, explained later.
+-   **validate** — validators for this vehicle.
+-   **resolve** — resolvers for this vehicle.
 
-In xPDOFileVehicles, you will also see a directory with the same filename as the vehicle, minus the ".vehicle". If you open it, there will be the files for the vehicle.
+For `xPDOFileVehicle`, a directory named after the vehicle (minus `.vehicle`) holds its files.
 
 ## Resolvers and Validators
 
-What are resolvers and validators? Well, think of them like pre and post installation scripts. They are, in essence, PHP scripts. (In fact, if you open them up, they look exactly like PHP scripts.) They are named the same filename as the vehicle, but are postfixed with ".resolver" or ".validator".
+Validators and resolvers bracket a Vehicle's processing: validators run before, resolvers after. In the package, each file is named after its vehicle and its source file — `{signature}.{source name without .php}.resolver`, or the same scheme with `.validator` at the end. A resolver built from `setupoptions.resolver.php` ends up as `{signature}.setupoptions.resolver.resolver`. The doubled `.resolver` is not a typo: the scheme appends its suffix to whatever the source file is called.
 
 ### A Validator
 
-A validator is executed _before_ the Vehicle is installed, upgraded or uninstalled. If they return false, the Vehicle is not installed, and is skipped.
+A validator runs _before_ the Vehicle is installed, upgraded or uninstalled. Returning false blocks that action for the Vehicle. Two caveats:
 
-They are useful for determining whether or not the Vehicle should still be installed, uninstalled or upgraded in the package process. For example - if you want to have dependencies and not have a Vehicle installed unless something else is found, a Validator would be a great place for it.
+-   a validator that returns false also blocks **uninstall**: the package install or uninstall fails for that vehicle, not only for install;
+-   validators attached to related (child) objects are skipped — during the related-objects walk only the parent vehicle's validators run.
+
+A PHP validator can return false without writing an error to the log: set `'silent_fail' => true` in its file metadata array.
 
 ### A Resolver
 
-Resolvers are executed _after_ the Vehicle is installed, upgraded or uninstalled. Each will execute in turn regardless of any other resolver results.
-
-Resolvers are useful for 'cleaning up' after a Vehicle is installed, or setting custom configuration options (such as ones setup in Setup Options during install).
+A resolver runs _after_ the Vehicle is installed, upgraded or uninstalled, and every resolver runs regardless of the results of the others. Resolvers clean up after the install or apply configuration, such as values entered in Setup Options.
 
 ## Usage
 
-Transport Packages can be managed in the [Package Management](extending-modx/transport-packages "Package Management") section of the Revolution manager. They can be added to the Revolution instance by either:
+Packages are managed in the Package Management section of the Revolution manager. Add a package by either:
 
-1. Uploading the file manually to core/packages/, and then clicking "Add New Package" and selecting the "Search Locally for Packages" option
-2. Downloading the package from a [Transport Provider](building-sites/extras/providers "Providers"). This allows updates to be remotely downloaded for a package as well.
+1.  Uploading the file to `core/packages/`, then clicking "Add New Package" and selecting the "Search Locally for Packages" option
+2.  Downloading it from a [Transport Provider](building-sites/extras/providers "Providers")
 
-Once downloaded, they can be installed by right-clicking a package in the grid, and clicking Install. This will prompt the user to accept a License Agreement should the package come with one, and prompting to read the README should the package contain one. Then it will present a form with pre-installation options, which may or may not exist depending on the package. The user can then click 'Install' to install the package.
+To install, right-click the package in the grid and click Install. The dialog may ask for the license and show the README, then offers pre-installation options when the package defines them.
 
-Once installed, the user can uninstall the package at any time. Also, if the package was downloaded from a [Transport Provider](building-sites/extras/providers "Providers"), then the user can check for updates for the package.
+If the package declares [dependencies](extending-modx/transport-packages/dependencies) in its `requires` attribute, the dialog gains a **Dependencies** tab with every requirement and its status: installed or downloadable. The **Install** and **Setup Options** buttons stay disabled until every requirement is met.
+
+You can uninstall a package at any time, and a package fetched from a [Transport Provider](building-sites/extras/providers "Providers") can be checked for updates.
+
+## Package Events
+
+The Package Management processors fire events your plugins can listen to:
+
+| Event                | When                                                                     | Arguments                                                                                                                                                                             |
+| -------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **OnPackageInstall** | after a package is installed                                             | `package` (the `modTransportPackage` object), `action` (`xPDOTransport::ACTION_INSTALL` or `xPDOTransport::ACTION_UPGRADE`, depending on whether a previous version was present)       |
+| **OnPackageUninstall** | after a package is uninstalled                                          | `package`                                                                                                                                                                             |
+| **OnPackageRemove**  | when the package is removed from the workspace (Remove and Purge processors) | `package`                                                                                                                                                                        |
 
 ## Related Pages
 
--   [Package Management](extending-modx/transport-packages "Package Management")
 -   [Providers](building-sites/extras/providers "Providers")
--   Tutorial: [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script "Creating a 3rd Party Component Build Script")
+-   Tutorial: [Creating a Build Script](extending-modx/transport-packages/build-script "Creating a Build Script")

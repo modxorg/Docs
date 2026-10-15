@@ -4,21 +4,19 @@ _old_id: "67"
 _old_uri: "2.x/developing-in-modx/advanced-development/package-management/creating-a-3rd-party-component-build-script"
 ---
 
-Users using Revolution 2.0.0-beta-4 or earlier should note that the defines are different in beta5 and onward. An example: `xPDOTransport::UNIQUE_KEYS` in beta5+ is `XPDO_TRANSPORT_UNIQUE_KEYS` in beta4 and earlier. MODX recommends to just update to beta5/SVN.
+A build script is the PHP file that packs a component into a `.transport.zip` package — the archive you install through Package Management.
 
-A build script. What is that, you might ask? This is the meat of the packaging process; here is where your component is actually put into the nice, neat .zip transport package that you find on modxcms.com or through Revolution's Package Management section.
-
-This tutorial will guide you through how to create one of those scripts. We'll be using a sample component called Quip, which contains a few menus, some chunks and a snippet, lexicons, setup options, a license, a readme, and system settings. It's basically a quick, easy run through of all the basics to creating a fundamental build script.
+This tutorial builds a package for the sample component Quip: menus, chunks, a Snippet, lexicons, setup options, a license, a readme, and system settings.
 
 ## Directory Structure
 
-First off, let's take a quick look at our directory structure. This isn't always how you have to do it - this one is specifically built this way for SVN; but it's definitely recommended, especially with the _assets/components/quip/_ and _core/components/quip/_ structures, since that makes creating the transport package much easier.
+The tutorial uses this layout. Your structure can differ; the split between _assets/components/quip/_ and _core/components/quip/_ is what makes packaging easy:
 
 ![](quip-dir1.png)
 
 ## Starting the Build Script
 
-Create a new file. Typically, it's build.transport.php in the \_build directory. Let's first start with some phpdoc comments at the top, and then start the timer.
+Create `build.transport.php` in the _build_ directory and start it with phpdoc comments and a timer:
 
 ```php
 <?php
@@ -35,7 +33,7 @@ $tstart = $mtime;
 set_time_limit(0); /* makes sure our script doesnt timeout */
 ```
 
-Now let's define some basic paths. We can define these up top into a "sources" array to make them easier to reach later in the build script. Note how the 'source\_core' and 'source\_assets' directories do _not_ post-fix a foreslash onto their paths. This is required.
+Collect the paths in a `$sources` array so later steps can reach them. The `source_core` and `source_assets` paths end without a forward slash — required:
 
 ```php
 $root = dirname(dirname(__FILE__)).'/';
@@ -52,13 +50,13 @@ $sources= array (
 unset($root); /* save memory */
 ```
 
-Now, we'll need to include some files to get the build libraries we'll need. First, let's include a file we'll create called 'build.config.php' in our build dir.
+Require the build config, which you create next to the script:
 
 ```php
 require_once dirname(__FILE__) . '/build.config.php';
 ```
 
-In this file, we'll want to define the location of our MODX Revolution installation so that the build script can know where to get the modX class, as well as where to put the package when finished. Our file will look somewhat like this:
+The config points the script at your MODX installation — where to load the modX class from and where to write the finished package:
 
 ```php
 <?php
@@ -72,9 +70,9 @@ define('MODX_CORE_PATH', '/absolute/path/to/modx/core/');
 define('MODX_CONFIG_KEY','config');
 ```
 
-You'll want to make sure to change the value of `MODX_CORE_PATH` to the absolute path of where your MODX Revolution core is installed. `MODX_CONFIG_KEY` can stay the same, unless you're doing a multi-domain install.
+Set `MODX_CORE_PATH` to the absolute path of your MODX core. Keep `MODX_CONFIG_KEY` unless you run a multi-domain install.
 
-Now, you'll want to include the modX class, and instantiate it. We'll also initialize it into the 'mgr' context, and set the log output to HTML to make our errors and info messages nice and formatted - unless we're doing this from the cmd line, where we'll want just standard echo messages.
+Instantiate modX, initialize the `mgr` context, and log as HTML; from the command line the log target switches to plain `ECHO`:
 
 ```php
 require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
@@ -85,32 +83,31 @@ $modx->setLogLevel(modX::LOG_LEVEL_INFO);
 $modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
 ```
 
-Okay, it's time for the meat. Let's first off use `$modx->loadClass` to load the `modPackageBuilder` class. Then we'll instantiate an instance of it, and create a package.
+MODX 3 loads the build classes through the Composer autoloader set up in `modx.class.php`, so there is no `$modx->loadClass()` step. Create the builder with its namespaced class (add `use MODX\Revolution\Transport\modPackageBuilder;` at the top for a short name):
 
 ```php
-$modx->loadClass('transport.modPackageBuilder','',false, true);
-$builder = new modPackageBuilder($modx);
+$builder = new \MODX\Revolution\Transport\modPackageBuilder($modx);
 $builder->createPackage('quip','0.1','alpha7');
 $builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
 ```
 
-The modPackageBuilder::createPackage function has 3 parameters:
+`createPackage($name, $version, $release)` — here the signature is `quip-0.1-alpha7`.
 
--   name,
--   version,
--   release.
+Other builder methods you may need:
 
-For us we'll be doing quip-0.1-alpha7, so let's go with that.
+-   `setWorkspace($workspace_id)` - Switches the workspace the package is built into; the built file lands in that workspace's `packages/` directory. Returns the `modWorkspace` or false for a bad id.
+-   `setAutoSelects(array $classes)` - Sets which classes `pack()` auto-collects into vehicles by namespace (used internally when `registerNamespace()` is called with `$autoincludes`).
+-   `getSignature()` - Returns the signature of the package currently being built.
+-   `buildSchema($model, $schema)` - Runs the xPDO model generator over a schema XML file, writing classes into the `$model` directory.
+-   `registerNamespace()` takes a fifth optional parameter, `$assetsPath`, after `$path` — it sets the namespace's assets path for components that keep files outside `core/`.
 
-Next, we'll register a [Namespace](extending-modx/namespaces "Namespaces") to this package. Not all packages need [Namespaces](extending-modx/namespaces "Namespaces"); but all 3rd Party Components do. Basically, a Namespace is an organizing tool for MODX so that MODX can know what objects are tied to what package. This is helpful later on should we want to uninstall our package; we'd want it to remove the objects we'd install.
-
-Plus, should we want to add any [Lexicon Entries](extending-modx/internationalization "Internationalization") to this package (which we will), MODX does so by relating it to it's Namespace. Our package builder will assign our Lexicon Entries to the Namespace, so we can easily manage _just_ our Lexicon Entries; not any others.
+Register a [Namespace](extending-modx/namespaces "Namespaces") for the package: not every package needs one, but every 3rd-Party Component does. The Namespace ties the package's objects together, so uninstall removes exactly what install added. It also groups the package's [Lexicon Entries](extending-modx/internationalization "Internationalization"): the builder assigns them to the Namespace, and you manage just those entries.
 
 ## Packaging in Objects
 
-Objects are packaged as _Vehicles_ in MODX Revolution; basically think of a vehicle as a sort of storage system that transports the data and/or files into the zip package. Packages can contain many vehicles; vehicles can contain many objects or files - however, vehicles that contain an object must only have one reference object (or parent object, whichever you prefer) that the vehicle is based off of.
+Objects travel as Vehicles: a vehicle carries data or files into the zip. A package holds many vehicles; an object vehicle is built on a single parent object. `$builder->createVehicle()` returns a `modTransportVehicle` — the object you later pass to `resolve()` and `putVehicle()`; it also offers `validate()`, `compile()` and `fetch()`.
 
-So, let's look at some examples for creating a vehicle before digging into our build script. This first example packages in a simple object, with some parameters:
+The first example packages a simple object with attributes:
 
 ```php
 $snippet = $modx->newObject('modSnippet');
@@ -123,26 +120,24 @@ $vehicle = $builder->createVehicle($snippet,array(
 ));
 ```
 
-So, first off, we created a snippet object. Note that you'll have to specify an arbitrary ID for it, even though we wont keep it later. This is required. Then, we used the 'createVehicle' function in modPackageBuilder to create the vehicle object. Let's look at those attributes options more closely:
+The snippet gets an arbitrary ID, which is not kept. With `UNIQUE_KEY` set, xPDO finds the row by that key and ignores the ID. Without `UNIQUE_KEY`, the ID identifies the object and is required. The vehicle attributes:
 
--   `xPDOTransport::UNIQUE_KEY` _(string/array)_ - Here you'd place the unique key that identifies the object you're creating. This will tell MODX to search for the modSnippet with the 'name' equal to the packaged in name (here, 'Test') when updating or removing the object. For most objects, this will be 'name'; others require different settings. Some might even require an array of two or more fields.
--   `xPDOTransport::UPDATE_OBJECT` _(boolean)_ - If true, MODX updates the object when an existing row matches `UNIQUE_KEY` during install or upgrade. If false, MODX leaves the existing row alone. This flag also gates uninstall: xPDO removes the object only when `UPDATE_OBJECT` is true (and `UNINSTALL_OBJECT` is not false). Set `UPDATE_OBJECT` to false when an upgrade must not overwrite user-changed data. That object then remains after uninstall as well.
--   `xPDOTransport::UNINSTALL_OBJECT` _(boolean)_ - If false, MODX leaves the object in the database when the package is uninstalled. If omitted, the default is true. Removal still requires `UPDATE_OBJECT` to be true; both conditions must pass before xPDO deletes the row.
--   `xPDOTransport::PRESERVE_KEYS` _(boolean)_ - If true, MODX applies the primary key values from the package when loading the object. Use `true` for natural or string primary keys (for example a Context `key`) so the packaged value is written. Use `false` for typical autoincrement IDs so the database assigns a new ID on insert. When the object already exists, this only takes effect if `UPDATE_OBJECT` is also true.
--   `xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL` _(boolean)_ - If true on this vehicle and the vehicle fails to install, MODX aborts the rest of the package install.
--   `xPDOTransport::PREEXISTING_MODE` _(integer)_ - Controls how objects (and file-resolver targets) that already exist on the site are handled. Use one of the mode constants below.
+-   `xPDOTransport::UNIQUE_KEY` _(string/array)_ - the column that identifies the object on install, update and uninstall. MODX matches the packaged object against it — usually `name`, sometimes a set of fields.
+-   `xPDOTransport::UPDATE_OBJECT` _(boolean)_ - update a row that matches `UNIQUE_KEY` on install or upgrade; when false, leave the row alone. This flag also gates uninstall: xPDO removes the object only when `UPDATE_OBJECT` is true and `UNINSTALL_OBJECT` is not false. Set it to false when an upgrade must not overwrite user changes — the object then survives uninstall as well.
+-   `xPDOTransport::UNINSTALL_OBJECT` _(boolean)_ - when false, the object stays in the database after uninstall; omitted means true. Removal still requires `UPDATE_OBJECT` to be true.
+-   `xPDOTransport::PRESERVE_KEYS` _(boolean)_ - applies only to inserts: true writes the packaged primary key, false lets the database assign one. Use true for natural keys (a Context `key`), false for autoincrement IDs. An existing row keeps its key regardless of this flag and of `UPDATE_OBJECT`.
+-   `xPDOTransport::ABORT_INSTALL_ON_VEHICLE_FAIL` _(boolean)_ - when true and this vehicle fails to install, MODX aborts the rest of the package install.
+-   `xPDOTransport::PREEXISTING_MODE` _(integer)_ - how objects (and file-resolver targets) that already exist on the site are handled; the modes below.
 
 **Preexisting modes** (values for `PREEXISTING_MODE`):
 
--   `xPDOTransport::PRESERVE_PREEXISTING` _(0, default)_ - On install or upgrade, snapshot preexisting object data (and matching files from file resolvers) so they can be restored later. On uninstall, objects that already existed before install are not removed (they stay in that snapshot).
--   `xPDOTransport::REMOVE_PREEXISTING` _(1)_ - Do not keep a restore snapshot. On uninstall, remove the object even if it existed before the package was installed (still requires `UPDATE_OBJECT` and `UNINSTALL_OBJECT`).
--   `xPDOTransport::RESTORE_PREEXISTING` _(2)_ - On uninstall, restore objects and files from the snapshot taken at install. Object restore also requires `UPDATE_OBJECT` to be true.
+-   `xPDOTransport::PRESERVE_PREEXISTING` _(0, default)_ - on install or upgrade, snapshot preexisting object data (and matching files from file resolvers) so they can be restored later. On uninstall, objects that existed before install are not removed — they stay in that snapshot.
+-   `xPDOTransport::REMOVE_PREEXISTING` _(1)_ - no restore snapshot. On uninstall, remove the object even if it existed before the package was installed (still requires `UPDATE_OBJECT` and `UNINSTALL_OBJECT`).
+-   `xPDOTransport::RESTORE_PREEXISTING` _(2)_ - on uninstall, restore objects and files from the snapshot taken at install. Object restore also requires `UPDATE_OBJECT` to be true.
 
-`PREEXISTING_MODE` can sit on the vehicle or be passed at install/uninstall time. Package Management passes it when uninstalling. Core setup uses `REMOVE_PREEXISTING` when installing the core package.
+`PREEXISTING_MODE` sits on the vehicle or is passed at install/uninstall time. Package Management passes it when uninstalling; core setup installs the core package with `REMOVE_PREEXISTING`.
 
-Our example looks for a Snippet named 'Test' and updates it when found, or creates it when missing. `PRESERVE_KEYS` is false, so an autoincrement primary key is not forced from the package.
-
-Let's also package in the modMenu:
+The modMenu follows the same pattern:
 
 ```php
 $menu= $modx->newObject('modMenu');
@@ -166,58 +161,14 @@ $vehicle= $builder->createVehicle($menu,array (
 
 ## Related objects
 
-When packing in related objects, you need 2 new parameters:
+Two more attributes cover related objects:
 
--   `xPDOTransport::RELATED_OBJECTS` _(boolean)_ - Either true or false, this will tell MODX we want to search for related objects to this object. This must be set for the next parameter to work.
--   `xPDOTransport::RELATED_OBJECT_ATTRIBUTES` _(array)_ - This defines the types and details of the related objects we want to grab. If you note, the format is simply an associative array of attributes - similar to the parent object's attributes - where the key is the "alias" of the related object we want to grab. The aliases can be found in the Schema, located in _core/model/schema/modx.mysql.schema.xml_.
+-   `xPDOTransport::RELATED_OBJECTS` _(boolean)_ - set true to search for related objects of this object; required for the next attribute to work.
+-   `xPDOTransport::RELATED_OBJECT_ATTRIBUTES` _(array)_ - the related objects to take: an associative array keyed by the alias of the relation, with the same attribute format as the parent object. Aliases come from the schema at _core/model/schema/modx.mysql.schema.xml_.
 
-You need to associate related objects to eachother with the `addOne` or `addMany` functions before calling `$builder->createVehicle`. This can be nested as deep as you need.
+Associate the related objects with the `addOne()` or `addMany()` functions before calling `$builder->createVehicle()`; nesting can go as deep as you need.
 
-So, back to our script. To recap, so far we have:
-
-```php
-<?php
-/**
- * Quip build script
- *
- * @package quip
- * @subpackage build
- */
-$mtime = microtime();
-$mtime = explode(" ", $mtime);
-$mtime = $mtime[1] + $mtime[0];
-$tstart = $mtime;
-set_time_limit(0);
-
-$root = dirname(dirname(__FILE__)).'/';
-$sources= array (
-    'root' => $root,
-    'build' => $root .'_build/',
-    'lexicon' => $root . '_build/lexicon/',
-    'resolvers' => $root . '_build/resolvers/',
-    'data' => $root . '_build/data/',
-    'source_core' => $root.'core/components/quip',
-    'source_assets' => $root.'assets/components/quip',
-    'docs' => $root.'core/components/quip/docs/',
-);
-unset($root);
-
-/* override with your own defines here (see build.config.sample.php) */
-require_once dirname(__FILE__) . '/build.config.php';
-require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
-
-$modx= new modX();
-$modx->initialize('mgr');
-$modx->setLogLevel(modX::LOG_LEVEL_INFO);
-$modx->setLogTarget(XPDO_CLI_MODE ? 'ECHO' : 'HTML');
-
-$modx->loadClass('transport.modPackageBuilder','',false, true);
-$builder = new modPackageBuilder($modx);
-$builder->createPackage('quip','0.1','alpha5');
-$builder->registerNamespace('quip',false,true,'{core_path}components/quip/');
-```
-
-So, let's first package the menu for our backend:
+Package the menu for the backend:
 
 ```php
 /* load action/menu */
@@ -229,12 +180,12 @@ $vehicle= $builder->createVehicle($menu,array (
     xPDOTransport::UNIQUE_KEY => 'text',
 ));
 $builder->putVehicle($vehicle);
-unset($vehicle,$action); /* to keep memory low */
+unset($vehicle,$menu); /* to keep memory low */
 ```
 
-Wait! Notice how I put the action data in a different file? You don't have to do this - it's completely personal preference - but it does keep our build script clean, and isolate our actions/menus to a separate file for easy management.
+The action data lives in a separate file — optional, but it keeps the build script short and the menus easy to manage.
 
-Let's do the same with our system settings:
+The system settings loop the same way:
 
 ```php
 /* load system settings */
@@ -252,7 +203,7 @@ foreach ($settings as $setting) {
 unset($settings,$setting,$attributes);
 ```
 
-Great! We've got our actions, menus and settings packaged in. Now, using our newfound knowledge about related objects, let's create a category called 'Quip' and put our Snippet and Chunks in that category. We'll go through this a bit slower, so we can easily see how this works:
+Next, a Category named 'Quip' with the Snippet and Chunks in it, step by step:
 
 ```php
 /* create category */
@@ -261,7 +212,7 @@ $category->set('id',1);
 $category->set('category','Quip');
 ```
 
-Okay, great. Step one done: category created. Now about that Snippet:
+Now the Snippet:
 
 ```php
 /* create the snippet */
@@ -269,12 +220,12 @@ $snippet= $modx->newObject('modSnippet');
 $snippet->set('id',0);
 $snippet->set('name', 'Quip');
 $snippet->set('description', 'A simple commenting component.');
-$snippet->set('snippet',file_get_contents($sources['source_core'].'/snippet.quip.php');
+$snippet->set('snippet',file_get_contents($sources['source_core'].'/snippet.quip.php'));
 ```
 
-Great! Note how here we're actually using the `file_get_contents()` function to grab the contents of the snippet from our dev environment and place it here. This makes it easy to run the build in future iterations; no need to continually update this call - just update that file.
+`file_get_contents()` reads the Snippet source from your development copy, so later builds pick up changes in that file automatically.
 
-Now, we had some properties on that snippet...how do we put those in?
+The properties go in next:
 
 ```php
 $properties = include $sources['data'].'properties.inc.php';
@@ -282,11 +233,9 @@ $snippet->setProperties($properties);
 $category->addMany($snippet);
 ```
 
-We're using the addMany method here, and not the addOne method. Wether you need to use one or the other does not so much depend on the amount of objects you are relating (in this case only one snippet), but the cardinality of the relationship.
+`addMany()` rather than `addOne()`: the choice follows the cardinality of the relationship, not the number of objects. A Category holds many Snippets, so the relation is one-to-many and `addMany()` fits — it accepts a single object or an array. See [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
 
-That may sound complex - but the cardinality simply means if it is a one-on-one or one-to-many relationship. In this case, a category has a one-to-many relationship with snippets (there can be many snippets in one category) and that means you will have to use the addMany method. You can pass an array of objects or just one object to that method, but which one you use depends on the cardinality. Read more about [relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships"), [addOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addone "addOne") and [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany").
-
-You'll use modSnippet's setProperties function to pass in an array of property arrays. So, let's take a look at that properties.inc.php file:
+The property definitions:
 
 ```php
 <?php
@@ -316,7 +265,7 @@ $properties = array(
 return $properties;
 ```
 
-Simple enough. And now on to the chunks:
+Now the chunks:
 
 ```php
 /* add chunks */
@@ -326,7 +275,7 @@ if (is_array($chunks)) {
 } else { $modx->log(modX::LOG_LEVEL_FATAL,'Adding chunks failed.'); }
 ```
 
-Good. We returned an array of chunks, and used modCategory's `addMany()` function to add them in. We also added a sanity check just in case we made a typo or something. Now, let's package all that into a vehicle:
+The array of chunks goes in with `addMany()`; the check catches a typo in the data file. Now package the category with its related Snippets and Chunks:
 
 ```php
 /* create category vehicle */
@@ -351,15 +300,11 @@ $attr = array(
 $vehicle = $builder->createVehicle($category,$attr);
 ```
 
-Great! We've got our category vehicle, complete with all the related chunks and snippet. They'll be installed in the right category when our users install our package, too - so it'll look nice and sharp!
-
 ## Validators and Resolvers
 
-Validators and resolvers are basically scripts that run during the install process. Validators are run at the start of the vehicle they are attached to. If they return false, the installation does not proceed.
+Validators run before the vehicle they are attached to installs; returning false stops the installation. Resolvers run after it has installed: a file resolver copies files into a target location, a PHP resolver executes a script.
 
-Resolvers, on the other hand, execute after vehicle they are attached to has installed. They can either be file or PHP scripts. A file resolver simply copies over files into a specific target location. A PHP resolver executes a script after install.
-
-These vehicle attributes toggle resolver and file-vehicle behavior (pass them in the same array as `UPDATE_OBJECT` and friends, or as install options):
+These vehicle attributes toggle resolver and file-vehicle behavior; pass them in the same array as `UPDATE_OBJECT` and friends, or as install options:
 
 -   `xPDOTransport::RESOLVE_FILES` _(boolean)_ - If false, file resolvers on the vehicle are skipped. Omit or set true to run them.
 -   `xPDOTransport::RESOLVE_FILES_REMOVE` _(boolean)_ - On uninstall, file resolvers remove their target files or directories unless this is set to false. Default is to remove.
@@ -369,7 +314,7 @@ These vehicle attributes toggle resolver and file-vehicle behavior (pass them in
 
 File resolvers also honor `PREEXISTING_MODE`. With `PRESERVE_PREEXISTING`, files already at the target path are archived before overwrite. With `RESTORE_PREEXISTING`, that archive is unpacked on uninstall.
 
-With that said, we're going to attach 2 file resolvers, and one PHP resolver, to our script:
+Attach two file resolvers and one PHP resolver:
 
 ```php
 $vehicle->resolve('file',array(
@@ -386,45 +331,39 @@ $vehicle->resolve('php',array(
 $builder->putVehicle($vehicle);
 ```
 
-Okay, first things first. File resolvers take two options:
+File resolvers take two options:
 
--   **source** - This is the target directory or script. If it's a file resolver, it must not end with a trailing slash and must be a valid directory. If it's a PHP script resolver, it must be a valid and accessible file.
+-   **source** - The directory (or script for a PHP resolver) to copy from. For a file resolver it must be a valid directory; the examples below write it without a trailing slash. For a PHP script resolver, a valid and accessible file.
 -   **target** - Only applicable to file resolvers, this tells MODX where to install the source files. It is an eval()'ed statement, so must be used as in the example. The standard MODX defines are available to you; use those to grab base paths to target.
 
-So in our examples, we simply move all the files in our source core directory to _modx/core/components/quip/_ (since our directory that we're moving is named "quip"), and all the files in our source assets directory to _modx/assets/components/quip/_.
+Each copy lands in `target/` plus the name of the source directory. The files from `$sources['source_core']` go to _core/components/quip/_, those from `$sources['source_assets']` to _assets/components/quip/_.
 
-You might be asking why we're moving these to two directories. Well, in practice, it's best to keep non-web-accessible files - such as PHP scripts, tpl files, docs, etc - in the core (which can be placed outside the webroot) so that they are kept secure from web visitors. This keeps only the files that need to be accessed through the web by your Component in the web-accessible part of your site.
+Keep files that must not be reachable over the web under _core_ — PHP, tpl files, docs. _core_ can sit outside the webroot; _assets_ then holds only what the browser needs.
 
-Next, we add a PHP resolver, called 'setupoptions.resolver.php'. We'll get back to this in much more detail, because it actually deals with the setup options process we'll get to later.
-
-And finally, we pack the vehicle into the package using the putVehicle function.
+The PHP resolver `setupoptions.resolver.php` is covered under Setup Options below.
 
 ## Lexicons
 
-So now we've got a package with system settings, actions, menus, snippets, chunks, a category, and a few resolvers all set up. Let's talk about our lexicons.
-
-We have our lexicon structured nicely in our _core/components/quip/lexicon_ directory:
+Lexicons sit in _core/components/quip/lexicon_:
 
 ![](quip-dir2.png)
 
-As you can see, we have a subdirectory as 'en', the IANA code for English. Then, we have a 'default.inc.php' - this represents the 'default' lexicon topic. Should we want to create separate lexicon topics, we would name them 'topicname.inc.php'.
+The subdirectory `en` is the IANA language code; `default.inc.php` is the `default` lexicon topic. Extra topics get their own `topicname.inc.php`.
 
-As of MODX Revolution RC-2, MODX will automatically find the lexicons in your lexicon directory, assuming that you put them in this structure in the following place: `{namespace_path}lexicon/`, where the Namespace path is the path you put for your Namespace earlier. You don't have to build in the lexicons directly at all; MODX will parse it for you.
-
-This is because the lexicons are cached first from your files, then any overrides from the DB are merged and cached. This allows people to 'override' your lexicons by using Lexicon Management in the Manager, should they choose to, without breaking their upgrade path for your Component.
+MODX finds lexicons at `{namespace_path}lexicon/` — the Namespace path you registered earlier — and parses them itself, so no lexicon code goes into the package. Lexicons are cached from the files first, then overrides from the database merge in. Users can edit them in Lexicon Management without breaking their upgrade path for your Component.
 
 ## Package Attributes: License, Readme and Setup Options
 
-Each package has what are called 'package attributes', which can be passed to any resolver or validator. You could pass pretty much anything you want into the function `modPackageBuilder::setPackageAttributes()`, in an array format. There are, however, three special keys that we'll deal with.
+Package attributes reach every resolver or validator; pass any array to `modPackageBuilder::setPackageAttributes()`. Four keys get special treatment:
 
--   **license** (string) - This represents your license agreement. Should MODX find this not empty during install, it will prompt the user to agree to it before they can proceed to install the package.
--   **readme** (string) - This holds the readme. Before installing, if this is not empty, the user will be able to view the readme. This can be useful to make sure people see any requirements before they install.
--   **changelog** (string) - Optional release notes shown with the package attributes.
--   **setup-options** (string) - And here is the best part - this can be an HTML form (minus the form tags) that will pass any user-inputted options to the resolvers or validators. This means that you can take in user input before install, and process it during install!
+-   **license** (string) - the license agreement. When it is not empty, install asks the user to accept it before the package can be installed.
+-   **readme** (string) - the readme shown before install, so requirements are seen first.
+-   **changelog** (string) - optional release notes shown with the package attributes.
+-   **setup-options** (string) - an HTML form (without the form tags) whose values go to the resolvers or validators. It collects user input before install and processes it during install.
 
-**Markdown in package attributes (MODX 3+):** when the installer shows `license`, `readme`, or `changelog`, MODX renders those strings as Markdown (Parsedown, safe mode) before display. [#13853](https://github.com/modxcms/revolution/pull/13853) You can keep plain text or HTML-ish content, but Markdown headings, lists, and links work without shipping a separate HTML file for those three keys.
+**Markdown in package attributes (MODX 3+):** When the installer shows `license`, `readme`, or `changelog`, MODX renders those strings as Markdown (Parsedown, safe mode) before display — [#13853](https://github.com/modxcms/revolution/pull/13853). Plain text and HTML-ish content are fine: Markdown headings, lists, and links work without shipping a separate HTML file for those three keys.
 
-So let's use these in our build script:
+Set them in the build script:
 
 ```php
 /* now pack in the license file, readme and setup options */
@@ -437,11 +376,11 @@ $builder->setPackageAttributes(array(
 ));
 ```
 
-Obviously our license and readme values are being passed the contents of our license and readme files. We're doing them via `file_get_contents()` so that we can still store the actual files in the \_modx/core/components/quip/docs\* directory after install, should the user want to view them later.
+`file_get_contents()` embeds the license and readme while the original files stay in the _core/components/quip/docs_ directory after install, should the user want to view them later.
 
-But 'setup-options' looks a little different. We could just pass a `file_get_contents()` call that puts in a string, but then our setup options form wouldn't be dynamic! There might be cases where you wouldn't want that, but we do. We want this options form to upgrade well. Note that you have to pass the file location as the 'source' parameter - remember Resolvers? Looks familiar, eh? Same idea.
+`setup-options` takes the file location as the `source` parameter, the same idea as a PHP resolver. A string from `file_get_contents()` would freeze the form; the file keeps it current across upgrades.
 
-Our setup.options.php file looks like this:
+The setup.options.php file:
 
 ```php
 <?php
@@ -489,22 +428,20 @@ $output = '<label for="quip-emailsTo">Emails To:</label>
 return $output;
 ```
 
-As you can see, some new constants here. These are available to all setup options forms and resolvers:
+The constants are available to all setup options forms and resolvers:
 
--   `xPDOTransport::PACKAGE_ACTION` - This tells us what action is being performed on the package; it is one of the following 3 values:
-    -   `xPDOTransport::ACTION_INSTALL` - This is set when the package is being executed as an install.
-    -   `xPDOTransport::ACTION_UPGRADE` - This is set when the package is being upgraded.
-    -   `xPDOTransport::ACTION_UNINSTALL` - This is set when the package is being uninstalled. This doesn't apply to setup-options, obviously, since nothing is being set up. In future Revolution releases, it will allow you to do specific options for uninstall; but not yet.
+-   `xPDOTransport::PACKAGE_ACTION` - the action performed on the package, one of three values:
+    -   `xPDOTransport::ACTION_INSTALL` - the package is being installed.
+    -   `xPDOTransport::ACTION_UPGRADE` - the package is being upgraded.
+    -   `xPDOTransport::ACTION_UNINSTALL` - the package is being uninstalled. Setup options ignore it: nothing is set up on uninstall.
 
-Basically, we're presenting them with a form before install that looks like this:
+The form shown before install:
 
 ![](setupopt.png)
 
-So that they can set or update the values of the emailsTo, emailsFrom, and emailsReplyTo system settings before they install the package. Now, the script will first check to see if those settings already exist; and if so, we'll fill them in with those values. This allows for upgrades to go gracefully, persisting the user's custom settings for those values. Pretty cool, huh?
+It sets or updates the `emailsTo`, `emailsFrom` and `emailsReplyTo` system settings before install. The script reads the current values first, so an upgrade keeps the user's changes.
 
-Obviously, there's a lot you could do with this. You could set target directories for photo locations, setup basic email accounts, set login/pass information for 3rd party web service integrations, and more. We'll leave your imagination to do the work from here on out.
-
-Let's go back to our PHP script resolver that processes this information:
+The resolver applies the submitted values:
 
 ```php
 <?php
@@ -554,15 +491,23 @@ switch ($options[xPDOTransport::PACKAGE_ACTION]) {
 return $success;
 ```
 
-Note that $modx is not available here; you're actually running these scripts from within the transport object. The $modx object is available as a different name, however: $object->xpdo. $object is the object that the resolver is attached to; here, it would be the modCategory.
+`$modx` does not exist inside a resolver: it runs within the transport object. Use `$object->xpdo`, where `$object` is the object the resolver is attached to — here the modCategory.
 
-Our script, then, is setting the values set in the setup-options to the newly installed system settings.
-
-And now that we've got everything packaged and ready to go, let's pack the package into a zip file and give us the time it took to build the package:
+Now pack the package into a zip file:
 
 ```php
 $builder->pack();
+```
 
+`pack()` compresses the package with ZipArchive by default; if the extension is missing, it falls back to PclZip. The `xPDOTransport::ARCHIVE_WITH` option (read at pack time) makes the choice explicit:
+
+-   `xPDOTransport::ARCHIVE_WITH_DEFAULT` _(0)_ - the default: use ZipArchive when the extension is present, otherwise PclZip.
+-   `xPDOTransport::ARCHIVE_WITH_PCLZIP` _(1)_ - Use PclZip, even when ZipArchive is available.
+-   `xPDOTransport::ARCHIVE_WITH_ZIPARCHIVE` _(2)_ - Use ZipArchive when the extension is present.
+
+Then the timing wrapper:
+
+```php
 $mtime= microtime();
 $mtime= explode(" ", $mtime);
 $mtime= $mtime[1] + $mtime[0];
@@ -576,10 +521,9 @@ session_write_close();
 exit();
 ```
 
-Great, we're done! You'll only need to run this script now, and viola! A fully zipped transport package file will appear in your core/packages directory.
+Run the script; the finished `.transport.zip` appears in your _core/packages_ directory.
 
 ## Related Pages
 
--   [Package Management](extending-modx/transport-packages "Package Management")
 -   [Transport Packages](extending-modx/transport-packages "Transport Packages")
 -   [Transport Providers](building-sites/extras/providers "Providers")
