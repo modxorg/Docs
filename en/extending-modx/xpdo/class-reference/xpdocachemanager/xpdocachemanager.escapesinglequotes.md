@@ -20,9 +20,9 @@ string escapeSingleQuotes (string $s)
 Escape the quotes in the string below:
 
 ``` php
-$str = 'Testing my "fun" Windows system.';
+$str = "Testing my 'fun' Linux system.";
 echo $xpdo->cacheManager->escapeSingleQuotes($str);
-// outputs: Testing my \"fun\" Windows system.
+// outputs: Testing my \'fun\' Linux system.
 ```
 
 ## See Also

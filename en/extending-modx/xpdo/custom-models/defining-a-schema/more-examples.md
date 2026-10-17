@@ -64,7 +64,7 @@ FROM users JOIN userdata ON users.user_id = userdata.userdata_id;
 And here's the corresponding XML definitions:
 
 ``` xml
-<object class="Users" table="users" extends="xPDOObject">
+<object class="Users" table="users" extends="xPDO\Om\xPDOObject">
         <field key="user_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="username" dbtype="varchar" precision="255" phptype="string" null="true" />
         <field key="bio" dbtype="text" phptype="string" null="true" />
@@ -74,7 +74,7 @@ And here's the corresponding XML definitions:
         </index>
         <composite alias="Userdata" class="Userdata" local="user_id" foreign="userdata_id" cardinality="one" owner="local" />
 </object>
-<object class="Userdata" table="userdata" extends="xPDOObject">
+<object class="Userdata" table="userdata" extends="xPDO\Om\xPDOObject">
         <field key="userdata_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="age" dbtype="tinyint" precision="3" attributes="unsigned" phptype="integer" null="true" />
         <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
@@ -91,7 +91,7 @@ If you were to access this data in a Snippet, you might do something like the fo
 ``` php
 <?php
         $base_path = MODX_CORE_PATH . 'components/one_to_one/';
-        $modx->addPackage('one_to_one',$base_path.'model/','');
+        $modx->addPackage('one_to_one',$base_path.'model/');
         $user = $modx->getObject('Users', array('user_id' => 1 ) );
         $userdata = $user->getOne('Userdata');
         $output = '';
@@ -126,7 +126,7 @@ CREATE TABLE `comments` (
 > XML Schema
 
 ``` xml
-<object class="Blogposts" table="blogposts" extends="xPDOObject">
+<object class="Blogposts" table="blogposts" extends="xPDO\Om\xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
         <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
@@ -134,7 +134,7 @@ CREATE TABLE `comments` (
         </index>
         <composite alias="Comments" class="Comments" local="blogpost_id" foreign="blogpost" cardinality="many" owner="local" />
 </object>
-<object class="Comments" table="comments" extends="xPDOObject">
+<object class="Comments" table="comments" extends="xPDO\Om\xPDOObject">
         <field key="comment_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="blogpost" dbtype="int" precision="11" phptype="integer" null="true" />
         <field key="comment" dbtype="text" phptype="string" null="true" />
@@ -152,7 +152,7 @@ Here is some sample Snippet code. It assumes your package name is **one\_to\_man
 ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/one_to_many/';
-$modx->addPackage('one_to_many',$base_path.'model/','');
+$modx->addPackage('one_to_many',$base_path.'model/');
 $output = '';
 $blogpost = $modx->getObject('Blogposts', array('blogpost_id' => 1 ) );
 $comments = $blogpost->getMany('Comments');
@@ -194,27 +194,24 @@ CREATE TABLE `blogposts_tags` (
 
 > XML Schema
 
-Note the the following schema still contains the composite relationship for the Comments table.
-
 ``` xml
-<object class="Blogposts" table="blogposts" extends="xPDOObject">
+<object class="Blogposts" table="blogposts" extends="xPDO\Om\xPDOObject">
         <field key="blogpost_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="content" dbtype="text" phptype="string" null="true" />
         <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
                 <column key="blogpost_id" collation="A" null="false" />
         </index>
-        <composite alias="Comments" class="Comments" local="blogpost_id" foreign="blogpost_id" cardinality="many" owner="local" />
-        <composite alias="BlogpostsTags" class="BlogpostsTags" local="blogpost_id" foreign="blogpost_id" cardinality="many" owner="local" />
+        <composite alias="BlogpostsTags" class="BlogpostsTags" local="blogpost_id" foreign="blogpost" cardinality="many" owner="local" />
 </object>
-<object class="Tags" table="tags" extends="xPDOObject">
+<object class="Tags" table="tags" extends="xPDO\Om\xPDOObject">
         <field key="tag_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="true" />
         <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
                 <column key="tag_id" collation="A" null="false" />
         </index>
-        <composite alias="BlogpostsTags" class="BlogpostsTags" local="tag_id" foreign="tag_id" cardinality="many" owner="local" />
+        <composite alias="BlogpostsTags" class="BlogpostsTags" local="tag_id" foreign="tag" cardinality="many" owner="local" />
 </object>
-<object class="BlogpostsTags" table="blogposts_tags" extends="xPDOSimpleObject">
+<object class="BlogpostsTags" table="blogposts_tags" extends="xPDO\Om\xPDOSimpleObject">
         <field key="blogpost" dbtype="int" precision="11" phptype="integer" null="true" />
         <field key="tag" dbtype="int" precision="11" phptype="integer" null="true" />
         <index alias="PRIMARY" name="PRIMARY" primary="true" unique="true">
@@ -232,7 +229,7 @@ The following example assumes that the package is named **many\_to\_many**. Note
 ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/many_to_many/';
-$modx->addPackage('many_to_many',$base_path.'model/','');
+$modx->addPackage('many_to_many',$base_path.'model/');
 $output = '';
 $blogpost = $modx->getObject('Blogposts', array('blogpost_id' => 1 ) );
 $blopost_tags = $blogpost->getMany('BlogpostsTags');
@@ -267,7 +264,7 @@ CREATE TABLE `categories` (
 In order to define this relationship in xPDO XML, we must add 2 aggregate relationships to the object:
 
 ``` xml
-<object class="Categories" table="categories" extends="xPDOObject">
+<object class="Categories" table="categories" extends="xPDO\Om\xPDOObject">
         <field key="category_id" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
         <field key="parent_id" dbtype="int" precision="11" phptype="integer" null="true" />
         <field key="name" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -287,11 +284,11 @@ In this example, our package is named **parent\_child\_example**. Notice that th
 ``` php
 <?php
 $base_path = MODX_CORE_PATH . 'components/parent_child_example/';
-$modx->addPackage('parent_child_example',$base_path.'model/','');
+$modx->addPackage('parent_child_example',$base_path.'model/');
 $output = '';
 $category = $modx->getObject('Categories', array('category_id' => 1 ) );
 $subcategories = $category->getMany('Children');
-$output .= $category->get('content');
+$output .= $category->get('name');
 foreach ( $subcategories as $sc )
 {
     $output .= $sc->get('name');
@@ -308,7 +305,7 @@ In this example, we are setting an alias of _postalcode_ for the _zip_ field fro
 The field alias definition is simply defined using the `alias` element.
 
 ``` xml
-<object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
+<object class="sfStore" table="stores" extends="xPDO\Om\xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
   <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />

@@ -12,7 +12,7 @@ Add an AND condition to the WHERE clause.
 ## Syntax
 
 ``` php
-void andCondition ( $conditions, [ $binding = null], [ $group = 0])
+xPDOQuery andCondition ( $conditions, [ $binding = null], [ $group = 0])
 ```
 
 ## Example

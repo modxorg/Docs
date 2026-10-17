@@ -13,7 +13,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-acce
 ## Синтаксис
 
 ```php
-xPDOObject|null &getOne (
+xPDOObject|null getOne (
    string $alias,
    [object $criteria = null],
    [boolean|integer $cacheFlag = true]

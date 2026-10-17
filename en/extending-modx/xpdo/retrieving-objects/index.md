@@ -4,18 +4,18 @@ _old_id: "1207"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects"
 ---
 
-To get Objects in xPDO, there are a variety of methods. The two basic themes we'll concern ourselves with here is in the differences between an Object, a Collection, and an Iterator.
+To get Objects in xPDO, there are a variety of methods. The key differences are between an Object, a Collection, and an Iterator.
 
-An Object is a single `xPDOObject`, nothing more, nothing less. It is retrieved via `xPDO::getObject()`. Think of it like one row in a database table.
+An Object is a single `xPDOObject` — one row in a database table. Retrieved via `xPDO::getObject()`.
 
-A Collection is an array of `xPDOObjects`. They are retrieved via `xPDO::getCollection`. Think of it as a list of rows in a table.
+A Collection is an array of `xPDOObjects` — a list of rows. Retrieved via `xPDO::getCollection`.
 
-An Iterator is a special kind of Collection which is accessed sequentially so that all of the rows and objects representing them are not loaded into memory all at once.
+An Iterator is a special kind of Collection accessed sequentially, so not all rows are loaded into memory at once.
 
 
 > **Important:** do not pass untrusted input into the criteria parameter of the `xPDO::getObject()` or related methods. **Always sanitize the value, cast the value to integer for a primary key** (`getObject`/`getObjectGraph`), **or provide the criteria in array form** if it comes from any sort of user input to prevent potential SQL injections or returning data not supposed to be accessible. xPDO attempts to identify and prevent SQL injections, however as it also supports providing raw SQL criteria in several cases, not sanitizing the criteria may make your code vulnerable. 
 > 
-> Similarly do not pass untrusted input to the `sortby()` method on an `xPDOQuery` object. The direction only accepts `ASC` or `DESC`, however the column accepts any valid SQL clause which may include things you don't want. Checking a value against acceptable column names is the most secure option.    
+> Similarly do not pass untrusted input to the `sortby()` method on an `xPDOQuery` object. The direction accepts `ASC`, `DESC`, `ASCENDING`, or `DESCENDING`. The column is validated against a list of allowed SQL clauses; if it contains suspicious patterns (e.g. `;`, `UNION`, `sleep()`, `benchmark()`), it will be rejected. Checking a value against acceptable column names is still the most secure option.    
 
 ### [xPDO::getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 
@@ -27,7 +27,7 @@ Back to `$criteria`. This can be one of 4 things:
 
 -   A primary key value
 -   An array of field(s)
--   Raw SQL representing a valid condition
+-   Raw SQL representing a valid condition (only for string primary keys; for integer primary keys, use an array or `xPDOCriteria` object)
 -   An xPDOCriteria object or derivative.
 
 We'll get back to the fourth option later. First, an example of the first option:
@@ -56,21 +56,23 @@ Or, let's say we wanted to grab the first Box object we find with a width of 150
 $bigbox = $xpdo->getObject('Box', ['width' => 150]);
 ```
 
-It's also possible to provide a raw SQL condition to getObject as a string:
+For classes with a string primary key, you can also provide a raw SQL condition to getObject as a string:
 
 ```php
 $bigbox = $xpdo->getObject('Box', '`width` = 150');
 ```
 
+**Note:** For classes with an integer primary key, a raw SQL string criteria will not work — use an array or `xPDOCriteria` object instead.
+
 **Never use this approach with untrusted user input.** Use of the array syntax is very strongly recommended to make use of prepared statements and be protected against SQL injection or accessing information the user is not supposed to.  
 
-> **Good to know**: If your criteria matches multiple objects, getObject will only return the _first one_. Which one is first depends on the database and its natural sorting.
+> **Good to know**: If your criteria matches multiple objects, getObject will only return the _first one_. xPDO does not add an ORDER BY clause; the order is determined by the database.
 
 We'll discuss the fourth option, `xPDOCriteria`, later in the `xPDOQuery` and `xPDOCriteria` sections.
 
 ### [xPDO::getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 
-`xPDO::getCollection` takes the same three arguments as `getObject`; except the `$criteria` field must be either an array or `xPDOCriteria` object.
+`xPDO::getCollection` takes the same three arguments as `getObject`; the `$criteria` field can be an array, `xPDOCriteria` object, or a primary key value.
 
 Let's say we wanted to grab all the Box objects with width of 14:
 
@@ -90,7 +92,7 @@ foreach ($boxes as $box) {
 
 ### [xPDO::getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 
-The `xPDO::getIterator` method is identical to `xPDO::getCollection` except that you can only access one `xPDOObject` from the Collection of rows at one time. If you need access to all of the objects/rows at once, use `getCollection`. Otherwise, it is more efficient in terms of memory usage, to use getIterator to loop through a Collection of `xPDOObjects.
+`xPDO::getIterator` is identical to `xPDO::getCollection` except that only one `xPDOObject` is accessible at a time. Use `getCollection` if you need all objects at once; use `getIterator` for better memory efficiency when looping.
 
 The code for iterating over the Box objects with width of 14 is almost identical to that of `getCollection`:
 
@@ -112,13 +114,13 @@ Note that the index for each object when iterated over is not the primary key, u
 
 ### [xPDO::newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 
-One of the most powerful parts of xPDO is its ability to create complex queries in a simple fashion using the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") wrapper. This class lets you build SQL queries using OOP methods that extend the `xPDOCriteria` class – you can pass its instance right into getObject or getCollection calls. The newQuery function creates an [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object, and takes 3 parameters:
+One of the most powerful parts of xPDO is its ability to create complex queries using the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") wrapper. This class lets you build SQL queries using OOP methods that extend the `xPDOCriteria` class — you can pass its instance right into getObject or getCollection calls. The newQuery function creates an [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object, and takes 3 parameters:
 
 -   `$class` - The class name to create the query for.
--   `$criteria` - This is optional; but you can specify criteria here.
+-   `$criteria` - Optional; you can specify criteria here.
 -   `$cacheFlag` - Similar to getObject's cacheFlag, you can specify the caching behavior for this query.
 
-First, let's just show how you might use newQuery to define the criteria we used before: width = 14. We'll just add a sorting option to sort the results.
+First, let's use newQuery to define the criteria we used before: width = 14, with sorting:
 
 ```php
 $c = $xpdo->newQuery('Box');
@@ -127,11 +129,9 @@ $c->sortby('name', 'ASC');
 $boxes = $xpdo->getCollection('Box',$c);
 ```
 
-> **Important**: do not allow untrusted user input directly into the `$c->sortby()` method. The order only accepts `ASC` or `DESC`, but the column to sort by may be any valid SQL clause which can lead to unexpected results. 
+> **Important**: do not allow untrusted user input directly into the `$c->sortby()` method. The order accepts `ASC`, `DESC`, `ASCENDING`, or `DESCENDING`. The column is checked against a list of allowed SQL clauses; a value that contains `;`, `UNION`, `sleep()` or `benchmark()` is rejected and logged, so it cannot be injected. Still, validate the column yourself when it comes from user input.
 
-Once you have your result, you can iterate over the array (see above). You can see the similarity between the defining a query object and passing a simple array to getObject or getCollection. So why use [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")? It's more flexible. Did you see how we could use it to specify the sorting order?
-
-Next, let's use the query to join on a related table using [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's create an example query using [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") that will grab the first 5 Boxes with width of 5 and an owner of ID 2, sorted by their name. Our "Box" table has a many-to-many relationship with the "BoxOwner" table.
+Next, let's use the query to join on a related table using [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). This example grabs the first 5 Boxes with width of 5 and an owner of ID 2, sorted by name. Our "Box" table has a many-to-many relationship with the "BoxOwner" table.
 
 ```php
 $c = $xpdo->newQuery('Box');
@@ -145,7 +145,7 @@ $c->limit(5);
 $boxes = $xpdo->getCollection('Box',$c);
 ```
 
-We can join on 3rd table ("Owner") by using another call to [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). Let's also grab the 2nd 5 Boxes by specifying an offset – it's a 2nd argument to the limit() function:
+We can join on a 3rd table ("User") by using another call to [xPDOQuery.innerJoin](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.innerjoin "xPDOQuery.innerJoin"). The 2nd 5 Boxes are grabbed by specifying an offset — it's a 2nd argument to the limit() function:
 
 ```php
 $c = $xpdo->newQuery('Box');
@@ -161,11 +161,11 @@ $c->limit(5, 5); // limit, offset
 $boxes = $xpdo->getCollection('Box',$c);
 ```
 
-You can see that the sortby and where functions can take dot syntax on their parameters; they can prefix their columns with alias – sometimes they have to do this to prevent collisions!
+The sortby and where functions can take dot syntax on their parameters; they can prefix their columns with alias — sometimes they have to do this to prevent collisions!
 
 More information on [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") can be found [here](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery").
 
-The xml schema can be found in your MODX installation's core folder, here: model/schema/modx.mysql.schema.xml (helpful to get classNames, aliases, etc for your queries)
+The xml schema can be found in your MODX installation's core folder: model/schema/modx.mysql.schema.xml (helpful to get classNames, aliases, etc for your queries)
 
 #### Debugging
 

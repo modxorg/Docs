@@ -12,7 +12,7 @@ Gets a collection of objects related by aggregate or composite relations.
 ## Syntax
 
 ``` php
-array &getMany (
+array getMany (
    string $alias,
    [object $criteria = null],
    [boolean|integer $cacheFlag = true]
@@ -24,8 +24,8 @@ array &getMany (
 Get all the Chunks in a Category and output their names.
 
 ``` php
-$category = $xpdo->getObject('Category',1);
-$chunks = $category->getMany('Chunk');
+$category = $xpdo->getObject('SampleCategory',1);
+$chunks = $category->getMany('SampleChunk');
 foreach ($chunks as $chunk) {
    echo $chunk->get('name').'<br />';
 }

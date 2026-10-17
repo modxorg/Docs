@@ -14,7 +14,7 @@ Use this for 1:? (one:zero-or-one) or 1:1 relationships, which you can distingui
 ## Syntax
 
 ``` php
-xPDOObject|null &getOne (
+xPDOObject|null getOne (
    string $alias,
    [object $criteria = null],
    [boolean|integer $cacheFlag = true]

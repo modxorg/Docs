@@ -7,4 +7,5 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/state-accessors"
 
 1. [isLazy](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/islazy)
 2. [isDirty](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isdirty)
-3. [isNew](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isnew)
+3. [setDirty](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/setdirty)
+4. [isNew](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isnew)

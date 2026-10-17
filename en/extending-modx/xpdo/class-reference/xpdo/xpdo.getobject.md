@@ -16,7 +16,7 @@ The criteria can be a primary key value, an array of primary key values (for mul
 ## Syntax
 
 ``` php
-xPDOObject|null getObject (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
+xPDO\Om\xPDOObject|null getObject (string $className, [xPDO\Om\xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
 ## Example
@@ -43,9 +43,9 @@ You can retrieve any MODX object this way, just by knowing its object name – u
 | Template    | modTemplate |                                                                                                                              |
 | Snippet     | modSnippet  |                                                                                                                              |
 
-See **core/model/schema/modx.mysql.schema.xml** file for a full definition of all MODX objects.
+See **core/model/schema/modx.mysql.schema.xml** for a full definition of all MODX objects.
 
-If you need to retrieve other attributes for these objects (e.g. TVs for a page), then you may need to look at [getObjectGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
+If you need to retrieve other attributes for these objects (e.g. TVs for a page), see [getObjectGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")
 
 ### Simplest Example (Custom Objects)
 
@@ -107,6 +107,6 @@ $myobj = $xpdo->getObject('MyObject', $query);
 - [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 - [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
 - [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
-- \[xPDO.load\]
+- [xPDOObject.load](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/load "xPDOObject.load")
 - [xPDO.query](extending-modx/xpdo/class-reference/xpdo/xpdo.query "xPDO.query")
 - [xPDO](extending-modx/xpdo "xPDO")

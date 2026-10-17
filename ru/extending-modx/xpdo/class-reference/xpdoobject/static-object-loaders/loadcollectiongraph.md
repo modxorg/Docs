@@ -11,5 +11,5 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/static-object-loade
 ## Синтаксис
 
 ```php
-function loadCollectionGraph(& $xpdo, $className, $graph, $criteria, $cacheFlag)
+static array loadCollectionGraph(xPDO &$xpdo, string $className, string|array $graph, mixed $criteria, boolean|integer $cacheFlag)
 ```

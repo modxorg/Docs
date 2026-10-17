@@ -12,7 +12,7 @@ Add an INNER JOIN clause to the query.
 ## Syntax
 
 ``` php
-void innerJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
+xPDOQuery innerJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
 ```
 
 ## Example

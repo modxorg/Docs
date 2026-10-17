@@ -23,7 +23,7 @@ $xpdo->log($level, $msg, $target= '', $def= '', $file= '', $line= '');
 - `$line` (string) A line number to help locate the source of the event. Usually you would use the \_\_LINE\_\_ constant
 
 ``` php
-void log (integer $level, string $msg, [string $target = ''], [string $def = ''], [string $file = ''], [string $line = ''])
+void log (integer $level, string $msg, [string|array $target = ''], [string $def = ''], [string $file = ''], [string $line = ''])
 ```
 
 ## Log Levels
@@ -62,7 +62,7 @@ $xpdo->log(xPDO::LOG_LEVEL_ERROR, 'An error occurred.', '', 'MySnippet');
 
 ### Specify File and Line
 
-Remember that ultimately, all MODX Snippets and Plugins run from cached files, so the source file listed will be the cached file. 
+All MODX Snippets and Plugins run from cached files, so the source file listed will be the cached file. 
 
 ``` php
 $xpdo->log(xPDO::LOG_LEVEL_ERROR, 'This is my error message...', '', 'MySnippet', __FILE__, __LINE__);
@@ -73,6 +73,8 @@ $xpdo->log(xPDO::LOG_LEVEL_ERROR, 'This is my error message...', '', 'MySnippet'
 ```
 
 ### Custom Log File
+
+**Note:** When a PSR-3 logger is registered (as MODX 3 does by default), the `$target` argument is ignored and all output goes through the logger. The examples below apply only when no PSR-3 logger is set.
 
 You may wish to send errors to a destination other than the default MODX error log. To accomplish this, you must pass an array to the `$target` argument. You must verbosely specify 'FILE' as the target, otherwise, the message will be echoed back to the page.
 
@@ -116,11 +118,10 @@ $xpdo->log(xPDO::LOG_LEVEL_DEBUG,'This is a debugging statement.');
 
 ### Custom Use in Snippets
 
-It can be really handy to increase logging verbosity for a single Snippet or plugin. To accomplish this, use the `setLogLevel()` function. You can use this to override the global value of the **log\_level** System Setting:
+To increase logging verbosity for a single Snippet or plugin, use `setLogLevel()` to override the global **log\_level** System Setting:
 
 ``` php
 // Call your snippet like this: [[mySnippet? &log_level=`4`]]
-// Override global log_level value
 $log_level = $modx->getOption('log_level', $scriptProperties, $modx->getOption('log_level'));
 $modx->setLogLevel($log_level);
 ```

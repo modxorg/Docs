@@ -12,7 +12,7 @@ Add an OR condition to the WHERE statement in the query.
 ## Syntax
 
 ``` php
-void orCondition ( $conditions, [ $binding = null], [ $group = 0])
+xPDOQuery orCondition ( $conditions, [ $binding = null], [ $group = 0])
 ```
 
 ## Example

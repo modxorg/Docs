@@ -20,7 +20,7 @@ string toJSON (array $array)
 ``` php
 $ar = array('name' => 'John');
 $str = $xpdo->toJSON($ar);
-echo $str; // prints: {name:"John"}
+echo $str; // prints: {"name":"John"}
 ```
 
 ## See Also

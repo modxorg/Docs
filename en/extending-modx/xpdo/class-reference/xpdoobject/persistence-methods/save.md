@@ -7,7 +7,7 @@ _old_uri: "2.x/class-reference/xpdoobject/persistence-methods/save"
 
 ## xPDOObject::save()
 
-Persist new or changed objects to the database container. Will also cascade and save any objects that have been added to it via related object addition methods (addOne, addMany).
+Write this object and its changed fields to the database, then write the related objects attached to it.
 
 ## Syntax
 
@@ -15,77 +15,76 @@ Persist new or changed objects to the database container. Will also cascade and 
 boolean save ([boolean|integer $cacheFlag = null])
 ```
 
-## Examples
+`$cacheFlag` overrides the cache lifetime of the object for this call. Pass `true` to use the configured lifetime, or an integer for a number of seconds. The default, `null`, keeps the lifetime the object was loaded with.
 
-Save a wand, along with its owner and parts.
+## Foreign Keys Are Filled In From the Relation Owner
 
-``` php
-$owner = $xpdo->newObject('Wizard');
-$owner->set('name','Harry Potter');
-$parts = array();
-$parts[1] = $xpdo->newObject('WandPart');
-$parts[1]->set('name','Phoenix Feather');
-$parts[2] = $xpdo->newObject('WandPart');
-$parts[2]->set('name','Holly Branch');
-$wand = $xpdo->newObject('Wand');
-$wand->addOne($owner);
-$wand->addMany($parts);
-if ($wand->save() == false) {
-   echo 'Oh no, the wand failed to save!';
-}
-```
+Related objects reach the database through `addOne()` and `addMany()`, and the `owner` attribute of the relation decides who writes the key:
 
-This can get a bit tricky when dealing with related objects, but you can skip a few steps (provided that you have defined your relation properly). For example, normally when dealing with join tables, you need to know the primary key from the related tables before you can add a row there. However, with xPDO, you can omit the primary key from one table when you reference the related table via addMany() or addOne().
+| `owner` | What happens on `save()` |
+|---|---|
+| `local` | The foreign key is written into the related object from this object's key, then the related object is saved. |
+| `foreign` | The related object is saved first, then its key is written into this object's local field. |
+
+When `owner` is missing, `save()` assumes `foreign` for a relation of `cardinality="many"` and `local` otherwise. This is what lets you attach an object to a new parent without knowing the parent's primary key yet:
 
 ``` php
-$Product = $modx->newObject('Product');
-$ProductImage = $modx->newObject('ProductImage');
-$ProductImage->set('image_id', 123);
-//$ProductImage->set('product_id', $lastInsertId); // You can skip this
-$related = array();
-$related[] = $ProductImage;
-$Product->addMany($related);
-$Product->save();
+$product = $modx->newObject('Product');
+$image = $modx->newObject('ProductImage');
+$image->fromArray(array('file' => 'case.jpg'));
+
+$product->addMany(array($image));
+$product->save(); // writes the image first, then product_image.product_id
 ```
 
-If the operation did create a new record (instead of updating an existing one), you can tie into the underlying [PDO::lastInsertId()](http://php.net/manual/en/pdo.lastinsertid.php) method:
+## Objects With Unread Fields Are Not Saved
+
+When a row is hydrated, xPDO puts every field of the class into the object's `_lazy` list and then removes from that list the fields the row actually contained. A query that selects the whole table leaves the list empty; a query that selects part of it does not.
+
+`save()` refuses to run while `_lazy` is not empty: it writes `Attempt to save lazy object: ...` at ERROR level to the MODX log and returns `false`. Read the missing fields first — `get()` fetches a single lazy field, `toArray()` fetches all of them — then save.
+
+## The Generated Key Lands in the Object
+
+After an INSERT into a table with a native auto-increment key, the value is written into the object's fields. Read it back from the object rather than from the driver:
 
 ``` php
-$modx->lastInsertId();
-// OR
-$object->getPrimaryKey();
-// OR
-$object->get('id'); // <-- or whatever the primary field is named
+$page = $modx->newObject('modResource');
+$page->fromArray(array('pagetitle' => 'My Page'));
+$page->save();
+
+echo $page->getPrimaryKey(); // the new id
 ```
 
-_Success may vary depending on the underlying driver._
+`$modx->lastInsertId()` returns the same number, but only for the query that ran last.
 
 ## Validation Messages
 
-You can do more than just react to a boolean yes/no of whether your object saved correctly. You can also return some messages about what exactly was problematic.
+`save()` runs `validate()` first and returns `false` without writing anything if validation fails. MODX turns this on through the `xPDO::OPT_VALIDATE_ON_SAVE` option, so in a processor it is already in effect. The validator holds the reason:
 
 ``` php
-// save object and report validation errors
 if (!$object->save()) {
-    // @var modValidator $validator
     $validator = $object->getValidator();
     if ($validator->hasMessages()) {
         foreach ($validator->getMessages() as $message) {
-            $this->addFieldError($message['field'],$this->modx->lexicon($message['message']));
+            $this->addFieldError($message['field'], $this->modx->lexicon($message['message']));
         }
     }
 }
 ```
 
-Ultimately, adding a field error adds messages onto the MODX error stack ($modx->errors). Each message is an associative array with an id and a msg.
-
-You can be a bit more concise using code like this (cleanup needed):
+`addFieldError()` adds each message to the single error object on MODX, `$modx->error`. Every entry is an associative array with `id` and `msg`. Inside a processor, the shorter form does the same through `modError::checkValidation()`:
 
 ``` php
-if ($object->save() == false) {
+if (!$object->save()) {
     $modx->error->checkValidation($object);
-    return $this->failure($modx->lexicon($objectType.'_err_save'));
+    return $this->failure($modx->lexicon($objectType . '_err_save'));
 }
 ```
 
-See `modProcessor::addFieldError()` in **modprocessor.class.php** and `modError::addField()` in **error/moderror.class.php**
+See `addFieldError()` in `core/src/Revolution/Processors/Processor.php` and `checkValidation()` in `core/src/Revolution/error/modError.php`.
+
+## See Also
+
+- [validate](extending-modx/xpdo/class-reference/xpdoobject/validation/validate)
+- [getValidator](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator)
+- [remove](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/remove)

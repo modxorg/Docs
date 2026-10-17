@@ -12,7 +12,7 @@ Creates an new `xPDOQuery` for a specified `xPDOObject` class.
 ## Syntax
 
 ``` php
-xPDOQuery newQuery (string $class, [mixed $criteria = null], [boolean|integer $cacheFlag = true])
+xPDO\Om\xPDOQuery|false newQuery (string $class, [mixed $criteria = null], [boolean|integer $cacheFlag = true])
 ```
 
 **Valid Class**

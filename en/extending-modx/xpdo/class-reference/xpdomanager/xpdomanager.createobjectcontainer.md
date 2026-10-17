@@ -12,7 +12,7 @@ Creates the container for a persistent data object. In this implementation, a so
 ## Syntax
 
 ``` php
-void createObjectContainer (string $className)
+boolean createObjectContainer (string $className)
 ```
 
 ## Examples
@@ -27,7 +27,7 @@ $manager->createObjectContainer('Person');
 If you need to do this in a MODX Snippet, you'd use the $modx object, and you'd have to make sure you added your package (and its model classes) first:
 
 ``` php
-$modx->addPackage('yourpkg',MODX_CORE_PATH.'components/yourpkg/model/','prefix_');
+$modx->addPackage('yourpkg',MODX_CORE_PATH.'components/yourpkg/model/','prefix_','Vendor\\YourPkg\\Model');
 $manager = $modx->getManager();
 $manager->createObjectContainer('Myobject');
 ```

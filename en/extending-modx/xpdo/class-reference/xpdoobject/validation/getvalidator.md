@@ -12,5 +12,5 @@ Get the `xPDOValidator` class configured for this instance.
 ## Syntax
 
 ``` php
-string|boolean getValidator ()
+xPDOValidator|null getValidator ()
 ```

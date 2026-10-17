@@ -14,7 +14,7 @@ This will only work if there is a corresponding xPDO class for the table and its
 ## Syntax
 
 ``` php
-int removeObjectContainer (string $className)
+boolean removeObjectContainer (string $className)
 ```
 
 ## Examples

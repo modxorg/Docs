@@ -10,17 +10,19 @@ Object validation is done through `xPDOValidator`, xPDO's validation class. It's
 
 ## How is it Done?
 
-Validation can be done either via the XML schema, or during run-time by [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator") methods.
+Validation rules can be declared in the XML schema of an object, or attached at run time through [`addValidationRule()`](extending-modx/xpdo/class-reference/xpdoobject). Either way, `xPDOValidator::validate()` executes them and collects failure messages.
 
 ## Example Usage
 
-First, let's create our model with this object:
+Rules are attached to a field, and the field must be declared in the same object. This model declares both `name` and `number`:
 
 ``` xml
-<model package="test" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" tablePrefix="test_">
-    <object class="myTest" table="test" extends="xPDOSimpleObject">
+<model package="Test" baseClass="xPDO\Om\xPDOObject" platform="mysql" defaultEngine="InnoDB" version="3.0">
+    <object class="myTest" table="test" extends="xPDO\Om\xPDOSimpleObject">
         <field key="name" dbtype="varchar" precision="255"
             phptype="string" default="" null="false" />
+        <field key="number" dbtype="int" precision="10"
+            phptype="integer" default="0" null="false" />
 
         <validation>
             <rule field="name"
@@ -29,42 +31,47 @@ First, let's create our model with this object:
                 rule="xPDOMinLengthValidationRule"
                 value="1"
                 message="Please specify a name."
-             />
+            />
         </validation>
     </object>
 </model>
 ```
 
-From there, go ahead and generate the model from the XML schema. And now in a Snippet we'll call Test:
+::: warning
+A rule whose `field` names a column that the object does not declare is dropped silently. `xPDOObject::addValidationRule()` looks the field up in the map first and keeps the rule only if the lookup succeeds, so validation then passes with no messages and no error.
+:::
+
+Generate the model from the schema, then validate an object in a Snippet:
 
 ``` php
 $output = '';
-$modx->addPackage('test','/path/to/my/test/model/','test_');
-$obj = $modx->newObject('myTest');
+$modx->addPackage('Test', '/path/to/components/test/model/');
+$obj = $modx->newObject('Test\myTest');
+$obj->set('name','');
 $validator = $obj->getValidator();
-if ($validator->validate() == false) {
-    $messages = $validator->getMessages();
-    foreach ($messages as $errorMsg) {
+if (!$validator->validate()) {
+    foreach ($validator->getMessages() as $errorMsg) {
         $output .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'];
     }
 }
+return $output;
 ```
 
 This will output:
 
 > An error occurred on field "name": Please specify a name.
 
+Validation only runs on fields that were changed on the object. An untouched object has nothing to check and `validate()` returns `true`.
+
 ## Rules
 
 There are three different types of rules: `callable`, `preg_match`, and `xPDOValidationRule`.
 
-### The 'callable' Rule
+### The `callable` Rule
 
-A callable rule simply is a rule based upon a function that you pass.
+A callable rule runs a PHP function you pass. In the `rule` attribute you name a global function, or a static method as `Class::method`. You cannot pass an object instance, because the name lives in XML.
 
-This can be done a few ways. In the "rule" parameter of the schema, you can specify a function name, let's say, 'myCallable', and then make sure to define the function before you call `validate()`.
-
-The function is passed two parameters, the first of which is the value of the column in question, and the second an array of the other attributes on the Rule field in the schema. For example, a model with a rule as such:
+The function receives two parameters: the current value of the field, and an array of the remaining attributes on the `rule` element. Return `true` to pass, `false` to fail. For example, a model with a rule as such:
 
 ``` php
 <rule field="number" name="callable2"
@@ -76,33 +83,32 @@ The function is passed two parameters, the first of which is the value of the co
 Called with the code:
 
 ``` php
-function myCallable($value,$parameters) {
-    return $value < $parameters['min'];
+function myCallable($value, $parameters) {
+    return $value >= $parameters['min'];
 }
-$obj->set('number',101);
+$obj->set('number', 5);
 $validator = $obj->getValidator();
-if ($validator->validate() == false) {
-    $messages = $validator->getMessages();
-    foreach ($messages as $errorMsg) {
-        $o .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'].'<br />';
+if (!$validator->validate()) {
+    foreach ($validator->getMessages() as $errorMsg) {
+        $output .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'].'<br />';
     }
 }
 ```
 
 Will return:
 
-> An error occurred on field "number": Callable failed.
+> An error occurred on field "number": Value is too low. Must be 10 or more.
 
-You can also call class methods as well; if you have class A with method B, you can make the rule xml attribute be "A::B" to access the function.
+When the `message` attribute is present, its text is what reaches `getMessages()`. Without it, the validator falls back to the rule name followed by `failed`, for example `callable2 failed`.
 
-### The 'preg\_match' Rule
+### The `preg_match` Rule
 
-A `preg_match` rule is simply a regular expression rule that must pass on a field in order for the object to validate. An example rule in the schema is like such - this one checks to see if the field contains the string 'php':
+A `preg_match` rule is a regular expression that must match the field for the object to validate. This one checks that the field contains the string `php`:
 
 ``` php
 <rule field="name" name="phpMatch"
-      type="preg_match" rule="/php/i"
-      message="Does not contain the string 'php'." />
+    type="preg_match" rule="/php/i"
+    message="Does not contain the string 'php'." />
 ```
 
 And in the PHP:
@@ -110,10 +116,9 @@ And in the PHP:
 ``` php
 $obj->set('name','test');
 $validator = $obj->getValidator();
-if ($validator->validate() == false) {
-    $messages = $validator->getMessages();
-    foreach ($messages as $errorMsg) {
-        $o .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'].'<br />';
+if (!$validator->validate()) {
+    foreach ($validator->getMessages() as $errorMsg) {
+        $output .= 'An error occurred on field "'.$errorMsg['field'].'": '.$errorMsg['message'].'<br />';
     }
 }
 ```
@@ -122,26 +127,21 @@ This outputs:
 
 > An error occurred on field "name": Does not contain the string 'php'.
 
-### The 'xPDOValidationRule' Rule
+A field that is `NULL` fails the rule without running the expression.
 
-An xPDOValidationRule rule is a specific rule type that is based upon a class extension of the xPDOValidationRule class. This allows you to do more advanced rules, as well as use the built-in rules. The built in rules include:
+### The `xPDOValidationRule` Rule
 
-1. [xPDOForeignKeyConstraint](xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
+An `xPDOValidationRule` rule delegates to a class that extends `xPDOValidationRule`. A name without a backslash is resolved against the `xPDO\Validation\` namespace, so `rule="xPDOMinLengthValidationRule"` and `rule="xPDO\Validation\xPDOMinLengthValidationRule"` are the same rule. Built-in rules:
 
-More documentation on these specific rules to come.
+1. [xPDOForeignKeyConstraint](extending-modx/xpdo/custom-models/validation/xpdoforeignkeyconstraint)
+2. [xPDOMaxLengthValidationRule](extending-modx/xpdo/custom-models/validation/xpdomaxlengthvalidationrule)
+3. [xPDOMaxValueValidationRule](extending-modx/xpdo/custom-models/validation/xpdomaxvaluevalidationrule)
+4. [xPDOMinLengthValidationRule](extending-modx/xpdo/custom-models/validation/xpdominlengthvalidationrule)
+5. [xPDOMinValueValidationRule](extending-modx/xpdo/custom-models/validation/xpdominvaluevalidationrule)
+6. [xPDOObjectExistsValidationRule](extending-modx/xpdo/custom-models/validation/xpdoobjectexistsvalidationrule)
+
+See [Validation Rules](extending-modx/xpdo/custom-models/defining-a-schema/validators) for how to declare rules in a schema and write your own.
 
 ## See Also
-
-1. [xPDOForeignKeyConstraint](xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
 
 - [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator")

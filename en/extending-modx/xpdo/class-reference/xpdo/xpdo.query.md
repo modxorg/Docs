@@ -15,7 +15,7 @@ This can be a good way to issue reporting queries without having to worry about 
 ## Syntax
 
 ```php
-xPDOObject|false query (string $statement)
+\PDOStatement|false query (string $statement)
 ```
 
 > \$statement
@@ -26,13 +26,7 @@ The SQL statement to prepare and execute. Data inside the query should be [prope
 
 ### Select a Single Record
 
-Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch a data from built-in MODX tables.
-
-`xPDOObject|false query (string $statement)`
-
-> \$statement
-
-The SQL statement to prepare and execute. Data inside the query should be [properly escaped](http://php.net/manual/en/pdo.quote.php).
+Here's a simple query to fetch one row from the database. Note that you would normally use [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") or [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") to fetch data from built-in MODX tables.
 
 ```php
 $result = $modx->query("SELECT * FROM modx_users WHERE id=1");
@@ -72,10 +66,15 @@ Array
 )
 ```
 
-**No One-Liners!**
-The one-line method-chaining available to PDO is not possible with xPDO. The following **will not work**:
+**Method chaining**
 
-`$row = $modx->query("SELECT * FROM cms_users WHERE id=1")->fetch();`
+`query()` returns the underlying `PDOStatement`, so you can chain PDO methods directly on the result:
+
+```php
+$row = $modx->query("SELECT * FROM cms_users WHERE id=1")->fetch();
+```
+
+Because `query()` returns `false` on failure, guard the chain with a check if the statement may not be available.
 
 ### Selecting Multiple Records
 

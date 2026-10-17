@@ -27,3 +27,4 @@ if ($item->remove() == false) echo 'The Item failed to remove.';
 ## Смотрите также
 
 -   [Removing Objects](extending-modx/xpdo/removing-objects)
+-   [save](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/save)

@@ -4,7 +4,7 @@ _old_id: "1259"
 _old_uri: "2.x/class-reference/xpdocachemanager"
 ---
 
-xPDOCacheManager handles all caching algorithms and methods within xPDO.
+`xPDO\Cache\xPDOCacheManager` handles all caching algorithms and methods within xPDO.
 
 1. [xPDOCacheManager.copyFile](extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.copyfile)
 2. [xPDOCacheManager.copyTree](extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemanager.copytree)

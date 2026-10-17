@@ -20,7 +20,7 @@ mixed fromJSON (string $src, [boolean $asArray = true])
 Convert JSON code to an array:
 
 ``` php
-$str = '{name:"John"}';
+$str = '{"name":"John"}';
 $ar = $xpdo->fromJSON($str);
 print_r($ar); // prints: Array ( 'name' => 'John' )
 ```

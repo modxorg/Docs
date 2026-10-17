@@ -22,41 +22,15 @@ $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 ```
 
-## Setting Class and Map Templates
+## Generated Files
 
-Setting the Templates is completely optional. xPDO provides you with some basic templates that will work fine.
+In xPDO 3.x, `parseSchema()` generates the following files:
 
-By default, xPDO provides you with default class and map templates. For the purposes of this example, however, we want to create class files and maps with PHPDoc formatting at the top, so we'll need to override the default class and map templates.
+- `model/<package>/<Class>.php` — the base class (with `namespace` and `use` statements)
+- `model/<package>/<platform>/<Class>.php` — the platform-specific class (with `public static $metaMap`)
+- `model/<package>/metadata.mysql.php` — the metadata envelope (with `version`, `namespace`, `namespacePrefix`, `class_map`)
 
-To do so, we'll just override the variables in the $generator object:
-
-``` php
-$generator->classTemplate= <<<EOD
-<?php
-/**
- * [+phpdoc-package+]
- */
-class [+class+] extends [+extends+] {}
-?>
-EOD;
-$generator->platformTemplate= <<<EOD
-<?php
-/**
- * [+phpdoc-package+]
- */
-require_once (strtr(realpath(dirname(dirname(__FILE__))), '\\\\', '/') . '/[+class-lowercase+].class.php');
-class [+class+]_[+platform+] extends [+class+] {}
-?>
-EOD;
-$generator->mapHeader= <<<EOD
-<?php
-/**
- * [+phpdoc-package+]
- */
-EOD;
-```
-
-Note the phpdoc-package tag that we've built. This is taken from our "model" tag's attribute we defined earlier in the schema. These templates will provide us with the base for our class and map files, with PHPDoc comments.
+The `phpdoc-package` attribute from the schema is used in the generated files.
 
 ## Generating the Files
 

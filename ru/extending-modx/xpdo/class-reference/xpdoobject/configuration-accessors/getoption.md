@@ -11,13 +11,12 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/configuration-acces
 ## Синтаксис
 
 ```php
-mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )
+mixed getOption (string $key [, array|null $options [, mixed $default]] )
 ```
 
 -   `$key`: ключ настройки или опции для загрузки.
 -   `$options`: источник настройки или опции. Либо null (который пытается найти ключ в основной конфигурации), либо массив параметров.
 -   `$default`: значение, возвращаемое, когда ключ не найден.
--   `$skipEmpty`: если установлено значение `true`, `$default` также будет возвращено, если значение `$key` / `$key's` является пустой строкой. **_Добавлено в xPDO 2.2.1 / MODX 2.2.0-rc2_**.
 
 ## Примеры
 

@@ -12,7 +12,7 @@ This function is responsible for turning a result set row into an xPDOObject ins
 ## Syntax
 
 ``` php
-static xPDOObject _loadInstance(
+static xPDOObject|null _loadInstance(
    xPDO &$xpdo,
    string $className,
    mixed $criteria,

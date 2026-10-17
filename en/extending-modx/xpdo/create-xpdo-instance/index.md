@@ -11,7 +11,7 @@ When using xPDO standalone, or if you want to create additional instances, use t
 The constructor has the following signature:
 
 ``` php
-$xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
+$xpdo= new \xPDO\xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
 ```
 
 ## Parameters
@@ -34,6 +34,9 @@ This is the username and password to the database. Simply specify the database l
 
 This allows you to pass an array of xPDO-specific options into the constructor.
 
+> [!NOTE]
+> In xPDO 3.x the fourth argument is typed `array|ContainerInterface`. A `Symfony\Component\DependencyInjection\ContainerInterface` with a `config` key is the preferred way to pass configuration; the plain array is retained for backwards compatibility only and is deprecated. MODX 3 always passes the DI container.
+
 Some of the xPDO-specific parameters use custom defines that you can use, such as (but not limited to):
 
 - `xPDO::OPT_BASE_CLASSES` — An array of classes to load upon instantiation.
@@ -49,17 +52,16 @@ Some of the xPDO-specific parameters use custom defines that you can use, such a
 - `xPDO::OPT_CACHE_KEY` — If set, defines the key of the default cache instance; the default value is _default_.
 - `xPDO::OPT_CACHE_PATH` — If set, will set a custom cachePath class variable to the xPDO object that can be used in caching.
 - `xPDO::OPT_CACHE_ATTEMPTS` — If set, defines the number attempts `xPDOFileCache` will attempt to lock an existing cache entry for writing; default is 1. _(2.1 only)_
-- `xPDO::OPT_CACHE_ATTEMPT_DELAY` — If set, defines the number microseconds to delay each attempt to lock existing cache entries for writing; default is 10000. _(2.1 only)_
+- `xPDO::OPT_CACHE_ATTEMPT_DELAY` — If set, defines the number microseconds to delay each attempt to lock existing cache entries for writing; default is 1000. _(2.1 only)_
 - `xPDO::OPT_CONNECTIONS` — Optionally defines a pool of [additional connections](extending-modx/xpdo/create-xpdo-instance/connections) to select from when instantiating xPDO. _(2.2 only)_
 - `xPDO::OPT_CONN_INIT` — Defines options a connection must have to be selected as the initial connection; applicable when multiple connections are defined. _(2.2 only)_
 - `xPDO::OPT_CONN_MUTABLE` — Defines if data from a connection can be changed, i.e. is writable. _(2.2 only)_
 - `xPDO::OPT_HYDRATE_FIELDS` — If true, fields will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
 - `xPDO::OPT_HYDRATE_RELATED_OBJECTS` — If true, related objects will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
 - `xPDO::OPT_HYDRATE_ADHOC_FIELDS` — If true, ad-hoc fields will be [hydrated](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
-- `xPDO::OPT_LOADER_CLASSES` — Can be an array of class names to load upon instantiation of the xPDO object. _(deprecated in 2.0.0-pl)_
 - `xPDO::OPT_ON_SET_STRIPSLASHES` — If set, stripslashes() is applied to values being set() on xPDOObject instances.
 - `xPDO::OPT_TABLE_PREFIX` — If set, all database class references will be prefixed with this prefix.
-- `xPDO::OPT_VALIDATOR_CLASS` — If set, will use a custom class specified that derives from xPDOValidator _(the default)_
+- `xPDO::OPT_VALIDATOR_CLASS` — If set, will use a custom class specified that derives from `xPDO\Validation\xPDOValidator` _(the default)_
 - `xPDO::OPT_VALIDATE_ON_SAVE` — If true, `xPDOObjects` will be validated against their Validators before saving.
 
 ### $driverOptions
@@ -72,8 +74,8 @@ An optional array of driver-specific PDO options. More info can be found [here](
 - [Caching](extending-modx/xpdo/caching "Caching")
 - [Database Connections and xPDO](extending-modx/xpdo/create-xpdo-instance/connections "Database Connections and xPDO")
 - [Hydrating Fields](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields")
-- [Object Validation](extending-modx/xpdo/custom-models/validation "Object Validation")
-- [Using Custom Object Loaders](xpdo/extending-your-xpdo-model/overriding-derived-behavior/using-custom-object-loaders "Using Custom Object Loaders")
+- [Object Validation](extending-modx/xpdo/class-reference/xpdoobject/validation "Object Validation")
+- [Using Custom Object Loaders](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/using-custom-loader-classes "Using Custom Object Loaders")
 
 ### More information about options
 

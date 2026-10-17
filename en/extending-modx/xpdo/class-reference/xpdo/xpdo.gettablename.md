@@ -12,7 +12,7 @@ Gets the actual run-time table name from a specified class name.
 ## Syntax
 
 ``` php
-string getTableName (string $className, [boolean $includeDb = false])
+string|null getTableName (string $className, [boolean $includeDb = false])
 ```
 
 ## Example

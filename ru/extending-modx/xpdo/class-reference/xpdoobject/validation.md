@@ -10,3 +10,4 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/validation"
 3. [getValidator](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator)
 4. [validate](extending-modx/xpdo/class-reference/xpdoobject/validation/validate)
 5. [isValidated](extending-modx/xpdo/class-reference/xpdoobject/validation/isvalidated)
+6. [_loadValidation](extending-modx/xpdo/class-reference/xpdoobject/validation/loadvalidation)

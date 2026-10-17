@@ -48,6 +48,15 @@ $query->where(array(
 $boxes = $xpdo->getCollection('Box',$query);
 ```
 
+A value may also be an [xPDOExpression](extending-modx/xpdo/class-reference/xpdoexpression "xPDOExpression"), which is inlined as raw SQL rather than bound as a parameter:
+
+``` php
+$query = $xpdo->newQuery('modResource');
+$query->where(array(
+   'createdon:<=' => $xpdo->expression('NOW()'),
+));
+```
+
 Get all boxes with a width of 15 or 10.
 
 ``` php

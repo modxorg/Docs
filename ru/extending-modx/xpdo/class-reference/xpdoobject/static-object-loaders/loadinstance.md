@@ -11,7 +11,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/static-object-loade
 ## Синтаксис
 
 ```php
-static xPDOObject _loadInstance(
+static xPDOObject|null _loadInstance(
    xPDO &$xpdo,
    string $className,
    mixed $criteria,
