@@ -6,7 +6,7 @@ _old_uri: "2.x/advanced-features/object-validation"
 
 ## What is Object Validation in xPDO?
 
-Object validation is done through `xPDOValidator`, xPDO's validation class. It's automatically accessible from any `xPDOObject`, via the `getValidator` method.
+Object validation is done through `xPDO\Validation\xPDOValidator`, xPDO's validation class (MODX 3 swaps in `MODX\Revolution\Validation\modValidator`). It's automatically accessible from any `xPDOObject` via the [`getValidator()`](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator) method.
 
 ## How is it Done?
 

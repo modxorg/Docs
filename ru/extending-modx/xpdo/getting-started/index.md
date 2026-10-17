@@ -29,7 +29,7 @@ xPDO не наследует PDO напрямую, но предоставляе
 Начните с расширения класса так:
 
 ``` php
-class myClass extends xPDO
+class myClass extends \xPDO\xPDO
 ```
 
 затем определите конструктор:

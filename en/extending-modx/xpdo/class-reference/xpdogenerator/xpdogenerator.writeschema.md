@@ -25,7 +25,7 @@ boolean writeSchema (
 Generate the xml schema from an existing database. This also only generates XML for the tables prefixed with 'mydb\_'.
 
 ``` php
-$xpdo= new xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
+$xpdo= new \xPDO\xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 

@@ -1,20 +1,29 @@
 ---
 title: "getValidator"
-description: "Получает класс xPDOValidator, настроенный для этого экземпляра."
+description: "Возвращает класс валидатора, настроенный для этого экземпляра."
 translation: "extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator"
 ---
 
 ## xPDOObject::getValidator()
 
-Получает класс `xPDOValidator`, настроенный для этого экземпляра.
+Возвращает валидатор, настроенный для этого экземпляра. Класс берётся из опции `xPDO::OPT_VALIDATOR_CLASS` и по умолчанию равен `xPDO\Validation\xPDOValidator`; в MODX 3 он переопределён на `MODX\Revolution\Validation\modValidator`. Глобальное имя `xPDOValidator` в 3.x **недоступно** — в `core/include/deprecated.php` нет алиаса для него, поэтому разрешается только namespaced-имя.
+
+Правила для класса объекта подгружаются при первом обращении методом [`_loadValidation()`](extending-modx/xpdo/class-reference/xpdoobject/validation/loadvalidation "_loadValidation").
 
 ## Синтаксис
 
 ```php
-xPDOValidator|null getValidator ()
+xPDO\Validation\xPDOValidator|null getValidator ()
 ```
 
-Класс валидатора берётся из опции `xPDO::OPT_VALIDATOR_CLASS` и по умолчанию равен `xPDO\Validation\xPDOValidator`. Правила для класса объекта подгружаются при первом обращении — см. [_loadValidation()](extending-modx/xpdo/class-reference/xpdoobject/validation/loadvalidation "_loadValidation").
+## Пример
+
+```php
+$validator = $object->getValidator();
+if ($validator->hasMessages()) {
+    print_r($validator->getMessages());
+}
+```
 
 ## Смотрите также
 

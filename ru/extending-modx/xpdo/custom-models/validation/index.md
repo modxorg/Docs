@@ -5,7 +5,7 @@ translation: "extending-modx/xpdo/custom-models/validation"
 
 ## Что такое валидация объектов в xPDO?
 
-Проверка (или валидация) объекта выполняется с помощью `xPDOValidator`, класса проверки в xPDO. Он автоматически доступен из любого `xPDOObject` объекта через метод `getValidator`.
+Проверка (или валидация) объекта выполняется с помощью `xPDO\Validation\xPDOValidator`, класса проверки в xPDO (в MODX 3 подменяется на `MODX\Revolution\Validation\modValidator`). Он автоматически доступен из любого `xPDOObject` через метод [`getValidator()`](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator).
 
 ## Как это делается?
 

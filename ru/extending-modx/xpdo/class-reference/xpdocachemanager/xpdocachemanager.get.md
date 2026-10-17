@@ -10,7 +10,7 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 
 Также позволяет передавать массив опций. Текущие доступные значения:
 
--   `format` - если равно `XPDO_CACHE_JSON`, просто получит содержимое массива. Это полезно, если вы `set()` кешировали с помощью `XPDO_CACHE_JSON`, чтобы лучше обрабатывать данные JSON.
+-   `cache_format` - если равно `\xPDO\Cache\xPDOCacheManager::CACHE_JSON`, просто получит содержимое массива. Это полезно, если вы `set()` кешировали с помощью `\xPDO\Cache\xPDOCacheManager::CACHE_JSON`, чтобы лучше обрабатывать данные JSON.
 -   `removeIfEmpty` - если установлено значение `true`, файл кэша будет удален, если он пуст. Это действие по умолчанию.
 
 ## Синтаксис
@@ -30,7 +30,7 @@ $test = $xpdo->cacheManager->get('test');
 Получите данные нашего JSON-кэша под названием «myjson»:
 
 ```php
-$myJsonData = $xpdo->cacheManager->get('myjson',array('format' => xPDO::CACHE_JSON));
+$myJsonData = $xpdo->cacheManager->get('myjson',array('cache_format' => \xPDO\Cache\xPDOCacheManager::CACHE_JSON));
 ```
 
 ## Смотрите также

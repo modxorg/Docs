@@ -55,11 +55,10 @@ $xpdo= new xPDO($dsn, $username= '', $password= '', $options= array(), $driverOp
 - `xPDO::OPT_HYDRATE_FIELDS` : если true, поля будут [гидратированы](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
 - `xPDO::OPT_HYDRATE_RELATED_OBJECTS` : если true, связанные объекты будут [гидратированы](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
 - `xPDO::OPT_HYDRATE_ADHOC_FIELDS` : если true, ad-hoc поля будут [гидратированы](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields").
-- `xPDO::OPT_LOADER_CLASSES` : может быть массивом имён классов для загрузки при создании объекта xPDO. _(устарело в 2.0.0-pl)_
 - `xPDO::OPT_ON_SET_STRIPSLASHES` : если задано, к значениям при `set()` у экземпляров xPDOObject применяется stripslashes().
 - `xPDO::OPT_TABLE_PREFIX` : если задано, ко всем ссылкам на классы БД добавляется этот префикс.
-- `xPDO::OPT_VALIDATOR_CLASS` : если задано, используется указанный пользовательский класс, производный от xPDOValidator _(по умолчанию)_
-- `xPDO::OPT_VALIDATE_ON_SAVE` : если true, перед сохранением `xPDOObjects` проверяются своими Validators.
+- `xPDO::OPT_VALIDATOR_CLASS` : если задано, используется указанный пользовательский класс, производный от `xPDO\Validation\xPDOValidator` _(по умолчанию)_
+- `xPDO::OPT_VALIDATE_ON_SAVE` : если true, перед сохранением `xPDOObjects` проверяются своими валидаторами.
 
 ### $driverOptions
 

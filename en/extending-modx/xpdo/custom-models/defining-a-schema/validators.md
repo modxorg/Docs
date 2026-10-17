@@ -26,7 +26,7 @@ The **rule** element may use these attributes:
 
 - **field**: field name _(required)_
 - **name**: unique name for this rule. You can attach several rules to one field _(required)_
-- **type**: must be `callable`, `preg_match`, or `xPDOValidationRule` _(required)_. Use `callable`, not `callback`. Older docs and samples sometimes said `callback`; xPDO’s validator only recognizes `callable` (see `xPDOValidator` in Revolution 3.x under `core/vendor/xpdo/.../Validation/`)
+- **type**: must be `callable`, `preg_match`, or `xPDOValidationRule` _(required)_. Use `callable`, not `callback`. Older docs and samples sometimes said `callback`; xPDO’s validator only recognizes `callable` (see `xPDO\Validation\xPDOValidator` in Revolution 3.x under `core/vendor/xpdo/.../Validation/`)
 - **rule**: depends on **type**. For `callable`, the PHP function or `Class::method` name. For `preg_match`, the regular expression. For `xPDOValidationRule`, a class that extends `xPDOValidationRule` _(required)_
 - **value**: optional argument for some `xPDOValidationRule` classes _(optional)_
 - **message**: failure message _(required)_. In MODX 2+, this is often a lexicon key for translated strings
