@@ -12,7 +12,7 @@ Sets the debug state for the XPDO connection.
 ## Syntax
 
 ``` php
-void setDebug ([boolean $v = true])
+void setDebug ([boolean|integer $v = true])
 ```
 
 ## Example

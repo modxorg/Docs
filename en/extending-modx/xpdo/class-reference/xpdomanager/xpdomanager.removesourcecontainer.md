@@ -12,7 +12,7 @@ Drops a physical data container, if it exists.
 ## Syntax
 
 ``` php
-int removeSourceContainer (string $dsn, string $username, string $password)
+boolean removeSourceContainer ($dsnArray = null, $username = null, $password = null)
 ```
 
 ## Examples
@@ -23,5 +23,5 @@ Drop a database called 'MyDatabase'.
 $newDatabaseName = 'MyDatabase';
 $dsn = 'mysql:host=localhost;dbname='.$newDatabaseName.';charset=utf8';
 $manager = $xpdo->getManager();
-$manager->removeSourceContainer($dsn,'myusername','mypassword');
+$manager->removeSourceContainer(xPDO::parseDSN($dsn),'myusername','mypassword');
 ```

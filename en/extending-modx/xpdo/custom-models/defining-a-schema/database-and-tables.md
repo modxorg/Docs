@@ -17,35 +17,35 @@ Our current XML file looks like this:
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <model package="storefinder"
-   baseClass="xPDOObject"
+   baseClass="xPDO\Om\xPDOObject"
    platform="mysql"
    defaultEngine="InnoDB"
    tablePrefix="sf_"
    phpdoc-package="storefinder"
    phpdoc-subpackage="model"
-   version="1.1">
+   version="3.0">
 ```
 
 First we'll tell the browser and parser that this is XML code with a standard XML header. Next, we're going to create a "model" tag, and put some attributes into it. The "model" tag is a representation of the database itself. The attributes are:
 
 - **package** - The name of the xPDO package (note this is different than a "transport package", a Revolution term). This is how xPDO separates different models and manages them. _Note: in the XML, the package name must be all lowercase._
-- **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom xPDOObject extension, it's best to leave it at the default.
+- **baseClass** - This is the base class from which all your class definitions will extend. Unless you're planning on creating a custom xPDOObject extension, it's best to leave it at the default `xPDO\Om\xPDOObject`.
 - **platform** — The database platform PDO driver you are using. At this time, xPDO supports mysql, sqlite, and sqlsrv PDO drivers. (Note: sqlsrv is no longer supported in MODX3.)
 - **defaultEngine** — The default engine of the database tables, usually either MyISAM or InnoDB. InnoDB is recommended.
 - **tablePrefix** — An optional parameter that can be set to override the default runtime table prefix. Useful for creating 3rd party components, but typically recommended to NOT define so the tablePrefix inherits from the MODX installation.
 - **phpdoc-package & phpdoc-subpackage** — These are custom attributes we're going to use in our map and class files. They're not standard xPDO attributes, but show that you can put whatever you want as attributes.
-- **version** — The version of the xPDO schema. As changes are made to the schema format, the version is updated to differentiate how the model is handled at runtime.
+- **version** — The version of the xPDO schema. For xPDO 3.x, use `version="3.0"`. This enables PSR-4 autoloading and the `metadata.{dbtype}.php` envelope.
 
 ## Schema Versions
 
-There are different schema versions. Between version 1.0 and 1.1, the biggest difference is how object indexes are defined. See [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions to the new format. Do not add version="1.1" (leave off the version attribute or set it to 1.0) if you have not yet described your indexes in the 1.1 schema format or xPDO will create the tables with no indexes.
+For xPDO 3.x, use `version="3.0"`. This is the current schema version and enables PSR-4 autoloading and the `metadata.{dbtype}.php` envelope. See [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1 "Upgrading Models to Schema Version 1.1") for information on migrating older index definitions.
 
 ## Defining Tables
 
 Great! Now we've got our model definition. Let's add a table tag as the next line.
 
 ``` xml
-<object class="sfStore" table="stores" extends="xPDOSimpleObject">
+<object class="sfStore" table="stores" extends="xPDO\Om\xPDOSimpleObject">
 ```
 
 "Object" is our representation of a table, which will generate into an xPDOObject class when we're through. There are some attributes to note here:
@@ -54,7 +54,7 @@ Great! Now we've got our model definition. Let's add a table tag as the next lin
 - **table** — This should point to the actual database table name, minus the tablePrefix we specified for the package.
 - **extends** — This is the class that it extends. Note that you can make subclasses and extended classes straight from the XML. Extended classes will inherit their parent class's fields.
 
-You'll see here that this table extends "xPDOSimpleObject", rather than xPDOObject. This means that the table comes already with an "id" field, that is an auto-increment primary key.
+You'll see here that this table extends `xPDO\Om\xPDOSimpleObject`, rather than `xPDO\Om\xPDOObject`. This means that the table comes already with an "id" field, that is an auto-increment primary key.
 
 Now that we've got a table definition for our stores table, let's add some field definitions to it:
 
@@ -111,7 +111,7 @@ And finally, we'll finish the table definition by closing the object tag:
 Now let's add an "sfOwner" class, which will represent any owners we have:
 
 ``` xml
-<object class="sfOwner" table="owners" extends="xPDOSimpleObject">
+<object class="sfOwner" table="owners" extends="xPDO\Om\xPDOSimpleObject">
   <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
   <field key="email" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 
@@ -124,7 +124,7 @@ Now let's add an "sfOwner" class, which will represent any owners we have:
 And since we want our stores to possibly have multiple owners, let's add a sfStoreOwner class, that will bridge the many-to-many relationship:
 
 ``` xml
-<object class="sfStoreOwner" table="store_owners" extends="xPDOSimpleObject">
+<object class="sfStoreOwner" table="store_owners" extends="xPDO\Om\xPDOSimpleObject">
   <field key="store" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
   <field key="owner" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
 

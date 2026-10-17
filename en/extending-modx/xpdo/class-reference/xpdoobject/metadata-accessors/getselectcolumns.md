@@ -25,5 +25,5 @@ static string getSelectColumns (
 ## Examples
 
 ``` php
-$columnString = xPDOObject::getSelectColumns($xpdo,'modChunk');
+$columnString = \xPDO\Om\xPDOObject::getSelectColumns($xpdo,'modChunk');
 ```

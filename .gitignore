@@ -10,4 +10,5 @@ ht.access
 index.php
 .htaccess
 .temp/
+.codegraph/
 .DS_Store

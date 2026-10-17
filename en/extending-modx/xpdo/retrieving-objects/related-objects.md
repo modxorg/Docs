@@ -4,7 +4,7 @@ _old_id: "1228"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/working-with-related-objects"
 ---
 
-Related objects in xPDO can be accessed via newQuery, as shown earlier, or through xPDOObject's helper functions, [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") and [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany") (depending on the relationship.
+Related objects in xPDO can be accessed via `newQuery()`, or through the xPDOObject helper functions [getOne](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getone "getOne") and [getMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/getmany "getMany"), depending on the relationship.
 
 ## Retrieving Objects
 
@@ -87,18 +87,18 @@ This helps xPDO differentiate between which object belongs to which relationship
 
 ### [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany")
 
-Objects with one-to-many relationships can also be batch added via the [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") method. Let's say we want to add all the Wheel objects with width of 10 to our Car:
+Objects with one-to-many relationships can also be batch added via the [addMany](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "addMany") method. Let's say we want to add all the Wheel objects with position 'front' to our Car:
 
 ``` php
 $wheels = $xpdo->getCollection('Wheel',array(
-   'width' => 10,
+   'position' => 'front',
 ));
 
 $car->addMany($wheels);
 $car->save();
 ```
 
-This will add all the 10-width Wheels and save the relationships.
+This will add all the front-position Wheels and save the relationships.
 
 ## See Also
 

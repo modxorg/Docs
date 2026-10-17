@@ -17,12 +17,12 @@ boolean endsWith (string $string, string|array $pattern)
 
 ## Example
 
-See if a file contains the s
+See if a file ends with a specific extension:
 
 ``` php
 $filename = '/my/site/test.flv';
 if ($xpdo->cacheManager->endsWith($filename,'flv')) {
-  echo 'Ends with flv!";
+  echo 'Ends with flv!';
 }
 ```
 

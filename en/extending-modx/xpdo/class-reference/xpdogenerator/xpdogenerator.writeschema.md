@@ -25,11 +25,11 @@ boolean writeSchema (
 Generate the xml schema from an existing database. This also only generates XML for the tables prefixed with 'mydb\_'.
 
 ``` php
-$xpdo= new xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
+$xpdo= new \xPDO\xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 
-$xml= $generator->writeSchema('/path/to/my/new/packagename.schema.xml','mypackage', 'xPDOObject','mydb_');
+$xml= $generator->writeSchema('/path/to/my/new/packagename.schema.xml','mypackage', 'xPDO\\Om\\xPDOObject','mydb_');
 ```
 
 Note: generating the XML schema doesn't generate the aggregate and composite relationships - just the field and object definitions. You'll need to specify those relationships yourself. See [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships) for more details.

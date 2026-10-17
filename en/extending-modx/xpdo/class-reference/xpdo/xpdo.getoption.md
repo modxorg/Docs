@@ -15,7 +15,7 @@ Get an xPDO configuration option value by key.
 mixed getOption (string $key [, array|null $options [, mixed $default [, boolean $skipEmpty]]] )
 ```
 
-$key: the key of the setting or option to load.
+$key: the key of the setting or option to load. Can also be an array of keys, in which case an array of values is returned.
 
 $options: the source of the setting or option. Either null (which attempts to find the key in the main configuration) or an array of options.
 

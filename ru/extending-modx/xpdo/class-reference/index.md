@@ -31,3 +31,7 @@ translation: "extending-modx/xpdo/class-reference"
 24. [xPDO.setLogTarget](extending-modx/xpdo/class-reference/xpdo/xpdo.setlogtarget)
 25. [xPDO.setOption](extending-modx/xpdo/class-reference/xpdo/xpdo.setoption)
 26. [xPDO.toJSON](extending-modx/xpdo/class-reference/xpdo/xpdo.tojson)
+27. [xPDO.expression](extending-modx/xpdo/class-reference/xpdo/xpdo.expression)
+28. [xPDO.parseDSN](extending-modx/xpdo/class-reference/xpdo/xpdo.parseDsn "xPDO.parseDSN")
+
+Класс `xPDO\Om\xPDOExpression` оборачивает сырой фрагмент SQL, чтобы его можно было подставить в запрос дословно. Подробнее — в разделе [xPDOExpression](extending-modx/xpdo/class-reference/xpdoexpression).

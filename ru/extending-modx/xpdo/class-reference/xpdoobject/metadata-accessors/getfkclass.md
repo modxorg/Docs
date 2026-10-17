@@ -11,7 +11,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/
 ## Синтаксис
 
 ```php
-void getFKClass (string $k)
+string|bool getFKClass (string $k)
 ```
 
 ## Примеры

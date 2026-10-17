@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/retrieving-objects"
 **Коллекция** - это массив `xPDOObjects`. Они извлекаются через `xPDO::getCollection`. Думайте об этом как о списке строк в таблице.
 **Итератор** - это особый вид `Collection`, к которому осуществляется последовательный доступ, так что все строки и представляющие их объекты не загружаются в память одновременно.
 
-### [xPDO::getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+## [xPDO::getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 
 `getObject` принимает 3 аргумента:
 
@@ -54,7 +54,7 @@ $bigbox = $xpdo->getObject('Box',array('width' => 150));
 
 Мы обсудим третий вариант, `xPDOCriteria`, позже в разделах`xPDOQuery` и `xPDOCriteria`.
 
-### [xPDO::getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+## [xPDO::getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 
 `xPDO::getCollection` принимает те же три аргумента, что и `getObject`, за исключением того, что поле `$tests` должно быть либо массивом, либо объектом `xPDOCriteria``.
 
@@ -74,7 +74,7 @@ foreach ($boxes as $box) {
 // yellow
 ```
 
-### [xPDO::getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+## [xPDO::getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 
 Метод `xPDO::getIterator` идентичен `xPDO::getCollection`, за исключением того, что вы можете получить доступ только к одному `xPDOObject` из коллекции строк одновременно. Если вам нужен доступ ко всем объектам/строкам одновременно, используйте `getCollection`. В противном случае с точки зрения использования памяти более эффективно использовать `getIterator` для циклического перебора коллекции `xPDOObjects`.
 
@@ -96,7 +96,7 @@ foreach ($boxes as $box) {
 
 Обратите внимание, что индекс для каждого объекта при повторном выполнении не является первичным ключом, в отличие от индекса массива при использовании `getCollection`.
 
-### [xPDO::newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
+## [xPDO::newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 
 Одна из самых мощных частей xPDO - это возможность создавать сложные запросы простым способом, используя [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") обертку. Этот класс позволяет создавать запросы SQL с использованием методов ООП, расширяющих класс `xPDOCriteria` - вы можете передавать его экземпляр прямо в вызовы `getObject` или `getCollection`. Функция `newQuery` создает [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") объект, и принимает 3 параметра:
 
@@ -151,7 +151,7 @@ $boxes = $xpdo->getCollection('Box',$c);
 
 Схему xml можно найти в основной папке установки MODX, здесь: _model/schema/modx.mysql.schema.xml_ (полезно получить classNames, aliases и т.д. для ваших запросов)
 
-#### Отладка
+### Отладка
 
 Зачастую полагаться на уровень ORM может быть непонятно, поэтому вы можете заставить xPDO распечатывать необработанные запросы к базе данных.
 
@@ -294,3 +294,4 @@ if ($pages) {
 -   [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
 -   [xPDO.newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 -   [xPDO.where](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where "xPDO.where")
+-   [Сложные запросы: xPDOCriteria и xPDOQuery](extending-modx/xpdo/retrieving-objects/complex-queries "Сложные запросы")

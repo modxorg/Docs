@@ -12,7 +12,7 @@ Creates a PDO database connection for use by xPDO. Returns true if the connectio
 ## Syntax
 
 ``` php
-boolean connect ([array $driverOptions = array ()])
+boolean connect ([array $driverOptions = array ()], [array $options = array ()])
 ```
 
 ## Example

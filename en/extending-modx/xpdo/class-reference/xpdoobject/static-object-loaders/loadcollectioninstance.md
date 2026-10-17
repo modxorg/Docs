@@ -19,6 +19,6 @@ static boolean _loadCollectionInstance(
    mixed $criteria,
    array $row,
    boolean $fromCache,
-   boolean|integer $cacheFlag
+   boolean|integer $cacheFlag = true
 )
 ```

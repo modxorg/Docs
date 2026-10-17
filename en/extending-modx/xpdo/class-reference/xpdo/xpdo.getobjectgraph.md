@@ -86,5 +86,5 @@ The main benefit of using getObjectGraph is to retrieve data from related tables
 - [xPDO.getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 - [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
 - [xPDO.getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
-- \[xPDO.load\]
+- [xPDOObject::load](extending-modx/xpdo/class-reference/xpdoobject/static-object-loaders/load "xPDOObject::load")
 - [xPDO](extending-modx/xpdo "xPDO")

@@ -6,7 +6,7 @@ _old_uri: "2.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor
 
 ## What is hydration?
 
-Hydration is the process in which fields and related objects represented by an `xPDOObject` are populated with values. By default, these fields are **only** accessible using the `get()`, `getOne()` and `getMany()` methods of `xPDOObject`, and must be defined with appropriate metadata in the map for the object. However, there are a number of options you can use to extend how xPDO hydrates fields and related objects.
+Hydration is the process in which fields and related objects represented by an `xPDO\Om\xPDOObject` are populated with values. By default, these fields are **only** accessible using the `get()`, `getOne()` and `getMany()` methods of `xPDOObject`, and must be defined with appropriate metadata in the map for the object. However, there are a number of options you can use to extend how xPDO hydrates fields and related objects.
 
 The options are available by passing any of the following configuration options into the `$config` parameter of the [xPDO constructor](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor"):
 
@@ -16,7 +16,7 @@ The options are available by passing any of the following configuration options 
 
 ## Hydrating Fields
 
-If the `xPDO::OPT_HYDRATE_FIELDS` option is set to true, in addition to accessing fields via the `xPDOObject::get()` method, all object fields will be made accessible for reading directly as public member variables of the object. An example of this is such:
+If the `xPDO::OPT_HYDRATE_FIELDS` option is set to true, in addition to accessing fields via the `xPDO\Om\xPDOObject::get()` method, all object fields will be made accessible for reading directly as public member variables of the object. An example of this is such:
 
 ``` php
 $object->set('name',$name);

@@ -17,7 +17,7 @@ string getFieldName (string $k, [string $alias = null])
 ## Примеры
 
 ```php
-$document = $xpdo->getObject('Document',1);
+$document = $modx->getObject('modResource',1);
 echo $document->getFieldName('editedby');
-// prints `documents`.`editedby`
+// prints `site_content`.`editedby`
 ```

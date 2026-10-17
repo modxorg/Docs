@@ -11,7 +11,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-acce
 ## Синтаксис
 
 ```php
-array &getMany (
+array getMany (
    string $alias,
    [object $criteria = null],
    [boolean|integer $cacheFlag = true]

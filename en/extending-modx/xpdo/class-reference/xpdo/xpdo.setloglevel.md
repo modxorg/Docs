@@ -11,6 +11,12 @@ Sets the logging level state for the XPDO instance.
 
 ## Syntax
 
+``` php
+integer setLogLevel ([integer $level = xPDO::LOG_LEVEL_FATAL])
+```
+
+Returns the previous log level.
+
 ## Example
 
 Set the log level to show log messages with at least INFO status.

@@ -12,7 +12,7 @@ Adds a LEFT JOIN clause to the query.
 ## Syntax
 
 ``` php
-void leftJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
+xPDOQuery leftJoin ( $class, [ $alias = ''], [ $conditions = array ()], [ $conjunction = xPDOQuery::SQL_AND], [ $binding = null], [ $condGroup = 0])
 ```
 
 ## Example

@@ -14,7 +14,7 @@ The manager class can perform operations such as creating or altering table stru
 ## Syntax
 
 ``` php
-object|null getManager ()
+xPDO\Om\xPDOManager|null getManager ()
 ```
 
 ## Example

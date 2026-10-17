@@ -12,7 +12,7 @@ See <http://php.net/manual/en/function.pdo-commit.php>
 ## Syntax
 
 ``` php
-void commit ()
+boolean commit ()
 ```
 
 ## Example

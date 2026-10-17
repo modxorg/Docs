@@ -12,7 +12,7 @@ See <http://php.net/manual/en/function.pdo-begintransaction.php>
 ## Syntax
 
 ``` php
-void beginTransaction ()
+boolean beginTransaction ()
 ```
 
 ## Example

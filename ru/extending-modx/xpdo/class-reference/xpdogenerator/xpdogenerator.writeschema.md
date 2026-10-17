@@ -24,7 +24,7 @@ boolean writeSchema (
 Создайте XML-схему из существующей базы данных. Это также генерирует XML только для таблиц с префиксом 'mydb\_'.
 
 ```php
-$xpdo= new xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
+$xpdo= new \xPDO\xPDO('mysql:host=localhost;dbname=myolddatabase','username','password','mydb_');
 $manager= $xpdo->getManager();
 $generator= $manager->getGenerator();
 

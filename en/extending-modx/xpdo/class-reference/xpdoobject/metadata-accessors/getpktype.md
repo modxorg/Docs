@@ -20,7 +20,7 @@ string getPKType()
 Grabs the PK type of a table of Resources, which have an auto\_increment ID field:
 
 ``` php
-$resource = $xpdo->getObject('Resource',1);
+$resource = $modx->getObject('modResource',1);
 echo $resource->getPKType();
 // prints "integer"
 ```

@@ -16,7 +16,7 @@ array toArray(
    [string $keyPrefix = ''],
    [boolean $rawValues = false],
    [boolean $excludeLazy = false],
-   [boolean|integer|string|array $inludeRelated = false])
+   [boolean|integer|string|array $includeRelated = false])
 )
 ```
 

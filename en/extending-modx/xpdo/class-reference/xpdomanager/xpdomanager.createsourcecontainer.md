@@ -12,11 +12,11 @@ Creates the physical data container represented by a data source.
 ## Syntax
 
 ``` php
-void createSourceContainer (
-   $dsn,
-   [$username = ''],
-   [$password = ''],
-   [$containerOptions = null]
+boolean createSourceContainer (
+   $dsnArray = null,
+   [$username = null],
+   [$password = null],
+   [$containerOptions = array()]
 )
 ```
 
@@ -28,5 +28,5 @@ Create a database called 'MyDatabase'.
 $newDatabaseName = 'MyDatabase';
 $dsn = 'mysql:host=localhost;dbname='.$newDatabaseName.';charset=utf8';
 $manager = $xpdo->getManager();
-$manager->createSourceContainer($dsn,'myusername','mypassword');
+$manager->createSourceContainer(xPDO::parseDSN($dsn),'myusername','mypassword');
 ```

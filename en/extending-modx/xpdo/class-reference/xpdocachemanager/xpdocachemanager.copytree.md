@@ -9,7 +9,7 @@ _old_uri: "2.x/class-reference/xpdocachemanager/xpdocachemanager.copytree"
 
 Recursively copies a directory tree from a source directory to a target directory. Allows the following options:
 
-- `new_dir_permissions` - The permissions to set any new directories to that were created in the target. (Can also be the 4th parameter of copyFile.) Defaults to 0775.
+- `new_folder_permissions` - The permissions to set any new directories to that were created in the target. (Can also be the 4th parameter of copyFile.) Defaults to 0775.
 - `new_file_permissions` - The permissions to set the new file to if `copy_preserve_permissions` is false. Defaults to 0664.
 - `copy_exclude_items` - An array of names of files to skip.
 - `copy_exclude_patterns` - An array or string of patterns to exclude by.

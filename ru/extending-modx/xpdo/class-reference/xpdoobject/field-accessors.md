@@ -11,3 +11,5 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/field-accessors"
 4. [fromArray](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromarray)
 5. [toJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/tojson)
 6. [fromJSON](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/fromjson)
+7. [addFieldAlias](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/addfieldalias)
+8. [encode](extending-modx/xpdo/class-reference/xpdoobject/field-accessors/encode)

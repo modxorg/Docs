@@ -12,7 +12,7 @@ translation: "extending-modx/xpdo/class-reference/xpdocachemanager/xpdocachemana
 -   `copy_preserve_permissions` - xPDO попытается скопировать структуру разрешений из исходного файла в целевой объект. По умолчанию `false`.
 -   `copy_preserve_filemtime` - xPDO попытается скопировать измененное время из исходного файла в целевой файл. По умолчанию true.
 -   `copy_return_file_stat` - Значение `true` вернет информацию php [stat()](http://www.php.net/stat) в возвращаемом массиве. По умолчанию `false`.
--   `new_dir_permissions` - Разрешения для установки любых новых каталогов, которые были созданы в цели. (Также может быть 4-м параметром copyFile.) По умолчанию `0775`.
+-   `new_folder_permissions` - Разрешения для установки любых новых каталогов, которые были созданы в цели. (Также может быть 4-м параметром copyFile.) По умолчанию `0775`.
 -   `new_file_permissions` - Разрешения для установки нового файла, если `copy_preserve_permissions` равно `false`. По умолчанию `0664`.
 
 ## Синтаксис

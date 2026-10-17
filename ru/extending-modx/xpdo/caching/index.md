@@ -9,7 +9,7 @@ translation: "extending-modx/xpdo/caching"
 
 Есть несколько дополнительных глобальных опций, которые можно установить, если вы хотите использовать что-то, кроме раздела кэша по умолчанию и провайдера.
 
--   `xPDO::OPT_CACHE_HANDLER` - Это определяет провайдера кэша или производный класс `xPDOCache`, который реализует методы кэширования xPDO. (`default=cache.xPDOFileCache`)
+-   `xPDO::OPT_CACHE_HANDLER` - Это определяет провайдера кэша или производный класс `xPDOCache`, который реализует методы кэширования xPDO. (по умолчанию `xPDO\Cache\xPDOFileCache`)
 -   `xPDO::OPT_CACHE_KEY` - Это определяет раздел кэша или экземпляр производного класса `xPDOCache`, определенного как обработчик кэша или _провайдер_. (`default=default`)
 -   `xPDO::OPT_CACHE_EXPIRES` - Это определяет время истечения кеша по умолчанию в секундах для всех разделов кеша, если они не настроены специально.(`default=0`)
 
@@ -50,7 +50,7 @@ $xpdo->cacheManager->delete('testdata');
 ```php
 $cacheOptions = array(
     xPDO::OPT_CACHE_KEY => 'myCache',
-    xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
+    xPDO::OPT_CACHE_HANDLER => 'xPDO\\Cache\\xPDOAPCCache',
 );
 
 $xpdo->cacheManager->set('testdata', 'Мои кэшированные данные.', 0, $cacheOptions);
@@ -68,7 +68,7 @@ $xpdo->cacheManager->delete('testdata', $cacheOptions);
 ```php
 $myCache = $xpdo->cacheManager->getCacheProvider('myCache', array(
     xPDO::OPT_CACHE_KEY => 'myCache',
-    xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
+    xPDO::OPT_CACHE_HANDLER => 'xPDO\\Cache\\xPDOAPCCache',
 ));
 
 $myCache->set('testdata', 'Мои кэшированные данные.');

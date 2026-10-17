@@ -12,7 +12,7 @@ Writes a file to the filesystem.
 ## Syntax
 
 ``` php
-boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])
+int|boolean writeFile (string $filename, string $content, [string $mode = 'wb'], [array $options = array()])
 ```
 
 ## Example

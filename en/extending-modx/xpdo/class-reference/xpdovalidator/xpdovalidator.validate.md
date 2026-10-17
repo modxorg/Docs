@@ -7,7 +7,7 @@ _old_uri: "2.x/class-reference/xpdovalidator/xpdovalidator.validate"
 
 ## xPDOValidator::validate
 
-Executes validation against the object attached to this validator. May also accept an array of parameters to pass to the validation rule.
+Executes validation against the object attached to this validator. The optional array may contain keys `stopOnFail` and `stopOnRuleFail` to control whether validation stops on the first failing column or rule.
 
 ## Syntax
 
@@ -21,7 +21,7 @@ Check to see if any validation errors occurred.
 
 ``` php
 $validator = $obj->getValidator();
-if ($validator->validate()) {
+if (!$validator->validate()) {
    echo 'Errors occurred!';
 }
 ```

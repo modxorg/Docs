@@ -25,7 +25,7 @@ description: "Правила валидации полей в XML-схеме xPD
 
 - **field**: имя поля _(обязательный)_
 - **name**: уникальное имя правила. На одно поле можно повесить несколько правил _(обязательный)_
-- **type**: только `callable`, `preg_match` или `xPDOValidationRule` _(обязательный)_. Нужно писать `callable`, не `callback`. В старых текстах иногда встречался `callback`; валидатор xPDO принимает только `callable` (см. `xPDOValidator` в Revolution 3.x: `core/vendor/xpdo/.../Validation/`)
+- **type**: только `callable`, `preg_match` или `xPDOValidationRule` _(обязательный)_. Нужно писать `callable`, не `callback`. В старых текстах иногда встречался `callback`; валидатор xPDO принимает только `callable` (см. `xPDO\Validation\xPDOValidator` в Revolution 3.x: `core/vendor/xpdo/.../Validation/`)
 - **rule**: зависит от **type**. Для `callable` — имя PHP-функции или `Class::method`. Для `preg_match` — регулярное выражение. Для `xPDOValidationRule` — класс-наследник `xPDOValidationRule` _(обязательный)_
 - **value**: необязательный аргумент для части классов `xPDOValidationRule` _(необязательный)_
 - **message**: текст при ошибке _(обязательный)_. В MODX 2+ часто ключ лексикона для перевода
