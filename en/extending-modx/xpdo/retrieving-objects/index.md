@@ -17,7 +17,7 @@ An Iterator is a special kind of Collection accessed sequentially, so not all ro
 > 
 > Similarly do not pass untrusted input to the `sortby()` method on an `xPDOQuery` object. The direction accepts `ASC`, `DESC`, `ASCENDING`, or `DESCENDING`. The column is validated against a list of allowed SQL clauses; if it contains suspicious patterns (e.g. `;`, `UNION`, `sleep()`, `benchmark()`), it will be rejected. Checking a value against acceptable column names is still the most secure option.    
 
-### [xPDO::getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
+## [xPDO::getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")
 
 `getObject` takes 3 arguments: `$className`, `$criteria`, and `$cacheFlag`. The first argument is the class name you'd like to retrieve; the second is the criteria by which you'd like to search for it; and the final argument is the caching option for the object.
 
@@ -70,7 +70,7 @@ $bigbox = $xpdo->getObject('Box', '`width` = 150');
 
 We'll discuss the fourth option, `xPDOCriteria`, later in the `xPDOQuery` and `xPDOCriteria` sections.
 
-### [xPDO::getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
+## [xPDO::getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection")
 
 `xPDO::getCollection` takes the same three arguments as `getObject`; the `$criteria` field can be an array, `xPDOCriteria` object, or a primary key value.
 
@@ -90,7 +90,7 @@ foreach ($boxes as $box) {
 // yellow
 ```
 
-### [xPDO::getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
+## [xPDO::getIterator](extending-modx/xpdo/class-reference/xpdo/xpdo.getiterator "xPDO.getIterator")
 
 `xPDO::getIterator` is identical to `xPDO::getCollection` except that only one `xPDOObject` is accessible at a time. Use `getCollection` if you need all objects at once; use `getIterator` for better memory efficiency when looping.
 
@@ -112,7 +112,7 @@ foreach ($boxes as $box) {
 
 Note that the index for each object when iterated over is not the primary key, unlike the array index when using getCollection.
 
-### [xPDO::newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
+## [xPDO::newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 
 One of the most powerful parts of xPDO is its ability to create complex queries using the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") wrapper. This class lets you build SQL queries using OOP methods that extend the `xPDOCriteria` class — you can pass its instance right into getObject or getCollection calls. The newQuery function creates an [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") object, and takes 3 parameters:
 
@@ -163,11 +163,11 @@ $boxes = $xpdo->getCollection('Box',$c);
 
 The sortby and where functions can take dot syntax on their parameters; they can prefix their columns with alias — sometimes they have to do this to prevent collisions!
 
-More information on [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") can be found [here](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery").
+More about the query builder in the [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") class reference.
 
 The xml schema can be found in your MODX installation's core folder: model/schema/modx.mysql.schema.xml (helpful to get classNames, aliases, etc for your queries)
 
-#### Debugging
+### Debugging
 
 As the ORM layer takes care of the queries and doesn't expose them to you normally, if things don't work as expected it may be useful to get access to what xPDO will actually ask of the database. The following code can be used to show the SQL for an xPDOQuery:
 
@@ -253,3 +253,4 @@ Please view the dedicated page: [getCollectionGraph](extending-modx/xpdo/retriev
 -   [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
 -   [xPDO.newQuery](extending-modx/xpdo/class-reference/xpdo/xpdo.newquery "xPDO.newQuery")
 -   [xPDO.where](extending-modx/xpdo/class-reference/xpdoquery/xpdoquery.where "xPDO.where")
+-   [Complex Queries with xPDOCriteria and xPDOQuery](extending-modx/xpdo/retrieving-objects/complex-queries "Complex Queries")

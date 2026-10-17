@@ -7,7 +7,7 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getancestry"
 
 ## xPDO::getAncestry
 
-Returns an array of the class names a class extends, from the immediate parent up to `xPDOObject`. By default the class itself is not included; pass `false` as the second argument to include it.
+Returns an array of the class names a class extends, from the class itself up to `xPDOObject`. By default the class itself is included; pass `false` as the second argument to start from its parent. Returns an empty array if the class cannot be loaded.
 
 ## Syntax
 

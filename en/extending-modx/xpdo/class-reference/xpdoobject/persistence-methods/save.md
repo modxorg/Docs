@@ -22,7 +22,7 @@ boolean save ([boolean|integer $cacheFlag = null])
 Related objects reach the database through `addOne()` and `addMany()`, and the `owner` attribute of the relation decides who writes the key:
 
 | `owner` | What happens on `save()` |
-|---|---|
+| --- | --- |
 | `local` | The foreign key is written into the related object from this object's key, then the related object is saved. |
 | `foreign` | The related object is saved first, then its key is written into this object's local field. |
 

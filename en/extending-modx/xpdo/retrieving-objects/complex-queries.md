@@ -23,9 +23,9 @@ $query->where([
 ]);
 ```
 
-* **Conjunction** – optional (`AND` is assumed). Use `OR:` to group conditions with logical OR.
-* **Field** – any column of the target class.
-* **Operator** – one of the supported operators (`=`, `!=`, `>`, `>=`, `<`, `<=`, `LIKE`, `IN`, `NOT IN`, `BETWEEN`, `NOT BETWEEN`, …). The operator is case‑insensitive.
+- **Conjunction** – optional (`AND` is assumed). Use `OR:` to group conditions with logical OR.
+- **Field** – any column of the target class.
+- **Operator** – one of the supported operators (`=`, `!=`, `>`, `>=`, `<`, `<=`, `LIKE`, `IN`, `NOT IN`, `BETWEEN`, `NOT BETWEEN`, …). The operator is case‑insensitive.
 
 The three‑part syntax mirrors the implementation in `xPDO\Om\xPDOCriteria::parseCriteria()` and is documented in the source at `core/vendor/xpdo/xpdo/src/xPDO/Om/xPDOQuery.php`.
 

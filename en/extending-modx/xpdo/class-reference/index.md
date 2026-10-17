@@ -33,5 +33,6 @@ The xPDO class is the base class for xPDO, and most functions are performed thro
 25. [xPDO.setOption](extending-modx/xpdo/class-reference/xpdo/xpdo.setoption)
 26. [xPDO.toJSON](extending-modx/xpdo/class-reference/xpdo/xpdo.tojson)
 27. [xPDO.expression](extending-modx/xpdo/class-reference/xpdo/xpdo.expression)
+28. [xPDO.parseDSN](extending-modx/xpdo/class-reference/xpdo/xpdo.parseDsn "xPDO.parseDSN")
 
 The `xPDO\Om\xPDOExpression` class wraps a raw SQL fragment so it can be inlined verbatim into a query. See [xPDOExpression](extending-modx/xpdo/class-reference/xpdoexpression) for details.

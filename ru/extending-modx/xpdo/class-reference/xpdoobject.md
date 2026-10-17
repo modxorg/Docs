@@ -47,4 +47,8 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject"
 -   [State Accessors](extending-modx/xpdo/class-reference/xpdoobject/state-accessors)
     -   [isLazy](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/islazy)
     -   [isDirty](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isdirty)
+    -   [setDirty](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/setdirty)
     -   [isNew](extending-modx/xpdo/class-reference/xpdoobject/state-accessors/isnew)
+-   [Жизненный цикл](extending-modx/xpdo/class-reference/xpdoobject)
+    -   [\_\_construct](extending-modx/xpdo/class-reference/xpdoobject/__construct)
+    -   [Magic-методы](extending-modx/xpdo/class-reference/xpdoobject/magic-accessors)

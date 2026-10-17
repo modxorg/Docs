@@ -27,7 +27,7 @@ Aggregate relations are **not** followed. Objects that only point at this one th
 A `modResource` owns five composite relations, and one of them is `Children`:
 
 | Alias | Class | Foreign key |
-|---|---|---|
+| --- | --- | --- |
 | `Children` | `MODX\Revolution\modResource` | `parent` |
 | `TemplateVarResources` | `MODX\Revolution\modTemplateVarResource` | `contentid` |
 | `ResourceGroupResources` | `MODX\Revolution\modResourceGroupResource` | `document` |

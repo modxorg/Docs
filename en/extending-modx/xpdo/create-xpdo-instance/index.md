@@ -66,7 +66,7 @@ Some of the xPDO-specific parameters use custom defines that you can use, such a
 
 ### $driverOptions
 
-An optional array of driver-specific PDO options. More info can be found [here](http://us.php.net/manual/en/pdo.drivers.php).
+An optional array of driver-specific PDO options. See the [PDO driver documentation](http://us.php.net/manual/en/pdo.drivers.php) for the options each driver supports.
 
 ## See Also
 

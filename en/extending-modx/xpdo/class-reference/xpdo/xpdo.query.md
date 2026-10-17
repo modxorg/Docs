@@ -66,7 +66,7 @@ Array
 )
 ```
 
-**Method chaining**
+### Method chaining
 
 `query()` returns the underlying `PDOStatement`, so you can chain PDO methods directly on the result:
 

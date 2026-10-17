@@ -23,7 +23,7 @@ xPDOObject|null getOne (
 
 ## Example
 
-Echo the email of a modUser with ID 1, which has a related object called modUserProfile, that has a field called "email" - set as "a@bc.com" for this user.
+Echo the email of a modUser with ID 1, which has a related object called modUserProfile, that has a field called "email" — set as `a@bc.com` for this user.
 
 ``` php
 $user = $modx->getObject('modUser',1);

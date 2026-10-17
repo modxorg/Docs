@@ -160,7 +160,7 @@ $boxes = $xpdo->getCollectionGraph('Box', '{"Wheels":{}}', array('width' => 14))
 ## When the graph comes back empty
 
 | Symptom | Cause |
-|---|---|
+| --- | --- |
 | Log: `No foreign key definition for parentClass: Box using relation alias: Wheels` | The graph names an alias that `Box` does not declare, or the schema was not loaded into the connection. |
 | The relation is `null` or an empty array, no error logged | The `LEFT JOIN` matched nothing: the parent row's foreign key is empty, or no related row carries the referenced value. |
 | A nested level is empty while its parent is not | The nested alias exists on the parent relation's class but not on the class you assumed it on. Check the `<aggregate>` and `<composite>` elements of each class in the chain. |
