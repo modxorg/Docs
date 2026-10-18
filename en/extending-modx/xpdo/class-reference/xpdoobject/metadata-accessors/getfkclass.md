@@ -12,7 +12,7 @@ Get the name of a class related by foreign key to a specified field key. This is
 ## Syntax
 
 ``` php
-void getFKClass (string $k)
+string|bool getFKClass (string $k)
 ```
 
 ## Examples

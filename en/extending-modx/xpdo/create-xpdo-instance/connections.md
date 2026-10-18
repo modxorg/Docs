@@ -9,14 +9,14 @@ _old_uri: "2.x/getting-started/using-your-xpdo-model/database-connections-and-xp
 Database connectivity in xPDO is done in the constructor. The xPDO object can only hold one database connection per instance, but you are free to instantiate as many xPDO instances as you need. The syntax of the constructor is such:
 
 ``` php
-function xPDO($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
+function __construct($dsn, $username= '', $password= '', $options= array(), $driverOptions= null)
 ```
 
 So let's say we want to connect to a localhost database named 'test' on port 3306, with a utf-8 charset:
 
 ``` php
 $dsn = 'mysql:host=localhost;dbname=test;port=3306;charset=utf8';
-$xpdo = new xPDO($dsn,'username','password');
+$xpdo = new \xPDO\xPDO($dsn,'username','password');
 ```
 
 And you're done!
@@ -53,7 +53,7 @@ $port = 3306;
 $charset = 'utf8';
 
 $dsn = "mysql:host=$host;dbname=$dbname;port=$port;charset=$charset";
-$xpdo = new xPDO($dsn, $username, $password);
+$xpdo = new \xPDO\xPDO($dsn, $username, $password);
 
 // Test your connection
 echo $o = ($xpdo->connect()) ? 'Connected' : 'Not Connected';
@@ -73,7 +73,7 @@ xPDO 2.2 introduces the ability to define multiple connections, and includes con
 To define additional connections for an xPDO instance, you can pass an array of connection configuration arrays in the `$options` parameter of the xPDO constructor. Each connection array defines the same parameters as an xPDO constructor call. Here is an example constructor call with multiple read-only connections specified:
 
 ``` php
-$xpdo = new xPDO('mysql:host=127.0.0.1:19570;dbname=xpdotest;charset=utf8', 'username', 'password' array(
+$xpdo = new \xPDO\xPDO('mysql:host=127.0.0.1:19570;dbname=xpdotest;charset=utf8', 'username', 'password', array(
     xPDO::OPT_CONN_MUTABLE => true,
     xPDO::OPT_CONN_INIT => array(xPDO::OPT_CONN_MUTABLE => false),
     xPDO::OPT_CONNECTIONS => array(

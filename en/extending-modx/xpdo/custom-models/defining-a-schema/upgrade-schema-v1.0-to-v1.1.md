@@ -6,6 +6,9 @@ _old_uri: "2.x/getting-started/creating-a-model-with-xpdo/defining-a-schema/defi
 
 ## Upgrading Models from Schema Version 1.0 to 1.1
 
+> [!NOTE]
+> Schema version 1.1 is itself superseded by `version="3.0"`, which is what current xPDO 3.x models use. Use 3.0 for new work; see [Defining the Database and Tables](database-and-tables) for the current schema version and its PSR-4 autoloading envelope. This page describes the historical 1.0 → 1.1 index-definition migration only.
+
 In xPDO 2.0.0-rc3, a new schema element for describing table indexes was added to the `object` element of the xPDO schema. To maintain backwards compatibility in the runtime code with older schemas, where the indexes were described using the _index_ and _index\_group_ attributes of the `field` elements, schemas created with this new element must be differentiated from the older schemas. As a result, the _version_ attribute was added to the `model` element with a value of 1.1. All legacy models without the version element are assumed to be version 1.0.
 
 To make conversion of existing mysql models easier, a tool is provided in xPDO that can be executed from the command line or a browser.

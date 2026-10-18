@@ -21,7 +21,7 @@ Returns the formerly set log target.
 ## Syntax
 
 ``` php
-mixed setLogTarget ([string $target = 'ECHO'], mixed 1)
+mixed setLogTarget ([string|array $target = 'ECHO'])
 ```
 
 ## Examples

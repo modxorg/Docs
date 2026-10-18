@@ -13,7 +13,7 @@ translation: "extending-modx/xpdo/class-reference/xpdoobject/related-object-acce
 ## Синтаксис
 
 ```php
-xPDOObject|null &getOne (
+xPDOObject|null getOne (
    string $alias,
    [object $criteria = null],
    [boolean|integer $cacheFlag = true]
@@ -22,7 +22,7 @@ xPDOObject|null &getOne (
 
 ## Пример
 
-Отобразите электронную почту пользователя `modUser` с идентификатором 1, у которого есть связанный объект с именем `modUserProfile`, у которого есть поле с именем «email» - для этого пользователя установлено «a@bc.com».
+Отобразите электронную почту пользователя `modUser` с идентификатором 1, у которого есть связанный объект с именем `modUserProfile`, у которого есть поле с именем «email» — для этого пользователя установлено `a@bc.com`.
 
 ```php
 $user = $modx->getObject('modUser',1);

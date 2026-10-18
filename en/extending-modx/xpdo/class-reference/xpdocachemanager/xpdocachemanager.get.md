@@ -11,7 +11,7 @@ Get a value from a cache provider by key.
 
 Also allows for an array of options to be passed. The current available values are:
 
-- `format` - If equals `XPDO_CACHE_JSON`, will simply get the contents of the array. This is useful if you `set()` the cache with `XPDO_CACHE_JSON`, to better handle JSON data.
+- `cache_format` - If equals `\xPDO\Cache\xPDOCacheManager::CACHE_JSON`, will simply get the contents of the array. This is useful if you `set()` the cache with `\xPDO\Cache\xPDOCacheManager::CACHE_JSON`, to better handle JSON data.
 - `removeIfEmpty` - If set to true, will remove the cache file if it's empty. This is the default action.
 
 ## Syntax
@@ -31,7 +31,7 @@ $test = $xpdo->cacheManager->get('test');
 Get our JSON cache data called 'myjson':
 
 ``` php
-$myJsonData = $xpdo->cacheManager->get('myjson',array('format' => xPDO::CACHE_JSON));
+$myJsonData = $xpdo->cacheManager->get('myjson',array('cache_format' => \xPDO\Cache\xPDOCacheManager::CACHE_JSON));
 ```
 
 ## See Also

@@ -26,7 +26,7 @@ The **rule** element may use these attributes:
 
 - **field**: field name _(required)_
 - **name**: unique name for this rule. You can attach several rules to one field _(required)_
-- **type**: must be `callable`, `preg_match`, or `xPDOValidationRule` _(required)_. Use `callable`, not `callback`. Older docs and samples sometimes said `callback`; xPDO’s validator only recognizes `callable` (see `xPDOValidator` in Revolution 3.x under `core/vendor/xpdo/.../Validation/`)
+- **type**: must be `callable`, `preg_match`, or `xPDOValidationRule` _(required)_. Use `callable`, not `callback`. Older docs and samples sometimes said `callback`; xPDO’s validator only recognizes `callable` (see `xPDO\Validation\xPDOValidator` in Revolution 3.x under `core/vendor/xpdo/.../Validation/`)
 - **rule**: depends on **type**. For `callable`, the PHP function or `Class::method` name. For `preg_match`, the regular expression. For `xPDOValidationRule`, a class that extends `xPDOValidationRule` _(required)_
 - **value**: optional argument for some `xPDOValidationRule` classes _(optional)_
 - **message**: failure message _(required)_. In MODX 2+, this is often a lexicon key for translated strings
@@ -130,7 +130,7 @@ if (!$this->object->save()) {
 
 ### Writing Your Own Validation Rules
 
-For a custom `xPDOValidationRule` subclass, add one PHP class file per rule under your package model folder, for example `core/components/my_pkg/model/my_pkg/normalparents.class.php`. Use a lowercase filename with a `.class.php` extension so xPDO can find the class.
+For a custom `xPDOValidationRule` subclass, add one PHP class file per rule under your package model folder, for example `core/components/my_pkg/model/my_pkg/NormalParents.php`. Use a PSR-4 compatible filename and namespace.
 
 Schema snippet for a Custom Resource Class that only allows built-in parents:
 
@@ -142,7 +142,7 @@ Schema snippet for a Custom Resource Class that only allows built-in parents:
             field="parent"
             message="Invalid parent"
             name="parent"
-            rule="NormalParents"
+            rule="MyVendor\\Validation\\NormalParents"
             type="xPDOValidationRule"
         />
     </validation>
@@ -158,7 +158,9 @@ Matching rule class:
  * @param array $options from the XML schema
  * @return boolean false on failed validation, true on pass
  */
-class NormalParents extends xPDOValidationRule
+namespace MyVendor\Validation;
+
+class NormalParents extends \xPDO\Validation\xPDOValidationRule
 {
     public function isValid($value, array $options = array())
     {
@@ -182,5 +184,5 @@ class NormalParents extends xPDOValidationRule
 
 ## See Also
 
-- [Object Validation](extending-modx/xpdo/custom-models/validation)
+- [Object Validation](extending-modx/xpdo/class-reference/xpdoobject/validation)
 - [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator)

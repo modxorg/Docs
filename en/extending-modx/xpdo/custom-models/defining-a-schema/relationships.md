@@ -13,7 +13,7 @@ An aggregate relationship in xPDO is relationship between two tables where the s
 A great example of this is a collection of Crayons in a Box. The relationship from the Crayons to the Box is an **aggregate** relationship. If you delete a crayon object, it's related box object should not be removed (because it might contain other crayons). Our crayon object would be defined in our XML schema like this:
 
 ``` xml
-<object class="myCrayon" table="crayons" extends="xPDOSimpleObject">
+<object class="myCrayon" table="crayons" extends="xPDO\Om\xPDOSimpleObject">
     <field key="box" dbtype="int" precision="10" phptype="integer" null="false" default="" />
     <aggregate alias="Box" class="myBox" local="box" foreign="id" cardinality="one" owner="foreign" />
 </object>
@@ -45,7 +45,7 @@ If we delete a box, its related crayons should be removed as well.
 Back to our Crayon-Box example: The Crayons are Composites of the Box object. We'd define that in our XML schema as:
 
 ``` xml
-<object class="myBox" table="boxes" extends="xPDOSimpleObject">
+<object class="myBox" table="boxes" extends="xPDO\Om\xPDOSimpleObject">
     <composite alias="Crayons" class="myCrayon" local="id" foreign="box" cardinality="many" owner="local" />
 </object>
 ```
@@ -76,8 +76,8 @@ Let's go back to our [StoreFinder model](database-and-tables). First off, let's 
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
-<model package="storefinder" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" phpdoc-package="storefinder" phpdoc-subpackage="model" version="1.1">
-  <object class="sfStore" table="sfinder_stores" extends="xPDOSimpleObject">
+<model package="storefinder" baseClass="xPDO\Om\xPDOObject" platform="mysql" defaultEngine="InnoDB" tablePrefix="sf_" phpdoc-package="storefinder" phpdoc-subpackage="model" version="3.0">
+  <object class="sfStore" table="stores" extends="xPDO\Om\xPDOSimpleObject">
     <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" />
     <field key="address" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
     <field key="city" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
@@ -98,7 +98,7 @@ Let's go back to our [StoreFinder model](database-and-tables). First off, let's 
     </index>
   </object>
   
-  <object class="sfOwner" table="sfinder_owners" extends="xPDOSimpleObject">
+  <object class="sfOwner" table="owners" extends="xPDO\Om\xPDOSimpleObject">
     <field key="name" dbtype="varchar" precision="100" phptype="string" null="false" default="" index="index" />
     <field key="email" dbtype="varchar" precision="255" phptype="string" null="false" default="" />
 
@@ -107,7 +107,7 @@ Let's go back to our [StoreFinder model](database-and-tables). First off, let's 
     </index>
   </object>
   
-  <object class="sfStoreOwner" table="sfinder_store_owners" extends="xPDOSimpleObject">
+  <object class="sfStoreOwner" table="store_owners" extends="xPDO\Om\xPDOSimpleObject">
     <field key="store" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
     <field key="owner" dbtype="int" precision="10" attributes="unsigned" phptype="integer" null="false" default="0" index="index" />
 

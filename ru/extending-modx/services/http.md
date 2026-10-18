@@ -3,18 +3,21 @@ title: "HTTP-сервисы"
 translation: "extending-modx/services/http"
 ---
 
-Начиная с 3.0.0-beta1 MODX использует стандартные для экосистемы инструменты исходящих HTTP-запросов. Это заменяет реализации `modRest` и `modRestClient` и ближе к тому, что принято в PHP-экосистеме.
+Начиная с 3.0.0-beta1 MODX использует стандартные для экосистемы инструменты исходящих HTTP-запросов. Устаревший клиент `modRest` все еще поставляется с ядром, но помечен как deprecated; `modRestClient` удален. Новый код предполагается писать на PSR-сервисах ниже — они ближе к тому, что принято в PHP-экосистеме.
 
 По умолчанию MODX даёт реализацию этих сервисов на Guzzle. Компонент может переопределить их. Пока вы опираетесь на PSR-интерфейсы, ваш код не ломается при таких заменах.
 
 Из контейнера сервисов можно запросить любой из сервисов PSR-7 (HTTP messages), PSR-17 (HTTP factories) и PSR-18 (HTTP client):
 
 - `\Psr\Http\Client\ClientInterface`: PSR-18 совместимый HTTP Client для отправки PSR-7 request. На каждый вызов даёт свежий `\GuzzleHttp\Client` с настройками по умолчанию.
-- `\Psr\Http\Message\ServerRequestFactoryInterface`, PSR-17 совместимый ServerRequestFactory для новых PSR-7 ServerRequest. По умолчанию shared instance `\Http\Factory\Guzzle\ServerRequestFactory` [1]
-- `\Psr\Http\Message\RequestFactoryInterface`, PSR-17 совместимый RequestFactory для новых PSR-7 Request. По умолчанию shared instance `\Http\Factory\Guzzle\RequestFactory` [1]
-- `\Psr\Http\Message\StreamFactoryInterface`, PSR-7 совместимый StreamFactory, обычно для тела request/response. По умолчанию shared instance `\Http\Factory\Guzzle\StreamFactory`.
+- `\Psr\Http\Message\ServerRequestFactoryInterface`, PSR-17 совместимый ServerRequestFactory для новых PSR-7 ServerRequest. По умолчанию shared instance `\GuzzleHttp\Psr7\HttpFactory`.
+- `\Psr\Http\Message\RequestFactoryInterface`, PSR-17 совместимый RequestFactory для новых PSR-7 Request. По умолчанию shared instance `\GuzzleHttp\Psr7\HttpFactory`.
+- `\Psr\Http\Message\StreamFactoryInterface`, PSR-7 совместимый StreamFactory, обычно для тела request/response. По умолчанию shared instance `\GuzzleHttp\Psr7\HttpFactory`.
+- `\Psr\Http\Message\ResponseFactoryInterface`, PSR-17 совместимый ResponseFactory. По умолчанию shared instance `\GuzzleHttp\Psr7\HttpFactory`.
+- `\Psr\Http\Message\UploadedFileFactoryInterface`, PSR-17 совместимый UploadedFileFactory. По умолчанию shared instance `\GuzzleHttp\Psr7\HttpFactory`.
+- `\Psr\Http\Message\UriFactoryInterface`, PSR-17 совместимый UriFactory. По умолчанию shared instance `\GuzzleHttp\Psr7\HttpFactory`.
 
-[1] Скоро их обновят до `\GuzzleHttp\Psr7\HttpFactory` из `guzzlehttp/psr7` v2. Сейчас конфликт зависимостей, поэтому на старте взяли работу http-interop.
+Клиент Guzzle по умолчанию берет настройки прокси из системных настроек `proxy_host`, `proxy_port`, `proxy_username` и `proxy_password`; они применяются к каждому запросу через сервис `ClientInterface`, пока вы не переопределите сервис сами.
 
 ## HTTP GET Request
 
@@ -46,7 +49,7 @@ try {
 
 $body = json_decode($response->getBody()->getContents());
 
-return '<pre>' . $response->getStatusCode() . ' : ' . print_r($body, true) . '</pre>';
+return print_r($body, true);
 ```
 
 ## HTTP POST request (JSON body)
@@ -75,7 +78,7 @@ try {
 
 $body = json_decode($response->getBody()->getContents());
 
-return '<pre>' . $response->getStatusCode() . ' : ' . print_r($body, true) . '</pre>';
+return print_r($body, true);
 ```
 
 Здесь запись идёт прямо в существующий streaming body request. Можно через StreamFactoryInterface создать новый stream и поставить его как body. Пример:
@@ -98,10 +101,15 @@ $request = $factory->createRequest('POST', 'https://reqres.in/api/users')
 
 ## ServerRequest или Request?
 
-Для исходящих запросов обычно берут Request и RequestFactoryInterface.
-
-ServerRequest ближе к обработке _входящих_ запросов. MODX пока не использует PSR-стандарты для входящих запросов.
+Для исходящих запросов берут `RequestFactoryInterface`. `ServerRequest` описывает _входящие_ запросы, которые MODX пока не обрабатывает через PSR.
 
 ## Переопределение HTTP-сервисов
 
-Чтобы переопределить один или несколько HTTP-сервисов, через [dependency injection из 3.0](extending-modx/di-container) вызовите `set()` для нужного интерфейса и передайте свой callable.
+Чтобы переопределить один или несколько HTTP-сервисов, через [dependency injection из 3.0](extending-modx/di-container) зарегистрируйте нужный интерфейс через `add()` и передайте свой callable:
+
+```php
+$modx->services->add(\Psr\Http\Client\ClientInterface::class, function ($c) {
+    return new MyCustomClient();
+});
+```
+

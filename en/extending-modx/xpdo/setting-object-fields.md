@@ -80,8 +80,8 @@ The fifth parameter, `$adhocValues`, when true, will automatically set any passe
 
 ``` php
 $myBox->fromArray(array(
-  'width' 5',
-  'notRealField' => 'boo',
+   'width' => 5,
+   'notRealField' => 'boo',
 ),'',false,false,true);
 ```
 
@@ -109,7 +109,7 @@ The parameters are:
 
 - `$className`: the name of the model to update
 - `$setValues`: an array with key => value pairs of values to set
-- `$criteria`: an xPDOCritera instance or array representing a condition for which collections need to be updated.
+- `$criteria`: an `xPDO\Om\xPDOCriteria` instance or array representing a condition for which collections need to be updated.
 
 For example:
 

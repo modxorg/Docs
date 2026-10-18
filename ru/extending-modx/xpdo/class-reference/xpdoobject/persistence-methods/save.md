@@ -76,15 +76,19 @@ if (!$object->save()) {
 }
 ```
 
-В конечном итоге, добавление поля error добавляет сообщения в стек ошибок MODX (`$modx->errors`). Каждое сообщение представляет собой ассоциативный массив с идентификатором и сообщением.
-
-Вы можете быть немного более краткими, используя такой код (необходима очистка):
+В конечном итоге, добавление поля error добавляет каждое сообщение в единственный объект ошибок MODX — `$modx->error`. Каждое сообщение представляет собой ассоциативный массив с ключами `id` и `msg`. В процессоре более краткая запись делает то же самое через `modError::checkValidation()`:
 
 ```php
-if ($object->save() == false) {
+if (!$object->save()) {
     $modx->error->checkValidation($object);
-    return $this->failure($modx->lexicon($objectType.'_err_save'));
+    return $this->failure($modx->lexicon($objectType . '_err_save'));
 }
 ```
 
-Смотрите `modProcessor::addFieldError()` в **modprocessor.class.php** и `modError::addField()` в **error/moderror.class.php**
+Смотрите `addFieldError()` в **core/src/Revolution/Processors/Processor.php** и `checkValidation()` в **core/src/Revolution/error/modError.php**.
+
+## Смотрите также
+
+-   [validate](extending-modx/xpdo/class-reference/xpdoobject/validation/validate)
+-   [getValidator](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator)
+-   [remove](extending-modx/xpdo/class-reference/xpdoobject/persistence-methods/remove)

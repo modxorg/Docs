@@ -29,22 +29,22 @@ xPDO не наследует PDO напрямую, но предоставляе
 Начните с расширения класса так:
 
 ``` php
-class myClass extends xPDO
+class myClass extends \xPDO\xPDO
 ```
 
 затем определите конструктор:
 
 ``` php
-function __construct($options = array()) {
-    $options = array(
+function __construct(array $options = []) {
+    $options = array_merge($options, [
         xPDO::OPT_CACHE_PATH => '/path/to/my/cache/dir',
         xPDO::OPT_TABLE_PREFIX => 'myprefix_',
         xPDO::OPT_HYDRATE_FIELDS => true,
         xPDO::OPT_HYDRATE_RELATED_OBJECTS => true,
         xPDO::OPT_HYDRATE_ADHOC_FIELDS => true,
         xPDO::OPT_VALIDATE_ON_SAVE => true,
-    );
-    parent :: __construct(
+    ]);
+    parent::__construct(
         'mysql:host=localhost;dbname=myxpdodb;charset=utf8',
         'username',
         'password',
@@ -59,23 +59,13 @@ function __construct($options = array()) {
 }
 ```
 
+Обратите внимание на `array_merge($options, [...])`: если просто присвоить `$options = array(...)`, то опции, переданные вызывающим кодом, молча потеряются.
+
 Здесь много деталей. Подробнее о конструкторе: [Конструктор xPDO](extending-modx/xpdo/create-xpdo-instance "The xPDO Constructor").
 
 ## xPDO как сервисный слой
 
-Помимо PDO, xPDO может оборачивать другие объекты, с которыми вы работаете рядом с моделью.
-
-Например, вы можете вручную загрузить Smarty как объект и вызывать его прямо из экземпляра xPDO:
-
-``` php
-if ($className= $xpdo->loadClass('Smarty','/path/to/smarty/smarty.class.php', false, true)) {
-    $xpdo->smarty= & new $className ($xpdo);
-}
-
-$xpdo->smarty->someFunc();
-```
-
-Но xPDO даёт удобный метод, который делает это в одну строку:
+Помимо PDO, xPDO может оборачивать другие объекты, с которыми вы работаете рядом с моделью. Метод `getService()` загружает такой объект и даёт к нему доступ:
 
 ``` php
 if ($xpdo->getService('myService', 'myServiceClass', '/path/to/model/root/', array('param1' => $param1, 'param2' => $param2)) {
@@ -84,6 +74,8 @@ if ($xpdo->getService('myService', 'myServiceClass', '/path/to/model/root/', arr
 ```
 
 Если экземпляр сервиса уже загружен в текущем запросе, он не загрузится снова, а просто вернётся. Так вы получаете переиспользуемые сервисные объекты для типовых задач.
+
+**Замечание:** `getService()` объявлен устаревшим начиная с xPDO 3.0 и будет удалён в 3.1. Пользуйтесь DI-контейнером для доступа к сервисам.
 
 ## xPDO как ORM
 

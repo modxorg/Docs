@@ -12,7 +12,7 @@ Parses an XPDO XML schema and generates classes and map files from it.
 ## Syntax
 
 ``` php
-boolean parseSchema (string $schemaFile, [string $outputDir = ''], [boolean $compile = false])
+boolean parseSchema (string $schemaFile, [string $outputDir = ''], [array $options = array()])
 ```
 
 ## Example

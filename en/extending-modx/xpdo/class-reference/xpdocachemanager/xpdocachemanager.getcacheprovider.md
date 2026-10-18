@@ -12,14 +12,14 @@ Get an instance of a provider which implements the `xPDOCache` interface. Defaul
 ## Syntax
 
 ``` php
-void &getCacheProvider ([ $key = ''], [ $options = array()])
+xPDOCache|null getCacheProvider ([ $key = ''], [ $options = array()])
 ```
 
 ## Example
 
 ``` php
 $cacheManager = $xpdo->getCacheManager();
-$provider = $cacheManager->getCacheProvider('xPDOMemCache');
+$provider = $cacheManager->getCacheProvider('default', array(xPDO::OPT_CACHE_HANDLER => 'xPDO\\Cache\\xPDOMemCached'));
 ```
 
 ## See Also

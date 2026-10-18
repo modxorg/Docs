@@ -7,17 +7,17 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getcollection"
 
 ## xPDO::getCollection
 
-Retrieves a collection of `xPDOObjects` by the specified `xPDOCriteria`.
+Retrieves a collection of `xPDO\Om\xPDOObject` instances by the specified `xPDO\Om\xPDOCriteria`.
 
 If none are found, returns an empty array.
 
 ## Syntax
 
 ``` php
-array getCollection (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
+array getCollection (string $className, [xPDO\Om\xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
-Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
+If you are using xPDO map and class files generated from XML schema, the classname is **not** the same as your table name. Check the schema XML file:
 
 ``` php
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">

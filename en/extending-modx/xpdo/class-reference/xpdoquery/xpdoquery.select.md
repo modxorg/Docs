@@ -12,14 +12,12 @@ Specify columns to return from the SQL query.
 ## Syntax
 
 ``` php
-getSelectColumns($className, $tableAlias= '', $columnPrefix= '', $columns= array (), $exclude= false)
+xPDOQuery select ([string|array $columns = '*'])
 ```
 
-``` php
-xPDOQuery select ([string $columns = '*'])
-```
+Pass either a comma-separated string or an array of column names. `'*'` is expanded into the full prefixed column list of the class, so a joined query can hydrate every object. To limit the result set, pass the output of [getSelectColumns](extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/getselectcolumns "getSelectColumns"), which returns a comma-delimited string.
 
-When selecting fields, **always** make sure to at least include the Primary Key of the table; otherwise, xPDO will not be able to make an object from it and get lost in recursion with the error that the maximum number of nested functions of 100 has been exceeded.
+Always include the primary key of the table. Without it xPDO cannot key the objects it hydrates, and lazy-loading repeats until PHP stops on the nesting limit.
 
 ## Example
 
@@ -33,7 +31,7 @@ $boxes = $xpdo->getCollection('Box',$query);
 
 ## Use with toArray()
 
-It's important to point out that `toArray()` will by default lazy-load values, so it effectively overrides the values you've passed to the `select()` method. To have `toArray()` to follow along with what you've passed to `select()`, you set its third parameter to "true".
+`toArray()` lazy-loads missing fields by default, so it prints more than `select()` asked for. Set the third parameter to `true` to limit the array to the selected fields.
 
 ``` php
 $query = $xpdo->newQuery('modUser');
@@ -47,13 +45,6 @@ foreach ($users as $u) {
 
 ## See Also
 
+- [getSelectColumns](extending-modx/xpdo/class-reference/xpdoobject/metadata-accessors/getselectcolumns "getSelectColumns")
+- [xPDOExpression](extending-modx/xpdo/class-reference/xpdoexpression "xPDOExpression")
 - [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
-
-The function works with either an array of field names or a comma-separated string:
-
-``` php
-xPDOQuery select ([string $columns = '*'])
-xPDOQuery select ([array $columns =  array()])
-```
-
-The example in the API docs passes `select()` the results of `getSelectColumns()`, which returns a comma-delimited list (a string).

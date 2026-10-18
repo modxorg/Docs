@@ -10,7 +10,7 @@ To use xPDO's caching abilities, you'll need to configure several global options
 
 There are several additional global options that can be set if you wish to use something other than the default cache partition and provider.
 
-- `xPDO::OPT_CACHE_HANDLER` - This defines a cache provider, or xPDOCache derivative class which implements xPDO caching methods. (default=cache.xPDOFileCache)
+- `xPDO::OPT_CACHE_HANDLER` - This defines a cache provider, or xPDOCache derivative class which implements xPDO caching methods. (default=`xPDO\Cache\xPDOFileCache`)
 - `xPDO::OPT_CACHE_KEY` - This defines a cache partition, or an instance of the xPDOCache derivative class defined as the cache handler or _provider_. (default=default)
 - `xPDO::OPT_CACHE_EXPIRES` - This defines a default cache expiration time in seconds for all cache partitions to use if not specifically configured themselves.(default=0)
 
@@ -51,7 +51,7 @@ An example of passing the configuration to the xPDOCacheManager methods:
 ``` php
 $cacheOptions = array(
     xPDO::OPT_CACHE_KEY => 'myCache',
-    xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
+    xPDO::OPT_CACHE_HANDLER => 'xPDO\\Cache\\xPDOAPCCache',
 );
 
 $xpdo->cacheManager->set('testdata', 'My cached data.', 0, $cacheOptions);
@@ -62,14 +62,14 @@ echo $xpdo->cacheManager->get('testdata', $cacheOptions);
 $xpdo->cacheManager->delete('testdata', $cacheOptions);
 ```
 
-This would use an instance of `xPDOAPCCache` and prefix all entries with cacheMe since APC does not allow multiple instances and in order to use it the entries must be partitioned per xPDOCache instance by their key.
+This would use an instance of `xPDO\Cache\xPDOAPCCache`. The partition key is used by `xPDOCache::getCacheKey()` to namespace entries within the provider.
 
 An alternative approach is to get the specific cache partition itself and use it's methods directly:
 
 ``` php
 $myCache = $xpdo->cacheManager->getCacheProvider('myCache', array(
     xPDO::OPT_CACHE_KEY => 'myCache',
-    xPDO::OPT_CACHE_HANDLER => 'cache.xPDOAPCCache',
+    xPDO::OPT_CACHE_HANDLER => 'xPDO\\Cache\\xPDOAPCCache',
 ));
 
 $myCache->set('testdata', 'My cached data.');

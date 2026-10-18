@@ -5,7 +5,7 @@ translation: "extending-modx/snippets/templating"
 
 ## Шаблонные сниппеты
 
-Одна из лучших практик в дизайне сниппета - убедиться, что вы никогда не пишете HTML непосредственно в сниппете, а разбиваете HTML на куски. Из этого туториала вы узнаете, как это сделать в сниппете.
+Никогда не пишите HTML напрямую в сниппете — шаблонизируйте HTML в чанки.
 
 ### Наш начальный сниппет
 
@@ -72,16 +72,17 @@ foreach ($resources as $resource) {
 
 ``` php
 // сначала получить шаблон чанка в переменной
-$tpl = $this->modx->getParser()->getElement('modChunk', 'chunkName');
+$tpl = $modx->getParser()->getElement('modChunk', 'chunkName');
 $tpl->setCacheable(false);
 
 // Теперь перебрать коллекцию результатов
 foreach ($resources as $resource) {
    $resourceArray = $resource->toArray();
-   $tpl->_processed = false; // Эта линия важна!
    $output .= $tpl->process($resourceArray);
 }
 ```
+
+Обратите внимание: именно `$tpl->setCacheable(false)` позволяет обрабатывать чанк заново для каждой строки — если оставить кэширование включенным, повторные итерации переиспользуют первый результат.
 
 Теперь пользователь может вызвать сниппет таким образом, чтобы переопределить блок для каждого ресурса с помощью этого вызова:
 
@@ -132,8 +133,6 @@ $id = (int)$modx->getOption('id',$scriptProperties,390);
 $children = $modx->getChildIds($id);
 ```
 
-Очевидно, что вы можете добавить дополнительные опции к этому сниппету, такие как `firstRowCls` (только для первой строки в результатах), `lastRowCls`, `firstRowTpl`, `sortBy`, `sortDir`, `limit` или что-либо еще, что вы можете придумать. Мы могли бы даже сделать так, чтобы «опубликованный» фильтр также был свойством, или скрыть ресурсы, которые являются папками и т.д. Важной частью является то, что теперь у вас есть общее представление.
-
 Для справки, наш окончательный код выглядит так:
 
 ``` php
@@ -156,7 +155,7 @@ $resources = $modx->getCollection('modResource',$c);
 $output = '';
 foreach ($resources as $resource) {
     $resourceArray = $resource->toArray();
-    $resourceArray['cls'] = $rowCls;
+    $resourceArray['rowCls'] = $rowCls;
     $output .= $modx->getChunk($tpl,$resourceArray);
 }
 return $output;
@@ -164,7 +163,6 @@ return $output;
 
 ## Смотрите также
 
-1. [Создание шаблонов сниппетов](extending-modx/snippets/templating)
-2. [Добавление CSS и JS на ваши страницы через сниппеты](extending-modx/snippets/register-assets)
-3. [Как написать хороший Сниппет](extending-modx/snippets/good-snippet)
-4. [Как написать хороший чанк](extending-modx/snippets/good-chunk)
+1. [Добавление CSS и JS на ваши страницы через сниппеты](extending-modx/snippets/register-assets)
+2. [Как написать хороший Сниппет](extending-modx/snippets/good-snippet)
+3. [Как написать хороший чанк](extending-modx/snippets/good-chunk)

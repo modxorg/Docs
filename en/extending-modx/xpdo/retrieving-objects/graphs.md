@@ -4,168 +4,178 @@ _old_id: "1171"
 _old_uri: "2.x/getting-started/using-your-xpdo-model/retrieving-objects/getcollectiongraph"
 ---
 
-## Overview
+## What the method does
 
-`getCollectionGraph` allows you to automatically load up related objects by specifying a JSON style hash to its second argument (in other words, it automatically joins a table on its related tables). It's possible to nest the JSON hash so you also retrieve the related objects of the related objects, for example:
+`getCollectionGraph` loads related objects along with the requested ones, so you read them as objects instead of walking JOIN results by hand. You name the relations to load in a JSON graph passed as the second argument, and xPDO turns the graph into one `LEFT JOIN` per relation.
 
 ``` php
-$blogpost = $modx->getCollectionGraph('BlogPost', '{ "Comments":{} }', 34 );
-foreach ( $blogpost->Comments as $c ) {
-/* ...do something with each comment... */
-}
-// OR, joining on related objects of related objects
-$TFR = $modx->getCollectionGraph('TrackingformsResources', '{ "Resources":{ "MassUnit":{}, "VolumeUnit":{} } }', 123 );
+$boxes = $xpdo->getCollectionGraph('Box', '{"Owner":{},"Wheels":{}}');
 ```
 
-xPDO translates this all into the necessary database query that joins on the appropriate tables (e.g. perhaps named trackingforms\_resources, resources, and units) – like most of the xPDO methods, you refer to a model's tables/classes via their aliases.
-
-You can *NOT* set a limit on a getCollectionGraph when using an xPDOQuery object - you will be limiting the total number of rows fetched, which is not the same as the total number of top level (eg BlogPost) objects. You can get very unexpected results by doing so.
-
-## Sample Snippet
-
-The below example that specifies several related objects. In the **Zip** XML schema, there would be some sort of aggregate relationship defined for "TZ", "ST", and "CT".
+Each key is a relation alias from your schema, and each empty object is the list of relations to load below that node. The graph nests, so the related objects of related objects arrive too:
 
 ``` php
-<?php
-$out = false;
-$xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
-$collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}', $lookupZip);
-foreach ($collection as $obj)
-{
-    if (is_object($obj))
-    {
-        $out = $obj->toArray();                      // 'Zip'
-        $out[timezone] = $obj->TZ->get('tzname');
-        $out[state] = $obj->ST->get('statename');
-        $out[county] = $obj->CT->get('countyname');
+$tracks = $xpdo->getCollectionGraph('Track', '{"Boxes":{"Wheels":{}}}');
+foreach ($tracks as $track) {
+    foreach ($track->Boxes as $box) {
+        foreach ($box->Wheels as $wheel) {
+            echo $track->get('name').': '.$wheel->get('position')."\n";
+        }
     }
 }
-return $out;
-?>
 ```
 
-Note that when you are using `$xpdo->newQuery()` to filter the results and have multiple field names which are the same, for example an "id" field, in one or more of the different classes you join, xPDO will fail to return any result. Simply prefix your fieldname with the classname in that case, for example myClassName.id
+The array form `array('Owner' => array(), 'Wheels' => array())` is equivalent to the JSON string.
 
-### Snippet Call
+> **Aliases, not class names.** Every key in the graph and in the criteria is the `alias` attribute of an `<aggregate>` or `<composite>` in your schema, not the related class name. A graph naming a class that no relation uses loads nothing for that node, and xPDO writes `No foreign key definition for parentClass: …` to the log.
+
+## The schema behind the example
+
+The examples on this page use a small model of boxes that belong to a track and carry wheels. The two relations used by the first example are declared on `Box`:
 
 ``` php
-[[!zipCollectionGraph?lookupZip=`32117`]]
+$xpdo->setPackage('track', MODX_BASE_PATH.'track/model/', 'track_');
 ```
-
-### Output
-
-``` php
-Array
-(
-    [id] => 32117
-    [city] => Daytona Beach
-    [areacode] => 386
-    [lat] => 29.233
-    [lon] => -81.0479
-    [sw_county_id] => 1800
-    [sw_states_id] => 15
-    [sw_timezones_id] => 4
-    [timezone] => Eastern
-    [state] => Florida
-    [county] => Volusia
-)
-```
-
-### Equivalent MySQL
-
-``` php
-$xpdo->setPackage('sw_zipCode', MODX_BASE_PATH.'wsw/model/', 'sw_');
-$collection= $xpdo->getCollectionGraph('Zip', '{"TZ":{},"ST":{},"CT":{}}', $lookupZip);
-```
-
-In MySQL:
-
-``` sql
-SELECT *
-FROM `sw_zips` AS Z
-LEFT JOIN `sw_county` AS CT ON CT.`id` = Z.`sw_county_id`
-LEFT JOIN `sw_states` AS ST ON ST.`id` = Z.`sw_states_id`
-LEFT JOIN `sw_timezones` AS TZ ON TZ.`id` = Z.`sw_timezones_id`
-WHERE Z.`id` = 32117
-```
-
-### The Schema
-
-The following schema is greatly simplified for readability and this example:
-
-Though a functional schema, this is not a final schema by any stretch of the imagination.
 
 ``` xml
-<model package="sw_zipCode" version="1.0" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM">
-<object class="class="City" table="city" extends="xPDOSimpleObject">
-    <field key="cityname" dbtype="varchar" precision="50" phptype="string" null="false"/>
-</object>
-<object class="Cityzip" table="cityzip" extends="xPDOSimpleObject">
-    <field key="city" dbtype="int" precision="10" phptype="integer" null="false"/>
-    <field key="zip" dbtype="int" precision="5" phptype="integer" null="false"/>
-</object>
-<object class="County" table="county" extends="xPDOSimpleObject">
-    <field key="countyname" dbtype="varchar" precision="35" phptype="string" null="true" index="index"/>
-</object>
-<object class="States" table="states" extends="xPDOSimpleObject">
-    <field key="statename" dbtype="varchar" precision="40" phptype="string" null="false" index="index"/>
-    <field key="abbrv" dbtype="char" precision="2" phptype="string" null="false"/>
-</object>
-<object class="Timezones" table="timezones" extends="xPDOSimpleObject">
-    <field key="tzname" dbtype="varchar" precision="20" phptype="string" null="true" index="index"/>
-</object>
-<object class="Zip" table="zips" extends="xPDOSimpleObject">
-    <field key="city" dbtype="varchar" precision="50" phptype="string" null="true"/>
-    <field key="areacode" dbtype="int" precision="3" phptype="integer" null="true"/>
-    <field key="lat" dbtype="float" phptype="float" null="true"/>
-    <field key="lon" dbtype="float" phptype="float" null="true"/>
-    <field key="sw_county_id" dbtype="int" precision="4" phptype="integer" null="false" index="pk"/>
-    <field key="sw_states_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
-    <field key="sw_timezones_id" dbtype="int" precision="2" phptype="integer" null="false" index="pk"/>
+<model package="track" version="3.0" baseClass="xPDO\Om\xPDOObject" platform="mysql" defaultEngine="InnoDB">
+    <object class="User" table="users" extends="xPDO\Om\xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="50" phptype="string" null="false"/>
+    </object>
 
-    <aggregate alias="TZ" class="Timezones" local="tz_id" foreign="id" cardinality="one" owner="foreign" />
-    <aggregate alias="ST" class="County" local="sw_county_id" foreign="id" cardinality="one" owner="foreign" />
-    <aggregate alias="CT" class="States" local="sw_states_id" foreign="id" cardinality="one" owner="foreign" />
-</object>
+    <object class="Box" table="boxes" extends="xPDO\Om\xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="50" phptype="string" null="false"/>
+        <field key="width" dbtype="int" precision="10" phptype="integer" null="false" default="0" index="index"/>
+        <field key="owner_id" dbtype="int" precision="10" phptype="integer" null="true" index="index"/>
+        <field key="track_id" dbtype="int" precision="10" phptype="integer" null="true" index="index"/>
+
+        <aggregate alias="Owner" class="User" local="owner_id" foreign="id" cardinality="one" owner="foreign"/>
+        <composite alias="Wheels" class="Wheel" local="id" foreign="box_id" cardinality="many" owner="local"/>
+        <aggregate alias="Track" class="Track" local="track_id" foreign="id" cardinality="one" owner="foreign"/>
+    </object>
+
+    <object class="Wheel" table="wheels" extends="xPDO\Om\xPDOSimpleObject">
+        <field key="position" dbtype="varchar" precision="20" phptype="string" null="false"/>
+        <field key="width" dbtype="int" precision="10" phptype="integer" null="false" default="0"/>
+        <field key="box_id" dbtype="int" precision="10" phptype="integer" null="false" index="index"/>
+    </object>
+
+    <object class="Track" table="tracks" extends="xPDOSimpleObject">
+        <field key="name" dbtype="varchar" precision="50" phptype="string" null="false"/>
+
+        <composite alias="Boxes" class="Box" local="id" foreign="track_id" cardinality="many" owner="local"/>
+    </object>
 </model>
 ```
 
-## Another Example
+A class that extends `xPDOSimpleObject` inherits an `id` field that is a native auto-increment primary key, so the schema does not declare one. The fields named here — `Box.name`, `Box.width`, `Box.owner_id`, `Box.track_id`, `User.name`, `Wheel.position`, `Wheel.width`, `Wheel.box_id`, `Track.name` — are the only fields the examples read.
 
-Another relation example that is common is joining MODX pages with their Template Variable values. Sometimes this does not work as expected since values are stored differently than you might expect. But here's a walk-through.
+## Reading the result
+
+A `cardinality="one"` relation arrives as an object; a `cardinality="many"` relation arrives as an array you loop over. `toArray()` returns the fields of the object you asked for, without the relation data:
 
 ``` php
-$pages = $modx->getCollectionGraph('modResource', '{"TemplateVarResources":{}}', array('parent'=>12));
-
-foreach ($pages as $p) {
-    foreach ($p->TemplateVarResources as $tv) {
-        // Do stuff here with the TV
-        $tv_array = $tv->toArray();
-        $tv->get('value');
+foreach ($boxes as $box) {
+    print_r($box->toArray());
+    echo $box->Owner->get('name')."\n";
+    foreach ($box->Wheels as $wheel) {
+        echo $wheel->get('position')."\n";
     }
 }
 ```
 
-## Comments
+`$box->Owner` is `null` when the `LEFT JOIN` found no matching row, so guard any dereference. The same is true of a relation whose foreign key on the parent row is empty.
 
-1. Obtain a connection via [the xPDO Constructor](/xpdo/1.x/getting-started/fundamentals/xpdo,-the-class/the-xpdo-constructor "The xPDO Constructor") including [Hydrating Fields](extending-modx/xpdo/create-xpdo-instance/hydrating-fields "Hydrating Fields")
-2. Viewing the package name in the schema we set (or apply) the package to our connection, taking note of the prefix our tables are using in the database
-3. Using 'Zip' as our "view" we look at the relationships directly defined in the Zip object, in our schema, and access those via the aliases given there
+## The generated SQL
 
-## Additional Notes
+`getCollectionGraph('Box', '{"Owner":{},"Wheels":{}}', array('width' => 14))` produces one statement. Every column is prefixed with its relation alias, so fields of the same name coming from different classes stay apart:
 
-Everything is about the schema definition. A poorly thought out and developed schema may very well lead to many hours of frustration.
+``` sql
+SELECT `Box`.`id` AS `Box_id`, `Box`.`name` AS `Box_name`, `Box`.`width` AS `Box_width`,
+    `Box`.`owner_id` AS `Box_owner_id`, `Box`.`track_id` AS `Box_track_id`,
+    `Owner`.`id` AS `Owner_id`, `Owner`.`name` AS `Owner_name`,
+    `Wheels`.`id` AS `Wheels_id`, `Wheels`.`position` AS `Wheels_position`,
+    `Wheels`.`width` AS `Wheels_width`, `Wheels`.`box_id` AS `Wheels_box_id`
+FROM `track_boxes` AS `Box`
+LEFT JOIN `track_users` AS `Owner` ON `Box`.`owner_id` = `Owner`.`id`
+LEFT JOIN `track_wheels` AS `Wheels` ON `Box`.`id` = `Wheels`.`box_id`
+WHERE `Box`.`width` = 14
+ORDER BY `Box`.`id` ASC
+```
 
-If you are having trouble with xPDO, you have two main avenues of troubleshooting:
+xPDO adds the `ORDER BY` on the primary key of the main class, so the parent objects come back in primary key order. The prefixes are removed when the rows are hydrated, which is why `$box->get('width')` and `$box->Wheels[0]->get('width')` are both plain field names.
 
-- First and foremost -- the schema is not correct. Re thinking it from the bottom relations up, and through each relationship may help us "see" where we may be missing it.
-- Not understanding what we are seeing is another huge issue.
-    - Understand the point of your schema. If your schema will eventually instantiate an object representing a single entity (such as a user) your base relationships should be ($this->user) 1: 1 or many on the other side.
-    - A relationship tied to a many-to-many relation (as in the relations between users and groups) will probably need a for each loop to filter through the sub relation.
-    - Aggregate relations should typically be singular. Removing them does nothing to the related data
-    - Composite relations should typically be plural. Removing them also removes each of the related child relations.
-    - Don't be afraid to use regular language in your schema. Instead of Cityzip, in the schema above, Cityhaszips might be a bit clearer in thinking through your schema
-    - Don't use the same class name in multiple places in the schema. Not only will it bring confusion while coding, I suspect it also confuses xPDO. If for no other reason -- its just bad form.
-    - xPDO is fast, very fast. If your queries are taking to long, go back to the schema and follow the indexes.
-    - xPDO likes primary keys, so build your relations around primary keys when ever possible -- if not always.
-    - In case you missed it '{"TZ":{},"ST":{},"CT":{}}' is JSON formatted.
+## Filtering a graph
+
+Pass an [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") as the third argument to filter the parents. Prefix a field with the relation alias when several loaded classes share the field name:
+
+``` php
+$criteria = $xpdo->newQuery('Box');
+$criteria->where(array(
+    'Box.width' => 14,
+    'Wheels.position' => 'front',
+));
+$boxes = $xpdo->getCollectionGraph('Box', '{"Wheels":{}}', $criteria);
+```
+
+An unprefixed field always resolves against the main class.
+
+::: warning
+Do not call `limit()` on the criteria you pass to `getCollectionGraph`. The limit applies to the joined rows, and one parent with three wheels contributes three of them. A box then arrives with only some of its wheels, and the number of boxes you get depends on how many wheels each has. Filter instead of limiting, and page over the parents with a separate query.
+:::
+
+`getObjectGraph` takes the same three arguments and returns a single parent object instead of a collection. If the criteria matches more than one object, it returns the first one and writes `getObjectGraph criteria returned more than one instance.` to the log.
+
+## A graph over the MODX model
+
+Joining Resources with the TV values assigned to them is the same call against the classes MODX ships. The composite `TemplateVarResources` and the aggregate `TemplateVar` are declared in MODX's own schema:
+
+``` php
+$criteria = $modx->newQuery('modResource');
+$criteria->where(array('TemplateVarResources.tmplvarid' => 5));
+
+$pages = $modx->getCollectionGraph(
+    'modResource',
+    '{"TemplateVarResources":{"TemplateVar":{}}}',
+    $criteria
+);
+foreach ($pages as $page) {
+    print $page->get('pagetitle')."\n";
+    foreach ($page->TemplateVarResources as $tv) {
+        print $tv->TemplateVar->get('name').' is '.$tv->get('value')."\n";
+    }
+}
+```
+
+Stored TV values are not always what the manager shows: a value may be serialized, or hold a snippet name that only renders at output time. Filter on `value` with care.
+
+## Criteria given as a string
+
+`getCollectionGraph` skips the primary-key handling that `getObject` applies to its criteria, so a plain condition string reaches the query unchanged. The array form is still the safer habit, and both behave the same way here:
+
+``` php
+$boxes = $xpdo->getCollectionGraph('Box', '{"Wheels":{}}', array('width' => 14));
+```
+
+## When the graph comes back empty
+
+| Symptom | Cause |
+| --- | --- |
+| Log: `No foreign key definition for parentClass: Box using relation alias: Wheels` | The graph names an alias that `Box` does not declare, or the schema was not loaded into the connection. |
+| The relation is `null` or an empty array, no error logged | The `LEFT JOIN` matched nothing: the parent row's foreign key is empty, or no related row carries the referenced value. |
+| A nested level is empty while its parent is not | The nested alias exists on the parent relation's class but not on the class you assumed it on. Check the `<aggregate>` and `<composite>` elements of each class in the chain. |
+| Fewer parent objects than expected | A limit on the criteria truncated the joined rows. See the warning above. |
+
+## Schema decisions that decide what a graph returns
+
+- Cardinality must match the data. `hydrateGraphNode` reads `cardinality` to decide whether the relation is attached with `addMany` or `addOne`, and `remove()` walks only `<composite>` relations when deleting. An aggregate declared as `many` is never filled as a collection.
+- Relations belong on the class that holds the foreign key. An aggregate with `owner="foreign"` reads the column on the owning row; a composite with `owner="local"` writes its value into the child rows on save.
+- Build the chain on primary keys. Every aggregate and composite resolves through the `local` and `foreign` columns named in the schema, and those columns have to exist in the tables the classes map to.
+
+## See Also
+
+- [Creating an xPDO Instance](extending-modx/xpdo/create-xpdo-instance "Creating an xPDO Instance")
+- [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery")
+- [Defining Relationships](extending-modx/xpdo/custom-models/defining-a-schema/relationships "Defining Relationships")
+- [xPDO.getCollectionGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollectiongraph "xPDO.getCollectionGraph")
+- [xPDO.getObjectGraph](extending-modx/xpdo/class-reference/xpdo/xpdo.getobjectgraph "xPDO.getObjectGraph")

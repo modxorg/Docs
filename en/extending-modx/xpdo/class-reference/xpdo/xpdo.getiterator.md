@@ -7,17 +7,17 @@ _old_uri: "2.x/class-reference/xpdo/xpdo.getiterator"
 
 ## xPDO::getIterator
 
-Retrieves an `xPDOIterator` representing an iterable collection of `xPDOObjects` by the specified `xPDOCriteria`.
+Retrieves an `xPDO\xPDOIterator` representing an iterable collection of `xPDO\Om\xPDOObject` instances by the specified `xPDO\Om\xPDOCriteria`.
 
 Use an `xPDOIterator` to loop over large result sets and work with one instance at a time. This greatly reduces memory usage over loading the entire collection of objects into memory at one time. It is also slightly faster.
 
 ## Syntax
 
 ``` php
-xPDOIterator getIterator (string $className, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
+xPDO\xPDOIterator getIterator (string $className, [xPDO\Om\xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
 ```
 
-Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.
+If you are using xPDO map and class files generated from XML schema, the classname is **not** the same as your table name. Check the schema XML file:
 
 ``` xml
 <object class="MyClassName" table="my_class_name" extends="xPDOObject">

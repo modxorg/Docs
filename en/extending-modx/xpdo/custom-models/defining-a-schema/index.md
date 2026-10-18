@@ -10,7 +10,7 @@ xPDO generates its map and class files, which power the database relationships, 
 
 ### Schema Version
 
-Please note that the default schema version changed in xPDO 2.0.0-rc3 to version 1.1. If you created your model in releases before 2.0.0-rc3, and you want to use the new index elements for describing your indexes, you can migrate to the new schema format by using the upgrade tool included with xPDO. See [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1 "Upgrading Models to Schema Version 1.1") for more information.
+For xPDO 3.x (used in MODX 3), schemas must use `version="3.0"`. This version enables PSR-4 autoloading and the `metadata.{dbtype}.php` envelope. If you have an older 1.1 schema, see [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1 "Upgrading Models to Schema Version 1.1") for information on migrating your index definitions, then update the version to 3.0.
 
 - [Defining the Database and Tables](extending-modx/xpdo/custom-models/defining-a-schema/database-and-tables)
 - [Upgrading Models to Schema Version 1.1](extending-modx/xpdo/custom-models/defining-a-schema/upgrade-schema-v1.0-to-v1.1)

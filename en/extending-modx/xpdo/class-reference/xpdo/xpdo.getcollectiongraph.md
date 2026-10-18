@@ -14,7 +14,7 @@ If none are found, returns an empty array.
 ## Syntax
 
 ``` php
-array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool|int $cacheFlag = true])
+array getCollectionGraph (string $className, array|str $graph, [xPDOCriteria|array|str|int $criteria = null], [bool $cacheFlag = true])
 ```
 
 Remember, if you are using xPDO map and class files that were generated from XML schema, the classname is **not** the same as your table name. If in doubt, have a look at the schema XML file, e.g.

@@ -5,7 +5,7 @@ translation: "extending-modx/xpdo/custom-models/validation"
 
 ## Что такое валидация объектов в xPDO?
 
-Проверка (или валидация) объекта выполняется с помощью `xPDOValidator`, класса проверки в xPDO. Он автоматически доступен из любого `xPDOObject` объекта через метод `getValidator`.
+Проверка (или валидация) объекта выполняется с помощью `xPDO\Validation\xPDOValidator`, класса проверки в xPDO (в MODX 3 подменяется на `MODX\Revolution\Validation\modValidator`). Он автоматически доступен из любого `xPDOObject` через метод [`getValidator()`](extending-modx/xpdo/class-reference/xpdoobject/validation/getvalidator).
 
 ## Как это делается?
 
@@ -124,22 +124,15 @@ if ($validator->validate() == false) {
 
 Это определенный тип правила, основанный на расширении класса класса `xPDOValidationRule`. Это позволяет делать более сложные правила, а также использовать встроенные. Встроенные правила включают в себя:
 
-1. [xPDOForeignKeyConstraint](ru/xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](ru/xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](ru/xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](ru/xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](ru/xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](ru/xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
+1. [xPDOForeignKeyConstraint](extending-modx/xpdo/custom-models/validation/xpdoforeignkeyconstraint)
+2. [xPDOMaxLengthValidationRule](extending-modx/xpdo/custom-models/validation/xpdomaxlengthvalidationrule)
+3. [xPDOMaxValueValidationRule](extending-modx/xpdo/custom-models/validation/xpdomaxvaluevalidationrule)
+4. [xPDOMinLengthValidationRule](extending-modx/xpdo/custom-models/validation/xpdominlengthvalidationrule)
+5. [xPDOMinValueValidationRule](extending-modx/xpdo/custom-models/validation/xpdominvaluevalidationrule)
+6. [xPDOObjectExistsValidationRule](extending-modx/xpdo/custom-models/validation/xpdoobjectexistsvalidationrule)
 
-Ожидайте больше документации по этим конкретным правилам.
+О том, как объявлять правила в схеме и писать собственные, читайте в разделе [Validation Rules](extending-modx/xpdo/custom-models/defining-a-schema/validators).
 
 ## Смотрите также
 
-1. [xPDOForeignKeyConstraint](ru/xpdo/advanced-features/object-validation/xpdoforeignkeyconstraint)
-2. [xPDOMaxLengthValidationRule](ru/xpdo/advanced-features/object-validation/xpdomaxlengthvalidationrule)
-3. [xPDOMaxValueValidationRule](ru/xpdo/advanced-features/object-validation/xpdomaxvaluevalidationrule)
-4. [xPDOMinLengthValidationRule](ru/xpdo/advanced-features/object-validation/xpdominlengthvalidationrule)
-5. [xPDOMinValueValidationRule](ru/xpdo/advanced-features/object-validation/xpdominvaluevalidationrule)
-6. [xPDOObjectExistsValidationRule](ru/xpdo/advanced-features/object-validation/xpdoobjectexistsvalidationrule)
-
-- [xPDOValidator](ru/extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator")
+-   [xPDOValidator](extending-modx/xpdo/class-reference/xpdovalidator "xPDOValidator")

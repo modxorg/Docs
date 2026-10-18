@@ -3,9 +3,7 @@ title: "Написание хорошего сниппета"
 translation: "extending-modx/snippets/good-snippet"
 ---
 
-Для некоторых написание сниппета MODX может быть их первой пробой пера в програмировании. Вот несколько советов для новичков и опытных разработчиков.
-
-## Our Example Snippet
+## Наш пример сниппета
 
 ``` php
 <?php
@@ -31,13 +29,9 @@ translation: "extending-modx/snippets/good-snippet"
 $x = (int) $modx->getOption('x', $scriptProperties);
 $y = (int) $modx->getOption('y', $scriptProperties);
 $z = (int) $modx->getOption('z', $scriptProperties, 1);
-// Для отладки:
-$modx->log(modX::LOG_LEVEL_DEBUG
-    , '[mySnippet] вызван на странице '. $modx->resource->id . ' со следующими свойствами: '
-    .print_r($scriptProperties, true));
 // Проверка Входных Данных
 if (!isset($scriptProperties['x']) || !isset($scriptProperties['y'])) {
-    $modx->log(modX::LOG_LEVEL_ERROR, '[mySnippet] отсутствуют необходимые свойства &X и &г!');
+    $modx->log(modX::LOG_LEVEL_ERROR, '[mySnippet] отсутствуют необходимые свойства &x и &y!');
     return;
 }
 return $x * $y * $z;
@@ -103,7 +97,7 @@ return $modx->getChunk('myChunk', $props);
 
 ## Не используйте Print или Echo
 
-Никогда не печатайте и не повторяйте значения в вашем фрагменте кода. Фрагменты подобны функциям: они должны _возвращать_ данные. При использовании инструкций `print` или `echo` может показаться, что они работают. Они могут иметь неожиданные результаты. Всегда собирайте выходные данные в переменную строку, например `$output`, и возвращайте эту переменную строку.
+Никогда не печатайте и не повторяйте значения в вашем фрагменте кода. Фрагменты подобны функциям: они должны _возвращать_ данные. Вывод через `echo` не теряется — MODX буферизирует его и добавляет перед возвращаемым значением, — но смешивание обоих способов делает порядок вывода непредсказуемым и трудно обоснованным (дубли, лишние пробелы, вывод до возврата ошибки). Всегда собирайте выходные данные в переменную строку, например `$output`, и возвращайте эту переменную строку.
 
 ## Консистенция
 
@@ -129,5 +123,4 @@ $modx->log(modX::LOG_LEVEL_DEBUG, '[mySnippet] вызван со следующ�
 
 1. [Создание шаблонов сниппетов](extending-modx/snippets/templating)
 2. [Добавление CSS и JS на ваши страницы через сниппеты](extending-modx/snippets/register-assets)
-3. [Как написать хороший Сниппет](extending-modx/snippets/good-snippet)
-4. [Как написать хороший чанк](extending-modx/snippets/good-chunk)
+3. [Как написать хороший чанк](extending-modx/snippets/good-chunk)

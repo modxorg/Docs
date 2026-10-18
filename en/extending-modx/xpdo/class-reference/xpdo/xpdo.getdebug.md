@@ -12,7 +12,7 @@ Returns the debug state for the XPDO connection.
 ## Syntax
 
 ``` php
-boolean getDebug ()
+boolean|integer getDebug ()
 ```
 
 ## Example

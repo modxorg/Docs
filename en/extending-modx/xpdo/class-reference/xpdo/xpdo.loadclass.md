@@ -5,9 +5,15 @@ _old_id: "1249"
 _old_uri: "2.x/class-reference/xpdo/xpdo.loadclass"
 ---
 
+## **⚠️ DEPRECATED** – `xPDO::loadClass`
+
+**Note:** `loadClass()` has been **deprecated since xPDO 3.0**. Use Composer autoloading or `addPackage()` with PSR‑4 instead.
+
 ## xPDO::loadClass
 
 Include a class by fully qualified name. This is a handy way to perform an `include_once` operation to include a `.class.php` file. If the file is not found, `false` is returned and a warning is logged. This only includes the class: it does not instantiate an instance of it.
+
+**Note:** `loadClass()` is deprecated since xPDO 3.0. Use Composer autoloading or `addPackage()` with PSR-4 instead.
 
 ## Syntax
 
@@ -21,11 +27,11 @@ The $fqn (fully qualified name) should in the format:
 
 which will translate to:
 
-> XPDO\_CORE\_PATH/om/dir\_a/dir\_b/dir\_c/dbtype/classname.class.php
+> XPDO\_CORE\_PATH/Om/dir\_a/dir\_b/dir\_c/classname.class.php
 
 ### Hint
 
-- The file name you are including must include **.class.php** as its extension.
+- The file name you are including must include **.class.php** as its extension (legacy 2.x format).
 - The path to your model must end in a trailing slash!
 
 ## Example

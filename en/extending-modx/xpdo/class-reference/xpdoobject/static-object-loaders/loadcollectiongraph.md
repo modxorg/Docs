@@ -12,5 +12,5 @@ This function is responsible for loading a collection of object instances, as we
 ## Syntax
 
 ``` php
-function loadCollectionGraph(& $xpdo, $className, $graph, $criteria, $cacheFlag)
+static array loadCollectionGraph(xPDO &$xpdo, string $className, string|array $graph, mixed $criteria, boolean|integer $cacheFlag)
 ```

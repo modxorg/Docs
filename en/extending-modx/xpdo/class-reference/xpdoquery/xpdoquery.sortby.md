@@ -12,7 +12,7 @@ Add an ORDER BY clause to the query.
 ## Syntax
 
 ``` php
-xPDOQuery sortby (string $column, [string $direction = 'ASC'])
+xPDOQuery sortby (string|xPDOExpression $column, [string $direction = 'ASC'])
 ```
 
 ## Example
@@ -39,6 +39,13 @@ Likewise, you can pass any valid database function to the sortby method, e.g. 'F
 $query = $xpdo->newQuery('modResource');
 $query->sortby('FIELD(modResource.id, 4,7,2,5,1 )');
 $boxes = $xpdo->getCollection('modResource',$query);
+```
+
+For a raw SQL fragment, wrap it in an [xPDOExpression](extending-modx/xpdo/class-reference/xpdoexpression "xPDOExpression") so the intent is explicit and the value is not mistaken for a column name:
+
+``` php
+$query = $xpdo->newQuery('modResource');
+$query->sortby($xpdo->expression('COUNT(*)'), 'DESC');
 ```
 
 ## See Also

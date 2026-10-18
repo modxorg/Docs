@@ -12,7 +12,7 @@ Get the absolute path to the current writable directory for storing cache files.
 ## Syntax
 
 ``` php
-string getCachePath ()
+string|false getCachePath ()
 ```
 
 ## Example

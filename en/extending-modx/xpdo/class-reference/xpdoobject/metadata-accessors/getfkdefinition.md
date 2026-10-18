@@ -20,14 +20,13 @@ array getFKDefinition (string $alias)
 Get the FK definition of a User who just edited the Document.
 
 ``` php
-$document = $xpdo->getObject('Document',1);
+$document = $modx->getObject('modResource',1);
 $fkdef = $document->getFKDefinition('EditedBy');
 print_r($fkdef);
 
 /* Outputs:
 Array (
-  [class] => User
-  [key] => editedby
+  [class] => MODX\Revolution\modUser
   [local] => editedby
   [foreign] => id
   [cardinality] => one
