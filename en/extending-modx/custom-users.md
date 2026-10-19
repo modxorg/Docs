@@ -1,16 +1,15 @@
 ---
 title: "Custom Users"
+description: "Guide to extending the MODX Revolution modUser class to add custom user data and functionality, including schema, model generation, and usage."
 _old_id: "355"
 _old_uri: "2.x/developing-in-modx/advanced-development/extending-moduser"
 ---
 
 ## Intended Audience
 
-This article is for developers who are looking to add additional data to their MODX users and functionality to the related classes.
+For developers who need extra data on their MODX users and extra functionality on the related classes. The steps below are technical and rely on xPDO: familiarity with xPDO objects and methods (e.g. [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")) is required.
 
-Although this is possible via a less integrated approach by simply adding a database table that includes a foreign key relation back to the original MODX users table, the approach outlined here is for a more thorough integration via extending the core modUser class.
-
-The steps here are highly technical and they rely on MODX's underlying xPDO framework. You should have some familiarity with xPDO's objects and methods (e.g. [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject")) before attempting this tutorial.
+The quick way out is a separate table with a foreign key back to `modx_users`. This article covers the deeper integration instead: extending the core `modUser` class.
 
 ### See Also
 
@@ -18,33 +17,34 @@ The steps here are highly technical and they rely on MODX's underlying xPDO fram
 - [More Examples of xPDO XML Schema Files](extending-modx/xpdo/custom-models/defining-a-schema/more-examples "More Examples of xPDO XML Schema Files")
 - [Generating the Model Code](extending-modx/xpdo/custom-models/generating-the-model "Generating the Model Code")
 
-## Overview
 
-By extending the MODX Revolution authentication layer we can build very complex and varied user subsystems, e.g. for social networking, user management systems, or other applications not yet conceptualized. This ability to extend the modUser class is just one example of how to extend a core class – a similar approach could be used to extend any MODX core class.
-
-## Purpose
-
-Extending modUser is for those situations when user authentication or user interaction need to be extended or enhanced, e.g. for easier custom authentication.
 
 ## The Rules
 
-Extending modUser does _not_ mean we are adding anything to the _modx_\_users table in the database. Instead, we will be adding a separate related table, bound to the original table via a foreign key. At no time should an extended application actually attempt to completely replace the modUser Class. We use the modUser class as our foundation and we build on it. The only indication that the user has been extended will be found by the class\_key being changed from "modUser" to the extended class name.
+Extending `modUser` does **not** mean writing to the `modx_users` table. You add a separate related table and bind it to the original table by a foreign key. Never replace the `modUser` class outright: build on it.
 
-Your extension should be used to access **your extension**. If the user (object) has not been extended, do not allow your extension to interact with them -- hence: let your extension die.
+The only trace of an extended user is its `class_key` — changed from `MODX\Revolution\modUser` (the default in 3.x; `modUser` in 2.x) to the extended class name.
 
-MODX Revolution already handles users and probably does not need much help. While we may use your extension on \*our\* data, please do not begin writing "bloat" which is simply repeating code already provided in the modUser class. In other words use the Revolution resources for your extended users, but do not create code to replace modUser.
 
-Lastly, get familiar with [modUser](developing-in-modx/other-development-resources/class-reference/moduser "modUser"), before you begin to code. Some methods are not one-to-one as you might assume, such as attributes, which can be assigned per context, resource, etc. Typically use the modUser suggestions to access modUser methods.
+Key rules for extending `modUser`:
 
-## Steps to extending modUser
+1. Use your extension only to access your extra data. Do not interact with user objects that have not been extended.
+2. Do not replicate existing `modUser` functionality. Use the built-in user handling instead.
+3. Learn `modUser` and `modPrincipal` before coding. Some of their methods (attributes, for one) work per context or resource.
+4. Work with attributes through `modPrincipal::loadAttributes()` / `getAttributes()`. They are driven by the `principal_targets` system setting.
+5. Access `modUser` methods through `modUser` suggestions.
 
-### 1. ) Create the schema and generate a model
+## Steps to extend modUser
 
-The first thing we need to accomplish, is to create an extended user schema which extends modUser. Please note that there is no aggregate relation upwards from your "main" class which is extending modUser.
+### 1. Create the extended user schema and generate a model
+
+Create an extended user schema that extends modUser. There is no aggregate relation upwards from your "main" class which is extending modUser.
+
+The table prefix for the ancillary table is set in the `<model>` node.
 
 #### Simple Example
 
-The simplest example we could imagine is that we want to add a single extra attribute to the user data – so in the database, this would mean we have a separate table with 2 columns: one for the foreign key relation back to the **modx\_users** table, and the other column containing our new "extra" attribute, e.g. a _facebook\_url_:
+We add a single extra attribute (e.g. a _facebook\_url_) to the user data. In the database this means a separate table with 2 columns: a foreign key back to the **modx\_users** table and the new attribute:
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -64,11 +64,11 @@ The simplest example we could imagine is that we want to add a single extra attr
  </model>
 ```
 
-Note that the extending of modUser class happens all within that single _object_ node. Also notice that we specify the prefix for our ancillary table in the _model_ node: **ext\_**
+The extension of modUser happens within a single _object_ node.
 
 #### More Involved Example
 
-Note that the _index="unique"_ bit has been deprecated – the index declaration should go into its own node as in the example above.
+Deprecated: `index="unique"` — declare indexes in their own node instead:
 
 ``` xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -94,22 +94,23 @@ Note that the _index="unique"_ bit has been deprecated – the index declaration
 </model>
 ```
 
-You will need to parse and create the model map associated with this schema. As this process is out of the scope of this topic, please refer to [Using Custom Database Tables in your 3rd Party Components](extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables in your 3rd Party Components") for further information.
+Parse and create the model map for this schema. The process is out of scope here: see [Using Custom Database Tables in your 3rd Party Components](extending-modx/tutorials/using-custom-database-tables "Using Custom Database Tables in your 3rd Party Components").
 
-### 2.) Edit the extuser.class.php
+### 2. Edit the extended user class
 
-To access the extended class, we have to inform modUser that the user in question has been extended. The _modx_\_users table in the database contains a field specifically for this purpose: class\_key. The default value in this field is modUser. As users are added to your site using your extension we need to "force" the name of our "main" class in the schema, namely extUser in our example.
+Set `class_key` in `_modx_users` to your extended class (e.g., `extUser`). Default is `MODX\Revolution\modUser`.
 
-Edit the extuser.class.php file created when you generated the model. The specific file is the one found in the top of the model tree (you should see a mysql directory) in this same folder. Edit the file to resemble the following:
+Edit the generated `extuser.class.php` (found in `model/mysql/`):
 
 ``` php
- <?php
+<?php
 /**
  * @package extendeduser
  * @subpackage user.mysql
  */
+use MODX\Revolution\modUser;
 class extUser extends modUser {
-    function __construct(xPDO & $xpdo) {
+    function __construct(xPDO $xpdo) {
         parent::__construct($xpdo);
         $this->set('class_key','extUser');
     }
@@ -117,32 +118,32 @@ class extUser extends modUser {
 ?>
 ```
 
-### 3.) Create (or edit) _extension\_packages in System Settings_
+### 3. Create (or edit) extension_packages in System Settings
 
-Access the System settings found in the System menu of the manager, and search for [extension\_packages](building-sites/settings/extension_packages "extension_packages").
+In System settings (System menu), search for [extension_packages](building-sites/settings/extension_packages "extension_packages").
 
- **If the key already exists**, add inside the json array
+**If the key already exists**, add inside the JSON array:
 
 ``` php
 ,{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}
 ```
 
-#### If the key does not exists
+**If the key does not exist**, create a new system setting:
 
-- Create a new system setting with name of extension\_packages
-- Key of extension\_packages
+- Name: `extension_packages`
+- Key: `extension_packages`
 - Fieldtype: Textfield
-- value
+- Value:
 
 ``` php
 [{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}}]
 ```
 
-### 4.) Final Step Create a class to access and utilize your extended class
+### 4. Create a class to access and utilize your extended user class
 
-The whole reason for extending a core class is so you could interact with your extended data more easily. So at some point in a Snippet or Plugin or CMP, you'd be working with your new data.
+To interact with your extended data, create a class to access it. You'll typically do this in a Snippet, Plugin, or CMP.
 
-#### Simple Example
+#### Snippet Example
 
 Here's how you might interact with your extended data in a Snippet:
 
@@ -157,7 +158,7 @@ return print_r($data->toArray(), true);
 #### More complex example
 
 ``` php
- <?php
+<?php
 /**
  *  File        sample.class.php (requires MODX Revolution 2.x)
  * Created on    Aug 18, 2010
@@ -171,12 +172,12 @@ return print_r($data->toArray(), true);
  * @license      GPL
  *
  */
-if (!class_exists('Sampleclass')) {
-    class Sampleclass
+if (!class_exists('Extendeduser')) {
+    class Extendeduser
     {
-        function __construct(modX & $modx, array $config= array ()) {
-            /* Import modx as a reference */
-            $this->modx= & $modx;
+        function __construct(modX $modx, array $config= array ()) {
+            /* Import modx */
+            $this->modx= $modx;
             /* Establish the environment */
             $this->extPath= $modx->getOption('core_path',null, MODX_CORE_PATH).'components/extendeduser/';
             $this->modx->addPackage('extendeduser', $this->extPath .'model/', 'ut_');
@@ -215,13 +216,13 @@ if (!class_exists('Sampleclass')) {
 }
 ```
 
-#### 5.) Accessing the class
+#### 5.) Accessing the extended user class
 
 In our example we will be accessing our extended user throughout our site, therefore we load it as a service as shown in the following example:
 
 ``` php
 <?php
-$x = $modx->getService('extendeduser','Sampleclass',$modx->getOption('core_path',null, MODX_CORE_PATH).'components/extendeduser/',$scriptProperties);
+$x = $modx->getService('extendeduser','Extendeduser',$modx->getOption('core_path',null, MODX_CORE_PATH).'components/extendeduser/',$scriptProperties);
 if (!($x instanceof Extendeduser)) {
     $modx->log(modX::LOG_LEVEL_ERROR,'[Extendeduser] Could not load Extendeduser class.');
     $modx->event->output(true);
@@ -231,42 +232,36 @@ return;
 
 ## Noteworthy items
 
-1. Any pre existing user, will still have modUser as the class\_key and therefore will **not** be extended or produce user objects of type extUser unless you change it
-2. Double check the modx.mysql.schema.xml file to make sure you are not using classes or alias it is already using, as yours will supersede the default moduser prohibiting you access to items such as the user attributes (with alias Profile)
-3. The extUser will **not** have a table created in the database, but the attached relations will
-4. The extended class table(s) **must** be in the same database as the regular _modx_\_users table
-5. Symptoms of step 3 (extension\_packages path) not being correct:
-   1. Any user with the class\_key of extUser will return an error upon login: "User cannot be found...". If this is the admin, access your database directly, return the class\_key to modUser, login correctly and then alter the path to a correct representation of the path.
-   2. The snippets attached to the class will intermittently work or fail altogether
-6. To get counts from your data (i.e. how many phone numbers does this person have) use either (any criteria can be added):
+1. Any pre-existing user will still have `modUser` as the `class_key` and therefore will not be extended or produce user objects of type `extUser` unless you change it.
+2. `modUser::setSudo()` – the preferred way to set the privileged `sudo` flag, since mass‑assignment of `sudo` is blocked in `modUser::set()`.
+3. `modUser::save()` is overridden to fire MODX‑specific events (e.g. `OnUserBeforeSave`) and to set `createdon` for new users. Be aware that saving an extended user will trigger these events.
+4. Double‑check the `modx.mysql.schema.xml` file to ensure you are not colliding with existing class names or aliases; otherwise your extensions may supersede the default `modUser` definitions (including attributes like `Profile`).
+5. The `extUser` will **not** have a table created in the database, but the attached relations will.
+6. The extended class table(s) **must** be in the same database as the regular `_modx_\_users` table.
+7. Symptoms of step 3 (extension _packages path) not being correct:
+   - Any user with the `class_key` of `extUser` will return an error upon login: "User cannot be found…". If this is the admin, access your database directly, revert the `class_key` to `MODX\Revolution\modUser`, log in correctly, and then correct the path.
+   - The snippets attached to the class may intermittently work or fail altogether.
+8. To get counts from your data (i.e. how many phone numbers does this person have) use either (any criteria can be added):
 
 ``` php
     $this->modx->getCount('extPhones', array('user' => $this->userID));
     $this->modx->getCount('extPhones');
 ```
 
-It is completely possible to have multiple extended modUser systems active at the same time. It would even be feasible to extend Jason Coward's rpx extension into a hybrid system utilizing the benefits of both systems. It is also completely possible to have multiple extended modUser applications running autonomously. This is simply done by following this process for each of your extensions, changing only the "class\_key" field to reflect the extended class belonging to each respective user.
+Multiple extended modUser systems can run side by side: repeat the process for each extension, changing `class_key` to the respective extended class. They can even be combined — for example, by extending the rpx extension into a hybrid system.
 
 ## Suggested additional considerations
 
-The model files can be edited with methods and descriptions. Take a look at much of the MODX / xPDO models and you will see this done extensively.
-
-This process can be automated and captured upon user login. For the sake of brevity, it is best to refer you to splittingred's github, where he provides a real world application:
-
-The plugins:
-
-- <http://github.com/splittingred/modActiveDirectory/blob/master/core/components/activedirectory/elements/plugins/plugin.activedirectory.php>
-
-The events:
-
-- <http://github.com/splittingred/modActiveDirectory/blob/master/core/components/activedirectory/elements/events/onauthentication.php>
-- <http://github.com/splittingred/modActiveDirectory/blob/master/core/components/activedirectory/elements/events/onusernotfound.php>
+- Model files can be edited with methods and descriptions (see MODX/xPDO models).
+- Automate on user login: see splittingred's modActiveDirectory:
+    - Plugin: `plugin.activedirectory.php`
+    - Events: `onauthentication.php`, `onusernotfound.php`
 
 ## Extended modUser Classes currently Available
 
-[modActiveDirectory](http://github.com/splittingred/modActiveDirectory) an application which provides interaction with a Microsoft Domain Controller
+[modActiveDirectory](http://github.com/splittingred/modActiveDirectory) provides interaction with a Microsoft Domain Controller.
 
-[rpx extension](http://github.com/opengeek/engaged) allows people to login via Facebook and other social networking medium
+[rpx extension](http://github.com/opengeek/engaged) allows people to login via Facebook and other social networking mediums.
 
 ## Modifying class\_key
 
