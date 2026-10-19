@@ -12,3 +12,6 @@ index.php
 .temp/
 .codegraph/
 .DS_Store
+
+# Local tooling artefacts
+.codegraph/

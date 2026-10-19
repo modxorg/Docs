@@ -1,16 +1,14 @@
 ---
 title: "Написание плагинов"
+description: Как плагины MODX подписываются на системные события, читают имя события и возвращают или изменяют вывод, с примерами"
 translation: "extending-modx/plugins"
 ---
 
 ## Что такое плагин?
 
-Плагины похожи на сниппеты: это фрагменты PHP-кода с доступом к API MODX. Главное отличие в том, _когда_ выполняется код. Сниппеты вы вставляете в страницу или шаблон, и они запускаются при просмотре. Плагины срабатывают на системные события: сохранение чанка, очистка кеша и т. п. Когда событие «стреляет», выполняется каждый плагин, который на него подписан. После выполнения управление возвращается к точке сразу после места вызова системного события.
+Плагин — это PHP, который выполняется на системном событии, а не при отрисовке страницы. Сниппет работает, когда рендерится страница; плагин — когда что-то происходит: сохраняется чанк, чистится кэш, пользователь логинится. Все плагины, подписанные на сработавшее событие, выполняются по возрастанию приоритета, после чего управление возвращается вызывающему коду.
 
-**Другие CMS**
-В каждой CMS есть аналог «плагина», но термины могут отличаться. В WordPress, например, плагины «цепляются» к событиям «actions» или «filters».
-
-Плагины не ограничены фронтендом. Многие события возникают только в менеджере MODX. Список системных событий MODX см. [здесь](https://docs.modx.com/current/en/extending-modx/plugins/system-events "MODX System Events").
+В других CMS этот механизм называют хуком, действием или фильтром — имя разное, суть одна. Большинство событий MODX возникает только в менеджере, поэтому плагины не ограничены фронтендом; полный список — в [Системных событиях](extending-modx/plugins/system-events "MODX System Events").
 
 При сохранении из кода плагина удаляется любой закрывающий PHP-тег `?>`. Он не нужен: при выполнении код плагина окажется внутри другого PHP-кода.
 
@@ -42,20 +40,16 @@ switch($eventName) {
 }
 ```
 
-## Примеры плагинов
+## Сообщение пользователю
 
-Ниже несколько типичных сценариев:
-
-### Сообщение пользователю
-
-**Описание:** Отправьте пользователю сообщение при создании или редактировании страницы, например кастомный заголовок.
+**Описание:** Отправьте пользователю сообщение при создании или редактировании страницы, например свой заголовок.
 **Системные события:** OnDocFormPrerender
 
 ``` php
 $modx->event->output('Hi there user!');
 ```
 
-### Пользовательская валидация
+## Валидация при сохранении
 
 **Описание:** Выполните пользовательскую валидацию при сохранении ресурса страницы.
 **Системные события:** OnBeforeDocFormSave
@@ -69,11 +63,11 @@ return "This goes to the logs";
 Текст для пользователя передавайте в **$modx->event->output()**. Сообщение в лог отправляйте через `return`. Если валидация прошла, верните `null`.
 
 **HTML не допускается**
-Вывод в **$modx->event->output()** должен быть plain text, без HTML. Сообщение показывается в модальном окне JavaScript.
+Вывод в **$modx->event->output()** должен быть plain text, без HTML. Для OnBeforeDocFormSave этот текст становится сообщением об ошибке процессора и выводится как обычный текст.
 
 Возвращаемое значение должно быть строкой. Если это число, склейте его с пустой строкой.
 
-### Фильтр слов
+## Фильтр слов
 
 **Описание:** Отфильтруйте слова в документе перед выводом на сайт.
 **Системные события:** OnWebPagePrerender
@@ -84,11 +78,11 @@ $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
 ```
 
-### Редирект при 404
+## Редирект при 404
 
 **Описание:** Перенаправьте пользователя на выбранный документ и отправьте сообщение.
 **Системные события:** OnPageNotFound
-**Системные настройки:**
+**Системные настройки:** создайте эти три ключа в «Система → Настройки» — в ядре их нет:
 
 - _pnf.page_: ID ресурса ошибки
 - _pnf.mailto_: адрес получателя
@@ -106,22 +100,24 @@ if ($modx->event->name == 'OnPageNotFound') {
             $resourceId = $modx->resource->get('id');
             $subject = 'Page not found';
             $body = 'Someone tried to access document id '.$resourceId;
-            $modx->getService('mail', 'mail.modPHPMailer');
-            $modx->mail->set(modMail::MAIL_BODY, $body);
-            $modx->mail->set(modMail::MAIL_FROM, $modx->getOption('pnf.mailfrom'));
-            $modx->mail->set(modMail::MAIL_FROM_NAME, 'MODX');
-            $modx->mail->set(modMail::MAIL_SENDER, 'MODX');
-            $modx->mail->set(modMail::MAIL_SUBJECT, $subject);
-            $modx->mail->address('to',$mailto);
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_BODY, $body);
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_FROM, $modx->getOption('pnf.mailfrom'));
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_FROM_NAME, 'MODX');
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_SENDER, 'MODX');
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_SUBJECT, $subject);
+            $modx->mail->address('to', $mailto);
             $modx->mail->setHTML(true);
             $modx->mail->send();
          }
-         $url = $this->makeUrl($scriptProperties['page']);
-         $modx->sendRedirect($url, 1);
+         $modx->sendRedirect($modx->makeUrl($errorPage), ['count_attempts' => true]);
          exit;
     }
 }
 ```
+
+::: warning
+Внутри кода плагина используйте `$modx->…`, а не `$this->…`. В 3.x тело плагина подключается через `include` напрямую, без обёртки в метод, поэтому `$this` — это объект `modPlugin`, у которого нет ни `makeUrl()`, ни `getOption()`, ни лексиконных методов.
+:::
 
 ## Смотрите также
 
@@ -198,7 +194,7 @@ if ($modx->event->name == 'OnPageNotFound') {
 - [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender)
 - [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender)
 - [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit)
-- [OnModxInit](extending-modx/plugins/system-events/onmodxinit)
+- [OnMODXInit](extending-modx/plugins/system-events/onmodxinit)
 - [OnPackageInstall](extending-modx/plugins/system-events/onpackageinstall)
 - [OnPackageRemove](extending-modx/plugins/system-events/onpackageremove)
 - [OnPackageUninstall](extending-modx/plugins/system-events/onpackageuninstall)
@@ -218,7 +214,7 @@ if ($modx->event->name == 'OnPageNotFound') {
 - [OnPropertySetBeforeSave](extending-modx/plugins/system-events/onpropertysetbeforesave)
 - [OnPropertySetRemove](extending-modx/plugins/system-events/onpropertysetremove)
 - [OnPropertySetSave](extending-modx/plugins/system-events/onpropertysetsave)
-- [OnResourceGroupBeforeRemove](extending-modx/plugins/system-events/onresourcegroupbeforeremove)
+- [OnBeforeResourceGroupRemove](extending-modx/plugins/system-events/onresourcegroupbeforeremove)
 - [OnResourceGroupBeforeSave](extending-modx/plugins/system-events/onresourcegroupbeforesave)
 - [OnResourceGroupRemove](extending-modx/plugins/system-events/onresourcegroupremove)
 - [OnResourceGroupSave](extending-modx/plugins/system-events/onresourcegroupsave)

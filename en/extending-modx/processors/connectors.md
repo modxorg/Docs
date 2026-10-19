@@ -18,13 +18,13 @@ Manager requests for core actions go through files under `connectors/` that incl
 
 Example shape of a request: your ExtJS grid posts to a connector URL with `action=resource/getlist` (plus auth headers MODExt adds for you).
 
-## Extra connectors
+## Extra processors
 
-The core connector only knows core processor paths. Extras add their own file, typically:
+MODX 3.x has exactly one connector, `connectors/index.php`; manager requests are routed by `namespace`, not by a per-Component file. Nothing in core looks for `assets/components/<pkg>/connector.php`.
+
+To route a request at your own processors, write a PHP file that includes the core connector and then handles the request itself. The connector skips its own `handleRequest()` when `MODX_CONNECTOR_INCLUDED` is already defined, which is what `config.core.php` does — so the include is enough:
 
 `assets/components/myextra/connector.php`
-
-Pattern (same idea as in [Developing an Extra, Part II](extending-modx/tutorials/developing-an-extra/part-2)):
 
 ```php
 <?php
@@ -46,6 +46,8 @@ $modx->request->handleRequest([
 ```
 
 `processors_path` tells MODX where `{action}.class.php` files live. The grid’s `baseParams.action` (for example `mgr/item/getlist`) maps to `processors/mgr/item/getlist.class.php`.
+
+You must point the client at this file yourself — set `connectorUrl` to its URL in the grid config. MODX will not discover it.
 
 ## Auth and CSRF
 

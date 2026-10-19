@@ -1,41 +1,46 @@
 ---
 title: "Namespaces"
+description: How MODX namespaces resolve lexicons, manager controllers, and model packages, and what runs inside a namespace bootstrap.php"
 _old_id: "208"
 _old_uri: "2.x/developing-in-modx/advanced-development/namespaces"
 ---
 
-Namespaces are organizational elements for Components. They relate lexicon strings and packages to one another, as well as provide a basic way for Revolution to know what objects belong to what package.
+A namespace is an organizational unit for Components. It maps a short name to a directory on disk, which lets MODX find that Component's lexicons, manager controllers, and model packages without hard-coded paths.
 
-Lexicons, controllers, processors and model packages are typically contained in a specific namespace. 
+Lexicons and controllers resolve through a namespace. **Processors do not** — see [Processors](extending-modx/processors) for how they are located.
 
 ## Usage
 
-Revolution uses namespace paths to determine where to load 3rd Party Component files for custom manager pages, as well as managing custom language strings for those 3rd Party Components.
+A manager page is identified by two query parameters: `namespace` (default `core`) and `a`, which carries the action. Given `?a=some/action&namespace=quip`, MODX looks for the controller inside the `quip` namespace directory — most often `core/components/quip/controllers/some/action.class.php`.
 
-For example, if a Namespace called "quip" has a path of "/www/modx/core/components/quip/", then when the CMP is loaded from the [Action](extending-modx/menus/actions "Actions and Menus") with a value on the controller of "index", it will look for the index controller file in the namespace path, ie: "/www/modx/core/components/quip/index.php". This will then load in place of the Custom Manager Page. A useful value for the controller on the Action is "controllers/index", so that you can point it to "/www/modx/core/components/quip/controllers/index.php" (which is the standard practice for paths for Extras in MODX).
+If a namespace "quip" has the path `/www/modx/core/components/quip/`, that file resolves to `/www/modx/core/components/quip/controllers/some/action.class.php`.
+
+Menu entries store the same pair: `modMenu` carries an `action` column and a `namespace` column (default `core`). There is no `controller` column — the 2.x `modAction` class and its `controller` field were removed in 3.0. The full resolution order lives under [Controllers and Menus](extending-modx/menus/actions "Controllers and Menus").
 
 ## Lexicons in Namespaces
 
-Namespaces can be used to isolate Lexicons and Lexicon Topics. For example, when loading a Lexicon, you can specify the Namespace of the topic prior to the name of the topic with a colon. For example, to load the "comment" topic for the "quip" Namespace:
+Namespaces isolate Lexicons and Lexicon Topics. To load the "comment" topic from the "quip" namespace, prefix the topic with the namespace and a colon:
 
 ```php
 $modx->lexicon->load('quip:comment');
 ```
 
-Assuming we're in English, this will look for the lexicon/en/comment.inc.php file in the Namespace path for Quip. This allows Lexicon topics to be loaded dynamically based on the Namespace path, rather than requiring the topic files to be put inside the MODX core directories.
+In English this looks for `lexicon/en/comment.inc.php` inside the namespace path, so topics can live outside the MODX core directories and load on demand.
 
 - [Internationalization](extending-modx/internationalization "Internationalization")
 
-## Bootstrapping Services 
+## Bootstrapping Services
 
-If a file named `bootstrap.php` is present in the root of the namespace, it will be automatically included during the initialisation of MODX. 
+If a file named `bootstrap.php` sits in the namespace root, MODX includes it during initialisation. Use it to [inject services into the dependency injection container](extending-modx/di-container).
 
-This can be used to [inject services into the dependency injection container](extending-modx/di-container). 
-
-In the `bootstrap.php` file, you have access to:
+Inside the file you have access to:
 
 - `MODX\Revolution\modX $modx`
 - `array $namespace`
+
+::: warning
+`_initNamespaces()` runs early — before extension packages load, before culture initialisation, and before the `OnMODXInit` event. At that point `$modx->lexicon` is still `null`, and no Component models are registered yet. Register autoloaders and services here; resolve anything that depends on a lexicon or a model from `OnMODXInit` instead.
+:::
 
 ### Examples
 
