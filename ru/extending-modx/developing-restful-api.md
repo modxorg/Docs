@@ -1,11 +1,12 @@
 ---
 title: "Разработка RESTful API"
+description: "Собственный REST API в MODX Revolution на modRestService и modRestController: загрузка, маршруты, CRUD, хуки, авторизация и формат ответа."
 translation: "extending-modx/developing-restful-api"
 ---
 
 MODX даёт небольшой REST-сервер на классах `modRestService` и `modRestController`. Вы направляете HTTP-запросы на bootstrap-скрипт, сопоставляете пути URL с классами контроллеров и получаете CRUD над объектами xPDO плюс хуки для авторизации, валидации и формы ответа.
 
-Страница покрывает MODX 2.3+ и MODX 3.x. В 3.x классы лежат в `MODX\Revolution\Rest\*`. Поведение сервиса и контроллеров совпадает с примерами ниже.
+Страница покрывает MODX 2.x и MODX 3.x. В 3.x классы лежат в `MODX\Revolution\Rest\*`. Публичный API контроллеров совпадает, но конфигурация сервиса — нет: в 3.x есть опция `sanitize`, в 2.x — `xmlDisableEntityLoader`.
 
 > Исходящие HTTP-запросы из MODX к чужим API это другой стек. См. [HTTP-клиент](extending-modx/services/http). Устаревший клиент `modRest` описан в [Services](extending-modx/services/modrest).
 
@@ -92,6 +93,12 @@ $rest->process();
 
 `checkPermissions()` у сервиса по умолчанию возвращает `true`. Переопределите метод в своём подклассе сервиса (или режьте трафик раньше), если нужна проверка на каждый запрос. Авторизация на уровне контроллера идёт через `verifyAuthentication()` (ниже).
 
+::: warning
+`process()` не возвращает ответ — он отправляет его и завершает скрипт (`exit(0)`). Код после вызова не выполняется, результат нужно разбирать из вывода. Поведение отключается опцией `exitOnResponse => false`.
+:::
+
+Запрос без сегмента пути (`/rest/`) попадает на контроллер `Index`: имя действия задаётся опцией `defaultAction`.
+
 ### Перезапись URL
 
 Правила rewrite кладите **внутрь** `rest/`, чтобы остальной сайт ходил как обычно.
@@ -127,7 +134,7 @@ location @modx_rest {
 }
 ```
 
-Код 405 значит: роутер отработал, контроллер не найден. Дальше добавляйте контроллеры.
+Код 405 со сообщением `Method not allowed` значит, что роутер отработал, а контроллер не найден. Дальше добавляйте контроллеры.
 
 ### Полезные опции `modRestService`
 
@@ -136,13 +143,25 @@ location @modx_rest {
 | `basePath` | `base_path` сайта | Каталог файлов контроллеров |
 | `controllerClassPrefix` | `modRestController` | Префикс класса из имени файла |
 | `controllerClassSeparator` | `''` | Соединитель префикса и сегмента класса |
+| `controllerClassFilePostfix` | `.php` | Расширение файлов при обходе каталогов |
+| `defaultAction` | `index` | Контроллер для запроса без сегмента пути |
 | `requestParameter` | `_rest` | GET-параметр с путём (`items`, `items/15`) |
-| `defaultResponseFormat` | `json` | `json` или `xml`, если суффикса нет |
+| `defaultResponseFormat` | `json` | Формат, если суффикса нет |
+| `supportedFormats` | `xml,json,qs` | Какие суффиксы формата распознаются |
+| `checkForSuffix` | `true` | Разбирать ли суффикс формата в пути |
 | `collectionResultsKey` / `collectionTotalKey` | `results` / `total` | Ключи в ответе списка |
 | `propertyLimit` / `propertyOffset` | `limit` / `start` | Имена параметров пагинации |
 | `propertySort` / `propertySortDir` | `sort` / `dir` | Имена параметров сортировки |
 | `propertySearch` | `search` | Имя параметра текстового поиска |
 | `defaultSuccessStatusCode` / `defaultFailureStatusCode` | `200` / `200` | HTTP-коды для `success()` / `failure()` |
+| `responseSuccessKey` / `responseMessageKey` / `responseObjectKey` / `responseErrorsKey` | `success` / `message` / `object` / `errors` | Ключи тела ответа контроллера |
+| `errorMessageSeparator` | `' '` | Разделитель ошибок в `addFieldError()` |
+| `trimParameters` | `false` | Обрезать пробелы у строковых параметров запроса |
+| `sanitize` | `false` | Только 3.x: прогнать параметры через `modX::sanitize()` |
+| `exitOnResponse` | `true` | Завершать скрипт после отправки ответа |
+| `xmlRootNode` | `response` | Корневой узол при выводе в XML |
+
+Неизвестный суффикс не считается ошибкой — запрос уходит в `defaultResponseFormat`. Служебные коды сервиса (`400`, `401`, `405`, `500`) всегда содержат ключи `success`, `message`, `object`, `code`: ключи из `response*Key` на них не влияют.
 
 ## 2. Конечные точки API
 
@@ -156,7 +175,7 @@ location @modx_rest {
 
 Пути вроде `/items/create` не нужны. `POST /items` уже означает создание.
 
-При `controllerClassPrefix => 'MyController'` и пустом separator файл `rest/Controllers/Items.php` должен объявлять класс `MyControllerItems`.
+При `controllerClassPrefix => 'MyController'` и пустом separator файл `rest/Controllers/Items.php` должен объявлять класс `MyControllerItems`. Сопоставление пути с файлом нечувствительно к регистру: `/rest/Items` и `/rest/items` ведут в один контроллер.
 
 ### Контроллер для MODX 3.x
 
@@ -218,15 +237,19 @@ class MyControllerItems extends modRestController
 
 Сегмент ID копируется в `$this->primaryKeyField` (по умолчанию `id`) до вызова метода.
 
+Контроллер без метода нужного глагола даёт `405 Unsupported HTTP method`. Класс, который нельзя создать (например, абстрактный), даёт `400`. Если метод глагола не вызвал ни `success()`, ни `failure()`, ни `collection()`, сервис отвечает повторным `405` вместо вашего payload.
+
+Параметры запроса собираются по-разному: `GET` читает только строку запроса, `POST` — строку запроса плюс тело, `PUT` — `$_POST` и тело (параметры в адресе игнорируются), `DELETE` — строку запроса и тело.
+
 ### Параметры списка
 
 Значения по умолчанию из конфига сервиса:
 
 | Параметр | Назначение |
 | --- | --- |
-| `limit` | Размер страницы (`$defaultLimit` контроллера, обычно `20`) |
+| `limit` | Размер страницы (`$defaultLimit`, по умолчанию `20`) |
 | `start` | Смещение |
-| `sort` | Поле сортировки (иначе `$defaultSortField`) |
+| `sort` | Поле сортировки (иначе `$defaultSortField`, по умолчанию `name`) |
 | `dir` | `ASC` или `DESC` |
 | `search` | LIKE по полям из `$searchFields` |
 
@@ -241,17 +264,26 @@ class MyControllerItems extends modRestController
 | `$classKey` | Класс xPDO |
 | `$classAlias` | Необязательный alias в запросе |
 | `$primaryKeyField` | Поле для read/update/delete (по умолчанию `id`) |
-| `$defaultSortField` / `$defaultSortDirection` | Сортировка списка по умолчанию |
-| `$defaultLimit` / `$defaultOffset` | Пагинация по умолчанию |
+| `$defaultSortField` / `$defaultSortDirection` | Сортировка списка (по умолчанию `name` и `ASC`) |
+| `$defaultLimit` / `$defaultOffset` | Пагинация по умолчанию (`20` и `0`) |
 | `$searchFields` | Поля для параметра `search` |
 | `$postRequiredFields` / `$putRequiredFields` / `$deleteRequiredFields` | Обязательные поля запроса |
 | `$postRequiredRelatedObjects` / `$putRequiredRelatedObjects` | Карта `field => classKey`, объекты должны существовать |
 | `$postMethod` / `$putMethod` / `$deleteMethod` | Методы объекта для записи (`save` / `save` / `remove`) |
-| `$allowedMethods` | Допустимые HTTP-глаголы |
+| `$allowedMethods` | Глаголы в заголовке `Access-Control-Allow-Methods` при `OPTIONS` |
+| `$allowedHeaders` | Заголовки в `Access-Control-Allow-Headers` (по умолчанию `Content-Type`) |
+
+::: warning
+`$allowedMethods` не ограничивает запросы. Глагол отбрасывается по одному признаку — есть ли в контроллере одноимённый метод; неизвестный глагол даёт `405`. Список попадает только в заголовок CORS.
+:::
+
+Конструктор контроллера переопределять нельзя: экземпляр создаёт сервис.
 
 ## 4. Хуки и форма ответа
 
 Стандартные `get` / `post` / `put` / `delete` закрывают обычный сценарий. Хуки нужны для фильтров, прав и другого payload.
+
+**Инициализация**: `initialize()` вызывается после проверки прав и до метода глагола — удобное место для общих настроек контроллера.
 
 **До записи/удаления**: верните `true`, чтобы продолжить, или `false` / строку ошибки, чтобы остановить:
 
@@ -259,7 +291,9 @@ class MyControllerItems extends modRestController
 - `beforePut()`
 - `beforeDelete()`
 
-Объект доступен как `$this->object`.
+Объект доступен как `$this->object`. У `beforePost()` и `beforePut()` возврат `null` равнозначен `true`, у `beforeDelete()` — нет: там `null` прерывает запрос и уходит в `failure()` с пустым сообщением. Возвращайте `true` явно.
+
+Текст, который увидит клиент при возврате `false`, задайте через `setErrorMessage()`; отдельную ошибку поля добавьте через `addFieldError()` или снимите через `removeFieldError()`.
 
 **После чтения/записи**: `afterRead`, `afterPost`, `afterPut` и `afterDelete` получают исходящий массив по ссылке. Меняйте поля там.
 
@@ -269,9 +303,20 @@ class MyControllerItems extends modRestController
 - `prepareListObject(xPDOObject $object)`: разметка строки (по умолчанию `toArray()`)
 - `addSearchQuery()`: своя логика поиска
 
+**Объект:**
+
+- `getPrimaryKeyCriteria($id)`: критерии выборки для read/update/delete — точка для своих условий и составных ключей
+- `setObjectFields(&$object, array $values)`: перенос значений в объект
+
+Ошибки модели подхватываются автоматически: если объект умеет `getErrors()`, они попадают в ответ. Формулировки берутся из лексикона `rest`, который сервис подгружает сам.
+
 **Хелперы:**
 
-- `$this->getProperty($key)` / `setProperty()` / `getProperties()`
+- `$this->getProperty($key)` / `setProperty()` / `unsetProperty()` / `setProperties()` / `getProperties()`
+- `$this->setHeaders()` / `getHeaders()`
+- `$this->setDefault($key, $value)` / `setDefaults(array $values)`
+- `$this->checkRequiredFields(array $fields)` — возвращает `true` или текст ошибки
+- `$this->checkRequiredRelatedObjects(array $pairs)`
 - `$this->success($message, $object, $status)`
 - `$this->failure($message, $object, $status)`
 - `$this->collection($list, $total, $status)`
@@ -309,6 +354,8 @@ public function beforePost()
 
 У контроллера по умолчанию `protected $protected = true`. При защите `process()` вызывает `verifyAuthentication()` до метода глагола (кроме `OPTIONS`). Штатный `verifyAuthentication()` возвращает `true`.
 
+На момент `verifyAuthentication()` свойство с ID ещё не заполнено, а `$this->object` ещё `null`: оба появляются позже. Для проверки прав по записи используйте `$this->getProperties()`.
+
 Публичная точка:
 
 ```php
@@ -325,17 +372,25 @@ public function verifyAuthentication()
 }
 ```
 
-Ошибка авторизации даёт HTTP 401 и стандартный error payload. Держите HTTPS и свою схему токена или сессии. OAuth в этом стеке ядро не поставляет.
+Ошибка авторизации даёт HTTP 401 и стандартный error payload. Держите HTTPS и свою схему токена или сессии: механизма OAuth в стеке `modRestService` нет.
 
 `modRestService::checkPermissions()` это отдельный барьер в bootstrap. Для глобальных правил переопределите метод в своём классе сервиса.
 
 ## 6. Формат ответа
 
-По умолчанию JSON. XML запрашивайте суффиксом `.xml` (`/rest/items.xml`) или через `defaultResponseFormat => 'xml'`.
+Формат задаётся суффиксом пути или опцией `defaultResponseFormat`. Из коробки доступны три:
+
+| Суффикс | Content-Type | Тело |
+| --- | --- | --- |
+| без суффикса, `.json` | `application/json` | JSON |
+| `.xml` | `application/xml` | XML с корнем из `xmlRootNode` |
+| `.qs` | `text/plain` | URL-кодированная строка |
+
+Тело запроса разбирается по `Content-Type`: `application/json`, `application/xml`, `application/x-www-form-urlencoded` (по умолчанию). При `image/jpeg`, `image/png` или `image/gif` в свойства попадает открытый поток `filehandle`.
 
 При разборе входящего XML пустой XML-элемент в PHP-массиве становится пустой строкой (`''`), а не пустым массивом. [#14305](https://github.com/modxcms/revolution/pull/14305) Контроллеры с `empty()` или строгой проверкой `=== ''` ведут себя так же, как при JSON с `""`.
 
-Тела success/failure используют ключи из конфига сервиса (`success`, `message`, `object`, плюс `errors` при ошибках полей). Списки используют `results` и `total`.
+Тела `success()` / `failure()` используют ключи из конфига сервиса (`success`, `message`, `object`, плюс `errors` при ошибках полей) и всегда содержат `code`. Списки используют `results` и `total`.
 
 HTTP-статус по умолчанию для успеха и ошибки: `200`. Передайте третий аргумент в `success()` / `failure()` или смените `defaultSuccessStatusCode` / `defaultFailureStatusCode`, если нужны коды вроде 201 или 404.
 
