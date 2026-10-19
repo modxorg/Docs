@@ -1,12 +1,13 @@
 ---
 title: "Developing RESTful APIs"
+description: "Build a REST API in MODX Revolution with modRestService and modRestController: bootstrap, routes, CRUD, hooks, authentication, and response formats."
 _old_id: "1728"
 _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 ---
 
 MODX ships a small REST server stack built around `modRestService` and `modRestController`. You point HTTP requests at a bootstrap script, map URL paths to controller classes, and get CRUD behaviour over xPDO objects with hooks for auth, validation, and response shaping.
 
-This page covers MODX 2.3+ and MODX 3.x. Class locations changed in 3.x (`MODX\Revolution\Rest\*`). Behaviour of the service and controllers matches the examples below.
+This page covers MODX 2.x and MODX 3.x. Class locations changed in 3.x (`MODX\Revolution\Rest\*`). The public controller API matches across versions, the service config does not: 3.x adds `sanitize`, 2.x has `xmlDisableEntityLoader`.
 
 > Outgoing HTTP from MODX to third-party APIs is a different stack. See [HTTP Client](extending-modx/services/http). The deprecated `modRest` client is documented under [Services](extending-modx/services/modrest).
 
@@ -93,6 +94,12 @@ $rest->process();
 
 `checkPermissions()` on the service returns `true` by default. Override it on a custom service subclass (or gate traffic earlier) when every request must pass a site-wide check. Per-controller auth uses `verifyAuthentication()` (see below).
 
+::: warning
+`process()` does not return a response — it sends the payload and ends the script (`exit(0)`). Nothing after the call runs, and callers must read the result from the output. Set `exitOnResponse => false` to keep control.
+:::
+
+A request with no path segment (`/rest/`) routes to the `Index` controller; the name comes from the `defaultAction` option.
+
 ### URL rewriting
 
 Put rewrite rules **inside** `rest/` so the rest of the site keeps normal routing.
@@ -128,7 +135,7 @@ Open `/rest/foobar` in a browser. A working bootstrap returns JSON like:
 }
 ```
 
-That 405 means the router ran and found no matching controller. Next step: add controllers.
+That 405 with the message `Method not allowed` means the router ran and found no matching controller. Next step: add controllers.
 
 ### Useful `modRestService` options
 
@@ -137,13 +144,25 @@ That 405 means the router ran and found no matching controller. Next step: add c
 | `basePath` | site `base_path` | Directory of controller files |
 | `controllerClassPrefix` | `modRestController` | Prefix prepended to the class loaded from the file name |
 | `controllerClassSeparator` | `''` | Joiner between prefix and class segment |
+| `controllerClassFilePostfix` | `.php` | Extension used when scanning directories |
+| `defaultAction` | `index` | Controller for a request with no path segment |
 | `requestParameter` | `_rest` | Query param that carries the path (`items`, `items/15`) |
-| `defaultResponseFormat` | `json` | `json` or `xml` when no suffix is present |
+| `defaultResponseFormat` | `json` | Format used when no suffix is present |
+| `supportedFormats` | `xml,json,qs` | Suffixes recognised as formats |
+| `checkForSuffix` | `true` | Whether to parse a format suffix from the path |
 | `collectionResultsKey` / `collectionTotalKey` | `results` / `total` | Keys in list responses |
 | `propertyLimit` / `propertyOffset` | `limit` / `start` | Query param names for pagination |
 | `propertySort` / `propertySortDir` | `sort` / `dir` | Query param names for sorting |
 | `propertySearch` | `search` | Query param name for text search |
 | `defaultSuccessStatusCode` / `defaultFailureStatusCode` | `200` / `200` | HTTP status codes used by `success()` / `failure()` |
+| `responseSuccessKey` / `responseMessageKey` / `responseObjectKey` / `responseErrorsKey` | `success` / `message` / `object` / `errors` | Keys in a controller response body |
+| `errorMessageSeparator` | `' '` | Separator between field errors |
+| `trimParameters` | `false` | Trim whitespace from string request parameters |
+| `sanitize` | `false` | 3.x only: run parameters through `modX::sanitize()` |
+| `exitOnResponse` | `true` | End the script after sending the response |
+| `xmlRootNode` | `response` | Root node of XML output |
+
+An unknown suffix is not an error — the request falls back to `defaultResponseFormat`. Service-level error codes (`400`, `401`, `405`, `500`) always carry the keys `success`, `message`, `object`, and `code`; the `response*Key` options do not affect them.
 
 ## 2. Building API endpoints
 
@@ -157,7 +176,7 @@ Map one path segment to one resource type. HTTP verbs do the work:
 
 Skip paths like `/items/create`. `POST /items` already means create.
 
-With `controllerClassPrefix => 'MyController'` and empty separator, file `rest/Controllers/Items.php` must define class `MyControllerItems`.
+With `controllerClassPrefix => 'MyController'` and empty separator, file `rest/Controllers/Items.php` must define class `MyControllerItems`. Path matching is case-insensitive: `/rest/Items` and `/rest/items` reach the same controller.
 
 ### MODX 3.x controller
 
@@ -219,15 +238,19 @@ Load the package with `addPackage()` (or your Extra's service) before `process()
 
 The ID segment is copied onto `$this->primaryKeyField` (default `id`) before the method runs.
 
+A controller without a method for the requested verb returns `405 Unsupported HTTP method`. A class that cannot be instantiated (an abstract base, for instance) returns `400`. If the verb method never calls `success()`, `failure()`, or `collection()`, the service answers with a second `405` instead of your payload.
+
+Parameters are collected per verb: `GET` reads the query string only, `POST` merges the query string with the body, `PUT` uses `$_POST` and the body (query string ignored), `DELETE` merges the query string with the body.
+
 ### List query parameters
 
 Defaults from the service config:
 
 | Param | Purpose |
 | --- | --- |
-| `limit` | Page size (controller `$defaultLimit`, default `20`) |
+| `limit` | Page size (`$defaultLimit`, default `20`) |
 | `start` | Offset |
-| `sort` | Field name (falls back to `$defaultSortField`) |
+| `sort` | Field name (falls back to `$defaultSortField`, default `name`) |
 | `dir` | `ASC` or `DESC` |
 | `search` | LIKE filter across `$searchFields` |
 
@@ -242,17 +265,26 @@ Set these on your controller class to drive the default CRUD path:
 | `$classKey` | xPDO class to load |
 | `$classAlias` | Optional query alias |
 | `$primaryKeyField` | Field used for read/update/delete (default `id`) |
-| `$defaultSortField` / `$defaultSortDirection` | Default list sorting |
-| `$defaultLimit` / `$defaultOffset` | Default pagination |
+| `$defaultSortField` / `$defaultSortDirection` | Default list sorting (`name` and `ASC`) |
+| `$defaultLimit` / `$defaultOffset` | Default pagination (`20` and `0`) |
 | `$searchFields` | Fields searched when `search` is present |
 | `$postRequiredFields` / `$putRequiredFields` / `$deleteRequiredFields` | Required request fields |
 | `$postRequiredRelatedObjects` / `$putRequiredRelatedObjects` | Map of `field => classKey` that must exist |
 | `$postMethod` / `$putMethod` / `$deleteMethod` | Object methods called to persist (`save` / `save` / `remove`) |
-| `$allowedMethods` | HTTP verbs this controller accepts |
+| `$allowedMethods` | Verbs advertised in `Access-Control-Allow-Methods` on `OPTIONS` |
+| `$allowedHeaders` | Headers advertised in `Access-Control-Allow-Headers` (default `Content-Type`) |
+
+::: warning
+`$allowedMethods` does not restrict requests. A verb is accepted only when the controller defines a method of that name; anything else returns `405`. The list feeds the CORS header and nothing else.
+:::
+
+Do not override the controller constructor — the service instantiates the class.
 
 ## 4. Hooks and response shaping
 
 Default `get` / `post` / `put` / `delete` already handle the happy path. Override hooks when you need filters, permissions, or a different payload.
+
+**Initialisation**: `initialize()` runs after the auth check and before the verb method — a good place for shared controller setup.
 
 **Before write/delete**: return `true` to continue, or `false` / an error string to abort:
 
@@ -260,7 +292,9 @@ Default `get` / `post` / `put` / `delete` already handle the happy path. Overrid
 - `beforePut()`
 - `beforeDelete()`
 
-The object sits on `$this->object`.
+The object sits on `$this->object`. A `null` return means "continue" in `beforePost()` and `beforePut()`, but not in `beforeDelete()`: there `null` aborts the request and reaches `failure()` with an empty message. Return `true` explicitly.
+
+Set the text the client sees on a `false` return with `setErrorMessage()`; add or drop individual field errors with `addFieldError()` / `removeFieldError()`.
 
 **After read/write**: `afterRead`, `afterPost`, `afterPut`, and `afterDelete` receive the outgoing array by reference. Change fields there before the response leaves.
 
@@ -270,9 +304,20 @@ The object sits on `$this->object`.
 - `prepareListObject(xPDOObject $object)`: map each row (default `toArray()`)
 - `addSearchQuery()`: override search behaviour
 
+**Object access:**
+
+- `getPrimaryKeyCriteria($id)`: read/update/delete criteria — the place for custom conditions and composite keys
+- `setObjectFields(&$object, array $values)`: copy values onto the object
+
+Model errors are picked up automatically: when the object implements `getErrors()`, they reach the response. Wording comes from the `rest` lexicon, which the service loads itself.
+
 **Helpers you call from overrides:**
 
-- `$this->getProperty($key)` / `setProperty()` / `getProperties()`
+- `$this->getProperty($key)` / `setProperty()` / `unsetProperty()` / `setProperties()` / `getProperties()`
+- `$this->setHeaders()` / `getHeaders()`
+- `$this->setDefault($key, $value)` / `setDefaults(array $values)`
+- `$this->checkRequiredFields(array $fields)` — returns `true` or an error string
+- `$this->checkRequiredRelatedObjects(array $pairs)`
 - `$this->success($message, $object, $status)`
 - `$this->failure($message, $object, $status)`
 - `$this->collection($list, $total, $status)`
@@ -292,7 +337,7 @@ protected function prepareListObject(xPDOObject $object)
 }
 ```
 
-Example: block creates unless a field is present:
+Example: reject creates for one reserved name:
 
 ```php
 public $postRequiredFields = ['name'];
@@ -310,6 +355,8 @@ public function beforePost()
 
 Each controller has `protected $protected = true` by default. When protected, `process()` calls `verifyAuthentication()` before the verb method (except `OPTIONS`). The stock `verifyAuthentication()` returns `true`.
 
+At that point the ID property is still unset and `$this->object` is still `null` — both arrive later. Read `$this->getProperties()` for payload-based permission checks.
+
 For a public endpoint, set:
 
 ```php
@@ -326,17 +373,25 @@ public function verifyAuthentication()
 }
 ```
 
-Failed auth becomes HTTP 401 with the standard error payload. Pair this with HTTPS and your own token or session scheme. The core does not ship OAuth for this stack.
+Failed auth becomes HTTP 401 with the standard error payload. Pair this with HTTPS and your own token or session scheme; `modRestService` ships no OAuth mechanism.
 
 `modRestService::checkPermissions()` is a separate gate that runs in your bootstrap when you call it. Override that method on a custom service class for global rules.
 
 ## 6. Response format
 
-JSON is the default. Request XML with a `.xml` suffix when the format is enabled (`/rest/items.xml`), or set `defaultResponseFormat` to `xml`.
+The format comes from a path suffix or from `defaultResponseFormat`. Three ship out of the box:
 
-When the service parses inbound XML request bodies, an empty XML element becomes an empty string (`''`) in the resulting PHP array, not an empty array. [#14305](https://github.com/modxcms/revolution/pull/14305) Controllers that treat “empty” with `empty()` or strict `=== ''` checks stay consistent with JSON clients sending `""`.
+| Suffix | Content-Type | Body |
+| --- | --- | --- |
+| none, `.json` | `application/json` | JSON |
+| `.xml` | `application/xml` | XML rooted at `xmlRootNode` |
+| `.qs` | `text/plain` | URL-encoded string |
 
-Success and failure bodies use keys from the service config (`success`, `message`, `object`, plus `errors` when field errors exist). List calls use `results` and `total`.
+Request bodies are parsed by `Content-Type`: `application/json`, `application/xml`, or `application/x-www-form-urlencoded` (the default). With `image/jpeg`, `image/png`, or `image/gif` the properties receive an open `filehandle` stream.
+
+When the service parses inbound XML request bodies, an empty XML element becomes an empty string (`''`) in the resulting PHP array, not an empty array. [#14305](https://github.com/modxcms/revolution/pull/14305) Controllers that treat "empty" with `empty()` or strict `=== ''` checks stay consistent with JSON clients sending `""`.
+
+`success()` and `failure()` bodies use the keys from the service config (`success`, `message`, `object`, plus `errors` when field errors exist) and always carry `code`. List calls use `results` and `total`.
 
 Default HTTP status for both success and failure is `200`. Pass a third argument to `success()` / `failure()`, or change `defaultSuccessStatusCode` / `defaultFailureStatusCode`, when you need 201/404-style codes.
 
