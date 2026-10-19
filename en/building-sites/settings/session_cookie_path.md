@@ -8,7 +8,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_cookie_p
 
 **Name**: Session Cookie Path
 **Type**: String
-**Default**: /
+**Default**: empty — falls back to `MODX_BASE_URL`
 
 Use this setting to customize the cookie path for identifying site specific session cookies.
 

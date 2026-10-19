@@ -59,8 +59,10 @@ Typical Extra folders:
 | Path | Role |
 | --- | --- |
 | `core/components/yourpkg/` | PHP: model, elements, lexicon, processors, controllers |
-| `assets/components/yourpkg/` | JS, CSS, images, `connector.php` for CMP AJAX |
+| `assets/components/yourpkg/` | JS, CSS, images |
 | `_build/` | Build scripts and packaging data (not shipped in the zip) |
+
+There is no per-Component `connector.php`. Manager AJAX goes to the single `/connectors/index.php`, and the `namespace` query parameter routes it to your Component's `core/components/yourpkg/` code.
 
 See also [Creating Components: component structure](extending-modx/creating-components/component-structure) and [Transport Packages](extending-modx/transport-packages).
 
@@ -78,11 +80,11 @@ If the Extra is served from another local URL path than the Manager (for example
 
 | Setting | Why |
 | --- | --- |
-| [`cache_lexicon_topics`](building-sites/settings/cache_lexicon_topics) = No | Lexicon edits show up without fighting topic cache |
-| [`session_name`](building-sites/settings/session_name) | Unique per local site |
-| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Shared session across local paths when needed |
+| [`cache_noncore_lexicon_topics`](building-sites/settings/cache_noncore_lexicon_topics) = No | Lexicon edits from non-core namespaces show up without a topic cache. `cache_lexicon_topics` is a different setting — it only decides whether the cache file is written, so stale entries keep being read either way |
+| [`session_name`](building-sites/settings/session_name) | Unique per local site. Empty by default, which leaves PHP's own session name in place |
+| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Shared session across local paths when needed. Empty by default, which falls back to `MODX_BASE_URL` |
 
-While iterating PHP, clear `core/cache/` or use Manage → Clear Cache after path or class map changes. For schema/model work, regenerate maps with your Extra’s build schema script, then clear cache again.
+While iterating PHP, clear `core/cache/` or use Content → Clear Cache after path or class map changes. There is no `manage` menu in 3.x — the entry lives under the site ("Content") menu. For schema/model work, regenerate maps with your Extra’s build schema script, then clear cache again.
 
 ## Packaging
 

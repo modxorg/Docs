@@ -36,9 +36,8 @@ translation: "extending-modx/custom-manager-pages/troubleshooting"
 
 Типичные местоположения внутри компонента:
 
-- Коннектор: assets/components/mycomponent/connector.php or assets/components/mycomponent/mgr/connector.php
-- Процессор: core/components/mycomponent/processors/mgr/processorname.class.php (кастомные процессоры должны называться `<action>.class.php`, а файл должен возвращать имя класса; класс обычно наследует `\MODX\Revolution\Processors\Processor` или один из его потомков)
-- Контроллер: core/components/mycomponent/controllers/controllername.class.php (файл класса, а не голый PHP-файл)
+- Процессор: `core/components/mycomponent/processors/mgr/processorname.class.php` (пользовательские процессоры должны называться `<action>.class.php` и возвращать имя класса; класс обычно наследует `\MODX\Revolution\Processors\Processor` или одного из его потомков). В MODX 3.x один коннектор — `/connectors/index.php`, маршрутизация идёт по параметру `namespace`; компонент может добавить свой bootstrap-файл в `assets/`, но никто его не найдёт автоматически — см. [Коннекторы](extending-modx/processors/connectors)
+- Контроллер: `core/components/mycomponent/controllers/controllername.class.php` (файл класса, а не голый PHP-файл)
 
 ### 1.2. Зачем мне все эти штуки в моей странице? Разве я не могу просто отобразить некоторые значения в моем контроллере и собрать что-нибудь оттуда?
 

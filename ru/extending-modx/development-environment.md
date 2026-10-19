@@ -58,8 +58,10 @@ description: "Локальный MODX для разработки Extras, сни
 | Путь | Назначение |
 | --- | --- |
 | `core/components/yourpkg/` | PHP: model, elements, lexicon, processors, controllers |
-| `assets/components/yourpkg/` | JS, CSS, картинки, `connector.php` для AJAX CMP |
+| `assets/components/yourpkg/` | JS, CSS, картинки |
 | `_build/` | Скрипты сборки и данные пакета (в zip не входят) |
+
+Отдельного `connector.php` у компонента нет. AJAX менеджера идёт на единый `/connectors/index.php`, а параметр `namespace` в запросе направляет его в код вашего компонента в `core/components/yourpkg/`.
 
 См. также [структуру компонента](extending-modx/creating-components/component-structure) и [транспортные пакеты](extending-modx/transport-packages).
 
@@ -77,11 +79,11 @@ description: "Локальный MODX для разработки Extras, сни
 
 | Настройка | Зачем |
 | --- | --- |
-| [`cache_lexicon_topics`](building-sites/settings/cache_lexicon_topics) = Нет | Правки лексикона видны без борьбы с кэшем топиков |
-| [`session_name`](building-sites/settings/session_name) | Уникальное имя на каждый локальный сайт |
-| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Общая сессия на разных локальных путях |
+| [`cache_noncore_lexicon_topics`](building-sites/settings/cache_noncore_lexicon_topics) = Нет | Правки лексикона из не-core пространств имён видны без кэша топиков. `cache_lexicon_topics` — другая настройка: она решает только, пишется ли файл кэша, поэтому устаревшие записи читаются в любом случае |
+| [`session_name`](building-sites/settings/session_name) | Уникальное имя на каждый локальный сайт. По умолчанию пусто — остаётся имя сессии PHP |
+| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Общая сессия на разных локальных путях. По умолчанию пусто — подставляется `MODX_BASE_URL` |
 
-Пока крутите PHP, после смены путей или class map чистите `core/cache/` или используйте «Управление → Очистить кэш». Для схемы/модели пересоберите карты скриптом Extra, затем снова очистите кэш.
+Пока крутите PHP, после смены путей или class map чистите `core/cache/` или используйте «Контент → Очистить кэш». Меню «Управление» в 3.x нет — пункт лежит в меню сайта («Контент»). Для схемы/модели пересоберите карты скриптом Extra, затем снова очистите кэш.
 
 ## Упаковка
 

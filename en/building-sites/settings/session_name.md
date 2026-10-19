@@ -8,7 +8,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_name"
 
 **Name**: Session Name
 **Type**: String
-**Default**: modxcmssession
+**Default**: empty (PHP's own default session name)
 
 Use this setting to customize the session name used for the sessions in MODX.
 

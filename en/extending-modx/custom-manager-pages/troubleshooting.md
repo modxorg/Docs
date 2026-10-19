@@ -31,8 +31,7 @@ A controller returns the markup (HTML) and inserts JavaScript and CSS on a back-
 
 Typical locations within a component:
 
-- Connector: `assets/components/mycomponent/connector.php` or `assets/components/mycomponent/mgr/connector.php`
-- Processor: `core/components/mycomponent/processors/mgr/processorname.class.php` (custom processors must be named `<action>.class.php` and the file must return the class name; the class usually extends `\MODX\Revolution\Processors\Processor` or one of its descendants)
+- Processor: `core/components/mycomponent/processors/mgr/processorname.class.php` (custom processors must be named `<action>.class.php` and the file must return the class name; the class usually extends `\MODX\Revolution\Processors\Processor` or one of its descendants). MODX 3.x ships one connector, `/connectors/index.php`, routed by the `namespace` parameter; a component may also add its own bootstrap file under `assets/`, but nothing discovers it — see [Connectors](extending-modx/processors/connectors)
 - Controller: `core/components/mycomponent/controllers/controllername.class.php`
 
 
