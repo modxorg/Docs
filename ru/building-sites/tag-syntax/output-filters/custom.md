@@ -1,5 +1,6 @@
 ---
 title: "Примеры пользовательских фильтров вывода"
+description: "Пишем собственный выходной модификатор как сниппет, с получаемыми параметрами и готовыми примерами."
 translation: "building-sites/tag-syntax/output-filters/custom"
 ---
 
@@ -89,21 +90,6 @@ if ($input % 2) {
 ### parseLinks
 
 Выходной фильтр parseLinks находит ссылки и заменяет их html `<a>` атрибутом `</a>`
-
-``` php
-<?php
-/*
- * Based on phx:parseLinks
- */
-$t = $input;
-$t = ereg_replace("[a-zA-Z]+://([.]?[a-zA-Z0-9_/-])*", "<a href=\"\\0\">\\0</a>", $t);
-$t = ereg_replace("(^| |\n)(www([.]?[a-zA-Z0-9_/-])*)", "\\1<a href=\"http://\\2\">\\2</a>", $t);
-return $t;
-```
-
-### parseTags
-
-Этот parseTags принимает входные данные в виде списка, разделенного запятыми, и делает все отдельные теги ссылкой на ресурс 9 с параметром запроса tag=tagname, добавленным к ссылке.
 
 ``` php
 <?php

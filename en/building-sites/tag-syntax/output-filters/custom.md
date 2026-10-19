@@ -1,18 +1,19 @@
 ---
 title: "Custom Output Filter Examples"
+description: "Write your own output modifier as a Snippet, with the parameters it receives, and ready examples to copy."
 _old_id: "353"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filters-(output-modifiers)/custom-output-filter-examples"
 ---
 
 ## Introduction
 
- Custom Output Filters are MODX Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
+Custom Output Filters are MODX Snippets dedicated to formatting placeholder output in the view layer (in a Template or in a Chunk). If a raw placeholder, e.g.
 
 ``` php
 [[*pagetitle]]
 ```
 
- returns a string of text, you can modify it via a custom Output Filter, e.g.
+returns a string of text, you can modify it via a custom Output Filter, e.g.
 
 ``` php
 [[*pagetitle:myOutputFilter]]
@@ -22,26 +23,26 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/input-and-output-filte
 
  In the above example, the pagetitle value will be modified by a Snippet named **myOutputFilter**
 
- Check the page on MODX's [built-in output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") before writing your own filter.
+Check the page on MODX's [built-in output filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") before writing your own filter.
 
 ## Creating a Custom Output Modifier
 
- When writing your own Output Modifier, your Snippet can take the following inputs:
+When writing your own Output Modifier, your Snippet can take the following inputs:
 
 ``` php
 $input; // the value that is being formatted/filtered
 $options; // optional values passed via backticks
 ```
 
- A custom output filter is simply a [Snippet](extending-modx/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier.
+A custom output filter is simply a [Snippet](extending-modx/snippets "Snippets") that is earmarked to modify content. Simply put the [Snippet](extending-modx/snippets "Snippets") name instead of the modifier.
 
- The syntax is that the Snippet name comes after a colon. Example with a snippet named 'makeDownloadLink':
+The syntax is that the Snippet name comes after a colon. Example with a snippet named 'makeDownloadLink':
 
 ``` php
 [[+file:makeDownloadLink=`notitle`]]
 ```
 
- This will pass these properties to the snippet:
+This will pass these properties to the snippet:
 
 | Param   | Value                             | Example Result                             |
 | ------- | --------------------------------- | ------------------------------------------ |
@@ -59,13 +60,13 @@ return strtolower($input);
 
 ## Examples
 
- As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODX makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
+As the examples to be found below are not included in the core, you will need to add these yourself. Luckily, MODX makes this ridiculously easy. You can simply use snippets as output filters, so the process of adding a custom output filter is merely adding a new snippet! To use the output filter, you reference the snippet name.
 
- To documentation contributors: please add examples in alphabetical order.
+To documentation contributors: please add examples in alphabetical order.
 
 ### alternateClass
 
- alternateClass simply checks if an integer (for example, a counting placeholder) passed can be divided by two. If that is possible, it returns the class you specify as the output filter's property.
+alternateClass simply checks if an integer (for example, a counting placeholder) passed can be divided by two. If that is possible, it returns the class you specify as the output filter's property.
 
 ``` php
 <?php
@@ -81,7 +82,7 @@ if ($input % 2) {
 ?>
 ```
 
- Use like this:
+Use like this:
 
 ``` php
 [[+component.idx:alternateClass=`alt`]]
@@ -89,7 +90,7 @@ if ($input % 2) {
 
 ### parseLinks
 
- The parseLinks output filter finds links, and replaces them with a html `<a>` attribute.`</a>`
+The parseLinks output filter finds links, and replaces them with a html `<a>` attribute.`</a>`
 
 ``` php
 <?php

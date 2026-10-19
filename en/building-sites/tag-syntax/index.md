@@ -1,5 +1,6 @@
 ---
 title: "Tag Syntax"
+description: "MODX tag syntax by token and name, how to call tags with properties and output filters, caching rules, and literal brackets in values."
 sortorder: "1"
 _old_id: "302"
 _old_uri: "2.x/making-sites-with-modx/tag-syntax"
@@ -64,7 +65,7 @@ A good rule-of-thumb is that your tags should fit onto one line, even if you mul
 
 ## Literal square brackets inside tags
 
-MODX 3 can keep literal single `[` and `]` characters inside tag property values (for example in an output filter) without breaking tag collection. [#13904](https://github.com/modxcms/revolution/pull/13904)
+MODX 3 can keep literal single `[` and `]` characters inside tag property values (for example in an output filter) without breaking tag collection. [#16302](https://github.com/modxcms/revolution/pull/16302)
 
 ```php
 [[+label:notempty=`[required]`]]

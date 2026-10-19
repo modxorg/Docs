@@ -1,5 +1,6 @@
 ---
 title: "Formatos de fecha"
+description: "Formatea campos de fecha con los modificadores de salida date y strtotime, la tabla de símbolos strftime y las marcas de tiempo Unix."
 _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
@@ -33,7 +34,11 @@ No es posible dar todos los ejemplos posibles, pero aquí hay algunas formas com
 | 17 julio 2020            | ```[[*createdon:strtotime:date=`%d %B %Y`]]```                  |
 | viernes, julio 17, 2020   | ```[[*createdon:strtotime:date=`%A, %B %d, %Y`]]```             |
 | 17-07-2020               | ```[[*createdon:strtotime:date=`%d-%m-%Y`]]```                  |
-| Depende de la configuración | ```[[*createdon:strtotime:date=`[[++manager_date_format]]`]]``` |
+| Depende de la configuración | ```[[*createdon:strtotime:date=`%A, %d %B %Y`]]``` |
+
+::: warning
+`manager_date_format` **no** sirve como formato del modificador `date`. Ese ajuste está escrito en notación de PHP `date()`, mientras que el modificador `date` llama a `strftime()` — los símbolos difieren (`Y` frente a `%Y`, `d` frente a `%d`).
+:::
 
 ## Todos los parámetros
 
