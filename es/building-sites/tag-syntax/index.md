@@ -1,5 +1,6 @@
 ---
 title: "Sintaxis de Etiquetas"
+description: "Sintaxis de etiquetas MODX por token y nombre, llamada de etiquetas con propiedades y filtros de salida, reglas de caché y corchetes literales en valores."
 sortorder: "1"
 _old_id: "302"
 _old_uri: "2.x/making-sites-with-modx/tag-syntax"

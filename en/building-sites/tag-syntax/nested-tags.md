@@ -89,7 +89,7 @@ Snippet with no token: put `!` in the returned name when you need it uncached (`
 
 ### Sidebox pattern
 
-Jason's example chunk `sidebox`:
+Jason's example chunk `sidebox`. The Snippet names in this example — `getValue`, `UltimateParent`, `Wayfinder` — come from Extras, not from the MODX core; the nesting pattern works with any Snippet that returns a name and a properties string.
 
 ``` php
 <div class="sidebox">

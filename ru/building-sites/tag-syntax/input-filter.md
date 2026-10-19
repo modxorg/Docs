@@ -1,5 +1,6 @@
 ---
 title: "Входной фильтр"
+description: "Как MODX применяет входной фильтр к вызовам тегов до запуска выходного фильтра."
 translation: "building-sites/tag-syntax/input-filter"
 ---
 

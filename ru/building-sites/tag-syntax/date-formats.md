@@ -1,5 +1,6 @@
 ---
 title: "Форматы даты"
+description: "Форматирование полей дат модификаторами date и strtotime, таблица символов strftime и Unix-времена."
 translation: "building-sites/tag-syntax/date-formats"
 ---
 
@@ -32,7 +33,11 @@ MODX написан на PHP и, как таковой, опирается на 
 | 18 April 2011           | ```[[*createdon:strtotime:date=`%d %B %Y`]]```                  |
 | Monday, April 18, 2011  | ```[[*createdon:strtotime:date=`%A, %B %d, %Y`]]```             |
 | 2011-04-18              | ```[[*createdon:strtotime:date=`%Y-%m-%d`]]```                  |
-| Зависит от конфигурации | ```[[*createdon:strtotime:date=`[[++manager_date_format]]`]]``` |
+| Зависит от конфигурации | ```[[*createdon:strtotime:date=`%A, %d %B %Y`]]``` |
+
+::: warning
+Настройка `manager_date_format` **не годится** как формат для модификатора `date`. Она записана в нотации PHP `date()`, а модификатор `date` вызывает `strftime()` — у этих функций разные символы (`Y` против `%Y`, `d` против `%d`). Подставлять настройку нельзя.
+:::
 
 ## Все параметры
 

@@ -1,5 +1,6 @@
 ---
 title: "Date Formats"
+description: "Format date fields with the date and strtotime output modifiers, the strftime symbol table, and Unix timestamps."
 _old_id: "91"
 _old_uri: "2.x/making-sites-with-modx/commonly-used-template-tags/date-formats"
 ---
@@ -33,7 +34,11 @@ It's not possible to give every possible example, but here are some common ways 
 | 18 April 2011            | ```[[*createdon:strtotime:date=`%d %B %Y`]]```                  |
 | Monday, April 18, 2011   | ```[[*createdon:strtotime:date=`%A, %B %d, %Y`]]```             |
 | 2011-04-18               | ```[[*createdon:strtotime:date=`%Y-%m-%d`]]```                  |
-| Depends on configuration | ```[[*createdon:strtotime:date=`[[++manager_date_format]]`]]``` |
+| Depends on configuration | ```[[*createdon:strtotime:date=`%A, %d %B %Y`]]``` |
+
+::: warning
+`manager_date_format` is **not** usable as the format for the `date` modifier. That setting is documented in PHP `date()` notation, while the `date` modifier runs `strftime()` — the two families use different symbols (`Y` versus `%Y`, `d` versus `%d`). Passing the setting through yields a string MODX cannot parse.
+:::
 
 ## All Parameters
 
