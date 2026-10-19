@@ -9,7 +9,6 @@ _old_uri: "2.x/developing-in-modx/basic-development/snippets"
 
 Snippets are how MODX runs dynamic PHP inside your pages.
 
-
 A Snippet is a short, reusable piece of PHP that returns a value. A [Chunk](building-sites/elements/chunks) returns static markup with placeholders; a Snippet computes its output at render time.
 
 ## How Snippets Execute
