@@ -143,7 +143,7 @@ In System settings (System menu), search for [extension_packages](building-sites
 
 To interact with your extended data, create a class to access it. You'll typically do this in a Snippet, Plugin, or CMP.
 
-#### Simple Example
+#### Snippet Example
 
 Here's how you might interact with your extended data in a Snippet:
 
@@ -254,8 +254,8 @@ Multiple extended modUser systems can run side by side: repeat the process for e
 
 - Model files can be edited with methods and descriptions (see MODX/xPDO models).
 - Automate on user login: see splittingred's modActiveDirectory:
-  - Plugin: `plugin.activedirectory.php`
-  - Events: `onauthentication.php`, `onusernotfound.php`
+    - Plugin: `plugin.activedirectory.php`
+    - Events: `onauthentication.php`, `onusernotfound.php`
 
 ## Extended modUser Classes currently Available
 
