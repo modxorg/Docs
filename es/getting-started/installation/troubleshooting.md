@@ -2,15 +2,15 @@
 title: "Solución de problemas de instalación"
 _old_id: "311"
 _old_uri: "2.x/getting-started/installation/troubleshooting-installation"
+translation: "getting-started/installation/troubleshooting"
 ---
 
 ## Problemas comunes
 
 En primer lugar, asegúrate de que:
 
-- Seguiste todas las instrucciones [aquí](getting-started/installation  "Instalación") para tu distribución.
-- Estás usando al menos PHP 8.1+ (obligatorio desde MODX 3.2; las versiones 3.x anteriores permitían PHP 7.2+).
-- Está utilizando MySQL superior a 4.1.20, pero no ninguna iteración de MySQL 5.0.51 (incluida 5.0.51a).
+- Seguiste todas las instrucciones [aquí](getting-started/installation "Instalación") para tu distribución.
+- Tu entorno cumple con los actuales [Requisitos del Servidor](getting-started/server-requirements) — en especial **PHP 8.1+** (obligatorio desde MODX 3.2; las versiones 3.x anteriores permitían PHP 7.2+) y una versión compatible de MySQL/MariaDB (Setup aborta en MySQL 5.0.51 — ver [MySQL 5.0.51](troubleshooting/mysql-5.0.51)).
 - Borraste el directorio `core/cache/` completamente antes de comenzar la configuración. A veces, los permisos de archivo incorrectos pueden causar problemas.
 - Limpiaste la caché y las cookies de tu navegador.
 
@@ -33,7 +33,7 @@ try {
 ?>
 ```
 
-Si esto falla, la configuración de tu PDO no es  correcta.
+Si esto falla, la configuración de tu PDO no es correcta.
 
 ## Errores comunes
 
@@ -43,7 +43,7 @@ Aquí hay algunos problemas comunes que pueden ocurrir durante la instalación y
 
 Probablemente hayas copiado `config.inc.tpl` en `config.inc.php`, lo cual es incorrecto. Convierte el archivo config.inc.php en un archivo vacío y escribible.
 
-Si cambiaste el nombre de `config.inc.tpl` a `config.inc.php`, cámbielo  a `config.inc.tpl` y crea un archivo en blanco llamado config.inc.php que se pueda escribir.
+Si cambiaste el nombre de `config.inc.tpl` a `config.inc.php`, cámbialo a `config.inc.tpl` y crea un archivo en blanco llamado config.inc.php que se pueda escribir.
 
 ### "¡Hice clic en instalar y obtuve una pantalla en blanco!"
 
@@ -53,9 +53,9 @@ Asegúrate de que tu configuración `memory_limit` en php.ini esté establecida 
 
 Una de las causas comunes de este problema es que estés utilizando un puerto no estándar para MySQL. Intenta poner esta sintaxis en el campo de nombre de host (reemplazando los datos con el host y el puerto de tu servidor mysql):
 
-> my.basededatos.com;port=3307
+> my.database.com;port=3307
 
-### Warning: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argumento no válido (intentando conectarse a través de unix: //) o "Checking database:Could not connect to the mysql server"
+### Warning: PDO::\_\_construct() \[pdo.--construct\]: \[2002\] Argumento no válido (intentando conectarse a través de unix://) o "Checking database:Could not connect to the mysql server."
 
 Esto significa que tu socket MySQL está configurado incorrectamente. Por lo general, esto se puede solucionar agregando (o actualizando) tu php.ini:
 
@@ -65,9 +65,9 @@ mysqli.default_socket=/path/to/my/mysql.sock
 pdo_mysql.default_socket=/path/to/my/mysql.sock
 ```
 
-### La página de inicio de sesión sigue redirigiéndome a si misma sin error
+### La página de inicio de sesión sigue redirigiéndome a sí misma sin error
 
-Esto puede suceder con las antiguas instalaciones beta de Revolution. Para solucionarlo, elimina las  3 configuraciones de sistema siguientes de la tabla `[prefijo]_system_settings` en la base de datos (donde prefijo es el prefijo de tu tabla):
+Esto puede suceder con las antiguas instalaciones beta de Revolution. Para solucionarlo, elimina las 3 configuraciones de sistema siguientes de la tabla `[prefijo]_system_settings` en la base de datos (donde prefijo es el prefijo de tu tabla):
 
 - `session_name`
 - `session_cookie_path`
@@ -79,7 +79,7 @@ A menos, por supuesto, que los hayas cambiado explícitamente para algún propó
 
 ### Rareza general en el Manager
 
-En algunos sistemas, especialmente con alojamiento compartido, puede haber un problema con la configuración del sistema `compress_js` y/o `compress_css`. Ve a **Administrador → Configuración del Sistema** y escribe 'compress' (sin las comillas) en el cuadro de búsqueda, en la esquina superior derecha. Apaga las dos configuraciones, luego cierra la sesión, elimina todos los archivos en el directorio `core/cache`, borra la memoria caché y las cookies de tu navegador, y vuelve a iniciar sesión.
+En algunos sistemas, especialmente con alojamiento compartido, puede haber un problema con la configuración del sistema `compress_js` y/o `compress_css`. Ve a **Administrador → Configuración del Sistema** y escribe 'compress' (sin las comillas) en el cuadro de búsqueda, en la esquina superior derecha. Desactiva las dos configuraciones, luego cierra la sesión, elimina todos los archivos en el directorio `core/cache`, borra la memoria caché y las cookies de tu navegador, y vuelve a iniciar sesión.
 
 Si el Manager está lo suficientemente desordenado que no te deja cambiar la configuración, consulta la nota a continuación sobre cómo cambiar las dos configuraciones de sistema en la tabla `modx_system_settings` de la base de datos con PhpMyAdmin.
 
@@ -87,7 +87,7 @@ Si el Manager está lo suficientemente desordenado que no te deja cambiar la con
 
 Además, las "fallas" de la página pueden provenir de elementos almacenados en la memoria caché de tu propio navegador, lo que puede provocar que el árbol de recursos / elementos / archivos no aparezca debido a versiones antiguas de JavaScript y otros archivos que se utilizan en el lado del cliente. Esto puede verificarse accediendo al administrador con un navegador que no se utilizó anteriormente para hacerlo.
 
-La solución simple: borra la memoria caché de tu navegador e inicia sesión nuevamente en el Manager .
+La solución simple: borra la memoria caché de tu navegador e inicia sesión nuevamente en el Manager.
 
 Una solución más completa:
 
@@ -98,13 +98,13 @@ Una solución más completa:
 
 ### ¡No puedo iniciar sesión en el administrador después de la instalación!
 
-Si está redirigiendo nuevamente a la pantalla de inicio de sesión, intenta configurar esto en tu archivo .htaccess, en la raíz de tu instalación MODX:
+Si cada vez te redirige de nuevo a la pantalla de inicio de sesión, intenta configurar esto en tu archivo .htaccess, en la raíz de tu instalación MODX:
 
 ``` php
 php_value session.auto_start 0
 ```
 
-### No se pudo conectar con el servidor de la base de datos. Verifique las propiedades de conexión e intente nuevamente. Acceso denegado
+### No se pudo conectar con el servidor de la base de datos. Verifica las propiedades de conexión e inténtalo de nuevo. Acceso denegado
 
 En algunos alojamientos compartidos, si creas un nombre de usuario para tu base de datos con un guion bajo (\_), puede causar problemas. Asegúrate de que el nombre de usuario de tu base de datos no contenga guion bajo e inténtalo de nuevo.
 
@@ -124,8 +124,8 @@ Esto te permitirá usar el Manager sin compresión JS y CSS.
 
 ### Faltan partes del Manager, cadenas de idioma indefinidas o hay errores de JavaScript 500 en el Manager
 
-1. Asegúrate de que tu carpeta `Connectors/` tenga permisos 0755
+1. Asegúrate de que tu carpeta `connectors/` tenga permisos 0755
 
-## ¿Aún tienes problemas??
+## ¿Aún tienes problemas?
 
-Si todavía tienes problemas, publica tu error y la información del entorno del servidor en la [Comunidad MODX](https://community.modx.com), e intentaremos y solucionar tu problema lo antes posible.
+Si todavía tienes problemas, publica tu error y la información del entorno del servidor en la [Comunidad MODX](https://community.modx.com), e intentaremos solucionar tu problema lo antes posible.
