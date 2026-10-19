@@ -3,6 +3,7 @@ title: "Requerimientos del Servidor"
 sortorder: "2"
 _old_id: "273"
 _old_uri: "2.x/getting-started/server-requirements"
+translation: "getting-started/server-requirements"
 ---
 
 MODX funcionará bien en la mayoría de los alojamientos compartidos o en la nube, así como en VPS y dedicados. MODX está escrito en PHP, generalmente usa una base de datos MySQL y necesita un servidor web como Apache o nginx para atender las solicitudes web.
@@ -10,12 +11,14 @@ MODX funcionará bien en la mayoría de los alojamientos compartidos o en la nub
 | Componente | Mínimo | Recomendado |
 | ---------- | ------ | ----------- |
 | PHP | 8.1 | 8.2 o superior |
-| Base de datos | Última MySQL 5.6.x | MariaDB 10.1.x o Percona Server 5.6.x o superior |
+| Base de datos | MySQL 5.7.x | MySQL 8.0+ / MariaDB 10.6+ / Percona Server 8.0+ |
 | Servidor web | * | NGINX 1.18 o Apache 2.4 |
 
 ## PHP
 
-MODX 3 requiere **PHP 8.1 o superior** (`composer.json` en la [rama 3.x](https://github.com/modxcms/revolution/blob/3.x/composer.json)). Para instalaciones nuevas, PHP 8.2+ es una buena meta.
+Las versiones actuales de MODX 3 requieren **PHP 8.1 o superior**. Se recomienda PHP 8.2+.
+
+MODX 3.0 requería originalmente PHP 7.2. El mínimo se elevó a **PHP 8.1 en MODX 3.2**. Si aún usas una versión 3.x anterior, comprueba los requisitos de esa versión antes de actualizar — pasar a 3.2 o superior significa que tu host debe soportar PHP 8.1+.
 
 ### Extensiones obligatorias
 
@@ -54,9 +57,9 @@ MODX admite una base `mysql` y existe una implementación de terceros para `post
 
 > Nota: el soporte sqlsrv está obsoleto y [se eliminó en 3.0](https://github.com/modxcms/revolution/issues/15540).
 
-La versión mínima admitida de MySQL es 4.1.20, pero se recomienda 5.7 o superior. También es posible usar clusters como Galera.
+La versión mínima admitida de MySQL es 5.7; se recomienda MySQL 8.0+ o MariaDB 10.6+. También es posible usar clusters como Galera.
 
-Se admiten los motores MyISAM e InnoDB, así como los conjuntos de caracteres utf8 y utf8mb. Se recomienda utf8mb para el soporte UTF-8 más amplio.
+Se admiten los motores MyISAM e InnoDB, así como los conjuntos de caracteres utf8 y utf8mb4. Se recomienda utf8mb4 para el soporte UTF-8 más amplio.
 
 Se requieren los siguientes permisos:
 
@@ -68,7 +71,7 @@ Se requieren los siguientes permisos:
 
 MODX funciona en la mayoría de los servidores web actuales. Se recomiendan Apache 2.4+ o nginx 1.18.x.
 
-Para usar [friendly urls](getting-started/friendly-urls) puede hacer falta configuración adicional. Hay instrucciones para [apache](/current/en/getting-started/friendly-urls/apache), [nginx](getting-started/friendly-urls/nginx) y [lighttpd](getting-started/friendly-urls/lighttpd).
+Para usar [friendly urls](getting-started/friendly-urls) puede hacer falta configuración adicional. Hay instrucciones para [apache](getting-started/friendly-urls/apache), [nginx](getting-started/friendly-urls/nginx) y [lighttpd](getting-started/friendly-urls/lighttpd).
 
 ## Exploradores soportados por el Administrador
 
