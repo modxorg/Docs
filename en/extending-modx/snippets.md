@@ -1,18 +1,18 @@
 ---
 title: "Writing Snippets"
+description: How MODX snippets execute, how to pass properties into them, and how they differ from chunks and static snippets"
 _old_id: "292"
 _old_uri: "2.x/developing-in-modx/basic-development/snippets"
 ---
 
-## Overview
+## What is a Snippet?
 
-Snippets are the method by which MODX allows you to run dynamic PHP code in any of your pages. They are the main development vehicle for most developers.
+Snippets are how MODX runs dynamic PHP inside your pages.
 
-### What is a Snippet?
 
-According to one definition, a "snippet" is "a short reusable piece of computer source code". Some people have a hard time distinguishing this from a "chunk", so a helpful mnemonic might lie in the p's... as in "PHP", e.g. sni-"P(h)P"-et.
+A Snippet is a short, reusable piece of PHP that returns a value. A [Chunk](building-sites/elements/chunks) returns static markup with placeholders; a Snippet computes its output at render time.
 
-### How Do They Work?
+## How Snippets Execute
 
 A cacheable Snippet is compiled into an ordinary include file under `cache/includes/elements/modsnippet/` and executed with `include`. Its body is not wrapped in a function — there is no `eval()` and no generated function, so `$this` does not exist inside a Snippet and `$modx` is the only object in scope.
 
@@ -20,7 +20,7 @@ Whether a Snippet is cached is decided by its tag, not by a property: `[[mySnipp
 
 Once executed, the output is parsed by the MODX Parser, so it can contain element tags.
 
-### Simple Example
+## Simple Example
 
 Here's a basic example of what a Snippet's code might look like:
 
@@ -33,9 +33,9 @@ If you named this _"helloWorld"_, you could call this snippet by using `[[helloW
 
 Returning the value is the convention. `echo` works as well — MODX starts an output buffer before including the file and prepends whatever was echoed to the returned value — but a `return` keeps the output in one place.
 
-### Passing Values Into a Snippet
+## Passing Values Into a Snippet
 
-Values are passed to your Snippet using a modifed CGI web-form type notation that follows the Snippet's name. If your Snippet were named "mySnippet", you might call it using something like this:
+Values are passed with a CGI-style notation that follows the Snippet name. For a Snippet named `mySnippet`:
 
 ``` php
 [[!mySnippet? &input=`Hello World`]]
@@ -49,13 +49,13 @@ return 'My input was: ' . $input;
 ?>
 ```
 
-Notice that the variable names in the calling bit need to match the variable names in the Snippet EXACTLY (case matters... i.e. 'input' not 'INPUT' or 'Input'). Secondly, don't forget the '&' in front of the would-be variable names. And last but most certainly not least, take note that those are **backticks**, not single quotes!
+Names must match exactly, case included: `input`, not `INPUT`. Keep the `&` prefix, and use **backticks** rather than single quotes.
 
-### Reading Values in your Snippets
+### Reading Values
 
 In general, you can read your values by referencing the arguments that were passed: **&someParameter** in the call translates to **$someParameter** in the PHP code.
 
-You can also read _all_ parameters by using the built-in **$scriptProperties** array. This is useful if your Snippet takes variable parameters – it handles a similar use-case as PHP's [func\_get\_args()](http://www.php.net/manual/en/function.func-get-args.php) function.
+The whole array is available as `$scriptProperties`, which suits a Snippet whose parameter names are not known in advance.
 
 For example, if you call your Snippet using a call like this:
 
@@ -72,25 +72,21 @@ Array(
 )
 ```
 
-If the Snippet has entries on its Properties tab, or a Property Set assigned via `[[mySnippet@setName]]`, those are merged in first and the call parameters override them by key.
+If the Snippet has Properties tab entries or a property set from `[[mySnippet@setName]]`, those merge in first and call parameters override them by key.
 
 ## Database Interaction in Snippets
 
-Accessing the database layer in MODX relies on an Object Relational Model (ORM) called [xPDO](extending-modx/xpdo "xPDO") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODX objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
+MODX reaches the database through [xPDO](extending-modx/xpdo "xPDO"), an ORM built on PDO. Load data with [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") rather than writing raw queries.
 
-### Why an ORM?
+## Why an ORM?
 
-You might be asking, why use an ORM instead of just straight SQL? Well, a few reasons:
+1. **SQL abstraction** — the same code runs on MySQL, SQLite, and PostgreSQL.
+2. **Parameter escaping** — xPDO binds values through PDO, so SQL injection has no path in.
+3. **Shorter code** — work that took 40 lines of `mysql_*` calls becomes about ten.
 
-1. **SQL Abstraction** - This means that you can write code that works in a variety of different database types, such as MySQL, sqllite, postegresql, and more, as MODX expands to those databases. All without having to rewrite a single line of code. This makes it ideal for plugin authors who want their code to be executable on the widest possible variety of systems.
-2. **Parameter Escaping** - No more having to worry about SQL injection; xPDO uses PHP's PDO to escape all variables passed in to the SQL call to prevent any malicious calls.
-3. **Cleaner, shorter Code** - What could be done in 40+ lines in mysql\_\* calls can now be done in 10 or less.
+## Example DB Code
 
-There are more reasons, but that's for brevity. Let's look at a few examples:
-
-### Example DB Code
-
-Let's get a chunk named 'LineItem', and change the placeholders in it (done with `[[+placeholderName]]` syntax) to some custom values:
+Take a chunk named `LineItem` and replace its `[[+placeholderName]]` placeholders with values:
 
 ``` php
 $chunk = $modx->getObject('modChunk',array(
@@ -103,9 +99,9 @@ return $chunk->process(array(
 ));
 ```
 
-That code would get a chunk with the name of 'LineItem', and return it processed with the placeholders set. The $chunk variable there is actually an [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject"), which is an object representation of the Resource.
+$chunk is an [xPDOObject](extending-modx/xpdo/class-reference/xpdoobject "xPDOObject") — an object representation of the Chunk, with its placeholders already processed.
 
-What about more complex queries? Like, say, getting the first 10 Resources with a parent of 23, 24 or 25. And let's make it so they aren't hidden from menus or deleted, are published, and sort them by menuindex. That's when we use the powerful $modx->newQuery() method:
+For real queries use `$modx->newQuery()` — here to get the first 10 published Resources under parents 23, 24 or 25, sorted by menuindex:
 
 ``` php
 $c = $modx->newQuery('modResource');
@@ -120,11 +116,11 @@ $c->limit(10);
 $resources = $modx->getCollection('modResource',$c);
 ```
 
-Note how we first create an xPDOQuery object ($c) using $modx->newQuery(). We passed in the name of the class we wanted to build the query from - here 'modResource', or Resources - and then used our where() function to add some restrictions. Then we sorted and limited them.
+`newQuery()` takes the class name, `where()` adds restrictions, then `sortby()` and `limit()` bound the result.
 
-And finally, we called getCollection which - unlike getObject - returns a collection, or array, of xPDOObjects. We could then iterate over those using foreach and do whatever we want with them.
+`getCollection()` returns an array of objects; `getObject()` returns one.
 
-### Further Database Reading
+## Further Database Reading
 
 For further reading on xPDO, read up on these:
 
@@ -132,13 +128,15 @@ For further reading on xPDO, read up on these:
 - [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects") in xPDO
 - The [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") Object
 
-## Recommended Methods and Tips
+## Develop Snippets Outside the Manager
 
-### Write your Snippets outside of the MODX Manager
+Point a [static Snippet](building-sites/elements/static-elements) at a file on disk instead of pasting code into the Manager:
 
-As of 2.2.0, you can simply add a "static" Snippet: just reference the static file.
+``` php
+[[!include? &file=`/absolute/path/to/my/snippet.php`]]
+```
 
-Pre 2.2.0, it's still pretty easy to do - just create an 'include' snippet, but make its content be this:
+The body can stay thin:
 
 ``` php
 if (file_exists($file)) {
@@ -147,19 +145,13 @@ if (file_exists($file)) {
 return $o;
 ```
 
-You can use the include snippet on a page like such:
+That way you can lint the file from the command line (_php -l my\_script.php_) and get real error output while you work. Move the code into the Manager only once it works.
 
-``` php
-[[!include? &file=`/absolute/path/to/my/snippet.php`]]
-```
+::: warning
+A PHP file under the web root is callable by anyone. Keep snippet files outside the web root, or move the `core/` directory out of it, before you deploy. Guarding the file with an "am I inside MODX" test is weaker than moving it.
+:::
 
-And run your Snippets externally while you develop them!
-
-Then you can test them to make sure they work (e.g. on the bash command line, you can use the command _php -l my\_script.php_ to check the script for syntax errors). Depending on your environment, you may also get some useful error messages to help you with debugging. Copy and paste the code into MODX only when you're sure it's working.
-
-Remember that a snippet in a file on your web site can be executed by anyone with a web browser, so don't leave them there on a live site unless you've placed the snippet code outside the web root so the file can't be accessed via the web. In MODX Revolution, you can put the snippet files under the core directory and move the entire directory outside the web root. You can also put a test in the snippet that makes it exit if it's not running inside MODX, but it's safest just to move the file or paste the code into a snippet in the Manager and delete the file.
-
-### Don't mix PHP and HTML in a Snippet
+## Don't mix PHP and HTML in a Snippet
 
 Snippets execute PHP code, so a Snippet's code must be valid PHP on its own. The code below is not:
 
@@ -183,11 +175,11 @@ $output = $modx->getChunk('myChunk',array(
 return $output;
 ```
 
-### Don't Work on Live Snippets
+## Don't Work on Live Snippets
 
 If you're writing new versions of Snippets, _duplicate_ the old version! That way you can go back to the old version of the code if something doesn't work correctly! MODX doesn't inherently do versioning control, so you have to backup code yourself.
 
-### Use Default Properties
+## Use Default Properties
 
 Consider adding default properties for your snippet into the snippet's Properties tab, so that the user can add custom [Property Sets](building-sites/properties-and-property-sets "Properties and Property Sets") to override them.
 

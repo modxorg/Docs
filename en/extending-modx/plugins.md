@@ -1,19 +1,17 @@
 ---
 title: "Writing Plugins"
+description: How MODX plugins hook into system events, read the event name, and return or modify output, with worked examples"
 _old_id: "242"
 _old_uri: "2.x/developing-in-modx/basic-development/plugins"
 ---
 
 ## What is a Plugin?
 
-Plugins are similar to Snippets in that they are bits of PHP code that have access to the MODX API. The big difference, however, is in _when_ the code executes. You put Snippets inside of a page or inside a template and they run when the page is viewed, whereas Plugins are set to execute during certain system events, e.g. saving a Chunk, or emptying the cache. So when a given event "fires", any Plugin "listening" for that event is executed. Once the Plugin's code has executed, control returns to the point after the spot where the System Event was triggered.
+Plugins are PHP that runs at a system event rather than on page view. A Snippet runs when the page renders; a Plugin runs when something happens — a Chunk is saved, the cache is cleared, a user logs in. Any Plugin attached to a fired event executes, lowest priority number first, and control then returns to the caller.
 
-**Other CMSs**
-Every CMS uses some concept of "plugin", but the exact nomenclature may differ. In WordPress, for example, plugins are "hooked" to events called "actions" or "filters".
+Other CMSes call this mechanism a hook, an action, or a filter; the name differs, the idea does not. Most MODX events fire only inside the Manager, so Plugins are not limited to front-end work — see [System Events](extending-modx/plugins/system-events "MODX System Events") for the full list.
 
-Since they execute during various events, Plugins aren't limited to front-end processing. Many events are triggered by events that take place only within the MODX Manager. There is a list of MODX System Events [here](https://docs.modx.com/current/en/extending-modx/plugins/system-events "MODX System Events").
-
-Any closing PHP tag ?> will be stripped from your plugin code when it is saved. It's unnecessary (and unwanted) because the plugin code will end up inside other PHP code when executed.
+Any closing PHP tag `?>` is stripped from Plugin code when it is saved. It is unnecessary: the body ends up inside other PHP code when executed.
 
 ## The Event Model
 
@@ -43,11 +41,7 @@ switch($eventName) {
 }
 ```
 
-## Plugin Examples
-
-Plugins can be used for a variety of different applications, below are a couple of examples:
-
-### Message the User
+## Message the User
 
 **Description:** Send a custom message to the user as they create/edit a page... a custom header.
 **System Events:** OnDocFormPrerender
@@ -56,7 +50,7 @@ Plugins can be used for a variety of different applications, below are a couple 
 $modx->event->output('Hi there user!');
 ```
 
-### Custom Validation
+## Custom Validation
 
 **Description:** Do some custom validation on saving a page resource
 **System Events:** OnBeforeDocFormSave
@@ -74,7 +68,7 @@ The output you set in **$modx->event->output()** must not contain any HTML! Use 
 
 Return value must be a string. If your return value will be a number, concatenate it with an empty string.
 
-### Word Filter
+## Word Filter
 
 **Description:** Filter words from a document before it's displayed on the web
 **System Events:** OnWebPagePrerender
@@ -85,7 +79,7 @@ $output = &$modx->resource->_output; // get a reference to the output
 $output = str_replace($words,"<b>[filtered]</b>",$output);
 ```
 
-### Page-Not-Found Redirector
+## Page-Not-Found Redirector
 
 **Description:** Redirects a user to selected document and sends a message
 **System Events:** OnPageNotFound

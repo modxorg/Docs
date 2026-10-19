@@ -38,38 +38,34 @@ Files are the source of truth. The `modLexiconEntry` table (`MODX\Revolution\mod
 
 ## Loading and Using Lexicons
 
+Topics load on demand, deduplicated by full coordinate. Switch languages through a site or context setting, not per tag — one context per language is the usual shape.
+
 ### In content, chunks, and templates
 
 ```
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
-`language`, `topic`, and `namespace` are all optional. The tag loads its topic on demand, so there is no separate preload step. Topics are deduplicated by their full coordinate — `de:school:default` and `en:school:default` are different entries in the cache.
-
-Prefer switching languages per site or context setting over per tag. Separate contexts per language is the usual approach.
-
-Placeholders in the entry are filled from tag properties:
+All three properties are optional. Placeholders in the entry are filled from tag properties:
 
 ```
-[[!%key? &topic=`topicname` &namespace=`namespace_name` &language=`en` &userinput=`amazing`]]
+[[!%userinput=`amazing`]]
 ```
 
-The `!` prefix marks the tag uncacheable, which matters when the string changes per request.
+The `!` prefix marks the tag uncacheable — needed when the string changes per request.
 
 ### In PHP
 
-The lexicon service is registered during culture initialisation, so `$modx->lexicon` is ready to use. `$modx->getService('lexicon', 'modLexicon')` still works, but the short class name is a deprecated alias.
+The lexicon service registers during culture initialisation, so `$modx->lexicon` is ready. The `getService('lexicon', 'modLexicon')` form still works but uses a deprecated class alias.
 
-Load topics with `modLexicon::load()`. The argument is `<topic>`, `<namespace>:<topic>`, or `<language>:<namespace>:<topic>`, and it accepts any number of topics at once:
+`modLexicon::load()` takes `<topic>`, `<namespace>:<topic>` or `<language>:<namespace>:<topic>`, any number at once:
 
 ``` php
 $modx->lexicon->load('chunk','user','school:playground');
 $modx->lexicon->load('es:school:playground');
 ```
 
-The first loads three topics; the second loads the Spanish version of `playground` in the `school` namespace, overriding the current language.
-
-Read a single entry with `modX::lexicon()`. Pass an array as the second argument to fill placeholders:
+Read one entry with `modX::lexicon()`; pass an array as the second argument to fill placeholders:
 
 ``` php
 $modx->lexicon('school.basketball');
@@ -85,13 +81,13 @@ In a CMP, `_()` reads from the lexicon set loaded for the page:
  _('lexicon.key', { userinput: 'amazing' });
 ```
 
-To load additional topics on demand, request them from `connectors/lang.js.php` with a comma-separated `topic` parameter — any topics the current language has:
+Load extra topics on demand from `connectors/lang.js.php` with a comma-separated `topic` parameter:
 
 ```
 /connectors/lang.js.php?topic=myextra:default,myextra:settings
 ```
 
-The response replaces `MODx.lang`, so call it before the strings you need are used. Core loads `core:default` in connectors by itself; anything else is yours to request.
+The response replaces `MODx.lang`, so call it before using the strings. Core loads `core:default` by itself.
 
 ## Lexicons for Settings
 
