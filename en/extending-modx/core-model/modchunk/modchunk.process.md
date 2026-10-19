@@ -8,7 +8,7 @@ description: "Render the Chunk with the given properties and return the output"
 Renders the Chunk and returns the output.
 
 1. `modElement::process` merges the given properties over the stored defaults and property sets, applies the input filter and loads the content.
-2. The parser walks the body for `[[...]]` tags; every property is available as a `[[+key]]` placeholder. The walk repeats up to `parser_max_iterations` times, 10 by default.
+2. The parser walks the body for `[[...]]` tags; every property is available as a `[[+key]]` placeholder. The walk repeats up to `parser_max_iterations` times, 10 by default. That value is not a system setting — see [Parsing MODX Tags](extending-modx/parsing-tags).
 3. The output filter runs.
 4. A cacheable Chunk's result enters the per-request element cache; a later call with the same tag reuses it.
 
