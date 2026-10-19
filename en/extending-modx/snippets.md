@@ -14,9 +14,11 @@ According to one definition, a "snippet" is "a short reusable piece of computer 
 
 ### How Do They Work?
 
-Most Snippets are _cached_, meaning they're stored as a temporary, dynamic function in the cache. If they're flagged as uncached, then they are not parsed until the parser has done all of the other cached content.
+A cacheable Snippet is compiled into an ordinary include file under `cache/includes/elements/modsnippet/` and executed with `include`. Its body is not wrapped in a function — there is no `eval()` and no generated function, so `$this` does not exist inside a Snippet and `$modx` is the only object in scope.
 
-Then, once they're up to be cached, Snippets are then parsed by the MODX Parser. They have access to the $modx object.
+Whether a Snippet is cached is decided by its tag, not by a property: `[[mySnippet]]` is cacheable, `[[!mySnippet]]` is not. The `cache_type` column on Snippets is deprecated and never read.
+
+Once executed, the output is parsed by the MODX Parser, so it can contain element tags.
 
 ### Simple Example
 
@@ -25,12 +27,11 @@ Here's a basic example of what a Snippet's code might look like:
 ``` php
 <?php
 return 'Hello, World!';
-?>
 ```
 
 If you named this _"helloWorld"_, you could call this snippet by using `[[helloWorld]]` in your documents, templates, or Chunks (see [Tag Syntax](building-sites/tag-syntax "Tag Syntax")). You can also call a Snippet from another Snippet using the [runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet") API method.
 
-Note how we returned the code rather than echo'ed the content out. **Never use echo** in a Snippet - always return the output.
+Returning the value is the convention. `echo` works as well — MODX starts an output buffer before including the file and prepends whatever was echoed to the returned value — but a `return` keeps the output in one place.
 
 ### Passing Values Into a Snippet
 
@@ -71,9 +72,11 @@ Array(
 )
 ```
 
+If the Snippet has entries on its Properties tab, or a Property Set assigned via `[[mySnippet@setName]]`, those are merged in first and the call parameters override them by key.
+
 ## Database Interaction in Snippets
 
-Accessing the database layer in MODX relies on an Object Relational Model (ORM) called [xPDO](extending-modx/xpdo "Home") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODX objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
+Accessing the database layer in MODX relies on an Object Relational Model (ORM) called [xPDO](extending-modx/xpdo "xPDO") for database connectivity, so you won't often write raw database queries like you might do in other CMS's. Usually you will access data from the database using several MODX objects and methods such as [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") and [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection"). This relies on the underlying xPDO framework.
 
 ### Why an ORM?
 
@@ -158,7 +161,7 @@ Remember that a snippet in a file on your web site can be executed by anyone wit
 
 ### Don't mix PHP and HTML in a Snippet
 
-Snippets execute PHP code. They should always begin with a **`<?php** and end with a **?>`** _You cannot mix PHP and HTML in a Snippet!_ For example, the following code won't work:
+Snippets execute PHP code, so a Snippet's code must be valid PHP on its own. The code below is not:
 
 ``` php
 <p>This is a horrible mixture of HTML and PHP</p>
@@ -167,11 +170,7 @@ return "<p>and PHP!  Don't try it!  It's bad architecture and it won't work!!</p
 ?>
 ```
 
-You'll find that MODX will append PHP tags to beginning and end of the snippet, creating an invalid syntax, e.g.:
-
-``` php
-<?php <?php //something here ?> ?>
-```
+MODX prepends a single `<?php` to the code before writing it to the cache, so the file that actually runs starts with `<?php` followed by your stray HTML — a syntax error, not the `<?php … ?>` pair the old versions of this page claimed.
 
 If you need to do something like this, **use a Chunk** - separate the PHP into a Snippet, load its output into a placeholder with the [modx API](extending-modx/core-model/modx "modX") placeholder functions or chunk processing, and include the Snippet's placeholders in the Chunk:
 
@@ -194,10 +193,14 @@ Consider adding default properties for your snippet into the snippet's Propertie
 
 ## See Also
 
-1. [Templating Your Snippets](extending-modx/snippets/templating)
-2. [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
-3. [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
-4. [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
+- [Snippets in content](building-sites/elements/snippets): cached vs. uncacheable calls and Property Sets
+- [Static Snippets](building-sites/elements/static-elements): calling a Snippet file directly
+- [Parsing MODX Tags](extending-modx/parsing-tags): re-parsing Snippet output
+- [log_snippet_not_found](building-sites/settings/log_snippet_not_found)
+- [Templating Your Snippets](extending-modx/snippets/templating)
+- [Adding CSS and JS to Your Pages Through Snippets](extending-modx/snippets/register-assets)
+- [How to Write a Good Snippet](extending-modx/snippets/good-snippet)
+- [How to Write a Good Chunk](extending-modx/snippets/good-chunk)
 
 - [modX.runSnippet](extending-modx/modx-class/reference/modx.runsnippet "modX.runSnippet")
 - [modX.setPlaceholder](extending-modx/modx-class/reference/modx.setplaceholder "modX.setPlaceholder")

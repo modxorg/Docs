@@ -70,7 +70,7 @@ return "This goes to the logs";
 The trick here is that what you want to message the user has to be passed to the **$modx->event->output()** function; any text you want to write to the logs can simply be returned by the plugin. If you pass validation, simply return null.
 
 **No HTML Allowed**
-The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! This is because the message is passed to the user via a Javascript modal window.
+The output you set in **$modx->event->output()** must not contain any HTML! Use plain text only! For OnBeforeDocFormSave the text becomes the processor's error message, which is rendered as plain text.
 
 Return value must be a string. If your return value will be a number, concatenate it with an empty string.
 
@@ -89,7 +89,7 @@ $output = str_replace($words,"<b>[filtered]</b>",$output);
 
 **Description:** Redirects a user to selected document and sends a message
 **System Events:** OnPageNotFound
-**System Settings:**
+**System Settings:** create these three keys in System → Settings — they do not ship with core:
 
 - _pnf.page_: Error Resource ID
 - _pnf.mailto_: Mail To Address
@@ -107,22 +107,24 @@ if ($modx->event->name == 'OnPageNotFound') {
             $resourceId = $modx->resource->get('id');
             $subject = 'Page not found';
             $body = 'Someone tried to access document id '.$resourceId;
-            $modx->getService('mail', 'mail.modPHPMailer');
-            $modx->mail->set(modMail::MAIL_BODY, $body);
-            $modx->mail->set(modMail::MAIL_FROM, $modx->getOption('pnf.mailfrom'));
-            $modx->mail->set(modMail::MAIL_FROM_NAME, 'MODX');
-            $modx->mail->set(modMail::MAIL_SENDER, 'MODX');
-            $modx->mail->set(modMail::MAIL_SUBJECT, $subject);
-            $modx->mail->address('to',$mailto);
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_BODY, $body);
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_FROM, $modx->getOption('pnf.mailfrom'));
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_FROM_NAME, 'MODX');
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_SENDER, 'MODX');
+            $modx->mail->set(\MODX\Revolution\modMail::MAIL_SUBJECT, $subject);
+            $modx->mail->address('to', $mailto);
             $modx->mail->setHTML(true);
             $modx->mail->send();
          }
-         $url = $this->makeUrl($scriptProperties['page']);
-         $modx->sendRedirect($url, 1);
+         $modx->sendRedirect($modx->makeUrl($errorPage), ['count_attempts' => true]);
          exit;
     }
 }
 ```
+
+::: warning
+Inside Plugin code use `$modx->…`, never `$this->…`. In 3.x the Plugin body is `include`d directly instead of being wrapped in a method, so `$this` is the `modPlugin` object — it has no `makeUrl()`, `getOption()`, or lexicon helpers.
+:::
 
 ## See Also
 
@@ -199,7 +201,7 @@ if ($modx->event->name == 'OnPageNotFound') {
 - [OnManagerPageAfterRender](extending-modx/plugins/system-events/onmanagerpageafterrender)
 - [OnManagerPageBeforeRender](extending-modx/plugins/system-events/onmanagerpagebeforerender)
 - [OnManagerPageInit](extending-modx/plugins/system-events/onmanagerpageinit)
-- [OnModxInit](extending-modx/plugins/system-events/onmodxinit)
+- [OnMODXInit](extending-modx/plugins/system-events/onmodxinit)
 - [OnPackageInstall](extending-modx/plugins/system-events/onpackageinstall)
 - [OnPackageRemove](extending-modx/plugins/system-events/onpackageremove)
 - [OnPackageUninstall](extending-modx/plugins/system-events/onpackageuninstall)
@@ -219,7 +221,7 @@ if ($modx->event->name == 'OnPageNotFound') {
 - [OnPropertySetBeforeSave](extending-modx/plugins/system-events/onpropertysetbeforesave)
 - [OnPropertySetRemove](extending-modx/plugins/system-events/onpropertysetremove)
 - [OnPropertySetSave](extending-modx/plugins/system-events/onpropertysetsave)
-- [OnResourceGroupBeforeRemove](extending-modx/plugins/system-events/onresourcegroupbeforeremove)
+- [OnBeforeResourceGroupRemove](extending-modx/plugins/system-events/onresourcegroupbeforeremove)
 - [OnResourceGroupBeforeSave](extending-modx/plugins/system-events/onresourcegroupbeforesave)
 - [OnResourceGroupRemove](extending-modx/plugins/system-events/onresourcegroupremove)
 - [OnResourceGroupSave](extending-modx/plugins/system-events/onresourcegroupsave)
