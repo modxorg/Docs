@@ -1,34 +1,41 @@
 ---
 title: "Media Sources"
+description: "Media Sources in MODX: what they are, the three Source Types of the core, and where to go next."
 _old_id: "369"
 _old_uri: "2.x/administering-your-site/media-sources"
 ---
 
-Media Sources are only available in MODX Revolution 2.2 or later.
-
 ## What are Media Sources?
 
-Media Sources are a feature in MODX Revolution, where one can specify the "source" of media in their MODX installation. This is visualized in many ways - the most common being in the left-hand Files tree, the MODX.Browser window, and file and image TVs.
+A Media Source tells MODX where to read and write media files. It appears in three places:
+
+- the Files tree on the left;
+- the MODX.Browser window;
+- the image and file TVs.
 
 ![](sources-tree2.png)
 
-A source can be many types - from the file system itself, to an Amazon S3 bucket, to a Flickr album. MODX provides two source types with the core installation: the file system and Amazon S3 bucket integration. Other sources can be made by creating Media Source Drivers, or by downloading them from [Package Management](extending-modx/transport-packages "Package Management").
+## Source Types
 
-## Using Media Sources
+Every Media Source has a Source Type that decides where the files live. MODX ships three of them:
 
-The following articles describe basic usage of media sources.
+| Source Type | Where the files are |
+| --- | --- |
+| [File System](building-sites/media-sources/types/media-source-type-file-system "Media Source Type - File System") | A directory on the server that runs MODX |
+| [FTP](building-sites/media-sources/types/media-source-type-ftp "Media Source Type - FTP") | A remote server reached over FTP |
+| [Amazon S3](building-sites/media-sources/types/media-source-type-s3 "Media Source Type - S3") | An S3 bucket |
 
-- [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source")
-- [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs "Assigning Media Sources to TVs")
-- [Securing a Media Source](building-sites/media-sources/securing "Securing a Media Source")
-- [Media Source Types](building-sites/media-sources/types "Media Source Types")
+Packages add more Source Types, and so does your own code. See [Extending Media Sources](building-sites/media-sources/extending "Extending Media Sources").
 
 ## See Also
 
-1. [Adding a Media Source](building-sites/media-sources/creating)
-2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
-3. [Securing a Media Source](building-sites/media-sources/securing)
-   1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
-4. [Media Source Types](building-sites/media-sources/types)
+1. [Media Sources](building-sites/media-sources)
+2. [Adding a Media Source](building-sites/media-sources/creating)
+3. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
+4. [Securing a Media Source](building-sites/media-sources/securing)
+   1. [Creating a Client Media Source](building-sites/media-sources/securing/clients-tutorial)
+5. [Media Source Types](building-sites/media-sources/types)
    1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
-   2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+   2. [Media Source Type - FTP](building-sites/media-sources/types/media-source-type-ftp)
+   3. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+6. [Extending Media Sources](building-sites/media-sources/extending)

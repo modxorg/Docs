@@ -1,48 +1,105 @@
 ---
 title: "Securing a Media Source"
+description: "Secure a Media Source in MODX: Access Policies, User Groups, the criteria of a policy, and the global permissions of the manager."
 _old_id: "487"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source"
 ---
 
-This article describes how to secure a Media Source to certain User Groups. It is recommended to read the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article before reading this one. Before getting started, create a "Content Editors" user group, if you don't already have one.
+Create the source first: [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source").
 
-Those installing new installs of MODX 2.2.0-pl will need to add the string "sources.modAccessMediaSource" (no quotes) to the comma-separated list of values in the "principal\_targets" System Setting. This is due to [this bug here](http://bugs.modx.com/issues/6470) which has been fixed in 2.2.0-pl2.
+## How a Source Is Secured
 
-## Locking Down our Source to Admins
+A source is secured with the Access Policies of MODX. On the **Access Permissions** tab of the source you attach a policy to a User Group. That policy decides what the members of the group may do with the source.
 
-Media Sources use the common ACLs that the [MODX Security System](building-sites/client-proofing/security "Security") uses. You can attach policies to them via User Groups, that allow you to restrict basic actions on them, such as saving, loading, and listing.
+A source without a User Group attached is open: any user may use it, edit it and see it.
 
-Go ahead and edit our "My New Source" source that we created in the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article. From there, click on the "Access Permissions" tab. You'll see an empty grid. Sources that have no User Groups assigned to them are "public" - in the sense that any user can use, edit and see them.
+## The Two Core Policies
 
-We're going to first lock down our new source so that it can only be seen and edited by Administrators. Click on the "Add User Group" button above the grid. This should pop up a window:
+MODX ships two policies for sources:
+
+| Policy | Criteria |
+| --- | --- |
+| Media Source Admin | `create`, `copy`, `load`, `list`, `save`, `remove`, `view` |
+| Media Source User | `load`, `list`, `view` |
+
+The `load` criterion is granted to every source, so only `list` and `view` of the **Media Source User** policy have an effect.
+
+## Locking a Source to a User Group
+
+Open the source for editing and go to the **Access Permissions** tab. The grid is empty at first. Click **Add User Group** to open the window:
 
 ![](20110907-jje3b536kann962u778as3gxj5.jpeg)
 
-Fill it out as shown above, noting that there are two available [Access Policies](building-sites/client-proofing/security/policies "Policies"). The "Media Source Admin" policy is what we want - it allows full access to the media source, including viewing, editing, removing and listing. The other - Media Source User - only allows viewing and listing of the source (basically a read-only policy). Since we're assigning this to our Administrator group, we want them to have full access.
+Pick the User Group, the minimum role, and the policy.
 
-Save your Source. Flush Sessions (Security -> Flush Sessions) and then re-login to the manager. This will make it viewable now to only Administrators.
+**Media Source Admin** gives full access: creating, duplicating, viewing, editing, removing and listing the source. Save the source.
 
-If a non-administrator attempts to view or edit a TV in a Resource using your now-protected Source, they will only see the value - and not be able to edit it. This allows you to keep secure Sources in TVs protected.
-
-## Restricting to Content Editors
-
-Now that you've added an ACL for the Admins, let's also add one for our Content Editors group. Add another ACL:
+**Media Source User** is enough for a group that needs the files only. Add a second row to the grid, this time for the **Content Editors** group with that policy:
 
 ![](screen+shot+2011-09-07+at+3.54.11+pm.png)
 
-Add it to the grid, and save your Source. This will allow all the Users in your Content Editors User Group to be able to see and use your Source, but not alter the Source. They'll be able to add it to TVs, view it in the Files tree, and browse the Source - but not edit the Source itself, nor remove it.
+Save the source. The members of the group now see the source in the Files tree, may assign it to TVs and may pick files from it. They may not change the source itself.
 
-**Media source policy applies to files and folders it provides**
-Media source policy decides what a user can do with files provided by the media source and _not the media source itself_. "Admin" policy is for administering or managing files, while "User" is only for using or accessing files. In the above example Content Editors will be able to access files and folders provided by "My New Source", browse for them and pick them in TVs. However, they **will not be able to upload** any new files **nor create** any files and directories. For that they will need wider permissions than provided by the "Media Source User" policy. In that case the "Media Source Admin" policy should be used or a custom one with tailored permissions.
+A user who belongs to none of the User Groups of the source sees the value of a TV that uses it as plain text. Such a user cannot change the value.
 
-That's the end of basic Media Source usage. Feel free to learn about the different [Media Source Types](building-sites/media-sources/types "Media Source Types").
+Open the user menu and choose **Access → Logout All Users**, then log in again. The attributes of a user are cached in the session, so the new policy reaches the users only after that.
+
+## The Policy Governs the Source and Its Files
+
+The criteria of the policy apply to the source itself and to the files it holds:
+
+| Criterion | The source | The files and folders |
+| --- | --- | --- |
+| `list` | — | Browse the folders and see the files |
+| `view` | — | Open and download a file, unpack an archive |
+| `create` | — | Create a file or a folder, upload files |
+| `save` | Edit the source | Rename a file or a folder, write to a file, change the visibility |
+| `remove` | Delete the source | Delete a file or a folder |
+| `copy` | Duplicate the source | — |
+
+The **Media Source User** policy has no `create` criterion, so a content editor cannot upload files or create folders in the source.
+
+## Global Permissions
+
+The policy of the source works together with the global permissions of the manager. A user needs both: the global permission for the action, and the criterion of the source in its policy.
+
+| Action | Global permission | Criterion of the source |
+| --- | --- | --- |
+| Browse the folders and the files | `file_list`, `directory_list` | `list` |
+| Open and download a file | `file_view` | `view` |
+| Unpack an archive | `file_unpack` | `view` |
+| Create a file | `file_create` | `create` |
+| Upload files | `file_upload` | `create` |
+| Create a folder | `directory_create` | `create` |
+| Rename a file, write to a file | `file_update` | `save` |
+| Rename a folder | `directory_update` | `save` |
+| Delete a file | `file_remove` | `remove` |
+| Delete a folder | `directory_remove` | `remove` |
+| Change the visibility | `directory_chmod` | `save` |
+
+The work with the sources themselves needs these global permissions:
+
+| Permission | What it opens |
+| --- | --- |
+| `sources` | The **Media Sources** item of the menu. |
+| `source_view` | The grid of sources. |
+| `source_save` | Creating a source and saving one. |
+| `source_edit` | Editing a source. |
+| `source_delete` | Deleting a source. |
+
+## Turning the Check Off
+
+The `access_media_source_enabled` setting turns the check of the source policies off completely. It is on by default. The core does not ship it among the system settings, so a site that needs it creates a setting with that key.
 
 ## See Also
 
-1. [Adding a Media Source](building-sites/media-sources/creating)
-2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
-3. [Securing a Media Source](building-sites/media-sources/securing)
-   1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
-4. [Media Source Types](building-sites/media-sources/types)
+1. [Media Sources](building-sites/media-sources)
+2. [Adding a Media Source](building-sites/media-sources/creating)
+3. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
+4. [Securing a Media Source](building-sites/media-sources/securing)
+   1. [Creating a Client Media Source](building-sites/media-sources/securing/clients-tutorial)
+5. [Media Source Types](building-sites/media-sources/types)
    1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
-   2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+   2. [Media Source Type - FTP](building-sites/media-sources/types/media-source-type-ftp)
+   3. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+6. [Extending Media Sources](building-sites/media-sources/extending)

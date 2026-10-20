@@ -1,32 +1,49 @@
 ---
 title: "Тип медиа источника - FTP"
+translation: "building-sites/media-sources/types/media-source-type-ftp"
+description: "Тип источника FTP в MODX: параметры подключения, превью и видимость файлов."
 ---
 
-## FTP
+## Тип медиа источника - FTP
 
-**Имя типа**: File Transfer Protocol
+Этот тип источника читает и записывает файлы на удалённом сервере по FTP. Он входит в состав ядра, основан на адаптере Flysystem для FTP и доступен в списке типов без установки чего-либо дополнительно.
 
-Читает и записывает файлы на удалённом сервере по FTP. Входит в состав ядра (на базе Flysystem FTP-адаптера) и доступен в списке типов медиаисточников без установки чего-либо дополнительно.
+## Доступные свойства
 
-### Свойства
-
-| Свойство | Описание |
+| Имя | Описание |
 | --- | --- |
-| `host` | Имя хоста FTP-сервера |
-| `username` | Имя учётной записи |
-| `password` | Пароль учётной записи |
-| `port` | Порт FTP |
-| `root` | Начальный каталог на сервере |
-| `passive` | Использовать пассивный режим |
-| `ssl` | Использовать FTPS (SSL/TLS) |
-| `timeout` | Тайм-аут соединения в секундах |
+| `host` | Имя хоста FTP-сервера. |
+| `username` | Учётная запись для входа. **По умолчанию**: `anonymous` |
+| `password` | Пароль учётной записи. |
+| `root` | Каталог, с которого начинает источник. |
+| `url` | Публичный адрес файлов, например `https://files.example.com/`. По нему строятся превью в менеджере. |
+| `port` | Порт FTP-сервера. **По умолчанию**: `21` |
+| `passive` | Использовать пассивный режим. **По умолчанию**: `true` |
+| `ssl` | Использовать FTPS, FTP поверх SSL. **По умолчанию**: `false` |
+| `timeout` | Тайм-аут соединения, в секундах. **По умолчанию**: `30` |
+| `imageExtensions` | Расширения через запятую, которые считаются изображениями. **По умолчанию**: `jpg,jpeg,png,gif,webp` |
+| `skipFiles` | Имена через запятую, которые нужно скрывать. **По умолчанию**: `.svn,.git,_notes,nbproject,.idea,.DS_Store` |
+| `skipExtensions` | Расширения через запятую, которые нужно скрывать. **По умолчанию**: пусто |
 
-### Использование
+## Превью и видимость
 
-Создайте медиаисточник, как описано в [Создание медиаисточника](building-sites/media-sources/creating), выберите тип **File Transfer Protocol**, заполните параметры подключения, затем назначьте источник ТВ или используйте в коде. Общее описание — [Медиаисточники](building-sites/media-sources).
+Превью объекта — это адрес самого объекта, собранный из свойства `url`. Этот тип не создаёт миниатюры, поэтому у него нет свойств `thumbnailType` и `thumbnailQuality`.
+
+У этого типа нет свойства `visibility`, поэтому новые файлы всегда создаются публичными. Видимость уже существующего файла всё же можно сменить в менеджере.
+
+## Использование источника
+
+Создайте источник, как описано в статье [Добавление источника файлов](building-sites/media-sources/creating "Добавление источника файлов"), выберите тип **File Transfer Protocol**, заполните параметры подключения, а затем назначьте источник TV или используйте его в коде.
 
 ## Смотрите также
 
-1. [Типы медиаисточников](building-sites/media-sources/types)
-2. [Тип медиа источника - File System](building-sites/media-sources/types/media-source-type-file-system)
-3. [Тип медиа источника - S3](building-sites/media-sources/types/media-source-type-s3)
+1. [Источники файлов](building-sites/media-sources)
+2. [Добавление источника файлов](building-sites/media-sources/creating)
+3. [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs)
+4. [Защита медиа источника](building-sites/media-sources/securing)
+   1. [Руководство по созданию источника файлов для клиентов](building-sites/media-sources/securing/clients-tutorial)
+5. [Типы источника файлов](building-sites/media-sources/types)
+   1. [Тип источника файлов - Файловая система](building-sites/media-sources/types/media-source-type-file-system)
+   2. [Тип источника файлов - FTP](building-sites/media-sources/types/media-source-type-ftp)
+   3. [Тип источника файлов - S3](building-sites/media-sources/types/media-source-type-s3)
+6. [Расширение источников файлов](building-sites/media-sources/extending)
