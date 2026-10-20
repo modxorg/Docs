@@ -1,5 +1,6 @@
 ---
 title: "Media Source Type - FTP"
+description: "The FTP Source Type in MODX: the connection properties, the previews and the visibility of files."
 ---
 
 ## The FTP Media Source Type

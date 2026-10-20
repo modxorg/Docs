@@ -1,5 +1,6 @@
 ---
 title: "Creating a Client Media Source"
+description: "Create a separate Media Source for clients: hide the Filesystem source, add a source of their own, and set it as the default."
 _old_id: "350"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source/creating-a-media-source-for-clients-tutorial"
 ---

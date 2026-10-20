@@ -1,6 +1,7 @@
 ---
 title: "Типы медиа источников"
 translation: "building-sites/media-sources/types"
+description: "Типы источников в MODX 3: файловая система, FTP и Amazon S3, и как добавить свои."
 ---
 
 ## Типы источников в ядре

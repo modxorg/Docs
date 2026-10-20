@@ -1,5 +1,6 @@
 ---
 title: "Media Sources"
+description: "Media Sources in MODX: what they are, the three Source Types of the core, and where to go next."
 _old_id: "369"
 _old_uri: "2.x/administering-your-site/media-sources"
 ---

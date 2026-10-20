@@ -1,5 +1,6 @@
 ---
 title: "Media Source Type - S3"
+description: "The Amazon S3 Source Type in MODX: its properties, the region of the bucket, the previews and the visibility of files."
 _old_id: "367"
 _old_uri: "2.x/administering-your-site/media-sources/media-source-types/media-source-type-s3"
 ---

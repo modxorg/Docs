@@ -1,5 +1,6 @@
 ---
 title: "Extending Media Sources"
+description: "Extend MODX with your own Media Source Type: the contract of modMediaSourceInterface, the properties of a type, and the events."
 ---
 
 ## What a Source Type Is

@@ -1,6 +1,7 @@
 ---
 title: "Расширение источников файлов"
 translation: "building-sites/media-sources/extending"
+description: "Свой тип источника файлов в MODX: контракт modMediaSourceInterface, свойства типа и события."
 ---
 
 ## Что такое тип источника

@@ -1,5 +1,6 @@
 ---
 title: "Adding a Media Source"
+description: "Add a Media Source in MODX: create it, set the properties of its type, and point the settings at it."
 _old_id: "343"
 _old_uri: "2.x/administering-your-site/media-sources/adding-a-media-source"
 ---

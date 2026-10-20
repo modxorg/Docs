@@ -1,6 +1,7 @@
 ---
 title: "Тип медиа источника - FTP"
 translation: "building-sites/media-sources/types/media-source-type-ftp"
+description: "Тип источника FTP в MODX: параметры подключения, превью и видимость файлов."
 ---
 
 ## Тип медиа источника - FTP

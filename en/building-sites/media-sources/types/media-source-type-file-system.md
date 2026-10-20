@@ -1,5 +1,6 @@
 ---
 title: "Media Source Type - File System"
+description: "The File System Source Type in MODX: its properties, the visibility of files and folders, the rights of new objects, and the protected system directories."
 _old_id: "366"
 _old_uri: "2.x/administering-your-site/media-sources/media-source-types/media-source-type-file-system"
 ---

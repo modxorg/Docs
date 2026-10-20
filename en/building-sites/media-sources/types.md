@@ -1,5 +1,6 @@
 ---
 title: "Media Source Types"
+description: "The Source Types of MODX 3: File System, FTP and Amazon S3, and how to add more."
 _old_id: "368"
 _old_uri: "2.x/administering-your-site/media-sources/media-source-types"
 ---

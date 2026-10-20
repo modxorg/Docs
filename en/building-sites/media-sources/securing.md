@@ -1,5 +1,6 @@
 ---
 title: "Securing a Media Source"
+description: "Secure a Media Source in MODX: Access Policies, User Groups, the criteria of a policy, and the global permissions of the manager."
 _old_id: "487"
 _old_uri: "2.x/administering-your-site/media-sources/securing-a-media-source"
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Назначение источника файлов TV"
 translation: "building-sites/media-sources/assigning-to-tvs"
+description: "Назначение источника файлов для TV в MODX: свой источник для каждого контекста и ограничение одним каталогом."
 ---
 
 ## Какие TV работают с источниками

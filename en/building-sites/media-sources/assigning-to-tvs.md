@@ -1,5 +1,6 @@
 ---
 title: "Assigning Media Sources to TVs"
+description: "Assign a Media Source to a TV in MODX: pick a source per Context and limit it to one folder."
 _old_id: "346"
 _old_uri: "2.x/administering-your-site/media-sources/assigning-media-sources-to-tvs"
 ---

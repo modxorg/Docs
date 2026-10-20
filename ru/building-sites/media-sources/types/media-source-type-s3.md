@@ -1,6 +1,7 @@
 ---
 title: "Тип источника файлов - S3"
 translation: "building-sites/media-sources/types/media-source-type-s3"
+description: "Тип источника Amazon S3 в MODX: свойства, регион корзины, превью и видимость файлов."
 ---
 
 ## Тип источника файлов - Amazon S3
