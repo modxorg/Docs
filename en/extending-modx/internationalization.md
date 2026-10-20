@@ -1,6 +1,6 @@
 ---
 title: "Internationalization"
-description: How MODX lexicons store, load, and address translated strings across languages, topics, and namespaces, in tags, PHP, and JavaScript"
+description: "How MODX lexicons store, load, and address translated strings across languages, topics, and namespaces, in tags, PHP, and JavaScript"
 _old_id: "168"
 _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 ---
@@ -46,10 +46,12 @@ Topics load on demand, deduplicated by full coordinate. Switch languages through
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
-All three properties are optional. Placeholders in the entry are filled from tag properties:
+The `topic` and the `language` can be left out: the topic falls back to `default`, the language to the one of the request. The `namespace` falls back to `core` as well, so it has to be given for a lexicon outside the core namespace — without it the tag looks in the core only.
+
+Placeholders in the entry are filled from the properties of the tag, which follow the `?`:
 
 ```
-[[!%userinput=`amazing`]]
+[[!%key? &userinput=`amazing`]]
 ```
 
 The `!` prefix marks the tag uncacheable — needed when the string changes per request.
@@ -58,11 +60,12 @@ The `!` prefix marks the tag uncacheable — needed when the string changes per 
 
 The lexicon service registers during culture initialisation, so `$modx->lexicon` is ready. The `getService('lexicon', 'modLexicon')` form still works but uses a deprecated class alias.
 
-`modLexicon::load()` takes `<topic>`, `<namespace>:<topic>` or `<language>:<namespace>:<topic>`, any number at once:
+`modLexicon::load()` takes `<topic>`, `<namespace>:<topic>` or `<language>:<namespace>:<topic>`. Every argument is one such coordinate — there is no separate parameter for the namespace:
 
 ``` php
-$modx->lexicon->load('chunk','user','school:playground');
-$modx->lexicon->load('es:school:playground');
+$modx->lexicon->load('chunk');                 // the topic in every namespace
+$modx->lexicon->load('school:playground');    // the topic of one namespace
+$modx->lexicon->load('es:school:playground'); // the topic of one namespace in one language
 ```
 
 Read one entry with `modX::lexicon()`; pass an array as the second argument to fill placeholders:
@@ -87,26 +90,29 @@ Load extra topics on demand from `connectors/lang.js.php` with a comma-separated
 /connectors/lang.js.php?topic=myextra:default,myextra:settings
 ```
 
+The connector reads the `topic` parameter, splits it by commas and loads every coordinate with `modLexicon::load()`. The templates of the core do the same: `manager/templates/default/header.tpl` asks for `?ctx=mgr&topic=topmenu,file,resource,…`.
+
 The response replaces `MODx.lang`, so call it before using the strings. Core loads `core:default` by itself.
 
 ## Lexicons for Settings
 
-System Settings read their labels from the `setting` topic, not only from `default`. Prefix entries with the Component namespace to avoid collisions:
+The label of a System Setting is the key `setting_<key>`, and its description is `setting_<key>_desc`. The key of the setting keeps the prefix of the Component it belongs to, for example `gallery.display_thumbs`.
 
-**Default topic** (`lexicon/en/default.inc.php`):
+The core keeps its labels in the `setting` topic (`core/lexicon/en/setting.inc.php`):
 
 ``` php
-$_lang['gallery.display_thumbs'] = 'Display Thumbnails';
+$_lang['setting_manager_date_format'] = 'Manager Date Format';
+$_lang['setting_manager_date_format_desc'] = 'The format string, in PHP date() format, for the dates represented in the manager.';
 ```
 
-**Setting topic** (`lexicon/en/setting.inc.php`):
+A Component outside the core namespace keeps them in the `default` topic (`lexicon/en/default.inc.php`) — that is also the topic the manager writes a translated label into:
 
 ``` php
 $_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
 ```
 
-The Settings grid loads both topics, so a key without the `setting_` prefix will not label the setting.
+The Settings grid loads both topics of the namespace of the setting, so a key with the `setting_` prefix is found in either of them. A key without that prefix does not label the setting.
 
 ## See Also
 

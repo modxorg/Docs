@@ -1,6 +1,6 @@
 ---
 title: "Интернационализация"
-description: Как лективы MODX хранят, загружают и адресуют переведённые строки по языкам, темам и пространствам имён — в тегах, PHP и JavaScript"
+description: "Как лективы MODX хранят, загружают и адресуют переведённые строки по языкам, темам и пространствам имён — в тегах, PHP и JavaScript"
 translation: "extending-modx/internationalization"
 ---
 
@@ -45,10 +45,12 @@ MODX поддерживает локали в ядре. Системная на�
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
-Все три свойства необязательны. Плейсхолдеры в записи заполняются из свойств тега:
+Свойства `topic` и `language` можно опускать: тема по умолчанию — `default`, язык — язык текущего запроса. Свойство `namespace` тоже по умолчанию равно `core`, поэтому для лексикона вне пространства имён ядра его нужно указать — иначе тег ищет только в ядре.
+
+Плейсхолдеры в записи заполняются из свойств тега, которые идут после `?`:
 
 ```
-[[!%userinput=`amazing`]]
+[[!%key? &userinput=`amazing`]]
 ```
 
 Префикс `!` помечает тег некэшируемым — нужно, когда строка меняется от запроса к запросу.
@@ -57,11 +59,12 @@ MODX поддерживает локали в ядре. Системная на�
 
 Сервис лексикона регистрируется при инициализации культуры, поэтому `$modx->lexicon` сразу готов. `getService('lexicon', 'modLexicon')` работает, но короткое имя класса — устаревший алиас.
 
-`modLexicon::load()` принимает `<topic>`, `<namespace>:<topic>` или `<language>:<namespace>:<topic>` и сколько угодно тем за раз:
+`modLexicon::load()` принимает `<topic>`, `<namespace>:<topic>` или `<language>:<namespace>:<topic>`. Каждый аргумент — такая координата, отдельного параметра для пространства имён нет:
 
 ``` php
-$modx->lexicon->load('chunk','user','school:playground');
-$modx->lexicon->load('es:school:playground');
+$modx->lexicon->load('chunk');                 // тема во всех пространствах имён
+$modx->lexicon->load('school:playground');    // тема одного пространства имён
+$modx->lexicon->load('es:school:playground'); // тема одного пространства имён на одном языке
 ```
 
 Отдельную запись читают методом `modX::lexicon()`. Вторым аргументом передаётся массив для подстановки плейсхолдеров:
@@ -86,26 +89,29 @@ $modx->lexicon('school.basketball', ['userinput' => 'amazing']);
 /connectors/lang.js.php?topic=myextra:default,myextra:settings
 ```
 
+Коннектор читает параметр `topic`, делит его по запятым и загружает каждую координату через `modLexicon::load()`. Шаблоны ядра поступают так же: `manager/templates/default/header.tpl` запрашивает `?ctx=mgr&topic=topmenu,file,resource,…`.
+
 Ответ заменяет `MODx.lang`, поэтому вызывайте его до использования нужных строк. Ядро само грузит `core:default`.
 
 ## Лексиконы для настроек
 
-Системные настройки берут подписи из темы `setting`, а не только из `default`. Префиксуйте записи пространством имён компонента, чтобы избежать коллизий:
+Подпись системной настройки — это ключ `setting_<key>`, а её описание — `setting_<key>_desc`. Ключ самой настройки сохраняет префикс компонента, например `gallery.display_thumbs`.
 
-**Тема default** (`lexicon/en/default.inc.php`):
+Ядро хранит подписи в теме `setting` (`core/lexicon/en/setting.inc.php`):
 
 ``` php
-$_lang['gallery.display_thumbs'] = 'Display Thumbnails';
+$_lang['setting_manager_date_format'] = 'Manager Date Format';
+$_lang['setting_manager_date_format_desc'] = 'The format string, in PHP date() format, for the dates represented in the manager.';
 ```
 
-**Тема setting** (`lexicon/en/setting.inc.php`):
+Компонент вне пространства имён ядра хранит их в теме `default` (`lexicon/en/default.inc.php`) — туда же менеджер записывает перевод подписи:
 
 ``` php
 $_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
 ```
 
-Грид настроек грузит обе темы, поэтому ключ без префикса `setting_` подпись настройки не создаст.
+Грид настроек грузит обе темы пространства имён настройки, поэтому ключ с префиксом `setting_` находится в любой из них. Ключ без этого префикса подпись настройки не создаёт.
 
 ## Смотрите также
 
