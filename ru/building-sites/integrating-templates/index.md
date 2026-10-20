@@ -1,13 +1,14 @@
 ---
 title: "Интеграция шаблонов"
 translation: "building-sites/integrating-templates"
+description: "Сборка шаблона MODX из тегов, чанков и сниппетов статичной HTML-страницы: шапка и подвал как чанки, меню как сниппет и динамический виджет."
 ---
 
 ## Построение шаблона
 
-Интеграция сайта в MODX часто начинается с определения того, какие элементы сайта обычно повторяются от страницы к странице. Как правило, повторяющиеся элементы будут заголовок, навигация и нижний колонтитул.
+Отправная точка — статичная HTML-страница сайта. Части, которые повторяются от страницы к странице, — шапка, навигация и подвал, — становятся [Шаблоном](building-sites/elements/templates). Содержимое каждой страницы переезжает в поле, которое читает шаблон.
 
-В приведенном ниже примере показан простой шаблон, в котором контент, заполняемый в каждом отдельном ресурсе полем контента, может быть вставлен в тег `[[*content]]`, который, в свою очередь, окружен разметкой, определенной как [Шаблон](building-sites/elements/templates).
+В шаблоне ниже `[[*content]]` стоит там, где должно быть содержимое страницы. MODX подставляет на это место содержимое ресурса, который использует шаблон.
 
 ``` html
 <!DOCTYPE html>
@@ -47,66 +48,43 @@ translation: "building-sites/integrating-templates"
 </html>
 ```
 
-Дополнительные шаблоны также могут быть необходимы, поскольку структура страницы отличается.
+> [!WARNING]
+> `[[!++site_url]]`, `[[!++http_host]]` и `[[!++url_scheme]]` — это **значения конфигурации, а не системные настройки**. Они приходят из `config.inc.php`, и в менеджере их не изменить.
 
-В случае создания поста в блоге мы можем также захотеть добавить боковую панель, и хотя у нас есть много вариантов, чтобы добавить это, например, создание [Переменные шаблона](building-sites/elements/template-variables) чтобы включать и выключать боковую панель, редактору сайта может быть удобнее просто выбрать шаблон для сообщений в блоге, который уже содержит боковую панель. Поэтому в этом случае может быть хорошей идеей установить вторичный шаблон.
+| Тег | Константа в `config.inc.php` | Значение |
+| --- | --- | --- |
+| `[[!++site_url]]` | `MODX_SITE_URL` | адрес сайта с завершающей косой чертой |
+| `[[!++http_host]]` | `MODX_HTTP_HOST` | хост без схемы |
+| `[[!++url_scheme]]` | `MODX_URL_SCHEME` | `http://` или `https://` с завершающей косой чертой |
+
+Полный адрес собирается как `[[!++url_scheme]][[!++http_host]]`.
+
+Странице с другой структурой нужен второй шаблон. Для записи в блоге сделайте шаблон с боковой панелью и дайте редактору выбирать его для записей. [TV](building-sites/elements/template-variables), которая включает и выключает панель, — другой вариант, но тогда выбор придётся делать редактору на каждой странице.
+
+Шаблон записи в блоге — это тот же шаблон с добавленной боковой панелью, шапка и head остаются прежними:
 
 ``` html
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Organization">
-<head>
-   <meta charset="UTF-8">
-   <base href="[[!++site_url]]" />
-   <title>[[*pagetitle]]</title>
-   [[- Continue to insert your CSS, Scripts and other assets here. ]]
-</head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <nav>
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Header End -->
-    <main>
-        [[*content]]
-    </main>
-    <!-- Aside Start -->
-    <aside>
-        <section>
-            <h4>Related posts</h4>
-            <ul>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-        </section>
-    </aside>
-    <!-- Aside End -->
-    <!-- Footer Start -->
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-            </ul>
-        </nav>
-    </footer>
-    <!-- Footer End -->
-</body>
-</html>
+<main>
+    [[*content]]
+</main>
+<aside>
+    <section>
+        <h4>Related posts</h4>
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </section>
+</aside>
 ```
 
 ## Использование чанков
 
-[Чанки](building-sites/elements/chunks) способ предложить управления повторяющимся контентом в одном месте. В приведенном выше примере шаблона есть статическая навигация в верхнем и нижнем колонтитулах, это может стать проблемой, если возникла необходимость изменить текст для одной из этих ссылок. Вместо изменения текста в каждом шаблоне и десинхронизации риска было бы предпочтительно обновить его один раз, и это изменение отразится на всех шаблонах. Мы можем сделать это, используя чанки.
+[Чанки](building-sites/elements/chunks) хранят разметку, которая повторяется в разных шаблонах, чтобы её можно было править в одном месте. В шапке и подвале примера выше лежат ссылки навигации. Если разметка вставлена в каждый шаблон, изменение текста одной ссылки приходится повторять в каждом шаблоне, и копии расходятся. Перенесите разметку в чанки — и правка происходит один раз.
 
-Приведенный ниже пример иллюстрирует размещение верхнего, нижнего и нижнего колонтитула в чанке.
+Шапка, подвал и боковая панель переезжают в три чанка:
 
-```php
+``` php
 [[$headerHTML]]
     <main>
         [[*content]]
@@ -115,25 +93,23 @@ translation: "building-sites/integrating-templates"
 [[$footerHTML]]
 ```
 
-Чанк `headerHTML` заменил разметку, которая ранее была в заголовке, включая тег DOCTYPE и заголовок. Чанк `footerHTML` теперь заменил разметку нижнего колонтитула, включая закрывающиеся теги body и html. В случае, описанном выше относительно изменения текста ссылки, теперь его нужно будет выполнить только один раз в блоке.
+Чанк `headerHTML` хранит DOCTYPE, head и шапку. Чанк `footerHTML` хранит подвал и закрывающие теги `</body>` и `</html>`. Текст ссылки меняется в чанке — и изменение сразу попадает во все шаблоны.
 
-Чанки не ограничиваются включением верхнего уровня, они также могут быть вложены в другие чанки. В приведенном ниже примере мы создали новый чанк с именем `metaData` и заполнили его некоторыми общими метаданными.
+Чанк можно вложить в другой чанк. Чанк `metaData` хранит общие метаданные:
 
 ``` php
   <!-- SEO Microdata (Schema.org variant) - Google, Bing, Yahoo -->
   <meta content="[[++site_name]]" itemprop="description">
   <meta content="[[++site_name]]" itemprop="name">
-  <meta content="http://www.[[!++http_host]]" itemprop="url">
-  <meta content="http://www.[[!++http_host]]/meta_thumbnail.png" itemprop="image">
+  <meta content="[[!++url_scheme]][[!++http_host]]" itemprop="url">
+  <meta content="[[!++url_scheme]][[!++http_host]]/meta_thumbnail.png" itemprop="image">
   <meta content="info@[[!++http_host]]" itemprop="email">
   <meta content="[[++site_name]]" name="companyright">
 ```
 
-Теперь мы можем встроить этот чанк в существующий чанк `headerHTML`:
+Его можно встроить в чанк `headerHTML`:
 
 ``` php
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
    <meta charset="UTF-8">
    <base href="[[!++site_url]]" />
@@ -141,68 +117,51 @@ translation: "building-sites/integrating-templates"
    [[$metaData]]
    [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <nav>
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Header End -->
 ```
 
-## Использование Сниппетов
+## Использование сниппетов
 
-MODX предлагает много динамики из коробки, но [Сниппеты](building-sites/elements/snippets) способ расширить эту динамику. Внутри нашего сниппета `headerHTML` у нас есть навигация, которая может быть создана и управляться динамически с использованием сниппета или дополнительного дополнения, такого как [Wayfinder](extras/wayfinder) или [pdoMenu](extras/pdoTools/Snippets/pdoMenu). Wayfinder и pdoMenu - это дополнения, которые могут автоматически заполнять ваше меню на основе ресурсов, имеющихся на вашем сайте. Кроме того, они также могут обрабатывать «активный» класс, когда пользователь перемещается по сайту, а также множество других функций.
+Сниппет добавляет шаблону или чанку динамическое поведение. Такой сниппет может заменить и навигацию в чанке `headerHTML`. [Wayfinder](extras/wayfinder) и [pdoMenu](extras/pdoTools/Snippets/pdoMenu) собирают меню из ресурсов сайта и отмечают текущий ресурс классом `active`.
 
-Чтобы использовать этот сниппет, вставьте его вместо текущего статического меню в блоке headerHTML.
+Вместо статичных ссылок в чанке `headerHTML` вызовите:
 
 ``` php
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Organization">
-<head>
-   <meta charset="UTF-8">
-   <base href="[[!++site_url]]" />
-   <title>[[*pagetitle]]</title>
-   [[$metaData]]
-   [[- Continue to insert your CSS, Scripts and other assets here. ]]
-</head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <nav>
-            [[pdoMenu?
-              &parents=`0`
-              &level=`1`
-            ]]
-        </nav>
-    </header>
-    <!-- Header End -->
+<nav>
+    [[pdoMenu?
+      &parents=`0`
+      &level=`1`
+    ]]
+</nav>
 ```
 
-*В приведенном выше примере используется pdoMenu. Для получения дополнительной функциональности и свойств, которые могут быть применены, включая диктовку вывода html, пожалуйста, проверьте [документацию](extras/pdoTools/Snippets/pdoMenu).*
+*У pdoMenu есть и другие свойства и свой формат вывода — смотрите [документацию](extras/pdoTools/Snippets/pdoMenu).*
 
-Тем не менее, сниппеты не ограничиваются существующими дополнениями и могут быть созданы и затем включены в ваш шаблон для выполнения любой динамической функции, которую позволяет язык PHP. Например, мы могли бы создать сниппет с именем `getWeather` и заполнить его следующим кодом:
+Собственный сниппет делает всё, что позволяет PHP. Этот, с именем `getWeather`, читает текущую погоду через API:
 
 ``` php
-// Получение API URL
-$jsonurl = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22";
+// Stash API URL
+$jsonurl = "https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY";
 
-// Вызов API
-$json = file_get_contents($jsonurl);
+// Call API
+$json = @file_get_contents($jsonurl);
+if ($json === false) {
+    return 'The weather service is not available';
+}
 
-// Получение результатов
-$weather = json_decode($json);
+// Stash results
+$weather = json_decode($json, true);
+if (!isset($weather['weather'][0]['main'])) {
+    return 'The weather service returned no data';
+}
 
-// Получение описания погоды
-return $weather->weather[0]->main;
-```  
+// Return weather description
+return $weather['weather'][0]['main'];
+```
 
-Отсюда можно вызвать Сниппет внутри нашего `aside`, который будет служить виджетом для получения текущего описания погоды.
+> [!WARNING]
+> **Ключ API должен быть вашим.** Ключ сервиса бесплатный, его получают на сайте самого сервиса. Ключ, который раньше стоял в этом примере, больше не работает, а на любой запрос без верного ключа сервис отвечает ошибкой. Поэтому сниппет выше проверяет ответ, прежде чем читать данные.
+
+Вызовите сниппет в чанке `aside`, и он послужит виджетом с текущим описанием погоды:
 
 ``` php
 <aside>
@@ -213,7 +172,7 @@ return $weather->weather[0]->main;
 </aside>
 ```
 
-The result of this Snippet would render on the front end like this:
+Сниппет подставляет свой ответ в страницу:
 
 ``` php
 <aside>
@@ -224,37 +183,30 @@ The result of this Snippet would render on the front end like this:
 </aside>
 ```
 
-Результат этого сниппета во время вызова выводит значение `Drizzle`. Это значение из API будет кэшироваться в MODX, так как Snippet был вызван без флага uncache `!`. Однако в этом случае использования это может быть проблематично, поскольку кэшированное значение `Drizzle` может сохраняться даже после изменения погоды. Этот конкретный сниппет должен быть вызван без кэширования с использованием флага `!`, чтобы предотвратить эту проблему. Чтобы вызвать сниппет без кэширования, поместите флаг перед именем сниппета `[[!GetWeather]]`.
+Значение `Drizzle` — это то, что сервис отдал, когда пример писался, ответ меняется со временем. MODX кэширует его, потому что в вызове выше нет флага `!`, и закэшированный `Drizzle` переживёт смену погоды. Вызовите сниппет без кэширования: поставьте `!` перед именем — `[[!getWeather]]`.
 
-Этот сниппет также может быть расширен с использованием другого сниппета, который получает местоположение пользователя из другого API. Результат которого затем может быть передан в сниппет getWeather в качестве параметра.
+Сниппет может передать параметр другому сниппету. `getLocation` читает местоположение посетителя через другой API и передаёт его в `getWeather`:
 
 ``` php
 [[!getWeather? &location=`[[!getLocation]]`]]
 ```
 
-Сниппет `getWeather` может быть обновлен для захвата свойства и установки значения местоположения в вызове API.
+Сниппет `getWeather` принимает свойство и подставляет местоположение в вызов API. Остальной код остаётся прежним:
 
 ``` php
-// Получение свойств
+// Get properties
 $location = $modx->getOption('location', $scriptProperties);
 
-// Получение API URL
-$jsonurl = "https://samples.openweathermap.org/data/2.5/weather?q=" . $location . "&appid=b6907d289e10d714a6e88b30761fae22";
-
-// Вызов API
-$json = file_get_contents($jsonurl);
-
-// Получение результатов
-$weather = json_decode($json);
-
-// Получение описания погоды
-return $weather->weather[0]->main;
+// Stash API URL
+$jsonurl = "https://api.openweathermap.org/data/2.5/weather?q=" . $location . "&appid=YOUR_API_KEY";
 ```
 
-Узнайте больше о [Сниппетах](building-sites/elements/snippets).
+## Смотрите также
 
-## Ресурсы
-
-[Серия видео Быстрого старта](building-sites/integrating-templates/video-quick-start)
-
-[Именованный якорь](building-sites/integrating-templates/named-anchor)
+1. [Интеграция шаблонов](building-sites/integrating-templates)
+2. [Серия видео «Быстрый старт»](building-sites/integrating-templates/video-quick-start)
+3. [Именованный якорь](building-sites/integrating-templates/named-anchor)
+4. [Шаблоны](building-sites/elements/templates)
+5. [Чанки](building-sites/elements/chunks)
+6. [Сниппеты](building-sites/elements/snippets)
+7. [Переменные шаблона](building-sites/elements/template-variables)

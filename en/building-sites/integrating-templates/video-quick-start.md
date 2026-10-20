@@ -1,53 +1,66 @@
 ---
 title: "Video Quick-Start Series"
+description: "A video series that walks through the installation of MODX and the building of a site with templates, chunks, snippets and template variables."
 _old_id: "1662"
 _old_uri: "2.x/getting-started/video-quick-start-series/"
 ---
 
+> [!WARNING]
+> The series was recorded in 2013 for MODX 2.x. Every video shows the manager and the installer of MODX 2.x. The principles of the elements are the same in MODX 3. The interface of the manager and the installer of the current version looks different.
+
 ## Installing MODX
 
-### Using MODX Cloud
+### Getting Started with MODX — using MODX Cloud
 
-MODX Cloud is a rapid development platform built to make tasks like installation, upgrading, and migrating MODX sites a one-button affair. This video shows you how to sign up for an account and get started with MODX in minutes.
+MODX Cloud is a service of its own, outside of MODX: it makes tasks like installation, upgrading and migrating of MODX sites a one-button affair. The video shows how to sign up for an account and get started. The interface of the service in the video is the one of 2013.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/60298110" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-### Using cPanel
+### MODX "Advanced" Installation
 
-MODX's default installation software makes it easy to deploy on almost any server environment that meets the minimum requirements. This video shows you how to install MODX on a common cPanel-enabled hosting account in just a few minutes.
+MODX's default installer deploys on almost any server that meets the minimum requirements. The video shows how to install MODX on a common cPanel-enabled hosting account in just a few minutes.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/68094979" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ## Importing Your HTML Into MODX
 
-This video series walks you step-by-step through the process of integrating custom-designed web pages into MODX. In under an hour, you can turn your static site into a dynamic, CMS-driven powerhouse that's fun and easy to manage.
+This series walks step by step through the integration of web pages of your own design into MODX. A static site becomes a site whose content is edited in the manager.
 
-### Your First Template
+### Your First MODX Template
 
-Watch this tutorial to learn how to integrate your own HTML/CSS/Javascript into a MODX Template, with simple-to-use placeholders for dynamic content.
+How to put your own HTML/CSS/JavaScript into a MODX Template, with simple-to-use placeholders for dynamic content.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/60884063" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### Using Chunks
 
-This tutorial shows you how to manipulate your own front-end code using Chunks.
+How to manage your own front-end code with Chunks.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/62971149" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### PHP Snippets
 
-Integrate your own PHP Snippets, or leverage a powerful library of pre-packaged Snippets that extend MODX's core functionality on an ad-hoc basis. Use only what you need for your site. Learn the basics in this tutorial.
+How to write your own PHP Snippets, and how to use the library of pre-packaged Snippets that extend MODX's core on demand. Take only what your site needs.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/68277695" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### Template Variables
 
-Template Variables ("TVs") are simply custom fields: easy-to-use input fields for site admins and content editors, yet full control for designers and developers. Learn all about them in this tutorial.
+A TV is a custom field: an input field for site admins and content editors, with full control for designers and developers.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/72873121" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 ### MODX Elements Combined
 
-This tutorial shows you how to combine the various Elements discussed in previous videos to fully leverage the power and flexibility of MODX. By the end of this video, you should have a basic understanding of how to use Snippets, TVs, Chunks and Templates to build a simple yet dynamic custom website in MODX.
+How to combine the Elements of the previous videos — Snippets, TVs, Chunks and Templates — into a working site.
 
 <iframe sandbox="allow-same-origin allow-forms allow-popups allow-scripts" src="https://player.vimeo.com/video/74035603" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+## See Also
+
+1. [Integrating Templates](building-sites/integrating-templates)
+2. [Video Quick-Start Series](building-sites/integrating-templates/video-quick-start)
+3. [Named Anchor](building-sites/integrating-templates/named-anchor)
+4. [Templates](building-sites/elements/templates)
+5. [Chunks](building-sites/elements/chunks)
+6. [Snippets](building-sites/elements/snippets)
