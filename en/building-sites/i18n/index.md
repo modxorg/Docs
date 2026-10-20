@@ -1,6 +1,6 @@
 ---
 title: "Internationalisation"
-description: "Lexicons in MODX: how the language of a request is chosen, how to call a lexicon entry from a template or from PHP, and how to override a single translated string."
+description: "Lexicons in MODX: how the language of a request is chosen, how to call a lexicon entry from a template or from PHP, and how to add a missing translation."
 ---
 
 ## What Lexicons Are
@@ -70,9 +70,11 @@ Without a language, the current one is used: the `cultureKey` setting, or the la
 
 ### Overriding a Single Entry
 
-A single string can be overridden in the manager, under **Admin → Lexicon Management**. Double-click the value of an entry and type the new one.
+A single string can be overridden in the manager, under **Admin → Lexicon Management**. Double-click the value of an entry and type the new one, or use the **Create** button to add a string the core does not have at all.
 
 An override is stored in the database, takes precedence over the file of the topic and survives an update of MODX. **Revert Lexicon Entry** removes the override of one entry, and **Revert Entries** removes the overrides of a whole topic and language.
+
+See [Add a missing translation](building-sites/i18n/add-missing-translation) for the rest.
 
 ## Events
 
