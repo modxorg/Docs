@@ -26,9 +26,9 @@ if (isset($hosts[$host])) {
 }
 ```
 
-The plugin returns nothing in the manager, because the manager must stay in the `mgr` context.
+The early return keeps the manager in the `mgr` context.
 
-`switchContext($contextKey, $reload = false)` returns `false` when the context was not loaded. The result is worth checking before the rest of the request relies on the new context:
+`switchContext($contextKey, $reload = false)` returns `false` when the context was not loaded. Check the result before the rest of the request relies on the new context:
 
 ``` php
 if (!$modx->switchContext('domain2')) {
@@ -38,18 +38,18 @@ if (!$modx->switchContext('domain2')) {
 
 ## A Gateway of Its Own
 
-The second mechanism does not need a Plugin. The file `index.php` reads the context from `config.context.php` next to it:
+This mechanism needs no Plugin. The file `index.php` reads the context from `config.context.php` next to it:
 
 ``` php
 <?php
 return 'domain2';
 ```
 
-When the file is absent, the request starts in the `web` context. A directory of its own with a copy of `index.php`, `config.core.php` and `.htaccess`, plus its own `config.context.php`, is a separate gateway for that domain — see [Serving a Second Domain](building-sites/contexts/virtual-host).
+When the file is absent, the request starts in the `web` context. A directory of its own — a copy of `index.php`, `config.core.php` and `.htaccess` plus its own `config.context.php` — is a separate gateway for that domain: see [Serving a Second Domain](building-sites/contexts/virtual-host).
 
 ## The Session Handler
 
-Switching the context at runtime does not load a custom session handler: the handler is set by the gateway and applies to the whole request. A context with a session handler of its own needs a gateway of its own.
+Switching the context at runtime does not load a custom session handler: the handler is set by the gateway and applies to the whole request. A context with a session handler of its own needs a gateway of its own: see [Serving a Second Domain](building-sites/contexts/virtual-host).
 
 ## See Also
 

@@ -3,15 +3,15 @@ title: "Serving a Second Domain"
 description: "Serving a second domain from one MODX installation: the context and its settings, the gateway directory with its own config.context.php, and the virtual host of the web server."
 ---
 
-MODX 3 does not match a host with a context by itself. The context of a request is chosen by the gateway that starts it, so a second domain needs a second gateway — a directory with its own `index.php` and a `config.context.php` that names the context.
+MODX 3 does not match a host with a context by itself. The gateway that starts a request chooses its context, so a second domain needs a second gateway: a directory with its own `index.php` and a `config.context.php` that names the context.
 
-This page builds such a gateway for the context `dev` on the host `dev.example.com`.
+The example below builds such a gateway for the context `dev` on the host `dev.example.com`.
 
 ## Creating the Context
 
 Create the context in the manager: **Admin** → **Contexts** → **Create**. The **Context Key** is `dev` — the key is what the gateway names — and the name is free. The keys `mgr`, `web` and `root` are reserved by the core.
 
-Then create the resources of the domain in the branch of the context in the resource tree. The tree looks like this:
+Then create the resources of the domain in the branch of the context. The tree looks like this:
 
 ![](subctx1.png)
 
@@ -26,7 +26,7 @@ Four settings on the **Context Settings** tab of the context decide how the URLs
 | `site_start` | the ID of the resource that opens the domain |
 | `site_url` | `http://dev.example.com/` — the scheme, the host and the path, with a trailing slash |
 
-Any other setting can be overridden here as well — `cultureKey` for the language of the domain, for example. Changing a setting clears the cache of the context, so a manual cache clear is not needed.
+Any other setting can be overridden here as well — `cultureKey` for the language of the domain, for example. Changing a setting clears the cache of the context, so no manual cache clear is needed.
 
 ## The Gateway Directory
 
@@ -34,31 +34,31 @@ The gateway is a directory of its own with four files:
 
 | File | What it holds |
 | --- | --- |
-| `index.php` | a copy of the `index.php` of the installation |
-| `config.core.php` | a copy of the `config.core.php` of the installation |
-| `.htaccess` | a copy of the `.htaccess` of the installation |
+| `index.php` | a copy of `index.php` from the installation |
 | `config.context.php` | the key of the context |
+| `config.core.php` | a copy of `config.core.php` from the installation |
+| `.htaccess` | a copy of `.htaccess` from the installation |
 
-`config.context.php` holds one line:
+`index.php` works as it is. The other three files are set up as follows:
 
-``` php
-<?php
-return 'dev';
-```
+1. `config.context.php` holds one line:
 
-`config.core.php` holds the path to the core of the installation as an absolute path — the installer writes it that way:
+   ``` php
+   <?php
+   return 'dev';
+   ```
 
-``` php
-define('MODX_CORE_PATH', '/home/example.com/public_html/core/');
-```
+2. `config.core.php` holds the path to the core of the installation as an absolute path — the installer writes it that way:
 
-That path is the only thing to correct in the copy: the other two files work as they are.
+   ``` php
+   define('MODX_CORE_PATH', '/home/example.com/public_html/core/');
+   ```
 
-The `.htaccess` of the gateway needs one change — `RewriteBase` has to point to the directory of the gateway:
+3. `.htaccess` needs one change — `RewriteBase` has to point to the directory of the gateway:
 
-```
-RewriteBase /dev/
-```
+   ```
+   RewriteBase /dev/
+   ```
 
 ## The Virtual Host
 
