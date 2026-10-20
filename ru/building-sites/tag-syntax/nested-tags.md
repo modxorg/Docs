@@ -7,7 +7,7 @@ description: "Как MODX разбирает вложенные теги, что
 
 MODX разбирает вложенные теги **изнутри наружу** и по-разному обрабатывает кэшированные и некэшированные теги. Это удобно, когда TV вложен в свойство сниппета. Тем же объясняется, почему условие с полными тегами в обеих ветках может выполнить тяжёлый код, который вам не нужен.
 
-Эта страница дополняет короткие заметки на [Синтаксис тегов](building-sites/tag-syntax#кэширование). Правила кэширования взяты из [руководства Mark Hamstra](https://www.markhamstra.com/modx/2011/10/caching-guidelines-for-modx-revolution/) и [статьи о вложенном кэше](https://www.markhamstra.com/modx/2011/11/nested-caching-in-modx-revolution/). Паттерн «mosquito» описан в [посте Jason Coward](https://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/).
+Эта страница дополняет короткие заметки на [Синтаксис тегов](building-sites/tag-syntax#keshirovanie). Правила кэширования взяты из [руководства Mark Hamstra](https://www.markhamstra.com/modx/2011/10/caching-guidelines-for-modx-revolution/) и [статьи о вложенном кэше](https://www.markhamstra.com/modx/2011/11/nested-caching-in-modx-revolution/). Паттерн «mosquito» описан в [посте Jason Coward](https://modx.com/blog/2012/09/14/tags-as-the-result-or-how-conditionals-are-like-mosquitoes/).
 
 ## Порядок разбора (сначала кэш)
 

@@ -39,7 +39,7 @@ translation: "building-sites/client-proofing/security/policies"
 
 По умолчанию в MODX присутствует политика доступа ["Administrator"](building-sites/client-proofing/security/policies/permissions/administrator-policy "Политики - Политика Администратора") которая содержит все [Разрешения](building-sites/client-proofing/security/policies/permissions "Разрешения") которые можно использовать в контексте ACL. При создании пользовательской политики доступа, для пользователей с ограничениями, эту политику лучше всего продублировать.
 
-Кнопки публикации в менеджере требуют `publish_document` в Context Access ACL на контексте **`mgr`**. Политика только на другом контексте эти кнопки не откроет. Подробнее: [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
+Кнопки публикации в менеджере требуют `publish_document` в Context Access ACL на контексте **`mgr`**. Политика только на другом контексте эти кнопки не откроет. Подробнее: [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#publikaciya-v-menedzhere-i-neskolko-grupp).
 
 ### Доступ к группе ресурсов
 

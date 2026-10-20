@@ -8,7 +8,7 @@ translation: "extending-modx/modx-class/reference/modx.haspermission"
 
 Возвращает true, если у пользователя есть указанное разрешение политики в **текущем** контексте (`$modx->context`). В менеджере это обычно `mgr`.
 
-Значит `$modx->hasPermission('publish_document')` в коде менеджера видит только Context Access на **`mgr`**. Та же выдача на другом контексте эту проверку не закрывает. См. [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
+Значит `$modx->hasPermission('publish_document')` в коде менеджера видит только Context Access на **`mgr`**. Та же выдача на другом контексте эту проверку не закрывает. См. [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#publikaciya-v-menedzhere-i-neskolko-grupp).
 
 ## Синтаксис
 

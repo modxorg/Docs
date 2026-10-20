@@ -63,7 +63,7 @@ description: "Правила валидации полей в XML-схеме xPD
 
 ## Валидация через callable
 
-Укажите `type="callable"`, чтобы вызвать свою PHP-функцию через [`call_user_func_array()`](https://www.php.net/manual/ru/function.call-user-func-array.php). Имя задано в XML, поэтому экземпляр объекта передать нельзя. Используйте глобальную функцию (`my_function`) или статический метод (`MyClass::myFunction`). См. также [правило callable](extending-modx/xpdo/custom-models/validation#правило-callable).
+Укажите `type="callable"`, чтобы вызвать свою PHP-функцию через [`call_user_func_array()`](https://www.php.net/manual/ru/function.call-user-func-array.php). Имя задано в XML, поэтому экземпляр объекта передать нельзя. Используйте глобальную функцию (`my_function`) или статический метод (`MyClass::myFunction`). См. также [правило callable](extending-modx/xpdo/custom-models/validation#pravilo-callable).
 
 ## Валидация xPDOValidationRule
 
