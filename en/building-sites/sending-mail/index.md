@@ -1,76 +1,117 @@
 ---
 title: Sending mail
+description: "Configure outgoing email in MODX: SMTP, DKIM, provider settings, and testing."
 ---
 
-MODX has an [email service built-in](extending-modx/services/modmail), which can send emails through PHPs plain `mail()` function, or by using SMTP.
+MODX has a built-in [email service](extending-modx/services/modmail). It sends mail through PHP's `mail()` function or an SMTP server.
 
-There are various scenarios in which emails may be sent:
+Mail is sent in several situations:
 
-- When requesting a password reset, or using passwordless login
-- When a user submits a form on the front-end, typically handled by [FormIt](extras/formit)
-- In custom code. For instructions about using the email service, see [modMail](extending-modx/services/modmail).
+- Password reset and passwordless login.
+- Front-end forms, usually through [FormIt](extras/formit).
+- Custom code that uses the mail service.
 
-In all of these cases, the MODX core email settings are used. These are found in the manager under System (cog icon) > System Settings. Search for "mail" or select the "Mail" area filter.
+All of these use the core mail settings. Find them in System (cog icon) > System Settings. Search for `mail_`, or filter the **Mail** area. Two related settings sit elsewhere: `emailsender` in **Authentication and Security**, and `site_name` in **Site**.
 
-By default, email is sent using PHPs `mail()` feature. This uses server-level settings, but is typically not recommended due to poor deliverability. Instead, configure sending via SMTP. 
+By default, MODX sends mail with PHP's `mail()`. It relies on server-level settings and often has poor deliverability. Configure SMTP instead.
 
-## Enabling sending via SMTP
+## Sending via SMTP
 
-1. Enable the `mail_use_smtp` system setting
-2. Enable the `mail_smtp_auth` system setting
-3. Configure the host the SMTP server is available from in the `mail_smtp_hosts` system setting.
-4. Configure the SMTP port in the `mail_smtp_port` system setting. In many cases, port 25 is blocked, so you'll need to use a different one, typically 587 or 465.
-5. Enter your SMTP credentials in the `mail_smtp_user` and `mail_smtp_pass` fields.
-6. If necessary, set `mail_smtp_secure` to `tls` or `ssl` (MODX 3). Older docs referred to `mail_smtp_prefix`; use the Mail area in System Settings and match what your install shows.
+1. Enable `mail_use_smtp`.
+2. Enable `mail_smtp_auth` if the server requires a login.
+3. Set `mail_smtp_hosts` to the SMTP server. Separate several hosts with `;` to try them in order; each host can include a port (`smtp1.example.com:587;smtp2.example.com`). A host may also start with `ssl://` or `tls://`.
+4. Set `mail_smtp_port`. The installer default is `587`; `465` is also common. Many providers block outbound port `25`.
+5. Enter the login in `mail_smtp_user` and `mail_smtp_pass`.
+6. If the server needs explicit encryption, set `mail_smtp_secure` to `tls` or `ssl`. Use `tls` with port 587 or 2525, and `ssl` with port 465. MODX 3 calls this setting `mail_smtp_secure`; older versions used `mail_smtp_prefix`.
 
-For steps 3-6, the exact details will depend on the mail server or mail service you're using. Consult their documentation, setup instructions, or support for the information to use.
+Steps 3–6 depend on the mail server or service. Consult its documentation for exact values.
 
-More specific instructions are available for:
+More specific instructions:
 
 - [Amazon SES](building-sites/sending-mail/amazon-ses)
 - [Mailtrap.io](building-sites/sending-mail/mailtrap)
 
 ### Common SMTP providers
 
-Use these as starting points. Providers change auth rules; create app passwords or SMTP credentials in their dashboards when prompted.
+The values below are starting points; confirm them with the provider. Create app passwords or SMTP credentials in the provider's dashboard when prompted.
 
 | Provider | Host | Port | `mail_smtp_secure` | Auth notes |
-| -------- | ---- | ---- | ------------------ | ---------- |
-| Gmail / Google Workspace | `smtp.gmail.com` | `587` / `465` | `tls` / `ssl` | App password or OAuth; plain account password usually rejected |
-| Yandex Mail | `smtp.yandex.com` or `smtp.yandex.ru` | `465` / `587` | `ssl` on 465 | App password from Yandex Mail client settings |
+| --- | --- | --- | --- | --- |
+| Gmail / Google Workspace | `smtp.gmail.com` | `587` / `465` | `tls` / `ssl` | App password or OAuth; a plain account password is usually rejected |
+| Yandex Mail | `smtp.yandex.com` or `smtp.yandex.ru` | `465` / `587` | `ssl` on 465, `tls` on 587 | App password from Yandex Mail settings |
 | Mail.ru | `smtp.mail.ru` | `465` / `587` | `ssl` / `tls` | App password from Mail.ru security settings |
-| Rambler | `smtp.rambler.ru` | `465` | `ssl` | Confirm current requirements in Rambler help |
-| Mailgun | `smtp.mailgun.org` or `smtp.eu.mailgun.org` | `587` / `465` / `2525` | Match port | Per-domain SMTP credentials in Mailgun |
-| Custom VPS / shared hosting | Host-provided SMTP hostname | Often `587` or `465` | Per host | Outbound `25` is often blocked |
+| Rambler | `smtp.rambler.ru` | `465` | `ssl` | Check the current requirements in Rambler help |
+| Mailgun | `smtp.mailgun.org` or `smtp.eu.mailgun.org` | `587` / `465` / `2525` | `tls` on 587 and 2525, `ssl` on 465 | Per-domain SMTP credentials in Mailgun |
+| Custom VPS / shared hosting | Host-provided hostname | Often `587` or `465` | Per host | Outbound `25` is often blocked by the provider |
 
-Set `emailsender` to an address that provider allows (same mailbox, or a verified sending domain).
+Set [`emailsender`](building-sites/settings/emailsender) to an address the provider allows: the same mailbox, or an address on a verified sending domain.
 
-If FormIt redirects or shows success but no message arrives, install [QuickEmail](extras/quickemail) and test SMTP alone before changing FormIt hooks. See also the troubleshooting section on the [simple contact page](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page).
+If FormIt reports success but no message arrives, install [QuickEmail](extras/quickemail) and test SMTP without FormIt hooks. See also the troubleshooting section on the [simple contact page](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page).
 
 ## Testing email sending
 
-Once you've configured the sending, you'll want to make sure it works. The simplest way to do so is by installing the [QuickEmail extra](extras/quickemail) through the [package manager](building-sites/extras). 
+Install the [QuickEmail extra](extras/quickemail) through the [package manager](building-sites/extras).
 
-Once installed, add the following snippet call to a resource. 
+Add this snippet call to a resource:
 
 ```
 [[!QuickEmail? &debug=`1`]]
 ```
 
-View the resource on the front-end. QuickEmail will try to send a test email, and will render a detailed debug log. If it fails, it usually comes down to the wrong port, prefix, or authentication. 
+Open the resource in a browser where you are signed in to the manager. QuickEmail returns `Unauthorized` without a manager session (`mgr` context). With `debug`, it sends a test message and renders the SMTP log.
 
-**When it works as expected, remove the snippet call.** If you don't, someone else may stumble across it, which may leak your email credentials. 
+If sending fails, check the port, `mail_smtp_secure`, and the credentials. PHPMailer hides the username and password at this debug level, but the server response is still shown.
 
-## Testing and improving email deliverability
+**Remove the snippet call after testing.** While it is published, anyone with a manager session can send test email from that page.
 
-Sending emails is one - but if it actually arrives in the recipients inbox is another question. 
+## DKIM signing
 
-This can be affected by anything from the email content (does it seem spammy?), but also by various mail protection systems such as SPF, DKIM, and DMARC. Mail server IPs may also get blacklisted if they send too much spam.
+DKIM lets the recipient verify that your domain sent the message and that it was not modified in transit. MODX signs outgoing mail through PHPMailer. SPF and DMARC are still configured in DNS and at the mail provider.
 
-These systems are configured on the server level, and are out of scope for this documentation, but to make sure your emails arrive it is strongly recommended to make sure those are properly configured. 
+Set these in System Settings:
 
-There are various services and tutorials online to help you with that. [mail-tester.com](https://www.mail-tester.com/) is an excellent one that can be used for free. It provides you a single-use email address to send an email to (tip: use QuickEmail, adding the `&to` property), and will check a large part of what can influence your deliverability.
+- [`mail_dkim_selector`](building-sites/settings/mail_dkim_selector) — the selector published in DNS as `<selector>._domainkey.<domain>`.
+- [`mail_dkim_domain`](building-sites/settings/mail_dkim_domain) — the signing domain.
+- [`mail_dkim_privatekeyfile`](building-sites/settings/mail_dkim_privatekeyfile) — path to the private key file, readable by PHP; or
+- [`mail_dkim_privatekeystring`](building-sites/settings/mail_dkim_privatekeystring) — the key itself. It takes precedence over the file.
+- [`mail_dkim_identity`](building-sites/settings/mail_dkim_identity) — optional identity (`i=`) for the signature.
+- [`mail_dkim_passphrase`](building-sites/settings/mail_dkim_passphrase) — passphrase for an encrypted key.
 
-## Other relevant settings
+Signing starts only when the domain, selector, and a key are set. Publish the matching public key in DNS at `<selector>._domainkey.<domain>`.
 
-Unless otherwise configured on a snippet or in code, the `From` email header will be set to the value of the `emailsender` system setting, and the name will be your `site_name` system setting. 
+## Deliverability
+
+Delivery depends on more than MODX: content that looks like spam, a new IP address, and missing DNS records all reduce the chance a message reaches the inbox.
+
+- SPF and DMARC are configured in DNS and at the mail provider. DKIM is signed by MODX with a key published in DNS.
+- A server IP can be blacklisted when it sends too much spam.
+- [mail-tester.com](https://www.mail-tester.com/) gives you a one-time address and checks most of these factors. Send to it with QuickEmail and the `&to` property.
+
+## Other mail settings
+
+| Setting | Default | Effect |
+| --- | --- | --- |
+| [`mail_smtp_autotls`](building-sites/settings/mail_smtp_autotls) | Yes | PHPMailer starts STARTTLS when the server offers it, even with an empty `mail_smtp_secure`. This is why port 587 often works without setting `tls`. |
+| [`mail_smtp_helo`](building-sites/settings/mail_smtp_helo) | empty | HELO/EHLO hostname; empty uses the server hostname. |
+| [`mail_smtp_timeout`](building-sites/settings/mail_smtp_timeout) | 10 | SMTP timeout in seconds. |
+| [`mail_smtp_single_to`](building-sites/settings/mail_smtp_single_to) | No | Send one message per recipient instead of one message with several `To` addresses. |
+| [`mail_smtp_keepalive`](building-sites/settings/mail_smtp_keepalive) | No | Keep the SMTP connection open between messages. Not recommended for normal use. |
+| [`mail_charset`](building-sites/settings/mail_charset) | UTF-8 | Message charset. |
+| [`mail_encoding`](building-sites/settings/mail_encoding) | 8bit | Transfer encoding. |
+| `mail_inlinestyle_inline` | Yes | Move CSS from `<style>` blocks into inline `style` attributes in HTML mail. |
+| `mail_inlinestyle_remove_style_tags` | No | Remove `<style>` tags after inlining. Can break responsive layouts. |
+
+## From address
+
+`modMail` does not set a default `From` header. Core flows do: password reset, passwordless login, and user create/update use [`emailsender`](building-sites/settings/emailsender) as the address and [`site_name`](building-sites/settings/site_name) as the name.
+
+In custom code, set both explicitly:
+
+```php
+use MODX\Revolution\Mail\modMail;
+
+$mail->set(modMail::MAIL_FROM, $modx->getOption('emailsender'));
+$mail->set(modMail::MAIL_FROM_NAME, $modx->getOption('site_name'));
+```
+
+Without a valid `From` header, receiving servers may reject the message.
