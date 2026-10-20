@@ -11,11 +11,11 @@ You want a User to have manager editing access, but not have all the [Permission
 
 ## The Solution
 
-1. In Access Controls ->Roles, create a new role (lets call it "Editor") with an authority of 10.
+1. In **Access Controls → Roles**, create a new role (lets call it "Editor") with an authority of 10.
 2. In the lock icon in the user menu → **Access Control Lists** → the tab **Policies**, duplicate the administrator policy and rename it. For our example we'll use "AdminLite".
 3. Edit the AdminLite Policy to use whatever [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") you want the User to have.
 4. In the lock icon in the user menu → **Access Control Lists** → the tab **User Groups & Users**, right click the "Administrator" group and select "Update User Group.".
-5. On the Permissions -> Context Access tab, add two new entries to the grid:
+5. On the **Context Access** tab, add two new entries to the grid:
     1. Context: 'mgr' Minimum Role: 'Editor', Access Policy 'AdminLite'
     2. Context: 'web' Minimum Role: 'Editor', Access Policy 'Load, List and View'
 6. In the lock icon in the user menu → **Users**, create the new user or edit an existing one. On the Access Permissions tab, assign them to the Administrator group with a role of Editor.

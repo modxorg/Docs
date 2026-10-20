@@ -9,6 +9,8 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/creating-a-se
 
 You want another User to have full manager access, with all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") of an Administrator user. Perhaps it's your colleague or your client, but by creating another Administrator you are handing over the keys to the _entire_ site. This is a simplistic scenario. The other admin could modify or delete your user, so this may not be a viable solution for what you need.
 
+To give a user manager access on a smaller scale, see [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access "Giving a User Manager Access"). Shaun McCormick's video on [Understanding MODX Revolution Security](http://vimeo.com/13856994) walks through setting up complex permission schemes.
+
 ## The Solution
 
 After logging into your site's manager, do the following:
@@ -60,8 +62,3 @@ When thinking about roles, think about that access policy there. The access poli
     5. [More on the Anonymous User Group](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
 8. [Troubleshooting Security](building-sites/client-proofing/security/troubleshooting-security)
     1. [Resetting a User Password Manually](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)
-
-Related resources for this tutorial:
-
-- [Giving a User Manager Access](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access "Giving a User Manager Access") — an example of how to create a user with a permission level of less than yours.
-- Shaun McCormick's video on [Understanding MODX Revolution Security](http://vimeo.com/13856994) — a detailed walk-through of setting up complex permission schemes.
