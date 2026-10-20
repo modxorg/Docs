@@ -1,21 +1,22 @@
 ---
 title: "Integrating Templates"
+description: "Build a MODX template from the tags, chunks and snippets of a static HTML page: a header and a footer as chunks, a menu as a snippet, and a dynamic widget."
 ---
 
 ## Building Templates
 
-The integration of a site into MODX will often start with defining which elements of the site are commonly repeated from page to page. Typically, repeated elements would be a header, navigation and a footer.
+Start from the static HTML page of the site. The parts that repeat from page to page — the header, the navigation, the footer — become the Template. The content of each page moves into the field that the Template reads.
 
-The example below demonstrates a simple template where content, populated in each individual resource by the content field, can be injected into the `[[*content]]` tag, which in turn is surrounded by markup defined as the [Template](building-sites/elements/templates).
+In the Template below, `[[*content]]` stands where the content of the page goes. MODX replaces the tag with the content of the Resource that uses the Template.
 
 ``` html
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
-   <meta charset="UTF-8">
-   <base href="[[!++site_url]]" />
-   <title>[[*pagetitle]]</title>
-   [[- Continue to insert your CSS, Scripts and other assets here. ]]
+    <meta charset="UTF-8">
+    <base href="[[!++site_url]]" />
+    <title>[[*pagetitle]]</title>
+    [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
 <body>
     <!-- Header Start -->
@@ -46,66 +47,43 @@ The example below demonstrates a simple template where content, populated in eac
 </html>
 ```
 
-Additional templates may also be necessary as the structure of a page differs.
+> [!WARNING]
+> `[[!++site_url]]`, `[[!++http_host]]` and `[[!++url_scheme]]` are **config values, not system settings**. They come from `config.inc.php` and cannot be edited in the manager.
 
-In the case of creating a blog post we may wish to also include a side bar, and whilst there are many options available to us to add this in such as creating a [Template Variable](building-sites/elements/template-variables) to toggle the sidebar on and off, it may be more convenient for the site editor to simply select a template for blog posts which contains a sidebar already. Therefore, in this instance it may be a good idea to setup a secondary template.
+| Tag | Constant in `config.inc.php` | Value |
+| --- | --- | --- |
+| `[[!++site_url]]` | `MODX_SITE_URL` | the address of the site, with a trailing slash |
+| `[[!++http_host]]` | `MODX_HTTP_HOST` | the host without a scheme |
+| `[[!++url_scheme]]` | `MODX_URL_SCHEME` | `http://` or `https://`, with a trailing slash |
+
+A full address is built as `[[!++url_scheme]][[!++http_host]]`.
+
+A page with a different structure needs a second Template. For a blog post with a sidebar, create a Template that contains the sidebar and let the editor pick it for blog posts. A [TV](building-sites/elements/template-variables) that switches the sidebar on and off is the alternative, but then the choice falls on the editor for every page.
+
+The Template for the blog post is the one above with an aside added — the head and the header stay the same:
 
 ``` html
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Organization">
-<head>
-   <meta charset="UTF-8">
-   <base href="[[!++site_url]]" />
-   <title>[[*pagetitle]]</title>
-   [[- Continue to insert your CSS, Scripts and other assets here. ]]
-</head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <nav>
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Header End -->
-    <main>
-        [[*content]]
-    </main>
-    <!-- Aside Start -->
-    <aside>
-        <section>
-            <h4>Related posts</h4>
-            <ul>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-        </section>
-    </aside>
-    <!-- Aside End -->
-    <!-- Footer Start -->
-    <footer>
-        <nav>
-            <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-            </ul>
-        </nav>
-    </footer>
-    <!-- Footer End -->
-</body>
-</html>
+<main>
+    [[*content]]
+</main>
+<aside>
+    <section>
+        <h4>Related posts</h4>
+        <ul>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </section>
+</aside>
 ```
 
 ## Using Chunks
 
-[Chunks](building-sites/elements/chunks) offer a way of managing repeatable content in one place. In the example template above there is a static navigation in the header and footer, this may become problematic if there was a need to change the text for one of these links. Rather than change the text in each template and risk desynchronisation it would be preferable to update it once and have that change reflect on all templates. We can accomplish this by utilising chunks.
+[Chunks](building-sites/elements/chunks) hold the markup that repeats across Templates, so that it can be edited in one place. The header and the footer of the example above carry the navigation links. With the markup inlined in every Template, a change to the text of one link has to be made in every Template. The copies drift apart. Move the markup into Chunks and the edit happens once.
 
-The below example illustrates placing the header, footer and aside into a chunk.
+The header, the footer and the aside move into three Chunks:
 
-```php
+``` php
 [[$headerHTML]]
     <main>
         [[*content]]
@@ -114,25 +92,23 @@ The below example illustrates placing the header, footer and aside into a chunk.
 [[$footerHTML]]
 ```
 
-The `headerHTML` chunk has replaced the markup that was previously in the header, including the DOCTYPE and head tag. The `footerHTML` chunk has now replaced the footer mark up, including the closing body and html tag. In the case described above regarding the change of the link text it would now only need to be performed once in the chunk.
+The `headerHTML` Chunk holds the DOCTYPE, the head and the header. The `footerHTML` Chunk holds the footer and the closing `</body>` and `</html>` tags. The text of a link is changed in the Chunk, and the change reaches every Template at once.
 
-Chunks are not limited to a top level include, they can also be nested inside of other Chunks. In the below example we have created a new Chunk called `metaData` and filled it with some common meta data.
+A Chunk can also be nested in another Chunk. The Chunk `metaData` holds the common meta data:
 
 ``` php
   <!-- SEO Microdata (Schema.org variant) - Google, Bing, Yahoo -->
   <meta content="[[++site_name]]" itemprop="description">
   <meta content="[[++site_name]]" itemprop="name">
-  <meta content="http://www.[[!++http_host]]" itemprop="url">
-  <meta content="http://www.[[!++http_host]]/meta_thumbnail.png" itemprop="image">
+  <meta content="[[!++url_scheme]][[!++http_host]]" itemprop="url">
+  <meta content="[[!++url_scheme]][[!++http_host]]/meta_thumbnail.png" itemprop="image">
   <meta content="info@[[!++http_host]]" itemprop="email">
   <meta content="[[++site_name]]" name="companyright">
 ```
 
-We could now embed this chunk inside of our existing `headerHTML` chunk:
+It can be embedded in the `headerHTML` Chunk:
 
 ``` php
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Organization">
 <head>
    <meta charset="UTF-8">
    <base href="[[!++site_url]]" />
@@ -140,68 +116,51 @@ We could now embed this chunk inside of our existing `headerHTML` chunk:
    [[$metaData]]
    [[- Continue to insert your CSS, Scripts and other assets here. ]]
 </head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <nav>
-            <ul>
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
-    <!-- Header End -->
 ```
 
 ## Using Snippets
 
-MODX offers a lot of dynamics out of the box but [Snippets](building-sites/elements/snippets) are a way of extending that dynamic. Inside of our `headerHTML` chunk we have a navigation which could be made and managed dynamically with the use of a snippet or extra such as [Wayfinder](extras/wayfinder) or [pdoMenu](extras/pdoTools/Snippets/pdoMenu). Both Wayfinder and pdoMenu are extras rich in functionality that can automatically populate your menu based on the resources that exist in your site. In addition they can also handle the 'active' class as the user navigates through the site as well as a plethora of other functions.
+A Snippet adds dynamic behaviour to a Template or a Chunk. Such a Snippet can also build the navigation of the `headerHTML` Chunk instead of static links. [Wayfinder](extras/wayfinder) and [pdoMenu](extras/pdoTools/Snippets/pdoMenu) both build the menu from the Resources of the site. Both mark the current Resource with the `active` class.
 
-To use this Snippet insert it in replacement of the current static menu in the `headerHTML` Chunk.
+Replace the static links of the `headerHTML` Chunk with the call:
 
 ``` php
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Organization">
-<head>
-   <meta charset="UTF-8">
-   <base href="[[!++site_url]]" />
-   <title>[[*pagetitle]]</title>
-   [[$metaData]]
-   [[- Continue to insert your CSS, Scripts and other assets here. ]]
-</head>
-<body>
-    <!-- Header Start -->
-    <header>
-        <nav>
-            [[pdoMenu?
-              &parents=`0`
-              &level=`1`
-            ]]
-        </nav>
-    </header>
-    <!-- Header End -->
+<nav>
+    [[pdoMenu?
+      &parents=`0`
+      &level=`1`
+    ]]
+</nav>
 ```
 
-*The above example uses pdoMenu. For additional functionality and properties that can be applied, including the dictation of the html output, please check the [documentation](extras/pdoTools/Snippets/pdoMenu).*
+*pdoMenu has more properties and its own output format — see its [documentation](extras/pdoTools/Snippets/pdoMenu).*
 
-However, Snippets are not limited to pre exisiting extras and can be created and then included in your template to perform any dynamic function the PHP language allows. For example we could create a Snippet called `getWeather` and populate it with the following code:
+A Snippet of your own does any work that PHP allows. This one, called `getWeather`, reads the current weather from an API:
 
 ``` php
 // Stash API URL
-$jsonurl = "https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=b6907d289e10d714a6e88b30761fae22";
+$jsonurl = "https://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=YOUR_API_KEY";
 
 // Call API
-$json = file_get_contents($jsonurl);
+$json = @file_get_contents($jsonurl);
+if ($json === false) {
+    return 'The weather service is not available';
+}
 
 // Stash results
-$weather = json_decode($json);
+$weather = json_decode($json, true);
+if (!isset($weather['weather'][0]['main'])) {
+    return 'The weather service returned no data';
+}
 
 // Return weather description
-return $weather->weather[0]->main;
-```  
+return $weather['weather'][0]['main'];
+```
 
-From here the Snippet can be called inside of our `aside` to serve as a widget to get the current weather description.
+> [!WARNING]
+> **The API key has to be your own.** The key of the service is a free one that you get on the site of the service itself. The key that used to stand in this example no longer works. Every request without a valid key is answered with an error. That is why the Snippet above checks the answer before it reads the data.
+
+Call the Snippet in the `aside` Chunk to serve the current weather description as a widget:
 
 ``` php
 <aside>
@@ -212,7 +171,7 @@ From here the Snippet can be called inside of our `aside` to serve as a widget t
 </aside>
 ```
 
-The result of this Snippet would render on the front end like this:
+The Snippet writes its answer into the page:
 
 ``` php
 <aside>
@@ -223,37 +182,30 @@ The result of this Snippet would render on the front end like this:
 </aside>
 ```
 
-The result of this Snippet at the time of writing outputs a value of `Drizzle`. This value from the API will be cached in MODX as the Snippet was called without the uncache flag `!`. However in this use case it could be problematic as the cached value `Drizzle` may persist even after the weather has changed. This particular Snippet should be called uncached using the `!` flag to prevent this issue. To call the snippet uncached place the flag in front of the Snippet name `[[!getWeather]]`.
+The value `Drizzle` is what the service returned when the example was written — the answer changes over time. MODX caches it, because the call above carries no uncache flag `!`, so the cached `Drizzle` survives the change of the weather. Call the Snippet uncached to prevent this: put the `!` in front of the Snippet name, `[[!getWeather]]`.
 
-This snippet could also be further extended with the use of another Snippet which get's the users location from a different API. The result of which could then be passed into the `getWeather` Snippet as a parameter.
+A Snippet can pass a parameter to another Snippet. `getLocation` reads the location of the visitor from a different API and passes it to `getWeather`:
 
 ``` php
 [[!getWeather? &location=`[[!getLocation]]`]]
 ```
 
-The `getWeather` Snippet could then be updated to capture the property and set the location value in the API call.
+The `getWeather` Snippet captures the property and puts the location into the API call. The rest of the code stays as it was:
 
 ``` php
 // Get properties
 $location = $modx->getOption('location', $scriptProperties);
 
 // Stash API URL
-$jsonurl = "https://samples.openweathermap.org/data/2.5/weather?q=" . $location . "&appid=b6907d289e10d714a6e88b30761fae22";
-
-// Call API
-$json = file_get_contents($jsonurl);
-
-// Stash results
-$weather = json_decode($json);
-
-// Return weather description
-return $weather->weather[0]->main;
+$jsonurl = "https://api.openweathermap.org/data/2.5/weather?q=" . $location . "&appid=YOUR_API_KEY";
 ```
 
-Read more about [Snippets](building-sites/elements/snippets).
+## See Also
 
-## Resources
-
-[Video quick start series](building-sites/integrating-templates/video-quick-start)
-
-[Named anchor](building-sites/integrating-templates/named-anchor)
+1. [Integrating Templates](building-sites/integrating-templates)
+2. [Video Quick-Start Series](building-sites/integrating-templates/video-quick-start)
+3. [Named Anchor](building-sites/integrating-templates/named-anchor)
+4. [Templates](building-sites/elements/templates)
+5. [Chunks](building-sites/elements/chunks)
+6. [Snippets](building-sites/elements/snippets)
+7. [Template Variables](building-sites/elements/template-variables)
