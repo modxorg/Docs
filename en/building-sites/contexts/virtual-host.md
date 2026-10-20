@@ -1,120 +1,102 @@
 ---
-title: "Using Virtual Hosts"
-_old_id: "352"
-_old_uri: "2.x/administering-your-site/contexts/creating-a-subdomain-from-a-folder-using-virtual-hosts"
+title: "Serving a Second Domain"
+description: "Serving a second domain from one MODX installation: the context and its settings, the gateway directory with its own config.context.php, and the virtual host of the web server."
 ---
 
-This tutorial will demonstrate how to use a Context to create and manage a separate subdomain in a single Revolution install. We're going to create a subdomain at dev.modx.com (of course, not really, but you get the idea).
+MODX 3 does not match a host with a context by itself. The context of a request is chosen by the gateway that starts it, so a second domain needs a second gateway — a directory with its own `index.php` and a `config.context.php` that names the context.
+
+This page builds such a gateway for the context `dev` on the host `dev.example.com`.
 
 ## Creating the Context
 
-Navigate to System -> Contexts. Click _Create New_ to create a new context. Give it a name of "dev" and click _Save_.
+Create the context in the manager: **Admin** → **Contexts** → **Create**. The **Context Key** is `dev` — the key is what the gateway names — and the name is free. The keys `mgr`, `web` and `root` are reserved by the core.
 
-Next, in the Resource Tree (to the left) create a "Dev Home" Resource. Place it in the root of the "dev" context. Also, while you're at it, create a "Dev Docs" Resource as well with an alias of "documentation". We'll use this to test our context links.
-
-Your tree should look something like this:
+Then create the resources of the domain in the branch of the context in the resource tree. The tree looks like this:
 
 ![](subctx1.png)
 
-From there, go ahead and right-click on the "dev" Context in the tree, and click "Edit Context". From here we'll see a Context Settings tab. Click on it, and you'll need to add a few settings:
+## The Settings of the Context
 
-- **base\_url** - Set this to "**/**" (no quotes) since we're making the root of the URL our base.
-- **http\_host** - Set this to **dev.modxcms.com** (or your subdomain name)
-- **site\_start** - Set this to the **ID of your "Dev Home" resource**.
-- **site\_url** - Set this to **<http://dev.modxcms.com/>** (or your subdomain url). Don't forget the **_trailing slash_**. Remember this setting is: **scheme + _http\_host_ + base\_url**
+Four settings on the **Context Settings** tab of the context decide how the URLs of the domain are built:
 
-You can add other context-specific settings, such as error\_page, unauthorized\_page, cultureKey, and others if you so choose. All system settings can be overridden by setting them on a context.
+| Setting | Value |
+| --- | --- |
+| `base_url` | `/` |
+| `http_host` | `dev.example.com` |
+| `site_start` | the ID of the resource that opens the domain |
+| `site_url` | `http://dev.example.com/` — the scheme, the host and the path, with a trailing slash |
 
-**Note: LINKING BETWEEN CONTEXTS**
-If you're going to be **linking back to the 'web' context from this context ('dev')**, you'll want to **add those same Context Settings (with 'web'-specific values, of course) to the 'web' context**. This allows MODX to know where to redirect 'web' context URLs back to.
+Any other setting can be overridden here as well — `cultureKey` for the language of the domain, for example. Changing a setting clears the cache of the context, so a manual cache clear is not needed.
 
-After creating the settings, clear your site cache.
+## The Gateway Directory
 
-## Creating the Virtual Host
+The gateway is a directory of its own with four files:
 
-**cPanel Users**
-cPanel will make the necessary changes automatically when you create a new sub domain. Manually editing the Virtual Hosts is not recommended.
+| File | What it holds |
+| --- | --- |
+| `index.php` | a copy of the `index.php` of the installation |
+| `config.core.php` | a copy of the `config.core.php` of the installation |
+| `.htaccess` | a copy of the `.htaccess` of the installation |
+| `config.context.php` | the key of the context |
 
-Now we need to do some Apache work. (If you're not using Apache, you can at least follow the same idea and customize it to your server.) Go to Apache's httpd.conf file, and add these lines, changing where necessary for your domain name:
+`config.context.php` holds one line:
 
 ``` php
-NameVirtualHost dev.modxcms.com
-<VirtualHost dev.modxcms.com>
-  ServerAdmin dev@modxcms.com
-  DocumentRoot /home/modxcms.com/public_html/dev
-  ServerName dev.modxcms.com
-  ErrorLog logs/devmodxcms-error_log
-  TransferLog logs/devmodxcms-access_log
+<?php
+return 'dev';
+```
+
+`config.core.php` holds the path to the core of the installation as an absolute path — the installer writes it that way:
+
+``` php
+define('MODX_CORE_PATH', '/home/example.com/public_html/core/');
+```
+
+That path is the only thing to correct in the copy: the other two files work as they are.
+
+The `.htaccess` of the gateway needs one change — `RewriteBase` has to point to the directory of the gateway:
+
+```
+RewriteBase /dev/
+```
+
+## The Virtual Host
+
+The web server needs a host of its own for that directory. For Apache 2.4:
+
+``` apache
+<VirtualHost *:80>
+    ServerName dev.example.com
+    DocumentRoot /home/example.com/public_html/dev
+    ErrorLog logs/dev-error_log
+    CustomLog logs/dev-access_log
 </VirtualHost>
 ```
 
-Some Apache installs prefer you to put the IP address of the server in the VirtualHost and NameVirtualHost parameters - this is fine; the important field is the ServerName.
+Restart the web server and open `http://dev.example.com/` — the resource named by `site_start` answers.
 
-Obviously, if you're creating a different subdomain than dev.modxcms.com, you'd want to change these values.
+## Links Between the Contexts
 
-Great! Restart your server (apachectl graceful).
+A link to a resource of another context names that context:
 
-## The Subdomain Files
-
-Now we're going to need to create the actual files to load the subdomain. Go create a "dev/" subdirectory in /home/modxcms.com/public\_html/ (or whatever base path your webroot is in).
-
-You'll need to copy 3 files from your MODX Revolution's root directory:
-
-- index.php
-- .htaccess
-- config.core.php
-
-Copy those to the dev/ directory.
-
-Now, you'll need to edit them.
-
-### index.php
-
-Edit index.php, and find this line (near the end):
-
-``` php
-$modx->initialize('web');
+```
+[[~135:context=`web`]]
 ```
 
-Change 'web' to 'dev'. Save the file and close.
+The URL is absolute, because the resource lives in another context. A link without a context stays in the context of the request and is relative:
 
-#### .htaccess
-
-You'll only need to edit one line here (and maybe not at all). Find this line (near the top):
-
-``` php
-RewriteBase /
+```
+[[~135]]
 ```
 
-Make sure that's set to /, not anything else. It should match the **base\_url** context setting you set up earlier.
-
-#### config.core.php
-
-What is really important here is to make sure this line points to your MODX core folder:
+The same holds in PHP:
 
 ``` php
- define('MODX_CORE_PATH', dirname(__FILE__) . '/core/');
+$url = $modx->makeUrl(135, 'web');
 ```
-
-If the main domain is "up one level" on the filesystem, you should be able to use the following:
-
-``` php
- define('MODX_CORE_PATH', dirname(dirname(__FILE__)) . '/core/');
-```
-
-## Final Steps
-
-Clear your site cache again, refresh the Resource tree, and click 'Preview' on your "Dev Home" document. You should now be showing the page at the following URL:
-
-> <http://dev.modxcms.com/>
-
-Create a `[[~135]]` link to the "Dev Docs" Resource in the "Dev Home" Resource. Reload your page. Note the link properly builds to:
-
-> <http://dev.modxcms.com/documentation.html>
-
-And you're done!
 
 ## See Also
 
-- [Contexts](building-sites/contexts "Contexts")
-- Contexts as subfolders (from the forums: <https://forums.modx.com/index.php/topic,51346.0.html>)
+1. [Contexts](building-sites/contexts)
+2. [Using a Gateway Plugin](building-sites/contexts/gateway-plugin)
+3. [System Settings](building-sites/settings)

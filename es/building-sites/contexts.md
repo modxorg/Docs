@@ -1,65 +1,166 @@
 ---
 title: "Contextos"
-_old_id: "66"
-_old_uri: "2.x/administering-your-site/contexts"
+description: "Contextos en MODX: cómo anulan los ajustes del sistema, cómo crear uno, cómo se concede el acceso y la API, los eventos y los procesadores que hay detrás."
 ---
 
- Los contextos permiten que los ajustes de configuración de MODX se anulen, amplíen, aislen o se compartan entre dominios, subdominios, subsitios, sitios múltiples, secciones culturales específicas, aplicaciones web específicas, etc.
+Un Contexto es un conjunto con nombre de anulaciones de configuración sobre el que se ejecuta una petición: lleva sus propios ajustes, su propia rama del árbol de recursos y sus propias reglas de acceso.
 
- Puedes crear fácilmente un contexto desde la entrada Contextos en el manú Sistema. El contexto se mostrará en tu árbol de recursos. Los recursos se pueden arrastrar fácilmente entre contextos para moverlos de un contexto a otro.
-
- Nota: no hay nada fundamentalmente _diferente_ acerca de los recursos en diferentes contextos, excepto que ahora heredan las configuraciones del contexto en el que se encuentran. Por tanto, si creas un nuevo contexto, tendrás que editar la configuración del mismo para que aparezca algún cambio real distinguible.
+MODX incluye dos contextos: `web` (Website) para el front end y `mgr` (Manager) para el gestor. Un contexto se direcciona por su **clave**; esa clave es la que se pasa a `initialize()` y a `switchContext()`. El **nombre** es solo una etiqueta para la interfaz.
 
 ## Creando un contexto
 
- Primero, vete a la página Contextos, a través de Sistema(_*icono de rueda dentada en  el menú  superior_) -> Contextos. Luego, haz clic en el botón "Crear Nuevo" (_encima de la cuadrícula_). 
- 
- ![](contextos.png)
- 
- Esto te pedirá una clave, un nombre y una descripción, y un numero de posición (en base al cuál se ordenarán los contextos en el árbol de la parte izquierda del Manager). 
- 
- ![](contexto-2.png)
- 
- Una vez creado, haz clic con el botón derecho sobre el contexto recién aparecido en la cuadrícula, y haz clic en "Actualizar Contexto".
- 
+Los contextos se gestionan en el gestor: **Admin** (el engranaje del menú superior) → **Contexts** (`?a=context`). El botón **Create** abre un formulario con cuatro campos:
 
- Esto te llevará a una página con 3 pestañas que muestran el contexto, una cuadrícula de configuraciones vacía y una cuadrícula con los permisos de acceso al mismo. Desde aquí puedes agregar configuraciones específicas del contexto que reasignará cualquier configuración del sistema. Tu nuevo contexto estará completamente vacío, lo que requiere que incluyas todas y cada una de las configuraciones que necesites que utilice (por ej. site_start = Id de la página de inicio de tu nuevo contexto).
+| Campo | Obligatorio | Significado |
+| --- | --- | --- |
+| `key` | sí | el identificador del contexto; el valor que se usa en `initialize()` y en `switchContext()` |
+| `name` | sí | la etiqueta que se muestra en el gestor y en el árbol de recursos |
+| `description` | no | texto libre |
+| `rank` | no | el orden del contexto en el árbol |
 
- Ten en cuenta que los nuevos contextos no obtienen automáticamente permisos de "carga" para usuarios anónimos en 2.2+; deberás concederlos manualmente.
+Las claves `mgr`, `web` y `root` están reservadas por el núcleo.
 
-Cuando creas un nuevo contexto además del contexto "web" predeterminado, es posible que también debas aplicar la configuración de contexto al contexto web.
+Un contexto nuevo recibe acceso de inmediato: el grupo de usuarios **Administrator** recibe la política *Context* y el usuario anónimo recibe la política *Load Only*, el derecho `load` y nada más. El acceso anónimo se omite cuando la petición al procesador lleva `enableAnonymous=0`.
 
-## Configuraciones de contexto
+Los contextos aparecen en el árbol de recursos como una rama propia, y los recursos se mueven entre contextos arrastrándolos.
 
- Puedes crear configuraciones para cualquier contexto definido haciendo clic en ** Sistema -> Contextos**. Luego haz clic con el botón derecho en cualquier contexto y selecciona "Actualizar Contexto".
+## Ajustes de contexto
 
- Cada contexto puede tener su propia configuración que anula o extiende las [Configuraciones de Sistema](/current/en/building-sites/settings "Configuraciones de Sistema"). Las configuraciones de contexto, a su vez pueden ser anuladadas o extendidas por las [Configuraciones de Usuario](/current/en/building-sites/client-proofing/security/users#Users-UsersUserSettings). La jerarquía a recordar es esta:
+Los ajustes de un contexto anulan los [Ajustes del Sistema](/current/en/building-sites/settings) del mismo nombre, y los ajustes de un usuario anulan los del contexto. El orden es:
 
- Configuración del sistema -> Configuración del contexto -> Configuración del usuario
+```
+Ajuste del sistema → Ajuste del contexto → Ajuste del usuario
+```
+
+Un ajuste de contexto se edita en la pestaña **Context Settings** de la página del contexto: **Contexts** → clic derecho en un contexto → **Edit**. Cambiar un ajuste borra la caché de ese contexto, así que no hace falta limpiar la caché a mano.
+
+Los ajustes que un contexto suele anular:
+
+| Ajuste | Qué cambia |
+| --- | --- |
+| `base_url` | la parte de ruta de las URL del contexto |
+| `http_host` | el host para el que se construyen las URL |
+| `site_url` | la URL completa del contexto: esquema, host y ruta |
+| `site_start` | el recurso que abre el contexto |
+| `cultureKey`, `locale` | el idioma y la configuración regional de la petición |
+| `session_name`, `session_cookie_path`, `session_cookie_domain` | la cookie de sesión del contexto |
+
+Los ajustes de sesión de un contexto conservan los valores del núcleo salvo que se anulen:
+
+| Ajuste | Valor por defecto |
+| --- | --- |
+| `session_name` | vacío — PHP conserva el suyo |
+| `session_cookie_path` | `MODX_BASE_URL`, con `base_url` como alternativa |
+| `session_cookie_domain` | vacío |
+| `session_cookie_secure` | `false` |
+| `session_cookie_httponly` | `true` |
+| `session_cookie_samesite` | vacío |
+| `session_cookie_lifetime` | `0` |
 
 ## Acceso al contexto
 
-Al crear un nuevo contexto, asegúrate de que los grupos de usuarios que quieras tengan acceso a él:
+El acceso a un contexto se concede por grupo de usuarios en la pestaña **Contexts** del panel de acceso: el icono del candado en el menú de usuario → **Access Control Lists** → un grupo de usuarios → **Access Permissions** → **Contexts**. La pestaña enumera los contextos y la política que cada grupo tiene sobre ellos.
 
-`Sistema -> Listas de Control de Acceso -> Actualizar Grupo de Usuarios deseado -> Permisos -> Acceso a Contextos`
+Una política sobre un contexto decide cuál de las cinco áreas de acceso se aplica: Context, Resource Group, Element Category, Media Source y Namespace. Una política sin área cubre el contexto mismo.
 
-## Recuperando configuraciones de contexto
+## Leyendo ajustes de contexto
 
- Recuperar una configuración de contexto no es diferente a recuperar cualquier otra configuración del sistema; de hecho, es posible que no te dés cuenta de que se está obteniendo una configuración determinada en el nivel de sistema o de contexto (o en el de usuario).
-
- En una plantilla o Chunk:
+Un ajuste del contexto actual se lee como cualquier otro ajuste; el nivel del que procede no es visible para quien lee:
 
 ``` php
 [[++my_context_setting]]
 ```
 
- Programáticamente en un Snippet:
-
 ``` php
 $setting = $modx->getOption('my_context_setting');
 ```
 
+El ajuste de un contexto concreto se lee del propio contexto:
+
+``` php
+$setting = $modx->context->getOption('my_context_setting');
+$setting = $modx->getContext('web')->getOption('my_context_setting');
+```
+
+El idioma de una petición se toma de la primera fuente que tenga valor: el parámetro `cultureKey` de la petición, el `cultureKey` de la sesión, el `cultureKey` del contexto y, por último, el ajuste del sistema `cultureKey`. El código solo admite en él los caracteres `A-Z`, `a-z`, `0-9`, `_` y `-`.
+
+## Elegir un contexto durante la petición
+
+Una petición empieza en el contexto que indique la puerta de entrada. Dos mecanismos lo cambian:
+
+- el archivo `config.context.php` junto a `index.php` — el archivo devuelve la clave del contexto en el que empieza la petición. Ver [Servir un segundo dominio](/current/en/building-sites/contexts/virtual-host);
+- un Plugin en el evento `OnHandleRequest` que llame a `switchContext()`. Ver [Uso de un Plugin de puerta](/current/en/building-sites/contexts/gateway-plugin).
+
+El método que cambia el contexto durante la ejecución:
+
+``` php
+if ($modx->switchContext('domain2')) {
+    // la petición continúa en el contexto "domain2"
+}
+```
+
+`switchContext($contextKey, $reload = false)` devuelve `false` cuando el contexto no se cargó, así que conviene comprobar el resultado. Cambiar el contexto **no** carga un manejador de sesión propio: lo define la puerta de entrada. Un contexto con su propio manejador de sesión necesita su propia puerta de entrada.
+
+## Eventos
+
+| Evento | Cuándo se dispara |
+| --- | --- |
+| `OnContextInit` | se carga un contexto: en cada petición y en cada `switchContext()` |
+| `OnContextBeforeSave` | antes de guardar un contexto |
+| `OnContextSave` | después de guardar un contexto |
+| `OnContextUpdate` | se actualiza un contexto en el gestor |
+| `OnContextBeforeRemove` | antes de eliminar un contexto |
+| `OnContextRemove` | después de eliminar un contexto |
+| `OnContextFormPrerender` | antes de dibujar el formulario de un contexto |
+| `OnContextFormRender` | después de dibujar el formulario de un contexto |
+
+Los eventos de MODX 2 que se citan a menudo en material antiguo — `OnContextSwitch`, `OnSiteInit`, `OnSiteRender`, `OnManagerInit` y `OnBeforeRequest` — no existen en MODX 3.
+
+## Ajustes del sistema
+
+| Ajuste | Valor por defecto | Qué hace |
+| --- | --- | --- |
+| `default_context` | `web` | el contexto en el que se crean los recursos nuevos |
+| `access_context_enabled` | `true` | comprueba el acceso a un contexto en cada petición; desactivarlo ignora todas las reglas de acceso a contextos |
+| `allow_forward_across_contexts` | `false` | permite que un enlace simbólico y `sendForward()` lleguen a un recurso de otro contexto |
+| `cache_context_settings` | `true` | cachea los ajustes de los contextos |
+| `use_context_resource_table` | `true` | mantiene la tabla de recursos que pertenecen a varios contextos |
+| `context_tree_sort` | `true` | ordena los contextos del árbol de recursos por nombre |
+| `context_tree_sortby` | `rank` | el campo por el que se ordenan los contextos del árbol |
+| `context_tree_sortdir` | `ASC` | la dirección de la ordenación |
+
+## Procesadores
+
+Los procesadores de los contextos y el permiso que necesita cada uno:
+
+| Procesador | Permiso |
+| --- | --- |
+| `Context/Create` | `new_context` |
+| `Context/Duplicate` | `new_context` |
+| `Context/Get` | `view_context` |
+| `Context/GetList` | `view_context` |
+| `Context/Update` | `edit_context` |
+| `Context/UpdateFromGrid` | `edit_context` |
+| `Context/Remove` | `delete_context` |
+| `Context/Setting/Create` | `settings` |
+| `Context/Setting/Get` | `settings` |
+| `Context/Setting/GetList` | `settings` |
+| `Context/Setting/Remove` | `settings` |
+| `Context/Setting/Update` | la política `save` del contexto |
+
+`Context/Duplicate` copia los ajustes, las reglas de acceso y las fuentes de medios del contexto, y — con `duplicateResources=1` — también sus recursos.
+
+## Fuentes de medios de un contexto
+
+La fuente de medios de un elemento se puede fijar para un contexto concreto. El elemento usa entonces la fuente de su propio contexto y, si el contexto no tiene ninguna, vuelve a la fuente por defecto del elemento.
+
+## Un recurso en varios contextos
+
+Un recurso pertenece normalmente a un contexto. Con `use_context_resource_table` activada, la tabla `context_resource` guarda los recursos que pertenecen a varios de ellos, y cada recurso así se encuentra en todos los contextos listados.
+
 ## Ver también
 
-1. [Crear un subdominio desde una carpeta usando hosts virtuales](/current/en/building-sites/contexts/virtual-host)
-2. [Uso de un Plugin de puertas para administrar múltiples dominios](/current/en/building-sites/contexts/gateway-plugin)
+1. [Servir un segundo dominio](/current/en/building-sites/contexts/virtual-host)
+2. [Uso de un Plugin de puerta](/current/en/building-sites/contexts/gateway-plugin)
+3. [Ajustes del Sistema](/current/en/building-sites/settings)
+4. [Listas de Control de Acceso](/current/en/building-sites/client-proofing/security/policies/acls)
