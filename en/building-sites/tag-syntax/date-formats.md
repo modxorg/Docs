@@ -36,9 +36,8 @@ It's not possible to give every possible example, but here are some common ways 
 | 2011-04-18               | ```[[*createdon:strtotime:date=`%Y-%m-%d`]]```                  |
 | Depends on configuration | ```[[*createdon:strtotime:date=`%A, %d %B %Y`]]``` |
 
-::: warning
-`manager_date_format` is **not** usable as the format for the `date` modifier. That setting is documented in PHP `date()` notation, while the `date` modifier runs `strftime()` — the two families use different symbols (`Y` versus `%Y`, `d` versus `%d`). Passing the setting through yields a string MODX cannot parse.
-:::
+> [!WARNING]
+> `manager_date_format` is **not** usable as the format for the `date` modifier. That setting is documented in PHP `date()` notation, while the `date` modifier runs `strftime()` — the two families use different symbols (`Y` versus `%Y`, `d` versus `%d`). Passing the setting through yields a string MODX cannot parse.
 
 ## All Parameters
 

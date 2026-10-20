@@ -19,10 +19,8 @@ Fires after removing a file via the manager.
 | directory | Contains the full path to the file that has been removed. |
 | source    | Contains the modMediaSource object.                       |
 
-::: tip Note
-Unlike the other OnFileManager* file events, this event names its path parameter `directory` rather than `path`.
-:::
-
+> [!TIP]
+> Unlike the other OnFileManager* file events, this event names its path parameter `directory` rather than `path`.
 
 ## See Also
 

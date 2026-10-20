@@ -23,19 +23,18 @@ Before deleting its own row, the method walks `_composites` and calls `remove()`
 
 Aggregate relations are **not** followed. Objects that only point at this one through an `aggregate` relation stay in the database.
 
-::: danger
-A `modResource` owns five composite relations, and one of them is `Children`:
-
-| Alias | Class | Foreign key |
-| --- | --- | --- |
-| `Children` | `MODX\Revolution\modResource` | `parent` |
-| `TemplateVarResources` | `MODX\Revolution\modTemplateVarResource` | `contentid` |
-| `ResourceGroupResources` | `MODX\Revolution\modResourceGroupResource` | `document` |
-| `Acls` | `MODX\Revolution\modAccessResource` | `target` |
-| `ContextResources` | `MODX\Revolution\modContextResource` | `resource` |
-
-`remove()` on one resource therefore deletes its whole subtree of child resources, together with the TV values, resource group assignments, permissions, and context settings that belong to every resource in that subtree. To take a resource out of the tree without losing it, set `deleted` and `published` and move it to the recycle bin instead. See [Removing Objects](extending-modx/xpdo/removing-objects).
-:::
+> [!CAUTION]
+> A `modResource` owns five composite relations, and one of them is `Children`:
+>
+> | Alias | Class | Foreign key |
+> | --- | --- | --- |
+> | `Children` | `MODX\Revolution\modResource` | `parent` |
+> | `TemplateVarResources` | `MODX\Revolution\modTemplateVarResource` | `contentid` |
+> | `ResourceGroupResources` | `MODX\Revolution\modResourceGroupResource` | `document` |
+> | `Acls` | `MODX\Revolution\modAccessResource` | `target` |
+> | `ContextResources` | `MODX\Revolution\modContextResource` | `resource` |
+>
+> `remove()` on one resource therefore deletes its whole subtree of child resources, together with the TV values, resource group assignments, permissions, and context settings that belong to every resource in that subtree. To take a resource out of the tree without losing it, set `deleted` and `published` and move it to the recycle bin instead. See [Removing Objects](extending-modx/xpdo/removing-objects).
 
 ## Returns false Without a Primary Key
 

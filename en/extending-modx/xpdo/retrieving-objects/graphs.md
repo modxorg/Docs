@@ -120,9 +120,8 @@ $boxes = $xpdo->getCollectionGraph('Box', '{"Wheels":{}}', $criteria);
 
 An unprefixed field always resolves against the main class.
 
-::: warning
-Do not call `limit()` on the criteria you pass to `getCollectionGraph`. The limit applies to the joined rows, and one parent with three wheels contributes three of them. A box then arrives with only some of its wheels, and the number of boxes you get depends on how many wheels each has. Filter instead of limiting, and page over the parents with a separate query.
-:::
+> [!WARNING]
+> Do not call `limit()` on the criteria you pass to `getCollectionGraph`. The limit applies to the joined rows, and one parent with three wheels contributes three of them. A box then arrives with only some of its wheels, and the number of boxes you get depends on how many wheels each has. Filter instead of limiting, and page over the parents with a separate query.
 
 `getObjectGraph` takes the same three arguments and returns a single parent object instead of a collection. If the criteria matches more than one object, it returns the first one and writes `getObjectGraph criteria returned more than one instance.` to the log.
 

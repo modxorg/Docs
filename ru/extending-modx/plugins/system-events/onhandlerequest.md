@@ -28,9 +28,8 @@ description: "Событие запускается в начале обрабо
 | Класс              | class modManagerRequest                                                                                                                                                                                              |
 | Метод              | public function handleRequest()                                                                                                                                                                                      |
 
-::: tip Примечание
-На стороне веб-сайта событие вызывается из [modRequest::handleRequest()](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modRequest.php); в менеджере оно вызывается из класса и метода, указанных выше.
-:::
+> [!TIP]
+> На стороне веб-сайта событие вызывается из [modRequest::handleRequest()](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modRequest.php); в менеджере оно вызывается из класса и метода, указанных выше.
 
 ## Смотри также
 

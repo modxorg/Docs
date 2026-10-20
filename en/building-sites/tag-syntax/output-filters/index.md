@@ -241,9 +241,8 @@ The Login:[[+modx.user.id:userinfo=`thislogin`:date=`%Y-%m-%d`]]<br />
 Number of Logins: [[+modx.user.id:userinfo=`logincount`]]
 ```
 
-::: warning
-`userinfo` never returns `password`, `cachepwd`, `salt`, `sessionid`, or `session_stale` — those keys are stripped from the user row before the lookup. A call for one of them renders empty.
-:::
+> [!WARNING]
+> `userinfo` never returns `password`, `cachepwd`, `salt`, `sessionid`, or `session_stale` — those keys are stripped from the user row before the lookup. A call for one of them renders empty.
 
 `[[!+modx.user.id]]` defaults to the currently logged in user ID. You can of course replace that with `[[*createdby]]` or other resource field or placeholders that return a numeric ID representing a user.
 

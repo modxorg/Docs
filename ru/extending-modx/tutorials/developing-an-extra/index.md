@@ -135,9 +135,8 @@ $modx->services->add('doodles', function () use ($modx, $namespace) {
 
 `$modx->getService()` also still loads a service and is what older Extras use, but it is deprecated and scheduled for removal.
 
-::: warning
-`bootstrap.php` runs before the Context is loaded. `$modx->getContext()` returns `null` in there, and Context settings are not in the configuration yet — keep the file to class loading and service registration.
-:::
+> [!WARNING]
+> `bootstrap.php` runs before the Context is loaded. `$modx->getContext()` returns `null` in there, and Context settings are not in the configuration yet — keep the file to class loading and service registration.
 
 Any Snippet can then fetch the service:
 
@@ -299,9 +298,8 @@ src/Model/mysql/Doodle.php
 src/Model/metadata.mysql.php
 ```
 
-::: danger
-Do not open `build.schema.php` in a browser. It creates tables and rewrites files with no authentication in front of it — run it from the command line only.
-:::
+> [!CAUTION]
+> Do not open `build.schema.php` in a browser. It creates tables and rewrites files with no authentication in front of it — run it from the command line only.
 
 `bootstrap.php` calls `addPackage()` on every request, so anything you write from here on can use `\Doodles\Model\Doodle`. The Snippet so far only fetches the service and sets defaults:
 

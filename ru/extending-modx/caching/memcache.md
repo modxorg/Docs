@@ -8,9 +8,8 @@ translation: "extending-modx/caching/memcache"
 -   Работающий сервер memcached и адрес, на котором он работает
 -   [Расширение PHP memcached](https://www.php.net/manual/en/book.memcached.php), установленное на сервере с MODX
 
-::: warning
-Расширение называется `memcached`, а не `memcache`. Расширение `memcache` удалено в PHP 7, а MODX 3.x требует PHP 8.1 или новее, поэтому на поддерживаемой установке его нет.
-:::
+> [!WARNING]
+> Расширение называется `memcached`, а не `memcache`. Расширение `memcache` удалено в PHP 7, а MODX 3.x требует PHP 8.1 или новее, поэтому на поддерживаемой установке его нет.
 
 ## Настройка Memcache в MODX
 

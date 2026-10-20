@@ -26,9 +26,8 @@ $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modFileRegister', array('directory' => 'food'));
 ```
 
-::: warning
-Очистка кэша вручную — удаление всех файлов и папок в `core/cache/` — удаляет также все существующие сообщения `modFileRegister`.
-:::
+> [!WARNING]
+> Очистка кэша вручную — удаление всех файлов и папок в `core/cache/` — удаляет также все существующие сообщения `modFileRegister`.
 
 ### modDbRegister
 

@@ -94,9 +94,8 @@ $rest->process();
 
 `checkPermissions()` on the service returns `true` by default. Override it on a custom service subclass (or gate traffic earlier) when every request must pass a site-wide check. Per-controller auth uses `verifyAuthentication()` (see below).
 
-::: warning
-`process()` does not return a response — it sends the payload and ends the script (`exit(0)`). Nothing after the call runs, and callers must read the result from the output. Set `exitOnResponse => false` to keep control.
-:::
+> [!WARNING]
+> `process()` does not return a response — it sends the payload and ends the script (`exit(0)`). Nothing after the call runs, and callers must read the result from the output. Set `exitOnResponse => false` to keep control.
 
 A request with no path segment (`/rest/`) routes to the `Index` controller; the name comes from the `defaultAction` option.
 
@@ -274,9 +273,8 @@ Set these on your controller class to drive the default CRUD path:
 | `$allowedMethods` | Verbs advertised in `Access-Control-Allow-Methods` on `OPTIONS` |
 | `$allowedHeaders` | Headers advertised in `Access-Control-Allow-Headers` (default `Content-Type`) |
 
-::: warning
-`$allowedMethods` does not restrict requests. A verb is accepted only when the controller defines a method of that name; anything else returns `405`. The list feeds the CORS header and nothing else.
-:::
+> [!WARNING]
+> `$allowedMethods` does not restrict requests. A verb is accepted only when the controller defines a method of that name; anything else returns `405`. The list feeds the CORS header and nothing else.
 
 Do not override the controller constructor — the service instantiates the class.
 

@@ -37,9 +37,8 @@ Rules are attached to a field, and the field must be declared in the same object
 </model>
 ```
 
-::: warning
-A rule whose `field` names a column that the object does not declare is dropped silently. `xPDOObject::addValidationRule()` looks the field up in the map first and keeps the rule only if the lookup succeeds, so validation then passes with no messages and no error.
-:::
+> [!WARNING]
+> A rule whose `field` names a column that the object does not declare is dropped silently. `xPDOObject::addValidationRule()` looks the field up in the map first and keeps the rule only if the lookup succeeds, so validation then passes with no messages and no error.
 
 Generate the model from the schema, then validate an object in a Snippet:
 
