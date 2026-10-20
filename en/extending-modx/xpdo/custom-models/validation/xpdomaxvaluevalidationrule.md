@@ -8,11 +8,10 @@ _old_uri: "2.x/advanced-features/object-validation/xpdomaxvaluevalidationrule"
 
 This rule compares the numeric value of a field with a maximum given by the `value` attribute in the schema.
 
-::: danger
-`xPDOMaxValueValidationRule` never fails validation in xPDO 3.x. Its `isValid()` method computes the comparison and adds the message, but does not return the result, so the rule scores as passed. `xPDOValidator::validate()` returns `true` even when the maximum is exceeded.
-
-The message is still written to `getMessages()`, so a caller that inspects the messages unconditionally sees it, while a caller that only checks the return value of `validate()` does not. Use the `callable` rule below instead if you need a maximum.
-:::
+> [!CAUTION]
+> `xPDOMaxValueValidationRule` never fails validation in xPDO 3.x. Its `isValid()` method computes the comparison and adds the message, but does not return the result, so the rule scores as passed. `xPDOValidator::validate()` returns `true` even when the maximum is exceeded.
+>
+> The message is still written to `getMessages()`, so a caller that inspects the messages unconditionally sees it, while a caller that only checks the return value of `validate()` does not. Use the `callable` rule below instead if you need a maximum.
 
 Without `value`, the maximum defaults to `0`.
 

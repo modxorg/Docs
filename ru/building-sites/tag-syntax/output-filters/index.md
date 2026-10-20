@@ -244,11 +244,10 @@ Comment: [[+modx.user.id:userinfo=`comment`]]<br />
 Last Login: [[+modx.user.id:userinfo=`lastlogin`:date=`%Y-%m-%d`]]<br />
 The Login:[[+modx.user.id:userinfo=`thislogin`:date=`%Y-%m-%d`]]<br />
 Number of Logins: [[+modx.user.id:userinfo=`logincount`]]
-
-::: warning
-`userinfo` никогда не возвращает `password`, `cachepwd`, `salt`, `sessionid` или `session_stale` — эти ключи вырезаются из записи пользователя до выборки. Запрос одной из них даст пустоту.
-:::
 ```
+
+> [!WARNING]
+> `userinfo` никогда не возвращает `password`, `cachepwd`, `salt`, `sessionid` или `session_stale` — эти ключи вырезаются из записи пользователя до выборки. Запрос одной из них даст пустоту.
 
 `[[!+modx.user.id]]` по умолчанию используется текущий зарегистрированный идентификатор пользователя. Конечно, вы можете заменить это на `[[*madeby]]` или другое поле ресурса или плейсхолдеров, которые возвращают числовой идентификатор, представляющий пользователя.
 

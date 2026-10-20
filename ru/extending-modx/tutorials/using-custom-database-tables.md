@@ -9,9 +9,8 @@ translation: "extending-modx/tutorials/using-custom-database-tables"
 
 MODX 3 приносит пространства имён PHP в XML-схему и файлы классов, а также новую функциональность bootstrap для загрузки зависимостей. Меняется и структура map-файлов MySQL в генерируемой модели. Пройдём простой пример как отправную точку. Дальше можно усложнять: конфигурационные файлы, вспомогательные функции. Сначала посмотрим минимум для создания пользовательской таблицы и покажем, что из неё можно читать и писать.
 
-::: warning
-Эта методология не обратно совместима с MODX 2.x. Руководство рассчитано на MODX 3. Эквивалент для 2.x: [Using Custom Database Tables](https://docs.modx.com/revolution/2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables"). Краткий чеклист апгрейда (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`): [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
-:::
+> [!WARNING]
+> Эта методология не обратно совместима с MODX 2.x. Руководство рассчитано на MODX 3. Эквивалент для 2.x: [Using Custom Database Tables](https://docs.modx.com/revolution/2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables"). Краткий чеклист апгрейда (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`): [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
 
 **ПРИМЕЧАНИЕ**: материал переработан из прежнего примера StoreFinder.
 
@@ -126,9 +125,8 @@ xPDO лежит в `core/vendor/xpdo/xpdo/src/xPDO/`, дальше: как у к
 </model>
 ```
 
-::: warning
-В MODX 3 в aggregate и composite атрибут `class` ***должен содержать полное имя класса с namespace***.
-:::
+> [!WARNING]
+> В MODX 3 в aggregate и composite атрибут `class` ***должен содержать полное имя класса с namespace***.
 
 Тег model и атрибуты задают свойства компонента/Extra:
 
@@ -178,9 +176,8 @@ width="600" />
 
 `index.php` вызывает функцию инициализации с ключом контекста `web`, если только `config.context.php` в корне установки не вернёт другой. Эта функция в `modX.php` сначала вызывает `_initNamespaces()`, а затем `_initContext()`. `_initNamespaces()` читает записи namespace из кеша, перебирает их и подключает каждый найденный `bootstrap.php`.
 
-::: warning
-`bootstrap.php` подключается до `_initContext()`, поэтому внутри него контекста ещё нет: `$modx->getContext()` вернёт `null`, а настройки контекста ещё не в конфигурации. Ограничивайтесь самим `$modx` и данными namespace в файле bootstrap — всё остальное ждёт своего момента в запросе.
-:::
+> [!WARNING]
+> `bootstrap.php` подключается до `_initContext()`, поэтому внутри него контекста ещё нет: `$modx->getContext()` вернёт `null`, а настройки контекста ещё не в конфигурации. Ограничивайтесь самим `$modx` и данными namespace в файле bootstrap — всё остальное ждёт своего момента в запросе.
 
 <img src="img/init-namespaces-function.png" 
 alt="The initNamespaces function"
@@ -271,13 +268,11 @@ MODX 3 по-прежнему вызывает `addPackage`, формат чут�
 $modx->addPackage('ToDo\Model', $namespace['path'] . 'src/', null, 'ToDo\\');
 ```
 
-::: warning
-Запустите `build.schema.php` до того, как начнёте полагаться на этот файл. `addPackage()` читает `src/Model/metadata.mysql.php`, и когда файла нет, молча выходит без ошибки PHP — единственный след, предупреждение `Could not load package metadata` в журнале MODX, после чего все классы компонента дальше по запросу «не найдены».
-:::
+> [!WARNING]
+> Запустите `build.schema.php` до того, как начнёте полагаться на этот файл. `addPackage()` читает `src/Model/metadata.mysql.php`, и когда файла нет, молча выходит без ошибки PHP — единственный след, предупреждение `Could not load package metadata` в журнале MODX, после чего все классы компонента дальше по запросу «не найдены».
 
-::: danger
-`bootstrap.php` выполняется до того, как менеджер закончит загрузку. Опечатка в PHP, неверное имя класса или любой `echo` в этом файле ломают менеджер, и он перестаёт загружаться. Уберите лишний вывод, и всё заработает снова.
-:::
+> [!CAUTION]
+> `bootstrap.php` выполняется до того, как менеджер закончит загрузку. Опечатка в PHP, неверное имя класса или любой `echo` в этом файле ломают менеджер, и он перестаёт загружаться. Уберите лишний вывод, и всё заработает снова.
 
 ## Скрипт создания таблиц
 

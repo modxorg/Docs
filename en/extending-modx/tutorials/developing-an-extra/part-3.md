@@ -300,9 +300,8 @@ $vehicle->resolve('file',array(
 ));
 ```
 
-::: warning
-Order matters here. `putVehicle()` copies the vehicle into the package, and a resolver added after that call is never copied — the build "succeeds" and the files simply do not arrive on install.
-:::
+> [!WARNING]
+> Order matters here. `putVehicle()` copies the vehicle into the package, and a resolver added after that call is never copied — the build "succeeds" and the files simply do not arrive on install.
 
 The first argument of `resolve()` is the resolver type; `'file'` is the built-in file resolver. It takes two options:
 
@@ -356,9 +355,8 @@ The array keys are the columns of the menu table. `action` and `namespace` are w
 
 The table also has a **permissions** column, left empty here. It takes a comma-separated list of permission names, and MODX checks it in two places: the Manager skips the menu entry for users who lack the permission, and a direct hit on the route raises an access error. An empty list is not "restricted" — the item simply stays visible to everyone who can reach the Manager, which is the right default for an Extra that ships its own settings.
 
-::: warning
-A name in that column has to exist before it can be granted. Creating it is a separate step in the Manager: **Access → Permissions**, where the permission is added to a policy template, and that policy is then granted to a User Group. Fill the column in on a site where no such permission exists yet and the menu entry disappears for everyone — including the administrator who just installed the package.
-:::
+> [!WARNING]
+> A name in that column has to exist before it can be granted. Creating it is a separate step in the Manager: **Access → Permissions**, where the permission is added to a policy template, and that policy is then granted to a User Group. Fill the column in on a site where no such permission exists yet and the menu entry disappears for everyone — including the administrator who just installed the package.
 
 ## Adding a Resolver
 
@@ -464,9 +462,8 @@ return $output;
 
 The setup options file works like a resolver and returns the HTML of the installation form. So far it only greets the user.
 
-::: tip
-The uninstall action never reaches this file: `Processors/Workspace/Packages/GetAttribute.php:89-97` passes only `ACTION_INSTALL` and `ACTION_UPGRADE`, and setup options are not shown at all on uninstall.
-:::
+> [!TIP]
+> The uninstall action never reaches this file: `Processors/Workspace/Packages/GetAttribute.php:89-97` passes only `ACTION_INSTALL` and `ACTION_UPGRADE`, and setup options are not shown at all on uninstall.
 
 Any form element in that HTML arrives in the `$options` array of the resolvers under its `name`, so a resolver can read what the user filled in — a field named `test` is `$options['test']`. That is how an Extra can ask questions before it installs. Going further than the greeting shown here is beyond the scope of this tutorial; [Quip](/extras/quip "Quip") is a published Extra that does it, and its [source code](https://github.com/splittingred/Quip) shows how.
 

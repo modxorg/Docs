@@ -9,9 +9,8 @@ _old_uri: "2.x/developing-in-modx/advanced-development/caching/setting-up-memcac
 - A running memcached server and the address it listens on
 - The [PHP memcached extension](https://www.php.net/manual/en/book.memcached.php) on the server running MODX
 
-::: warning
-The extension is named `memcached`, not `memcache`. The latter was removed in PHP 7 and MODX 3.x requires PHP 8.1 or newer, so no supported installation has it.
-:::
+> [!WARNING]
+> The extension is named `memcached`, not `memcache`. The latter was removed in PHP 7 and MODX 3.x requires PHP 8.1 or newer, so no supported installation has it.
 
 ## Setting up Memcache in MODX
 

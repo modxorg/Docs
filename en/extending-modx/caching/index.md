@@ -23,9 +23,8 @@ MODX ships with these cache handlers:
 
 The source tree still contains `xPDO\Cache\xPDOAPCCache`, but it cannot initialize: it tests for `apc_exists()`, a function removed in PHP 7. Do not configure it.
 
-::: warning
-A handler that fails to initialize is replaced with `xPDOFileCache` and the site keeps working, so a misconfiguration is easy to miss. A class name that cannot be loaded writes `Could not load class: ...` at ERROR level to the MODX log — check the log after changing a handler. See [Using Memcache](extending-modx/caching/memcache).
-:::
+> [!WARNING]
+> A handler that fails to initialize is replaced with `xPDOFileCache` and the site keeps working, so a misconfiguration is easy to miss. A class name that cannot be loaded writes `Could not load class: ...` at ERROR level to the MODX log — check the log after changing a handler. See [Using Memcache](extending-modx/caching/memcache).
 
 ## MODX Core Cache Partitions
 
@@ -55,9 +54,8 @@ Four more directories sit in `core/cache/` without being cache partitions:
 
 Each partition is named by two system settings: `cache_PARTITION_key` holds the folder name, `cache_PARTITION_handler` the handler class. To change the handler of one partition, create a system setting named cache\_PARTITION\_handler — for example cache\_resource\_handler or cache\_scripts\_handler — and give it the class name of the handler you want. Context settings of the same name override system settings, so a partition can be moved to a different store for one Context only.
 
-::: warning
-`cache_resource_clear_partial` switches `refresh()` to clearing only the contexts you name, instead of the whole **resource** partition. It only takes effect when `cache_handler` is set to exactly `xPDOFileCache`; MODX compares the setting as a literal string, and its own default value is the namespaced `xPDO\Cache\xPDOFileCache`. In practice you must set both settings by hand, or the flag is ignored.
-:::
+> [!WARNING]
+> `cache_resource_clear_partial` switches `refresh()` to clearing only the contexts you name, instead of the whole **resource** partition. It only takes effect when `cache_handler` is set to exactly `xPDOFileCache`; MODX compares the setting as a literal string, and its own default value is the namespaced `xPDO\Cache\xPDOFileCache`. In practice you must set both settings by hand, or the flag is ignored.
 
 ### Database caching {#database-caching}
 
@@ -110,9 +108,8 @@ Every refresh also fires the **OnCacheUpdate** event with the `results`, `paths`
 - `clean($options = array())`. Flushes (empties) an entire cache provider. Make sure to define the xPDO::OPT\_CACHE\_KEY in the options array.
 - `flushPermissions()`. Marks the permission data of all Users stale, so it is rebuilt on the next request.
 
-::: warning
-`add()`, `replace()` and `set()` declare `$var` by reference. Pass a literal straight to them — `$modx->cacheManager->set('k', 5)` — and PHP raises a fatal error. Assign to a variable first.
-:::
+> [!WARNING]
+> `add()`, `replace()` and `set()` declare `$var` by reference. Pass a literal straight to them — `$modx->cacheManager->set('k', 5)` — and PHP raises a fatal error. Assign to a variable first.
 
 The `$options` array selects the partition to write to, the handler to write through, and the default expiry time:
 

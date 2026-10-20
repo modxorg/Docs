@@ -116,9 +116,8 @@ if ($modx->event->name == 'OnPageNotFound') {
 }
 ```
 
-::: warning
-Inside Plugin code use `$modx->…`, never `$this->…`. In 3.x the Plugin body is `include`d directly instead of being wrapped in a method, so `$this` is the `modPlugin` object — it has no `makeUrl()`, `getOption()`, or lexicon helpers.
-:::
+> [!WARNING]
+> Inside Plugin code use `$modx->…`, never `$this->…`. In 3.x the Plugin body is `include`d directly instead of being wrapped in a method, so `$this` is the `modPlugin` object — it has no `makeUrl()`, `getOption()`, or lexicon helpers.
 
 ## See Also
 

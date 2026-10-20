@@ -42,9 +42,8 @@ $parser->processElementTags('', $content, true, true, '[[', ']]', [], $maxIterat
 return $content;
 ```
 
-::: warning
-Each call to `processElementTags()` fires the `OnParseDocument` plugin event. The two-pass recipe above therefore triggers it twice — plugins on that event run their logic twice and can rewrite the content through the passed reference.
-:::
+> [!WARNING]
+> Each call to `processElementTags()` fires the `OnParseDocument` plugin event. The two-pass recipe above therefore triggers it twice — plugins on that event run their logic twice and can rewrite the content through the passed reference.
 
 ## Method reference
 

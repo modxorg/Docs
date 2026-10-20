@@ -431,9 +431,8 @@ None of this has to be handled by hand: MODExt sends the token both ways for req
 
 > /www/doodles/core/components/doodles/processors/mgr/doodle/getList.class.php
 
-::: warning
-The file name has to match the action, case included: MODX builds the path as `<processors_path><action>.class.php` without lowering the case (`core/src/Revolution/modX.php:1833`). A `getlist.class.php` next to an action of `mgr/doodle/getList` works on macOS and Windows and fails on a Linux server.
-:::
+> [!WARNING]
+> The file name has to match the action, case included: MODX builds the path as `<processors_path><action>.class.php` without lowering the case (`core/src/Revolution/modX.php:1833`). A `getlist.class.php` next to an action of `mgr/doodle/getList` works on macOS and Windows and fails on a Linux server.
 
 Create it:
 
@@ -463,9 +462,8 @@ return 'DoodleGetListProcessor';
 
 The trailing `return` names the class so that MODX can find it; the file itself may hold anything else the processor needs.
 
-::: tip
-MODX looks for a processor in this order (`core/src/Revolution/modX.php:1786-1884`): an autoloadable class if `action` is itself a class name, then `action` of the form `context/update` mapped to `MODX\Revolution\Processors\Context\Update`, and only then a file. Core processors use the second form, which is why they need no `return` line at all.
-:::
+> [!TIP]
+> MODX looks for a processor in this order (`core/src/Revolution/modX.php:1786-1884`): an autoloadable class if `action` is itself a class name, then `action` of the form `context/update` mapped to `MODX\Revolution\Processors\Context\Update`, and only then a file. Core processors use the second form, which is why they need no `return` line at all.
 
 Load the page:
 
@@ -537,9 +535,8 @@ Handle the parameter in the getList processor by adding a method to the class:
 
 Сетка с поиском готова. Теперь сами записи.
 
-::: tip
-MODX grids have a built-in filter mechanism — the lexicon grid configures it with `tbar.cls: 'has-nested-filters'` and a `filters` array (`manager/assets/modext/workspace/lexicon/lexicon.grid.js:16-24`). The text field above is the older, hand-written way; it still works, and it lets you see exactly what goes over the wire.
-:::
+> [!TIP]
+> MODX grids have a built-in filter mechanism — the lexicon grid configures it with `tbar.cls: 'has-nested-filters'` and a `filters` array (`manager/assets/modext/workspace/lexicon/lexicon.grid.js:16-24`). The text field above is the older, hand-written way; it still works, and it lets you see exactly what goes over the wire.
 
 ### Adding an Update Window
 

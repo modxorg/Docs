@@ -29,10 +29,8 @@ Values returned from this event are written to the log as errors.
 | Class          | class modManagerRequest                                                                                                                                                                                       |
 | Method         | public function handleRequest()                                                                                                                                                                               |
 
-::: tip Note
-On the web side the event is fired from [modRequest::handleRequest()](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modRequest.php); in the manager it is fired from the class and method listed above.
-:::
-
+> [!TIP]
+> On the web side the event is fired from [modRequest::handleRequest()](https://github.com/modxcms/revolution/blob/3.x/core/src/Revolution/modRequest.php); in the manager it is fired from the class and method listed above.
 
 ## See Also
 

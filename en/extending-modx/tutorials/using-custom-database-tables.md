@@ -10,9 +10,8 @@ This tutorial builds a small To-Do list: two tables described in an XML Schema, 
 
 MODX 3 adds PHP Namespaces to the XML Schema and the class files, a `bootstrap.php` file for startup work, and a new MySQL map layout in the generated model. Everything below is written for MODX 3 and starts from the minimum: one table, one model, one record written and read back.
 
-::: warning
-This methodology does not work on MODX 2.x. For 2.x, use the [2.x guide](https://docs.modx.com/revolution/2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables"). For an upgrade checklist (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`), see [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
-:::
+> [!WARNING]
+> This methodology does not work on MODX 2.x. For 2.x, use the [2.x guide](https://docs.modx.com/revolution/2.x/case-studies-and-tutorials/using-custom-database-tables-in-your-3rd-party-components "Using Custom Database Tables"). For an upgrade checklist (Composer, `metadata.mysql.php`, `instanceof`, `addPackage`), see [xPDO 3](getting-started/upgrading-to-3.0/xpdo).
 
 **Note**: converted from the earlier "StoreFinder" example.
 
@@ -118,9 +117,8 @@ Create `project1/core/components/todo/schema/todo.mysql.schema.xml` and paste th
 </model>
 ```
 
-::: warning
-In MODX 3, the `class` attribute of any aggregate or composite must be the full namespaced class.
-:::
+> [!WARNING]
+> In MODX 3, the `class` attribute of any aggregate or composite must be the full namespaced class.
 
 The `model` tag and its attributes:
 
@@ -168,9 +166,8 @@ As of MODX 3, the Core Path in your Namespace entry is where MODX looks for `boo
 
 `index.php` calls the initialize function with the context key `web`, unless `config.context.php` in the install root returns another one. That function, in `modX.php`, calls `_initNamespaces()` first and `_initContext()` after it. `_initNamespaces()` loads the Namespace data from the cache, loops over the entries, and requires every `bootstrap.php` it finds.
 
-::: warning
-`bootstrap.php` is required before `_initContext()`, so the Context does not exist inside it: `$modx->getContext()` returns `null`, and Context settings are not in the configuration yet. Stick to `$modx` itself and to the namespace data in the bootstrap file — anything else has to wait until later in the request.
-:::
+> [!WARNING]
+> `bootstrap.php` is required before `_initContext()`, so the Context does not exist inside it: `$modx->getContext()` returns `null`, and Context settings are not in the configuration yet. Stick to `$modx` itself and to the namespace data in the bootstrap file — anything else has to wait until later in the request.
 
 <img src="img/init-namespaces-function.png" 
 alt="The initNamespaces function"
@@ -251,13 +248,11 @@ MODX 3 still calls `addPackage`, with a slightly different signature: it also re
 $modx->addPackage('ToDo\Model', $namespace['path'] . 'src/', null, 'ToDo\\');
 ```
 
-::: warning
-Run `build.schema.php` before you rely on this file. `addPackage()` reads `src/Model/metadata.mysql.php`, and when that file is missing it gives up without a PHP error — the only trace is a `Could not load package metadata` warning in the MODX log, and then every class of your component is "not found" further down.
-:::
+> [!WARNING]
+> Run `build.schema.php` before you rely on this file. `addPackage()` reads `src/Model/metadata.mysql.php`, and when that file is missing it gives up without a PHP error — the only trace is a `Could not load package metadata` warning in the MODX log, and then every class of your component is "not found" further down.
 
-::: danger
-`bootstrap.php` runs before the Manager finishes loading. A PHP typo, a wrong class name, or any `echo` in this file breaks the Manager and it stops loading. Remove the `echo` and it works again.
-:::
+> [!CAUTION]
+> `bootstrap.php` runs before the Manager finishes loading. A PHP typo, a wrong class name, or any `echo` in this file breaks the Manager and it stops loading. Remove the `echo` and it works again.
 
 ## Writing Our Build Tables Script
 
@@ -324,9 +319,8 @@ Output is wrapped in `pre` tags to keep the example free of a template and of an
 
 Create a Snippet named `ToDo` to match, and paste in the script below. The first half writes the Lists and Tasks from the data array when the request carries `&action=generate`; the second half reads everything back into a string.
 
-::: warning
-Loading the page more than once with `&action=generate` adds another set of records every time. Each set gets its own new ids.
-:::
+> [!WARNING]
+> Loading the page more than once with `&action=generate` adds another set of records every time. Each set gets its own new ids.
 
 Writing and reading: [Creating Objects](extending-modx/xpdo/creating-objects "Creating Objects"), [Retrieving Objects](extending-modx/xpdo/retrieving-objects "Retrieving Objects"), [Add Many](extending-modx/xpdo/class-reference/xpdoobject/related-object-accessors/addmany "Add Many").
 

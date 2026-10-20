@@ -26,9 +26,8 @@ $modx->getService('registry', 'registry.modRegistry');
 $modx->registry->addRegister('food', 'registry.modFileRegister', array('directory' => 'food'));
 ```
 
-::: warning
-Clearing the cache manually by deleting all files and folders under `core/cache/` deletes existing modFileRegister messages as well.
-:::
+> [!WARNING]
+> Clearing the cache manually by deleting all files and folders under `core/cache/` deletes existing modFileRegister messages as well.
 
 ### modDbRegister
 

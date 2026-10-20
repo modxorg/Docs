@@ -146,9 +146,8 @@ return $o;
 
 That way you can lint the file from the command line (_php -l my\_script.php_) and get real error output while you work. Move the code into the Manager only once it works.
 
-::: warning
-A PHP file under the web root is callable by anyone. Keep snippet files outside the web root, or move the `core/` directory out of it, before you deploy. Guarding the file with an "am I inside MODX" test is weaker than moving it.
-:::
+> [!WARNING]
+> A PHP file under the web root is callable by anyone. Keep snippet files outside the web root, or move the `core/` directory out of it, before you deploy. Guarding the file with an "am I inside MODX" test is weaker than moving it.
 
 ## Don't mix PHP and HTML in a Snippet
 

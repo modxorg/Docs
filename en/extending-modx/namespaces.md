@@ -38,9 +38,8 @@ Inside the file you have access to:
 - `MODX\Revolution\modX $modx`
 - `array $namespace`
 
-::: warning
-`_initNamespaces()` runs early — before extension packages load, before culture initialisation, and before the `OnMODXInit` event. At that point `$modx->lexicon` is still `null`, and no Component models are registered yet. Register autoloaders and services here; resolve anything that depends on a lexicon or a model from `OnMODXInit` instead.
-:::
+> [!WARNING]
+> `_initNamespaces()` runs early — before extension packages load, before culture initialisation, and before the `OnMODXInit` event. At that point `$modx->lexicon` is still `null`, and no Component models are registered yet. Register autoloaders and services here; resolve anything that depends on a lexicon or a model from `OnMODXInit` instead.
 
 ### Examples
 
