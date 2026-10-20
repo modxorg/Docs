@@ -35,7 +35,7 @@ description: "Внутренняя переадресация запроса д�
 
 ## Поля и кеш
 
-Непустые поля символической ссылки могут перекрывать поля цели в зависимости от [`symlink_merge_fields`](building-sites/settings/symlink_merge_fields). Поле `content` всегда остаётся ID цели. Исключения описаны в разделе [Использование символических ссылок](building-sites/resources/symlink/using-resource-symlinks#объединение-полей).
+Непустые поля символической ссылки могут перекрывать поля цели в зависимости от [`symlink_merge_fields`](building-sites/settings/symlink_merge_fields). Поле `content` всегда остаётся ID цели. Исключения описаны в разделе [Использование символических ссылок](building-sites/resources/symlink/using-resource-symlinks#obedinenie-poley).
 
 Если цель не появилась после сохранения, очистите кеш сайта и кеш документов.
 

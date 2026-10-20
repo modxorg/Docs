@@ -27,7 +27,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/giving-
 - Эти ключи должны быть в Context Access ACL на **`mgr`**, а не только на `web` или другом фронтовом контексте.
 - Разрешения Resource Policy `publish` / `unpublish` текущий UI публикации в менеджере не открывают.
 
-Подробнее: [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
+Подробнее: [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#publikaciya-v-menedzhere-i-neskolko-grupp).
 
 ## Смотрите также
 

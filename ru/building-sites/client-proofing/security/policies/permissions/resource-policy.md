@@ -25,7 +25,7 @@ translation: "building-sites/client-proofing/security/policies/permissions/resou
 | unpublish |
 | view |
 
-Не путайте разрешения Resource `publish` / `unpublish` с контекстным `publish_document` из политики администратора. Чекбокс публикации, даты, пункты в дереве и процессоры в менеджере смотрят на `publish_document` для контекста **`mgr`**. Одних `publish` / `unpublish` на Resource ACL недостаточно. См. [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#публикация-в-менеджере-и-несколько-групп).
+Не путайте разрешения Resource `publish` / `unpublish` с контекстным `publish_document` из политики администратора. Чекбокс публикации, даты, пункты в дереве и процессоры в менеджере смотрят на `publish_document` для контекста **`mgr`**. Одних `publish` / `unpublish` на Resource ACL недостаточно. См. [ACL: публикация в менеджере](building-sites/client-proofing/security/policies/acls#publikaciya-v-menedzhere-i-neskolko-grupp).
 
 ## Смотрите также
 

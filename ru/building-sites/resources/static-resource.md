@@ -31,7 +31,7 @@ description: "Отдача файла с диска через ресурс: о�
 - `Content-Type` из типа содержимого.
 - `Content-Length`, если размер известен.
 - `Content-Disposition`: `attachment`, если у ресурса выбрано вложение, иначе `inline`.
-- [Пользовательские заголовки](building-sites/resources/content-types#пользовательские-заголовки) типа содержимого.
+- [Пользовательские заголовки](building-sites/resources/content-types#polzovatelskie-zagolovki) типа содержимого.
 
 Затем MODX отправляет файл через `readfile()` и завершает запрос. Шаблон не используется, теги не разбираются. Браузер получает байты без изменений.
 

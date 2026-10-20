@@ -4,9 +4,9 @@ description: "Чанк заголовка календаря eventsCalendar2"
 translation: "extras/eventscalendar2/eventscalendar2.tplhead2"
 ---
 
-- [Использование](#использование)
-- [Плейсхолдеры](#плейсхолдеры)
-- [См. также](#см-также)
+- [Использование](#ispolzovanie)
+- [Плейсхолдеры](#pleysholdery)
+- [См. также](#sm-takzhe)
 
 ## Использование
 

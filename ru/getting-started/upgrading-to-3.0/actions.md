@@ -3,7 +3,7 @@ title: "modAction и связанные"
 translation: "getting-started/upgrading-to-3.0/actions"
 ---
 
-`modAction` и `modAccessAction` удалены в MODX 3 (см. [Удалённые объекты](#удаленные-объекты) ниже); `modActionDom`, `modAccessActionDom`, `modActionField` и таблицы `actiondom` / `access_actiondom` / `actions_fields` остались и по-прежнему используются правилами Form Customization. Вместе с этим была выполнена очистка классов `modManagerResponse` и `modManagerController`.
+`modAction` и `modAccessAction` удалены в MODX 3 (см. [Удалённые объекты](#udalennye-obekty) ниже); `modActionDom`, `modAccessActionDom`, `modActionField` и таблицы `actiondom` / `access_actiondom` / `actions_fields` остались и по-прежнему используются правилами Form Customization. Вместе с этим была выполнена очистка классов `modManagerResponse` и `modManagerController`.
 
 Это означает, что URL-адреса менеджера в виде `/manager/?a=15` (где `15` — это идентификатор действия) больше не будут работать. Дополнения, которые на них полагаются, должны перейти на маршрутизацию на основе пространства имён в форме `/manager/?namespace=myextra&a=action`. Страница, на которую попадает пользователь после входа, задаётся настройками `welcome_action` и `welcome_namespace`.
 
