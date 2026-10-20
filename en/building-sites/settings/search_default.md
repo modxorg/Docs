@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/search_default"
 
 ## search\_default
 
-**Name**: Published Default
+**Name**: Searchable Default
 **Type**: Yes/No
 **Default**: Yes
 

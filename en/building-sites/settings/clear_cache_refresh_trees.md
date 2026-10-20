@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/clear_cache_refr
 
 ## clear\_cache\_refresh\_trees
 
-**Name**: Refresh Trees on Cache Clear
+**Name**: Refresh Trees on Site Cache Clear
 **Type**: Yes/No
 **Default**: No
 **Available In**: 2.0.7+

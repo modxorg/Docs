@@ -11,7 +11,7 @@ description: "Friendly URL Suffix"
 
 **Name**: Friendly URL Suffix  
 **Type**: String  
-**Default**: '.html'  
+**Default**: `.html`  
 **Removed In**: Revolution 2.0.1
 
 Here you can specify the suffix for Friendly URLs. Specifying '.html' will append .html to all your friendly URLs.

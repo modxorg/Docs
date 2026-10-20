@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/server_offset_ti
 
 ## server\_offset\_time
 
-**Name**: Server Offset Tim
+**Name**: Server offset time
 **Type**: Number
 **Default**: 0
 

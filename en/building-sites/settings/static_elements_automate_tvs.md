@@ -3,7 +3,7 @@ title: "static_elements_automate_tvs"
 description: "Automate static elements for template variables"
 ---
 
-**Name**: Automate static elements for template variables?  
+**Name**: Automate static elements for TVs?
 **Type**: Yes/No  
 **Default**: No  
 **Available In**: Revolution 2.7.0+

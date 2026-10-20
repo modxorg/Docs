@@ -13,6 +13,6 @@ In MODX, configure the following via System > System Settings:
 - `mail_smtp_hosts`: smtp.mailtrap.io
 - `mail_smtp_port`: 587
 - `mail_smtp_user` and `mail_smtp_pass` are provided in the inbox settings in mailtrap. 
-- `mail_smtp_prefix`: tls
+- `mail_smtp_secure`: tls
 
 [Also see the generic instructions for sending email with SMTP for further activation and testing instructions](building-sites/sending-mail)

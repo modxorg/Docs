@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/session_handler_
 
 ## session\_handler\_class
 
-**Name**: Session Handler Class
+**Name**: Session Handler Class Name
 **Type**: String
-**Default**: modSessionHandler
+**Default**: MODX\Revolution\modSessionHandler
 
-For database managed sessions, use 'modSessionHandler'. Leave this blank to use standard PHP session management, or set to your own custom session handling class.
+For database-managed sessions, use the fully qualified class name `MODX\Revolution\modSessionHandler` (the default). Leave this blank to use standard PHP session management, or set it to your own custom session-handling class. Short class names from 2.x are not resolved by the autoloader.

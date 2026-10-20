@@ -1,6 +1,6 @@
 ---
-title: "anonymous_sessions"
-translation: "building-sites/settings/anonymous_sessions"
+title: "parser_recurse_uncacheable"
+translation: "building-sites/settings/parser_recurse_uncacheable"
 description: "Если отключено, некэшируемые элементы могут показывать кэшированное содержимое внутри кэшируемых элементов"
 ---
 

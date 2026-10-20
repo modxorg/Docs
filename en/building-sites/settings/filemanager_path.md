@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/filemanager_path
 
 ## filemanager\_path
 
-This setting was deprecated in MODX Revolution 2.2. It has been replaced with [Media Sources](building-sites/media-sources).
+This setting was deprecated in MODX Revolution 2.2 and **removed in MODX 3.0**. It has been replaced with [Media Sources](building-sites/media-sources).
 
 **Name**: File Manager Path
 **Type**: string

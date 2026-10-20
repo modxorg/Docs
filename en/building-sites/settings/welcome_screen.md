@@ -8,6 +8,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/welcome_screen"
 
 **Name**: Show Welcome Screen
 **Type**: Yes/No
-**Default**: No
+**Default**: Yes
 
 If set to true, the welcome screen will show on the next successful loading of the welcome page, and then not show after that.

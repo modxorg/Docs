@@ -6,7 +6,7 @@ translation: "building-sites/settings/proxy_port"
 ## proxy_port
 
 -   **Имя**: Прокси порт
--   **Тип**: String
+-   **Тип**: Number
 -   **По умолчанию**:
 
 Порт для вашего прокси-сервера.

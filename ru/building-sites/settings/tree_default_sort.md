@@ -6,7 +6,7 @@ translation: "building-sites/settings/tree_default_sort"
 ## tree_default_sort
 
 -   **Имя**: Поле сортировки дерева ресурсов
--   **Тип**: Textfield
+-   **Тип**: String
 -   **По умолчанию**: menuindex
 -   **Доступно в**: 2.0.8+
 

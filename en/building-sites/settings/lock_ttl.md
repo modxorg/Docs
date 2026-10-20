@@ -4,7 +4,7 @@ description: "The number of seconds a lock on a Resource will remain for if the 
 ---
 
 **Name**: Lock Time-to-Live  
-**Type**: String  
+**Type**: Number
 **Default**: 360   
 **Available In**: 2.2.1+
 

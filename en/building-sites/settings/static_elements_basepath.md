@@ -4,7 +4,7 @@ description: "Basepath of where to store the static elements files."
 ---
 
 **Name**: Static elements basepath   
-**Type**: Text  
+**Type**: String
 **Default**:  
 **Available In**: Revolution 2.7.0+
 

@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/mail_use_smtp"
 
 ## mail\_use\_smtp
 
-**Name**: Use SMTP in Mail
+**Name**: Use SMTP
 **Type**: Yes/No
 **Default**: No
 

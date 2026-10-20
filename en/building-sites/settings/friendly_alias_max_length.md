@@ -6,8 +6,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/friendly_alias_m
 
 ## friendly\_alias\_max\_length
 
-**Name**: AFURL Alias Maximum Length
-**Type**: Textfield
+**Name**: FURL Alias Maximum Length
+**Type**: Number
 **Default**: 0
 **Available In**: Revolution 2.0.8+
 

@@ -6,7 +6,7 @@ description: 'RegEx used when upload_translit sanitizes uploaded file names, sep
 ## upload\_translit\_restrict\_chars\_pattern
 
 **Name**: File Name Character Restriction Pattern
-**Type**: Textfield
+**Type**: String
 **Default**: (See Below)
 **Available In**: MODX 3.1.0+
 

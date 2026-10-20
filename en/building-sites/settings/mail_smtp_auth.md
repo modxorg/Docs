@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/mail_smtp_auth"
 
 ## mail\_smtp\_auth
 
-**Name**: Use SMTP Authentication
+**Name**: SMTP Authentication
 **Type**: Yes/No
 **Default**: No
 

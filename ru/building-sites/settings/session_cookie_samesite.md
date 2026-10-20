@@ -1,5 +1,6 @@
 ---
 title: "session_cookie_samesite"
+translation: "building-sites/settings/session_cookie_samesite"
 description: "Поддержка SameSite атрибута для сессии"
 ---
 

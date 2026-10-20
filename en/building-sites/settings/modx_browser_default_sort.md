@@ -5,7 +5,7 @@ description: "The default sort method when using the Media Browser in the manage
 
 **Name**: Media Browser Default Sort  
 **Type**: String  
-**Default**:   
+**Default**: name
 **Available In**: 2.2.1+
 
 The default sort method when using the Media Browser in the manager. Available values are: `name`, `size`, `lastmod` (last modified).

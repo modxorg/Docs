@@ -1,15 +1,17 @@
 ---
 title: "strip_image_paths"
+description: "Removed in MODX 3.0. File browser paths are no longer rewritten by this setting."
 _old_id: "294"
 _old_uri: "2.x/administering-your-site/settings/system-settings/strip_image_paths"
 ---
 
-## strip\_image\_paths
+**Removed in MODX 3.0.** The setting is no longer installed and has no effect.
+
+---
 
 **Name**: Rewrite Browser Paths
 **Type**: Yes/No
 **Default**: Yes
+**Available In**: Revolution 2.x only
 
-If this is set to 'No', MODX will write file browser resource src's (images, files, flash, etc.) as absolute URLs. Relative URLs are helpful should you wish to move your MODX install, e.g., from a staging site to a production site. If you have no idea what this means, it's best just to leave it set to 'Yes'.
-
-This setting is **deprecated** in MODX Revolution and is no longer in use.
+On 2.x, No made MODX write file browser sources as absolute URLs. Yes kept them relative. This covered images, files, Flash, and similar sources.

@@ -4,7 +4,7 @@ description: "Set the URL for the RSS feed for the MODX Security panel in the ma
 ---
 
 
-**Name**: MODX Security Feed URL   
+**Name**: MODX Security Notices Feed URL
 **Type**: String  
 **Default**: <https://forums.modx.com/board.xml?board=294>
 

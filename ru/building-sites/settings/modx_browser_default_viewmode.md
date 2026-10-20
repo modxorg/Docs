@@ -1,7 +1,7 @@
 ---
 title: "modx_browser_default_viewmode"
 translation: "building-sites/settings/modx_browser_default_viewmode"
-description: "Пространство Имен, которому принадлежит действие Welcome"
+description: "Режим просмотра по умолчанию в медиа-браузере менеджера"
 ---
 
 -   **Имя**: Режим просмотра по умолчанию в диспетчере файлов

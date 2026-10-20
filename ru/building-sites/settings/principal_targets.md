@@ -6,7 +6,7 @@ description: "Настройте цели ACL для загрузки для П�
 
 -   **Имя**: Целевые классы для загрузки списков контроля доступа
 -   **Тип**: textfield
--   **По умолчанию**: modAccessContext,modAccessResourceGroup,modAccessCategory,sources.modAccessMediaSource,modAccessNamespace 
+-   **По умолчанию**: MODX\Revolution\modAccessContext,MODX\Revolution\modAccessResourceGroup,MODX\Revolution\modAccessCategory,MODX\Revolution\Sources\modAccessMediaSource,MODX\Revolution\modAccessNamespace
 -   **Доступно в**: 2.1+
 
 Настройте цели ACL для загрузки для Пользователей MODX.

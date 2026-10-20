@@ -7,6 +7,6 @@ description: "The length of the auto-generated password for a User"
 
 **Name**: Password Auto-Generated Length  
 **Type**: Number  
-**Default**: 10
+**Default**: 16
 
 The length of the auto-generated password for a User.

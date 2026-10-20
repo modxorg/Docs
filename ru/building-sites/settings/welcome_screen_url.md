@@ -6,6 +6,6 @@ description: "URL всплывающего окна приветствия, от
 
 -   **Имя**: URL окна приветствия
 -   **Тип**: String  
--   **По умолчанию**: зависит от релиза, например, для 2.8 значение такое: //misc.modx.com/revolution/welcome.28.html для MODX 2.8 
+-   **По умолчанию**: //misc.modx.com/revolution/welcome.32.html
 
 URL всплывающего окна приветствия, отображаемого при первой загрузке MODX Revolution. 

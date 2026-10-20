@@ -6,4 +6,4 @@ description: "Удалена в MODX 3.0. Неиспользуемый шабл�
 
 Настройка `webpwdreminder_message` удалена в MODX 3.0. В 2.x в ней хранился HTML письма, которое уходило веб-пользователю при запросе нового пароля. Ядро этот шаблон уже не использовало.
 
-Сброс пароля менеджера идёт через [forgot_login_email](building-sites/settings/forgot_login_email). Сброс на сайте делают дополнения вроде Login.
+Сброс пароля менеджера использует запись лексикона `login_forgot_email` (`core/lexicon/en/login.inc.php`); настройка [forgot_login_email](building-sites/settings/forgot_login_email) тоже удалена в 3.0. Сброс на сайте делают дополнения вроде Login.
