@@ -3,31 +3,37 @@ title: "Источники файлов"
 translation: "building-sites/media-sources"
 ---
 
-Источники файлов доступны только в MODX Revolution 2.2 или новее.
+## Что такое источники файлов
 
-## Что такое источники файлов?
+Источник файлов указывает MODX, где читать и записывать файлы мультимедиа. Он используется в трёх местах:
 
-Источники файлов - это возможность указывать "источник" мультимедиа в MODX. Источники в системе управления представлены несколькими способами, наиболее частые - это левое дерево файлов, окно диспетчера файлов, а также в TV с типом ввода файл и изображения.
+- в дереве файлов слева;
+- в окне MODX.Browser;
+- в TV с типом ввода «Изображение» и «Файл».
 
-![](/2.x/en/building-sites/media-sources/sources-tree2.png)
+![](sources-tree2.png)
 
-Источник может быть разных типов - от внутренней файловой системы до Amazon S3 или Flickr. MODX по умолчанию предоставляет два типа источников файлов: файловая система и интеграция с Amazon S3. Другие источники могут быть созданы путем добавления нового типа источников или путем их загрузки их из [Управление пакетами](extending-modx/transport-packages "Управление пакетами").
+## Типы источников
 
-## Использование источников файлов
+У каждого источника есть тип, который решает, где лежат файлы. В ядре MODX поставляется три типа:
 
-В следующих разделах описывается базовое использование источников файлов.
+| Тип источника | Где лежат файлы |
+| --- | --- |
+| [Файловая система](building-sites/media-sources/types/media-source-type-file-system "Тип источника файлов - Файловая система") | Каталог на сервере, где работает MODX |
+| [FTP](building-sites/media-sources/types/media-source-type-ftp "Тип источника файлов - FTP") | Удалённый сервер, доступный по FTP |
+| [Amazon S3](building-sites/media-sources/types/media-source-type-s3 "Тип источника файлов - S3") | Корзина S3 |
 
--   [Добавление источника файлов](building-sites/media-sources/creating "Добавление источника файлов")
--   [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs "Назначение источника файлов для TV")
--   [Защита источника файлов](building-sites/media-sources/securing "Защита источника файлов")
--   [Типы источника файлов](building-sites/media-sources/types "Типы источника файлов")
+Другие типы приходят из пакетов и из вашего собственного кода. Смотрите [Расширение источников файлов](building-sites/media-sources/extending "Расширение источников файлов").
 
 ## Смотрите также
 
-1. [Добавление источника файлов](building-sites/media-sources/creating)
-2. [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs)
-3. [Защита источника файлов](building-sites/media-sources/securing)
-    1. [Руководство по созданию источника файлов для клиентов](building-sites/media-sources/securing/clients-tutorial)
-4. [Типы источника файлов](building-sites/media-sources/types)
-    1. [Типы источника файлов - Файловая система](building-sites/media-sources/types/media-source-type-file-system)
-    2. [Типы источника файлов - S3](building-sites/media-sources/types/media-source-type-s3)
+1. [Источники файлов](building-sites/media-sources)
+2. [Добавление источника файлов](building-sites/media-sources/creating)
+3. [Назначение источника файлов для TV](building-sites/media-sources/assigning-to-tvs)
+4. [Защита медиа источника](building-sites/media-sources/securing)
+   1. [Руководство по созданию источника файлов для клиентов](building-sites/media-sources/securing/clients-tutorial)
+5. [Типы источника файлов](building-sites/media-sources/types)
+   1. [Тип источника файлов - Файловая система](building-sites/media-sources/types/media-source-type-file-system)
+   2. [Тип источника файлов - FTP](building-sites/media-sources/types/media-source-type-ftp)
+   3. [Тип источника файлов - S3](building-sites/media-sources/types/media-source-type-s3)
+6. [Расширение источников файлов](building-sites/media-sources/extending)

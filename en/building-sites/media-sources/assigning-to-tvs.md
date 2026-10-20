@@ -4,49 +4,62 @@ _old_id: "346"
 _old_uri: "2.x/administering-your-site/media-sources/assigning-media-sources-to-tvs"
 ---
 
-This article describes how to assign a Media Source to a TV. It is recommended to read the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article before reading this one.
+Create the source first: [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source").
 
-Only "image" and "file" type TVs use Sources at this time.
+## Which TVs Use Sources
 
-## Creating the TV
+Only TVs with the `image` or the `file` input type open the file browser of a source. The other input types store a plain value.
 
-First we will start by creating a TV that we will attach a media source to. Go ahead and create a TV called "TestSourceTV", and save it. Notice then you'll see a new tab on your TV, a "Media Sources" tab. This will have a grid of [Contexts](building-sites/contexts "Contexts") that are available, and the Sources that are associated with those Contexts.
+The `manipulatable_url_tv_output_types` setting holds a separate list of TV types. When such a TV is rendered on a page, its value gets the `baseUrl` of the source in front of it. The list defaults to `image,file`.
 
-This means that TVs can use different Sources per Context. This will take effect when editing a TV in a Resource from that Context, as well as when that TV is rendered in that Context.
+## Assigning a Source to a TV
 
-For now, go ahead and assign all contexts to the Source "My New Source", which we created in the [Adding a Media Source](building-sites/media-sources/creating "Adding a Media Source") article. Set your TV's input type, under the "Input Options" tab, to "image". Assign it to a Template. Save your TV.
+Create the TV first, then save it. The edit page of the TV has a **Media Sources** tab. It lists the Contexts of the installation and the source assigned to each of them.
 
-## Limiting the Source to Specific Folders
+A TV can use a different source in every Context. The source of the Context that the Resource belongs to is the one that opens.
 
-Often, you'll want users to select files from a specific folder when selecting a value for a TV. You can set up this restriction when you define your Media Source.
+1. Create a TV called `TestSourceTV` and save it.
+2. Open the **Media Sources** tab and assign the source to the Contexts you need.
+3. Set the input type of the TV to `image` on the **Options** tab.
+4. Assign the TV to a Template and save.
 
-1\. First, create your Media Source under **Tools -> Media Sources**
-2\. After you've created the Media Source, right-click it and select "Update Media Source"
-3\. Scroll down and edit the following properties:
+## Limiting a Source to a Folder
 
-- **basePath** - set to something like "assets/images/"
-- **baseUrl** - set to something like "assets/images/"
+A source usually points at one directory, so that the users of the TV pick files from that directory and nowhere else. Set it on the source itself:
 
-Leave **basePathRelative** and **baseUrlRelative** set to "Yes". That's the most common way to set this up.
+1. Create the source under **Media → Media Sources**.
+2. Open the source for editing.
+3. Set the properties:
 
-**basePath** and **baseUrl** should start _without_ a slash, but they should end with a trailing slash.
+| Property | Value |
+| --- | --- |
+| `basePath` | `assets/images/` |
+| `baseUrl` | `assets/images/` |
+
+Leave `basePathRelative` and `baseUrlRelative` on. They are on by default, and they tell MODX that the path and the address are relative to the install directory.
+
+**Write the path without a leading slash and with a trailing one**
+MODX does not check either end of the value, and a path that starts with a slash is no longer relative to the install directory.
 
 ## Editing the TV
 
-Now, when you edit that TV in a Resource, you'll notice that it uses the Source we created earlier:
+Open the TV in a Resource and the source shows up in the field:
 
 ![](20110907-pd72jtn9bhdbn5q5qb7wadku5a.jpeg)
 
-Clicking the dropdown will load the MODX.Browser window using the Source that we specified - note that our source here only loads the contents of the assets/ directory.
+Opening the list loads the MODX.Browser window with the source you assigned. The browser shows the contents of `assets/` and nothing else.
 
-Now we'll probably want to consider restricting access to this Source, so that our Content Editors can't accidentally edit it and mess it up. Read the [next article](building-sites/media-sources/securing "Securing a Media Source") to find out how.
+Access to the source decides who may use it. See [Securing a Media Source](building-sites/media-sources/securing "Securing a Media Source") for the rules.
 
 ## See Also
 
-1. [Adding a Media Source](building-sites/media-sources/creating)
-2. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
-3. [Securing a Media Source](building-sites/media-sources/securing)
-   1. [Creating a Media Source for Clients Tutorial](building-sites/media-sources/securing/clients-tutorial)
-4. [Media Source Types](building-sites/media-sources/types)
+1. [Media Sources](building-sites/media-sources)
+2. [Adding a Media Source](building-sites/media-sources/creating)
+3. [Assigning Media Sources to TVs](building-sites/media-sources/assigning-to-tvs)
+4. [Securing a Media Source](building-sites/media-sources/securing)
+   1. [Creating a Client Media Source](building-sites/media-sources/securing/clients-tutorial)
+5. [Media Source Types](building-sites/media-sources/types)
    1. [Media Source Type - File System](building-sites/media-sources/types/media-source-type-file-system)
-   2. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+   2. [Media Source Type - FTP](building-sites/media-sources/types/media-source-type-ftp)
+   3. [Media Source Type - S3](building-sites/media-sources/types/media-source-type-s3)
+6. [Extending Media Sources](building-sites/media-sources/extending)
