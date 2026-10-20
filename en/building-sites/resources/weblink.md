@@ -1,24 +1,50 @@
 ---
 title: "Weblink"
+description: "Redirect a Resource to a URL or another Resource, with response codes and menu behavior."
 _old_id: "336"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/weblink"
 ---
 
 ## What is a Weblink?
 
-A weblink is a document of type "reference". Its template is not used to display or format the link, rather the template in this case simply serves as a container for any Template Variables that you may wish to append to your WebLink. The WebLink simply serves as a link that will be part of a generated menu.
+A Weblink is a Resource that redirects to another URL. The target can be an external address or a Resource in the MODX tree.
 
-The content of the weblink is just an URL; the parser doesn't even parse it, MODX simply redirects to the URL. As soon as it sees that it is a "reference", it just uses the content as the argument for sendRedirect($url).
+The `type` field of a Weblink is `reference`, but MODX routes by `class_key` and the `MODX\Revolution\modWebLink` class.
 
-You can use an external URL for the content, or you can use a Resource ID to link to a Resource in your MODX Resource tree.
+A Weblink Template is not rendered: `modWebLink::process()` sends the redirect before any Template output, so Template Variables attached to a Weblink are not shown.
 
-## Example
+## Target URL
 
-Say you want a footer menu with links to a Terms of Use, a Privacy Policy, and others. But you also want a link to "Contact Us" there. Contact Us is one of your main pages, and is in the top-level of your tree to be displayed in your main menu. You would put those Resources in one "utility pages" folder, probably unpublished so it won't show up in your main menu, and use that folder ID as the Resource ID for the menu snippet. In that folder you would also put a Weblink to your site's contact page. This way the menu will include a link to the contact page, even though that Resource is not in the folder.
+The `content` field holds the target. A numeric value is treated as a Resource ID: MODX builds the full URL with `makeUrl()` and redirects there. A non-numeric value is treated as a URL; MODX parses tags such as `[[~12]]` or `[[+placeholder]]` first, then redirects.
 
-Or, you could do it the other way around, have the Contact Us Resource in your unpublished "utility pages" folder, and put the Weblink to it in your top-level so it will show in the main menu.
+A numeric target must be an existing Resource. MODX rejects a missing ID when you save.
 
-Originally a menu snippet would make the link to the Weblink itself, just as to any other MODX resource, thus causing the page to be loaded by the parser, triggering the redirect.
+## Response Code
+
+A Weblink sends `HTTP/1.1 301 Moved Permanently` by default. Change it in the **Response Code** field on the **Settings** tab.
+
+
+The value is stored as the `responseCode` property of the Resource in the `core` namespace. Examples:
+
+```text
+HTTP/1.1 302 Found
+HTTP/1.1 307 Temporary Redirect
+```
+
+A 301 is cached by browsers and search engines. Use a temporary code while the target may change.
+
+## Weblinks in menus and link tags
+
+By default, menus and link tags point to the Weblink's own URL, and the request triggers the redirect.
+
+Enable [`use_weblink_target`](building-sites/settings/use_weblink_target) to make link tags and `makeUrl()` return the target URL directly. The setting is off by default.
+
+## Example: footer link to another section
+
+A footer menu needs links to Terms of Use, a Privacy Policy, and Contact Us. Contact Us already exists in the main tree and should not appear in the main menu.
+
+Create an unpublished "utility pages" container and put the Contact Us Resource there. Then add a Weblink to that Resource in the footer menu container. The menu gets the Contact Us link without moving the Resource.
+
 
 ## See Also
 
@@ -27,4 +53,3 @@ Originally a menu snippet would make the link to the Weblink itself, just as to 
 3. [Static Resource](building-sites/resources/static-resource)
 4. [Symlink](building-sites/resources/symlink)
 5. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
-6. [Weblink](building-sites/resources/weblink)

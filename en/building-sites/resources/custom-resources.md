@@ -1,51 +1,98 @@
 ---
 title: "Custom Resource Classes"
+description: "Build custom Resource types in MODX 3: class_key, processors, extension points, and Resource events."
 _old_id: "79"
 _old_uri: "2.x/developing-in-modx/advanced-development/custom-resource-classes"
 ---
 
-Custom Resource Classes (CRC) shipped in MODX 2.2. They still work in 3.x. Create and update processors moved with the rest of the core processors. See [Processors on MODX 3](#processors-on-modx-3) below.
+Custom Resource Classes (CRC) extend `modResource` and work in MODX 3. The create and update processors moved with the rest of the core processors; see [Processors on MODX 3](#processors-on-modx-3).
 
 ## What is a Custom Resource Class?
 
-A Custom Resource Class (CRC) is a PHP class that extends the modResource class, allowing custom Resource types that can represent various types of data or applications. The MODX core uses four different types of Resource Classes: Documents, WebLinks, SymLinks, and Static Resources. Other types of CRCs could be a Blog type, a Forum type, a Gallery Album type, a RSS Feed type, etc – basically any type of content for which you want a URL (remember the "R" in URL stands for _Resource_).
+A CRC is a PHP class that extends `modResource` and defines a custom Resource type for data or an application. MODX ships four built-in Resource classes: Documents, Weblinks, Symlinks, and Static Resources. For example, a CRC can add a Blog, Forum, Gallery Album, or RSS Feed type.
 
-CRCs are created by extending the modResource class in PHP and loading the new class into the MODX system via Extension Packages. They store their data in the same table as normal Resources (in `modx_site_content`, but they will use a custom value for the class\_key column), but they can behave differently and have a custom management interface.
+A CRC is loaded through an Extension Package. It stores data in `modx_site_content` under its own `class_key`, but can behave differently and provide its own management interface.
 
 ### When to Use
 
-CRCs are useful for creating "embedded applications" into MODX, such as a Blog Post type (such as [modBlog](/extras/articles "Articles")) that lets you place a blog into your already existing MODX site. You can use them when you've got a fair amount of developer experience and you're comfortable with object-oriented code and you understand how your application can fit into the MODX content table along with other resources.
+CRCs fit "embedded applications" such as a blog post type that places a blog inside an existing MODX site. Use them when you have solid object-oriented PHP experience and understand how the application fits into the Resource table alongside other Resources.
 
 ### When Not to Use
 
-CRCs are not recommended to use when you are just wanting to add a few extra fields to a Resource, or alter the presentation of a Resource on the front-end. Those situations are best dealt with by using [Templates](building-sites/elements/templates "Templates") and [Template Variables](building-sites/elements/template-variables "Template Variables"). Do not use CRCs if you are not a strong developer or if your additions do not need to be manipulated and displayed via the built-in MODX Resource listings.
+Do not use a CRC to add a few fields or change how a Resource looks on the front-end. Use [Templates](building-sites/elements/templates) and [Template Variables](building-sites/elements/template-variables) for that. Skip CRCs when the additions do not need to appear in the built-in Resource listings.
 
-Also remember that CRCs cannot be overridden themselves: you cannot extend a CRC.
+**Rule of thumb:** if a [Snippet](extending-modx/snippets) or a [Template Variable](building-sites/elements/template-variables) can do the job more easily, use it. CRCs are harder to develop.
 
-**"Rule of Thumb"**
-If it can be done more easily using [Snippets](extending-modx/snippets "Snippets") or [Template Variables](building-sites/elements/template-variables "Template Variables"), then it's probably best to do it that way: CRCs are much more difficult to develop.
+## Extending a CRC
+
+If your class extends one of the built-in Resource classes, set `class_key` after `parent::__construct()`. The built-in constructors set it to their own class, so a child class otherwise keeps the parent's `class_key`.
+
+Add a `{class_key}CreateProcessor` and `{class_key}UpdateProcessor` when the subclass needs its own save behavior. Without them, MODX uses the core Resource processors.
+
+In MODX 3, `class_key` stores the class name with its namespace. The default is `MODX\Revolution\modDocument`. A custom class must be loadable under exactly the name stored in `class_key`, for example `My\Blog\modBlogPost`.
+
 
 ## Usage
 
-CRCs look like normal Resources in the tree. The CRC class can also hook into the context menus on the Resource tree to add options for creating a CRC type, such as "Create a Blog Here", etc. They can use the default Resource editing panels, or can provide an entirely separate user interface for managing their content. Some CRCs might even have other sub-classes (such as modBlogPost when using the modBlog CRC) that are completely hidden from the main Resource tree. This is useful when dealing with lots of Resources that do not scale well in a tree UI.
+CRCs look like normal Resources in the tree. A CRC class can add items to the Resource tree context menu, such as "Create a Blog Here", by setting `$showInContextMenu` and overriding `getContextMenuText()`. It can use the default Resource editing panels.
 
-CRCs can have their Controllers, Processors and main rendering functionality extended and overridden. You can, for example, automatically append text to the output of any CRC's content by overriding the process() or getContent() method of the CRC in the PHP class. Any method in the modResource class is available to be overridden when using CRCs.
+A CRC can have subclasses that are hidden from the create menu, such as a blog post class under a blog container. This keeps a large number of Resources out of the tree.
+
+Any method in `modResource` can be overridden, including controllers, processors, and rendering. Override `process()` or `getContent()` to change output.
+
+### Extension points
+
+| Member | Purpose |
+| --- | --- |
+| `process()` | Builds the front-end output. |
+| `getContent()` | Returns the raw content source. |
+| `getResourceTypeName()` | Returns the label for the Resource type in the manager. |
+| `getContextMenuText()` | Returns the create items for the Resource tree context menu. |
+| `getControllerPath()` | Returns the manager controller directory for the type. |
+| `prepareTreeNode(array $node)` | Changes the data used for the Resource tree node. |
+| `$showInContextMenu` | Shows or hides the type in the tree context menu. |
+| `$allowListingInClassKeyDropdown` | Allows changing a Resource to this type through the `class_key` dropdown. |
+| `$allowChildrenResources` | Allows child Resources under this type. |
+| `$allowDrop` | Controls drag-and-drop for the type in the tree. |
 
 ## Processors on MODX 3
 
-When you create or update a CRC, `MODX\Revolution\Processors\Resource\Create::getInstance()` looks for `{class_key}CreateProcessor`. The update processor looks for `{class_key}UpdateProcessor`. Your subclass must extend the core Resource processor.
+On create, `MODX\Revolution\Processors\Resource\Create::getInstance()` looks for `{class_key}CreateProcessor`. On update, the processor looks for `{class_key}UpdateProcessor`. The class must be compatible with the core processor API; in practice, extend the core processor.
 
-In 2.x those core classes lived at `core/model/modx/processors/resource/create.class.php` (`modResourceCreateProcessor`) and `update.class.php` (`modResourceUpdateProcessor`). Those files are gone. A `require_once` of those paths fails.
+The 2.x processor files are gone:
 
 | Old class | New class |
 | --- | --- |
 | `modResourceCreateProcessor` | `\MODX\Revolution\Processors\Resource\Create` |
 | `modResourceUpdateProcessor` | `\MODX\Revolution\Processors\Resource\Update` |
 
-`core/include/deprecated.php` aliases the old names until 3.3. For 3.0+ only, extend the namespaced classes. `runProcessor('resource/create')` still works.
+A `require_once` of `core/model/modx/processors/resource/create.class.php` or `update.class.php` fails.
+
+As of 3.2.x, `core/include/deprecated.php` still aliases the old class names. The file says the aliases will likely be removed in 3.3 or 3.4. Extend the namespaced classes and follow the upgrade notes.
+
+`runProcessor('resource/create')` still works.
 
 See [Step 4: Customizing the Processors](extending-modx/custom-resources/step-4-processors) and [Processors in the 3.0 upgrade notes](getting-started/upgrading-to-3.0/processors).
 
+## Resource events
+
+CRCs use the same Resource events as other types:
+
+| Event | When it fires |
+| --- | --- |
+| `OnBeforeDocFormSave` | Before a Resource is created or updated. A non-empty response cancels the save. |
+| `OnDocFormSave` | After a Resource is saved. |
+| `OnDocFormPrerender` | While the manager edit page is rendered. |
+| `OnResourceAddToResourceGroup` | After a Resource is added to a Resource Group. |
+| `OnResourceRemoveFromResourceGroup` | After a Resource is removed from a Resource Group. |
+| `OnResourceDelete` | When a Resource is deleted. |
+| `OnResourceUndelete` | When a deleted Resource is restored. |
+| `OnResourceDuplicate` | After a Resource is duplicated. |
+| `OnResourceBeforeSort` | Before Resources are reordered in the tree. |
+| `OnResourceSort` | After Resources are reordered in the tree. |
+| `OnResourceToolbarLoad` | While the Resource toolbar is built. |
+| `OnResourceCacheUpdate` | After the cache for a Resource is cleared. |
+
 ## Creating a CRC
 
-Please follow the tutorial on [Creating a Resource Class](extending-modx/custom-resources "Creating a Resource Class").
+Follow the tutorial on [Creating a Resource Class](extending-modx/custom-resources).

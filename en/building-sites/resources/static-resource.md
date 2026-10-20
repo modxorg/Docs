@@ -1,23 +1,62 @@
 ---
 title: "Static Resource"
+description: "Serve a file from disk through a Resource, with path limits, content types, templates, and downloads."
 _old_id: "293"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources/static-resource"
 ---
 
 ## What is a Static Resource?
 
-A Static Resource is a Resource abstraction of an actual file on the filesystem. You can think of the abstraction as a virtual representation of any file on your webserver. Like other MODX resources, this abstraction can have permissions associated with it and it shows up in the MODX manager in the resource tree, which allows it to show up in dynamic menus and search results. A MODX Static Resource can represent any file on your webserver (permissions permitting).
+A Static Resource represents a file on the filesystem. The `content` field holds the file path, not the file contents. MODX reads the file at request time and returns it; it does not copy the file or create a link to it.
 
-Static Resources can also have tags inside their content fields to determine the path of the file - so you can specify custom paths to set as System Settings, or use [Snippets](extending-modx/snippets "Snippets") to dynamically find the path.
 
-They behave exactly like a Document (standard Resource). Content within a Static Resource is parsed and displayed in the exact same way as a Document, but often you will alter the [Content Type](building-sites/resources/content-types "Content Types") and Content Disposition to match the type of file you are representing.
+Like other Resources, it has an ID, appears in the Resource tree, and can belong to Resource Groups and appear in menus and search results.
+
+The path can contain MODX tags. You can store a base path in a System Setting or use a [Snippet](extending-modx/snippets) to build it.
+
+## Where files may live
+
+The path is resolved against [`resource_static_path`](building-sites/settings/resource_static_path), which defaults to `{assets_path}`. The setting and the `content` field can both contain tags, and `../` sequences are stripped from the path.
+
+An absolute path outside that base is used only when [`resource_static_allow_absolute`](building-sites/settings/resource_static_allow_absolute) is enabled. That setting lets manager users read any file the PHP process can read, so keep it off unless every manager user is trusted.
+
+If the file is missing or unreadable, MODX sends the error page with a 404 status.
+
+## Content Types and output
+
+A Static Resource uses a [Content Type](building-sites/resources/content-types) like any other Resource, which decides the MIME type and the file extension in the URL.
+
+For a text Content Type (`Binary` set to No), MODX reads the file and renders it like a Document. The Template applies and tags in the file are parsed.
+
+For a binary Content Type, MODX sends the file as a stream:
+
+- `Content-Type` from the Content Type.
+- `Content-Length` when the size is known.
+- `Content-Disposition`: `attachment` when the Resource's Content Disposition is set to attachment, otherwise `inline`.
+- Any [custom headers](building-sites/resources/content-types#custom-headers) from the Content Type.
+
+
+MODX then streams the file with `readfile()` and exits. The Template is not used and tags are not parsed.
 
 ## About Aliases
 
-When you create a Static Resource, the alias should not include a file extension: the file extension is determined by the [Content Type](building-sites/resources/content-types "Content Types"). For example, if you create a Static Resource that points to a PDF file on your webserver, you might give the page an alias of "test". Once you select "PDF" as your Content Type, the ".pdf" extension will be appended to the alias (presuming that you have defined the PDF content type using ".pdf" as its file extension).  If you have created a custom content type for PDF, then you do not need to set the content disposition field to 'attachment'. It can be left as inline, as modern browsers can negotiate PDFs and can then also choose their own preferred way to handle PDFs - for example Chrome will display the PDF in the browser, whereas others may download the file. 
-*Sidenote:* You can always force a download by adding the ` download>` attribute to the link.
+Do not include a file extension in the alias: the [Content Type](building-sites/resources/content-types) supplies it. For example, a Static Resource with alias `test` and the PDF Content Type renders as `test.pdf`.
 
-To ensure your file is transmitted correctly, you should use the (empty) template. The static resource becomes a link to the file as long as you use this template. If you need to add some meta information to the resource via some Template Variables, and you create your own 'empty' template to enable this, then you must set the contents of the template to `[[*content]]` before it will work correctly.
+## Templates
+
+With the empty Template, MODX outputs the file contents. If you use a custom Template to add meta tags or Template Variables, include `[[*content]]` where the file contents should appear.
+
+A binary Static Resource bypasses the Template entirely.
+
+## Downloads
+
+Set **Content Disposition** to `attachment` to send the file as a download with the server-side header. To force a download from a link to an already served file, add the HTML `download` attribute.
+
+```html
+<a href="assets/files/report.pdf" download="report.pdf">Download the report</a>
+```
+
+Browsers may display a PDF inline or download it, depending on their settings. The `attachment` disposition or the `download` attribute makes the behavior explicit.
 
 ## See Also
 
@@ -25,5 +64,5 @@ To ensure your file is transmitted correctly, you should use the (empty) templat
 2. [Named Anchor](building-sites/integrating-templates/named-anchor)
 3. [Static Resource](building-sites/resources/static-resource)
 4. [Symlink](building-sites/resources/symlink)
-   1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
+    1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
 5. [Weblink](building-sites/resources/weblink)
