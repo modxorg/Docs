@@ -1,6 +1,7 @@
 ---
 title: "Группы ресурсов"
 translation: "building-sites/client-proofing/security/resource-groups"
+description: "Группы ресурсов MODX: как они собирают ресурсы и как группа получает к ним доступ."
 ---
 
 ## Что такое группа ресурсов?
@@ -13,7 +14,7 @@ translation: "building-sites/client-proofing/security/resource-groups"
 
 ### Вариант 1
 
-Откройте Security -> Resource Groups. Слева увидите список групп ресурсов, справа дерево ресурсов.
+Откройте иконка замка в меню пользователя → **Resource Groups**. Слева увидите список групп ресурсов, справа дерево ресурсов.
 
 Перетащите ресурсы из правого дерева прямо в группы ресурсов в левом:
 

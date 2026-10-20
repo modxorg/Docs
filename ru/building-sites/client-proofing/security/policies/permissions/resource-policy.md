@@ -1,6 +1,7 @@
 ---
 title: "Ресурсная политика"
 translation: "building-sites/client-proofing/security/policies/permissions/resource-policy"
+description: "Ресурсная политика MODX и список её разрешений."
 ---
 
 ## Ресурсная политика
@@ -12,6 +13,7 @@ translation: "building-sites/client-proofing/security/policies/permissions/resou
 | Имя |
 |------|
 | add\_children |
+| copy |
 | create |
 | delete |
 | list |

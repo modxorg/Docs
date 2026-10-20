@@ -1,20 +1,27 @@
 ---
-title: "Видимое поле"
+title: "Видимость поля"
 translation: "building-sites/client-proofing/form-customization/rules/field-visible"
+description: "Правило «Видимость поля» набора настройки формы в MODX: как оно прячет поле формы."
 ---
 
-## Правило видимого поля
+## Что делает правило
 
-Правило видимости поля, если оно установлено, будет объявлять поле «видимым» или нет для пользователя.
+Прячет поле формы менеджера. Поле не выводится вовсе, а значение ресурса в нём остаётся.
 
-## Примеры
+## Где задаётся
 
-Пример правила сокрытия поля introtext от [пользователей](building-sites/client-proofing/security/users "пользователей") в группе [пользователей](building-sites/client-proofing/security/user-groups "Группы пользователей") «Отдел кадров» будет выглядеть так:
+Вкладка **Поля** набора, колонка **Visible**. Снятая отметка у поля создаёт правило; поставленная обратно — удаляет его.
 
-![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-fieldvisible.png)
+## К чему применяется
+
+К полям формы ресурса:
+
+`id`, `pagetitle`, `alias`, `longtitle`, `description`, `introtext`, `content`, `published`, `deleted`, `publishedon`, `pub_date`, `unpub_date`, `template`, `hidemenu`, `menutitle`, `link_attributes`, `menuindex`, `class_key`, `content_type`, `parent`, `content_dispo`, `isfolder`, `show_in_tree`, `hide_children_in_tree`, `alias_visible`, `uri_override`, `uri`, `richtext`, `cacheable`, `searchable`, `syncsite`.
+
+Список полей хранится в справочнике формы и заполняется при установке MODX. На базе, обновлённой с 2.x, список может быть короче.
 
 ## Смотрите также
 
-```php
-[[getResources@section? &parents=`124` &context=`revolution`]]
-```
+1. [Правила настройки формы](building-sites/client-proofing/form-customization/rules)
+2. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
+3. [Настройка вкладок](building-sites/client-proofing/form-customization/tabs)

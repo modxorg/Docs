@@ -1,32 +1,25 @@
 ---
 title: "TV Default"
+description: "The TV Default rule of a Form Customization set in MODX: how it sets the default value of a template variable."
 _old_id: "313"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/tv-default"
 ---
 
-## The TV Default Value Rule
+## What the Rule Does
 
-The TV Default Value Rule, if set, will set the default value for a TV.
+Sets the default value of a TV of the form of the manager. The value appears when the form opens.
 
-This only works on "create" Actions, **not** "update" Actions.
+The rule is applied on the page the set is bound to: the page that creates a resource, or the page that edits one. To have it only on the page that creates a resource, bind the set to the action **Create Resource** instead of **Create & Edit Resource**.
 
-## Usage
+## Where It Is Set
 
-The values for the Rule should be as follows:
+The **Template Variables** tab of the set, in the **Default Value** column.
 
-- **Name**: The ID of the TV prefixed with 'tv'; for example, for the TV with ID 23, 'tv23'
-- **Containing Panel**: 'modx-panel-resource'
-- **Rule**: 'TV Default Value'
-- **Value**: The value you want to set as the default.
-
-## Examples
-
-An example Rule of setting the default value for a TV with ID 23 to "test" is:
-
-![](fc-tvdefault.png)
+**An empty cell zeroes the default value**
+A cell that is cleared does not restore the default value of the variable: it sets an empty default. To get the original value back, type it into the cell yourself.
 
 ## See Also
 
-``` php
-[[getResources@section? &parents=`313` &context=`revolution`]]
-```
+1. [Form Customization Rules](building-sites/client-proofing/form-customization/rules)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+3. [Customizing Tabs](building-sites/client-proofing/form-customization/tabs)

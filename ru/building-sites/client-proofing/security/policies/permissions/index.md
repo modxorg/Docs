@@ -1,6 +1,7 @@
 ---
 title: "Разрешения"
 translation: "building-sites/client-proofing/security/policies/permissions"
+description: "Разрешения MODX: что такое одно разрешение и как политики группируют их."
 ---
 
 ## Что такое Разрешения?
@@ -39,7 +40,7 @@ translation: "building-sites/client-proofing/security/policies/permissions"
     4. [Ограничение Элементов от пользователей](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
     5. [Подробнее о группе анонимных пользователей](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
 7. [Закалка MODX Revolution](getting-started/maintenance/securing-modx)
-8. [Стандарты безопасности](administering-your-site/security/security-standards)
+8. [Стандарты безопасности](building-sites/client-proofing/security)
 9. [Поиск проблем в безопасности](building-sites/client-proofing/security/troubleshooting-security)
     1. [Сбрость пароля пользователя в ручную](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)
 

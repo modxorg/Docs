@@ -1,27 +1,28 @@
 ---
 title: "Inline PHP"
+description: "The Inline PHP Dashboard Widget of MODX: PHP code that runs like a Snippet, and the rules it has to follow."
 _old_id: "87"
 _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-inline-php"
 ---
 
- The Inline PHP widget acts very similar to the [Snippet Widget](building-sites/client-proofing/dashboards/widget-types/snippet "Dashboard Widget Type - Snippet"), except it runs the content of the widget as if it were a Snippet.
+The Inline PHP widget runs the content of the widget as if it were a [Snippet Widget](building-sites/client-proofing/dashboards/widget-types/snippet "Dashboard Widget Type - Snippet"). The difference is the code: PHP instead of a call to a Snippet.
 
 ## Usage
 
- Simply place your PHP code in the content panel, and return the output of your widget.
+Simply place your PHP code in the content panel, and return the output of your widget.
 
- For example, this will display "Hello, World!":
+For example, this will display "Hello, World!":
 
 ``` php
 <?php
 return 'Hello, World!';
 ```
 
- A few notes about using this:
+A few notes about using this:
 
-- Do not "echo" content, as it will be ignored
-- Do not use `$modx->resource` in your widget, as there is no active resource for the dashboard
-- Do not put a closing PHP tag at the end of your code! For some reason, it gets parsed incorrectly (as of MODX 2.2.8)
+- Use `return`, not `echo`. What you print goes into the output of the page, not into the content of the widget.
+- Do not use `$modx->resource` in your widget, as there is no active resource on the Dashboard.
+- The tags `<?php` and `?>` are cut off before the code runs, so a closing tag is not needed.
 
 ## See Also
 

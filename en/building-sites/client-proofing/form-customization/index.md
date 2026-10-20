@@ -1,39 +1,47 @@
 ---
 title: "Customizing the Manager"
+description: "Form Customization in MODX: the profiles, the sets and the rules that change the forms of the manager."
 _old_id: "83"
 _old_uri: "2.x/administering-your-site/customizing-the-manager"
 ---
 
 ## What is Form Customization?
 
- Form Customization is a feature that allows users to create Rules, which govern how manager pages render their forms in the MODX Revolution Manager.
+Form Customization lets you change the forms of the manager: hide a field, rename it, give it another value, move a TV to another tab.
 
-## How Does it Work?
+The section is under **Admin → Form Customization**, and it needs the permission `customize_forms`.
 
- Currently, Form Customization has 3 layers:
+## The Three Layers
 
-> Profile -> Sets -> Rules
+> Profile → Set → Rules
 
- A Profile is a collection of Sets, and Sets are collections of Rules. Profiles can be restricted to specific User Groups.
+A **Profile** is a collection of Sets, and it can be bound to User Groups. A **Set** is a collection of Rules, and it is bound to a page of the manager. A **Rule** is one change that the Set applies to the form.
 
- A Set is a collection of Rules, and is tied to a certain view. Normally, you would have a Set for the Resource/Create page, and a Set for the Resource/Update page. Sets can also be tied to specific [Templates](building-sites/elements/templates "Templates") (meaning they load only when the Resource is using that Template). They can also have a 'Constraint' set, which limits the Set's execution to the restriction made in the Constraint.
+The rules are not edited on their own: they are rebuilt from the three grids of the set every time the set is saved. See [Form Customization Rules](building-sites/client-proofing/form-customization/rules "Form Customization Rules").
 
- A Rule is all the variations applied in a Set. Rules are hidden from view in MODX Revolution, but are instead shown as fields on the Set Editing page.
+## How It Is Stored
 
- More information about each of the parts of Form Customization can be found in each part's respective page:
+A profile holds sets, and a set holds its rules. The list of the fields and of the regions that can be changed is kept in a reference table. It is filled in when MODX is installed.
 
-1. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
-2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
-   1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
-3. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)
+## Which Forms Can Be Customized
 
-### What Forms can I Customize?
+Only the pages of a resource: **Create Resource** and **Edit Resource**. The page of a chunk, a snippet, a user or a user group is not covered.
 
- The Resource Create and Update pages can be customized at this time in Form Customization.
+A set is bound to one of three actions:
+
+| Action | The set applies to |
+| --- | --- |
+| Create Resource | The page that creates a resource. |
+| Edit Resource | The page that edits a resource. |
+| Create & Edit Resource | Both pages at once. |
+
+With the last one the set covers both pages. The list of the fields and of the regions it offers comes from the page that edits a resource.
 
 ## See Also
 
-1. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
-2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
-   1. [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs)
-3. [Manager Templates and Themes](building-sites/client-proofing/custom-manager-themes)
+1. [Customizing the Manager](building-sites/client-proofing/form-customization)
+2. [Form Customization Profiles](building-sites/client-proofing/form-customization/profiles)
+3. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+   1. [Form Customization Rules](building-sites/client-proofing/form-customization/rules)
+   2. [Customizing Tabs](building-sites/client-proofing/form-customization/tabs)
+4. [Custom Manager Themes](building-sites/client-proofing/custom-manager-themes)

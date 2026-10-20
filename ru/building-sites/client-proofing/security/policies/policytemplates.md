@@ -1,6 +1,7 @@
 ---
 title: "Шаблоны политик"
 translation: "building-sites/client-proofing/security/policies/policytemplates"
+description: "Шаблоны политик MODX и группы, которые их объединяют."
 ---
 
 ## Что такое шаблоны политик?
@@ -32,6 +33,24 @@ ResourceTemplate определяет дополнительные разреш�
 ### ContextTemplate
 
 ContextTemplate определяет доступ к контексту, когда административные действия не задействованы.
+
+### NamespaceTemplate
+
+NamespaceTemplate содержит три разрешения пространства имён: `list`, `load` и `view`.
+
+## Policy Template Groups
+
+Шаблоны объединяются в группы, и группа решает, в какой части списка политик показывается политика. В MODX 3 семь групп:
+
+| Группа | Шаблоны в ней |
+| --- | --- |
+| Administrator | AdministratorTemplate |
+| Object | ObjectTemplate |
+| Resource | ResourceTemplate |
+| Element | ElementTemplate |
+| MediaSource | MediaSourceTemplate |
+| Namespace | NamespaceTemplate |
+| Context | ContextTemplate |
 
 ## Смотрите также
 

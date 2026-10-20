@@ -1,25 +1,35 @@
 ---
 title: "Политики"
 translation: "building-sites/client-proofing/security/policies"
+description: "Политики доступа MODX: двенадцать штатных и шаблон, который определяет, что может содержать политика."
 ---
 
 ## Что такое политика доступа?
 
 Политика доступа - это набор [Разрешений](building-sites/client-proofing/security/policies/permissions "Разрешения") содержащий одно или несколько Разрешений, определённых в панели управления. По умолчанию в MODX определены следующие политики доступа:
 
-- **Administrator**: Политика администрирования контекста со всеми разрешениями по умолчанию.
-- **Content Editor**: Политика администрирования контекста с ограниченными разрешениями, относящимися к редактированию контента, но без разрешений на публикацию (`publish_document` / `unpublish_document`).
-- **Context**: Стандартная политика контекста, которую можно применять при создании списков ACL для получения базового доступа в контексте (read/write и view\_unpublished).  
-- **Element**: Политика элемента MODX со всеми атрибутами.
-- **Load Only**: Минимальная политика с разрешением на загрузку объекта.
-- **Load, List and View**: Разрешает загрузку чтение и просмотри.
-- **Media Source Admin**: Политика администрирования медиа источника.
-- **Media Source User**: Политика пользователя медиа источника, с базовым просмотром и использованием - но без редактирования.
-- **Object**: Политика объекта со всеми разрешениями.
-- **Resource**: Политика ресурсов MODX со всеми атрибутами.
+| Политика | Что это | Шаблон политики |
+| --- | --- | --- |
+| Administrator | Политика администрирования контекста со всеми разрешениями по умолчанию. | AdministratorTemplate |
+| Content Editor | Политика администрирования контекста с ограниченными разрешениями, относящимися к редактированию контента, но без разрешений на публикацию (`publish_document` / `unpublish_document`). | AdministratorTemplate |
+| Context | Стандартная политика контекста, которую можно применять при создании списков ACL для получения базового доступа в контексте (read/write и view\_unpublished). | ContextTemplate |
+| Developer | Политика администрирования контекста со всеми разрешениями администратора, кроме административных и относящихся к безопасности. | AdministratorTemplate |
+| Element | Политика элемента MODX со всеми атрибутами. | ElementTemplate |
+| Hidden Namespace | Прячет пространство имён из списков. Даёт `load` и `view`, запрещает `list`. | NamespaceTemplate |
+| Load Only | Минимальная политика с разрешением на загрузку объекта. | ObjectTemplate |
+| Load, List and View | Разрешает загрузку, чтение и просмотр. | ObjectTemplate |
+| Media Source Admin | Политика администрирования медиа источника. | MediaSourceTemplate |
+| Media Source User | Политика пользователя медиа источника, с базовым просмотром и использованием - но без редактирования. | MediaSourceTemplate |
+| Object | Политика объекта со всеми разрешениями. | ObjectTemplate |
+| Resource | Политика ресурсов MODX со всеми атрибутами. | ResourceTemplate |
 
-Если вы настраиваете любую из вышеуказанных политик доступа по умолчанию, продублируйте и переименуйте их перед настройкой! 
-Если вы этого не сделаете, при обновлении версии MODX все настройки будут утеряны, поскольку они будут переопределены сценарием установки.
+Шаблон политики определяет, какие разрешения она вообще может содержать, — это список чекбоксов, который вы получаете при создании политики. Смотрите [Шаблоны политик](building-sites/client-proofing/security/policies/policytemplates "Шаблоны политик").
+
+Если вы настраиваете любую из вышеуказанных политик доступа по умолчанию, продублируйте и переименуйте их перед настройкой! Сценарий установки пересоздаёт штатные политики при каждом обновлении, поэтому ваши правки в них могут пропасть.
+
+## Права страницы
+
+Странице политик нужно право `policy_view` — увидеть список, `policy_new` и `policy_save` — создать политику, `policy_edit` — изменить, `policy_delete` — удалить. Для шаблонов нужны `policy_template_view`, `policy_template_new`, `policy_template_save`, `policy_template_edit` и `policy_template_delete`.
 
 ## Создание и редактирование
 
@@ -90,6 +100,6 @@ translation: "building-sites/client-proofing/security/policies"
     4. [Ограничение Элементов от пользователей](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
     5. [Подробнее о группе анонимных пользователей](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
 7. [Закалка MODX Revolution](getting-started/maintenance/securing-modx)
-8. [Стандарты безопасности](administering-your-site/security/security-standards)
+8. [Стандарты безопасности](building-sites/client-proofing/security)
 9. [Поиск проблем в безопасности](building-sites/client-proofing/security/troubleshooting-security)
     1. [Сбрость пароля пользователя в ручную](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)

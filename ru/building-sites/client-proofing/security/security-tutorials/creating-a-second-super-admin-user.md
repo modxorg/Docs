@@ -1,6 +1,7 @@
 ---
 title: "Второй пользователь Super Admin"
 translation: "building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user"
+description: "Создать второго администратора MODX: группа и роль, которые дают нужные права."
 ---
 
 ## Задача
@@ -11,17 +12,17 @@ translation: "building-sites/client-proofing/security/security-tutorials/creatin
 
 Войдите в менеджер сайта и сделайте следующее:
 
-1. Создайте нового пользователя: Manage -> Users -> New User (кнопка)
+1. Создайте нового пользователя: иконка замка в меню пользователя → **Users** -> New User (кнопка)
 2. Задайте уникальные username, password и email.
-3. Перед сохранением откройте вкладку **Access Permissions** и нажмите **Add User Group to User**
+3. Перед сохранением откройте вкладку **Access Permissions** и нажмите ****Add User to Group****
     1. **User Group:**`Administrator`
     2. **Role:**`Super User`
-4. Сохраните пользователя. (Позже можно вернуться в Security -> Manage Users и правым кликом обновить свойства.)
+4. Сохраните пользователя. (Позже можно вернуться в иконка замка в меню пользователя → **Users** и правым кликом обновить свойства.)
 5. Проверьте вход в менеджер из другого браузера.
 
 ## Почему нельзя добавить ещё одного Administrator с другой [ролью](building-sites/client-proofing/security/roles "Roles"), например "Member"?
 
-Попробуйте. При входе под другим именем только с ролью "Member" доступ отклонят. Почему? Дело в [Context Access](building-sites/contexts "Contexts") и [Access Policies](building-sites/client-proofing/security/policies "Policies"). Они быстро усложняются. Откройте Security -> Access Controls, правым кликом по группе Administrator выберите Update User Group, затем вкладку **Context Access**. Увидите примерно такое:
+Попробуйте. При входе под другим именем только с ролью "Member" доступ отклонят. Почему? Дело в [Context Access](building-sites/contexts "Contexts") и [Access Policies](building-sites/client-proofing/security/policies "Policies"). Они быстро усложняются. Откройте иконка замка в меню пользователя → **Access Control Lists**, правым кликом по группе Administrator выберите Update User Group, затем вкладку **Context Access**. Увидите примерно такое:
 
 ![](user-group-perms.jpg)
 

@@ -1,6 +1,7 @@
 ---
 title: "Сниппет"
 translation: "building-sites/client-proofing/dashboards/widget-types/snippet"
+description: "Виджет панели управления типа «Сниппет» в MODX: сниппет, который возвращает содержимое виджета."
 ---
 
 Тип виджета «Панель инструментов Snippet» запускает сниппет кода MODX и помещает возвращаемое значение в панель виджетов.

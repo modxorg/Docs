@@ -1,13 +1,12 @@
 ---
 title: "Ограничение Element для пользователей"
 translation: "building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users"
+description: "Скрыть элемент MODX от пользователей, которым нельзя его править, через доступ к его категории."
 ---
 
-## Введение
+## Кратко
 
 Урок показывает, как скрыть любой Element (Template, Snippet и т. д.) в менеджере MODX. Для этого используют Element Category ACL: они защищают Elements в Categories от просмотра. Пользователи группы Editors увидят элементы. Пользователи вне группы их не увидят.
-
-### Кратко
 
 1. Создайте Category или возьмите существующую
 2. Поместите Element, который нужно защитить, в эту Category
@@ -28,7 +27,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/restric
 
 ### 3. Создайте User Group
 
-Откройте Security -> Access Controls в верхнем меню, вкладка "User Groups". Создайте новую группу или выберите существующую. Правым кликом по группе выберите "Update User Group".
+Откройте иконка замка в меню пользователя → **Access Control Lists** в верхнем меню, вкладка "User Groups". Создайте новую группу или выберите существующую. Правым кликом по группе выберите "Update User Group".
 
 В Revolution 2.3.x пункт Access Control Lists лежит в меню Admin (значок шестерёнки).
 
@@ -53,7 +52,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/restric
 
 ### 6. Flush Permissions
 
-В верхнем меню: "Security -> Flush Permissions". В Revolution 2.3.x это Manage -> Logout All Users.
+В верхнем меню: "**Flush Your Permissions**". В Revolution 2.3.x это иконка замка в меню пользователя → **Logout All Users**.
 
 Всех заставят войти снова. Element Category теперь защищена от пользователей вне группы Editors.
 
@@ -61,7 +60,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/restric
 
 Иногда нужно скрыть элементы от всех, кто не в группе Administrator. Положите элементы в категорию как выше, но привяжите её к группе Administrator:
 
-- Откройте редактирование группы Administrator (Security -> Access Controls -> User Groups -> правый клик по "Administrator" -> Update User Group). В Revolution 2.3.x это Access Control Lists в меню Admin (шестерёнка).
+- Откройте редактирование группы Administrator (иконка замка в меню пользователя → **Access Control Lists** → вкладка **User Groups & Users** -> правый клик по "Administrator" -> Update User Group). В Revolution 2.3.x это Access Control Lists в меню Admin (шестерёнка).
 - Откройте вкладку Element Category Access
 - Добавьте ACL через "Add Category":
     - Category: ваша Category из шагов выше
@@ -71,7 +70,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/restric
     - Нажмите "Save" в диалоге
 - Нажмите "Save" справа вверху
 
-- В верхнем меню: Security -> Flush All Sessions. В Revolution 2.3.x это Manage -> Logout All Users.
+- В верхнем меню: **Logout All Users**. В Revolution 2.3.x это иконка замка в меню пользователя → **Logout All Users**.
 
 Теперь Elements видит только admin Super User.
 
@@ -79,7 +78,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/restric
 
 Допустим, вы ограничили Template способом выше. Другой User Group без доступа к Template всё же должна править (но не создавать) Resources с этим Template и видеть TV шаблона. Сейчас вторая группа (назовём её Editors) видит Resource, в combobox Template показывает ID, но TV не видит. Нужна ещё одна ACL для группы Editors, чтобы загружались Template и связанные TV.
 
-- Откройте редактирование группы Editors (Security -> Access Controls -> User Groups -> правый клик по "Editors" -> Update User Group)
+- Откройте редактирование группы Editors (иконка замка в меню пользователя → **Access Control Lists** → вкладка **User Groups & Users** -> правый клик по "Editors" -> Update User Group)
 - Откройте вкладку Element Category Access
 - Добавьте ACL через "Add Category":
     - Category: ваша Category из шагов выше
@@ -89,7 +88,7 @@ translation: "building-sites/client-proofing/security/security-tutorials/restric
     - Нажмите "Save" в диалоге
 - Нажмите "Save" справа вверху
 
-- Пользователи Editors должны выйти и войти снова, либо Security -> Flush Sessions в верхнем меню
+- Пользователи Editors должны выйти и войти снова, либо **Logout All Users** в верхнем меню
 
 Готово. Editors увидят и будут править TV для Template в защищённой Category. Пользователи вне Editors их не увидят.
 

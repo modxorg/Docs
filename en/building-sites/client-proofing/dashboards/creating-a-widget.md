@@ -1,25 +1,26 @@
 ---
 title: "Creating a Dashboard Widget"
-_old_id: "69"
-_old_uri: "2.x/administering-your-site/dashboards/creating-a-dashboard-widget"
+description: "Create a Dashboard Widget in MODX: the fields of a widget, the sizes it takes, and how to put it on a Dashboard."
 ---
-
-This article describes how to create a custom Dashboard Widget, including a short description of the different Dashboard Widget types and how they work.
 
 ## Creating a Basic Widget
 
-Go to the Dashboards page (Dashboard -> Dashboards in the top menu), and click on the "Widgets" tab. Then, click on "Create New Widget", and this will load the Widget creation screen. You'll see a few new fields:
+Go to the Dashboards page (**Admin → Dashboards** in the top menu), and click on the "Widgets" tab. Then click **Create**, and the Widget creation screen loads. It has these fields:
 
-- **Name** - The name of your new widget. Let's call ours "Hello World".
-- **Description** - A short description of your widget, used internally.
-- **Widget Type** - The type of Widget. We'll get into this more later, but for now, just select "HTML".
-- **Size** - Widgets come in 3 sizes - half, full, and double. A half-sized widget takes up half of one row. A full takes up one whole row. A double takes up 2 rows.
-- **Namespace** - The Namespace to associate the widget with. Useful for Extras developers; but for us, let's keep it at "core".
-- **Lexicon** - Adds an ability to load a lexicon with this widget. Let's go ahead and leave ours at "core:dashboards", the default setting.
+| Field | What it holds |
+| --- | --- |
+| **Name** | The name of the widget. It must be unique. |
+| **Description** | A short description of the widget, used internally. |
+| **Widget Type** | The type of the widget. For a first widget, select "HTML". |
+| **Size** | One of seven sizes: Quarter, One Third, Half, Two Third, Three Quarters, Full Size and Double Size. |
+| **Permission** | The manager permission a user needs for the widget to appear. Empty means the widget is shown to everyone. |
+| **Namespace** | The Namespace to associate the widget with. Leave it at "core" unless you build an Extra. |
+| **Lexicon** | The lexicon to load with the widget. The default is "core:dashboards". |
+| **Properties** | Arbitrary properties of the widget, stored as JSON. A file or a snippet widget receives them as `$scriptProperties`. |
 
-You'll note that as you type the name of the widget, text appears below it following what you type. This is the automatic translation tool for Widget names; if you were to type a Lexicon Entry key, it would translate it (try typing "widget\_create" for kicks to see what it does).
+As you type the name, a translated version of it appears below the field. The translation looks up the key in the lexicon of the widget. Type the key of an existing entry, for example `w_configcheck`, and it shows the translated name of that entry.
 
-Now, in your dashboard widget content, go ahead and put this:
+Now, in the content of the widget, put this:
 
 ``` php
 <p>Hello, world!</p>
@@ -29,13 +30,13 @@ Our widget should look like this:
 
 ![](dashboard-create1.png)
 
-Go ahead and save the Widget.
+Save the widget.
 
 ### Assigning the Widget to the Default Dashboard
 
-Now that we've got our widget, let's assign it to the Default Dashboard, by going back to the main Dashboards page, clicking on the "Dashboards" tab, and finding the default Dashboard. Right-click on it, and click "Update Dashboard". This will load the Default Dashboard editing page.
+To assign the widget to the Default Dashboard, go back to the main Dashboards page, click on the "Dashboards" tab, and find the Default Dashboard. Right-click on it and click "Edit". This loads the editing page of the Default Dashboard.
 
-From here, click the "Place Widget" button above the Widgets grid on this page. Select our "Hello World" widget from the dropdown, and click save. Now our Widget is on the Dashboard! Let's go ahead and place it in position #2 by dragging it between the "Configuration Check" widget and the "MODX News Feed" widget:
+From here, click the "Place Widget" button above the Widgets grid on this page. Select the "Hello World" widget from the dropdown, and click save. To place it in position #2, drag it between the "Configuration Check" widget and the "MODX News Feed" widget:
 
 ![](dashboard-create2.png)
 
@@ -45,24 +46,31 @@ Save your Dashboard.
 >
 > Adding a widget directly on the dashboard page (via the dashboard view itself) only adds it for the currently logged-in user. Other users will not see it unless it is also added to the template.
 >
-> On large sites with many users, adding a widget to the template will create a placement record for each user who already has a personal copy of that dashboard. Keep this in mind if performance is a concern.
+> A widget that is added to the template arrives at the existing users with the default size and at the end of the list.
+>
+> On large sites with many users, adding a widget to the template creates a placement record for every user with a personal copy of that dashboard. Keep this in mind if performance is a concern.
 
 ### Viewing the Widget
 
-Now, if you click the "Dashboard" top menu item on the page, you can see your new dashboard widget in place!
+Now, if you click the MODX logo in the top left, you can see your new dashboard widget in place!
 
 ![](dashboard-create3.png)
 
+## Removing a Widget
+
+A widget is removed from the Widgets tab, and that removes it from all the Dashboards it was placed on. The widgets that ship with MODX cannot be removed.
+
 ## Other Widget Types
 
-Obviously, there are more widget types to create. See the [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types "Dashboard Widget Types") section for more information on creating different types of widgets.
+See the [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types "Dashboard Widget Types") section for the other types of widgets.
 
 ## See Also
 
-1. [Managing Your Dashboard](building-sites/client-proofing/dashboards/managing)
-2. [Assigning a Dashboard to a User Group](building-sites/client-proofing/dashboards/usergroups)
-3. [Creating a Dashboard Widget](building-sites/client-proofing/dashboards/creating-a-widget)
-4. [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types)
+1. [Dashboards](building-sites/client-proofing/dashboards)
+2. [Managing Your Dashboard](building-sites/client-proofing/dashboards/managing)
+3. [Assigning a Dashboard to a User Group](building-sites/client-proofing/dashboards/usergroups)
+4. [Creating a Dashboard Widget](building-sites/client-proofing/dashboards/creating-a-widget)
+5. [Dashboard Widget Types](building-sites/client-proofing/dashboards/widget-types)
     1. [Dashboard Widget Type - File](building-sites/client-proofing/dashboards/widget-types/file)
     2. [Dashboard Widget Type - HTML](building-sites/client-proofing/dashboards/widget-types/html)
     3. [Dashboard Widget Type - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)

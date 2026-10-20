@@ -1,5 +1,6 @@
 ---
 title: "Resource Groups"
+description: "The resource groups of MODX: how they collect the resources and how a group gets access to them."
 _old_id: "261"
 _old_uri: "2.x/administering-your-site/security/resource-groups"
 ---
@@ -14,7 +15,7 @@ You can manage the pages in a Resource Group in two different ways:
 
 ### Option 1
 
-Go to Security -> Resource Groups. From there you will see a list of all defined Resource Groups and a tree of Resources.
+Go to the lock icon in the user menu → **Resource Groups**. From there you will see a list of all defined Resource Groups and a tree of Resources.
 
 Drag the Resources from the right tree directly into Resource Groups in the left tree:
 

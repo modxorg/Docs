@@ -1,6 +1,7 @@
 ---
 title: "Доступ пользователя к Менеджеру"
 translation: "building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access"
+description: "Дать пользователю MODX права менеджера: группа, роли и политика, которые это делают."
 ---
 
 ## Задача

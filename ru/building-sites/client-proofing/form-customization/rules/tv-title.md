@@ -1,20 +1,19 @@
 ---
-title: "Название ТВ"
+title: "Заголовок TV"
 translation: "building-sites/client-proofing/form-customization/rules/tv-title"
+description: "Правило «Заголовок TV» набора настройки формы в MODX: как оно переименовывает переменную шаблона формы."
 ---
 
-## Заголовок TV правило
+## Что делает правило
 
-Правило заголовка TV изменит название TV.
+Заменяет метку переменной шаблона формы текстом, который задали вы. Переменная сохраняет имя и значение, меняется только текст рядом с ней.
 
-## Примеры
+## Где задаётся
 
-Пример правила установки метки на «Boo!» для TV с идентификатором 1 для всех [пользователи](building-sites/client-proofing/security/users "пользователей") будут выглядеть так:
-
-![](/2.x/en/building-sites/client-proofing/form-customization/rules/rule-tvlabel.png)
+Вкладка **Template Variables** набора, колонка **Label**. Переменная со своей меткой получает правило; пустая ячейка оставляет штатную метку.
 
 ## Смотрите также
 
-```php
-[[getResources@section? &parents=`314` &context=`revolution`]]
-```
+1. [Правила настройки формы](building-sites/client-proofing/form-customization/rules)
+2. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
+3. [Настройка вкладок](building-sites/client-proofing/form-customization/tabs)

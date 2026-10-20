@@ -1,29 +1,17 @@
 ---
 title: "Ручной сброс пароля пользователя"
 translation: "building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually"
+description: "Сбросить пароль пользователя MODX, когда ссылка для восстановления не доходит: через API."
 ---
 
 ## Сброс пароля через правку базы данных
 
 Бывает, что учётная запись недоступна из-за утерянного или забытого пароля. Часто помогает ссылка Forgot Password на форме входа. Иногда пароль нужно сбросить вручную прямо в базе. Нужен доступ к базе с таблицами MODX через PHPMyAdmin или другой клиент, где можно править или UPDATE записи.
 
-### Сброс пароля в MODX 2.1+
+**Пароль нельзя записать в базу вручную**
+В MODX 3 пароли хешируются классом `MODX\Revolution\Hashing\modNative` — это функция `password_hash()` из PHP. В базе такой функции нет, поэтому значение поля `password` нельзя посчитать вне PHP.
 
-В MODX 2.1+ пользователи по умолчанию создаются с алгоритмом хеширования PBKDF2. В MySQL или SQL Server обычно нет функций для таких хешей. Поэтому при ручном сбросе в базе также смените hash\_class пользователя с hashing.modPBKDF2 на hashing.modMD5. Затем через родную функцию MD5() задайте значение поля password. Пример MySQL UPDATE:
-
-``` php
-UPDATE modx_users SET hash_class = 'hashing.modMD5', password = MD5('the-new-password') WHERE username = 'theusername';
-```
-
-Чтобы пароль потом снова автоматически перешёл на PBKDF2, установите [pbkdf2Convert Plugin](https://modx.com/extras/package/pbkdf2convert) из Package Management.
-
-### Сброс пароля в MODX 2.0.x
-
-В MODX 2.0.x достаточно записать в поле password валидный MD5-хеш прямо в таблице. Пример MySQL UPDATE по username:
-
-``` php
-UPDATE modx_users SET password = MD5('the-new-password') WHERE username = 'theusername';
-```
+Есть и второй путь: полю `hash_class` пользователя можно задать класс `MODX\Revolution\Hashing\modMD5`, а пароль записать как MD5-хеш. Пользователь сможет войти, и при следующей смене пароля хеш будет пересчитан через `modNative`. Имя класса задаётся вместе с пространством имён; старое имя без него работает только через устаревший псевдоним, который печатает предупреждение.
 
 ## Сброс пароля через API
 
@@ -49,12 +37,12 @@ if (empty($username) || empty($password) || empty($email)) {
         die('ERROR: Missing criteria.');
 }
 
-$modx= new modX();
+$modx = new \MODX\Revolution\modX();
 $modx->initialize('mgr');
 
-$query = $modx->newQuery('modUser');
+$query = $modx->newQuery(\MODX\Revolution\modUser::class);
 $query->where( array('username'=>$username) );
-$user = $modx->getObjectGraph('modUser', '{ "Profile":{}, "UserGroupMembers":{} }', $query);
+$user = $modx->getObjectGraph(\MODX\Revolution\modUser::class, '{ "Profile":{}, "UserGroupMembers":{} }', $query);
 // print_r($user); exit;
 if (!$user) {
         die("ERROR: No user with username $username");
@@ -81,12 +69,12 @@ if (!empty($user->UserGroupMembers)) {
 // Add the User to the User Group if he is not a member
 if (!$is_member) {
         // Verify the user group exists
-        $UserGroup = $modx->getObject('modUserGroup', $user_group);
+        $UserGroup = $modx->getObject(\MODX\Revolution\modUserGroup::class, $user_group);
         if (!$UserGroup) {
                 die ("ERROR: User Group $user_group does not exist.");
         }
 
-        $Member = $modx->newObject('modUserGroupMember');
+        $Member = $modx->newObject(\MODX\Revolution\modUserGroupMember::class);
         $Member->set('user_group', $user_group);
         $Member->set('member', $user->get('id'));
         // Super User = role 2
@@ -109,3 +97,24 @@ print "SUCCESS: User $username updated.";
 
 **Warning**
 С таким скриптом будьте крайне осторожны. По возможности не кладите его внутрь document root. Держите его вне document root и запускайте из командной строки.
+
+## Смотрите также
+
+1. [Пользователи](building-sites/client-proofing/security/users)
+2. [Группы пользователей](building-sites/client-proofing/security/user-groups)
+3. [Группы ресурсов](building-sites/client-proofing/security/resource-groups)
+4. [Роли](building-sites/client-proofing/security/roles)
+5. [Политики](building-sites/client-proofing/security/policies)
+    1. [Разрешения](building-sites/client-proofing/security/policies/permissions)
+        1. [Разрешения - Политика администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+        2. [Разрешения - Ресурсная политика](building-sites/client-proofing/security/policies/permissions/resource-policy)
+    2. [ACL](building-sites/client-proofing/security/policies/acls)
+    3. [Шаблоны политик](building-sites/client-proofing/security/policies/policytemplates)
+6. [Учебники по безопасности](building-sites/client-proofing/security/security-tutorials)
+    1. [Доступ менеджера](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+    2. [Страницы только для участников](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+    3. [Второй суперпользователь](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+    4. [Ограничение элемента](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+    5. [Об анонимном пользователе](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
+7. [Диагностика безопасности](building-sites/client-proofing/security/troubleshooting-security)
+    1. [Ручной сброс пароля пользователя](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)
