@@ -69,11 +69,12 @@ description: "Создание виджета панели управления 
 
 ## Смотрите также
 
-1. [Управление панелью](building-sites/client-proofing/dashboards/managing)
-2. [Назначение панели группе пользователей](building-sites/client-proofing/dashboards/usergroups)
-3. [Создание виджета панели управления](building-sites/client-proofing/dashboards/creating-a-widget)
-4. [Типы виджетов панели управления](building-sites/client-proofing/dashboards/widget-types)
-    1. [Тип виджета - файл](building-sites/client-proofing/dashboards/widget-types/file)
-    2. [Тип виджета - HTML](building-sites/client-proofing/dashboards/widget-types/html)
-    3. [Тип виджета - inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
-    4. [Тип виджета - сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)
+1. [Панели управления](building-sites/client-proofing/dashboards)
+2. [Редактирование панели управления](building-sites/client-proofing/dashboards/managing)
+3. [Назначение панели управления группе пользователей](building-sites/client-proofing/dashboards/usergroups)
+4. [Создание виджета панели управления](building-sites/client-proofing/dashboards/creating-a-widget)
+5. [Типы виджетов панели управления](building-sites/client-proofing/dashboards/widget-types)
+    1. [Тип виджета панели управления - Файл](building-sites/client-proofing/dashboards/widget-types/file)
+    2. [Тип виджета панели управления - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+    3. [Тип виджета панели управления - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+    4. [Тип виджета панели управления - Сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)

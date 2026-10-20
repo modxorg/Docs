@@ -76,12 +76,26 @@ description: "Защитить страницы сайта на MODX так, ч�
 
 Пройдите шаги по порядку и убедитесь, что flush permissions выполнен. Если всё кажется верным, проверьте ещё раз и спросите на Forums. Если урок кажется неточным или вводящим в заблуждение, напишите в теме форума (ссылка ниже), что исправить.
 
+Два источника помогут разобраться в самих правах: [руководство Bob по правам](http://bobsguides.com/revolution-permissions.html) подробно раскрывает модель, а урок [Login.Basic Setup](/extras/login/login.tutorials/basic-setup "Login.Basic Setup") показывает базовую зону "Members Only", построенную на Login Snippet.
+
 ## Смотрите также
 
-Руководство Bob по правам: <http://bobsguides.com/revolution-permissions.html>
-
-Тема форума по этому уроку: <https://forums.modx.com/index.php/topic,51259.0.html>
-
-Базовая зона "Members Only" через Login Snippet: [Login.Basic Setup](/extras/login/login.tutorials/basic-setup "Login.Basic Setup")
-
-Безопасность: [Security](building-sites/client-proofing/security "Security")
+1. [Безопасность (ACLs)](building-sites/client-proofing/security)
+2. [Пользователи](building-sites/client-proofing/security/users)
+3. [Группы пользователей](building-sites/client-proofing/security/user-groups)
+4. [Группы ресурсов](building-sites/client-proofing/security/resource-groups)
+5. [Роли](building-sites/client-proofing/security/roles)
+6. [Политики](building-sites/client-proofing/security/policies)
+    1. [Разрешения](building-sites/client-proofing/security/policies/permissions)
+        1. [Политика администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+        2. [Ресурсная политика](building-sites/client-proofing/security/policies/permissions/resource-policy)
+    2. [ACL](building-sites/client-proofing/security/policies/acls)
+    3. [Шаблоны политик](building-sites/client-proofing/security/policies/policytemplates)
+7. [Учебники по безопасности](building-sites/client-proofing/security/security-tutorials)
+    1. [Доступ менеджера](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+    2. [Страницы только для участников](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+    3. [Второй суперпользователь](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+    4. [Ограничение элемента](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+    5. [Об анонимном пользователе](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
+8. [Диагностика безопасности](building-sites/client-proofing/security/troubleshooting-security)
+    1. [Ручной сброс пароля пользователя](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)

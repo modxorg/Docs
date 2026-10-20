@@ -4,7 +4,7 @@ translation: "building-sites/client-proofing/security"
 description: "Модель безопасности MODX: группы, политики и разрешения, и как список контроля доступа их связывает."
 ---
 
-## Безопасность в MODX Revolution
+## Модель безопасности
 
 Безопасность в MODX Revolution построена на списках. Права выдаются группам пользователей и привязываются к объекту с указанием минимальной роли.
 
@@ -91,8 +91,8 @@ MODX 3 создаёт при установке:
 5. [Роли](building-sites/client-proofing/security/roles)
 6. [Политики](building-sites/client-proofing/security/policies)
     1. [Разрешения](building-sites/client-proofing/security/policies/permissions)
-        1. [Разрешения - Политика администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
-        2. [Разрешения - Ресурсная политика](building-sites/client-proofing/security/policies/permissions/resource-policy)
+        1. [Политика администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+        2. [Ресурсная политика](building-sites/client-proofing/security/policies/permissions/resource-policy)
     2. [ACL](building-sites/client-proofing/security/policies/acls)
     3. [Шаблоны политик](building-sites/client-proofing/security/policies/policytemplates)
 7. [Учебники по безопасности](building-sites/client-proofing/security/security-tutorials)

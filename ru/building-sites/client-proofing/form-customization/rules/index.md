@@ -16,10 +16,10 @@ description: "Десять правил набора настройки форм
 | [Видимость области](building-sites/client-proofing/form-customization/rules/tab-visible "Видимость области") | Прячет область формы. | Области, **Visible** |
 | [Заголовок области](building-sites/client-proofing/form-customization/rules/tab-title "Заголовок области") | Переименовывает область формы. | Области, **Title** |
 | [Новая область](building-sites/client-proofing/form-customization/rules/new-tab "Новая область") | Добавляет свою область в форму. | Области, **Create** |
-| [Видимость TV](building-sites/client-proofing/form-customization/rules/tv-visible "Видимость TV") | Прячет переменную шаблона формы. | Переменные шаблона, **Visible** |
-| [Заголовок TV](building-sites/client-proofing/form-customization/rules/tv-title "Заголовок TV") | Переименовывает переменную шаблона формы. | Переменные шаблона, **Label** |
-| [Значение TV по умолчанию](building-sites/client-proofing/form-customization/rules/tv-default "Значение TV по умолчанию") | Задаёт значение по умолчанию для переменной шаблона. | Переменные шаблона, **Default Value** |
-| [Перенос TV в другую область](building-sites/client-proofing/form-customization/rules/move-tv-to-tab "Перенос TV в другую область") | Переносит переменную шаблона в другую область. | Переменные шаблона, **Region** |
+| [Видимость TV](building-sites/client-proofing/form-customization/rules/tv-visible "Видимость TV") | Прячет TV формы. | Template Variables, **Visible** |
+| [Заголовок TV](building-sites/client-proofing/form-customization/rules/tv-title "Заголовок TV") | Переименовывает TV формы. | Template Variables, **Label** |
+| [Значение TV по умолчанию](building-sites/client-proofing/form-customization/rules/tv-default "Значение TV по умолчанию") | Задаёт значение по умолчанию для TV. | Template Variables, **Default Value** |
+| [Перенос TV в другую область](building-sites/client-proofing/form-customization/rules/move-tv-to-tab "Перенос TV в другую область") | Переносит TV в другую область. | Template Variables, **Region** |
 
 ## Правила не правятся напрямую
 
@@ -29,7 +29,7 @@ description: "Десять правил набора настройки форм
 
 - **Set Information and Fields** — сам набор и поля формы;
 - **Regions** — области формы;
-- **Template Variables** — переменные шаблона, назначенные шаблону набора.
+- **Template Variables** — TV, назначенные шаблону набора.
 
 ## Порядок применения правил
 
@@ -38,10 +38,10 @@ description: "Десять правил набора настройки форм
 1. значение поля по умолчанию;
 2. новая область, затем видимость и заголовок областей;
 3. метка и видимость полей;
-4. значение по умолчанию, метка и видимость переменных шаблона;
-5. перенос переменной шаблона в другую область.
+4. значение по умолчанию, метка и видимость TV;
+5. перенос TV в другую область.
 
-Перенос идёт последним намеренно: переменную шаблона можно перенести в область, которую тот же набор только что создал.
+Перенос идёт последним намеренно: TV можно перенести в область, которую тот же набор только что создал.
 
 ## Смотрите также
 
