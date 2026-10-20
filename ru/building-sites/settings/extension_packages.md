@@ -5,56 +5,37 @@ translation: "building-sites/settings/extension_packages"
 
 ## extension_packages
 
--   **Имя**: Пакеты расширений
--   **Тип**: String (JSON-кодированный массив пар ключ-значение)
--   **По умолчанию**: Да
+-   **Имя**: Расширяющие пакеты
+-   **Тип**: String (JSON-массив пар «ключ — значение»)
+-   **По умолчанию**: (пусто)
 
-Используйте этот параметр для автозагрузки пакетов, расширяющих базовые классы, например, если вы расширяете modUser. Формат должен быть массивом JSON пар «key/value», где ключ - это пространство имен (то есть имя пакета), а значение - путь к его модели.
+Настройка autoload-пакетов, которые расширяют базовые классы, например `modUser`. Формат — JSON-массив пар, где ключ — пространство имён (имя пакета), а значение — путь к его модели.
 
-Этот эффект здесь аналогичен другим структурам, например, CodeIgniter, который позволяет переопределять базовые классы с помощью специального префикса имени класса "MY\_".
+Настройка не входит в установочный транспорт. Она создаётся автоматически при первом вызове `addExtensionPackage()`, поэтому на новой установке строки `extension_packages` нет, пока какой-либо пакет не зарегистрируется.
 
-Используйте это только тогда, когда вы расширяете основные классы, которые используются во время `initialize()`
+Эффект похож на другие фреймворки (например, CodeIgniter), где базовые классы переопределяются через префикс `MY_`.
 
-### Sample value
+Используйте это только для классов, которые задействованы во время **initialize()**.
+
+### Пример значения
 
 ```json
-[
-    {
-        "extendeduser": {
-            "path": "[[++core_path]]components/extendeduser/model/"
-        }
-    },
-    { "articles": { "path": "[[++core_path]]components/articles/model/" } }
-]
+[{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 ```
 
-Вы можете использовать
-
-```php
-[[++core_path]]
-```
-
-плейсхолдеры.
+Можно использовать плейсхолдер `[[++core_path]]`.
 
 ### Другой пример
 
-Если ваше расширение использует другой префикс таблицы, вы должны указать это в своем JSON, используя **tablePrefix** ключ, например:
+Если расширение использует другой префикс таблиц, укажите его ключом **tablePrefix**:
 
 ```json
-[
-    {
-        "extendeduser": {
-            "path": "[[++core_path]]components/extendeduser/model/",
-            "tablePrefix": "ext_"
-        }
-    },
-    { "articles": { "path": "[[++core_path]]components/articles/model/" } }
-]
+[{"extendeduser":{"path":"[[++core_path]]components/extendeduser/model/","tablePrefix":"ext_"}},{"articles":{"path":"[[++core_path]]components/articles/model/"}}]
 ```
 
 ## Связанные функции
 
-В какой-то момент в истории последних версий `addExtensionPackage` и `removeExtensionPackage` удобные функции были добавлены для облегчения добавления и удаления данных в настройках **extension_packages**.
+Функции `addExtensionPackage` и `removeExtensionPackage` добавляют и удаляют записи в настройке **extension_packages**.
 
 ### addExtensionPackage
 
@@ -62,7 +43,7 @@ translation: "building-sites/settings/extension_packages"
 boolean addExtensionPackage ([string $pkg = ''], [string $modelpath = ''], [array $options = array()])
 ```
 
-Аргумент `$pkg` действительно указывает подпапку в названной директории модели. В большинстве пакетов это имя совпадает с пространством имен пакета, но другие пакеты могут указывать несколько подпапок в своей модели. Обратите внимание, что массив `$options` может указывать ключ "tablePrefix", например:
+Аргумент `$pkg` задаёт подкаталог в каталоге модели. Обычно он совпадает с пространством имён пакета, но у пакета может быть несколько подкаталогов. В массиве `$options` можно указать `tablePrefix`:
 
 ```php
 $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', array('tablePrefix'=>'mypre_'));
@@ -70,7 +51,7 @@ $modx->addExtensionPackage('mypkg', '/path/to/core/components/mypkg/model/', arr
 
 ### removeExtensionPackage
 
-Когда пришло время для очистки, удалите ваш узел из **extension_packages** массива, используя эту вспомогательную функцию:
+Удаляет запись из массива **extension_packages**:
 
 ```php
 boolean removeExtensionPackage (string $pkg = '')

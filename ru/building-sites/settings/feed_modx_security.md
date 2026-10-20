@@ -6,6 +6,6 @@ description: "Установите URL для RSS-канала для панел
 
 -   **Имя**: URL канала «Уведомления безопасности MODX»
 -   **Тип**: String
--   **По умолчанию**: <http://feeds.feedburner.com/modxsecurity>
+-   **По умолчанию**: <https://forums.modx.com/board.xml?board=294>
 
 Установите URL для RSS-канала для панели безопасности MODX в Менеджере.

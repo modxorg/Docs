@@ -1,13 +1,16 @@
 ---
 title: "filemanager_url_relative"
 translation: "building-sites/settings/filemanager_url_relative"
+description: "Удалено в MODX 3.0. Используйте источники медиа."
 ---
 
-## filemanager_url_relative
+**Удалено в MODX 3.0.** Файловый менеджер настраивается через [источники медиа](building-sites/media-sources).
 
--   **Имя**: URL диспетчера файлов относительный? (Устарело)
+---
+
+-   **Имя**: URL файлового менеджера относительный?
 -   **Тип**: Да/Нет
 -   **По умолчанию**: Да
--   **Доступно в**: Revolution 2.0.0+
+-   **Доступен в**: только Revolution 2.0.0–2.x
 
-Для использования в сочетании с [filemanager_url](building-sites/settings/filemanager_url "filemanager_url"). Если установлено значение Нет, примет значение в [filemanager_url](building-sites/settings/filemanager_url "filemanager_url") является абсолютным URL Если да, будет построен путь из базового URL MODX.
+В 2.x работала вместе с [filemanager_url](building-sites/settings/filemanager_url). При значении «Нет» значение `filemanager_url` считалось абсолютным URL; при «Да» путь строился от базового URL MODX.

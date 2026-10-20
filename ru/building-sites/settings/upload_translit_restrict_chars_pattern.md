@@ -7,7 +7,7 @@ description: 'RegEx для очистки имён файлов при upload_tr
 ## upload\_translit\_restrict\_chars\_pattern
 
 **Name**: Шаблон ограничения символов в имени файла
-**Type**: Textfield
+**Type**: String
 **Default**: (см. ниже)
 **Available In**: MODX 3.1.0+
 

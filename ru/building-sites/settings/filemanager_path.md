@@ -5,7 +5,7 @@ translation: "building-sites/settings/filemanager_path"
 
 ## filemanager_path
 
-Этот параметр устарел в MODX Revolution 2.2. Он был заменен на [Media Sources](building-sites/media-sources).
+Этот параметр устарел в MODX Revolution 2.2 и **удалён в MODX 3.0**. Он был заменён на [источники медиа](building-sites/media-sources).
 
 -   **Имя**: Путь для диспетчера файлов (Устарело)
 -   **Тип**: string

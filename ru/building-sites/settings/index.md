@@ -1,189 +1,150 @@
 ---
 title: "Системные настройки"
-translation: "building-sites/settings/"
-description: "MODX поставляется с гибким набором системных настроек, все они перечислены на этой странице."
+translation: "building-sites/settings/index"
+description: "Настройки сайта: наследование, чтение, сохранение и создание."
 ---
 
-MODX поставляется с гибким набором системных настроек. Они находятся в Система -> Системные настройки и могут быть легко отредактированы и изменены. Все системные настройки доступны в ваших шаблонах с помощью обозначения `[[++placeholder]]`. Посмотрите [Теги шаблона](building-sites/tag-syntax/common) для дополнительной информации.
+Системные настройки действуют на весь сайт. Редактируйте их в разделе «Система» → «Системные настройки». В шаблонах значение доступно как `[[++key]]`, в PHP — через `$modx->getOption('key')`.
 
-## Переопределение настроек (Наследование)
+## Переопределение настроек (наследование)
 
-В то время как в этом документе в основном говорится о _Системных_ настройках, MODX поставляется с очень мощной системой наследования, которая позволяет переопределять настройки в контексте, пользовательской группе или пользовательской настройке.
-
-По сути, когда параметр запрашивается в сеансе определенного пользователя, параметры проверяются в следующем порядке:
+Настройку можно переопределить на четырёх уровнях. Для вошедшего пользователя MODX проверяет их в таком порядке:
 
 1. Настройка пользователя
 2. Настройка группы пользователей
-3. Настройка контекста (обратите внимание, что в менеджере контекст обычно называется mgr)
-4. Настройка системы
+3. Настройка контекста (в менеджере обычно `mgr`)
+4. Системная настройка
 
-## Создание новых системных настроек (через графический интерфейс)
+## Создание системной настройки в менеджере
 
-Чтобы создать новый параметр системы, нажмите ссылку «Создать новые параметры» в разделе «Система» -> «Параметры системы».
+Откройте «Система» → «Системные настройки» и нажмите «Создать».
 
 ![](system_settings_annotated.png)
 
 ### Параметры
 
--   Ключ: в конечном итоге это уникальное имя вашего `[[++placeholder]]`
--   Имя: эта метка отображается в столбце «Имя» при просмотре всех настроек системы. Это значение может быть локализовано (см. Ниже).
--   Тип поля: в настоящее время поддерживаются 3 типа ввода: TextField, TextArea, Yes/No
--   Пространство имен: как с [Пользовательские страницы менеджера](extending-modx/custom-manager-pages "Пользовательские страницы менеджера"), пространство имен определяет папку внутри core/components/.
--   Area Lexicon Entry: это значение влияет на группировку системных настроек; создайте несколько системных настроек, которые совместно используют «Область ввода лексики», и они будут сгруппированы вместе.
--   Значение: значение по умолчанию.
--   Описание: это значение может быть локализовано (см. Ниже).
+| Поле | Назначение |
+|---|---|
+| Ключ | Уникальное имя для `[[++key]]` и `getOption()`. |
+| Имя | Подпись в списке настроек; может быть локализована. |
+| Тип поля | xtype поля; см. [Типы системных настроек](#типы-системных-настроек). |
+| Пространство имён | Папка внутри `core/components/`, как у [пользовательских страниц менеджера](extending-modx/custom-manager-pages). |
+| Area Lexicon Entry | Группирует настройки с одинаковым значением. |
+| Значение | Значение по умолчанию. |
+| Описание | Подсказка; может быть локализована. |
 
 ### Локализация
 
-Значения, используемые для описания настроек системы, могут быть необязательно локализованы (т.е. переведены) путем ссылки на конкретный файл локализации. Ключи лексики следуют определенному формату:
+Имя и описание берутся из записей лексикона:
 
--   Имя: `setting_` + _Key_
--   Описание: `setting_` + _Key_ + `_desc`
+- Имя: `setting_` + ключ
+- Описание: `setting_` + ключ + `_desc`
 
-Например, если мы посмотрим на Quip's `[[++quip.emailsFrom]]` настройки, мы видим, что он использует пространство имен **quip**. Ожидаемая структура папок состоит в том, чтобы искать файлы локализации в папке пространства имен, затем в папке «лексикона», затем в папках, разделенных по языковым кодам, и затем в **default.inc.php** файле, для примера **core/components/quip/lexicon/en/default.inc.php**
-
-В нашем примере Quip мы видим имя _setting_quip.emailsFrom_ и описание _setting_quip.emailsFrom_desc_. Эти два значения соответствуют ключам в **\$\_lang** массив внутри **default.inc.php**:
+В пакете эти записи лежат в `core/components/<namespace>/lexicon/<language>/default.inc.php`:
 
 ```php
 $_lang['setting_quip.emailsFrom'] = 'From Email';
 $_lang['setting_quip.emailsFrom_desc'] = 'The email address to send system emails from.';
 ```
 
-Мы рекомендуем вам щелкнуть правой кнопкой мыши существующий системный параметр и выбрать «Обновить системный параметр», чтобы получить представление о том, как это работает.
+## Чтение настройки в коде
 
-### Получение настроек системы (программно)
-
-Чтобы получить значение настройки из сниппета, плагина или другого PHP-кода, вы используете [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") функции и передачи ей уникальный ключ для опции, например:
+Передайте ключ настройки в `getOption()`:
 
 ```php
 $siteStartId = $modx->getOption('site_start');
 ```
 
-В WordPress сопоставимая функция API **get_option()**.
+`getOption()` читает кэш настроек, а не базу данных.
 
-Эта функция извлекает значение из кэша настроек.
+## Сохранение настройки в коде
 
-### Сохранение настроек системы (программно)
+Значение из `getOption()` кэшируется и доступно только для чтения. Чтобы изменить настройку, загрузите объект `modSystemSetting`, обновите его, сохраните и очистите кэш.
 
-Здесь все становится немного сложнее: когда мы получаем значение, используя [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption"), мы получаем объект из кэша настроек. Это имеет явное преимущество в скорости, но это означает, что у нас по существу есть копия значения настройки, доступная только для чтения.
-
-Пока есть метод setOption; это только обновляет кэш настроек в памяти.
-
-Это по архитектурным причинам: системные настройки должны быть определены как _configurations_, **NOT runtime dynamic values**. Они обычно устанавливаются во время установки, а затем не часто обновляются. Однако могут быть законные времена, когда вам нужно обновить системные настройки программно, например, возможно, вы написали [Пользовательская страница менеджера](extending-modx/custom-manager-pages "Пользовательские страницы менеджеры - Руководство") которая предлагает настраиваемую форму для ваших пользователей для своих системных настроек.
-
-Если мы хотим обновить настройки системы, мы используем мощный xPDO [getObject](extending-modx/xpdo/class-reference/xpdo/xpdo.getobject "xPDO.getObject") функция. Итак, давайте вернемся к нашему поиску простой настройки сайта и сравним ее рядом с более подробным (и более гибким) аналогом xPDO:
+### Обновление объекта
 
 ```php
-echo $modx->getOption('site_name');
-// prints the same thing as this:
-$setting = $modx->getObject('modSystemSetting', 'site_name');
+use MODX\Revolution\modSystemSetting;
+
+$setting = $modx->getObject(modSystemSetting::class, 'site_name');
 if ($setting) {
-    echo $setting->get('value');
+    $setting->set('value', 'My New Site Name');
+    $setting->save();
 }
 ```
 
-Разница в том, что использование **getObject** извлекает объект из базы данных без кэширования, и мы можем делать с объектом гораздо больше вещей, включая сохранение этого объекта. Итак, вот как мы должны получить и сохранить настройки системы:
+### Очистка кэша
+
+Сохранение не обновляет кэш настроек. Очистите `system_settings`; добавьте `resource`, если значение используется на сайте:
 
 ```php
-$setting = $modx->getObject('modSystemSetting', 'site_name');
-$setting->set('value', 'My New Site Name');
-$setting->save();
-```
-
-Однако обратите внимание, что это не очищает кэш настроек, поэтому любые последующие вызовы **getOption** по-прежнему будут возвращать более старую кешированную версию настройки.
-
-Чтобы исправить это в MODX, вы должны очистить кеш. По крайней мере, кэш system_settings, но если вы используете значение параметра во сниппете или другой код, влияющий на интерфейс, кеш ресурсов тоже:
-
-```php
-$cacheRefreshOptions =  [
+$modx->cacheManager->refresh([
     'system_settings' => [],
     'resource' => [],
-];
-$modx->cacheManager->refresh($cacheRefreshOptions);
+]);
 ```
 
-В WordPress сопоставимая функция API **update_option()**.
-
-### Получение метаданных настроек
-
-Как только мы начнем извлекать _Objects_, которые представляют системные настройки, а не только их значение, мы можем увидеть все метаданные для любого заданного параметра (то есть все атрибуты). Посмотрите на этот код в качестве примера:
+### Метаданные настройки
 
 ```php
-$Setting = $modx->getObject('modSystemSetting', 'site_name');
-print_r( $Setting->toArray() );
-/*
-prints out something like this:
-Array (
-    [key] => site_name
-    [value] => My Skiphop Site
-    [xtype] => textfield
-    [namespace] => core
-    [area] => site
-    [editedon] => 2010-10-24 21:53:55
-)
-*/
+use MODX\Revolution\modSystemSetting;
+
+$setting = $modx->getObject(modSystemSetting::class, 'site_name');
+print_r($setting->toArray());
 ```
 
-Как только вы поймете, как манипулировать объектами с помощью MODX и xPDO, вы сможете извлекать и изменять практически все внутри MODX, потому что практически все является объектом.
+## Список связанных настроек
 
-## Получение списка связанных настроек
+Группируйте настройки по `area` или по префиксу ключа.
 
-Если вы заметили в графическом интерфейсе выше, MODX позволяет несколько логично сгруппировать настройки системы. Самые полезные группировки - это **area** и префикс **key**. Использование xPDO [getCollection](extending-modx/xpdo/class-reference/xpdo/xpdo.getcollection "xPDO.getCollection") Метод, мы можем легко предоставить некоторые критерии поиска, чтобы получить настройки, которые мы хотим.
-
-Вот как мы можем получить все настройки из области «Почта»:
+### По области
 
 ```php
-$relatedSettings = $modx->getCollection('modSystemSetting', array('area'=>'Mail'));
-foreach ( $relatedSettings as $Setting ) {
-        print $Setting->get('value');
+use MODX\Revolution\modSystemSetting;
+
+$relatedSettings = $modx->getCollection(modSystemSetting::class, ['area' => 'mail']);
+foreach ($relatedSettings as $setting) {
+    print $setting->get('value');
 }
 ```
 
-Это естественным образом приводит нас к одной из других особенностей xPDO: [xPDOQuery](extending-modx/xpdo/class-reference/xpdoquery "xPDOQuery") объект. Мы можем использовать его для передачи более сложных критериев нашему **вызову getCollection**. Вот как мы можем получить все настройки, которые используют префикс «quip»:
+### По префиксу ключа
 
 ```php
-$query = $modx->newQuery('modSystemSetting');
-$query->where(array('key:LIKE' => 'quip.%') );
-$relatedSettings = $modx->getCollection('modSystemSetting', $query);
-foreach ( $relatedSettings as $Setting ) {
-    print $Setting->get('value');
+use MODX\Revolution\modSystemSetting;
+
+$query = $modx->newQuery(modSystemSetting::class);
+$query->where(['key:LIKE' => 'quip.%']);
+$relatedSettings = $modx->getCollection(modSystemSetting::class, $query);
+foreach ($relatedSettings as $setting) {
+    print $setting->get('value');
 }
 ```
 
-Возможно, вы не ожидали введения в xPDO, пока вы просто пытались получить и установить системные настройки, но он там.
-
-## Создание системной настройки программно
-
-Возможно, вы захотите создать Системные настройки программно, чтобы предоставить вашим пользователям более чистый UX / UI. В своем коде вы можете поместить что-то вроде следующего:
+## Создание настройки в коде
 
 ```php
-$MySetting = $modx->newObject('modSystemSetting');
-$MySetting->set('key', 'mykey');
-$MySetting->set('value', 'my_value');
-$MySetting->set('xtype', 'textfield');
-$MySetting->set('namespace', 'my_namespace');
-$MySetting->set('area', 'MyArea');
-$MySetting->save();
-// Clear the cache:
-$cacheRefreshOptions =  array( 'system_settings' => array() );
-$modx->cacheManager->refresh($cacheRefreshOptions);
+use MODX\Revolution\modSystemSetting;
+
+$setting = $modx->newObject(modSystemSetting::class);
+$setting->set('key', 'mykey');
+$setting->set('value', 'my_value');
+$setting->set('xtype', 'textfield');
+$setting->set('namespace', 'my_namespace');
+$setting->set('area', 'MyArea');
+$setting->save();
+
+$modx->cacheManager->refresh(['system_settings' => []]);
 ```
 
-Обратите внимание, что вы должны создать записи лексики, которые соответствуют вашему имени ключа (см. Раздел «Локализация» выше):
-
--   Имя: `setting_` + _Key_
--   Описание: `setting_` + _Key_ + `_desc`
-
-Таким образом, в этом примере вам необходимо добавить следующие записи лексикона в загруженный вами лексикон:
+Добавьте записи лексикона, чтобы у настройки появились имя и описание:
 
 ```php
-$_lang['setting_mykey'] = 'Имя моей настройки';
-$_lang['setting_mykey_desc'] = 'Описание моего ключа';
+$_lang['setting_mykey'] = 'Name of My Setting';
+$_lang['setting_mykey_desc'] = 'Description of my key';
 ```
 
-MODX заполняет значения для имени и описания на основе этих записей лексики.
-
-Может оказаться полезным ссылаться на ваши локализованные языковые строки внутри ваших шаблонов или CMP. Это можно сделать с помощью тега лексикона, но вы должны указать тему «setting», например,
+Чтобы вывести подпись настройки в шаблоне или пользовательской странице менеджера, вызовите тег лексикона с темой `setting`:
 
 ```php
 [[!%setting_emailsender? &topic=`setting` &namespace=`core` &language=`en`]]
@@ -191,29 +152,30 @@ MODX заполняет значения для имени и описания �
 
 ## Типы системных настроек
 
-Атрибут **xtype** определяет, какой тип поля GUI будет использовать при рендеринге интерфейса для этого поля:
+Атрибут `xtype` задаёт поле, которое используется в менеджере:
 
--   **combo-boolean** : сохраненные значения 1 и 0. Будет отображать «Да» и «Нет»
--   **textfield** : стандартное текстовое поле
--   **textarea** : стандартная текстовая область
--   **text-password** : стандартное поле пароля (ввод маскируется)
--   **numberfield** : используется для ввода цифр
--   **modx-combo-language** : позволяет пользователю выбрать язык
--   **modx-combo-source** :
--   **modx-combo-template** : позволяет пользователю выбрать шаблон
--   **modx-combo-content-type** : позволяет пользователю выбрать тип контента
--   **modx-combo-charset** : позволяет пользователю выбрать набор символов
--   **modx-combo-rte** : как текстовая область, но с элементами управления форматированием
--   **modx-combo-context** : позволяет пользователю выбрать контекст
--   **modx-combo-manager-theme** : позволяет пользователю выбрать тему оформления интерфейса менеджера MODX
+| xtype | Поле |
+|---|---|
+| `combo-boolean` | Да/Нет; хранит `1` или `0` |
+| `textfield` | Однострочный текст |
+| `textarea` | Многострочный текст |
+| `text-password` | Скрытый текст |
+| `numberfield` | Число |
+| `modx-combo-language` | Выбор языка |
+| `modx-combo-source` | Выбор источника медиа |
+| `modx-combo-template` | Выбор шаблона |
+| `modx-combo-content-type` | Выбор типа содержимого |
+| `modx-combo-charset` | Выбор кодировки |
+| `modx-combo-rte` | Выбор визуального редактора |
+| `modx-combo-context` | Выбор контекста |
+| `modx-combo-namespace` | Выбор пространства имён |
+| `modx-combo-manager-theme` | Выбор темы менеджера |
 
 ## Список настроек
 
-Описание каждого параметра следующее:
-
 1. [access_category_enabled](building-sites/settings/access_category_enabled)
 2. [access_context_enabled](building-sites/settings/access_context_enabled)
-3. [access_resource_group_enabled](building-sites/settings/access_resource_group_enable)
+3. [access_resource_group_enabled](building-sites/settings/access_resource_group_enabled)
 4. [allow_duplicate_alias](building-sites/settings/allow_duplicate_alias)
 5. [allow_forward_across_contexts](building-sites/settings/allow_forward_across_contexts)
 6. [allow_manager_login_forgot_password](building-sites/settings/allow_manager_login_forgot_password)
@@ -261,26 +223,26 @@ MODX заполняет значения для имени и описания �
 48. [container_suffix](building-sites/settings/container_suffix)
 49. [context_tree_sortby](building-sites/settings/context_tree_sortby)
 50. [context_tree_sortdir](building-sites/settings/context_tree_sortdir)
-51. [context_tree_sort](building-sites/settings/context_tree_default_sort)
-52. [context_tree_sort](building-sites/settings/context_tree_sort)
-53. [cultureKey](building-sites/settings/culturekey)
-54. [custom_resource_classes](building-sites/settings/custom_resource_classes)
-55. [date_timezone](building-sites/settings/date_timezone)
-56. [debug](building-sites/settings/debug)
-57. [default_content_type](building-sites/settings/default_content_type)
-58. [default_context](building-sites/settings/default_context)
-59. [default_duplicate_publish_option](building-sites/settings/default_duplicate_publish_option)
-60. [default_media_source](building-sites/settings/default_media_source)
-61. [default_media_source_type](building-sites/settings/default_media_source_type)
-62. [default_per_page](building-sites/settings/default_per_page)
-63. [default_template](building-sites/settings/default_template)
-64. [default_username](building-sites/settings/default_username)
-65. [editor_css_path](building-sites/settings/editor_css_path)
-66. [editor_css_selectors](building-sites/settings/editor_css_selectors)
-67. [emailsender](building-sites/settings/emailsender)
-68. [emailsubject](building-sites/settings/emailsubject)
-69. [enable_dragdrop](building-sites/settings/enable_dragdrop)
-70. [enable_gravatar](building-sites/settings/enable_gravatar)
+51. [context_tree_sort](building-sites/settings/context_tree_sort)
+52. [cultureKey](building-sites/settings/culturekey)
+53. [custom_resource_classes](building-sites/settings/custom_resource_classes)
+54. [date_timezone](building-sites/settings/date_timezone)
+55. [debug](building-sites/settings/debug)
+56. [default_content_type](building-sites/settings/default_content_type)
+57. [default_context](building-sites/settings/default_context)
+58. [default_duplicate_publish_option](building-sites/settings/default_duplicate_publish_option)
+59. [default_media_source](building-sites/settings/default_media_source)
+60. [default_media_source_type](building-sites/settings/default_media_source_type)
+61. [default_per_page](building-sites/settings/default_per_page)
+62. [default_template](building-sites/settings/default_template)
+63. [default_username](building-sites/settings/default_username)
+64. [editor_css_path](building-sites/settings/editor_css_path)
+65. [editor_css_selectors](building-sites/settings/editor_css_selectors)
+66. [emailsender](building-sites/settings/emailsender)
+67. [emailsubject](building-sites/settings/emailsubject)
+68. [enable_dragdrop](building-sites/settings/enable_dragdrop)
+69. [enable_gravatar](building-sites/settings/enable_gravatar)
+70. [enable_template_picker_in_tree](building-sites/settings/enable_template_picker_in_tree)
 71. [error_log_filename](building-sites/settings/error_log_filename)
 72. [error_log_filepath](building-sites/settings/error_log_filepath)
 73. [error_page](building-sites/settings/error_page)
@@ -310,158 +272,185 @@ MODX заполняет значения для имени и описания �
 97. [friendly_alias_trim_chars](building-sites/settings/friendly_alias_trim_chars)
 98. [friendly_alias_word_delimiters](building-sites/settings/friendly_alias_word_delimiters)
 99. [friendly_alias_word_delimiter](building-sites/settings/friendly_alias_word_delimiter)
-100. [friendly_urls](building-sites/settings/friendly_urls)
-101. [friendly_urls_strict](building-sites/settings/friendly_urls_strict)
-102. [global_duplicate_uri_check](building-sites/settings/global_duplicate_uri_check)
-103. [hidemenu_default](building-sites/settings/hidemenu_default)
-104. [inherit_parent_template](building-sites/settings/inherit_parent_template)
-105. [link_tag_scheme](building-sites/settings/link_tag_scheme)
-106. [locale](building-sites/settings/locale)
-107. [lock_ttl](building-sites/settings/lock_ttl)
-108. [log_deprecated](building-sites/settings/log_deprecated)
-109. [log_level](building-sites/settings/log_level)
-110. [log_snippet_not_found](building-sites/settings/log_snippet_not_found)
-111. [log_target](building-sites/settings/log_target)
-112. [mail_charset](building-sites/settings/mail_charset)
-113. [mail_encoding](building-sites/settings/mail_encoding)
-114. [mail_smtp_auth](building-sites/settings/mail_smtp_auth)
-115. [mail_smtp_autotls](building-sites/settings/mail_smtp_autotls)
-116. [mail_smtp_helo](building-sites/settings/mail_smtp_helo)
-117. [mail_smtp_hosts](building-sites/settings/mail_smtp_hosts)
-118. [mail_smtp_keepalive](building-sites/settings/mail_smtp_keepalive)
-119. [mail_smtp_pass](building-sites/settings/mail_smtp_pass)
-120. [mail_smtp_port](building-sites/settings/mail_smtp_port)
-121. [mail_smtp_prefix](building-sites/settings/mail_smtp_prefix)
-122. [mail_smtp_single_to](building-sites/settings/mail_smtp_single_to)
-123. [mail_smtp_timeout](building-sites/settings/mail_smtp_timeout)
-124. [mail_smtp_user](building-sites/settings/mail_smtp_user)
-125. [mail_use_smtp](building-sites/settings/mail_use_smtp)
-126. [main_nav_parent](building-sites/settings/main_nav_parent)
-127. [manager_date_format](building-sites/settings/manager_date_format)
-128. [manager_direction](building-sites/settings/manager_direction)
-129. [manager_favicon_url](building-sites/settings/manager_favicon_url)
-130. [manager_html5_cache](building-sites/settings/manager_html5_cache)
-131. [manager_js_cache_file_locking](building-sites/settings/manager_js_cache_file_locking)
-132. [manager_js_cache_max_age](building-sites/settings/manager_js_cache_max_age)
-133. [manager_js_document_root](building-sites/settings/manager_js_document_root)
-134. [manager_js_zlib_output_compression](building-sites/settings/manager_js_zlib_output_compression)
-135. [manager_language](building-sites/settings/manager_language)
-136. [manager_lang_attribute](building-sites/settings/manager_lang_attribute)
-137. [manager_login_url_alternate](building-sites/settings/manager_login_url_alternate)
-138. [manager_theme](building-sites/settings/manager_theme)
-139. [manager_time_format](building-sites/settings/manager_time_format)
-140. [manager_tooltip_delay](building-sites/settings/manager_tooltip_delay)
-141. [manager_tooltip_enable](building-sites/settings/manager_tooltip_enable)
-142. [manager_use_fullname](building-sites/settings/manager_use_fullname)
-143. [manager_week_start](building-sites/settings/manager_week_start)
-144. [mgr_source_icon](building-sites/settings/mgr_source_icon)
-145. [mgr_tree_icon_context](building-sites/settings/mgr_tree_icon_context)
-146. [modx_browser_default_sort](building-sites/settings/modx_browser_default_sort)
-147. [modx_browser_default_viewmode](building-sites/settings/modx_browser_default_viewmode)
-148. [modx_browser_tree_hide_files](building-sites/settings/modx_browser_tree_hide_files)
-149. [modx_browser_tree_hide_tooltips](building-sites/settings/modx_browser_tree_hide_tooltips)
-150. [modx_charset](building-sites/settings/modx_charset)
-151. [new_file_permissions](building-sites/settings/new_file_permissions)
-152. [new_folder_permissions](building-sites/settings/new_folder_permissions)
-153. [parser_recurse_uncacheable](building-sites/settings/parser_recurse_uncacheable)
-154. [password_generated_length](building-sites/settings/password_generated_length)
-155. [password_min_length](building-sites/settings/password_min_length)
-156. [phpthumb_allow_src_above_docroot](building-sites/settings/phpthumb_allow_src_above_docroot)
-157. [phpthumb_cache_maxage](building-sites/settings/phpthumb_cache_maxage)
-158. [phpthumb_cache_maxfiles](building-sites/settings/phpthumb_cache_maxfiles)
-159. [phpthumb_cache_maxsize](building-sites/settings/phpthumb_cache_maxsize)
-160. [phpthumb_cache_source_enabled](building-sites/settings/phpthumb_cache_source_enabled)
-161. [phpthumb_document_root](building-sites/settings/phpthumb_document_root)
-162. [phpthumb_error_bgcolor](building-sites/settings/phpthumb_error_bgcolor)
-163. [phpthumb_error_fontsize](building-sites/settings/phpthumb_error_fontsize)
-164. [phpthumb_error_textcolor](building-sites/settings/phpthumb_error_textcolor)
-165. [phpthumb_far](building-sites/settings/phpthumb_far)
-166. [phpthumb_imagemagick_path](building-sites/settings/phpthumb_imagemagick_path)
-167. [phpthumb_nohotlink_enabled](building-sites/settings/phpthumb_nohotlink_enabled)
-168. [phpthumb_nohotlink_erase_image](building-sites/settings/phpthumb_nohotlink_erase_image)
-169. [phpthumb_nohotlink_text_message](building-sites/settings/phpthumb_nohotlink_text_message)
-170. [phpthumb_nohotlink_valid_domains](building-sites/settings/phpthumb_nohotlink_valid_domains)
-171. [phpthumb_nooffsitelink_enabled](building-sites/settings/phpthumb_nooffsitelink_enabled)
-172. [phpthumb_nooffsitelink_erase_image](building-sites/settings/phpthumb_nooffsitelink_erase_image)
-173. [phpthumb_nooffsitelink_require_refer](building-sites/settings/phpthumb_nooffsitelink_require_refer)
-174. [phpthumb_nooffsitelink_text_message](building-sites/settings/phpthumb_nooffsitelink_text_message)
-175. [phpthumb_nooffsitelink_valid_domains](building-sites/settings/phpthumb_nooffsitelink_valid_domains)
-176. [phpthumb_nooffsitelink_watermark_src](building-sites/settings/phpthumb_nooffsitelink_watermark_src)
-177. [phpthumb_zoomcrop](building-sites/settings/phpthumb_zoomcrop)
-178. [preserve_menuindex](building-sites/settings/preserve_menuindex)
-179. [principal_targets](building-sites/settings/principal_targets)
-180. [proxy_auth_type](building-sites/settings/proxy_auth_type)
-181. [proxy_host](building-sites/settings/proxy_host)
-182. [proxy_password](building-sites/settings/proxy_password)
-183. [proxy_port](building-sites/settings/proxy_port)
-184. [proxy_username](building-sites/settings/proxy_username)
-185. [publish_default](building-sites/settings/publish_default)
-186. [rb_base_dir](building-sites/settings/rb_base_dir)
-187. [rb_base_url](building-sites/settings/rb_base_url)
-188. [request_controller](building-sites/settings/request_controller)
-189. [request_method_strict](building-sites/settings/request_method_strict)
-190. [request_param_alias](building-sites/settings/request_param_alias)
-191. [request_param_id](building-sites/settings/request_param_id)
-192. [resource_tree_node_name](building-sites/settings/resource_tree_node_name)
-193. [resource_tree_node_name_fallback](building-sites/settings/resource_tree_node_name_fallback)
-194. [resource_tree_node_tooltip](building-sites/settings/resource_tree_node_tooltip)
-195. [richtext_default](building-sites/settings/richtext_default)
-196. [search_default](building-sites/settings/search_default)
-197. [send_poweredby_header](building-sites/settings/send_poweredby_header)
-198. [server_offset_time](building-sites/settings/server_offset_time)
-199. [server_protocol](building-sites/settings/server_protocol)
-200. [session_cookie_domain](building-sites/settings/session_cookie_domain)
-201. [session_cookie_httponly](building-sites/settings/session_cookie_httponly)
-202. [session_cookie_lifetime](building-sites/settings/session_cookie_lifetime)
-203. [session_cookie_path](building-sites/settings/session_cookie_path)
-204. [session_cookie_secure](building-sites/settings/session_cookie_secure)
-205. [session_enabled](building-sites/settings/session_enabled)
-206. [session_gc_maxlifetime](building-sites/settings/session_gc_maxlifetime)
-207. [session_handler_class](building-sites/settings/session_handler_class)
-208. [session_name](building-sites/settings/session_name)
-209. [settings_version](building-sites/settings/settings_version)
-210. [setting_static_elements_basepath](building-sites/settings/setting_static_elements_basepath)
-211. [show_tv_categories_header](building-sites/settings/show_tv_categories_header)
-212. [signupemail_message](building-sites/settings/signupemail_message)
-213. [site_name](building-sites/settings/site_name)
-214. [site_start](building-sites/settings/site_start)
-215. [site_status](building-sites/settings/site_status)
-216. [site_unavailable_message](building-sites/settings/site_unavailable_message)
-217. [site_unavailable_page](building-sites/settings/site_unavailable_page)
-218. [static_elements_automate_chunks](building-sites/settings/static_elements_automate_chunks)
-219. [static_elements_automate_plugins](building-sites/settings/static_elements_automate_plugins)
-220. [static_elements_automate_snippets](building-sites/settings/static_elements_automate_snippets)
-221. [static_elements_automate_templates](building-sites/settings/static_elements_automate_templates)
-222. [static_elements_automate_tvs](building-sites/settings/static_elements_automate_tvs)
-223. [static_elements_basepath](building-sites/settings/static_elements_basepath)
-224. [static_elements_default_category](building-sites/settings/static_elements_default_category)
-225. [static_elements_default_mediasource](building-sites/settings/static_elements_default_mediasource)
-226. [strip_image_paths](building-sites/settings/strip_image_paths)
-227. [symlink_merge_fields](building-sites/settings/symlink_merge_fields)
-228. [syncsite_default](building-sites/settings/syncsite_default)
-229. [tree_default_sort](building-sites/settings/tree_default_sort)
-230. [tree_root_id](building-sites/settings/tree_root_id)
-231. [tvs_below_content](building-sites/settings/tvs_below_content)
-232. [udperms_allowroot](building-sites/settings/udperms_allowroot)
-233. [ui_debug_mode](building-sites/settings/ui_debug_mode)
-234. [unauthorized_page](building-sites/settings/unauthorized_page)
-235. [upload_files](building-sites/settings/upload_files)
-236. [upload_maxsize](building-sites/settings/upload_maxsize)
-237. [upload_translit](building-sites/settings/upload_translit)
-238. [upload_translit_restrict_chars_pattern](building-sites/settings/upload_translit_restrict_chars_pattern)
-239. [user_nav_parent](building-sites/settings/user_nav_parent)
-240. [use_alias_path](building-sites/settings/use_alias_path)
-241. [use_browser](building-sites/settings/use_browser)
-242. [use_context_resource_table](building-sites/settings/use_context_resource_table)
-243. [use_editor](building-sites/settings/use_editor)
-244. [use_frozen_parent_uris](building-sites/settings/use_frozen_parent_uris)
-245. [use_multibyte](building-sites/settings/use_multibyte)
-246. [use_weblink_target](building-sites/settings/use_weblink_target)
-247. [webpwdreminder_message](building-sites/settings/webpwdreminder_message)
-248. [welcome_action](building-sites/settings/welcome_action)
-249. [welcome_namespace](building-sites/settings/welcome_namespace)
-250. [welcome_screen](building-sites/settings/welcome_screen)
-251. [welcome_screen_url](building-sites/settings/welcome_screen_url)
-252. [which_editor](building-sites/settings/which_editor)
-253. [which_element_editor](building-sites/settings/which_element_editor)
-254. [xhtml_urls](building-sites/settings/xhtml_urls)
+100. [friendly_url_prefix](building-sites/settings/friendly_url_prefix)
+101. [friendly_url_suffix](building-sites/settings/friendly_url_suffix)
+102. [friendly_urls](building-sites/settings/friendly_urls)
+103. [friendly_urls_strict](building-sites/settings/friendly_urls_strict)
+104. [global_duplicate_uri_check](building-sites/settings/global_duplicate_uri_check)
+105. [hidemenu_default](building-sites/settings/hidemenu_default)
+106. [inherit_parent_template](building-sites/settings/inherit_parent_template)
+107. [inline_help](building-sites/settings/inline_help)
+108. [link_tag_scheme](building-sites/settings/link_tag_scheme)
+109. [locale](building-sites/settings/locale)
+110. [lock_ttl](building-sites/settings/lock_ttl)
+111. [log_deprecated](building-sites/settings/log_deprecated)
+112. [log_level](building-sites/settings/log_level)
+113. [log_snippet_not_found](building-sites/settings/log_snippet_not_found)
+114. [log_target](building-sites/settings/log_target)
+115. [login_background_image](building-sites/settings/login_background_image)
+116. [login_help_button](building-sites/settings/login_help_button)
+117. [login_logo](building-sites/settings/login_logo)
+118. [mail_charset](building-sites/settings/mail_charset)
+119. [mail_dkim_domain](building-sites/settings/mail_dkim_domain)
+120. [mail_dkim_identity](building-sites/settings/mail_dkim_identity)
+121. [mail_dkim_passphrase](building-sites/settings/mail_dkim_passphrase)
+122. [mail_dkim_privatekeyfile](building-sites/settings/mail_dkim_privatekeyfile)
+123. [mail_dkim_privatekeystring](building-sites/settings/mail_dkim_privatekeystring)
+124. [mail_dkim_selector](building-sites/settings/mail_dkim_selector)
+125. [mail_encoding](building-sites/settings/mail_encoding)
+126. [mail_smtp_auth](building-sites/settings/mail_smtp_auth)
+127. [mail_smtp_autotls](building-sites/settings/mail_smtp_autotls)
+128. [mail_smtp_helo](building-sites/settings/mail_smtp_helo)
+129. [mail_smtp_hosts](building-sites/settings/mail_smtp_hosts)
+130. [mail_smtp_keepalive](building-sites/settings/mail_smtp_keepalive)
+131. [mail_smtp_pass](building-sites/settings/mail_smtp_pass)
+132. [mail_smtp_port](building-sites/settings/mail_smtp_port)
+133. [mail_smtp_secure](building-sites/settings/mail_smtp_secure)
+134. [mail_smtp_single_to](building-sites/settings/mail_smtp_single_to)
+135. [mail_smtp_timeout](building-sites/settings/mail_smtp_timeout)
+136. [mail_smtp_user](building-sites/settings/mail_smtp_user)
+137. [mail_use_smtp](building-sites/settings/mail_use_smtp)
+138. [main_nav_parent](building-sites/settings/main_nav_parent)
+139. [manager_date_format](building-sites/settings/manager_date_format)
+140. [manager_datetime_empty_value](building-sites/settings/manager_datetime_empty_value)
+141. [manager_datetime_separator](building-sites/settings/manager_datetime_separator)
+142. [manager_direction](building-sites/settings/manager_direction)
+143. [manager_favicon_url](building-sites/settings/manager_favicon_url)
+144. [manager_html5_cache](building-sites/settings/manager_html5_cache)
+145. [manager_js_cache_file_locking](building-sites/settings/manager_js_cache_file_locking)
+146. [manager_js_cache_max_age](building-sites/settings/manager_js_cache_max_age)
+147. [manager_js_document_root](building-sites/settings/manager_js_document_root)
+148. [manager_js_zlib_output_compression](building-sites/settings/manager_js_zlib_output_compression)
+149. [manager_language](building-sites/settings/manager_language)
+150. [manager_lang_attribute](building-sites/settings/manager_lang_attribute)
+151. [manager_login_url_alternate](building-sites/settings/manager_login_url_alternate)
+152. [manager_logo](building-sites/settings/manager_logo)
+153. [manager_theme](building-sites/settings/manager_theme)
+154. [manager_time_format](building-sites/settings/manager_time_format)
+155. [manager_tooltip_delay](building-sites/settings/manager_tooltip_delay)
+156. [manager_tooltip_enable](building-sites/settings/manager_tooltip_enable)
+157. [manager_use_fullname](building-sites/settings/manager_use_fullname)
+158. [manager_week_start](building-sites/settings/manager_week_start)
+159. [mgr_source_icon](building-sites/settings/mgr_source_icon)
+160. [mgr_tree_icon_context](building-sites/settings/mgr_tree_icon_context)
+161. [modx_browser_default_sort](building-sites/settings/modx_browser_default_sort)
+162. [modx_browser_default_viewmode](building-sites/settings/modx_browser_default_viewmode)
+163. [modx_browser_tree_hide_files](building-sites/settings/modx_browser_tree_hide_files)
+164. [modx_browser_tree_hide_tooltips](building-sites/settings/modx_browser_tree_hide_tooltips)
+165. [modx_charset](building-sites/settings/modx_charset)
+166. [new_file_permissions](building-sites/settings/new_file_permissions)
+167. [new_folder_permissions](building-sites/settings/new_folder_permissions)
+168. [package_installer_at_top](building-sites/settings/package_installer_at_top)
+169. [parser_recurse_uncacheable](building-sites/settings/parser_recurse_uncacheable)
+170. [password_generated_length](building-sites/settings/password_generated_length)
+171. [password_min_length](building-sites/settings/password_min_length)
+172. [passwordless_activated](building-sites/settings/passwordless_activated)
+173. [passwordless_expiration](building-sites/settings/passwordless_expiration)
+174. [photo_profile_source](building-sites/settings/photo_profile_source)
+175. [phpthumb_allow_src_above_docroot](building-sites/settings/phpthumb_allow_src_above_docroot)
+176. [phpthumb_cache_maxage](building-sites/settings/phpthumb_cache_maxage)
+177. [phpthumb_cache_maxfiles](building-sites/settings/phpthumb_cache_maxfiles)
+178. [phpthumb_cache_maxsize](building-sites/settings/phpthumb_cache_maxsize)
+179. [phpthumb_cache_source_enabled](building-sites/settings/phpthumb_cache_source_enabled)
+180. [phpthumb_document_root](building-sites/settings/phpthumb_document_root)
+181. [phpthumb_error_bgcolor](building-sites/settings/phpthumb_error_bgcolor)
+182. [phpthumb_error_fontsize](building-sites/settings/phpthumb_error_fontsize)
+183. [phpthumb_error_textcolor](building-sites/settings/phpthumb_error_textcolor)
+184. [phpthumb_far](building-sites/settings/phpthumb_far)
+185. [phpthumb_imagemagick_path](building-sites/settings/phpthumb_imagemagick_path)
+186. [phpthumb_nohotlink_enabled](building-sites/settings/phpthumb_nohotlink_enabled)
+187. [phpthumb_nohotlink_erase_image](building-sites/settings/phpthumb_nohotlink_erase_image)
+188. [phpthumb_nohotlink_text_message](building-sites/settings/phpthumb_nohotlink_text_message)
+189. [phpthumb_nohotlink_valid_domains](building-sites/settings/phpthumb_nohotlink_valid_domains)
+190. [phpthumb_nooffsitelink_enabled](building-sites/settings/phpthumb_nooffsitelink_enabled)
+191. [phpthumb_nooffsitelink_erase_image](building-sites/settings/phpthumb_nooffsitelink_erase_image)
+192. [phpthumb_nooffsitelink_require_refer](building-sites/settings/phpthumb_nooffsitelink_require_refer)
+193. [phpthumb_nooffsitelink_text_message](building-sites/settings/phpthumb_nooffsitelink_text_message)
+194. [phpthumb_nooffsitelink_valid_domains](building-sites/settings/phpthumb_nooffsitelink_valid_domains)
+195. [phpthumb_nooffsitelink_watermark_src](building-sites/settings/phpthumb_nooffsitelink_watermark_src)
+196. [phpthumb_zoomcrop](building-sites/settings/phpthumb_zoomcrop)
+197. [preserve_menuindex](building-sites/settings/preserve_menuindex)
+198. [principal_targets](building-sites/settings/principal_targets)
+199. [proxy_auth_type](building-sites/settings/proxy_auth_type)
+200. [proxy_host](building-sites/settings/proxy_host)
+201. [proxy_password](building-sites/settings/proxy_password)
+202. [proxy_port](building-sites/settings/proxy_port)
+203. [proxy_username](building-sites/settings/proxy_username)
+204. [publish_default](building-sites/settings/publish_default)
+205. [quick_search_in_content](building-sites/settings/quick_search_in_content)
+206. [quick_search_result_max](building-sites/settings/quick_search_result_max)
+207. [rb_base_dir](building-sites/settings/rb_base_dir)
+208. [rb_base_url](building-sites/settings/rb_base_url)
+209. [request_controller](building-sites/settings/request_controller)
+210. [request_method_strict](building-sites/settings/request_method_strict)
+211. [request_param_alias](building-sites/settings/request_param_alias)
+212. [request_param_id](building-sites/settings/request_param_id)
+213. [resource_static_allow_absolute](building-sites/settings/resource_static_allow_absolute)
+214. [resource_static_path](building-sites/settings/resource_static_path)
+215. [resource_tree_node_name](building-sites/settings/resource_tree_node_name)
+216. [resource_tree_node_name_fallback](building-sites/settings/resource_tree_node_name_fallback)
+217. [resource_tree_node_tooltip](building-sites/settings/resource_tree_node_tooltip)
+218. [richtext_default](building-sites/settings/richtext_default)
+219. [search_default](building-sites/settings/search_default)
+220. [send_poweredby_header](building-sites/settings/send_poweredby_header)
+221. [server_offset_time](building-sites/settings/server_offset_time)
+222. [server_protocol](building-sites/settings/server_protocol)
+223. [session_cookie_domain](building-sites/settings/session_cookie_domain)
+224. [session_cookie_httponly](building-sites/settings/session_cookie_httponly)
+225. [session_cookie_lifetime](building-sites/settings/session_cookie_lifetime)
+226. [session_cookie_path](building-sites/settings/session_cookie_path)
+227. [session_cookie_samesite](building-sites/settings/session_cookie_samesite)
+228. [session_cookie_secure](building-sites/settings/session_cookie_secure)
+229. [session_enabled](building-sites/settings/session_enabled)
+230. [session_gc_maxlifetime](building-sites/settings/session_gc_maxlifetime)
+231. [session_handler_class](building-sites/settings/session_handler_class)
+232. [session_name](building-sites/settings/session_name)
+233. [set_header](building-sites/settings/set_header)
+234. [settings_version](building-sites/settings/settings_version)
+235. [show_tv_categories_header](building-sites/settings/show_tv_categories_header)
+236. [signupemail_message](building-sites/settings/signupemail_message)
+237. [site_name](building-sites/settings/site_name)
+238. [site_start](building-sites/settings/site_start)
+239. [site_status](building-sites/settings/site_status)
+240. [site_unavailable_message](building-sites/settings/site_unavailable_message)
+241. [site_unavailable_page](building-sites/settings/site_unavailable_page)
+242. [static_elements_automate_chunks](building-sites/settings/static_elements_automate_chunks)
+243. [static_elements_automate_plugins](building-sites/settings/static_elements_automate_plugins)
+244. [static_elements_automate_snippets](building-sites/settings/static_elements_automate_snippets)
+245. [static_elements_automate_templates](building-sites/settings/static_elements_automate_templates)
+246. [static_elements_automate_tvs](building-sites/settings/static_elements_automate_tvs)
+247. [static_elements_basepath](building-sites/settings/static_elements_basepath)
+248. [static_elements_default_category](building-sites/settings/static_elements_default_category)
+249. [static_elements_default_mediasource](building-sites/settings/static_elements_default_mediasource)
+250. [static_elements_html_extension](building-sites/settings/static_elements_html_extension)
+251. [strip_image_paths](building-sites/settings/strip_image_paths)
+252. [symlink_merge_fields](building-sites/settings/symlink_merge_fields)
+253. [syncsite_default](building-sites/settings/syncsite_default)
+254. [topmenu_show_descriptions](building-sites/settings/topmenu_show_descriptions)
+255. [tree_default_sort](building-sites/settings/tree_default_sort)
+256. [tree_root_id](building-sites/settings/tree_root_id)
+257. [tvs_below_content](building-sites/settings/tvs_below_content)
+258. [udperms_allowroot](building-sites/settings/udperms_allowroot)
+259. [ui_debug_mode](building-sites/settings/ui_debug_mode)
+260. [unauthorized_page](building-sites/settings/unauthorized_page)
+261. [upload_files](building-sites/settings/upload_files)
+262. [upload_file_exists](building-sites/settings/upload_file_exists)
+263. [upload_maxsize](building-sites/settings/upload_maxsize)
+264. [upload_translit](building-sites/settings/upload_translit)
+265. [upload_translit_restrict_chars_pattern](building-sites/settings/upload_translit_restrict_chars_pattern)
+266. [user_nav_parent](building-sites/settings/user_nav_parent)
+267. [use_alias_path](building-sites/settings/use_alias_path)
+268. [use_browser](building-sites/settings/use_browser)
+269. [use_context_resource_table](building-sites/settings/use_context_resource_table)
+270. [use_editor](building-sites/settings/use_editor)
+271. [use_frozen_parent_uris](building-sites/settings/use_frozen_parent_uris)
+272. [use_multibyte](building-sites/settings/use_multibyte)
+273. [use_weblink_target](building-sites/settings/use_weblink_target)
+274. [webpwdreminder_message](building-sites/settings/webpwdreminder_message)
+275. [welcome_action](building-sites/settings/welcome_action)
+276. [welcome_namespace](building-sites/settings/welcome_namespace)
+277. [welcome_screen](building-sites/settings/welcome_screen)
+278. [welcome_screen_url](building-sites/settings/welcome_screen_url)
+279. [which_editor](building-sites/settings/which_editor)
+280. [which_element_editor](building-sites/settings/which_element_editor)
+281. [xhtml_urls](building-sites/settings/xhtml_urls)

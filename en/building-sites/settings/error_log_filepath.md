@@ -1,10 +1,10 @@
 ---
 title: "error_log_filepath"
-description: "Optionally set a absolute path the a custom error log location"
+description: "Optionally set an absolute path to a custom error log location"
 ---
 
 **Name**: Error log path  
 **Type**: String  
 **Default**:
 
-Optionally set a absolute path the a custom error log location. You might use placehodlers like `{cache_path}`.
+Optionally set an absolute path to a custom error log location. You might use placeholders like `{cache_path}`.

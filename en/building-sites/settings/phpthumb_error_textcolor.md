@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_error_t
 
 ## phpthumb\_error\_textcolor
 
-**Name**: phpThumb Error Text Color
+**Name**: phpThumb Error Font Color
 **Type**: textfield
 **Default**: FF0000
 **Available In:** 2.0.8+

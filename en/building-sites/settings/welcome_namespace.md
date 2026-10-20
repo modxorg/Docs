@@ -1,6 +1,6 @@
 ---
 title: "welcome_namespace"
-description: "The URL for the welcome screen that loads on first load of MODX Revolution."
+description: "The namespace the Welcome Action belongs to."
 ---
 
 **Name**: Welcome Namespace   

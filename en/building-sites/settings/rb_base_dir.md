@@ -1,15 +1,17 @@
 ---
 title: "rb_base_dir"
+description: "Removed in MODX 3.0. Use Media Sources instead."
 _old_id: "254"
 _old_uri: "2.x/administering-your-site/settings/system-settings/rb_base_dir"
 ---
 
-## rb\_base\_dir
+**Removed in MODX 3.0.** The resource browser was replaced by Media Sources; use a [Media Source](building-sites/media-sources) to configure the path to your files.
+
+---
 
 **Name**: Resource Path
 **Type**: String
 **Default**:
+**Available In**: Revolution 2.x only
 
-The physical path to the resource directory. This setting is usually automatically generated. If you're using IIS, however, MODX may not be able to work the path out on its own, causing the Resource Browser to show an error. In that case, you can enter the path to the images directory here (the path as you'd see it in Windows Explorer).
-
-This setting is **deprecated** in MODX Revolution. Please use [filemanager\_path](building-sites/settings/filemanager_path "filemanager_path") instead.
+On 2.x this was the physical path to the resource directory used by the resource browser. It was usually generated automatically; on IIS it sometimes had to be entered manually.

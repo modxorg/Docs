@@ -1,37 +1,18 @@
 ---
 title: "signupemail_message"
 translation: "building-sites/settings/signupemail_message"
+description: "Удалено как системная настройка в MODX 3.0. Текст берётся из лексикона login_signup_email."
 ---
 
-## signupemail\_message
+**Удалено как системная настройка в MODX 3.0.** На новой установке текст письма берётся из записи лексикона `login_signup_email` (`core/lexicon/en/login.inc.php`), а тема — из `login_email_subject`. Пароли больше не отправляются по почте: новому пользователю предлагают сбросить пароль или обратиться к администратору.
 
-**Имя**: Письмо регистрации  
-**Тип**: String  
-**По умолчанию**:
+Процессор по-прежнему читает настройку с таким ключом как переопределение, если она существует, — `modx->getOption('signupemail_message', null, $this->modx->lexicon('login_signup_email'), true)` в `Processors/Security/User/Create.php`, — но ключ не устанавливается, поэтому его нужно создать вручную в системных настройках. Предпочтительный способ изменить текст — переопределение лексикона.
 
-``` html
-Hello [[+uid]]
+---
 
-Here are your login details for [[+sname]] Content Manager:
+-   **Имя**: Письмо о регистрации
+-   **Тип**: String
+-   **По умолчанию**: запись лексикона `login_signup_email`
+-   **Доступен в**: Revolution 2.x
 
-Username: [[+uid]]
-Password: [[+pwd]]
-
-Once you log into the Content Manager ([[+surl]]), you can change your password.
-
-Regards,
-Site Administrator
-```
-
-Здесь задаётся текст письма, которое MODX отправляет пользователю, когда вы создаёте для него учётную запись и включаете отправку логина и пароля.
-
-При отправке Content Manager подставляет плейсхолдеры:
-
-- `[[+sname]]`: название сайта
-- `[[+saddr]]`: email сайта
-- `[[+surl]]`: URL сайта
-- `[[+uid]]`: логин или id пользователя
-- `[[+pwd]]`: пароль пользователя
-- `[[+ufn]]`: полное имя пользователя
-
-Оставьте в письме `[[+uid]]` и `[[+pwd]]`. Иначе логин и пароль не уйдут, и пользователь их не узнает.
+В 2.x это было письмо, которое отправлялось при создании учётной записи. В MODX 3 доступны плейсхолдеры `[[+uid]]`, `[[+ufn]]`, `[[+sname]]` и `[[+surl]]`; `[[+pwd]]` и `[[+saddr]]` **не подставляются**.

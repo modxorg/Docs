@@ -7,6 +7,4 @@ description: "When this is enabled, MODX will use a compressed version of its cu
 **Type**: Yes/No  
 **Default**: Yes
 
-When this is enabled, MODX will use a compressed version of its custom JavaScript libraries. This greatly reduces load and execution time. Disable only if you are modifying core elements.
-
-This setting will not work in Git deployments of Revolution. Leave at 'No'.
+When this is enabled, MODX will use a compressed version of its custom JavaScript libraries (`modx.jsgrps-min.js`). This greatly reduces load and execution time. Disable only if you are modifying core elements.

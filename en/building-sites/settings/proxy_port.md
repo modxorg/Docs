@@ -7,7 +7,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/proxy_port"
 ## proxy\_port
 
 **Name**: Proxy Port
-**Type**: String
+**Type**: Number
 **Default**:
 
 The port for your proxy server.

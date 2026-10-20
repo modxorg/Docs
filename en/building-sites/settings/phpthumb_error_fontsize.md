@@ -7,7 +7,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_error_f
 ## phpthumb\_error\_fontsize
 
 **Name**: phpThumb Error Font Size
-**Type**: textfield
+**Type**: Number
 **Default**: 1
 **Available In:** 2.0.8+
 

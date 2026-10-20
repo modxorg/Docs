@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/feed_modx_news_e
 
 ## feed\_modx\_news\_enabled
 
-**Name**: Enable MODX News Feed
+**Name**: MODX News Feed Enabled
 **Type**: Yes/No
 **Default**: Yes
 

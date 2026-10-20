@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/mail_smtp_keepal
 
 ## mail\_smtp\_keepalive
 
-**Name**: SMTP User
+**Name**: SMTP Keep-Alive
 **Type**: Yes/No
 **Default**: No
 

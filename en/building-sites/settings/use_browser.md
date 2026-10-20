@@ -1,16 +1,15 @@
 ---
 title: "use_browser"
-description: "If set to Yes, enables the resource browser."
+description: "Removed in MODX 3.0. Use the file_tree and file_manager permissions instead."
 ---
 
----
-
-**IMPORTANT**: This setting is **deprecated** in MODX Revolution. Use the `file_tree` and `file_manager` permissions instead, see also [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions").
+**Removed in MODX 3.0.** Access to the file browser is controlled by the `file_tree` and `file_manager` permissions. See [Permissions](building-sites/client-proofing/security/policies/permissions).
 
 ---
 
-**Name**: Use File Browser  
-**Type**: Yes/No  
-**Default**: Yes  
+**Name**: Use File Browser
+**Type**: Yes/No
+**Default**: Yes
+**Available In**: Revolution 2.x only
 
-If set to Yes, enables the resource browser. This will allow your users to browse and upload resources such as images, flash and media files on the server.
+On 2.x, setting this to Yes enabled the resource browser for users, allowing them to browse and upload images, Flash, and other media files.

@@ -6,7 +6,7 @@ translation: "building-sites/settings/friendly_alias_max_length"
 ## friendly_alias_max_length
 
 -   **Имя**: Максимальная длина псевдонима
--   **Тип**: Textfield
+-   **Тип**: Number
 -   **По умолчанию**: 0
 -   **Доступно в**: Revolution 2.0.8+
 

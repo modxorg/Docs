@@ -7,7 +7,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/tree_default_sor
 ## tree\_default\_sort
 
 **Name**: Resource Tree Default Sort Field
-**Type**: Textfield
+**Type**: String
 **Default**: menuindex
 **Available In:** 2.0.8+
 

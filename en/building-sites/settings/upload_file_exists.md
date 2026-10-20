@@ -3,7 +3,7 @@ title: 'upload_file_exists'
 description: 'The upload file exists setting allows or prevents users from uploading files with the same filename.'
 ---
 
-**Name**: Check if upload file exists  
+**Name**: Check if uploaded file exists
 **Type**: Yes/No  
 **Default**: Yes  
 **Available In**: Revolution 2.8+

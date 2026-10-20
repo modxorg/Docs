@@ -7,6 +7,6 @@ description: "The URL for the welcome screen that loads on first load of MODX Re
 
 **Name**: Welcome Screen URL  
 **Type**: String  
-**Default**: Release version specific URL, f.e. //misc.modx.com/revolution/welcome.28.html for MODX 2.8
+**Default**: //misc.modx.com/revolution/welcome.32.html
 
 The URL for the welcome screen that loads on first load of MODX Revolution.

@@ -4,7 +4,7 @@ description: "Controls turning debugging on/off in MODX and/or sets the PHP erro
 ---
 
 **Name**: Debug  
-**Type**: String  
+**Type**: Number
 **Default**:   
 **Available In**: Revolution 2.2.0+
 

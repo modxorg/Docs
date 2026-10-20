@@ -7,8 +7,8 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/phpthumb_nohotli
 ## phpthumb\_nohotlink\_enabled
 
 **Name**: phpThumb Hotlinking Disabled
-**Type**: combo-boolean
-**Default**: Yes/No
+**Type**: Yes/No
+**Default**: Yes
 **Available In:** 2.0.8+
 
 Remote servers are allowed in the src parameter unless you disable hotlinking in phpThumb.

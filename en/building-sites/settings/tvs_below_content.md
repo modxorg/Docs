@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/tvs_below_conten
 
 ## tvs_below_content
 
-**Name**: TVs Below Content
+**Name**: Move TVs Below Content
 **Type**: Yes/No
 **Default**: No
 

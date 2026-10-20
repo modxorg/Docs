@@ -8,6 +8,6 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/failed_login_att
 
 **Name**: Failed Login Attempts
 **Type**: Number
-**Default**: 3
+**Default**: 5
 
 The number of times a user can attempt to login before being blocked.

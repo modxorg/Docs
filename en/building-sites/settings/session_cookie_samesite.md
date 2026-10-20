@@ -3,7 +3,7 @@ title: "session_cookie_samesite"
 description: "Session Cookie with SameSite attribute"
 ---
 
--   **Name**: Session Cookie Samesite attribute  
+-   **Name**: Session Cookie Samesite
 -   **Type**: String  
 -   **Default**: ''  
 -   **Available In**: Revolution 2.8.2+  

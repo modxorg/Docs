@@ -4,7 +4,7 @@ description: "This value (in seconds) sets the amount of time cache files last f
 ---
 
 **Name**: Expiration Time for DB Session Cache  
-**Type**: String  
+**Type**: Number
 **Default**:  
 **Available In**: Revolution 2.1.1+ 
 

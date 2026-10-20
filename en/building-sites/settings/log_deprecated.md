@@ -5,7 +5,7 @@ description: "Enable to receive notices in your error log when deprecated functi
 
 -   **Name**: Log Deprecated Functions  
 -   **Type**: Yes/No  
--   **Default**: No  
+-   **Default**: Yes
 -   **Available In**: 2.7+
 
 Enable to receive notices in your error log when deprecated functions are used.

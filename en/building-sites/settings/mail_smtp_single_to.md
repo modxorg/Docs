@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/mail_smtp_single
 
 ## mail\_smtp\_single\_to
 
-**Name**: SMTP Single-To
+**Name**: SMTP Single To
 **Type**: Yes/No
 **Default**: No
 

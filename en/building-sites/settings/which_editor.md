@@ -6,7 +6,7 @@ _old_uri: "2.x/administering-your-site/settings/system-settings/which_editor"
 
 ## which\_editor
 
-**Name**: RichText Editor to Use
+**Name**: Editor to use
 **Type**: Richtext Combo
 **Default**:
 
