@@ -1,5 +1,6 @@
 ---
 title: "Resources"
+description: "Resource types, edit-page fields, Resource Groups, and link tags in MODX."
 sortorder: "2"
 _old_id: "264"
 _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
@@ -7,162 +8,178 @@ _old_uri: "2.x/making-sites-with-modx/structuring-your-site/resources"
 
 ## What is a Resource?
 
-A resource is a representation of a page in MODX. There are different types of Resources, such as documents, weblinks, symlinks, actual files, or many other things. The default Resource type is a Document, and simply represents a webpage on your site.
+A Resource is a page or another item in the Resource tree: a Document, a Weblink, a Symlink, or a Static Resource. [Custom Resource Classes](building-sites/resources/custom-resources) add more types.
 
-There are 4 total types of Resources, and they are Documents, [Weblinks](building-sites/resources/weblink "Weblink"), [Symlinks](building-sites/resources/symlink "Symlink"), and [Static Resources](building-sites/resources/static-resource "Static Resource").
-
-Each Resource also has a unique ID, or "Resource Identifier". This lets MODX know what Resource to fetch when you are loading a webpage. Also, when you're wanting to link between Resources, you should always use the ID to do so. That way MODX will generate the link and you will not have to worry about changed aliases, content types or anything - MODX will change your links also. Please see the Linking to Resources section below for more information on how to do this.
+Every Resource has an ID. Use the ID in link tags so MODX generates the URL; aliases and Content Types can then change without breaking links.
 
 ### Managing Resources
 
-Resources are shown in the Resources tree in the left-hand navigation of the manager. To edit one, simply click on the page you would like to edit. You can alternatively right-click the Resource and click 'Edit Resource'. This will load the Resource Edit page:
+Resources appear in the Resources tree on the left. Click a Resource to edit it, or right-click it and choose **Edit**. The edit page opens:
 
 ![](resource-edit1_v2.3.png)
 
-The content of the Resource can then be edited in the large content field in the bottom area. Other fields related to each Resource can also be edited via the tabs on the top of the page.
+### Resource Groups tab and Access
 
-### Resource Groups tab and the Access checkbox
+The **Resource Groups** tab lists every Resource Group. **Access** is membership, not an ACL grant.
 
-The **Resource Groups** tab lists every Resource Group on the site. The column labeled **Access** is membership, not an ACL grant.
 
-- Check **Access** and save: this Resource joins that group (`modResourceGroupResource`).
-- Uncheck **Access** and save: this Resource leaves that group.
+- Check **Access** and save: the Resource joins the group.
+- Uncheck **Access** and save: the Resource leaves the group.
 
-The page is still public until you pair the group with a User Group and an ACL. See [Resource Groups](building-sites/client-proofing/security/resource-groups).
+The Resource stays public until the group is paired with a User Group and an ACL. See [Resource Groups](building-sites/client-proofing/security/resource-groups).
 
-When you create a Resource under a parent that already belongs to groups, those **Access** boxes start checked. You need the `resourcegroup_resource_edit` permission to see and change them.
+A new Resource under a parent that belongs to groups starts with those **Access** boxes checked. The `resourcegroup_resource_edit` permission is required to see and change them.
 
 ## Resource Fields
 
-Resources come packaged with a list of predetermined fields by default. They are:
+The tables list the fields on the Resource edit page. `id` is inherited; the other fields are columns in `modx_site_content`.
 
-### General Resource Fields
+### Content fields
 
-| Name             | Description                                                                                                                                                       |
-| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id               | The ID of the Resource.                                                                                                                                           |
-| template         | A reference to the [Template](building-sites/elements/templates "Templates") that this Resource is using                                                          |
-| published        | If the Resource is Published, or viewable on the front-end.                                                                                                       |
-| pagetitle        | The title of the Resource.                                                                                                                                        |
-| longtitle        | A longer title of the Resource.                                                                                                                                   |
-| description      | An extended description of the Resource.                                                                                                                          |
-| introtext        | Also called 'Summary', an introductory excerpt of the Resource's content. Useful for blogs or searching.                                                          |
-| alias            | The URL alias to use, if your site is using Friendly URLs. A Resource with alias 'home' and Content Type 'html' would render 'home.html' if it isn't a Container. |
-| parent           | The Parent Resource's ID.                                                                                                                                         |
-| link\_attributes | Used with menu building snippets to add attributes to links, etc. Can be repurposed for other needs.                                                              |
-| menutitle        | The title to show for the Resource when displayed in a menu.                                                                                                      |
-| menuindex        | The order index of the Resource in a menu. Higher order means later.                                                                                              |
-| hidemenu         | Also called 'Hide from Menus', if set, this Resource will not show in most Menu or Navigation snippets.                                                           |
-| content          | The actual content of the Resource.                                                                                                                               |
+| Name | Description |
+| --- | --- |
+| id | The ID of the Resource. |
+| pagetitle | The title of the Resource. |
+| longtitle | A longer title of the Resource. |
+| description | An extended description of the Resource. |
+| introtext | An introductory excerpt, also called Summary. Useful for blogs and search results. |
+| alias | The URL alias, used with Friendly URLs. A Resource with alias `home` and an HTML Content Type renders as `home.html` unless it is a container. |
+| alias\_visible | Whether the alias appears in the URIs of child Resources when alias paths are enabled. |
+| parent | The ID of the parent Resource. |
+| type | Legacy type label, `document` or `reference`. MODX routes by `class_key`, not by this field. |
+| class\_key | The fully qualified class of the Resource. A Document uses `MODX\Revolution\modDocument`. See [Custom Resource Classes](building-sites/resources/custom-resources). |
+| context\_key | The key of the Context the Resource belongs to, usually `web`. |
+| template | The [Template](building-sites/elements/templates) used by the Resource. |
+| content\_type | The [Content Type](building-sites/resources/content-types) ID. It sets the MIME type and the file extension. |
+| content | The Resource content. Its meaning depends on the Resource type; see the table below. |
+| richtext | Whether the Resource uses a rich text editor, when one is installed. |
 
-### Settings Resource Fields
+#### Content by Resource type
 
-| Name        | Description                                                                                                                 |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------- |
-| isfolder    | Labeled as 'Container', this specifies whether or not the Resource renders with a / in Friendly URLs instead of its suffix. |
-| searchable  | If the Resource is searchable.                                                                                              |
-| cacheable   | If the Resource is cacheable.                                                                                               |
-| createdby   | The ID of the user who created the Resource.                                                                                |
-| editedby    | The ID of the last user to edit the Resource.                                                                               |
-| deleted     | If the Resource is deleted or not.                                                                                          |
-| deletedby   | The ID of the user who deleted the Resource.                                                                                |
-| publishedby | The ID of the user who last published the Resource.                                                                         |
-| createdon   | The date the Resource was created.                                                                                          |
-| publishedon | The date the Resource was published.                                                                                        |
-| editedon    | The date the Resource was last edited.                                                                                      |
-| pub\_date   | The scheduled date for a Resource to be published.                                                                          |
-| unpub\_date | The scheduled date for a Resource to be unpublished.                                                                        |
+| Type | What `content` holds |
+| --- | --- |
+| Document | HTML and MODX tags. |
+| Weblink | A URL, or the ID of a Resource to redirect to. |
+| Symlink | The ID of the target Resource. |
+| Static Resource | The path to a file, relative to `resource_static_path` or absolute when allowed. |
+
+### Publishing and menu fields
+
+| Name | Description |
+| --- | --- |
+| published | Whether the Resource is published and viewable on the front-end. |
+| pub\_date | The scheduled date and time to publish the Resource. |
+| unpub\_date | The scheduled date and time to unpublish the Resource. |
+| isfolder | Labeled **Container**. Makes Friendly URLs end with `/` instead of the Content Type suffix. |
+| hidemenu | Also called **Hide from Menus**. Most menu and navigation snippets skip the Resource. |
+| menutitle | The title shown in menus. |
+| menuindex | The order index in a menu. Higher values come later. |
+| link\_attributes | Attributes added to links by menu snippets. Can be repurposed. |
+| searchable | Whether the Resource is searchable. |
+| cacheable | Whether the Resource output is cacheable. |
+
+### System fields
+
+| Name | Description |
+| --- | --- |
+| createdby | The ID of the user who created the Resource. |
+| createdon | The date the Resource was created. |
+| editedby | The ID of the last user to edit the Resource. |
+| editedon | The date the Resource was last edited. |
+| publishedby | The ID of the user who last published the Resource. |
+| publishedon | The date the Resource was published. |
+| deleted | Whether the Resource is deleted. |
+| deletedby | The ID of the user who deleted the Resource. |
+| deletedon | The date the Resource was deleted. |
+| content\_dispo | `0` sends a binary file inline; `1` sends it as an attachment. |
+| uri | The generated URI. Freeze it with `uri_override`. |
+| uri\_override | Keep the current URI and stop MODX from regenerating it. |
+| show\_in\_tree | Show the Resource in the manager tree. |
+| hide\_children\_in\_tree | Hide this Resource's children in the manager tree. |
+| properties | A JSON object of namespaced properties. Weblinks store their `responseCode` here. |
 
 ### Using Resource Fields
 
-Resource fields can be accessed from anywhere by using the [Template Variable](building-sites/elements/template-variables "Template Variables") syntax, ie:
+Resource fields are available in templates and content through the [Template Variable](building-sites/elements/template-variables) syntax.
 
-``` php
-[[*pagetitle]] // renders the pagetitle.
-[[*id]] // renders the Resource's ID
-[[*createdby]] // renders the ID of the user who created this Resource
+```text
+[[*pagetitle]]
+[[*id]]
+[[*createdby]]
 ```
 
-They can also have [Output Filters](building-sites/tag-syntax/output-filters) "Input and Output Filters (Output Modifiers)") applied to them:
+[Output Filters](building-sites/tag-syntax/output-filters) can modify the value:
 
-``` php
-// Renders a limited version of the introtext field.
-// If it is longer than 100 chars, adds an ...
+```text
 [[*introtext:ellipsis=`100`]]
-// Grabs the user who last edited the Resource's username
 [[*editedby:userinfo=`username`]]
-// Grabs the user who published the Resource's email
 [[*publishedby:userinfo=`email`]]
 ```
 
+`ellipsis` limits `introtext` to 100 characters and adds an ellipsis. `userinfo` returns the username or email of the user stored in the field.
+
 ### Accessing Resource Fields in a Snippet
 
-Grabbing the Resource Fields in a [Snippet](extending-modx/snippets "Snippets") is quite easy; MODX provides you with the Resource object in any Snippet, via the `$modx->resource` reference. For example, this example Snippet will return the current page's pagetitle reversed:
+A [Snippet](extending-modx/snippets) receives the current Resource as `$modx->resource`. This returns `pagetitle` reversed:
 
-``` php
-/* output the current Resource's pagetitle */
+```php
 $output = $modx->resource->get('pagetitle');
 return strrev($output);
 ```
 
 ## Linking to a Resource
 
-In MODX, links to Resources are dynamically managed via "Link Tags". They look like this:
+Link tags generate URLs for Resources:
 
-``` php
+```text
 [[~123]]
 ```
 
-where '123' is the ID of the Resource to link to. You can put these tags anywhere, and MODX will dynamically render the URL for the Resource.
+`123` is the Resource ID. MODX renders the URL at request time.
 
-You can also get the Link Tag by dragging a Resource from the left tree into the content panel.
-
-Also see [Named Anchor](building-sites/integrating-templates/named-anchor "Named Anchor").
+Also see [Named Anchor](building-sites/integrating-templates/named-anchor).
 
 ### URL Parameters for Link Tags
 
-Adding URL parameters in your Link Tag is quite simple in Revolution. Let's say we have Resource ID 42 that resolves to a URL of 'store/items.html'. We want to add a 'tag' parameter to the URL, with a value of 'Snacks' and a 'sort' parameter of 'Taste'. Here's how you'd do it:
+Add parameters to a Link Tag with backticks:
 
-``` php
+```text
 [[~42? &tag=`Snacks` &sort=`Taste`]]
 ```
 
-This would render as:
+If Resource 42 resolves to `store/items.html`, the tag renders:
 
-``` php
+```text
 store/items.html?tag=Snacks&sort=Taste
 ```
 
-Note that those are **backticks** instead of apostrophes.
-
 ### URL Schemes in Link Tags
 
-You can specify the scheme for a Resource in your tag:
+Set the scheme with the `scheme` property:
 
-``` php
+```text
 [[~123? &scheme=`https`]]
 ```
 
-Would render the URL using 'https' instead of the scheme indicated by the current settings (i.e. system or context settings).
-
 The available schemes are:
 
-| Name  | Description                                                   |
-| ----- | ------------------------------------------------------------- |
-| -1    | (default) URL is relative to site\_url                        |
-| 0     | see http                                                      |
-| 1     | see https                                                     |
-| full  | Renders the link as an absolute URL, prepended with site\_url |
-| abs   | Renders the link as an absolute URL, prepended with base\_url |
-| http  | Renders the link as an absolute URL, forced to http scheme    |
-| https | Renders the link as an absolute URL, force to https scheme    |
+| Name | Description |
+| --- | --- |
+| -1 | (default) URL is relative to `site_url` |
+| 0 | Forces `http` when the current request uses `https` |
+| 1 | Forces `https` when the current request uses `http` |
+| full | Absolute URL, prepended with `site_url` |
+| abs | Absolute URL, prepended with `base_url` |
+| http | Absolute URL with the `http` scheme |
+| https | Absolute URL with the `https` scheme |
 
 ## See Also
 
 1. [Content Types](building-sites/resources/content-types)
-2. [Named Anchor](building-sites/integrating-templates/named-anchor)
-3. [Static Resource](building-sites/resources/static-resource)
-4. [Symlink](building-sites/resources/symlink)
+2. [Custom Resource Classes](building-sites/resources/custom-resources)
+3. [Named Anchor](building-sites/integrating-templates/named-anchor)
+4. [Static Resource](building-sites/resources/static-resource)
+5. [Symlink](building-sites/resources/symlink)
     1. [Using Resource Symlinks](building-sites/resources/symlink/using-resource-symlinks)
-5. [Weblink](building-sites/resources/weblink)
-6. [Resource Groups](building-sites/client-proofing/security/resource-groups)
+6. [Weblink](building-sites/resources/weblink)
+7. [Resource Groups](building-sites/client-proofing/security/resource-groups)
