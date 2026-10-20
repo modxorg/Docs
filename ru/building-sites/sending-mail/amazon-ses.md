@@ -1,46 +1,45 @@
 ---
 title: Amazon SES
 translation: "building-sites/sending-mail/amazon-ses"
+description: "Отправка почты MODX через Amazon SES по SMTP: подтверждение идентичностей, SMTP-учётные данные и проверка."
 ---
 
-Чтобы отправлять почту через Amazon SES (Simple Email Service) по SMTP, [работают общие инструкции](building-sites/sending-mail), но нужные детали иногда искать долго.
+Чтобы отправлять почту через Amazon SES (Simple Email Service) по SMTP, действуют [общие инструкции](building-sites/sending-mail). В консоли SES некоторые значения спрятаны; ниже — где их искать.
 
 ## Подтверждение домена и адреса
 
-Сначала [войдите в AWS Console](https://console.aws.amazon.com) и откройте сервис SES (Simple Email Service).
+[Войдите в AWS Console](https://console.aws.amazon.com) и откройте SES.
 
-В **Identity Management → Domains** нажмите Verify a New Domain. Укажите домен, включите генерацию DKIM Settings и по инструкции добавьте DNS-записи.
+В разделе **Identity Management > Identities** создайте идентичность домена. Укажите домен, оставьте включённым Easy DKIM и добавьте DNS-записи, которые покажет SES.
 
-Затем откройте **Identity Management → Email Addresses** и нажмите Verify a New Email Address. Укажите адрес и подтвердите его по письму. **Это нужно для каждого адреса, с которого вы хотите слать почту.**
+Затем создайте идентичность адреса электронной почты для каждого адреса, с которого будете отправлять, и подтвердите его по письму.
 
-## Создание IAM SMTP credentials
+## Создание SMTP-учётных данных
 
-В дашборде Amazon SES откройте **Email Sending → SMTP Settings**.
+В консоли SES откройте **Email sending > SMTP settings**.
 
-- Имя сервера добавьте в системную настройку `mail_smtp_hosts`.
-- Один из предложенных портов задайте в `mail_smtp_port`. Обычно работают 465 или 587.
-- Если TLS включён, в `mail_smtp_secure` поставьте `tls` или `ssl` (настройки Mail в MODX 3).
+- Скопируйте имя сервера в системную настройку `mail_smtp_hosts`.
+- Укажите один из предложенных портов в `mail_smtp_port`; обычно подходит `465` или `587`.
+- SES поддерживает TLS. Задайте `mail_smtp_secure`: `ssl` для порта 465 или `tls` для порта 587 (настройки Mail в MODX 3).
 
-Дальше нажмите **Create My SMTP Credentials**. Это быстрый путь к IAM user. Иначе процесс заметно сложнее.
+Нажмите **Create SMTP credentials**. Создаётся IAM-пользователь, который может отправлять почту только через SMTP. Для SES API и других сервисов AWS нужен другой пользователь или отдельная политика. [Подробнее об IAM-пользователях для SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/control-user-access.html).
 
-(Важно: созданный IAM user **только** шлёт почту по SMTP. Для API или других сервисов Amazon нужен другой user или отдельная access policy. [Подробнее про IAM users для почты](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/control-user-access.html))
+Укажите имя пользователя, по которому понятно, для какого сайта он нужен.
 
-Укажите имя пользователя. Сделайте его понятным для сайта, где будете использовать учётку.
+Нажмите **Create**.
 
-Внизу справа нажмите Create.
+Пользователь создан. Скачайте учётные данные или раскройте **Show User SMTP Security Credentials** и скопируйте SMTP-логин в `mail_smtp_user`, а пароль — в `mail_smtp_pass`.
 
-User создан. Скачайте credentials кнопкой внизу справа или раскройте **Show User SMTP Security Credentials** и скопируйте SMTP Username (в `mail_smtp_user`) и SMTP Password (в `mail_smtp_pass`).
-
-Если credentials не скачивали, **увидеть их снова не получится**. Перед закрытием окна проверьте, что отправка почты работает.
+**Если не скачать учётные данные, увидеть их больше не получится.** Проверьте отправку до того, как закроете окно.
 
 ## Проверка и следующие шаги
 
-Проверьте интеграцию через QuickEmail [как в документации по почте](building-sites/sending-mail).
+Проверьте отправку через QuickEmail [как описано в документации по почте](building-sites/sending-mail).
 
-Важно: пока не завершена верификация домена и адреса, отправка может не работать. Для новых пользователей Amazon ещё ограничивает объём писем.
+Отправка может не работать, пока не завершено подтверждение домена и адреса. Новым аккаунтам Amazon также ограничивает объём писем.
 
-В дашборде SES, в Domains, по клику на домен есть детали аутентификации писем.
+В консоли SES откройте идентичность домена, чтобы увидеть параметры аутентификации:
 
-- В Verification лежит TXT-запись. Она должна оставаться на домене, пока вы используете Amazon SES.
-- В DKIM список DNS-записей для [включения DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail).
-- В MAIL FROM Domain можно задать отдельный FROM-домен. Тогда отправителем будет ваш домен, а не amazonses.com.
+- **Verification** — TXT-запись. Она должна оставаться в DNS, пока вы используете SES.
+- **DKIM** — список DNS-записей для [включения DKIM](https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail).
+- **MAIL FROM domain** — отдельный домен envelope-from. Тогда письма возвращаются на ваш домен, а не на `amazonses.com`, что помогает согласованию SPF. Видимый заголовок `From` по-прежнему берётся из адреса, с которого вы отправляете.

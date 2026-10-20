@@ -1,18 +1,21 @@
 ---
 title: mailtrap.io
+description: "Use the Mailtrap email sandbox to capture test mail from a MODX development site."
 ---
 
-[Mailtrap](https://mailtrap.io) is a service (free plan available) that you can use to "trap" emails, without actually sending them to their intended recipient. Instead they're shown to you in a user interface.
+[Mailtrap](https://mailtrap.io) is a service (free plan available) that captures email in a sandbox instead of sending it to the real recipient. On a development site this keeps test messages from reaching real customers. You read the captured messages in Mailtrap's interface.
 
-When working on a development site, it's useful to configure emails to use such a service to prevent accidentally sending test emails to actual customers. 
+After creating an account, open the sandbox's SMTP settings and copy the username and password.
 
-After creating an account, you can find the credentials in the inbox settings. 
+In MODX, set these in System > System Settings:
 
-In MODX, configure the following via System > System Settings:
+- `mail_use_smtp`: Yes
+- `mail_smtp_auth`: Yes
+- `mail_smtp_hosts`: `sandbox.smtp.mailtrap.io`
+- `mail_smtp_port`: `587` (Mailtrap also recommends `2525`)
+- `mail_smtp_user` and `mail_smtp_pass`: the sandbox credentials
+- `mail_smtp_secure`: `tls`
 
-- `mail_smtp_hosts`: smtp.mailtrap.io
-- `mail_smtp_port`: 587
-- `mail_smtp_user` and `mail_smtp_pass` are provided in the inbox settings in mailtrap. 
-- `mail_smtp_secure`: tls
+Port `465` also works with `mail_smtp_secure` set to `ssl`. The sandbox is for development; Mailtrap provides a separate live SMTP host for production mail.
 
-[Also see the generic instructions for sending email with SMTP for further activation and testing instructions](building-sites/sending-mail)
+[See the generic SMTP instructions for enabling and testing email](building-sites/sending-mail)

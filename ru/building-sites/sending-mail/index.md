@@ -1,30 +1,31 @@
 ---
 title: Отправка почты
-translation: "building-sites/sending-mail"
+translation: "building-sites/sending-mail/index"
+description: "Настройка исходящей почты в MODX: SMTP, DKIM, параметры провайдеров и проверка."
 ---
 
-В MODX есть [встроенный email-сервис](extending-modx/services/modmail). Он шлёт письма через PHP `mail()` или через SMTP.
+В MODX есть [встроенный сервис почты](extending-modx/services/modmail). Он отправляет письма через PHP-функцию `mail()` или SMTP-сервер.
 
-Письма уходят в разных сценариях:
+Письма уходят в нескольких случаях:
 
-- Сброс пароля или passwordless login
-- Отправка формы на фронтенде, обычно через [FormIt](extras/formit)
-- Свой код. Как пользоваться email-сервисом, см. [modMail](extending-modx/services/modmail).
+- Сброс пароля и вход без пароля.
+- Формы на сайте, обычно через [FormIt](extras/formit).
+- Свой код, использующий почтовый сервис.
 
-Во всех случаях работают настройки почты ядра. В Менеджере: **Система** (иконка шестерёнки) → **Системные настройки**. Ищите `mail` или фильтр области **Mail**.
+Во всех случаях действуют системные настройки почты. Они находятся в разделе «Система» (иконка шестерёнки) → «Системные настройки». Ищите по `mail_` или включите фильтр области **Почта**. Две связанные настройки лежат в других областях: `emailsender` — в **Авторизации и безопасности**, `site_name` — в **Сайте**.
 
-По умолчанию используется PHP `mail()`. Это настройки сервера, но deliverability обычно слабая. Лучше настроить SMTP.
+По умолчанию MODX отправляет почту через PHP `mail()`. Эта функция зависит от настроек сервера и часто даёт плохую доставляемость. Настройте SMTP.
 
-## Включение SMTP
+## Включение отправки через SMTP
 
-1. Включите `mail_use_smtp`
-2. Включите `mail_smtp_auth`
-3. Укажите хост SMTP в `mail_smtp_hosts`
-4. Укажите порт в `mail_smtp_port`. Порт 25 часто закрыт, обычно берут 587 или 465.
-5. Введите учётные данные в `mail_smtp_user` и `mail_smtp_pass`
-6. При необходимости поставьте `mail_smtp_secure` в `tls` или `ssl` (MODX 3). В старых текстах встречался `mail_smtp_prefix`. Смотрите область Mail в Системных настройках вашей установки.
+1. Включите `mail_use_smtp`.
+2. Включите `mail_smtp_auth`, если сервер требует авторизацию.
+3. Укажите SMTP-сервер в `mail_smtp_hosts`. Несколько хостов разделяйте `;`, MODX попробует их по порядку; у каждого хоста можно указать порт (`smtp1.example.com:587;smtp2.example.com`). Хост может начинаться с `ssl://` или `tls://`.
+4. Задайте `mail_smtp_port`. Значение после установки — `587`; также часто используют `465`. Многие провайдеры блокируют исходящий порт `25`.
+5. Введите логин и пароль в `mail_smtp_user` и `mail_smtp_pass`.
+6. Если сервер требует явное шифрование, задайте `mail_smtp_secure`: `tls` или `ssl`. `tls` используют с портом 587 или 2525, `ssl` — с портом 465. В MODX 3 настройка называется `mail_smtp_secure`; в старых версиях — `mail_smtp_prefix`.
 
-Для шагов 3-6 точные значения зависят от почтового сервера или сервиса. Берите их из документации провайдера, инструкции по настройке или у поддержки.
+Шаги 3–6 зависят от почтового сервера или сервиса. Точные значения смотрите в их документации.
 
 Отдельные инструкции:
 
@@ -33,45 +34,85 @@ translation: "building-sites/sending-mail"
 
 ### Частые SMTP-провайдеры
 
-Это стартовые значения. Правила auth у провайдеров меняются. В их панелях создавайте app password или SMTP credentials, когда просят.
+Значения ниже — отправные; сверьте их с провайдером. App password или SMTP credentials создавайте в панели провайдера, когда это требуется.
 
-| Provider | Host | Port | `mail_smtp_secure` | Auth notes |
-| -------- | ---- | ---- | ------------------ | ---------- |
-| Gmail / Google Workspace | `smtp.gmail.com` | `587` / `465` | `tls` / `ssl` | App password или OAuth. Обычный пароль аккаунта часто отклоняют |
-| Yandex Mail | `smtp.yandex.com` или `smtp.yandex.ru` | `465` / `587` | `ssl` на 465 | App password в настройках клиента Yandex Mail |
+| Провайдер | Хост | Порт | `mail_smtp_secure` | Авторизация |
+| --- | --- | --- | --- | --- |
+| Gmail / Google Workspace | `smtp.gmail.com` | `587` / `465` | `tls` / `ssl` | App password или OAuth; обычный пароль аккаунта обычно отклоняют |
+| Yandex Mail | `smtp.yandex.com` или `smtp.yandex.ru` | `465` / `587` | `ssl` на 465, `tls` на 587 | App password в настройках Yandex Mail |
 | Mail.ru | `smtp.mail.ru` | `465` / `587` | `ssl` / `tls` | App password в настройках безопасности Mail.ru |
-| Rambler | `smtp.rambler.ru` | `465` | `ssl` | Актуальные требования смотрите в справке Rambler |
-| Mailgun | `smtp.mailgun.org` или `smtp.eu.mailgun.org` | `587` / `465` / `2525` | По порту | SMTP credentials на домен в Mailgun |
-| Custom VPS / shared hosting | SMTP-хост от хостера | Часто `587` или `465` | По хосту | Исходящий `25` часто закрыт |
+| Rambler | `smtp.rambler.ru` | `465` | `ssl` | Актуальные требования — в справке Rambler |
+| Mailgun | `smtp.mailgun.org` или `smtp.eu.mailgun.org` | `587` / `465` / `2525` | `tls` на 587 и 2525, `ssl` на 465 | SMTP credentials на домен в Mailgun |
+| VPS или shared hosting | Хост от провайдера | Часто `587` или `465` | Зависит от хоста | Исходящий `25` часто блокирует провайдер |
 
-В `emailsender` укажите адрес, который провайдер разрешает (тот же ящик или подтверждённый sending domain).
+В [`emailsender`](building-sites/settings/emailsender) укажите адрес, который разрешает провайдер: тот же ящик или адрес на подтверждённом домене отправки.
 
-Если FormIt редиректит или показывает success, а письма нет, поставьте [QuickEmail](extras/quickemail) и проверьте SMTP отдельно, прежде чем трогать hooks FormIt. См. также troubleshooting на [простой контактной странице](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page).
+Если FormIt сообщает об успехе, а письмо не приходит, установите [QuickEmail](extras/quickemail) и проверьте SMTP без хуков FormIt. См. также раздел диагностики на [простой контактной странице](extras/formit/formit.tutorials-and-examples/examples.simple-contact-page).
 
 ## Проверка отправки
 
-После настройки проверьте отправку. Проще всего поставить [QuickEmail](extras/quickemail) через [Package Manager](building-sites/extras).
+Установите [QuickEmail](extras/quickemail) через [менеджер пакетов](building-sites/extras).
 
-После установки добавьте вызов сниппета на ресурс:
+Добавьте вызов сниппета в ресурс:
 
 ```
 [[!QuickEmail? &debug=`1`]]
 ```
 
-Откройте ресурс на фронтенде. QuickEmail попробует отправить тестовое письмо и покажет подробный debug-лог. Если не вышло, обычно виноваты порт, prefix или auth.
+Откройте ресурс в браузере, где выполнен вход в менеджер. Без сессии менеджера (контекст `mgr`) QuickEmail вернёт `Unauthorized`. С `debug` он отправит тестовое письмо и покажет SMTP-лог.
 
-**Когда всё работает, уберите вызов сниппета.** Иначе кто-то наткнётся на него и может увидеть ваши credentials.
+Если отправка не удалась, проверьте порт, `mail_smtp_secure` и учётные данные. PHPMailer скрывает логин и пароль на этом уровне отладки, но ответ сервера показывает.
 
-## Deliverability
+**Удалите вызов сниппета после проверки.** Пока он опубликован, любой пользователь с сессией менеджера может отправить тестовое письмо с этой страницы.
 
-Отправить письмо это одно. Попасть во входящие у получателя это другое.
+## Подпись DKIM
 
-На это влияют содержимое (похоже ли на спам) и защита вроде SPF, DKIM и DMARC. IP почтовых серверов могут попасть в blacklist при большом объёме спама.
+DKIM позволяет получателю проверить, что письмо отправил ваш домен и что по пути его не изменили. MODX подписывает исходящие письма через PHPMailer. SPF и DMARC по-прежнему настраиваются в DNS и у почтового провайдера.
 
-Это настраивают на уровне сервера, вне рамок этой страницы. Чтобы письма доходили, настройте эти механизмы правильно.
+Задайте в системных настройках:
 
-В сети много сервисов и гайдов. Хороший бесплатный вариант: [mail-tester.com](https://www.mail-tester.com/). Вы получаете одноразовый адрес (удобно через QuickEmail с `&to`) и проверяете много факторов deliverability.
+- [`mail_dkim_selector`](building-sites/settings/mail_dkim_selector) — селектор; публикуется в DNS как `<selector>._domainkey.<domain>`.
+- [`mail_dkim_domain`](building-sites/settings/mail_dkim_domain) — домен подписи.
+- [`mail_dkim_privatekeyfile`](building-sites/settings/mail_dkim_privatekeyfile) — путь к файлу закрытого ключа, доступному PHP; или
+- [`mail_dkim_privatekeystring`](building-sites/settings/mail_dkim_privatekeystring) — сам ключ. Он имеет приоритет над файлом.
+- [`mail_dkim_identity`](building-sites/settings/mail_dkim_identity) — необязательный идентификатор (`i=`) подписи.
+- [`mail_dkim_passphrase`](building-sites/settings/mail_dkim_passphrase) — парольная фраза для зашифрованного ключа.
 
-## Другие связанные настройки
+Подпись включается, только когда заданы домен, селектор и ключ. Опубликуйте соответствующий открытый ключ в DNS по адресу `<selector>._domainkey.<domain>`.
 
-Если сниппет или код не задают иное, заголовок `From` берётся из `emailsender`, а имя из `site_name`.
+## Доставляемость
+
+Доставка зависит не только от MODX. На неё влияют содержание, похожее на спам, новый IP-адрес и отсутствующие DNS-записи.
+
+- SPF и DMARC настраиваются в DNS и у почтового провайдера. DKIM подписывает MODX ключом, опубликованным в DNS.
+- IP сервера может попасть в чёрный список, если с него отправляют много спама.
+- [mail-tester.com](https://www.mail-tester.com/) выдаёт одноразовый адрес и проверяет большинство факторов. Отправьте на него письмо через QuickEmail с параметром `&to`.
+
+## Другие настройки почты
+
+| Настройка | По умолчанию | Действие |
+| --- | --- | --- |
+| [`mail_smtp_autotls`](building-sites/settings/mail_smtp_autotls) | Да | PHPMailer включает STARTTLS, если сервер его предлагает, даже при пустом `mail_smtp_secure`. Поэтому порт 587 часто работает без `tls`. |
+| [`mail_smtp_helo`](building-sites/settings/mail_smtp_helo) | пусто | Имя в HELO/EHLO; при пустом значении используется имя сервера. |
+| [`mail_smtp_timeout`](building-sites/settings/mail_smtp_timeout) | 10 | Таймаут SMTP в секундах. |
+| [`mail_smtp_single_to`](building-sites/settings/mail_smtp_single_to) | Нет | Отправлять отдельное письмо каждому получателю вместо одного письма с несколькими адресами в `To`. |
+| [`mail_smtp_keepalive`](building-sites/settings/mail_smtp_keepalive) | Нет | Не закрывать SMTP-соединение между письмами. Для обычной работы не рекомендуется. |
+| [`mail_charset`](building-sites/settings/mail_charset) | UTF-8 | Кодировка сообщения. |
+| [`mail_encoding`](building-sites/settings/mail_encoding) | 8bit | Кодировка передачи. |
+| `mail_inlinestyle_inline` | Да | Переносит CSS из блоков `<style>` в атрибуты `style` в HTML-письмах. |
+| `mail_inlinestyle_remove_style_tags` | Нет | Удаляет теги `<style>` после переноса. Может сломать адаптивную вёрстку. |
+
+## Адрес отправителя
+
+`modMail` не задаёт заголовок `From` по умолчанию. Это делают сценарии ядра: сброс пароля, вход без пароля, создание и обновление пользователя. Они берут адрес из [`emailsender`](building-sites/settings/emailsender), а имя — из [`site_name`](building-sites/settings/site_name).
+
+В своём коде задайте оба значения явно:
+
+```php
+use MODX\Revolution\Mail\modMail;
+
+$mail->set(modMail::MAIL_FROM, $modx->getOption('emailsender'));
+$mail->set(modMail::MAIL_FROM_NAME, $modx->getOption('site_name'));
+```
+
+Без корректного `From` получающие серверы могут отклонить письмо.
