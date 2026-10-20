@@ -3,9 +3,9 @@ title: "Contextos"
 description: "Contextos en MODX: cómo anulan los ajustes del sistema, cómo crear uno, cómo se concede el acceso y la API, los eventos y los procesadores que hay detrás."
 ---
 
-Un Contexto es un conjunto con nombre de anulaciones de configuración sobre el que se ejecuta una petición: lleva sus propios ajustes, su propia rama del árbol de recursos y sus propias reglas de acceso.
+Un Contexto es un conjunto con nombre de anulaciones de configuración sobre el que se ejecuta una petición: sus propios ajustes, su propia rama del árbol de recursos y sus propias reglas de acceso.
 
-MODX incluye dos contextos: `web` (Website) para el front end y `mgr` (Manager) para el gestor. Un contexto se direcciona por su **clave**; esa clave es la que se pasa a `initialize()` y a `switchContext()`. El **nombre** es solo una etiqueta para la interfaz.
+MODX incluye dos contextos: `web` (Website) para el front end y `mgr` (Manager) para el gestor. Un contexto se direcciona por su **clave**, el valor que se pasa a `initialize()` y a `switchContext()`. El **nombre** es solo una etiqueta para la interfaz.
 
 ## Creando un contexto
 
@@ -13,16 +13,16 @@ Los contextos se gestionan en el gestor: **Admin** (el engranaje del menú super
 
 | Campo | Obligatorio | Significado |
 | --- | --- | --- |
-| `key` | sí | el identificador del contexto; el valor que se usa en `initialize()` y en `switchContext()` |
+| `key` | sí | el identificador del contexto |
 | `name` | sí | la etiqueta que se muestra en el gestor y en el árbol de recursos |
 | `description` | no | texto libre |
 | `rank` | no | el orden del contexto en el árbol |
 
 Las claves `mgr`, `web` y `root` están reservadas por el núcleo.
 
-Un contexto nuevo recibe acceso de inmediato: el grupo de usuarios **Administrator** recibe la política *Context* y el usuario anónimo recibe la política *Load Only*, el derecho `load` y nada más. El acceso anónimo se omite cuando la petición al procesador lleva `enableAnonymous=0`.
+Un contexto nuevo recibe acceso de inmediato: el grupo de usuarios **Administrator** recibe la política *Context* y el usuario anónimo la política *Load Only*, el derecho `load` y nada más. El acceso anónimo se omite cuando la petición al procesador lleva `enableAnonymous=0`.
 
-Los contextos aparecen en el árbol de recursos como una rama propia, y los recursos se mueven entre contextos arrastrándolos.
+Los contextos aparecen en el árbol de recursos como una rama propia. Los recursos se mueven entre contextos arrastrándolos.
 
 ## Ajustes de contexto
 
@@ -32,7 +32,7 @@ Los ajustes de un contexto anulan los [Ajustes del Sistema](/current/en/building
 Ajuste del sistema → Ajuste del contexto → Ajuste del usuario
 ```
 
-Un ajuste de contexto se edita en la pestaña **Context Settings** de la página del contexto: **Contexts** → clic derecho en un contexto → **Edit**. Cambiar un ajuste borra la caché de ese contexto, así que no hace falta limpiar la caché a mano.
+Un ajuste de contexto se edita en la pestaña **Context Settings**: **Contexts** → clic derecho en un contexto → **Edit**. Cambiar un ajuste borra la caché de ese contexto, así que no hace falta limpiar la caché a mano.
 
 Los ajustes que un contexto suele anular:
 
@@ -43,14 +43,13 @@ Los ajustes que un contexto suele anular:
 | `site_url` | la URL completa del contexto: esquema, host y ruta |
 | `site_start` | el recurso que abre el contexto |
 | `cultureKey`, `locale` | el idioma y la configuración regional de la petición |
-| `session_name`, `session_cookie_path`, `session_cookie_domain` | la cookie de sesión del contexto |
 
-Los ajustes de sesión de un contexto conservan los valores del núcleo salvo que se anulen:
+Los ajustes de sesión configuran la cookie de sesión del contexto y conservan los valores del núcleo salvo que el contexto los anule:
 
 | Ajuste | Valor por defecto |
 | --- | --- |
 | `session_name` | vacío — PHP conserva el suyo |
-| `session_cookie_path` | `MODX_BASE_URL`, con `base_url` como alternativa |
+| `session_cookie_path` | `MODX_BASE_URL`, o el ajuste `base_url` cuando está definido |
 | `session_cookie_domain` | vacío |
 | `session_cookie_secure` | `false` |
 | `session_cookie_httponly` | `true` |
@@ -59,7 +58,7 @@ Los ajustes de sesión de un contexto conservan los valores del núcleo salvo qu
 
 ## Acceso al contexto
 
-El acceso a un contexto se concede por grupo de usuarios en la pestaña **Contexts** del panel de acceso: el icono del candado en el menú de usuario → **Access Control Lists** → un grupo de usuarios → **Access Permissions** → **Contexts**. La pestaña enumera los contextos y la política que cada grupo tiene sobre ellos.
+El acceso a un contexto se concede por grupo de usuarios en la pestaña **Contexts** del panel de acceso: el icono del candado en el menú de usuario → **Access Control Lists** → un grupo de usuarios → **Access Permissions** → **Contexts**.
 
 Una política sobre un contexto decide cuál de las cinco áreas de acceso se aplica: Context, Resource Group, Element Category, Media Source y Namespace. Una política sin área cubre el contexto mismo.
 
@@ -75,14 +74,21 @@ Un ajuste del contexto actual se lee como cualquier otro ajuste; el nivel del qu
 $setting = $modx->getOption('my_context_setting');
 ```
 
-El ajuste de un contexto concreto se lee del propio contexto:
+El ajuste de un contexto concreto se lee de ese contexto:
 
 ``` php
 $setting = $modx->context->getOption('my_context_setting');
 $setting = $modx->getContext('web')->getOption('my_context_setting');
 ```
 
-El idioma de una petición se toma de la primera fuente que tenga valor: el parámetro `cultureKey` de la petición, el `cultureKey` de la sesión, el `cultureKey` del contexto y, por último, el ajuste del sistema `cultureKey`. El código solo admite en él los caracteres `A-Z`, `a-z`, `0-9`, `_` y `-`.
+El idioma de una petición se toma de la primera fuente que tenga valor:
+
+1. el parámetro `cultureKey` de la petición
+2. el `cultureKey` de la sesión
+3. el `cultureKey` del contexto
+4. el ajuste del sistema `cultureKey`
+
+El código solo admite en un `cultureKey` los caracteres `A-Z`, `a-z`, `0-9`, `_` y `-`.
 
 ## Elegir un contexto durante la petición
 
@@ -91,7 +97,7 @@ Una petición empieza en el contexto que indique la puerta de entrada. Dos mecan
 - el archivo `config.context.php` junto a `index.php` — el archivo devuelve la clave del contexto en el que empieza la petición. Ver [Servir un segundo dominio](/current/en/building-sites/contexts/virtual-host);
 - un Plugin en el evento `OnHandleRequest` que llame a `switchContext()`. Ver [Uso de un Plugin de puerta](/current/en/building-sites/contexts/gateway-plugin).
 
-El método que cambia el contexto durante la ejecución:
+El método que cambia el contexto:
 
 ``` php
 if ($modx->switchContext('domain2')) {
@@ -99,7 +105,9 @@ if ($modx->switchContext('domain2')) {
 }
 ```
 
-`switchContext($contextKey, $reload = false)` devuelve `false` cuando el contexto no se cargó, así que conviene comprobar el resultado. Cambiar el contexto **no** carga un manejador de sesión propio: lo define la puerta de entrada. Un contexto con su propio manejador de sesión necesita su propia puerta de entrada.
+`switchContext($contextKey, $reload = false)` devuelve `false` cuando el contexto no se cargó, así que conviene comprobar el resultado.
+
+Cambiar el contexto **no** carga un manejador de sesión propio: lo define la puerta de entrada, ver [Uso de un Plugin de puerta](/current/en/building-sites/contexts/gateway-plugin).
 
 ## Eventos
 
@@ -152,7 +160,7 @@ Los procesadores de los contextos y el permiso que necesita cada uno:
 
 ## Fuentes de medios de un contexto
 
-La fuente de medios de un elemento se puede fijar para un contexto concreto. El elemento usa entonces la fuente de su propio contexto y, si el contexto no tiene ninguna, vuelve a la fuente por defecto del elemento.
+La fuente de medios de un elemento se puede fijar para un contexto concreto. El elemento usa la fuente de su propio contexto y conserva la fuente por defecto del elemento cuando el contexto no tiene ninguna.
 
 ## Un recurso en varios contextos
 
