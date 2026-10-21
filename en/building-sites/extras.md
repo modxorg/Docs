@@ -1,77 +1,176 @@
 ---
 title: "Package Management"
-note: "This page is the result of different pages getting combined, which needs some manual work to rewrite into one."
-description: ""
+description: "Transport packages in MODX: where they come from, how to install, update, uninstall and delete one, and the permissions, events and settings behind the page."
 ---
 
-## Installing a Package
+Package Management installs, updates and removes transport packages — zip archives with the code and the data of a Component.
 
-This page will guide you through the process of installing a Package using [Transport Packages](extending-modx/transport-packages "Transport Packages").
+## Where the Page Is
 
-Downloading [Transport Packages](extending-modx/transport-packages) requires `cURL` or `PHP Sockets`. MODX will let you know if you don't have either of these. If you are still having problems with Package Management after confirming these are installed, see [Troubleshooting Package Management](building-sites/extras/troubleshooting "Troubleshooting Package Management").
-
-Go to `Extras->Installer`.
+**Extras** in the top menu → **Installer**. The page has two tabs: **Packages** and **Providers**.
 
 ![](modx-package-management-1.jpg)
 
-Then click the Download Extras button.
+The manager checks that the extension cURL is loaded. Without it a notice is shown above the page, and the button **Download Extras** is replaced by the search of the local directory. See [cURL Is Missing](building-sites/extras/troubleshooting#curl-is-missing).
 
 ![](modx-package-management-2.jpg)
 
-Browse the available packages, opening the folders to expose the individual packages. Click Download to download whichever packages you'd like to download. You may download multiple packages at one time.
+## Downloading a Package
+
+The **Download Extras** button opens the Package Browser: the categories of the provider on the left, the packages on the right. The **Download** button of a row downloads that package into `core/packages/`.
 
 ![](modx-package-management-3.jpg)
 
-The package will be downloaded to the proper directories in your MODX installation. Now you can view your new package, and click Install to choose to install it.
+The arrow next to the button opens a menu with three entries:
+
+- **Select a Provider** — choose the provider to download from;
+- **Search Locally for Packages** — look for the archives in `core/packages/`;
+- **Upload a package** — send an archive to `core/packages/` from the computer.
+
+## The Actions of a Package
+
+Every row of the grid carries the actions of the package:
+
+| Action | When it is there |
+| --- | --- |
+| **Install** | the package is not installed yet |
+| **Uninstall** | the package is installed |
+| **Reinstall** | the package is installed |
+| **Update** | a newer version is known and `auto_check_pkg_updates` is on |
+| **Check For Updates** | the package came from a provider and no newer version is known |
+| **Remove** | always |
+| **View Details** | always |
+
+<!-- FACT? The table gives the same condition for **Uninstall** and **Reinstall**, so the reader cannot tell when to use which one. -->
 
 ![](modx-package-management-4.jpg)
 
-[Providers](building-sites/extras/providers "Providers")
+The toolbar of the grid has one button that works on all the packages at once: **Purge Old Packages** removes the old versions of every package and keeps the installed one.
 
-You can select the location from which to download packages, add a new location, or select packages on your local machine. Use the Add New Package link, to the left of the Download Extras link. By default, the modx.com/extras repository is available as a remote provider.
+## Installing a Package
 
-## Manual Installation
+The **Install** button of a row in the grid of the **Packages** tab installs the package. Before the installation a panel opens with the tabs that the package carries: Changelog, Dependencies, Readme and License. Readme, Changelog and License are rendered as Markdown.
 
-If you prefer, you can manually copy the package into the core/packages directory. The package must be a transport.zip archive, such as wayfinder-2.1.1-beta1.transport.zip. Then, click on 'Add New Package' in the packages grid. From there, select the 'Scan Local' option. The package will now be visible in the Packages list, and you can install it as usual, by right-clicking and selecting Install Package from the pop-up menu.
+If the package carries pre-install options, they are asked for in the same panel. The installation itself runs in a console that reports every step.
 
-## Step-by-step
+A package that requires other packages shows the tab **Dependencies** in the same panel — see [Dependencies](#dependencies).
 
-### Downloading Packages
+## Installing a Package From an Archive
 
-You have a few options: you can download remotely via the Provider option, by selecting the modx.com provider from the menu (or just by clicking 'Download Extras' in the grid toolbar).
+A package can be installed from an archive on the server, without a provider:
 
-To download the packages, simply select the package you wish to download and click the "Download" button.
+1. put the file `<signature>.transport.zip` into `core/packages/`;
+2. choose **Search Locally for Packages** in the menu of the **Download Extras** button;
+3. the archive appears in the grid — install it as usual.
 
-Or, packages can be downloaded directly from a browser via MODX's Extras section, located at <https://modx.com/extras/>. The package zips are loaded simply by uploading them to your core/packages/ directory, and then running the Package Management section of the manager. From there, click on "Add New Package", and select the "Search Locally for Packages" option. MODX will then scan the core package directory, and add any packages you have.
+The directory `core/packages/` has to be writable by PHP.
 
-Downloading Packages requires you to either have cURL or sockets installed on your web server. If you do not have these installed, the list of packages will show blank.
+The same archive can be sent through the manager. The entry **Upload a package** in the same menu takes only a zip whose name ends with `.transport.zip`. It asks for the file and puts it into `core/packages/`.
 
-The Official Provider of modx.com has a URL of: <http://rest.modx.com/extras/> and comes packaged in with MODX Revolution 2.0.0.
+## Updating a Package
 
-### Installing Packages
+A package that came from a provider can be checked for a newer version: the **Check For Updates** button of the row opens a window with the versions the provider offers, and a newer version is installed from there.
 
-You can easily install packages by right-clicking on the package and clicking "Install". A console will load showing you the details of the package installation.
+With the setting `auto_check_pkg_updates` turned on, the button of the row is **Update** instead, and MODX looks for a newer version by itself.
 
-If the package should have a License Agreement, you'll need to agree to it before you can proceed. Also, the package might provide a README file for you to purvey before installing.
+<!-- FACT? The Actions table makes **Update** appear only when a newer version is known, but the Updating section says that `auto_check_pkg_updates` replaces **Check For Updates** with **Update**. Which condition decides the button? -->
 
-Finally, the package may or may not have some pre-install options and settings for you to set, such as:
+## Uninstalling a Package
 
-![](pkgsetupopt.png)
+The **Uninstall** button of the row rolls back the elements of the package. The window asks for one of three modes:
 
-The package should then install on your MODX installation.
+| Mode | What it does |
+| --- | --- |
+| **Preserve** | uninstalls the newer version and keeps the previous one, together with the settings and the values the component has added |
+| **Uninstall** | uninstalls all versions of the package; they stay in the grid and can be installed again |
+| **Restore** | restores the settings of the previous version as they were before the newer version was installed |
 
-### Updating Packages
+The archive, the unpacked directory and the record in the database stay in place.
 
-You can easily update any package that has been downloaded from a provider. Simply click the 'Check for Updates' context menu item (after right-clicking on the package), and MODX will load a window showing any newer versions. Should your package be already up-to-date, a message will appear.
+## Removing a Package
 
-You can then select the version you would like to install, and MODX will download the package and start the install process.
+The **Remove** button of the row deletes the package from the installation. The window **Delete Package** asks whether the package has to be uninstalled first — the option **Force Package Removal** deletes it either way.
 
-Now, if you want to revert back, you'll simply uninstall the package, and click the 'Revert' option, which will revert back to the prior package that was installed.
+The removal drops the archive `core/packages/<signature>.transport.zip`, the unpacked directory `core/packages/<signature>/` and the record of the database. The elements of the package are left where they are.
 
-### Uninstalling Packages
+## The Card of a Package
 
-You can click on any package to either remove or uninstall a package. _Removing_ a package removes the zip file entirely from your core/packages directory. Uninstall simply uninstalls it.
+The **View Details** button opens the card of the package: its signature, the provider it came from, the dates, the changelog, the readme and the license.
 
-Note the three modes when you uninstall a package:
+The grid of the **Packages** tab shows only the newest version of a package. The other versions are listed on the tab **Uploaded Versions** of the card, and a version can be deleted from it.
 
-![](pkguninstall.png)
+## Dependencies
+
+The requirements are listed on the tab **Dependencies** of the pre-install panel, and the button **Install all dependencies to continue** installs them.
+
+With the setting `abort_install_on_unsatisfied_dependency` — on by default — the installation is stopped until the dependencies are satisfied.
+
+How a package declares its dependencies is described in [Package Dependencies](extending-modx/transport-packages/dependencies).
+
+## Permissions
+
+| Permission | What it opens |
+| --- | --- |
+| `workspaces` | the page of Package Management |
+| `packages` | the processors of the packages |
+| `providers` | the processors of the providers |
+| `file_upload` | the upload of an archive |
+
+All four are part of the Administrator policy.
+
+## Events
+
+| Event | When it fires |
+| --- | --- |
+| `OnPackageInstall` | a package is installed |
+| `OnPackageUninstall` | a package is uninstalled |
+| `OnPackageRemove` | a package is removed or purged |
+
+Every event carries the `package`.
+
+<!-- FACT? The Transport Packages page gives `OnPackageInstall` an `action` argument as well, but this table does not mention it. Check which of the two is right. -->
+
+## Settings
+
+| Setting | Value by default | What it does |
+| --- | --- | --- |
+| [auto_check_pkg_updates](building-sites/settings/auto_check_pkg_updates) | `true` | the button of the row is **Update** instead of **Check For Updates** |
+| [auto_check_pkg_updates_cache_expire](building-sites/settings/auto_check_pkg_updates_cache_expire) | 15 minutes | how long the result of the check is kept |
+| [archive_with](building-sites/settings/archive_with) | `false` | `1` unpacks the archives with PCLZip instead of ZipArchive |
+
+The option `default_provider` names the provider that is preselected. The page reads it, but it is not registered as a system setting — see [modxcms/revolution#17100](https://github.com/modxcms/revolution/issues/17100).
+
+## Processors
+
+| Processor | Permission |
+| --- | --- |
+| `Workspace/Packages/GetList` | `packages` |
+| `Workspace/Packages/Get` | `packages` |
+| `Workspace/Packages/GetAttribute` | `packages` |
+| `Workspace/Packages/GetDependencies` | `packages` |
+| `Workspace/Packages/Install` | `packages` |
+| `Workspace/Packages/Uninstall` | `packages` |
+| `Workspace/Packages/Remove` | `packages` |
+| `Workspace/Packages/Update` | `packages` |
+| `Workspace/Packages/CheckForUpdates` | `packages` |
+| `Workspace/Packages/ScanLocal` | `packages` |
+| `Workspace/Packages/Purge` | `packages` |
+| `Workspace/Packages/Upload` | `file_upload` |
+| `Workspace/Packages/Version/GetList` | `packages` |
+| `Workspace/Packages/Version/Remove` | `packages` |
+| `Workspace/Packages/Dependency/Download` | `packages` |
+| `Workspace/Packages/Rest/GetList` | `packages` |
+| `Workspace/Packages/Rest/GetNodes` | `packages` |
+| `Workspace/Packages/Rest/GetInfo` | `packages` |
+| `Workspace/Packages/Rest/Download` | `packages` |
+| `Workspace/Providers/GetList` | `providers` |
+| `Workspace/Providers/Create` | `providers` |
+| `Workspace/Providers/Update` | `providers` |
+| `Workspace/Providers/UpdateFromGrid` | `providers` |
+| `Workspace/Providers/Remove` | `providers` |
+
+## See Also
+
+1. [Providers](building-sites/extras/providers)
+2. [Troubleshooting Package Management](building-sites/extras/troubleshooting)
+3. [Transport Packages](extending-modx/transport-packages)

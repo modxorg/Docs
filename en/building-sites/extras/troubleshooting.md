@@ -1,28 +1,36 @@
 ---
-title: "Troubleshooting"
-_old_id: "312"
-_old_uri: "2.x/administering-your-site/installing-a-package/troubleshooting-package-management"
+title: "Troubleshooting Package Management"
+description: "What to check when a package cannot be downloaded, installed or unpacked in MODX: cURL, the packages directory, the archive format and the archive_with setting."
 ---
 
-## Troubleshooting Package Management
+Most problems with Package Management come from the environment of the server rather than from MODX. Check the causes below.
 
-This page is dedicated to problems with Package Management, specifically with downloading and installing packages.
+## cURL Is Missing
 
-Most issues can be resolved by making sure you have cURL installed, and that the core/packages/ directory is writable by PHP.
+MODX asks the providers over HTTP with the PSR-18 client, which needs the extension cURL. The manager checks it when the page opens. Without cURL a notice is shown above the page, and the button **Download Extras** is replaced by the search of the local directory.
 
-### archiveTo/extractTo errors
+Ask your host for the extension cURL.
 
-If you've downloaded a package, but are getting 'archiveTo'-related errors or a "Package Not Found" error after downloading, make sure you're running at least Revolution 2.0.1, and then go to System Settings and set the **archive\_with** setting to "Yes", or 1.
+## The Packages Directory Is Not Writable
 
-This will force MODX to use PCLZip instead of ZipArchive, as your environment most likely has a broken ZipArchive configuration or version that is causing the error:
+The packages are unpacked into `core/packages/`, and the archives are written there as well. When PHP cannot write into that directory, the download and the installation fail. Make the directory writable by PHP.
 
-See these tickets for more information:
+## The Archive Cannot Be Unpacked
 
-- <http://bugs.php.net/bug.php?id=44974> (Closed)
-- <http://bugs.php.net/bug.php?id=47023> (Closed)
-- <http://bugs.php.net/bug.php?id=43641> (Closed)
-- <http://bugs.php.net/bug.php?id=48218> (Open)
+Some servers have a broken build of ZipArchive, and the unpack fails with an error from `extractTo` or `archiveTo`. The message comes from PHP, not from MODX.
 
-### Access Denied Error
+Set the system setting `archive_with` to **Yes** (the value `1`). MODX then unpacks the archives with PCLZip, which is shipped with MODX and needs no extension of PHP.
 
-If you have HTML5 caching enabled try disabling it and clear your browser cache. (<https://github.com/modxcms/revolution/issues/7340>)
+## The Archive Is Missing
+
+A package that is installed but whose archive was deleted from `core/packages/` can be fetched from the provider again. MODX downloads it once more when it needs the archive.
+
+## The Upload Is Refused
+
+The **Upload a package** entry of the menu of the **Download Extras** button takes only an archive with the name `<signature>.transport.zip`. A file with another name, or a file that is not a zip, is refused with a message that says so.
+
+## See Also
+
+1. [Package Management](building-sites/extras)
+2. [Providers](building-sites/extras/providers)
+3. [archive_with](building-sites/settings/archive_with)

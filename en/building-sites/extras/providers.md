@@ -1,35 +1,57 @@
 ---
 title: "Providers"
-_old_id: "247"
-_old_uri: "2.x/developing-in-modx/advanced-development/package-management/providers"
+description: "Transport providers in MODX: the remote service a package is downloaded from, how to add one, and what MODX asks it for."
 ---
 
-## What is a Transport Provider?
+A transport provider is a remote service that MODX downloads transport packages from. MODX ships with one — the provider of modx.com — and a site can have as many as it needs.
 
-Transport Providers in MODX are remote sources that one can download Transport Packages from. Simply by specifying a service URL, you can easily hook into the Transport Provider and grab the latest Transport Packages easily from it.
+## What a Provider Is
 
-MODX supports an unlimited number of Transport Providers, and each one can be from any source.
+A provider is a base URL of a REST service. MODX appends a fixed route to it and reads the answer as XML:
 
-MODX recommends not downloading Transport Packages from providers you cannot verify or do not trust. We recommend the modx.com Official Provider at: [https://rest.modx.com/extras/](https://rest.modx.com/extras/)
+| Route | What it returns |
+| --- | --- |
+| `repository` | the repositories of the provider and the categories in them |
+| `package` | the package of a signature |
+| `package/versions` | the versions of a package |
+| `package/update` | the newest version of a package |
+| `home` | the statistics of the provider |
+| `verify` | the answer that the service is a provider |
 
-## Usage
+The provider of modx.com is the service at `https://rest.modx.com/extras/`.
 
-To setup a Transport Provider, simply go to the Package Management page, and from there click on the 'Providers' panel heading at the bottom. This will open up a grid of Providers, which you can manage easily.
+> [!WARNING]
+> Download packages only from providers you trust: a provider serves the code that runs on your site.
 
-![](providers.png)
+## Adding a Provider
 
-From there, you can click "Add New Provider" to add another, or right-click on any provider to get more options. Providers must be valid JSON files, web-accessible, and in the correct Provider format. Note that the Extras section of modx.com is a Provider.
+Providers live on the tab **Providers** of the Package Management page: **Extras** in the top menu → **Installer** → **Providers**. The button **Create** opens the window with the fields of a provider:
 
-The Service URL is the actual, absolute location of the provider file.
+| Field | Meaning |
+| --- | --- |
+| `name` | the name of the provider in the list |
+| `service_url` | the base URL of the service |
+| `username` | the name to send with the requests |
+| `api_key` | the key to send with the requests |
+| `description` | free text |
 
-Once you have a provider, you can connect to it by going up to the Packages grid, clicking "Add New Provider", and then select the "Select a Provider" option. This will bring up a dropdown of Provider options: ![](selprovider.png)
+MODX checks the provider when it is saved: it asks the service `verify` and expects an answer that confirms the provider. A provider that does not answer is not saved.
 
-Once you've selected your provider, click Next, and the download tree will be populated with the contents of that Provider's payload (ie, data). This will show you a tree of Package Versions you can download:
+Every request to the provider carries:
 
-![](pkgdownload.png)
+- the `username` and the `api_key` of the provider;
+- the data of the installation: the `uuid`, the type of the database, the version of MODX, the host and the version of PHP, and the language of the manager.
 
-## Related Pages
+## Downloading from a Provider
 
-1. [Transport Packages](extending-modx/transport-packages)
-2. [Providers](building-sites/extras/providers)
-3. [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script)
+1. In the menu of the **Download Extras** button, choose **Select a Provider**.
+2. Pick the provider.
+3. Confirm with **Save and go to Package Browser**.
+
+The Package Browser opens with the categories of the provider on the left and the packages on the right.
+
+## See Also
+
+1. [Package Management](building-sites/extras)
+2. [Transport Packages](extending-modx/transport-packages)
+3. [Creating a Third Party Component Build Script](extending-modx/transport-packages/build-script)
