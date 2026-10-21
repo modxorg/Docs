@@ -20,7 +20,7 @@ Contexts are managed in the manager: **Admin** (the gear in the top menu) → **
 
 The keys `mgr`, `web` and `root` are reserved by the core.
 
-A new context is granted access right away: the **Administrator** user group receives the *Context* policy, the anonymous user the *Load Only* policy — the right `load` and nothing else. The anonymous access is skipped when the request to the processor carries `enableAnonymous=0`.
+A new context is granted access right away: the **Administrator** user group receives the *Context* policy, the anonymous user the *Load Only* policy — the right `load` and nothing else. The anonymous entry shows as **(anonymous)** in the **Access Permissions** tab of the context, and removing it there takes that access away.
 
 Contexts appear in the resource tree as their own branch. Resources are moved between contexts by dragging them.
 
@@ -94,7 +94,7 @@ The code accepts only the characters `A-Z`, `a-z`, `0-9`, `_` and `-` in a `cult
 
 A request starts in the context named by the gateway. Two mechanisms change that:
 
-- the gateway file `config.context.php` next to `index.php` — the file returns the key of the context to start in. See [Serving a Second Domain](building-sites/contexts/virtual-host);
+- the gateway file `config.context.php` next to `index.php` — the file returns the key of the context to start in. See [Using Virtual Hosts](building-sites/contexts/virtual-host);
 - a Plugin on the `OnHandleRequest` event that calls `switchContext()`. See [Using a Gateway Plugin](building-sites/contexts/gateway-plugin).
 
 The method that switches the context:
@@ -168,7 +168,7 @@ A resource normally belongs to one context. With `use_context_resource_table` en
 
 ## See Also
 
-1. [Serving a Second Domain](building-sites/contexts/virtual-host)
+1. [Using Virtual Hosts](building-sites/contexts/virtual-host)
 2. [Using a Gateway Plugin](building-sites/contexts/gateway-plugin)
 3. [System Settings](building-sites/settings)
 4. [Access Control Lists](building-sites/client-proofing/security/policies/acls)

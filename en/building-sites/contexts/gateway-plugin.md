@@ -1,9 +1,14 @@
 ---
 title: "Using a Gateway Plugin"
-description: "Serving several domains from one MODX installation: switching the context by host with a Plugin on OnHandleRequest, or with a gateway of its own."
+description: "Serving several domains from one MODX installation: the Plugin that switches the context by host, and the approach with a virtual host and a directory for every domain."
 ---
 
-One installation can serve several domains. The context of the request is what tells them apart, and two mechanisms choose it: a Plugin that switches the context, or a gateway file that starts in it.
+One installation can serve several domains, and the context of the request is what tells them apart. Two approaches do that:
+
+- **One virtual host, several domains.** Every domain points at the same virtual host, and a Plugin on `OnHandleRequest` reads the host and switches the context. This is the approach of this page.
+- **A virtual host and a directory for every domain.** Each domain gets a virtual host of its own and a gateway directory with its own `config.context.php`. See [Using Virtual Hosts](building-sites/contexts/virtual-host).
+
+The first approach needs nothing but the Plugin.
 
 ## Switching the Context by Host
 
@@ -36,24 +41,13 @@ if (!$modx->switchContext('domain2')) {
 }
 ```
 
-## A Gateway of Its Own
-
-This mechanism needs no Plugin. The file `index.php` reads the context from `config.context.php` next to it:
-
-``` php
-<?php
-return 'domain2';
-```
-
-When the file is absent, the request starts in the `web` context. A directory of its own — a copy of `index.php`, `config.core.php` and `.htaccess` plus its own `config.context.php` — is a separate gateway for that domain: see [Serving a Second Domain](building-sites/contexts/virtual-host).
-
 ## The Session Handler
 
-Switching the context at runtime does not load a custom session handler: the handler is set by the gateway and applies to the whole request. A context with a session handler of its own needs a gateway of its own: see [Serving a Second Domain](building-sites/contexts/virtual-host).
+Switching the context at runtime does not load a custom session handler: the handler is set by the gateway and applies to the whole request. A context with a session handler of its own needs a gateway of its own: see [Using Virtual Hosts](building-sites/contexts/virtual-host).
 
 ## See Also
 
 1. [Contexts](building-sites/contexts)
-2. [Serving a Second Domain](building-sites/contexts/virtual-host)
+2. [Using Virtual Hosts](building-sites/contexts/virtual-host)
 3. [OnHandleRequest](extending-modx/plugins/system-events/onhandlerequest)
 4. [GatewayManager](extras/gatewaymanager)

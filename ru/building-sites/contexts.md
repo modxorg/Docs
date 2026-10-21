@@ -21,7 +21,7 @@ description: "Контексты в MODX: как они переопределя
 
 Ключи `mgr`, `web` и `root` зарезервированы ядром.
 
-Новый контекст сразу получает доступ: группа пользователей **Administrator** — политику *Context*, анонимный пользователь — политику *Load Only*, то есть право `load` и больше ничего. Анонимный доступ пропускается, если в запрос к процессору передан `enableAnonymous=0`.
+Новый контекст сразу получает доступ: группа пользователей **Administrator** — политику *Context*, анонимный пользователь — политику *Load Only*, то есть право `load` и больше ничего. Запись анонимного пользователя видна как **(anonymous)** на вкладке **Access Permissions** контекста, и её удаление там снимает этот доступ.
 
 Контексты появляются в дереве ресурсов отдельной веткой. Ресурсы переносятся между контекстами перетаскиванием.
 
@@ -95,7 +95,7 @@ $setting = $modx->getContext('web')->getOption('my_context_setting');
 
 Запрос начинается в контексте, который называет гейтвей. Сменить контекст могут два механизма:
 
-- файл гейтвея `config.context.php` рядом с `index.php` — файл возвращает ключ контекста, в котором начинается запрос. См. [Второй домен](building-sites/contexts/virtual-host);
+- файл гейтвея `config.context.php` рядом с `index.php` — файл возвращает ключ контекста, в котором начинается запрос. См. [Использование виртуальных хостов](building-sites/contexts/virtual-host);
 - плагин на событие `OnHandleRequest`, который вызывает `switchContext()`. См. [Плагин шлюза](building-sites/contexts/gateway-plugin).
 
 Метод, который переключает контекст:
@@ -169,7 +169,7 @@ if ($modx->switchContext('domain2')) {
 
 ## Смотрите также
 
-1. [Второй домен](building-sites/contexts/virtual-host)
+1. [Использование виртуальных хостов](building-sites/contexts/virtual-host)
 2. [Плагин шлюза](building-sites/contexts/gateway-plugin)
 3. [Системные настройки](building-sites/settings)
 4. [ACL](building-sites/client-proofing/security/policies/acls)

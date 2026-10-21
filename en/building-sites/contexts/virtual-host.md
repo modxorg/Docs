@@ -1,9 +1,11 @@
 ---
-title: "Serving a Second Domain"
-description: "Serving a second domain from one MODX installation: the context and its settings, the gateway directory with its own config.context.php, and the virtual host of the web server."
+title: "Using Virtual Hosts"
+description: "Giving every domain its own virtual host and its own directory on one MODX installation: the context and its settings, the gateway directory with its own config.context.php, and the virtual host of the web server."
 ---
 
-MODX 3 does not match a host with a context by itself. The gateway that starts a request chooses its context, so a second domain needs a second gateway: a directory with its own `index.php` and a `config.context.php` that names the context.
+MODX 3 does not match a host with a context by itself. The gateway that starts a request chooses its context, so a second domain needs a second gateway.
+
+This page describes the approach where every domain has a virtual host of its own and a directory of its own on the same machine. When several domains point at one virtual host, a Plugin picks the context instead — see [Using a Gateway Plugin](building-sites/contexts/gateway-plugin).
 
 The example below builds such a gateway for the context `dev` on the host `dev.example.com`.
 
@@ -38,6 +40,8 @@ The gateway is a directory of its own with four files:
 | `config.context.php` | the key of the context |
 | `config.core.php` | a copy of `config.core.php` from the installation |
 | `.htaccess` | a copy of `.htaccess` from the installation |
+
+The three copies point at the same core and the same database. Only the context differs between the directories.
 
 `index.php` works as it is. The other three files are set up as follows:
 

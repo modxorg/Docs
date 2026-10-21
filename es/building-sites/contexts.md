@@ -20,7 +20,7 @@ Los contextos se gestionan en el gestor: **Admin** (el engranaje del menú super
 
 Las claves `mgr`, `web` y `root` están reservadas por el núcleo.
 
-Un contexto nuevo recibe acceso de inmediato: el grupo de usuarios **Administrator** recibe la política *Context* y el usuario anónimo la política *Load Only*, el derecho `load` y nada más. El acceso anónimo se omite cuando la petición al procesador lleva `enableAnonymous=0`.
+Un contexto nuevo recibe acceso de inmediato: el grupo de usuarios **Administrator** recibe la política *Context* y el usuario anónimo la política *Load Only*, el derecho `load` y nada más. La entrada del usuario anónimo aparece como **(anonymous)** en la pestaña **Access Permissions** del contexto, y quitarla ahí retira ese acceso.
 
 Los contextos aparecen en el árbol de recursos como una rama propia. Los recursos se mueven entre contextos arrastrándolos.
 
