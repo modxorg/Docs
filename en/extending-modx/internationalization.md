@@ -93,14 +93,16 @@ A page declares the topics it needs, and the manager loads them into `MODx.lang`
  */
 public function getLanguageTopics()
 {
-    return ['mycomponent:default'];
+    return ['mycomponent:default', 'mycomponent:settings'];
 }
 ```
+
+The method returns the list of the topics of the page, so a component names all of its topics at once.
 
 A page that needs a topic beyond those of its controller adds it with `addLexiconTopic()`:
 
 ``` php
-$this->addLexiconTopic('mycomponent:settings');
+$this->addLexiconTopic('mycomponent:reports');
 ```
 
 The manager asks the connector `connectors/lang.js.php` for the topics of the page: it reads the `topic` parameter, splits it by commas and loads every coordinate with `modLexicon::load()`. The templates of the core use it the same way — `manager/templates/default/header.tpl` asks for `?ctx=mgr&topic=topmenu,file,resource,…`.

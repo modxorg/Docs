@@ -92,14 +92,16 @@ $modx->lexicon('school.basketball', ['userinput' => 'amazing']);
  */
 public function getLanguageTopics()
 {
-    return ['mycomponent:default'];
+    return ['mycomponent:default', 'mycomponent:settings'];
 }
 ```
+
+Метод возвращает список тем страницы, поэтому компонент называет все свои темы сразу.
 
 Если странице нужна тема сверх объявленных контроллером, она добавляется через `addLexiconTopic()`:
 
 ``` php
-$this->addLexiconTopic('mycomponent:settings');
+$this->addLexiconTopic('mycomponent:reports');
 ```
 
 За темы страницы менеджер обращается к коннектору `connectors/lang.js.php`: он читает параметр `topic`, делит его по запятым и загружает каждую координату через `modLexicon::load()`. Шаблоны ядра поступают так же: `manager/templates/default/header.tpl` запрашивает `?ctx=mgr&topic=topmenu,file,resource,…`.
