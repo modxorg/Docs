@@ -83,15 +83,28 @@ $modx->lexicon('school.basketball', ['userinput' => 'amazing']);
  _('lexicon.key', { userinput: 'amazing' });
 ```
 
-Подгружайте темы по требованию у `connectors/lang.js.php` с параметром `topic` через запятую:
+Страница объявляет нужные темы, а менеджер грузит их в `MODx.lang`. Контроллер называет их в `getLanguageTopics()`:
 
+``` php
+/**
+ * Specify the language topics to load
+ * @return array
+ */
+public function getLanguageTopics()
+{
+    return ['mycomponent:default'];
+}
 ```
-/connectors/lang.js.php?topic=myextra:default,myextra:settings
+
+Если странице нужна тема сверх объявленных контроллером, она добавляется через `addLexiconTopic()`:
+
+``` php
+$this->addLexiconTopic('mycomponent:settings');
 ```
 
-Коннектор читает параметр `topic`, делит его по запятым и загружает каждую координату через `modLexicon::load()`. Шаблоны ядра поступают так же: `manager/templates/default/header.tpl` запрашивает `?ctx=mgr&topic=topmenu,file,resource,…`.
+За темы страницы менеджер обращается к коннектору `connectors/lang.js.php`: он читает параметр `topic`, делит его по запятым и загружает каждую координату через `modLexicon::load()`. Шаблоны ядра поступают так же: `manager/templates/default/header.tpl` запрашивает `?ctx=mgr&topic=topmenu,file,resource,…`. Компонент сам коннектор не вызывает — это делает менеджер.
 
-Ответ заменяет `MODx.lang`, поэтому вызывайте его до использования нужных строк. Ядро само грузит `core:default`.
+Ответ заменяет `MODx.lang`, поэтому темы нужно объявить до отрисовки страницы. Ядро само грузит `core:default`.
 
 ## Лексиконы для настроек
 

@@ -84,15 +84,28 @@ In a CMP, `_()` reads from the lexicon set loaded for the page:
  _('lexicon.key', { userinput: 'amazing' });
 ```
 
-Load extra topics on demand from `connectors/lang.js.php` with a comma-separated `topic` parameter:
+A page declares the topics it needs, and the manager loads them into `MODx.lang`. A controller names them in `getLanguageTopics()`:
 
+``` php
+/**
+ * Specify the language topics to load
+ * @return array
+ */
+public function getLanguageTopics()
+{
+    return ['mycomponent:default'];
+}
 ```
-/connectors/lang.js.php?topic=myextra:default,myextra:settings
+
+A page that needs a topic beyond those of its controller adds it with `addLexiconTopic()`:
+
+``` php
+$this->addLexiconTopic('mycomponent:settings');
 ```
 
-The connector reads the `topic` parameter, splits it by commas and loads every coordinate with `modLexicon::load()`. The templates of the core do the same: `manager/templates/default/header.tpl` asks for `?ctx=mgr&topic=topmenu,file,resource,…`.
+The manager asks the connector `connectors/lang.js.php` for the topics of the page: it reads the `topic` parameter, splits it by commas and loads every coordinate with `modLexicon::load()`. The templates of the core use it the same way — `manager/templates/default/header.tpl` asks for `?ctx=mgr&topic=topmenu,file,resource,…`. A Component does not call the connector itself; the manager does.
 
-The response replaces `MODx.lang`, so call it before using the strings. Core loads `core:default` by itself.
+The response replaces `MODx.lang`, so the topics have to be declared before the page is rendered. The core loads `core:default` by itself.
 
 ## Lexicons for Settings
 
