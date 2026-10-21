@@ -34,14 +34,12 @@ Every row of the grid carries the actions of the package:
 | Action | When it is there |
 | --- | --- |
 | **Install** | the package is not installed yet |
-| **Uninstall** | the package is installed |
-| **Reinstall** | the package is installed |
-| **Update** | a newer version is known and `auto_check_pkg_updates` is on |
-| **Check For Updates** | the package came from a provider and no newer version is known |
+| **Uninstall** | the package is installed; the button rolls its elements back |
+| **Reinstall** | the package is installed; the button runs the installation again over it |
+| **Update** | the setting `auto_check_pkg_updates` is on and the provider has a newer version |
+| **Check For Updates** | the package came from a provider and the setting `auto_check_pkg_updates` is off, so MODX does not know of a newer version yet |
 | **Remove** | always |
 | **View Details** | always |
-
-<!-- FACT? The table gives the same condition for **Uninstall** and **Reinstall**, so the reader cannot tell when to use which one. -->
 
 ![](modx-package-management-4.jpg)
 
@@ -71,9 +69,7 @@ The same archive can be sent through the manager. The entry **Upload a package**
 
 A package that came from a provider can be checked for a newer version: the **Check For Updates** button of the row opens a window with the versions the provider offers, and a newer version is installed from there.
 
-With the setting `auto_check_pkg_updates` turned on, the button of the row is **Update** instead, and MODX looks for a newer version by itself.
-
-<!-- FACT? The Actions table makes **Update** appear only when a newer version is known, but the Updating section says that `auto_check_pkg_updates` replaces **Check For Updates** with **Update**. Which condition decides the button? -->
+With the setting `auto_check_pkg_updates` turned on, MODX asks the provider for the newest version itself. The button of the row is then **Update** when a newer version is there, and **Check For Updates** otherwise.
 
 ## Uninstalling a Package
 
@@ -122,13 +118,11 @@ All four are part of the Administrator policy.
 
 | Event | When it fires |
 | --- | --- |
-| `OnPackageInstall` | a package is installed |
+| `OnPackageInstall` | a package is installed or upgraded |
 | `OnPackageUninstall` | a package is uninstalled |
 | `OnPackageRemove` | a package is removed or purged |
 
-Every event carries the `package`.
-
-<!-- FACT? The Transport Packages page gives `OnPackageInstall` an `action` argument as well, but this table does not mention it. Check which of the two is right. -->
+Every event carries the `package`. `OnPackageInstall` carries the `action` as well: `install` when the package is installed for the first time, `upgrade` when a newer version is installed over an older one.
 
 ## Settings
 
@@ -137,6 +131,7 @@ Every event carries the `package`.
 | [auto_check_pkg_updates](building-sites/settings/auto_check_pkg_updates) | `true` | the button of the row is **Update** instead of **Check For Updates** |
 | [auto_check_pkg_updates_cache_expire](building-sites/settings/auto_check_pkg_updates_cache_expire) | 15 minutes | how long the result of the check is kept |
 | [archive_with](building-sites/settings/archive_with) | `false` | `1` unpacks the archives with PCLZip instead of ZipArchive |
+| `abort_install_on_unsatisfied_dependency` | `true` | the installation stops until the dependencies of the package are satisfied |
 
 The option `default_provider` names the provider that is preselected. The page reads it, but it is not registered as a system setting — see [modxcms/revolution#17100](https://github.com/modxcms/revolution/issues/17100).
 
