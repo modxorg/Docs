@@ -1,6 +1,6 @@
 ---
 title: "Resetting a User Password Manually"
-description: "Reset the password of a user of MODX when the link for a forgotten password does not reach them: through the API."
+description: "Reset the password of a user of MODX when the link for a forgotten password does not reach them: in the database or through the API."
 _old_id: "484"
 _old_uri: "2.x/administering-your-site/security/troubleshooting-security/resetting-a-user-password-manually"
 ---
@@ -12,7 +12,13 @@ It is not uncommon for a User account to become inaccessible because of a lost o
 **The password cannot be written into the database by hand**
 MODX 3 hashes the passwords with `MODX\Revolution\Hashing\modNative`, which is the `password_hash()` function of PHP. A database has no such function, so the value of the field `password` cannot be calculated outside of PHP.
 
-There is a second way. Set the field `hash_class` of the user to the class `MODX\Revolution\Hashing\modMD5`, and write the password as an MD5 hash. The user can then log in with it, and the hash is recalculated with `modNative` the next time the password is changed. The name of the class has to be given with its namespace. The older name without it works only through a deprecated alias that prints a warning.
+There is a second way. Set the field `hash_class` of the user to the class `MODX\Revolution\Hashing\modMD5`, and write the password as an MD5 hash — the database has an `MD5()` function for that. This is the statement to run in the database — the name of the table carries the prefix of your installation:
+
+``` sql
+UPDATE modx_users SET hash_class = 'MODX\\Revolution\\Hashing\\modMD5', password = MD5('the-new-password') WHERE username = 'theusername';
+```
+
+The user can then log in with it, and the hash is recalculated with `modNative` the next time the password is changed. The name of the class has to be given with its namespace. The older name without it works only through a deprecated alias that prints a warning.
 
 ## Resetting a Password via the API
 

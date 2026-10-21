@@ -74,7 +74,7 @@ description: "Защитить страницы сайта на MODX так, ч�
 
 ## Всё ещё не работает?
 
-Пройдите шаги по порядку и убедитесь, что flush permissions выполнен. Если всё кажется верным, проверьте ещё раз и спросите на Forums. Если урок кажется неточным или вводящим в заблуждение, напишите в теме форума (ссылка ниже), что исправить.
+Пройдите шаги по порядку и убедитесь, что flush permissions выполнен. Если всё кажется верным, проверьте ещё раз и спросите об этом на [MODX Community](https://community.modx.com).
 
 Два источника помогут разобраться в самих правах: [руководство Bob по правам](http://bobsguides.com/revolution-permissions.html) подробно раскрывает модель, а урок [Login.Basic Setup](/extras/login/login.tutorials/basic-setup "Login.Basic Setup") показывает базовую зону "Members Only", построенную на Login Snippet.
 

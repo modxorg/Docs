@@ -8,9 +8,11 @@ MODX 3 can log a user in without a password. With the feature activated, the log
 
 ## Benefits of passwordless login
 
-As a site administrator you should not encourage your users to choose insecure passwords. Passwordless login moves the risk of a weak password away from your MODX installation, but of course needs a secure e-mail account for your users. The traditional username and password login has the same requirement, because it also offers self-service password resets by e-mail.
+As a site administrator you should not encourage your users to choose insecure passwords. Passwordless login moves the risk of a weak password away from your MODX installation, but of course needs a secure e-mail account for your users. The traditional username and password login has the same requirement, because it also offers self-service password resets by e-mail. The gain is that the user has no password to choose, to remember or to reuse.
 
-The password of the user stays in the database all the same. Every login by a link writes the hash of a temporary password into the field `password` of the user. The gain is that the user has no password to choose, to remember or to reuse, not that the password is gone.
+## The Password Is Replaced
+
+Logging in by a link replaces the password of the user. The handler writes a generated password into the field `password`, where only its hash is stored, and logs the user in with it. The password the user chose is therefore gone after the first link — the account is left with a password that nobody knows.
 
 ## How to enable passwordless login
 

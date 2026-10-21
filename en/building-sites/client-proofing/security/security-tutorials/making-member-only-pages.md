@@ -75,7 +75,7 @@ In some cases you may need to clear the site cache, specifically for the mgr (ma
 
 ## Still can't get it to work?
 
-Make sure you followed everything step by step and that you flushed permissions properly. If everything seems to be alright, check again and then go to the Forums to ask for help. If you think the tutorial is misleading or inaccurate, please visit the [forum topic discussing this tutorial](https://forums.modx.com/index.php/topic,51259.0.html) and post about what is incorrect so it can be fixed.
+Make sure you followed everything step by step and that you flushed permissions properly. If everything seems to be alright, check again and then ask for help on the [MODX Community](https://community.modx.com).
 
 Two further readings help with the permissions themselves: [Bob's permissions guide](http://bobsguides.com/revolution-permissions.html) covers the model in depth, and the [Login.Basic Setup](/extras/login/login.tutorials/basic-setup "Login.Basic Setup") tutorial shows a basic "Members Only" area built with the Login Snippet.
 
