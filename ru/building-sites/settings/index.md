@@ -1,6 +1,6 @@
 ---
 title: "Системные настройки"
-translation: "building-sites/settings/"
+translation: "building-sites/settings"
 description: "MODX поставляется с гибким набором системных настроек, все они перечислены на этой странице."
 ---
 
