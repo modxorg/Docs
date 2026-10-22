@@ -1,6 +1,6 @@
 ---
 title: "Пример простой контактной формы связи"
-translation: "extras/formit/formit.tutorials-and-examples/formit.examples.simple-contact-page"
+translation: "extras/formit/formit.tutorials-and-examples/examples.simple-contact-page"
 description: "Пример простой контактной формы связи"
 ---
 
