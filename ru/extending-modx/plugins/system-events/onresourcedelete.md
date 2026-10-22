@@ -1,6 +1,6 @@
 ---
 title: "OnResourceDelete"
-translation: "extending-modx/plugins/system-events/Onresourcedelete"
+translation: "extending-modx/plugins/system-events/onresourcedelete"
 description: "Событие OnResourceDelete срабатывает сразу после удаления ресурса"
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Обработка выпадающих списков, чекбоксов и радио кнопок"
-translation: "extras/formit/formit.tutorials-and-examples/formit.handling-selects,-checkboxes-and-radios"
+translation: "extras/formit/formit.tutorials-and-examples/handling-selects,-checkboxes-and-radios"
 description: "Обработка выпадающих списков, чекбоксов и радио кнопок"
 ---
 
