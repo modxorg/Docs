@@ -5,10 +5,7 @@ _old_id: "1"
 _old_uri: "dashboard.action"
 ---
 
-> Note: You're currently viewing documentation for MODX 3. This is a new major release: the Setup and Manager have a refreshed look (including a redesigned login), the codebase follows modern PHP standards, and it requires PHP 8.1 or later — see the [server requirements](getting-started/server-requirements) for the exact minimums per release.
-> 
-> The MODX Documentation team and contributors are improving the MODX 3 documentation, but we'd still like your help to take it further.
-> Can you help update the documentation for MODX 3? Any help is welcome. [Find open issues here](https://github.com/modxorg/Docs/issues)
+> The documentation site has undergone some updates. Documentation now defaults to 3.x, and there's a dark mode! If you encounter issues, [please open an issue on GitHub](https://github.com/modxorg/Docs/issues).
 
 MODX Revolution (Revo) is an easy-to-use Content Management System (CMS) and Application Framework rolled into one. Despite MODX's limitless possibilities, you'll find it refreshingly intuitive to work with. At every step, MODX aims to give you Creative Freedom.
 
