@@ -1,7 +1,7 @@
 ---
 title: "SmartTag"
 description: "Система тегирования для MODX Revolution"
-translation: "extras/smarttag/index"
+translation: "extras/smarttag"
 ---
 
 ## Описание

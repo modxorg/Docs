@@ -1,7 +1,7 @@
 ---
 title: "Rowboat"
 description: "Сниппет для перебора строк любой таблицы MySQL в MODX"
-translation: "extras/rowboat/index"
+translation: "extras/rowboat"
 ---
 
 ## Что такое Rowboat?

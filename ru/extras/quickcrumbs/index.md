@@ -1,7 +1,7 @@
 ---
 title: "QuickCrumbs"
 description: "Быстрый и эффективный сниппет хлебных крошек для MODX Revolution"
-translation: "extras/quickcrumbs/index"
+translation: "extras/quickcrumbs"
 ---
 
 ## Что такое QuickCrumbs

@@ -1,7 +1,7 @@
 ---
 title: "MessageManager"
 description: "Чтение, создание и ответы на сообщения Менеджера MODX на фронтенде сайта"
-translation: "extras/messagemanager/index"
+translation: "extras/messagemanager"
 ---
 
 ## Что такое MessageManager?

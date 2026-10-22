@@ -1,7 +1,7 @@
 ---
 title: "FoundationX"
 description: "Responsive CSS-фреймворк Foundation для MODX Cloud Snapshot"
-translation: "extras/foundationx/index"
+translation: "extras/foundationx"
 ---
 
 ## Что такое FoundationX?

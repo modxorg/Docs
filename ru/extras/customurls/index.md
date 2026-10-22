@@ -1,7 +1,7 @@
 ---
 title: "CustomUrls"
 description: "Пользовательские паттерны alias и URI для ресурсов MODX"
-translation: "extras/customurls/index"
+translation: "extras/customurls"
 ---
 
 ## Что такое CustomUrls?

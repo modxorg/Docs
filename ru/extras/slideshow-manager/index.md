@@ -1,7 +1,7 @@
 ---
 title: "Slideshow Manager"
 description: "CMP и сниппет для управления слайдшоу с расписанием публикации"
-translation: "extras/slideshow-manager/index"
+translation: "extras/slideshow-manager"
 ---
 
 ## Что такое Slideshow Manager?

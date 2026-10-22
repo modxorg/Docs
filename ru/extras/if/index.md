@@ -1,7 +1,7 @@
 ---
 title: "If"
 description: "Условный сниппет для логических проверок в MODX"
-translation: "extras/if/index"
+translation: "extras/if"
 ---
 
 ## Что такое If?

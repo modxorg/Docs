@@ -1,7 +1,7 @@
 ---
 title: "SizeMatters"
 description: "Логирование и графики ширины viewport и размеров шрифта посетителей сайта"
-translation: "extras/sizematters/index"
+translation: "extras/sizematters"
 ---
 
 ## Что такое SizeMatters?

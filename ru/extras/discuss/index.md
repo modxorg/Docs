@@ -1,7 +1,7 @@
 ---
 title: "Discuss"
 description: "Нативное форумное решение для MODX Revolution"
-translation: "extras/discuss/index"
+translation: "extras/discuss"
 ---
 
 ## Что такое Discuss?

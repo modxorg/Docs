@@ -1,7 +1,7 @@
 ---
 title: "MIGXdb"
 description: "Тип ввода TV для управления записями пользовательских таблиц и дочерними ресурсами в MODX"
-translation: "extras/migxdb/index"
+translation: "extras/migxdb"
 ---
 
 ## Что такое MIGXdb?

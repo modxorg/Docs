@@ -1,7 +1,7 @@
 ---
 title: "Shopkeeper"
 description: "Корзина и управление заказами для MODX Revolution"
-translation: "extras/shopkeeper/index"
+translation: "extras/shopkeeper"
 ---
 
 Корзина и управление заказами для MODX Revolution.

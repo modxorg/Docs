@@ -1,7 +1,7 @@
 ---
 title: "SmartOptimizer"
 description: "Оптимизация CSS и JS на фронтенде MODX через SmartOptimizer"
-translation: "extras/smartoptimizer/index"
+translation: "extras/smartoptimizer"
 ---
 
 ## Что такое SmartOptimizer?

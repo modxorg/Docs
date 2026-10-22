@@ -1,7 +1,7 @@
 ---
 title: "CookieList"
 description: "Wishlist и избранное через cookie для MODX Revolution"
-translation: "extras/cookielist/index"
+translation: "extras/cookielist"
 ---
 
 [CookieList](https://modx.com/extras/package/cookielist). универсальный addon для wishlist, избранного и похожего контента. Вы задаёте сохраняемое значение, поэтому он не ограничен ресурсами и подходит для custom components. Как следует из названия, данные хранятся в cookie.

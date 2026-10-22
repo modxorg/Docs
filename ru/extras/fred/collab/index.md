@@ -1,7 +1,7 @@
 ---
 title: "Совместная работа над темами"
 description: "Простой и git-подход к совместной разработке тем Fred"
-translation: "extras/fred/collab/index"
+translation: "extras/fred/collab"
 ---
 
 Совместная работа над темами помогает собрать надёжное решение для публикации в MODX Extras. Команда может разделить роли:

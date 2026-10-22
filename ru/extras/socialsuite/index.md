@@ -1,7 +1,7 @@
 ---
 title: "SocialSuite"
 description: "Набор инструментов для интеграции социальных сетей в дизайн MODX Revolution"
-translation: "extras/socialsuite/index"
+translation: "extras/socialsuite"
 ---
 
 SocialSuite сейчас в разработке и выйдет позже. Документацию расширим перед релизом.

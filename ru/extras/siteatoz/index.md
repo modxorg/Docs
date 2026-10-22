@@ -1,7 +1,7 @@
 ---
 title: "SiteAtoZ"
 description: "Сниппет алфавитного списка контента сайта с быстрыми ссылками по буквам"
-translation: "extras/siteatoz/index"
+translation: "extras/siteatoz"
 ---
 
 ## Что такое SiteAtoZ?

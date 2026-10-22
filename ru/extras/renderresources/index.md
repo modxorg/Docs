@@ -1,7 +1,7 @@
 ---
 title: "renderResources"
 description: "Универсальный сниппет MODX для вывода коллекции ресурсов"
-translation: "extras/renderresources/index"
+translation: "extras/renderresources"
 ---
 
 ## What is renderResources

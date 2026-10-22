@@ -1,7 +1,7 @@
 ---
 title: "LexiconHelper"
 description: "Утилита для поиска пропущенных и неиспользуемых строк лексикона в компонентах"
-translation: "extras/lexiconhelper/index"
+translation: "extras/lexiconhelper"
 ---
 
 ## Что такое LexiconHelper?

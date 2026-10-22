@@ -1,7 +1,7 @@
 ---
 title: "StatCache"
 description: "Плагин статического кэширования ресурсов MODX Revolution на файловой системе"
-translation: "extras/statcache/index"
+translation: "extras/statcache"
 ---
 
 ### Плагин статического кэширования для MODX Revolution

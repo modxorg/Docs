@@ -1,7 +1,7 @@
 ---
 title: "ConstantContact"
 description: "Плагин добавления контактов в списки Constant Contact из MODX Revolution"
-translation: "extras/constantcontact/index"
+translation: "extras/constantcontact"
 ---
 
 ## Что такое ConstantContact?

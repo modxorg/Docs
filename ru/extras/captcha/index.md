@@ -1,7 +1,7 @@
 ---
 title: "Captcha"
 description: "Captcha при входе в менеджер MODX и компоненты для форм на фронтенде"
-translation: "extras/captcha/index"
+translation: "extras/captcha"
 ---
 
 ## Что такое Captcha?

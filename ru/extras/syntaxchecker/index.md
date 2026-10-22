@@ -1,7 +1,7 @@
 ---
 title: "SyntaxChecker"
 description: "Плагин проверки синтаксиса MODX-тегов при сохранении документов и шаблонов"
-translation: "extras/syntaxchecker/index"
+translation: "extras/syntaxchecker"
 ---
 
 ## Что такое SyntaxChecker?

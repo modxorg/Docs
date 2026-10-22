@@ -1,7 +1,7 @@
 ---
 title: "Login"
 description: "Extra Login для авторизации на фронтенде, профилей, регистрации и восстановления пароля"
-translation: "extras/login/index"
+translation: "extras/login"
 ---
 
 ## Что такое Login?

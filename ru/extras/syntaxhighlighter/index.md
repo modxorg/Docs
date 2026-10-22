@@ -1,7 +1,7 @@
 ---
 title: "SyntaxHighlighter"
 description: "Подсветка синтаксиса кода на фронтенде для MODX Revolution"
-translation: "extras/syntaxhighlighter/index"
+translation: "extras/syntaxhighlighter"
 ---
 
 ## Что такое SyntaxHighlighter?

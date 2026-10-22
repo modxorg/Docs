@@ -1,7 +1,7 @@
 ---
 title: "sekSiteTools"
 description: "Набор сниппетов и чанков для типовых задач на сайте MODX"
-translation: "extras/seksitetools/index"
+translation: "extras/seksitetools"
 ---
 
 ## Что такое sekSiteTools?

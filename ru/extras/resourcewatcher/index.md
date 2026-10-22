@@ -1,7 +1,7 @@
 ---
 title: "ResourceWatcher"
 description: "Плагин для отправки email-уведомлений при создании и обновлении ресурсов"
-translation: "extras/resourcewatcher/index"
+translation: "extras/resourcewatcher"
 ---
 
 ## Что такое ResourceWatcher?

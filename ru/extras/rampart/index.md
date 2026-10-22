@@ -1,7 +1,7 @@
 ---
 title: "Rampart"
 description: "Антиспам для MODX: регистрации, формы FormIt, комментарии Quip и DNS blacklist"
-translation: "extras/rampart/index"
+translation: "extras/rampart"
 ---
 
 ## Что такое Rampart?

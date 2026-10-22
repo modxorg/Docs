@@ -1,7 +1,7 @@
 ---
 title: "Media Sources"
 description: "Настройки fred и fredReadOnly, mediaSource и imageMediaSource в Elements"
-translation: "extras/fred/themer/media_sources/index"
+translation: "extras/fred/themer/media_sources"
 ---
 
 Media Sources можно назначить глобально в настройках Media Source или в settings Element по имени Media Source. При установке в каждый Media Source добавляются две новые настройки. Для доступа из Fred их нужно задать вручную. ПРИМЕЧАНИЕ: Fred пока не проверяет права пользователя на Media Source и смотрит только перечисленные ниже настройки.

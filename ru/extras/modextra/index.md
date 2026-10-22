@@ -1,7 +1,7 @@
 ---
 title: "modExtra"
 description: "Базовый шаблон Extra для разработки новых компонентов MODX Revolution"
-translation: "extras/modextra/index"
+translation: "extras/modextra"
 ---
 
 ## Что такое modExtra?

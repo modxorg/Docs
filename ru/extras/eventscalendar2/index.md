@@ -1,7 +1,7 @@
 ---
 title: "eventsCalendar2"
 description: "Календарь событий MODX из ресурсов или JSON-массива"
-translation: "extras/eventscalendar2/index"
+translation: "extras/eventscalendar2"
 ---
 
 ![](eventscalendar2.png)

@@ -1,7 +1,7 @@
 ---
 title: "SimpleCart"
 description: "Коммерческий e-commerce extra для MODX Revolution от modmore"
-translation: "extras/simplecart/index"
+translation: "extras/simplecart"
 ---
 
 SimpleCart это коммерческий e-commerce extra для MODX Revolution.

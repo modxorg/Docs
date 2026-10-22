@@ -1,7 +1,7 @@
 ---
 title: "SiteEditor"
 description: "Редактирование сайта MODX с фронтенда без менеджера"
-translation: "extras/siteeditor/index"
+translation: "extras/siteeditor"
 ---
 
 ## Что такое SiteEditor?

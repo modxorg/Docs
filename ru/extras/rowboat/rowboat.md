@@ -1,7 +1,7 @@
 ---
 title: "Rowboat"
 description: "Свойства сниппета Rowboat для выборки строк из таблицы"
-translation: "extras/rowboat/rowboat.md"
+translation: "extras/rowboat/rowboat"
 ---
 
 ## Сниппет Rowboat

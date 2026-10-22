@@ -1,7 +1,7 @@
 ---
 title: "Personalize"
 description: "Сниппет для показа разного контента авторизованным и гостям в MODX Revolution"
-translation: "extras/personalize/index"
+translation: "extras/personalize"
 ---
 
 ## Что такое Personalize?

@@ -1,7 +1,7 @@
 ---
 title: "Upload to Users CMP"
 description: "CMP для загрузки файлов зарегистрированным пользователям MODX"
-translation: "extras/upload-to-users-cmp/index"
+translation: "extras/upload-to-users-cmp"
 ---
 
 ## Upload to Users CMP

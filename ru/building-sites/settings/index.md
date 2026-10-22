@@ -1,6 +1,6 @@
 ---
 title: "Системные настройки"
-translation: "building-sites/settings/index"
+translation: "building-sites/settings"
 description: "Настройки сайта: наследование, чтение, сохранение и создание."
 ---
 

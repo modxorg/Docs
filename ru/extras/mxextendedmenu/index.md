@@ -1,7 +1,7 @@
 ---
 title: "mxExtendedMenu"
 description: "Сниппет меню с гибкими шаблонами по глубине и типу ресурса, оптимизированный для больших меню"
-translation: "extras/mxextendedmenu/index"
+translation: "extras/mxextendedmenu"
 ---
 
 ## Назначение

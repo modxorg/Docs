@@ -1,7 +1,7 @@
 ---
 title: "Hits"
 description: "Подсчёт просмотров страниц MODX Revolution с хранением в отдельной таблице"
-translation: "extras/hits/index"
+translation: "extras/hits"
 ---
 
 Hits считает просмотры страниц MODX Revolution и сохраняет их в отдельной таблице.

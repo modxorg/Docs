@@ -1,7 +1,7 @@
 ---
 title: "spieFeed"
 description: "RSS/Atom-агрегатор для MODX Revolution на базе SimplePie"
-translation: "extras/spiefeed/index"
+translation: "extras/spiefeed"
 ---
 
 ## Description

@@ -1,7 +1,7 @@
 ---
 title: "CacheClear"
 description: "Extra для полной очистки каталога core/cache из менеджера MODX Revolution"
-translation: "extras/cacheclear/index"
+translation: "extras/cacheclear"
 ---
 
 ## Что такое CacheClear?

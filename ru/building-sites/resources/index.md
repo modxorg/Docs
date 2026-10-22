@@ -1,6 +1,6 @@
 ---
 title: "Ресурсы"
-translation: "building-sites/resources/index"
+translation: "building-sites/resources"
 description: "Типы ресурсов, поля, группы ресурсов и ссылки на ресурсы в MODX."
 ---
 

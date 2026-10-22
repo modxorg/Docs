@@ -1,7 +1,7 @@
 ---
 title: "StageCoach"
 description: "Extra для отложенной публикации изменений существующих ресурсов"
-translation: "extras/stagecoach/index"
+translation: "extras/stagecoach"
 ---
 
 ## Что такое StageCoach?

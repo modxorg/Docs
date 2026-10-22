@@ -1,7 +1,7 @@
 ---
 title: "ImageStyles"
 description: "Коллекции свойств phpThumb для коротких читаемых URL изображений по имени стиля"
-translation: "extras/imagestyles/index"
+translation: "extras/imagestyles"
 ---
 
 Компонент **ещё в разработке**. Мы над ним работаем.

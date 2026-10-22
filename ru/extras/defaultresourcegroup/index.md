@@ -1,7 +1,7 @@
 ---
 title: "DefaultResourceGroup"
 description: "Плагин автоматического назначения групп ресурсов новым документам в MODX Revolution"
-translation: "extras/defaultresourcegroup/index"
+translation: "extras/defaultresourcegroup"
 ---
 
 ## Что такое DefaultResourceGroup?

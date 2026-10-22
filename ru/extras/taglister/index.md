@@ -1,7 +1,7 @@
 ---
 title: "tagLister"
 description: "Extra tagLister для навигации по тегам: облако тегов, списки и фильтрация ресурсов"
-translation: "extras/taglister/index"
+translation: "extras/taglister"
 ---
 
 ## Что такое tagLister?

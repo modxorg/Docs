@@ -1,7 +1,7 @@
 ---
 title: "Подготовка MODX Templates для Fred"
 description: "Dropzones, один и несколько зон контента, Template Variable Fred Dropzone"
-translation: "extras/fred/themer/templates/index"
+translation: "extras/fred/themer/templates"
 ---
 
 Fred загружается только на страницах с MODX Templates, назначенными теме Fred (`Extras` > `Fred` > `Themed Templates`). Resource с template из этой таблицы блокирует поле Content в Manager и загружает Fred на фронтенде для редактирования под учётной записью.

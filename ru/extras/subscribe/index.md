@@ -1,7 +1,7 @@
 ---
 title: "Subscribe"
 description: "Форма регистрации, подписки и управления предпочтениями пользователей для MODX Revolution"
-translation: "extras/subscribe/index"
+translation: "extras/subscribe"
 ---
 
 ## Что такое Subscribe?

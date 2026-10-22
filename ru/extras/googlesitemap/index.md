@@ -1,7 +1,7 @@
 ---
 title: "GoogleSiteMap"
 description: "Сниппет Google SiteMap для MODX Revolution"
-translation: "extras/googlesitemap/index"
+translation: "extras/googlesitemap"
 ---
 
 ## Что такое GoogleSiteMap?

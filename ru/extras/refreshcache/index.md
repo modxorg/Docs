@@ -1,7 +1,7 @@
 ---
 title: "RefreshCache"
 description: "Сниппет принудительного обновления кэша ресурсов, чанков и сниппетов в MODX Revolution"
-translation: "extras/refreshcache/index"
+translation: "extras/refreshcache"
 ---
 
 ## Что такое RefreshCache?

@@ -1,7 +1,7 @@
 ---
 title: "HandyMan"
 description: "Мобильный менеджер MODX на jQuery Mobile для правки контента ресурсов"
-translation: "extras/handyman/index"
+translation: "extras/handyman"
 ---
 
 HandyMan: мобильный менеджер MODX на фреймворке jQuery Mobile.

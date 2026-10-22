@@ -1,7 +1,7 @@
 ---
 title: "ActivationEmail"
 description: "Плагин для отправки email при ручной активации или деактивации пользователей в менеджере MODX"
-translation: "extras/activationemail/index"
+translation: "extras/activationemail"
 ---
 
 ## Что такое ActivationEmail?

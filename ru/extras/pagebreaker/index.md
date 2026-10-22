@@ -1,7 +1,7 @@
 ---
 title: "PageBreaker"
 description: "Плагин для разбиения длинных текстов на страницы с пагинацией и ЧПУ"
-translation: "extras/pagebreaker/index"
+translation: "extras/pagebreaker"
 ---
 
 ## Описание

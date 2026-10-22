@@ -1,7 +1,7 @@
 ---
 title: "cssSweet"
 description: "Управление CSS сайта внутри MODX для тем и настраиваемых стилей"
-translation: "extras/csssweet/index"
+translation: "extras/csssweet"
 ---
 
 ## Зачем это нужно

@@ -1,7 +1,7 @@
 ---
 title: "sekFormTools"
 description: "Combo box, автодополнение, date picker и поля с подсказками для форм MODX"
-translation: "extras/sekformtools/index"
+translation: "extras/sekformtools"
 ---
 
 ## Что такое sekFormTools?

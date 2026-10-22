@@ -1,7 +1,7 @@
 ---
 title: "Создание темы для Fred"
 description: "Навыки, рабочий процесс и подсказки кода для авторов тем Fred"
-translation: "extras/fred/themer/index"
+translation: "extras/fred/themer"
 ---
 
 Авторам тем Fred нужны базовые знания MODX, уверенная вёрстка HTML/CSS для Elements и умение создавать валидный JSON для Option Sets.

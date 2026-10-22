@@ -1,7 +1,7 @@
 ---
 title: "EZfaq"
 description: "Сниппет страницы FAQ с раскрывающимися ответами для MODX Revolution"
-translation: "extras/ezfaq/index"
+translation: "extras/ezfaq"
 ---
 
 ## Что такое EZfaq?

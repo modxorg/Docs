@@ -1,7 +1,7 @@
 ---
 title: "Flexibility"
 description: "Готовый responsive-сайт на Foundation для быстрого старта проектов MODX Revolution"
-translation: "extras/flexibility/index"
+translation: "extras/flexibility"
 ---
 
 ## Что такое Flexibility?

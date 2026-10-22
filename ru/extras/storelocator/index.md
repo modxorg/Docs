@@ -1,7 +1,7 @@
 ---
 title: "StoreLocator"
 description: "Сниппет Google Maps для MODX: поиск ближайших магазинов и точек на карте"
-translation: "extras/storelocator/index"
+translation: "extras/storelocator"
 ---
 
 ## Что такое StoreLocator?

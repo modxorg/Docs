@@ -1,7 +1,7 @@
 ---
 title: "MetaX"
 description: "Сниппет генерации meta-тегов и других тегов head для MODX"
-translation: "extras/metax/index"
+translation: "extras/metax"
 ---
 
 MetaX это простой [snippet](developing-in-modx/basic-development/snippets) для автоматизации meta-тегов. Также генерирует base, canonical, css, rss и другие теги head.

@@ -1,7 +1,7 @@
 ---
 title: "Gallery"
 description: "Динамическая галерея изображений для MODX Revolution с альбомами, тегами и плагинами отображения"
-translation: "extras/gallery/index"
+translation: "extras/gallery"
 ---
 
 ## Что такое Gallery?

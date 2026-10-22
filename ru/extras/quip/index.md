@@ -1,7 +1,7 @@
 ---
 title: "Quip"
 description: "Сниппет комментариев для MODX Revolution с вложенными ветками, модерацией и управлением из менеджера"
-translation: "extras/quip/index"
+translation: "extras/quip"
 ---
 
 ## Что такое Quip?

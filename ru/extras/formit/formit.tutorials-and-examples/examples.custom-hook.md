@@ -1,6 +1,6 @@
 ---
 title: "Пользовательский произвольный хук"
-translation: "extras/formit/formit.tutorials-and-examples/formit.examples.custom-hook"
+translation: "extras/formit/formit.tutorials-and-examples/examples.custom-hook"
 description: "Пользовательский произвольный хук"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "ModDef"
 description: "Компонент для управления определениями терминов с подсказками на сайте"
-translation: "extras/moddef/index"
+translation: "extras/moddef"
 ---
 
 ## Что такое ModDef?

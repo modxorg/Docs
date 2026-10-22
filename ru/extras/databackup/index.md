@@ -1,7 +1,7 @@
 ---
 title: "Databackup"
 description: "Сниппет резервного копирования MySQL базы MODX и других баз данных"
-translation: "extras/databackup/index"
+translation: "extras/databackup"
 ---
 
 ## Что такое Databackup?

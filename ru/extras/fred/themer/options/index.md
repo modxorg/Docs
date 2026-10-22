@@ -1,7 +1,7 @@
 ---
 title: "Options"
 description: "Option Sets, полные и частичные наборы, импорт и overrides"
-translation: "extras/fred/themer/options/index"
+translation: "extras/fred/themer/options"
 ---
 
 Options определяют элементы управления для конечных пользователей при настройке Elements. Они задаются в Option Sets, привязанных к Elements.

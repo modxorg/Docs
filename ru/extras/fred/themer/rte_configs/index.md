@@ -1,7 +1,7 @@
 ---
 title: "Конфигурации Rich Text Editor (RTE)"
 description: "JSON-конфигурации TinyMCE для Fred и минимальные примеры"
-translation: "extras/fred/themer/rte_configs/index"
+translation: "extras/fred/themer/rte_configs"
 ---
 
 _todo_ @theboxer

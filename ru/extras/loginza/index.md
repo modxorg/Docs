@@ -1,7 +1,7 @@
 ---
 title: "Loginza"
 description: "OpenID-авторизация через Loginza: вход через Twitter, Google, Facebook и др."
-translation: "extras/loginza/index"
+translation: "extras/loginza"
 ---
 
 ## Описание

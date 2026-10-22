@@ -1,7 +1,7 @@
 ---
 title: "ClassExtender"
 description: "Инструменты расширения объектов modUser и modResource в MODX Revolution"
-translation: "extras/classextender/index"
+translation: "extras/classextender"
 ---
 
 ## Что такое ClassExtender?

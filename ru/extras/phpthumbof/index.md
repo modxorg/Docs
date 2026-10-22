@@ -1,7 +1,7 @@
 ---
 title: "phpThumbOf"
 description: "Безопасный пользовательский Output Filter для phpThumb на любом URL изображения в placeholder"
-translation: "extras/phpthumbof/index"
+translation: "extras/phpthumbof"
 ---
 
 ## Что такое phpThumbOf?

@@ -1,7 +1,7 @@
 ---
 title: "getRelated"
 description: "Сниппет связанных ресурсов MODX Revolution"
-translation: "extras/getrelated/index"
+translation: "extras/getrelated"
 ---
 
 getRelated: сниппет MODX Revolution для списка связанных ресурсов.

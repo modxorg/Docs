@@ -1,7 +1,7 @@
 ---
 title: "sekFancyBox"
 description: "Порт fancyBox 2.0.4 для стандартизированных модальных окон в MODX Revolution"
-translation: "extras/sekfancybox/index"
+translation: "extras/sekfancybox"
 ---
 
 ## Что такое sekFancyBox?

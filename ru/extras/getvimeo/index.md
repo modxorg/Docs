@@ -1,7 +1,7 @@
 ---
 title: "getVimeo"
 description: "Сниппет получения видео из канала Vimeo для MODX Revolution"
-translation: "extras/getvimeo/index"
+translation: "extras/getvimeo"
 ---
 
 ## Что такое getVimeo?

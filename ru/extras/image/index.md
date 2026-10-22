@@ -1,7 +1,7 @@
 ---
 title: "Image+"
 description: "Расширенный TV типа изображение для MODX Revolution с обрезкой и ограничением размеров"
-translation: "extras/image/index"
+translation: "extras/image"
 ---
 
 ## Что такое Image+?

@@ -1,7 +1,7 @@
 ---
 title: "FileUpload"
 description: "Сниппет для формы загрузки файлов с контролем групп, размера и расширений"
-translation: "extras/fileupload/index"
+translation: "extras/fileupload"
 ---
 
 ## Что такое FileUpload?

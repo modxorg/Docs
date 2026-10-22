@@ -1,7 +1,7 @@
 ---
 title: "mxFormBuilder"
 description: "Единый интерфейс для управления формами в MODX с защитой от типичных угроз"
-translation: "extras/mxformbuilder/index"
+translation: "extras/mxformbuilder"
 ---
 
 ## Назначение

@@ -1,7 +1,7 @@
 ---
 title: "Notify"
 description: "Extra для ручной отправки email-обновлений пользователям с опциональной публикацией в Twitter и Facebook"
-translation: "extras/notify/index"
+translation: "extras/notify"
 ---
 
 ## Что такое Notify?

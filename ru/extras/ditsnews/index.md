@@ -1,7 +1,7 @@
 ---
 title: "DitsNews"
 description: "Компонент MODX Revolution для управления рассылками и подписчиками"
-translation: "extras/ditsnews/index"
+translation: "extras/ditsnews"
 ---
 
 **Предупреждение**

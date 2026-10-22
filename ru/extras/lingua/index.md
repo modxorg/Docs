@@ -1,7 +1,7 @@
 ---
 title: "Lingua"
 description: "Переключатель лексикона MODX для фронтенда без отдельных контекстов"
-translation: "extras/lingua/index"
+translation: "extras/lingua"
 ---
 
 Переключатель лексикона MODX для фронтенда.

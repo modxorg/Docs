@@ -1,7 +1,7 @@
 ---
 title: "CacheMaster"
 description: "Плагин точечной очистки кэша одного ресурса или элемента в MODX Revolution"
-translation: "extras/cachemaster/index"
+translation: "extras/cachemaster"
 ---
 
 ## Что такое CacheMaster?

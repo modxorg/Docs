@@ -1,7 +1,7 @@
 ---
 title: "Системные настройки"
 description: "fred.blueprint_sort, fred.default_enabled, fred.launcher_position и другие"
-translation: "extras/fred/themer/system_settings/index"
+translation: "extras/fred/themer/system_settings"
 ---
 
 Системные настройки Fred управляют поведением сайта. Fred загружается на фронтенде, поэтому настройки можно менять по context, пользователю или группе.

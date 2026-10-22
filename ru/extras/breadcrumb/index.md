@@ -1,7 +1,7 @@
 ---
 title: "BreadCrumb"
 description: "Extra BreadCrumb для хлебных крошек в MODX Revolution с шаблонами и свойствами ресурсов"
-translation: "extras/breadcrumb/index"
+translation: "extras/breadcrumb"
 ---
 
 ## Что такое BreadCrumb?

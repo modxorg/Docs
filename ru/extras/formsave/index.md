@@ -1,7 +1,7 @@
 ---
 title: "FormSave"
 description: "Hook для FormIt: сохранение форм в БД и экспорт в CSV/XML/Print"
-translation: "extras/formsave/index"
+translation: "extras/formsave"
 ---
 
 FormSave это hook для FormIt, который сохраняет практически любую форму в базу данных и экспортирует результаты в CSV/XML/Print view из коробки. Вы также можете добавить свои шаблоны экспорта.

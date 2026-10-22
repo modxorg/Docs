@@ -1,7 +1,7 @@
 ---
 title: "virtuNewsletter"
 description: "Система рассылок для MODX Revolution с CMP, cron и шаблонами писем"
-translation: "extras/virtunewsletter/index"
+translation: "extras/virtunewsletter"
 ---
 
 virtuNewsletter: система рассылок для MODX Revolution.

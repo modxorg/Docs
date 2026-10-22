@@ -1,7 +1,7 @@
 ---
 title: "mhPayPal"
 description: "Приём пожертвований и платежей PayPal в MODX через сниппет mhPayPal"
-translation: "extras/mhpaypal/index"
+translation: "extras/mhpaypal"
 ---
 
 mhPayPal это простой сниппет для приёма пожертвований или оплаты одного товара. Вдохновлён FormIt, с тремя типами хуков для расширения базовой функциональности через сниппеты или встроенные хуки.

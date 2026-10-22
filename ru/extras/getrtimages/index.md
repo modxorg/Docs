@@ -1,7 +1,7 @@
 ---
 title: "getRTImages"
 description: "Извлечение и вывод изображений из Rich Text TV в MODX"
-translation: "extras/getrtimages/index"
+translation: "extras/getrtimages"
 ---
 
 ## Основы

@@ -1,7 +1,7 @@
 ---
 title: "modActiveDirectory"
 description: "Интеграция Microsoft Active Directory для аутентификации в MODX Revolution"
-translation: "extras/modactivedirectory/index"
+translation: "extras/modactivedirectory"
 ---
 
 ## Что такое modActiveDirectory?

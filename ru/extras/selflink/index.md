@@ -1,7 +1,7 @@
 ---
 title: "selfLink"
 description: "Простой сниппет ссылок «вверх», «следующий» и «предыдущий» для MODX Revolution"
-translation: "extras/selflink/index"
+translation: "extras/selflink"
 ---
 
 ## Что такое selfLink?
