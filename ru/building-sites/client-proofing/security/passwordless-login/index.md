@@ -1,6 +1,6 @@
 ---
 title: "Вход без пароля"
-translation: "building-sites/client-proofing/security/passwordless-login/"
+translation: "building-sites/client-proofing/security/passwordless-login"
 sortorder: 0
 ---
 

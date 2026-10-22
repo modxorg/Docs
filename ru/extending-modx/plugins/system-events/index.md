@@ -1,6 +1,6 @@
 ---
 title: "Системные события"
-translation: "extending-modx/plugins/system-events/"
+translation: "extending-modx/plugins/system-events"
 description: "Системные события запускаются везде в MODX, позволяя плагинам взаимодействовать с кодом MODX и добавлять пользовательские функции без модификации основного кода системы"
 ---
 

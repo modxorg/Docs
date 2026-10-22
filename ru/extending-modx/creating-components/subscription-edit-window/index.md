@@ -1,6 +1,5 @@
 ---
 title: "Окно редактирования подписки"
-translation: "extending-modx/creating-components/subscription-edit-window"
 ---
 
 На прошлом занятии мы сделали таблицу подписок и окно создания.
