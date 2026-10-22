@@ -1,7 +1,7 @@
 ---
 title: "ConvertDatabaseCharset"
 description: "Утилита для безопасной смены кодировки базы данных MODX"
-translation: "extras/convertdatabasecharset/index"
+translation: "extras/convertdatabasecharset"
 ---
 
 ## Что такое ConvertDatabaseCharset?

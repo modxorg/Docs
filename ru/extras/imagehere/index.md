@@ -1,7 +1,7 @@
 ---
 title: "imageHERE"
 description: "Инструмент для быстрой вставки placeholder-изображений при вёрстке"
-translation: "extras/imagehere/index"
+translation: "extras/imagehere"
 ---
 
 ## Что такое imageHERE?

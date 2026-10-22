@@ -1,7 +1,7 @@
 ---
 title: "mChimpX"
 description: "FormIt hook для подписки email на список Mailchimp"
-translation: "extras/mchimpx/index"
+translation: "extras/mchimpx"
 ---
 
 ## Что такое mChimpX?

@@ -1,7 +1,7 @@
 ---
 title: "Cliche"
 description: "Компонент галереи изображений для MODX Revolution 2.2"
-translation: "extras/cliche/index"
+translation: "extras/cliche"
 ---
 
 Cliche это компонент галереи изображений для MODX Revolution 2.2.

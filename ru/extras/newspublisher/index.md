@@ -1,7 +1,7 @@
 ---
 title: "NewsPublisher"
 description: "Extra для создания и редактирования ресурсов на фронтенде без входа в менеджер MODX"
-translation: "extras/newspublisher/index"
+translation: "extras/newspublisher"
 ---
 
 ## Что такое NewsPublisher?

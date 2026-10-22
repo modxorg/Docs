@@ -1,7 +1,7 @@
 ---
 title: "BxrExtra"
 description: "Базовый шаблон для создания нового Extra в MODX Revolution"
-translation: "extras/bxrextra/index"
+translation: "extras/bxrextra"
 ---
 
 BxrExtra. базовый шаблон для создания нового Extra в MODX Revolution. Основан на [modExtra](https://github.com/splittingred/modExtra) от [Shaun McCormick](https://github.com/splittingred).

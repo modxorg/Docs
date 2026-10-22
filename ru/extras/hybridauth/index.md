@@ -1,7 +1,7 @@
 ---
 title: "HybridAuth"
 description: "Социальная авторизация в MODX через библиотеку HybridAuth"
-translation: "extras/hybridauth/index"
+translation: "extras/hybridauth"
 ---
 
 Интеграция open source PHP-библиотеки социальной авторизации [HybridAuth](http://hybridauth.sourceforge.net/) в MODX Revolution.

@@ -1,7 +1,7 @@
 ---
 title: "Gallery"
 description: "Сниппет Gallery выводит галерею изображений по альбому, тегу или обоим параметрам"
-translation: "extras/gallery/gallery/index"
+translation: "extras/gallery/gallery"
 ---
 
 ## Сниппет Gallery

@@ -1,7 +1,7 @@
 ---
 title: "siblingNav"
 description: "Сниппет для навигации между sibling-ресурсами"
-translation: "extras/siblingnav/index"
+translation: "extras/siblingnav"
 ---
 
 ## Что такое siblingNav?

@@ -1,7 +1,7 @@
 ---
 title: "getDynaDescription"
 description: "Сниппет для создания meta-тегов description из TV, поля description или content ресурса"
-translation: "extras/getdynadescription/index"
+translation: "extras/getdynadescription"
 ---
 
 ## Что такое getDynaDescription?

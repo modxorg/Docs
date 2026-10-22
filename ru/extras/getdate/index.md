@@ -1,7 +1,7 @@
 ---
 title: "getDate"
 description: "Простой сниппет получения timestamp для MODX Revolution"
-translation: "extras/getdate/index"
+translation: "extras/getdate"
 ---
 
 ## Что такое getDate?

@@ -1,7 +1,7 @@
 ---
 title: "CamperManagement"
 description: "Add-on для управления транспортными средствами в MODX Revolution (больше не поддерживается)"
-translation: "extras/campermanagement/index"
+translation: "extras/campermanagement"
 ---
 
 **CamperManagement больше не поддерживается. Не используйте, если вы не разработчик, готовый взять проект на себя.**

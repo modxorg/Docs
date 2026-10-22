@@ -1,7 +1,7 @@
 ---
 title: "Fred"
 description: "Визуальный drag-and-drop редактор фронтенда для MODX CMS"
-translation: "extras/fred/index"
+translation: "extras/fred"
 ---
 
 ## Что такое Fred?

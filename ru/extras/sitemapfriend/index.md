@@ -1,7 +1,7 @@
 ---
 title: "sitemapFriend"
 description: "Сниппет MODX для генерации XML, HTML и пользовательских sitemap"
-translation: "extras/sitemapfriend/index"
+translation: "extras/sitemapfriend"
 ---
 
 ## What is sitemapFriend?

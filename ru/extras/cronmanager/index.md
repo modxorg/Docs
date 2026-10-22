@@ -1,7 +1,7 @@
 ---
 title: "CronManager"
 description: "Создание и запуск cron-задач через менеджер MODX Revolution"
-translation: "extras/cronmanager/index"
+translation: "extras/cronmanager"
 ---
 
 ## CronManager

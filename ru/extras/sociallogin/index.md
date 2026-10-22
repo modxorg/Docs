@@ -1,7 +1,7 @@
 ---
 title: "SocialLogin"
 description: "Короткие сниппеты социального входа для фронтенда MODX Revolution (не для Менеджера)"
-translation: "extras/sociallogin/index"
+translation: "extras/sociallogin"
 ---
 
 Быстрые короткие сниппеты социального входа для сайта на MODX Revolution (не для Менеджера).

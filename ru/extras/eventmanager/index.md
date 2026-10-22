@@ -1,7 +1,7 @@
 ---
 title: "EventManager"
 description: "Управление событиями и онлайн-бронированием в MODX Revolution"
-translation: "extras/eventmanager/index"
+translation: "extras/eventmanager"
 ---
 
 Из-за нехватки времени и появления лучших альтернатив разработка EventManager вряд ли продолжится. Для событий используйте другие extras: EventsX, mxCalendar или Church Events.

@@ -1,7 +1,7 @@
 ---
 title: "Canonical"
 description: "Сниппет canonical link для симлинков MODX, защита от дублирования контента в поиске"
-translation: "extras/canonical/index"
+translation: "extras/canonical"
 ---
 
 ## Что такое Canonical?

@@ -1,7 +1,7 @@
 ---
 title: "getYoutube"
 description: "Сниппет получения видео YouTube через Data API v3 для MODX Revolution"
-translation: "extras/getyoutube/index"
+translation: "extras/getyoutube"
 ---
 
 ## Что такое getYoutube?

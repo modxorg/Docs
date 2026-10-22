@@ -1,7 +1,7 @@
 ---
 title: "PHP Tidy (plugin)"
 description: "Плагин MODX Revolution на базе парсера PHP Tidy, срабатывает на OnWebPagePrerender"
-translation: "extras/php-tidy-(plugin)/index"
+translation: "extras/php-tidy-(plugin)"
 ---
 
 Плагин основан на парсере [PHP Tidy](http://php.net/manual/en/book.tidy.php), портирован в MODX автором goldsky.

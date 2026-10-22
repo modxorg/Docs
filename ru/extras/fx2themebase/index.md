@@ -1,7 +1,7 @@
 ---
 title: "FX2themebase"
 description: "MODX-реализация responsive CSS-фреймворка Zurb Foundation для тем и шаблонов"
-translation: "extras/fx2themebase/index"
+translation: "extras/fx2themebase"
 ---
 
 ## Что такое FX2?

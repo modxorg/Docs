@@ -1,7 +1,7 @@
 ---
 title: "BotBlockX"
 description: "Плагин для блокировки плохо ведущих себя ботов на основе классического скрипта Alex Kemp"
-translation: "extras/botblockx/index"
+translation: "extras/botblockx"
 ---
 
 ## Что такое BotBlockX?

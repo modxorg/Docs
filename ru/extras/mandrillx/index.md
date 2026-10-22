@@ -1,7 +1,7 @@
 ---
 title: "MandrillX"
 description: "Класс отправки почты через Mandrill в MODX, минуя почтовую систему MODX"
-translation: "extras/mandrillx/index"
+translation: "extras/mandrillx"
 ---
 
 MandrillX это класс для отправки почты через Mandrill в MODX. Он полностью обходит почтовую систему MODX.

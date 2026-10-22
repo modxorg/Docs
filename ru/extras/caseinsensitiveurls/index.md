@@ -1,7 +1,7 @@
 ---
 title: "CaseInsensitiveURLS"
 description: "Плагин редиректа смешанного регистра URL на lowercase при отсутствии ресурса"
-translation: "extras/caseinsensitiveurls/index"
+translation: "extras/caseinsensitiveurls"
 ---
 
 ## Что такое CaseInsensitiveURLs?

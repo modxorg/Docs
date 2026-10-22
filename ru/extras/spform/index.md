@@ -1,7 +1,7 @@
 ---
 title: "SPForm"
 description: "Простая защищённая от спама контактная форма, готовая к работе после установки"
-translation: "extras/spform/index"
+translation: "extras/spform"
 ---
 
 ## Что такое SPForm?

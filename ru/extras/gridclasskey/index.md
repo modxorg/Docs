@@ -1,7 +1,7 @@
 ---
 title: "GridClassKey"
 description: "Custom class key для grid дочерних ресурсов в менеджере MODX"
-translation: "extras/gridclasskey/index"
+translation: "extras/gridclasskey"
 ---
 
 GridClassKey: custom class key для менеджера MODX Revolution: дочерние ресурсы скрыты в grid контейнера.

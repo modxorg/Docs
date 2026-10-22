@@ -1,7 +1,7 @@
 ---
 title: "ExerPlan"
 description: "Планировщик тренировок для сайтов здравоохранения и спорта"
-translation: "extras/exerplan/index"
+translation: "extras/exerplan"
 ---
 
 ExerPlan: планировщик упражнений для сайтов здравоохранения и спортивных тренировок.

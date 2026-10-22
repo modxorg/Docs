@@ -1,7 +1,7 @@
 ---
 title: "EventsX"
 description: "Календарь событий для MODX Revolution с jQuery-календарём и списками"
-translation: "extras/eventsx/index"
+translation: "extras/eventsx"
 ---
 
 Обратите внимание: документация не проверена автором extra. Используйте на свой риск.

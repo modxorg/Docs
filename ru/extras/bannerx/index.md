@@ -1,7 +1,7 @@
 ---
 title: "BannerX"
 description: "Устаревший extra для баннеров с гиперссылками (заменён на BannerY)"
-translation: "extras/bannerx/index"
+translation: "extras/bannerx"
 ---
 
 **Удалён**

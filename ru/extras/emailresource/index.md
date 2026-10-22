@@ -1,7 +1,7 @@
 ---
 title: "EmailResource"
 description: "Плагин отправки HTML-версии ресурса с inline CSS по email из MODX Revolution"
-translation: "extras/emailresource/index"
+translation: "extras/emailresource"
 ---
 
 ## Что такое EmailResource?

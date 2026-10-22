@@ -1,7 +1,7 @@
 ---
 title: "PageBreaker"
 description: "Режимы OnLoadWebDocument и OnPageNotFound плагина PageBreaker"
-translation: "extras/pagebreaker/pagebreaker.md"
+translation: "extras/pagebreaker/pagebreaker"
 ---
 
 ## Описание

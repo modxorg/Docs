@@ -1,7 +1,7 @@
 ---
 title: "Breadcrumbs"
 description: "Сниппет Breadcrumbs для простой навигационной цепочки в MODX Revolution"
-translation: "extras/breadcrumbs/index"
+translation: "extras/breadcrumbs"
 ---
 
 ## Что такое Breadcrumbs?

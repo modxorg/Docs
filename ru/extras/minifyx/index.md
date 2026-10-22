@@ -1,7 +1,7 @@
 ---
 title: "MinifyX"
 description: "Сниппет для объединения JS и CSS файлов и ускорения загрузки страницы"
-translation: "extras/minifyx/index"
+translation: "extras/minifyx"
 ---
 
 ## Что такое MinifyX?

@@ -1,7 +1,7 @@
 ---
 title: "mxHasTvs"
 description: "Сниппет для условного вывода по значениям TV ресурса без тяжёлых conditional modifiers"
-translation: "extras/mxhastvs/index"
+translation: "extras/mxhastvs"
 ---
 
 mxHasTvs возвращает значение по TV ресурса (docid). Вы быстро строите шаблоны без ловушек conditional modifiers. Полезен для сложных правил UI (шаблон, чанк и т.д.), когда вывод зависит от значения TV. Возвращает строки true и false или пустоту, если найдено совпадение по любому из указанных TV.

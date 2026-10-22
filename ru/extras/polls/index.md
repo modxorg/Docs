@@ -1,7 +1,7 @@
 ---
 title: "Polls"
 description: "Менеджер опросов с вопросами и ответами для MODX Revolution"
-translation: "extras/polls/index"
+translation: "extras/polls"
 ---
 
 ## Что такое Polls?

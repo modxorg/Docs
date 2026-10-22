@@ -1,7 +1,7 @@
 ---
 title: "boilerX"
 description: "HTML5 Boilerplate для MODX Revolution с настраиваемыми чанками и системными настройками"
-translation: "extras/boilerx/index"
+translation: "extras/boilerx"
 ---
 
 ## Что такое boilerX?

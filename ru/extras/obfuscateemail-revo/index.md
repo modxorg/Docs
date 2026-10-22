@@ -1,7 +1,7 @@
 ---
 title: "ObfuscateEmail-Revo"
 description: "Плагин для обфускации email-адресов на странице без JavaScript"
-translation: "extras/obfuscateemail-revo/index"
+translation: "extras/obfuscateemail-revo"
 ---
 
 **Без JavaScript!**

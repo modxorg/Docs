@@ -1,7 +1,7 @@
 ---
 title: "sLink"
 description: "Сниппет для генерации xhtml разметки ссылок и якорей в MODX Revolution"
-translation: "extras/slink/index"
+translation: "extras/slink"
 ---
 
 ## Что такое sLink?

@@ -1,7 +1,7 @@
 ---
 title: "QuickEmail"
 description: "Сниппет для отправки email и диагностики проблем с почтой в MODX Revolution"
-translation: "extras/quickemail/index"
+translation: "extras/quickemail"
 ---
 
 ## Что такое QuickEmail?

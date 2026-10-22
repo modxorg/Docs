@@ -1,7 +1,7 @@
 ---
 title: "ReflectBlock"
 description: "Плагин блокировки и логирования запросов к уязвимому сниппету reflect в MODX Revolution"
-translation: "extras/reflectblock/index"
+translation: "extras/reflectblock"
 ---
 
 ## Что такое ReflectBlock?

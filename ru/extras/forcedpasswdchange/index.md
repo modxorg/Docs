@@ -1,7 +1,7 @@
 ---
 title: "ForcedPasswdChange"
 description: "Принудительная смена пароля пользователя в Менеджере MODX при первом входе"
-translation: "extras/forcedpasswdchange/index"
+translation: "extras/forcedpasswdchange"
 ---
 
 ## Что такое ForcedPasswdChange?

@@ -1,7 +1,7 @@
 ---
 title: "cookieJar"
 description: "Набор сниппетов MODX Revolution для установки, чтения и удаления cookies браузера"
-translation: "extras/cookiejar/index"
+translation: "extras/cookiejar"
 ---
 
 ## Что такое cookieJar?

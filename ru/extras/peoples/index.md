@@ -1,7 +1,7 @@
 ---
 title: "Peoples"
 description: "Компонент для вывода списков пользователей и групп пользователей на community-сайтах MODX Revolution"
-translation: "extras/peoples/index"
+translation: "extras/peoples"
 ---
 
 ## Что такое Peoples?

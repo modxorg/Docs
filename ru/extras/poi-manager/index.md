@@ -1,7 +1,7 @@
 ---
 title: "POI Manager"
 description: "Создание и управление POI с контейнерами, типами и RESTful API"
-translation: "extras/poi-manager/index"
+translation: "extras/poi-manager"
 ---
 
 Этот extra позволяет создавать и управлять POI. Вы можете создавать контейнеры POI (категории) и включать каждый POI в один или несколько контейнеров. Также можно создавать типы POI с дополнительными атрибутами.

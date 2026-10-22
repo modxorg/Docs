@@ -1,7 +1,7 @@
 ---
 title: "FileLister"
 description: "Динамический листинг файлов и каталогов для MODX Revolution"
-translation: "extras/filelister/index"
+translation: "extras/filelister"
 ---
 
 ## Что такое FileLister?

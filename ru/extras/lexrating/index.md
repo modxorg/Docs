@@ -1,7 +1,7 @@
 ---
 title: "LexRating"
 description: "jQuery рейтинг звёздами для MODX"
-translation: "extras/lexrating/index"
+translation: "extras/lexrating"
 ---
 
 LexRating ([goldsky](http://twitter.com/_goldsky)): jQuery star rating на базе [rateit.codeplex.com](http://rateit.codeplex.com) (by [gidon](http://twitter.com/gjunge)).

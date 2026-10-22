@@ -1,7 +1,7 @@
 ---
 title: "amazonSES mailing list"
 description: "Рассылка через Amazon SES для массовой отправки email без собственного почтового сервера"
-translation: "extras/amazonses-mailing-list/index"
+translation: "extras/amazonses-mailing-list"
 ---
 
 ## Что такое Amazon SES Mailing List?

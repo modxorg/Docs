@@ -1,7 +1,7 @@
 ---
 title: "mxCalendar"
 description: "Календарь событий для Evolution и Revolution с повторениями, картами и категориями"
-translation: "extras/mxcalendar/index"
+translation: "extras/mxcalendar"
 ---
 
 ![](logo-mxcalendar.png)

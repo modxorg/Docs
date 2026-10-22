@@ -1,7 +1,7 @@
 ---
 title: "FixedPre"
 description: "Плагин отображения MODX-тегов и кода inline через теги fixedpre в MODX Revolution"
-translation: "extras/fixedpre/index"
+translation: "extras/fixedpre"
 ---
 
 ## Что такое FixedPre?

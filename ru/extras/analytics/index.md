@@ -1,7 +1,7 @@
 ---
 title: "Analytics"
 description: "Вставка кода отслеживания Google Universal Analytics и/или Google Analytics на страницы сайта"
-translation: "extras/analytics/index"
+translation: "extras/analytics"
 ---
 
 ## Что такое Analytics?

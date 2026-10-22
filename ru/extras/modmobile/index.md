@@ -1,7 +1,7 @@
 ---
 title: "modMobile"
 description: "Плагин для переключения шаблона при посещении сайта с мобильного устройства"
-translation: "extras/modmobile/index"
+translation: "extras/modmobile"
 ---
 
 ## Что такое modMobile?

@@ -1,7 +1,7 @@
 ---
 title: "ThermX"
 description: "Сниппет термометра сбора средств для сайта в MODX Revolution"
-translation: "extras/thermx/index"
+translation: "extras/thermx"
 ---
 
 ## Что такое ThermX?

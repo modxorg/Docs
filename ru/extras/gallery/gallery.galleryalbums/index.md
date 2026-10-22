@@ -1,7 +1,7 @@
 ---
 title: "GalleryAlbums"
 description: "Сниппет GalleryAlbums выводит список альбомов Gallery"
-translation: "extras/gallery/gallery.galleryalbums/index"
+translation: "extras/gallery/gallery.galleryalbums"
 ---
 
 ## Сниппет GalleryAlbums

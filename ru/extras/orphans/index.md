@@ -1,7 +1,7 @@
 ---
 title: "Orphans"
 description: "CMP для поиска неиспользуемых элементов на сайте MODX"
-translation: "extras/orphans/index"
+translation: "extras/orphans"
 ---
 
 ## Что такое Orphans?

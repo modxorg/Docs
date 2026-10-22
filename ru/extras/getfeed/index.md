@@ -1,7 +1,7 @@
 ---
 title: "getFeed"
 description: "Сниппет для чтения RSS и вывода элементов через чанк"
-translation: "extras/getfeed/index"
+translation: "extras/getfeed"
 ---
 
 ## Что такое getFeed?

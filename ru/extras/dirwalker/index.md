@@ -1,7 +1,7 @@
 ---
 title: "DirWalker"
 description: "Класс рекурсивного обхода каталогов с фильтрацией файлов и папок для MODX Revolution"
-translation: "extras/dirwalker/index"
+translation: "extras/dirwalker"
 ---
 
 ## Что такое DirWalker?

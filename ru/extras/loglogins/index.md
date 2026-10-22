@@ -1,7 +1,7 @@
 ---
 title: "LogLogins"
 description: "Автоматическая запись входов и выходов пользователей в журнал действий Менеджера"
-translation: "extras/loglogins/index"
+translation: "extras/loglogins"
 ---
 
 ## Что такое LogLogins?

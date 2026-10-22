@@ -1,7 +1,7 @@
 ---
 title: "FileDownloadR"
 description: "Список файлов для скачивания с хешированными ссылками без раскрытия URL"
-translation: "extras/filedownload-r/index"
+translation: "extras/filedownload-r"
 ---
 
 Показывает список файлов для скачивания без раскрытия URL файла.

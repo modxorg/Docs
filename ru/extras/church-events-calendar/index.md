@@ -1,7 +1,7 @@
 ---
 title: "Church Events Calendar"
 description: "Календарь событий MODX с сниппетами Calendar, List и RSS"
-translation: "extras/church-events-calendar/index"
+translation: "extras/church-events-calendar"
 ---
 
 ## Что такое Church Events Calendar?

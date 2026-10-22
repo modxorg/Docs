@@ -1,7 +1,7 @@
 ---
 title: "userTools"
 description: "Набор сниппетов MODX Revolution для получения пользователей и связанных данных"
-translation: "extras/usertools/index"
+translation: "extras/usertools"
 ---
 
 ## Что такое userTools?

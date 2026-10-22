@@ -1,7 +1,7 @@
 ---
 title: "CMPGenerator"
 description: "GUI для генерации xPDO-схем и классов пользовательских таблиц MODX"
-translation: "extras/cmpgenerator/index"
+translation: "extras/cmpgenerator"
 ---
 
 ## Что такое CMPGenerator?

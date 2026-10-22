@@ -1,7 +1,7 @@
 ---
 title: "xFPC"
 description: "Полностраничное кеширование MODX Revolution с поддержкой динамического AJAX-контента"
-translation: "extras/xfpc/index"
+translation: "extras/xfpc"
 ---
 
 ## Что такое xFPC?

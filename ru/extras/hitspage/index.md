@@ -1,7 +1,7 @@
 ---
 title: "HitsPage"
 description: "Плагин для подсчёта HTTP-запросов (просмотров) страницы"
-translation: "extras/hitspage/index"
+translation: "extras/hitspage"
 ---
 
 ## Что такое HitsPage?

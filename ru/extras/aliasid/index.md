@@ -1,7 +1,7 @@
 ---
 title: "aliasid"
 description: "Extra для получения ID ресурса по его alias в текущем контексте"
-translation: "extras/aliasid/index"
+translation: "extras/aliasid"
 ---
 
 ## Что такое aliasid?

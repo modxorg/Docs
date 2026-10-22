@@ -1,7 +1,7 @@
 ---
 title: "GoRevo"
 description: "Коммерческий extra для интеллектуальной миграции сайтов MODX Evolution в MODX Revolution"
-translation: "extras/gorevo/index"
+translation: "extras/gorevo"
 ---
 
 ## Что такое GoRevo?

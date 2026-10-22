@@ -1,6 +1,6 @@
 ---
 title: "Генерация модели"
-translation: "extending-modx/xpdo/custom-models/generating-the-model-code"
+translation: "extending-modx/xpdo/custom-models/generating-the-model"
 ---
 
 Чтобы использовать недавно созданную XML схему, вам необходимо создать PHP скрипт, который будет анализировать XML схему внутри xPDO PHP классов и карт.

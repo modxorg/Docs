@@ -1,7 +1,7 @@
 ---
 title: "TaggingAtoZ"
 description: "Список тегов по группам A-Z из TV для MODX Revolution"
-translation: "extras/taggingatoz/index"
+translation: "extras/taggingatoz"
 ---
 
 ![](taggingatoz1.png)

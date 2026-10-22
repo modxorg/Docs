@@ -1,7 +1,7 @@
 ---
 title: "MoneyBird"
 description: "Список счетов MoneyBird для пользователей MODX на фронтенде"
-translation: "extras/moneybird/index"
+translation: "extras/moneybird"
 ---
 
 ## Что такое MoneyBird?

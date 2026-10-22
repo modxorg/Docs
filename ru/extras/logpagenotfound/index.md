@@ -1,7 +1,7 @@
 ---
 title: "LogPageNotFound"
 description: "Плагин для логирования всех запросов, завершившихся ошибкой 404"
-translation: "extras/logpagenotfound/index"
+translation: "extras/logpagenotfound"
 ---
 
 ## Что такое LogPageNotFound?

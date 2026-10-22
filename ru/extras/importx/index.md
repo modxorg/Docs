@@ -1,7 +1,7 @@
 ---
 title: "ImportX"
 description: "Extra MODX для быстрого создания ресурсов из CSV"
-translation: "extras/importx/index"
+translation: "extras/importx"
 ---
 
 ## What is ImportX?

@@ -1,7 +1,7 @@
 ---
 title: "ObjectExplorer"
 description: "Сниппет-справочник по объектам MODX на основе schema-файла"
-translation: "extras/objectexplorer/index"
+translation: "extras/objectexplorer"
 ---
 
 ## Что такое ObjectExplorer

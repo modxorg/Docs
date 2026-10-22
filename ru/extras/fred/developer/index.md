@@ -1,7 +1,7 @@
 ---
 title: "Разработка для Fred"
 description: "Расширение Fred через плагины, события MODX и toolbar/sidebar"
-translation: "extras/fred/developer/index"
+translation: "extras/fred/developer"
 ---
 
 Fred поддерживается [на Github](https://github.com/modxcms/fred) как open source проект под лицензией MIT. Issues и Pull Requests с улучшениями и исправлениями приветствуются.

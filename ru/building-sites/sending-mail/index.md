@@ -1,6 +1,6 @@
 ---
 title: Отправка почты
-translation: "building-sites/sending-mail/index"
+translation: "building-sites/sending-mail"
 description: "Настройка исходящей почты в MODX: SMTP, DKIM, параметры провайдеров и проверка."
 ---
 

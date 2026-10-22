@@ -1,7 +1,7 @@
 ---
 title: "Eletters"
 description: "Рассылка email-кампаний в MODX: группы, подписчики, очередь и шаблоны"
-translation: "extras/eletters/index"
+translation: "extras/eletters"
 ---
 
 ## Обзор GroupEletters

@@ -1,6 +1,6 @@
 ---
 title: "Символическая ссылка"
-translation: "building-sites/resources/symlink/index"
+translation: "building-sites/resources/symlink"
 description: "Внутренняя переадресация запроса другому ресурсу без смены URL: цель, права и кеш."
 ---
 

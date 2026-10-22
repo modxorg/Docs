@@ -1,7 +1,7 @@
 ---
 title: "miniShop2"
 description: "Полное решение для небольшого интернет-магазина на MODX Revolution"
-translation: "extras/minishop2/index"
+translation: "extras/minishop2"
 ---
 
 Эта документация изначально относилась к MiniShop 1. Поддержка MiniShop 1 прекращена в 2013 году.

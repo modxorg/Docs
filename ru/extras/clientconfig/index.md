@@ -1,7 +1,7 @@
 ---
 title: "ClientConfig"
 description: "Extra для настройки клиентских параметров сайта через удобный интерфейс в MODX Revolution"
-translation: "extras/clientconfig/index"
+translation: "extras/clientconfig"
 ---
 
 ClientConfig это extra для MODX Revolution 2.2 и новее. Администраторы настраивают простые опции для клиентов. Вы задаёте группы (вкладки) и настройки с разными типами полей, клиент заполняет значения, а вы используете их в шаблонах или коде.

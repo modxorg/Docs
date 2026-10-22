@@ -1,7 +1,7 @@
 ---
 title: "sekUserGalleries"
 description: "Менеджер галерей для загрузки и управления личными галереями пользователей в MODX"
-translation: "extras/sekusergalleries/index"
+translation: "extras/sekusergalleries"
 ---
 
 ## Что такое sekUserGalleries?

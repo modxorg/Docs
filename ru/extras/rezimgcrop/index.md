@@ -1,7 +1,7 @@
 ---
 title: "RezImgCrop"
 description: "Output Filter для уменьшения, обрезки и перевода изображений в оттенки серого"
-translation: "extras/rezimgcrop/index"
+translation: "extras/rezimgcrop"
 ---
 
 ## Что такое RezImgCrop?

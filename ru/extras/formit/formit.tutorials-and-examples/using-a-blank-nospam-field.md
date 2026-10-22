@@ -1,6 +1,6 @@
 ---
 title: "Использование пустого поля для защиты от спама"
-translation: "extras/formit/formit.tutorials-and-examples/formit.using-a-blank-nospam-field"
+translation: "extras/formit/formit.tutorials-and-examples/using-a-blank-nospam-field"
 description: "Использование пустого поля для защиты от спама"
 ---
 
