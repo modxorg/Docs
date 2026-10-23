@@ -1,5 +1,6 @@
 ---
 title: "Snippet"
+description: "The Snippet dashboard widget of MODX: a snippet that returns the content of the widget."
 _old_id: "88"
 _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-snippet"
 ---

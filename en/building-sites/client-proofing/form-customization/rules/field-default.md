@@ -1,23 +1,26 @@
 ---
 title: "Field Default"
+description: "The Field Default rule of a Form Customization set in MODX: how it puts a value into a field of the form."
 _old_id: "122"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/field-default"
 ---
 
-## The Field Default Rule
+## What the Rule Does
 
-The Field Default Rule, when set, will automatically set the default value of a field.
+Puts a value into a field of the form of the manager. The value appears when the form opens, and it is the value the field gets if the user saves the form without changing it.
 
-This will only work on "create" pages, **not** "update" pages.
+The rule is applied on the page the set is bound to: the page that creates a resource, or the page that edits one. To have it only on the page that creates a resource, bind the set to the action **Create Resource** instead of **Create & Edit Resource**.
 
-## Examples
+## Where It Is Set
 
-An example Rule of setting the default Category for a [Snippet](extending-modx/snippets "Snippets") for all [Users](building-sites/client-proofing/security/users "Users") in the User Group HR Department would look like this:
+The **Fields** tab of the set, in the **Default Value** column. A field with a value gets the rule; an empty cell removes it.
 
-![](fc-fielddefault1.png)
+## The Template of a New Resource
+
+On the field `template` the rule sets the template that a new resource gets. The field is only offered when the set is bound to the action **Create Resource**.
 
 ## See Also
 
-``` php
- [[getResources@section? &parents=`122` &context=`revolution`]]
- ```
+1. [Form Customization Rules](building-sites/client-proofing/form-customization/rules)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+3. [Customizing Tabs](building-sites/client-proofing/form-customization/tabs)

@@ -1,29 +1,33 @@
 ---
 title: "Назначение панели группе пользователей"
 translation: "building-sites/client-proofing/dashboards/usergroups"
+description: "Назначение панели управления группе пользователей в MODX и то, как у участников группы появляется личная копия настраиваемой панели."
 ---
 
-Как назначить Dashboard группе пользователей.
+В этой статье описано, как назначить панель управления группе пользователей.
 
-Найдите нужную User Group и откройте её на редактирование: **Меню → Access Controls**, ПКМ по группе в дереве, **Update User Group**.
+Сначала найдите группу пользователей, которой вы хотите назначить панель, и откройте её на правку. Дерево групп пользователей живёт на странице **Access → ACLs**: щёлкните по группе в дереве правой кнопкой мыши и выберите **Edit User Group**.
 
-В выпадающем списке **Dashboard** выберите панель. Все пользователи группы, у которых эта группа основная (Primary Group), будут видеть эту панель вместо Default.
+Дальше нажмите на выпадающий список «Dashboard» и выберите панель, которую хотите назначить этой группе. Все пользователи группы, у которых она основная, будут открывать эту панель вместо «Default».
 
 ![](dashboard-assign.png)
 
-## Настраиваемые панели и группы
+Панель назначается в форме группы. Обратного экрана, где панель назначалась бы группам, нет.
 
-Если у назначенной панели включено **Customizable**, при первом входе MODX создаёт личную копию раскладки виджетов для пользователя. Он может менять, добавлять и убирать виджеты на своей копии. На других членов группы это не влияет.
+## Настраиваемые панели и группы пользователей
 
-Когда администратор позже меняет шаблон панели (добавляет или убирает виджеты на странице Dashboards), изменения применяются ко всем личным копиям. Как шаблон распространяется, см. [Managing Your Dashboard](building-sites/client-proofing/dashboards/managing).
+Если у назначенной панели включён параметр **Customizable** (настраиваемая), MODX при первой загрузке панели клонирует раскладку виджетов для каждого пользователя. Пользователь может переставлять, добавлять и убирать виджеты на своей копии, не затрагивая остальных участников группы.
+
+Когда администратор позже меняет шаблон панели (добавлением или удалением виджетов на странице управления панелями), правки применяются ко всем личным панелям существующих пользователей. Подробнее об этом — в статье [Редактирование панели управления](building-sites/client-proofing/dashboards/managing "Редактирование панели управления").
 
 ## Смотрите также
 
-1. [Управление панелью](building-sites/client-proofing/dashboards/managing)
-2. [Назначение панели группе пользователей](building-sites/client-proofing/dashboards/usergroups)
-3. [Создание виджета](building-sites/client-proofing/dashboards/creating-a-widget)
-4. [Типы виджетов](building-sites/client-proofing/dashboards/widget-types)
-   1. [Тип File](building-sites/client-proofing/dashboards/widget-types/file)
-   2. [Тип HTML](building-sites/client-proofing/dashboards/widget-types/html)
-   3. [Тип Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
-   4. [Тип Snippet](building-sites/client-proofing/dashboards/widget-types/snippet)
+1. [Панели управления](building-sites/client-proofing/dashboards)
+2. [Редактирование панели управления](building-sites/client-proofing/dashboards/managing)
+3. [Назначение панели управления группе пользователей](building-sites/client-proofing/dashboards/usergroups)
+4. [Создание виджета панели управления](building-sites/client-proofing/dashboards/creating-a-widget)
+5. [Типы виджетов панели управления](building-sites/client-proofing/dashboards/widget-types)
+    1. [Тип виджета панели управления - Файл](building-sites/client-proofing/dashboards/widget-types/file)
+    2. [Тип виджета панели управления - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+    3. [Тип виджета панели управления - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+    4. [Тип виджета панели управления - Сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)

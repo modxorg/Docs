@@ -1,6 +1,7 @@
 ---
 title: "HTML"
 translation: "building-sites/client-proofing/dashboards/widget-types/html"
+description: "Виджет панели управления типа «HTML» в MODX: обычный HTML в содержимом виджета."
 ---
 
 Тип виджета HTML Dashboard отображает прямой HTML - ничего больше - в виджете. Полезно для простых сообщений и других данных.
@@ -21,11 +22,11 @@ Hello, [[+modx.user.username]]!
 [[MyDashboardSnippet]]
 ```
 
-Обратите внимание, что во сниппетах нет «активного ресурса», поэтому у сниппетов, ссылающихся на $ modx-> resource, будут проблемы.
+Обратите внимание, что на панели управления нет активного ресурса, поэтому у сниппета, который ссылается на `$modx->resource`, будут проблемы.
 
 ## Смотрите также
 
-1. [Тип виджета панели инструментов - Файл](building-sites/client-proofing/dashboards/widget-types/file)
-2. [Тип виджета панели инструментов - HTML](building-sites/client-proofing/dashboards/widget-types/html)
-3. [Тип виджета Dashboard - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
-4. [Тип виджета на приборной панели - Сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)
+1. [Тип виджета панели управления - Файл](building-sites/client-proofing/dashboards/widget-types/file)
+2. [Тип виджета панели управления - HTML](building-sites/client-proofing/dashboards/widget-types/html)
+3. [Тип виджета панели управления - Inline PHP](building-sites/client-proofing/dashboards/widget-types/inline-php)
+4. [Тип виджета панели управления - Сниппет](building-sites/client-proofing/dashboards/widget-types/snippet)
