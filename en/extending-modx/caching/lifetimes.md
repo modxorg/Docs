@@ -40,7 +40,7 @@ Open the Resource that calls `testCache` and refresh it repeatedly. The timestam
 
 This Snippet writes to the **default** partition, so clearing the site cache clears it too. That is why the original 10-second lifetime is hard to observe: you get a fresh 10 seconds each time you clear the cache. Raise `$lifetime` to 60 seconds to watch it expire without clearing.
 
-Data in a partition of your own survives clearing the site cache: `refresh()` clears the fixed list of core partitions, and a partition that is not on that list is never touched. Pass the partition in `$options` — see [Programmatic (Custom) Caching](extending-modx/caching/#programmatic-caching).
+Data in a partition of your own survives clearing the site cache: `refresh()` clears the fixed list of core partitions, and a partition that is not on that list is never touched. Pass the partition in `$options` — see [Programmatic (Custom) Caching](extending-modx/caching/#programmatic-custom-caching).
 
 ## Summary
 

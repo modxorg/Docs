@@ -57,7 +57,7 @@ Each partition is named by two system settings: `cache_PARTITION_key` holds the 
 > [!WARNING]
 > `cache_resource_clear_partial` switches `refresh()` to clearing only the contexts you name, instead of the whole **resource** partition. It only takes effect when `cache_handler` is set to exactly `xPDOFileCache`; MODX compares the setting as a literal string, and its own default value is the namespaced `xPDO\Cache\xPDOFileCache`. In practice you must set both settings by hand, or the flag is ignored.
 
-### Database caching {#database-caching}
+### Database caching
 
 The **cache\_db** system setting makes xPDO cache the result sets it reads from the database, including those returned by `getObject()` and `getCollection()`. Leave it off unless database access costs more than an include from disk — a remote database server, or a setup where a caching system is already available.
 
@@ -94,7 +94,7 @@ The second parameter, `$results`, is passed by reference and holds the result of
 
 Every refresh also fires the **OnCacheUpdate** event with the `results`, `paths` and `options` properties.
 
-## Programmatic (Custom) Caching {#programmatic-caching}
+## Programmatic (Custom) Caching
 
 `modCacheManager` caches data of any type. Data written to a partition of your own can be moved to a memcached, Redis or WinCache instance through the `cache_PARTITION_handler` system settings, without changing a single call site.
 

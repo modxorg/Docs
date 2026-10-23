@@ -36,9 +36,8 @@ No es posible dar todos los ejemplos posibles, pero aquí hay algunas formas com
 | 17-07-2020               | ```[[*createdon:strtotime:date=`%d-%m-%Y`]]```                  |
 | Depende de la configuración | ```[[*createdon:strtotime:date=`%A, %d %B %Y`]]``` |
 
-::: warning
-`manager_date_format` **no** sirve como formato del modificador `date`. Ese ajuste está escrito en notación de PHP `date()`, mientras que el modificador `date` llama a `strftime()` — los símbolos difieren (`Y` frente a `%Y`, `d` frente a `%d`).
-:::
+> [!WARNING]
+> `manager_date_format` **no** sirve como formato del modificador `date`. Ese ajuste está escrito en notación de PHP `date()`, mientras que el modificador `date` llama a `strftime()` — los símbolos difieren (`Y` frente a `%Y`, `d` frente a `%d`).
 
 ## Todos los parámetros
 
