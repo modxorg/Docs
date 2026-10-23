@@ -9,8 +9,8 @@ _old_uri: "2.x/administering-your-site/security/troubleshooting-security/resetti
 
 Have the user try the Forgot Password link on the login form. If the account is still unreachable, reset the password in the database.
 
-**The password cannot be written into the database by hand**
-MODX 3 stores the password as a hash that only PHP can produce. A database statement cannot calculate that hash.
+**The shipped hasher cannot be calculated in the database**
+MODX 3 stores the password with `MODX\Revolution\Hashing\modNative`. A database statement cannot produce that hash.
 
 Set the user's `hash_class` to `MODX\Revolution\Hashing\modMD5` and write the password as an MD5 hash. The database has an `MD5()` function for that. Run this statement. The table name carries your installation's prefix:
 
