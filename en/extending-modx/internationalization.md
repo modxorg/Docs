@@ -7,7 +7,7 @@ _old_uri: "2.x/developing-in-modx/advanced-development/internationalization"
 
 ## Overview
 
-A Lexicon is a collection of strings grouped by language and topic. Entries live in files under `lexicon/<lang>/<topic>.inc.php` inside a [namespace](extending-modx/namespaces), which keeps a Component's strings from colliding with core ones.
+A Lexicon groups strings by language and topic. Entries live in files under `lexicon/<lang>/<topic>.inc.php` inside a [namespace](extending-modx/namespaces). That keeps a Component's strings from colliding with core ones.
 
 - **Languages** — IANA keys, e.g. `en`, `de`, `ru`
 - **Topics** — files that group related entries
@@ -17,7 +17,7 @@ Splitting entries into topics keeps language files small and cheap to load, both
 
 ### Locales
 
-MODX does support locales in core. The [locale](building-sites/settings/locale) system setting is applied with `setlocale(LC_ALL, …)` during culture initialisation; the `setlocale` option gates that call and is not exposed in the manager, so it comes from `core/config/config.inc.php`.
+MODX supports locales in core. The [locale](building-sites/settings/locale) system setting is applied with `setlocale(LC_ALL, …)` during culture initialisation. The `setlocale` option gates that call and is not exposed in the manager, so it comes from `core/config/config.inc.php`.
 
 Use a UTF-8 locale such as `de_DE.utf8`, otherwise the backend renders incorrectly. To change locale per request rather than per site, set it in a Plugin on [OnInitCulture](extending-modx/plugins/system-events/oninitculture "OnInitCulture").
 
@@ -31,14 +31,15 @@ An entry has a key and a translated value, plus the coordinates that address it:
 | `value` | The translation | — |
 | `topic` | Topic the entry belongs to | `default` |
 | `namespace` | Namespace the topic lives in | `core` |
-| `language` | IANA key of the target language | current `cultureKey`, or `en` |
-| `createdon` / `editedon` | Timestamps | set automatically |
+| `language` | IANA key of the target language | `en` |
+| `createdon` | When the row was created | the create processor does not set it |
+| `editedon` | Last edit | set when the entry is created in the manager, and updated when the row is written |
 
 Files are the source of truth. The `modLexiconEntry` table (`MODX\Revolution\modLexiconEntry`) stores database overrides that are merged on top of the files — it is not where translations originate.
 
 ## Loading and Using Lexicons
 
-Topics load on demand, deduplicated by full coordinate. Switch languages through a site or context setting, not per tag — one context per language is the usual shape.
+Topics load on demand. A coordinate that includes a namespace (`namespace:topic` or `language:namespace:topic`) is loaded once. A bare topic name is loaded again on the next call. Switch languages through a site or context setting, not per tag — one context per language is the usual shape.
 
 ### In content, chunks, and templates
 
@@ -46,7 +47,11 @@ Topics load on demand, deduplicated by full coordinate. Switch languages through
 [[%key? &topic=`topicname` &namespace=`namespace_name` &language=`en`]]
 ```
 
-The `topic` and the `language` can be left out: the topic falls back to `default`, the language to the one of the request. The `namespace` falls back to `core` as well, so it has to be given for a lexicon outside the core namespace — without it the tag looks in the core only.
+| Property | When omitted |
+| --- | --- |
+| `topic` | `default` |
+| `language` | the request language (`cultureKey`), not the column default `en` |
+| `namespace` | `core`. Set it for a lexicon outside the core namespace, or the tag looks in core only |
 
 Placeholders in the entry are filled from the properties of the tag, which follow the `?`:
 
@@ -84,7 +89,7 @@ In a CMP, `_()` reads from the lexicon set loaded for the page:
  _('lexicon.key', { userinput: 'amazing' });
 ```
 
-A page declares the topics it needs, and the manager loads them into `MODx.lang`. To add the topics of an own component, name them in `getLanguageTopics()` of a controller of the component — it extends the list of the lexicons loaded for the page:
+The controller loads the topic `action`, then every topic returned by `getLanguageTopics()`, then `trash`. Return the topics the page needs. The base method returns an empty array.
 
 ``` php
 /**
@@ -97,21 +102,19 @@ public function getLanguageTopics()
 }
 ```
 
-The method returns the list of the topics of the page, so a component names all of its topics at once.
-
-A page that needs a topic beyond those of its controller adds it with `addLexiconTopic()`:
+A page that needs a topic beyond its controller's list adds it with `addLexiconTopic()`:
 
 ``` php
 $this->addLexiconTopic('mycomponent:reports');
 ```
 
-The manager asks the connector `connectors/lang.js.php` for the topics of the page: it reads the `topic` parameter, splits it by commas and loads every coordinate with `modLexicon::load()`. The templates of the core use it the same way — `manager/templates/default/header.tpl` asks for `?ctx=mgr&topic=topmenu,file,resource,…`.
+The manager asks the connector `connectors/lang.js.php` for the page's topics. It reads the `topic` parameter, splits it on commas, and loads every coordinate with `modLexicon::load()`. Core templates do the same. `manager/templates/default/header.tpl` asks for `?ctx=mgr&topic=topmenu,file,resource,…`.
 
-The connector does not extend the lexicon of a page that is already running: it answers with the topics of its own request — `core:default` and the ones asked for — and the response replaces `MODx.lang`. The topics of the page therefore have to be declared before it is rendered.
+The connector does not extend a running page's lexicon. It answers with its own request's topics, `core:default` and the ones asked for, and the response replaces `MODx.lang`. Declare the page's topics before it is rendered.
 
 ## Lexicons for Settings
 
-The label of a System Setting is the key `setting_<key>`, and its description is `setting_<key>_desc`. The key of the setting keeps the prefix of the Component it belongs to, for example `gallery.display_thumbs`.
+A System Setting's label is the key `setting_<key>`, and its description is `setting_<key>_desc`. The setting key keeps its Component's prefix, for example `gallery.display_thumbs`.
 
 The core keeps its labels in the `setting` topic (`core/lexicon/en/setting.inc.php`):
 
@@ -127,7 +130,7 @@ $_lang['setting_gallery.display_thumbs'] = 'Display Thumbnails';
 $_lang['setting_gallery.display_thumbs_desc'] = 'When set to true, this will display thumbnails for the gallery.';
 ```
 
-The Settings grid loads both topics of the namespace of the setting, so a key with the `setting_` prefix is found in either of them. A key without that prefix does not label the setting.
+The Settings grid loads both topics from the setting's namespace, so a key with the `setting_` prefix is found in either of them. A key without that prefix does not label the setting.
 
 ## See Also
 
