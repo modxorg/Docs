@@ -1,54 +1,46 @@
 ---
 title: "Providers"
-description: "Transport providers in MODX: the remote service a package is downloaded from, how to add one, and what MODX asks it for."
+description: "A transport provider is the service MODX downloads packages from, and how to add one."
 ---
 
-A transport provider is a remote service that MODX downloads transport packages from. MODX ships with one — the provider of modx.com — and a site can have as many as it needs.
+A transport provider is a remote service that MODX downloads packages from. MODX ships with the modx.com provider. A site can keep as many providers as it needs.
 
 ## What a Provider Is
 
-A provider is a base URL of a REST service. MODX appends a fixed route to it and reads the answer as XML:
+A provider is the address MODX downloads packages from.
 
-| Route | What it returns |
-| --- | --- |
-| `repository` | the repositories of the provider and the categories in them |
-| `package` | the package of a signature |
-| `package/versions` | the versions of a package |
-| `package/update` | the newest version of a package |
-| `home` | the statistics of the provider |
-| `verify` | the answer that the service is a provider |
-
-The provider of modx.com is the service at `https://rest.modx.com/extras/`.
+The modx.com provider is the service at `https://rest.modx.com/extras/`. Enter that address in **Service URL**.
 
 > [!WARNING]
-> Download packages only from providers you trust: a provider serves the code that runs on your site.
+> Download packages only from providers you trust. A provider serves the code that runs on your site.
 
 ## Adding a Provider
 
-Providers live on the tab **Providers** of the Package Management page: **Extras** in the top menu → **Installer** → **Providers**. The button **Create** opens the window with the fields of a provider:
+Open **Extras** in the top menu, then **Installer**, then **Providers**. **Create** opens the window.
 
-| Field | Meaning |
+| Field | What you enter |
 | --- | --- |
-| `name` | the name of the provider in the list |
-| `service_url` | the base URL of the service |
-| `username` | the name to send with the requests |
-| `api_key` | the key to send with the requests |
-| `description` | free text |
+| **Name** | the provider's name in the list |
+| **Service URL** | the service address |
+| **Username** | the name for this provider |
+| **API Key** | the key for this provider |
+| **Description** | free text |
 
-MODX checks the provider when it is saved: it asks the service `verify` and expects an answer that confirms the provider. A provider that does not answer is not saved.
+MODX checks the provider when you save. If the service does not confirm the address, MODX does not save the record.
 
-Every request to the provider carries:
+Each request sends:
 
-- the `username` and the `api_key` of the provider;
-- the data of the installation: the `uuid`, the type of the database, the version of MODX, the host and the version of PHP, and the language of the manager.
+- the **Username** and the **API Key** from this window
+- an installation identifier, the database type and the MODX version
+- the host, the PHP version and the manager's language
 
 ## Downloading from a Provider
 
-1. In the menu of the **Download Extras** button, choose **Select a Provider**.
+1. In the **Download Extras** menu, choose **Select a Provider**.
 2. Pick the provider.
 3. Confirm with **Save and go to Package Browser**.
 
-The Package Browser opens with the categories of the provider on the left and the packages on the right.
+The Package Browser opens. That provider's categories are on the left, the packages on the right.
 
 ## See Also
 

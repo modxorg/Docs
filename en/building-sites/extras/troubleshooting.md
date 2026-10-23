@@ -1,33 +1,31 @@
 ---
 title: "Troubleshooting Package Management"
-description: "What to check when a package cannot be downloaded, installed or unpacked in MODX: cURL, the packages directory, the archive format and the archive_with setting."
+description: "What to check when a package cannot be downloaded, installed or unpacked in MODX: cURL, the packages directory, and the archive_with setting."
 ---
 
-Most problems with Package Management come from the environment of the server rather than from MODX. Check the causes below.
+Most problems with Package Management come from the server.
 
 ## cURL Is Missing
 
-MODX asks the providers over HTTP with the PSR-18 client, which needs the extension cURL. The manager checks it when the page opens. Without cURL a notice is shown above the page, and the button **Download Extras** is replaced by the search of the local directory.
+Without the cURL extension, you see a warning above the page when it opens. MODX replaces **Download Extras** with **Search Locally for Packages**.
 
-Ask your host for the extension cURL.
+Ask your host to enable the cURL extension.
 
 ## The Packages Directory Is Not Writable
 
-The packages are unpacked into `core/packages/`, and the archives are written there as well. When PHP cannot write into that directory, the download and the installation fail. Make the directory writable by PHP.
+MODX unpacks packages into `core/packages/` and writes the archives there. When PHP cannot write to that directory, the download and the installation fail. Make the directory writable by PHP.
 
 ## The Archive Cannot Be Unpacked
 
-Some servers have a broken build of ZipArchive, and the unpack fails with an error from `extractTo` or `archiveTo`. The message comes from PHP, not from MODX.
-
-Set the system setting `archive_with` to **Yes** (the value `1`). MODX then unpacks the archives with PCLZip, which is shipped with MODX and needs no extension of PHP.
+If an archive does not unpack, set `archive_with` to **Yes**. MODX then unpacks the archive with its own means, without the PHP Zip extension.
 
 ## The Archive Is Missing
 
-A package that is installed but whose archive was deleted from `core/packages/` can be fetched from the provider again. MODX downloads it once more when it needs the archive.
+If the archive is no longer in `core/packages/`, the manager does not fetch it from the provider. Put `<signature>.transport.zip` into `core/packages/` and choose **Search Locally for Packages**.
 
 ## The Upload Is Refused
 
-The **Upload a package** entry of the menu of the **Download Extras** button takes only an archive with the name `<signature>.transport.zip`. A file with another name, or a file that is not a zip, is refused with a message that says so.
+**Upload a package**, in the **Download Extras** menu, accepts only an archive named `<signature>.transport.zip`. The manager refuses a file with another name, or a file that is not a zip, and says so.
 
 ## See Also
 
