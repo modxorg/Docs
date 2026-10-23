@@ -11,7 +11,7 @@ You see a name and a description field, and below them a grid of the widgets of 
 
 ![](dashboard-edit.png)
 
-The name and the description of the "Default" Dashboard cannot be changed. It is the Dashboard every user gets when no group assigns another one.
+The name of the Default Dashboard cannot be changed in the form. The description can. It is the Dashboard every user gets when no group assigns another one.
 
 ## Creating and Removing a Dashboard
 
@@ -28,9 +28,7 @@ Changes made on this page update the Dashboard **template**. For [customizable D
 - When you **add a widget** here, it will appear on the dashboard for all existing users of that dashboard.
 - When you **remove a widget** here, it will be removed from all users' personal dashboards.
 
-This is different from changes made directly on the dashboard page itself. Using the close button on a widget or adding a widget from the dashboard view affects only the currently logged-in user.
-
-If you want to enforce a widget change across all users, make it from this management page. If you only want to adjust your own dashboard, make the change directly on the dashboard page instead.
+Changes made on the dashboard page itself are different. The close button on a widget, or adding a widget from the dashboard view, affects only the currently logged-in user.
 
 A widget that is added to the template arrives at the existing users with the default size and at the end of the list.
 

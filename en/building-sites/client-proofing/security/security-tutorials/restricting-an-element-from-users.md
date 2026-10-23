@@ -18,7 +18,7 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/restricting-a
 
 ### 1. Create a Category
 
-Click the Elements tab on the left-hand tree, and click the Category icon in the toolbar, or right-click "Categories" at the bottom, then click "New Category". Create and save a new category. Alternatively, you can use an already-existing Category for this tutorial.
+Click the Elements tab in the left tree, then the Category icon in the toolbar. Or right-click "Categories" at the bottom and click "New Category". Save the category. An existing category works too.
 
 ### 2. Place the Element into the Category
 
@@ -26,17 +26,17 @@ Edit the Element and set its Category to be the new Category created in step 1.
 
 ### 3. Create a User Group
 
-Go to the lock icon in the user menu → **Access Control Lists** in the top menu, and find the "User Groups" tab. Then either create a new User Group or select a prior one. From there, right-click on the User Group and select "Update User Group".
+Go to the lock icon → **Access Control Lists** and open the **User Groups & Users** tab. Create a user group or select an existing one. Right-click it and select **Edit User Group**.
 
-If using the Access Wizard form, make sure the group gets "mgr" access in the Context field, and specify the Category in the Element Categories field. You can also put a list of users to be added to this group in the Users field. Right-click on the new User Group to update it if not using the Wizard.
+On the Access Wizard form, give the group "mgr" in the Context field and set the Category in the Element Categories field. The Users field can list users to add to this group. If you are not using the Wizard, right-click the new User Group and update it.
 
 ### 4. Add the Users to the User Group
 
-With the new User Group open for updating, find the Users tab and add any users you want to see the Element. Make sure to give them a Role of **at least** Member. Alternately, you can add individual users to the new User Group from the User's editing page in the Access Permission tab.
+With the new User Group open, open the Users tab and add the users who should see the Element. Give them a role of **at least** Member. Or add a user from that user's editing page, on the Access Permission tab.
 
 ### 5. Add the Element Category ACL
 
-Find the "Element Category Access" tab on this screen. The tab is in the panel of the group, next to the other access tabs.
+Open the "Element Category Access" tab. It sits in the group panel, next to the other access tabs.
 
 Click "Add Category" on the button above the grid. Select:
 
@@ -49,15 +49,15 @@ Click "Add Category" on the button above the grid. Select:
 
 ### 6. Flush Permissions
 
-On the top menu, find "**Flush Your Permissions**" and click it. Then the lock icon in the user menu → **Logout All Users**.
+Open the lock icon → **Flush Your Permissions**, then **Logout All Users**.
 
-This force everyone to log in again, and your Element Category will now be protected from users outside the Editors User Group.
+This forces everyone to log in again. The Element Category is then protected from users outside the Editors User Group.
 
 ## Hiding Specific Elements from Certain Users
 
 Sometimes, you want to hide elements from all users who are not in the Administrator group. To do that, put the elements in a category as we did above, but connect it to the Administrator user group:
 
-- Go to the Administrator User Group edit page: the lock icon in the user menu → **Access Control Lists** → the tab **User Groups & Users** -> right click "Administrator" and pick Update User Group
+- Go to the Administrator User Group edit page: the lock icon in the user menu → **Access Control Lists** → the tab **User Groups & Users** -> right click "Administrator" and pick **Edit User Group**
 - Find the Element Category Access tab
 - Add the following ACL entry, by clicking on "Add Category":
     - Category: your Category you made/selected earlier
@@ -72,9 +72,9 @@ Now, only the admin Super User can see the elements.
 
 ## Special Case for Templates
 
-Lets say you restricted a Template with the method above. But you also want another User Group to edit (but not create!) Resources with that Template, and to see its TVs, though it has no access to the Template. Currently, the 2nd User Group (let's call them Editors) would see the Resource, and the ID of the Template would show in the Template combobox, but they wouldn't see the TVs. We need another ACL on that group to get them to load the Template and its TVs.
+You restricted a Template with the method above. Another User Group should edit Resources that use that Template, but not create them. It should see the Template's TVs, though it has no access to the Template. That group (call them Editors) would see the Resource. The Template combobox would show the Template ID, and they would not see the TVs. Add another ACL on that group so it loads the Template and its TVs.
 
-- Go to the Editors User Group edit page: the lock icon in the user menu → **Access Control Lists** → the tab **User Groups & Users** -> right click "Editors" and pick Update User Group
+- Go to the Editors User Group edit page: the lock icon in the user menu → **Access Control Lists** → the tab **User Groups & Users** -> right click "Editors" and pick **Edit User Group**
 - Find the Element Category Access tab
 - Add the following ACL entry, by clicking on "Add Category":
     - Category: your Category you made/selected earlier
@@ -85,7 +85,7 @@ Lets say you restricted a Template with the method above. But you also want anot
 - Click on the "Save" button at the upper right
 - Have the users in the Editors User Group logout and log back in, or alternatively click **Logout All Users** in the top menu
 
-Done! Your Editors will now see and edit the TVs for the Template in the protected Category. The Template stays hidden from users who are not in the Editors User Group.
+Editors will now see and edit the TVs for the Template in the protected Category. The Template stays hidden from users who are not in the Editors User Group.
 
 ## See Also
 

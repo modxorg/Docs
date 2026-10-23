@@ -13,19 +13,19 @@ Users are assigned to User Groups, which carry [ACLs](building-sites/client-proo
 
 ## The Superuser
 
-The field `sudo` makes a user a superuser: `checkPolicy()` returns `true` right away, and the policy checks do not run for it at all. The user sees everything, whatever the ACLs say.
+The field `sudo` makes a user a superuser. Policy checks do not run for that user. The user sees everything, whatever the ACLs say.
 
 Only a user with the permission `set_sudo` can give it away. The administrator of a fresh installation gets it.
 
 ## User Settings
 
-The settings of a user override any System or Context settings with the same key, and they can be unique to that user as well. The order of inheritance for Settings is:
+A user setting overrides a user group setting of the same key. A user group setting overrides a context setting. A context setting overrides the system setting. The order is:
 
-`System Settings → Context Settings → User Settings`
+`System setting → Context setting → User group setting → User setting`
 
-To edit the user settings, navigate to the lock icon in the user menu → **Users** → **Update User** (right-click) → **Settings** (tab).
+To edit the settings of a user, open the lock icon → **Users**, right-click the user and choose **Edit**, then open the **Settings** tab.
 
-You can change user-specific settings only _after_ you've created the user. The "Settings" tab is not visible when you first create the user. It is shown only to a user who has the permissions `settings` **and** `namespace`.
+You can change those settings only after the user exists. The Settings tab is not on the create form, and only a sudo user sees it. Log in as sudo to edit the settings of a user.
 
 ## Users in the Front-End
 
@@ -36,12 +36,12 @@ When a user is logged into the frontend of your site, their username and ID are 
 [[+modx.user.username]] - Prints the username
 ```
 
-If a user is not logged in, ID will be blank, and Username will be "(anonymous)".
+If a user is not logged in, the ID is 0 and the username is `anonymous`.
 
 The default Username is set with the `default_username` setting.
 
 **Remember**
-Keep in mind that confusing caveat: just because you have logged into the _manager_ does not mean that you are logged into the _web_ front-end. The user-specific settings and the [getOption](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") API method obeys this same rule. If you're not logged in, the **System Settings → Context Settings → User Settings** cannot fully apply.
+Logging into the _manager_ does not log you into the _web_ front end. If you are not logged in on the site, the chain **system setting → context setting → user group setting → user setting** cannot fully apply. [Code that reads a setting](extending-modx/xpdo/class-reference/xpdoobject/configuration-accessors/getoption "getOption") follows the same split.
 
 ## The Fields of a User
 
@@ -58,7 +58,7 @@ Users contain the following fields:
 | remote\_key    | A remote user Key used by remote authentication apps.                                                         |
 | remote\_data   | A JSON array of data used by remote authentication apps.                                                      |
 | hash\_class    | The class that hashes the password of the user. The default of MODX 3 is `MODX\Revolution\Hashing\modNative`. |
-| salt           | The salt that the password of the user is hashed with.                                                        |
+| salt           | The salt stored on the user. The shipped hasher `modNative` does not use this column.                         |
 | primary\_group | The group that the user gets the dashboard and the access of its primary group from.                          |
 | session\_stale | Whether the session of the user is stale.                                                                     |
 | sudo           | Whether the user is a superuser. See [The Superuser](#the-superuser).                                         |
@@ -113,26 +113,26 @@ Users also have a Profile attached to them. It contains the following fields:
 
 ## Grabbing the User via the API
 
-The current user can be retrieved in the API via the `$modx->user` reference. For example, this snippet outputs the username of the user:
+The current user is available in the API as `$modx->user`. This snippet outputs the username:
 
 ``` php
 return $modx->user->get('username');
 ```
 
-To read the Profile fields, get the `modUserProfile` object through the Profile alias first. For example, this snippet grabs the email of the user and returns it:
+To read Profile fields, get the `modUserProfile` object through the Profile alias first. This snippet returns the user's email:
 
 ``` php
 $profile = $modx->user->getOne('Profile');
 return $profile ? $profile->get('email') : '';
 ```
 
-If the User is not logged in, `$modx->user` is still available as an object, but returns 0 as the ID and (Anonymous) as the username.
+If the user is not logged in, `$modx->user` is still available as an object. It returns 0 as the ID and `anonymous` as the username.
 
 To write your own User class, see [Extending modUser](extending-modx/custom-users "Extending modUser").
 
 ### Using Extended Fields
 
-Values in the extended field return as an array. They can be manipulated like so:
+Values in the `extended` field return as an array:
 
 ``` php
 /* get the extended field named "color": */

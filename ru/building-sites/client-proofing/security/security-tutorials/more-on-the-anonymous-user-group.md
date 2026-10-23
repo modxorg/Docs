@@ -6,34 +6,34 @@ description: "Кто такой анонимный пользователь в M
 
 ## Кто такой Anonymous?
 
-Любой посетитель сайта без входа — это анонимный пользователь.
+Любой посетитель сайта без входа это анонимный пользователь.
 
-**Анонимный пользователь — не группа пользователей**
-В базе нет группы «Anonymous». Анонимный пользователь — это список контроля доступа с principal `0`, а в дереве групп он показан псевдоузлом «(Anonymous)». Этот узел можно править так же, как любую группу, но меняете вы при этом доступ анонимного пользователя, а не группы.
+**Анонимный пользователь не является группой пользователей**
+В базе нет группы «Anonymous». В дереве групп посетитель показан узлом `(аноним)`. Узел правится так же, как любая группа. Меняется при этом доступ анонимного пользователя.
 
-Чтобы его открыть, пройдите по пути **иконка замка в меню пользователя → Access Control Lists**, вкладка **User Groups & Users**. Кликните правой кнопкой по записи «(Anonymous)» и выберите **Update User Group**. ![](access+controls.png)
+Откройте иконку замка → **Контроль доступа**, вкладка **Группы пользователей & Пользователи**. Щёлкните правой кнопкой `(аноним)` и выберите **Редактировать группу пользователя**. ![](access+controls.png)
 
 ## Что может Anonymous?
 
-По умолчанию анонимный пользователь получает Load Only во всех [Context](building-sites/contexts "Contexts"), кроме `mgr`. Без Load Only запрос к Context вернёт 404 Page Not Found.
+По умолчанию анонимный пользователь получает Load Only во всех [контекстах](building-sites/contexts "Contexts"), кроме `mgr`. Без Load Only запрос к контексту вернёт 404 Page Not Found.
 
 ![](user+group_+anonymous.png)
 
-Load Only не означает, что ресурс можно View (см. ниже).
+Load Only не означает, что ресурс можно View.
 
-Пример: вы создаёте [Resource Group](building-sites/client-proofing/security/resource-groups "Resource Groups") и даёте доступ конкретной User Group. Anonymous эту Resource Group не увидит. На этом строится [создание страниц только для участников](building-sites/client-proofing/security/security-tutorials/making-member-only-pages "Making Member-Only Pages").
+Если создать [группу ресурсов](building-sites/client-proofing/security/resource-groups "Группы ресурсов") и выдать её конкретной группе пользователей, анонимный пользователь её не увидит. На этом строятся [страницы только для участников](building-sites/client-proofing/security/security-tutorials/making-member-only-pages "Страницы только для участников").
 
 ### 401 против 404 на защищённых страницах
 
-Для защищённых Resource Groups у Anonymous по умолчанию нет Load. Ответ будет 404 Page Not Found. Если нужен 401 Unauthorized, дайте Anonymous доступ к Resource Group с политикой Load Only.
+У защищённой группы ресурсов у анонимного пользователя по умолчанию нет Load. Ответ будет 404 Page Not Found. Чтобы вернуть 401 Unauthorized, дайте ему доступ к группе ресурсов с политикой Load Only.
 
-Это делается на вкладке Resource Group Access при редактировании Anonymous.
+Это делается на вкладке Resource Group Access при редактировании анонимного пользователя.
 
 ![](screen+shot+2012-10-19+at+11.43.46+pm.png)
 
-Нажмите **Add Resource Group**, выберите защищённую Resource Group, Context (не `mgr`) и Access Policy Load Only. Сохраните.
+Нажмите **Add Resource Group**, выберите защищённую группу ресурсов, контекст (не `mgr`) и политику Load Only. Сохраните.
 
-View по ресурсам в этой группе всё ещё закрыт. Доступен только Load и ответ 401. Кастомную Unauthorized-страницу задайте через [Unauthorized Page System Setting](building-sites/settings/unauthorized_page "unauthorized_page").
+Ресурсы этой группы он по-прежнему не увидит (нет View). Доступен только Load, ответ будет 401. Свою страницу Unauthorized задайте в настройке [Unauthorized Page](building-sites/settings/unauthorized_page "unauthorized_page").
 
 ## Смотрите также
 

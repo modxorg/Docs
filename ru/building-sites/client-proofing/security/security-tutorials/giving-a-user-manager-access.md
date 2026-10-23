@@ -6,19 +6,19 @@ description: "Дать пользователю MODX права менеджер
 
 ## Задача
 
-Нужен доступ к редактированию в Менеджере без полного набора [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") администратора. Учебник частично написан BobRay.
+Нужен доступ к редактированию в менеджере без полного набора [разрешений](building-sites/client-proofing/security/policies/permissions "Разрешения") администратора. Часть учебника написал BobRay.
 
 ## Решение
 
-1. В **Access Control Lists** → вкладка **Roles** создайте роль (например, `Editor`) с authority `10`.
-2. В **Settings → Access Control Lists → Access Policies** продублируйте политику Administrator и переименуйте (например, `AdminLite`).
+1. В иконке замка → **Контроль доступа** откройте вкладку **Роли** и создайте роль (например, `Editor`) с authority `10`.
+2. На вкладке **Политики доступа** продублируйте политику Administrator и переименуйте (например, `AdminLite`).
 3. В политике AdminLite оставьте только нужные [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions").
-4. В **Settings → Access Control Lists → User Groups** кликните правой кнопкой группу `Administrator` и выберите **Update User Group**.
-5. На вкладке **Context Access** добавьте две строки:
+4. На вкладке **Группы пользователей & Пользователи** щёлкните правой кнопкой группу `Administrator` и выберите **Редактировать группу пользователя**.
+5. На вкладке **Контексты** нажмите **Добавить доступ к контексту** и добавьте две строки:
     1. Context: `mgr`, Minimum Role: `Editor`, Access Policy: `AdminLite`
     2. Context: `web`, Minimum Role: `Editor`, Access Policy: `Load, List and View`
-6. В **Manage → Users** создайте пользователя или откройте существующего. На вкладке Access Permissions добавьте его в группу Administrator с ролью Editor.
-7. Откройте **Security → Flush Sessions** и войдите снова.
+6. В иконке замка → **Пользователи** создайте пользователя или откройте существующего. На вкладке **Права доступа** добавьте его в группу Administrator с ролью Editor.
+7. Откройте иконку замка → **Завершить все сеансы** и войдите снова.
 
 ## Публикация в менеджере
 

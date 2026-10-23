@@ -10,31 +10,31 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/more-on-the-a
 Anyone who visits the site and is not logged in is the anonymous user.
 
 **The anonymous user is not a User Group**
-In the database there is no group "Anonymous". The anonymous user is an access control list with the principal `0`, and in the tree of the groups it shows up as a pseudo entry "(Anonymous)". You can edit that entry like any other group, but what you change is the access of the anonymous user.
+There is no group named Anonymous. In the group tree the visitor shows up as `(anonymous)`. You can edit that entry like any other group. What you change is the anonymous user's access.
 
-You reach it by navigating to the lock icon in the user menu → **Access Control Lists**, the tab **User Groups & Users**. Then right-click on the "(Anonymous)" entry and select "Update User Group". ![](access+controls.png)
+You reach it from the lock icon → **Access Control Lists**, the tab **User Groups & Users**. Right-click `(anonymous)` and select **Edit User Group**. ![](access+controls.png)
 
 ## What Can Anonymous Users Do?
 
-By default, the anonymous user is granted Load Only permissions in every [Context](building-sites/contexts "Contexts") except the "mgr" Context. Without Load Only permissions, requests to the Context would result in a 404 Page Not Found response.
+By default, the anonymous user is granted Load Only in every [Context](building-sites/contexts "Contexts") except the "mgr" Context. Without Load Only, a request to the Context returns 404 Page Not Found.
 
 ![](user+group_+anonymous.png)
 
-Load Only permissions doesn't necessarily mean they can View the Resource (see below).
+Load Only does not necessarily mean they can View the Resource.
 
-For example, if you create a [Resource Group](building-sites/client-proofing/security/resource-groups "Resource Groups") and grant access permissions to a specific User Group, the anonymous user cannot access it. This is the basis of [Creating Member Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages "Making Member-Only Pages").
+If you create a [Resource Group](building-sites/client-proofing/security/resource-groups "Resource Groups") and grant it to a specific User Group, the anonymous user cannot access it. That is the basis of [Making Member-Only Pages](building-sites/client-proofing/security/security-tutorials/making-member-only-pages "Making Member-Only Pages").
 
 ### 401 vs 404 Response on Protected Pages
 
-When you create protected Resource Groups, the anonymous user has no Load permissions on it by default. They get a 404 Page Not Found response. To give them a 401 Unauthorized response instead, grant the anonymous user access to the Resource Group with Load Only permissions.
+On a protected Resource Group, the anonymous user has no Load permission by default and gets 404 Page Not Found. To return 401 Unauthorized instead, grant that user access to the Resource Group with the Load Only policy.
 
-You can do this in the Resource Group Access tab of the editing page of the anonymous user.
+Do this on the Resource Group Access tab of the anonymous user's editing page.
 
 ![](screen+shot+2012-10-19+at+11.43.46+pm.png)
 
-Click on "Add Resource Group", select the protected Resource Group in the dropdown, and select the Context for the access (don't select the "mgr" context). Choose Load Only as the Access Policy, click "Save", and you're done.
+Click "Add Resource Group", select the protected Resource Group, and select the Context (don't select the "mgr" context). Choose Load Only as the Access Policy and click "Save".
 
-They still will not be able to view the Resources in that protected Resource Group. They will only be able to "Load" it, and get a 401 response. You can specify a Resource ID to serve as a custom Unauthorized page by using the [Unauthorized Page System Setting](building-sites/settings/unauthorized_page "unauthorized_page").
+They still cannot view the Resources in that Resource Group. They can only Load it, and the response is 401. Set a Resource ID as the Unauthorized page with the [Unauthorized Page](building-sites/settings/unauthorized_page "unauthorized_page") system setting.
 
 ## See Also
 

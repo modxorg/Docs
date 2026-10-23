@@ -7,15 +7,15 @@ _old_uri: "2.x/administering-your-site/security/security-tutorials/giving-a-user
 
 ## The Problem
 
-You want a User to have manager editing access, but not have all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") of an Administrator user. This tutorial, partially written by BobRay, will help you through that.
+You want a user to edit in the manager, and not have all the [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") of an Administrator user. Part of this tutorial was written by BobRay.
 
 ## The Solution
 
-1. In **Access Controls → Roles**, create a new role (lets call it "Editor") with an authority of 10.
-2. In the lock icon in the user menu → **Access Control Lists** → the tab **Policies**, duplicate the administrator policy and rename it. For our example we'll use "AdminLite".
+1. In the lock icon → **Access Control Lists**, open the **Roles** tab and create a role (call it "Editor") with an authority of 10.
+2. On the **Access Policies** tab, duplicate the administrator policy and rename it. For our example we'll use "AdminLite".
 3. Edit the AdminLite Policy to use whatever [Permissions](building-sites/client-proofing/security/policies/permissions "Permissions") you want the User to have.
-4. In the lock icon in the user menu → **Access Control Lists** → the tab **User Groups & Users**, right click the "Administrator" group and select "Update User Group.".
-5. On the **Context Access** tab, add two new entries to the grid:
+4. On the tab **User Groups & Users**, right-click the "Administrator" group and select **Edit User Group**.
+5. On the **Contexts** tab, click **Add Context Access** and add two entries:
     1. Context: 'mgr' Minimum Role: 'Editor', Access Policy 'AdminLite'
     2. Context: 'web' Minimum Role: 'Editor', Access Policy 'Load, List and View'
 6. In the lock icon in the user menu → **Users**, create the new user or edit an existing one. On the Access Permissions tab, assign them to the Administrator group with a role of Editor.

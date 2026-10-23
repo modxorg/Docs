@@ -3,15 +3,16 @@ title: "Custom Manager Themes"
 description: "Override the files of the MODX Manager with a theme of your own: how the theme is chosen, what it has to contain, and how to override a single file or a controller."
 ---
 
-**Heads up**: check a custom manager theme after every upgrade of MODX. A theme can conflict with the changes of a new release, and the files that a release adds are never picked up by the theme.
+> [!IMPORTANT]
+> Check a custom manager theme after every upgrade of MODX. A theme can conflict with the changes of a new release, and the files that a release adds are never picked up by the theme.
 
 ## How a Theme Works
 
-The manager is built on Smarty templates. The files of the default theme live in `manager/templates/default`. The system setting `manager_theme` holds the name of a directory inside `manager/templates/`. The manager reads the files of that theme first, and falls back to the files of `default` for everything the theme does not have.
+The manager is built on Smarty templates. The default theme's files live in `manager/templates/default`. The system setting `manager_theme` holds a directory name inside `manager/templates/`. The manager reads that theme's files first, and falls back to `default` for every file the theme does not have.
 
-Only the `default` theme ships with MODX 3. The others come with a build or with an extra, or they are your own.
+Only the `default` theme ships with MODX 3. Other themes come with a build, an extra, or your own files.
 
-The theme covers more than the pages of the manager. The templates of the dashboard widgets and of the TVs, and the controllers of the Resources, are resolved from it as well.
+The theme covers more than the manager pages. Dashboard widget templates, TV templates, and Resource controllers are resolved from it as well.
 
 ## Overriding a Single File
 
@@ -35,17 +36,17 @@ These files are read from the directory of the theme, with no fallback to `defau
 | `images/login/default-background.jpg` | The background of the login page. |
 | `email/default.tpl` | Creating a user: the template of the letter is not found. |
 
-**The stylesheet of the login page is not themed**
-`security/login.tpl` links the stylesheet of the `default` theme by a fixed path. To theme it, put `css/login.css` into the directory of the theme and fix the link in your own copy of `security/login.tpl`. The same holds for the browser of files, whose `browser/index.tpl` links `css/index.css` of the `default` theme.
+**The login page stylesheet is not themed**
+`security/login.tpl` links the `default` theme's stylesheet by a fixed path. To theme it, put `css/login.css` into the theme directory and fix the link in your copy of `security/login.tpl`. The same holds for the file browser: its `browser/index.tpl` links the `default` theme's `css/index.css`.
 
-The stylesheet of the manager itself is themed. Put `css/index.css` into the directory of the theme, and the header picks it up through the `{$indexCss}` placeholder.
+The manager stylesheet is themed. Put `css/index.css` into the theme directory, and the header picks it up through the `{$indexCss}` placeholder.
 
 ## Where the Theme Has to Live
 
-The directory of the theme is resolved inside `manager/templates/`, which is part of the installation and is overwritten by an update. Keep the files of the theme in a repository of your own and restore them after an update.
+The theme directory is resolved inside `manager/templates/`, which is part of the installation and is overwritten by an update. Keep the theme files in a repository of your own and restore them after an update.
 
-**An update resets the theme**
-On an update in the Evolve mode, the script `setup/includes/upgrade.install.php` sets `manager_theme` back to `default`. Check the value after every update.
+**An update from Evolution resets the theme**
+When the installer upgrades a site from Evolution, `setup/includes/upgrade.install.php` sets `manager_theme` back to `default`. An update inside MODX 3 leaves the setting as it is.
 
 ## Overriding a Controller
 

@@ -7,102 +7,51 @@ _old_uri: "2.x/administering-your-site/security/troubleshooting-security/resetti
 
 ## Resetting a User Password via Database Manipulation
 
-It is not uncommon for a User account to become inaccessible because of a lost or forgotten password. In many cases, this can easily be resolved by having the user use the Forgot Password link on the login form. In some cases you need to reset the password directly.
+Have the user try the Forgot Password link on the login form. If the account is still unreachable, reset the password in the database.
 
 **The password cannot be written into the database by hand**
-MODX 3 hashes the passwords with `MODX\Revolution\Hashing\modNative`, which is the `password_hash()` function of PHP. A database has no such function, so the value of the field `password` cannot be calculated outside of PHP.
+MODX 3 stores the password as a hash that only PHP can produce. A database statement cannot calculate that hash.
 
-There is a second way. Set the field `hash_class` of the user to the class `MODX\Revolution\Hashing\modMD5`, and write the password as an MD5 hash — the database has an `MD5()` function for that. This is the statement to run in the database — the name of the table carries the prefix of your installation:
+Set the user's `hash_class` to `MODX\Revolution\Hashing\modMD5` and write the password as an MD5 hash. The database has an `MD5()` function for that. Run this statement. The table name carries your installation's prefix:
 
 ``` sql
 UPDATE modx_users SET hash_class = 'MODX\\Revolution\\Hashing\\modMD5', password = MD5('the-new-password') WHERE username = 'theusername';
 ```
 
-The user can then log in with it, and the hash is recalculated with `modNative` the next time the password is changed. The name of the class has to be given with its namespace. The older name without it works only through a deprecated alias that prints a warning.
+The user can then log in with it. The next password change keeps hashing with `MODX\Revolution\Hashing\modMD5`. To return to the shipped hasher, set `hash_class` to `MODX\Revolution\Hashing\modNative` and then save a new password in the manager. The name of the class has to be given with its namespace. The older name without it works only through a deprecated alias that prints a warning.
 
 ## Resetting a Password via the API
 
-You can also reset the password (or manipulate any part of the MODX application) by using the API. Below is a sample script to update the password and e-mail address of a given user. It also ensures this user is in the Administrator User Group.
+This script sets a new password for an existing user. The password is hashed with the class already stored in `hash_class`.
 
 ``` php
 <?php
-define('MODX_API_MODE', true); // Gotta set this one constant.
+define('MODX_API_MODE', true);
+require_once '/full/path/to/index.php';
 
-// Reset the password and email of an existing user
-// and ensure they are a member of the specified group
 $username = 'theusername';
 $password = 'newpassword';
-$email = 'new@email.com';
-
-$user_group = 1; // 1 for Administrator
-
-// Full path to the MODX index.php file
-require_once('/full/path/to/index.php');
-
-// ====== Don't change anything below this line ======
-if (empty($username) || empty($password) || empty($email)) {
-        die('ERROR: Missing criteria.');
-}
 
 $modx = new \MODX\Revolution\modX();
 $modx->initialize('mgr');
 
-$query = $modx->newQuery(\MODX\Revolution\modUser::class);
-$query->where(['username' => $username]);
-$user = $modx->getObjectGraph(\MODX\Revolution\modUser::class, '{ "Profile":{}, "UserGroupMembers":{} }', $query);
+$user = $modx->getObject(\MODX\Revolution\modUser::class, ['username' => $username]);
 if (!$user) {
-        die("ERROR: No user with username $username");
+    die('ERROR: No user with that username.');
 }
 
-$user->set('username', $username);
-$user->set('active', 1);
 $user->set('password', $password);
-$user->Profile->set('email', $email);
-$user->Profile->set('blocked', 0);
-$user->Profile->set('blockeduntil', 0);
-$user->Profile->set('blockedafter', 0);
-
-// Verify the user is a member of specified User Group
-$is_member = false;
-if (!empty($user->UserGroupMembers)) {
-        foreach ($user->UserGroupMembers as $UserGroupMembers) {
-                if ($UserGroupMembers->get('user_group') == $user_group) {
-                        $is_member = true;
-                        break;
-                }
-        }
-}
-// Add the User to the User Group if he is not a member
-if (!$is_member) {
-        // Verify the user group exists
-        $UserGroup = $modx->getObject(\MODX\Revolution\modUserGroup::class, $user_group);
-        if (!$UserGroup) {
-                die("ERROR: User Group $user_group does not exist.");
-        }
-
-        $Member = $modx->newObject(\MODX\Revolution\modUserGroupMember::class);
-        $Member->set('user_group', $user_group);
-        $Member->set('member', $user->get('id'));
-        // Super User = role 2
-        $Member->set('role', 2);
-        $Member->set('rank', 0);
-        $user->addOne($Member, 'UserGroupMembers');
-}
-
-/* save user */
 if (!$user->save()) {
-        die('ERROR: Could not save user.');
+    die('ERROR: Could not save the user.');
 }
 
-print "SUCCESS: User $username updated.";
-
-?>
+echo 'SUCCESS: password updated.';
 ```
 
-You can put this script anywhere on your server so long as you update the path to the primary **index.php** file. You can execute the script by hitting it in a browser or via the command line.
+Put the script anywhere on the server, and update the path to the main **index.php**. Run it in a browser or from the command line.
 
-**Warning**
-Be extremely careful when using a script like this! If possible, do NOT put it inside your document root. Put it outside of your document root and execute the script via the command line.
+> [!WARNING]
+> Be extremely careful with a script like this. If possible, do not put it inside your document root. Put it outside the document root and run it from the command line.
 
 ## See Also
 

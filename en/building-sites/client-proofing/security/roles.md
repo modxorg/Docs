@@ -11,7 +11,7 @@ A Role groups the Users of a User Group by position or status, e.g. "Editor" or 
 
 Roles use an integer value called "Authority". **Lower numbers represent a stronger authority.** A user passes the check of an ACL when the authority of their role is **not greater** than the authority of the ACL. A user with a role of authority 10 passes every ACL that a user with a role of authority 11 passes.
 
-Be sure you clarify your language when talking about Authority because this inverse relationship can lead to some confusing sentences. It helps to think of "Authority" as ordinal numbers: first, second, third, etc. **Authority=1** is the first authority and trumps **Authority=2** (i.e. the second authority).
+Think of Authority as an ordinal: first, second, third. **Authority=1** is the first authority and trumps **Authority=2**.
 
 **The authority numbers are unique**
 The database will not let you create two roles with the same authority: the column has a unique index.
@@ -29,34 +29,40 @@ The role **Super User** passes the check of every ACL, because the authority of 
 
 ## The Permissions of the Page
 
-The page of the roles needs the permission `view_role` to see the list, `new_role` and `save_role` to create a role, `edit_role` to change one, and `delete_role` to delete one.
+The roles page needs these permissions:
+
+| Permission | What it allows |
+| --- | --- |
+| `view_role` | See the list. |
+| `new_role`, `save_role` | Create a role. |
+| `edit_role` | Change a role. |
+| `delete_role` | Delete a role. |
 
 ## Usage
 
-A common example is to create Roles that mimic a basic employee position structure. Let's say we create the following Roles and Authority levels:
+Create roles that follow job titles. Authority has to be unique. Super User already uses 0, and Member already uses 9999.
 
-- Administrator - 0
 - Director - 1
 - Coordinator - 2
 - Supervisor - 3
-- Employee - 9999
+- Employee - 10
 
 ![](roles-grid.png)
 
-We can then create a User Group called "HR Department". Within that User Group, we'll assign Users to those Roles (you can have multiple Users per Role, as well).
+Create a User Group called "HR Department" and assign users to those roles. Several users can share one role.
 
-Now, let's say John has a Role of Coordinator. Mark has a Role of Supervisor. We're going to give Mark's "HR Department" User Group an Access Policy called "AccountPolicy". It holds the following Access Permissions:
+John's role is Coordinator. Mark's role is Supervisor. Give the "HR Department" User Group an Access Policy called "AccountPolicy" on the "web" context, and set Minimum Role to "Supervisor":
+
+![](ug-ctx-grid1.png)
+
+The policy holds these permissions:
 
 - `view_accounts`
 - `save_accounts`
 
-We've assigned this Policy to the "web" context for our User Group "HR Department". We then set its Minimum Role value to "Supervisor":
+Mark has these permissions. He is in the User Group, and his role is at least "Supervisor".
 
-![](ug-ctx-grid1.png)
-
-This means that Mark has these Permissions: he's in the User Group and has at least the Role of "Supervisor".
-
-But this **also** means that John has these Permissions as well, since he is a "Coordinator" which has a stronger Authority level than "Supervisor". So, John as Coordinator has the Permissions that Mark had as Supervisor.
+John has them too. Coordinator has a stronger authority than Supervisor, so John has the permissions Mark has as Supervisor.
 
 ## See Also
 
