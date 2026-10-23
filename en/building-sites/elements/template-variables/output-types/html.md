@@ -6,21 +6,22 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ## HTML Tag TV Output Type
 
-This type allows you to wrap an HTML tag around the input. It is specifically intended to use with the [Tag input type(building-sites/elements/template-variables/input-types#TemplateVariableInputTypes-Tag), where individual tag values are separated by || characters.
+This output type wraps each part of the TV value in an HTML tag. It splits the stored value on `||`.
+
+**Check Box** and **Listbox (Multi-Select)** store `||` between choices, so this output type splits them. **Tag** and **Auto-Tag** store a comma-separated list, so this output type does not split them.
 
 ## Output Properties
 
-Its output properties look like:
+| Name | Description |
+| --- | --- |
+| Tag Name | Element name, such as `div` or `span`. If you leave it empty, the tag is `div`. |
+| ID | Meant to be the `id` of the tag. It does not reach the tag. |
+| Class | CSS class on the tag. |
+| Style | CSS written into the `style` attribute. |
+| Attributes | Extra HTML attributes. They do not reach the tag. |
 
-![](tvot.htmltag.png)
-
-| Name       | Description                                      |
-| ---------- | ------------------------------------------------ |
-| Tag Name   | The tag to create, such as div, img, span, etc.  |
-| Tag ID     | The dom ID of the tag.                           |
-| Class      | Any CSS classes to add to the tag.               |
-| Style      | Any style attributes to add to the tag.          |
-| Attributes | Any other attributes you want to add to the tag. |
+> [!WARNING]
+> **ID** and **Attributes** do not reach the tag. **Tag Name**, **Class**, and **Style** do. Build the extra attribute in a Snippet or an output filter.
 
 ## See Also
 

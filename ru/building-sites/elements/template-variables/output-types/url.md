@@ -5,28 +5,29 @@ translation: "building-sites/elements/template-variables/output-types/url"
 
 ## Тип вывода TV - URL
 
-Этот тип вывода позволяет вам обернуть ссылку (a-tag) вокруг ввода (обычно это тип ввода: «текст»).
+Этот тип вывода оборачивает значение TV в ссылку.
+
+Целое число в значении становится ссылкой на этот ресурс, в виде `[[~id]]`. Несколько значений через `||` становятся несколькими ссылками. Между ними ставится `<br />`.
 
 ## Свойства вывода
 
-Эти выходные свойства выглядят как:
+| Имя | Описание |
+| --- | --- |
+| Показать текст | Текст ссылки. Если поле пустое, текстом ссылки остаётся само значение. |
+| Заголовок | Атрибут `title`. Если поле пустое, берётся текст ссылки. |
+| ID | Атрибут `id`. |
+| Класс(ы) | CSS-класс ссылки. |
+| Стиль | CSS в атрибуте `style`. |
+| Цель | Куда открывается ссылка. В поле с самого начала стоит `_self`. Варианты: `_blank`, `_self`, `_parent`, `_top`. |
+| Атрибуты | Дополнительные HTML-атрибуты. До тега они не доходят. |
 
-![](tv-url-output.png)
+> [!WARNING]
+> То, что вы вводите в **Атрибуты**, на ссылке не появляется. **Показать текст**, **Заголовок**, **ID**, **Класс(ы)**, **Стиль** и **Цель** появляются. В этом типе вывода нет поля, которое добавит произвольный атрибут.
 
-| Имя          | Описание                                                           |
-| ------------ | ------------------------------------------------------------------ |
-| Output type  | Возможность вывода на фронтенде. Значение: URL                     |
-| Display text | текст, который отображается как текст ссылки вместо URL            |
-| Title        | тег заголовка для ссылки-заголовка                                 |
-| Class        | Класс CSS для прикрепления тега img                                |
-| Style        | Любые CSS-атрибуты стиля для добавления к тегу                     |
-| Target       | цель ссылки, должна быть оставлена пустой, но может быть "\_blank" |
-| Attributes   | любые другие HTML-атрибуты, которые вы хотите добавить в тег       |
+## См. также
 
-## Смотрите также
-
-1. [Тип вывода TV - Дата](building-sites/elements/template-variables/output-types/date)
-2. [Тип вывода TV - Разделитель](building-sites/elements/template-variables/output-types/delimiter)
-3. [Тип вывода TV - HTML тег](building-sites/elements/template-variables/output-types/html)
-4. [Тип вывода TV - Изображение](building-sites/elements/template-variables/output-types/image)
-5. [Тип вывода TV - URL](building-sites/elements/template-variables/output-types/url)
+1. [Тип вывода Date](building-sites/elements/template-variables/output-types/date)
+2. [Тип вывода Delimiter](building-sites/elements/template-variables/output-types/delimiter)
+3. [Тип вывода HTML Tag](building-sites/elements/template-variables/output-types/html)
+4. [Тип вывода Image](building-sites/elements/template-variables/output-types/image)
+5. [Тип вывода URL](building-sites/elements/template-variables/output-types/url)

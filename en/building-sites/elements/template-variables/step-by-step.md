@@ -5,53 +5,52 @@ _old_id: "75"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/creating-a-template-variable"
 ---
 
-This page outlines how to create a Template Variable in MODX Revolution. A Template Variable, in a nutshell, is a custom field. To read more about what a Template Variable is, see the page on [Template Variables](building-sites/elements/template-variables "Template Variables").
+This page defines a Template Variable. What a TV is: [Template Variables](building-sites/elements/template-variables "Template Variables").
 
 ## Explanation
 
-When we say "Create a Template Variable", there are two possible actions that we might be talking about:
- 
-- we can be referring to the action of adding some text or content to one of our existing custom fields when we edit a MODX page (i.e. a Resource),
-- OR we can be referring to the action of defining this field so that it is available to our MODX resources.
+"Create a Template Variable" can mean two things:
 
-This page is all about the latter. In the first case, we would be creating an _instance_ of the Template Variable, whereas the second case is all about defining the Template Variable blueprint, which determines how each instance will behave.
+- type a value into a custom field while you edit a Resource
+- define that field so Resources can use it
 
- **A Class of Field**
-When you create a Template Variable, you are really defining a _class_ of custom field; it acts as a blueprint for all instances of this custom field.
+This page is the second one. The definition is the blueprint. Each Resource then stores its own value.
 
 ## Creating the Template Variable
 
 ### 1. Log into the MODX manager
 
- Just to be clear, you must be logged into the MODX manager as an Administrator (or similar) for this to work!
+Log in to the Manager as an Administrator, or as a user with the same access.
 
 ### 2. Add the Template Variable
 
  On the left-hand resource-tree pane, click on the **Elements** tab
 
- ![](modx_create_tv.png)
+![](modx_create_tv.png)
 
 ### 3. Define the General Information
 
- When we define a TV, we have to define a lot of information about the behavior of this custom field. The "General Information" tab contains the basic information for this variable.
+When we define a TV, we have to define a lot of information about the behavior of this custom field. The "General Information" tab contains the basic information for this variable.
 
- ![](create-tv-general1.png)
+![](create-tv-general1.png)
 
-- **Variable Name**: This corresponds to the placeholders that will be used in your templates, e.g. **bio** = `[[*bio]]`. _This name should be **unique**_!
+- **Name**: the placeholder in your templates, for example **bio** = `[[*bio]]`. The name must be unique.
+
+> [!WARNING]
+> **Name** cannot match a Resource field. MODX rejects `id`, `type`, `pagetitle`, `longtitle`, `description`, `alias`, `alias_visible`, `link_attributes`, `published`, `pub_date`, `unpub_date`, `parent`, `isfolder`, `introtext`, `content`, `richtext`, `template`, `menuindex`, `searchable`, `cacheable`, `createdby`, `createdon`, `editedby`, `editedon`, `deleted`, `deletedby`, `deletedon`, `publishedon`, `publishedby`, `menutitle`, `content_dispo`, `hidemenu`, `class_key`, `context_key`, `content_type`, `uri`, `uri_override`, `hide_children_in_tree`, `show_in_tree`, and `properties`.
+
 - **Caption**: This is the primary label for your variable that appears when you edit a resource that uses this TV
 - **Description**: This is the secondary label for your variable
 - **Category**: This affects which sub-tab the variable appears on
 - **Sort Order**: If you're using more than one TV, this will determine which appear at the top (1 = top, bigger numbers sink to the bottom)
 
- ![](modx_template_variable_bio_1.png)
+![](modx_template_variable_bio_1.png)
 
- In the picture, you can see how the settings will correspond to your pages's editor fields.
-
- The name should be unique!
+The name should be unique. The picture shows the same fields on the Resource.
 
 ### 4. Define the Input Options
 
- Next, click on the **Input Options** tab: you need to choose which kind of field this will be, e.g. a text field, a dropdown field, a WYSIWYG, etc. See the page for See the [Template Variable Input Types](building-sites/elements/template-variables/input-types "Template Variable Input Types") for a full list of possible input types.
+Open the **Input Options** tab and choose the field: text, a dropdown, a rich text editor, and so on. The full list is [Template Variable Input Types](building-sites/elements/template-variables/input-types "Template Variable Input Types").
 
 - **Input Type**: Your field might be a simple text field, a dropdown, a reference to another page, or many other types of field.
 - **Input Options**: Some Input Types ignore this field, but others may require it. E.g. a dropdown list requires a list of possible values. Again, see the page on [Template Variable Input Types](building-sites/elements/template-variables/input-types "Template Variable Input Types") for more info.
@@ -71,49 +70,43 @@ When you create a Template Variable, you are really defining a _class_ of custom
 
 ### 7. Use it: Create a Resource
 
- Now that you've defined your TV and you've added it to a template, add a MODX Resource (e.g. right-click in the document tree and choose **Create --> Create Resource Here**). Select a template that uses this TV.
+ Now that you've defined your TV and added it to a Template, create a Resource. Right-click in the Resource tree and choose **Create** → **Document**. Select a Template that uses this TV.
 
 ### 8. Edit the Value
 
- Once your MODX Resource (i.e. page) is using the template that contains your template variable, you can add data to this attribute by clicking on the page's "Template Variables" tab.
-
-## Advanced Usage
-
- IN PROGRESS ...
-
- You may have noticed we skipped over a fair number of tabs in the initial walk through. Template Variables offer for some more complex functionality that you don't need for simple scenarios.
+When the Resource uses the Template that contains this TV, open the Resource's **Template Variables** tab and fill in the field.
 
 ## Output Rendering Options
 
- Next, we'll select the output rendering options. We'll select 'Date' as well, and as you'll note, below this box (depending on the Output Render selected) some form fields will show:
+Choose an output type, for example Date. Extra fields appear under that choice. Which fields appear depends on the output type:
 
  ![](create-tv-outtype1.png)
 
- Allowing us to edit more fine-grained options for that Output Render.
+Those fields are the options for that output type.
 
 ## Properties
 
- From there, we can specify any default properties we want for the TV. "How can you use properties on a TV?", you might ask. Well, let's say we're doing a textarea TV named "viewingSS". In our content, we've got this:
+A TV can have default properties. A textarea TV named `viewingSS` might contain:
 
 ``` php
 Viewing: [[+subsection]]
 ```
 
- We can add a list property 'subsection' to the grid, and then allow that property to be overridden via property sets. Say we created a Property Set named 'CarsSectionTVPS' (PS for Property Set). In it, we set the 'subsection' property to "Cars". We'd then attach it to the TV in our Resource, or Template, or whereever we are using it like so:
+Add a property `subsection` on the grid. A property set can override it. Create a property set `CarsSectionTVPS`, set `subsection` to `Cars`, and attach the set where the TV is used:
 
 ``` php
 [[*viewingSS@CarsSectionTVPS]]
 ```
 
- This would output in the place of the TV:
+The TV then prints:
 
 > Viewing: Cars
 
 ## Template and Resource Group Access
 
- We can assign TVs to [Templates](building-sites/elements/templates "Templates"), as well. This allows those Resources assigned to those [Templates](building-sites/elements/templates "Templates") to edit the TVs for each Resource.
+Assign the TV to a [Template](building-sites/elements/templates "Templates"). Resources that use that Template can then edit the TV.
 
- Also, TVs can be restricted to certain Resource Groups, selectable in the grid labeled "Access Permissions".
+Restrict the TV to Resource Groups in the **Access Permissions** grid.
 
 ## See Also
 
