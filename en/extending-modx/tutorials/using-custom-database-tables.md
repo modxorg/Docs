@@ -15,7 +15,7 @@ MODX 3 adds PHP Namespaces to the XML Schema and the class files, a `bootstrap.p
 
 **Note**: converted from the earlier "StoreFinder" example.
 
-## Terminology {#terminology}
+## Terminology
 
 Three names recur below. They are set in different places and each has its own case rule:
 
