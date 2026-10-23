@@ -3,47 +3,45 @@ title: "Using Virtual Hosts"
 description: "Giving every domain its own virtual host and its own directory on one MODX installation: the context and its settings, the gateway directory with its own config.context.php, and the virtual host of the web server."
 ---
 
-MODX 3 does not match a host with a context by itself. The gateway that starts a request chooses its context, so a second domain needs a second gateway.
+MODX 3 does not match a host with a context by itself. The gateway that starts a request chooses the context, so a second domain needs a second gateway.
 
-This page describes the approach where every domain has a virtual host of its own and a directory of its own on the same machine. When several domains point at one virtual host, a Plugin picks the context instead — see [Using a Gateway Plugin](building-sites/contexts/gateway-plugin).
-
-The example below builds such a gateway for the context `dev` on the host `dev.example.com`.
+Every domain here has its own virtual host and its own directory on the same machine. When several domains point at one virtual host, a Plugin picks the context. See [Using a Gateway Plugin](building-sites/contexts/gateway-plugin).
 
 ## Creating the Context
 
-Create the context in the manager: **Admin** → **Contexts** → **Create**. The **Context Key** is `dev` — the key is what the gateway names — and the name is free. The keys `mgr`, `web` and `root` are reserved by the core.
+Create the context in the manager: **Admin** → **Contexts** → **Create**. The **Context Key** is `dev`. The keys `mgr`, `web` and `root` are reserved. A key starts with a letter. After that it may contain letters, digits, a hyphen, a dot and a slash. An underscore is rejected.
 
-Then create the resources of the domain in the branch of the context. The tree looks like this:
+Then create the domain's resources in the context's branch. The tree looks like this:
 
 ![](subctx1.png)
 
-## The Settings of the Context
+## Context Settings
 
-Four settings on the **Context Settings** tab of the context decide how the URLs of the domain are built:
+Four settings on the context's **Context Settings** tab decide how the domain's URLs are built:
 
 | Setting | Value |
 | --- | --- |
 | `base_url` | `/` |
 | `http_host` | `dev.example.com` |
 | `site_start` | the ID of the resource that opens the domain |
-| `site_url` | `http://dev.example.com/` — the scheme, the host and the path, with a trailing slash |
+| `site_url` | `http://dev.example.com/` — scheme, host and path, with a trailing slash |
 
-Any other setting can be overridden here as well — `cultureKey` for the language of the domain, for example. Changing a setting clears the cache of the context, so no manual cache clear is needed.
+You can override any other setting here too. `cultureKey` sets the domain's language. `session_handler_class` sets the session handler for this gateway. The value is the class name you enter. Changing a setting clears the context's cache. You do not need to clear the cache by hand.
 
 ## The Gateway Directory
 
-The gateway is a directory of its own with four files:
+The gateway is its own directory with four files:
 
 | File | What it holds |
 | --- | --- |
-| `index.php` | a copy of `index.php` from the installation |
-| `config.context.php` | the key of the context |
-| `config.core.php` | a copy of `config.core.php` from the installation |
-| `.htaccess` | a copy of `.htaccess` from the installation |
+| `index.php` | a copy of the installation's `index.php` |
+| `config.context.php` | the context key |
+| `config.core.php` | a copy of the installation's `config.core.php` |
+| `.htaccess` | a copy of the installation's `.htaccess` |
 
 The three copies point at the same core and the same database. Only the context differs between the directories.
 
-`index.php` works as it is. The other three files are set up as follows:
+`index.php` works as it is. Set up the other three files as follows:
 
 1. `config.context.php` holds one line:
 
@@ -52,13 +50,13 @@ The three copies point at the same core and the same database. Only the context 
    return 'dev';
    ```
 
-2. `config.core.php` holds the path to the core of the installation as an absolute path — the installer writes it that way:
+2. `config.core.php` holds the absolute path to the installation's core. The installer writes it that way:
 
    ``` php
    define('MODX_CORE_PATH', '/home/example.com/public_html/core/');
    ```
 
-3. `.htaccess` needs one change — `RewriteBase` has to point to the directory of the gateway:
+3. `.htaccess` needs one change. `RewriteBase` has to point at the gateway directory:
 
    ```
    RewriteBase /dev/
@@ -66,28 +64,26 @@ The three copies point at the same core and the same database. Only the context 
 
 ## The Virtual Host
 
-The web server needs a host of its own for that directory. For Apache 2.4:
+The web server needs its own host for that directory. For Apache 2.4:
 
 ``` apache
 <VirtualHost *:80>
     ServerName dev.example.com
     DocumentRoot /home/example.com/public_html/dev
-    ErrorLog logs/dev-error_log
-    CustomLog logs/dev-access_log
 </VirtualHost>
 ```
 
-Restart the web server and open `http://dev.example.com/` — the resource named by `site_start` answers.
+Restart the web server and open `http://dev.example.com/`. The resource named by `site_start` answers.
 
-## Links Between the Contexts
+## Links Between Contexts
 
-A link to a resource of another context names that context:
+A link to another context's resource names that context:
 
 ```
 [[~135:context=`web`]]
 ```
 
-The URL is absolute, because the resource lives in another context. A link without a context stays in the context of the request and is relative:
+The URL is absolute when the named context is not the current one. A link without `context` stays relative when the resource belongs to the current context. When that resource belongs to another context, the link is the absolute URL of the context stored on the resource:
 
 ```
 [[~135]]
