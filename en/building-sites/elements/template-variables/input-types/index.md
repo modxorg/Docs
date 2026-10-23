@@ -28,7 +28,7 @@ There are a number of built-in template variable (TV) types. Be aware that:
 
 This TV type is a compound field with a text field for tag entry and rows of clickable pre-existing tags. It can be useful for blog content, Resources that can belong to multiple categories, or anytime you need a list of tags that have been used before. Every time you edit or create a Resource with access to an Auto-Tag TV, you will see rows of tags that have been used before. You can easily click on these tags to assign them to the current Resource.
 
-To make Auto-Tag TVs useful in the front end, you will need to set the [output type](building-sites/elements/template-variables/output-types) to “Delimiter” and specify a delimiter of your choice, and/or use an output filter to present them in the way you prefer. 
+**Auto-Tag** saves a comma-separated list. The Delimiter output type splits only on `||`, so it does not split these tags. Split on the comma in a Snippet or an output filter. 
 
 #### Linking Tags to Resources
 
@@ -72,7 +72,7 @@ return implode(', ', $output);
     "columns": "1",
     "columnDirection": "vertical",
     "columnWidth": "medium",
-    "columnWidth": "false"
+    "wrapColumnText": "false"
 }
 ```
 
@@ -126,23 +126,7 @@ You can distinguish between labels and values using double-equals (`==`) and bet
 | Default Option(s) | `(empty)` (no default) |
 |||
 
-##### Manually-Defined Options
-
-
-
-```php
-option1==value1||option2==value2
-```
-
-##### Dynamically-Defined Options
-
-The Check Box input type allows multiple checkboxes to be displayed with a single TV. Set input option values in the `option1==value1||option2==value2` format. To declare default checked checkboxes, supply the default value field with the option names, delimited by two pipes (||). You can enter a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") statement for your **Checkbox Options** to generate items from your database, for example: 
-
-```sql
-@SELECT pagetitle, id FROM modx_site_content WHERE parent=35
-```
-
-If you are using multiple checkboxes like this, you will probably need to set the **Output Type** to "Delimiter" (*e.g.*, a comma) so you can distinguish the values contained in each checkbox.
+With several checkboxes, set **Output Type** to Delimiter (for example a comma) so you can tell the stored values apart.
 
 
 ### Date (date)
@@ -176,47 +160,22 @@ If you’d like your TV to have a specific date selected by default, you can cho
 
 #### Preset Relative Date Options
 
-| Keyword | Result                                                                                 |
-| ------------- | ---------------------------------------------------------------------------------------- |
-| `yesterday`   | Displays the day before todays date, time 12:00pm                                        |
-| `today`       | Displays todays date, time 12:00pm                                                       |
-| `now`         | Displays todays date, current time                                                       |
-| `tomorrow`    | Displays the day after todays date, time 12:00pm                                         |
+| Keyword | Result |
+| --- | --- |
+| `yesterday` | The previous day at midnight. The Manager label is **Yesterday (midnight)**. |
+| `today` | Today at midnight. The Manager label is **Today (midnight)**. |
+| `now` | Today at the current time. The Manager label is **Today with Current Time**. |
+| `tomorrow` | The next day at midnight. The Manager label is **Tomorrow (midnight)**. |
 
-<br>
+The date string is passed to PHP `strtotime`. `+72` is not “72 hours ago”. The Manager hint still talks about hours. Type a string `strtotime` understands, such as `-72 hours`, or type the date itself.
 
-#### Sample Custom Date Options
+| Value | Result |
+| --- | --- |
+| `-72 hours` | 72 hours before the current time |
+| `+72 hours` | 72 hours after the current time |
+| `2026-07-01 14:00` | 1 July 2026 at 14:00 |
 
-| Value | Result                                                                                 |
-| ------------- | ---------------------------------------------------------------------------------------- |
-| `+X`          | X-hours BACK from the current time <br>(*e.g.*, `+72` means 3 days ago) |
-| `-X`          | X-hours IN THE FUTURE from the current time <br>(*e.g.*, `-72` means 3 days from now)   |
-| `YYYY-MM-DD HH:MM`          | Using this exact format, selects a specific date and time <br>(*e.g.*, `2026-07-01 14:00` selects July 1, 2026 at 2 pm)   |
-
-<hr>
-<br>
-
-Be careful when using the `+X` and `-X` patterns: While intuitively “-” would represent going back in time and “+” going forward, this is not the case. This is due to the date/time value being calulated using this basic fixed mathematical expression:
-
-```
-Base Time (now) - Differential Value (X)
-```
-
-So using basic math, to add 72 hours to the *Base Time* you need to plug a negative *Differential Value* into the equation, *i.e.*:
-
-```
-Base Time - (-72)
-```
-
-Conversely, to subtract 72 hours from the *Base Time* you need to plug a positive *Differential Value* into the equation, *i.e.*:
-
-```
-Base Time - (+72)
-```
-
-#### Formatting the Rendered Value
-
-You use the [Date TV Output Type](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/date-tv-output-type "Date TV Output Type") to change the format of the Date returned.
+Format the value on the page with the [Date TV output type](building-sites/elements/template-variables/output-types/date). That output type calls `strftime`. See the note on that page.
 
 ### Email
 
@@ -284,17 +243,10 @@ To learn about the various Media Source settings that influence where this TV’
 By default, this input type returns the link (to be used as `src` attribute) to the image. As an alternative to constructing the `<img>` tag for this TV in your front-end template, you can select [“Image”](making-sites-with-modx/customizing-content/template-variables/template-variable-output-types/image-tv-output-type) in *Output Options*; this will return a full image tag that includes the attributes you specify, *e.g.*:
 
 ```html
-<img
-    src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/path/to/chosen/image.png"
-    alt="For presentation only"
-    id="hero-page-[[*id]]"
-    class="hero-image full"
-    style="max-height: 50vh;"
-    loading="lazy"
->
+<img src="path/to/image.png" alt="Photo" id="photo" class="photo" style="width: 200px;">
 ```
 
-To be clear, `src` is included in the example code above for completeness and is not a part of the editable *Output Options*.
+`src` in that example is not one of the editable output options.
 
 ### Listbox (Single-Select) (listbox)
 
@@ -339,7 +291,7 @@ This TV type produces a select field where only a single option can be selected.
 </details>
 <img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-listbox-multi.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This TV type produces a custom select field where one or more options can be selected. Selections are presented as a row of dismissable options. As with the other chooser-type TVs, this field can be powered by using a `@SELECT` binding in its “Dropdown List Options” field. Its *Output Options* "Output Type" should almost always be set to Delimiter to distinguish between values.
+This TV type produces a custom select field where one or more options can be selected. Selections are presented as a row of dismissable options. As with the other chooser-type TVs, this field can be powered by using a `@SELECT` binding in its “Dropdown List Options” field. Set **Output Type** to Delimiter so you can tell the stored values apart.
 
 #### Simple Usage
 
@@ -389,7 +341,7 @@ This TV type simulates a real number field using a special text field with pre-d
 - Complex numbers (*e.g.*, radicals “2^10,” scientific notation “2.8e6,” etc.)
 - Number-specific special controls like `step` and the ability to change the entered value via the up and down arrow keys
 
-### Radio Options (radio)
+### Radio Options (option)
 
 <details>
     <summary><em>JSON Input Options Template</em></summary>
@@ -397,7 +349,10 @@ This TV type simulates a real number field using a special text field with pre-d
 ```json
 {
     "allowBlank": "true",
-    "columns": "1"
+    "columns": "1",
+    "columnDirection": "vertical",
+    "columnWidth": "medium",
+    "wrapColumnText": "false"
 }
 ```
 
@@ -434,24 +389,27 @@ Radio Options values are not restricted to just hard-coded text and numbers; you
 ```json
 {
     "allowBlank": "1",
-    "showNone": "1",
     "parents": "",
     "depth": "10",
     "includeParent": "1",
     "limitRelatedContext": "0",
-    "where": "[{\"isfolder: = \":\"1\"},{\"hidemenu\":\"0\",\"OR:hidemenu:=\":\"1\"}]",
-    "limit": "0"
+    "where": "",
+    "limit": "0",
+    "typeAhead": "false",
+    "typeAheadDelay": "250",
+    "forceSelection": "false",
+    "listEmptyText": ""
 }
 ```
 
 </details>
 <img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-resourcelist.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This TV type is a specialized single-select field that displays a dropdown list of child Resources of a given Resource ID. The value stored will be the ID of the selected child Resource.
+This TV type is a single-select list of Resources. The stored value is the id of the Resource you pick. The list follows the **Parents** field. With **Parents** empty, the list is not limited to the children of one Resource. **Depth** starts at 10.
 
-This is similar to using a [@SELECT](building-sites/elements/template-variables/bindings/select-binding "SELECT Binding") binding in a Listbox, but the Resource List will traverse the entire resource browser, whereas with a @SELECT binding, you'd have to update your query to list children of each parent.
+A blank choice labeled `-` is always in the list.
 
-This input type also accepts Where Conditions to filter the list. Two example values are shown below:
+You can filter the list with a JSON `where` value. These are examples, not the defaults:
 
 ```php
 [{"template:=":"4"}]
@@ -468,21 +426,14 @@ This input type also accepts Where Conditions to filter the list. Two example va
 
 ```json
 {
-    "allowBlank": "1",
-    "showNone": "1",
-    "parents": "",
-    "depth": "10",
-    "includeParent": "1",
-    "limitRelatedContext": "0",
-    "where": "[{\"isfolder: = \":\"1\"},{\"hidemenu\":\"0\",\"OR:hidemenu:=\":\"1\"}]",
-    "limit": "0"
+    "allowBlank": "true"
 }
 ```
 
 </details>
 <img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-richtext.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-When a Rich Text editor (*e.g.*, TinyMCE Rich Text Editor, CKEditor, Redactor, etc.) is installed, this TV type becomes available and produces a small <abbr title="What you see is what you get">WSYIWYG</abbr> field for creating html-formatted text.
+When a rich text editor is installed (for example TinyMCE, CKEditor, or Redactor), this TV type becomes available. It shows a small WYSIWYG field for HTML text.
 
 ### Tag
 
@@ -498,9 +449,9 @@ When a Rich Text editor (*e.g.*, TinyMCE Rich Text Editor, CKEditor, Redactor, e
 </details>
 <img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-tag.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This TV type present rows of clickable tags whose initial values are pre-defined in the TV’s **Tag Options**. Like the Auto-Tag TV, this compound field allows the addition of new comma-separated tags in the text input. However, these additions are only available in the Resource in which they are made. (Note that this TV type’s configuration is very similar to that of Check Box TVs.)
+This TV type shows rows of clickable tags. The starting values come from **Tag Options**. Like Auto-Tag, the text field can add comma-separated tags. Tags you add on the Resource stay on that Resource. The options are set up like a Check Box TV.
 
-To make Tag TVs useful in the front end, you will need to set the [output type](building-sites/elements/template-variables/output-types) to “Delimiter” and specify a delimiter of your choice, and/or use an output filter to present them in the way you prefer.
+**Tag** saves a comma-separated list, including tags you add on the Resource. The Delimiter output type splits only on `||`, so it does not split these tags. **Check Box** and **Listbox (Multi-Select)** store `||`, and Delimiter does split those.
 
 ### Text
 
@@ -539,7 +490,7 @@ This TV type produces a standard text field.
 </details>
 <img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-textarea.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This TV type produces a standard *textarea* field, with a height of 15 rows. It's the same size as the HTML Area fields, but without a WYSIWYG editor.
+This TV type produces a standard textarea. **Height** is in pixels and starts at 140.
 
 ### URL
 
@@ -555,41 +506,14 @@ This TV type produces a standard *textarea* field, with a height of 15 rows. It'
 </details>
 <img src="https://docs.modx.com/3.x/en/building-sites/elements/template-variables/input-types/type-url.svg" class="input-type" style="max-width: 460px; margin: 1rem 0;">
 
-This TV type produces a composite field with a dropdown option to select the protocol—(none), <http://>, <https://>, <ftp://>, or <mailto:>—and a text field for the remainder of the URL. Note that there is no preset validation for this field. To create a field that ensures the correctness of the URL entered, use a Text TV with a *Regular Expression Validator* rule.
+This TV type is a prefix list plus a text field. The prefixes are **(none)**, `http://`, `https://`, `ftp://`, and `mailto:`. **(none)** is stored as `--`. There is no format check. For a strict URL, use a Text TV with a regular expression validator.
 
-#### Usage Note
-
-You may paste full URLs into the text part of this field; the protocol will automatically be separated out and selected in the dropdown when the object this TV is a part of, usually a Resource, is saved.
+On save, MODX removes `http://` and `ftp://` from the text part, then adds the prefix you chose. `https://` and `mailto:` stay in the text. If that prefix is already selected, the saved value can contain it twice. Leave the scheme out of the text part.
 
 ## Dynamically-Defined Input Options
 
-First, please note that this section refers to the definition of the TV itself, not the user-defined, selectable options (key-value pairs) of a listbox or similar input.
+This section is about the TV definition, not the choices a listbox shows.
 
-When defining a TV in a way other than manager’s standard built-in editing form (_e.g._, within the MIGX Extra), a JSON configuration object can be used to define its input options. The input is ultimately rendered to the Resource form by the Smarty templating engine. However, Smarty tags cannot be used within this JSON object to change options on the fly. An alternative strategy that works is to use a Snippet to insert dynamic values. For example:
+Outside the Manager form, for example in MIGX, input options can be a JSON object.
 
-This won’t work:
-
-```json
-{
-    "maxDateValue":"{$smarty.now|date_format:'%Y-%m-%d'}",
-    "allowBlank":true,
-    "hideTime":true
-}
-```
-
-But, this _will_ work:
-
-```json
-{
-    "maxDateValue":"[[!tv-option--get-max-date]]",
-    "allowBlank":true,
-    "hideTime":true
-}
-```
-
-where the Snippet `tv-option--get-max-date`  contains:
-
-```php
-<?php
-return date('Y-m-d', time());
-```
+Tags in that JSON stay as plain text. Type the limit in **Earliest Date** and **Latest Date**. To calculate a TV value, call a [Snippet](extending-modx/snippets "Snippets"). A Snippet tag inside this JSON is not run.

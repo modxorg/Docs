@@ -7,7 +7,7 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 
 Привязка @CHUNK возвращает разобранное содержимое указанного чанка, когда @CHUNK используется в переменной шаблона (TV).
 
-Другими словами, если @CHUNK Hello — значение TV с именем MyChunk, следующий тег в шаблоне или в поле содержимого ресурса будет заменён содержимым чанка Hello:
+Если у TV `MyChunk` стоит `@CHUNK Hello`, этот тег в шаблоне или в содержимом ресурса заменяется содержимым чанка Hello:
 
 ```php
 [[*MyChunk]]
@@ -21,7 +21,7 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 
 Привязывает переменную к чанку. `chunk_name` — имя чанка. Возвращаемое значение — разобранный вывод чанка.
 
-Необязательные JSON-свойства (MODX 3.0+) передаются в `getChunk()` как массив плейсхолдеров / свойств чанка.
+Необязательный JSON после имени чанка становится плейсхолдерами этого чанка.
 
 ## Использование
 
@@ -35,7 +35,7 @@ translation: "building-sites/elements/template-variables/bindings/chunk-binding"
 @CHUNK MycontactForm {"submitLabel":"Отправить","showTitle":"1"}
 ```
 
-Некорректный JSON после имени чанка пишется в лог ошибок и игнорируется. Чанк всё равно выполняется без этих свойств.
+Некорректный JSON после имени чанка пишется в журнал ошибок MODX. Имя чанка не обрезается, поэтому MODX ищет чанк с этим хвостом в имени и не находит его. Корректный JSON по-прежнему отделяется и передаётся чанку.
 
 Эта привязка похожа на [@RESOURCE](building-sites/elements/template-variables/bindings/resource-binding "RESOURCE привязка"), но связывает TV с [чанком](building-sites/elements/chunks "Чанки"). Для выполнения PHP используйте [@SNIPPET](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET привязка").
 

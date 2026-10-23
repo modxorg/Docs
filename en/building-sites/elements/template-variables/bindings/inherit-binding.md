@@ -6,23 +6,14 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bin
 
 ## What is the @INHERIT Binding?
 
-The @INHERIT binding will automatically find the corresponding value of the parent Resource and use that as its value. If the parent Resource also has @INHERIT, it will look at that parent's parent's value, and so forth. If it ends up at the root and no value has been specified, the value will be 0.
+The @INHERIT binding looks up the same TV on the parent Resource. If that parent also uses @INHERIT, it keeps walking up. If the walk reaches the root and no value was stored, the TV is empty. It is not `0`. To supply a fallback at the root, write it after the command: `@INHERIT fallback`.
 
-For example, if you define a Template Variable to use a default value of "@INHERIT", then when you create a child resource under a parent, the value of the TV in the child will reflect the value stored in the parent resource.
-
-The devil is in the details here: if the value of a child TV has not been overridden (i.e. the inherited value is preserved), then MODX follows parsimonious storage rules, and **no row will be created inside the modx\_site\_tmplvar\_contentvalues table**. If you are accessing values via the API, then using the **getTVValue()** method on a page object, it will traverse up the hierarchy to find the value from the parent resource.
-
-``` php
-$pages = $modx->getCollection('modResource');
-foreach ($pages as $p) {
-    print $p->getTVValue('my_inheritance');
-}
-```
+While the child still shows the inherited value, MODX does not store a separate value for that child.
 
 **Be Careful**
 A value is not always written to the database when you are using @INHERIT.
 
-Note that this is a dynamic lookup that occurs whenever the child page is saved and its value is empty. If you later edit the values in the parent, these will be reflected in the child. You can break the inheritance by supplying your own value in the child. You may also restore the inheritance by deleting the value and leaving the field empty.
+While the child still matches what `@INHERIT` would return, MODX does not keep a separate value for that child. Later edits on the parent show up on the child. A value you type on the child stops the lookup. Clearing the field does not turn the lookup back on: the empty value is saved, and the child stays empty. To inherit again, set the child so its saved value matches the processed `@INHERIT`. MODX then drops the child's own value.
 
 ## Usage
 

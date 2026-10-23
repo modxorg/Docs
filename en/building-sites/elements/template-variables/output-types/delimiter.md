@@ -6,19 +6,17 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ## Delimiter TV Output Type
 
-This type allows you to output any TV input as a delimited list. It's very useful for TV inputs that store multiple values, such as the multiple select list, or checkbox inputs.
+This output type splits the TV value on `||`, then joins the parts with the delimiter you set.
 
-The output type will split the value on each double-bar (||), and then output it delimited by the delimiter value you set in the properties.
+If you never save a delimiter, the separator is a comma.
+
+**Check Box** and **Listbox (Multi-Select)** store `||`, so this output type can split them. **Tag** and **Auto-Tag** already store a comma-separated list. This output type does not split that list.
 
 ## Output Properties
 
-It's output properties look like:
-
-![](tvot.delim.png)
-
-| Name      | Description                              |
-| --------- | ---------------------------------------- |
-| Delimiter | A delimiter to separated each item with. |
+| Name | Description |
+| --- | --- |
+| Delimiter | Characters placed between items. An unsaved property uses a comma. |
 
 ## See Also
 

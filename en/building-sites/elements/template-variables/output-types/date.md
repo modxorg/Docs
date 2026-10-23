@@ -6,26 +6,24 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ## Date TV Output Type
 
-This type allows you to output any TV input as a Date, formatted in the way you want.
+This output type prints the TV value as a date. The format string uses [strftime](https://www.php.net/strftime) symbols.
+
+The Date output type and the `date` output filter both call `strftime`. From PHP 8.1 that writes a warning to the MODX log. PHP will remove the function in PHP 9. Format the date in a Snippet with `date()` instead.
 
 ## Output Properties
 
-It's output properties look like:
-
-![](tvot.date.png)
-
-| Name        | Description                                                                                                  |
-| ----------- | ------------------------------------------------------------------------------------------------------------ |
-| Date Format | A format string similar to the [PHP strftime method](http://php.net/strftime).                               |
-| Default     | If no value is set for the TV, use the current time? This defaults to 'no', which will output a blank value. |
+| Name | Description |
+| --- | --- |
+| Date Format | A [strftime](https://www.php.net/strftime) format string. The field starts at `%A %d, %B %Y`. |
+| Use Current Date as Fallback | If the TV has no value, print the current time. The field starts at no, which prints nothing. |
 
 ## Examples
 
-| Format String | Example Output        |
-| ------------- | --------------------- |
-| %A %d, %B %Y  | Friday 01, April 2011 |
-| %Y-%m-%d      | 2011-04-01            |
-| %b %e, %Y     | Apr 1, 2011           |
+| Format String | Example Output |
+| --- | --- |
+| `%A %d, %B %Y` | Friday 01, April 2011 |
+| `%Y-%m-%d` | 2011-04-01 |
+| `%b %e, %Y` | Apr 1, 2011 |
 
 ## See Also
 
