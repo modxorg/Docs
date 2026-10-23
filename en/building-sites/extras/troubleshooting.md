@@ -1,28 +1,34 @@
 ---
-title: "Troubleshooting"
-_old_id: "312"
-_old_uri: "2.x/administering-your-site/installing-a-package/troubleshooting-package-management"
+title: "Troubleshooting Package Management"
+description: "What to check when a package cannot be downloaded, installed or unpacked in MODX: cURL, the packages directory, and the archive_with setting."
 ---
 
-## Troubleshooting Package Management
+Most problems with Package Management come from the server.
 
-This page is dedicated to problems with Package Management, specifically with downloading and installing packages.
+## cURL Is Missing
 
-Most issues can be resolved by making sure you have cURL installed, and that the core/packages/ directory is writable by PHP.
+Without the cURL extension, you see a warning above the page when it opens. MODX replaces **Download Extras** with **Search Locally for Packages**.
 
-### archiveTo/extractTo errors
+Ask your host to enable the cURL extension.
 
-If you've downloaded a package, but are getting 'archiveTo'-related errors or a "Package Not Found" error after downloading, make sure you're running at least Revolution 2.0.1, and then go to System Settings and set the **archive\_with** setting to "Yes", or 1.
+## The Packages Directory Is Not Writable
 
-This will force MODX to use PCLZip instead of ZipArchive, as your environment most likely has a broken ZipArchive configuration or version that is causing the error:
+MODX unpacks packages into `core/packages/` and writes the archives there. When PHP cannot write to that directory, the download and the installation fail. Make the directory writable by PHP.
 
-See these tickets for more information:
+## The Archive Cannot Be Unpacked
 
-- <http://bugs.php.net/bug.php?id=44974> (Closed)
-- <http://bugs.php.net/bug.php?id=47023> (Closed)
-- <http://bugs.php.net/bug.php?id=43641> (Closed)
-- <http://bugs.php.net/bug.php?id=48218> (Open)
+If an archive does not unpack, set `archive_with` to **Yes**. MODX then unpacks the archive with its own means, without the PHP Zip extension.
 
-### Access Denied Error
+## The Archive Is Missing
 
-If you have HTML5 caching enabled try disabling it and clear your browser cache. (<https://github.com/modxcms/revolution/issues/7340>)
+If the archive is no longer in `core/packages/`, the manager does not fetch it from the provider. Put `<signature>.transport.zip` into `core/packages/` and choose **Search Locally for Packages**.
+
+## The Upload Is Refused
+
+**Upload a package**, in the **Download Extras** menu, accepts only an archive named `<signature>.transport.zip`. The manager refuses a file with another name, or a file that is not a zip, and says so.
+
+## See Also
+
+1. [Package Management](building-sites/extras)
+2. [Providers](building-sites/extras/providers)
+3. [archive_with](building-sites/settings/archive_with)

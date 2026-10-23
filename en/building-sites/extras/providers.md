@@ -1,35 +1,49 @@
 ---
 title: "Providers"
-_old_id: "247"
-_old_uri: "2.x/developing-in-modx/advanced-development/package-management/providers"
+description: "A transport provider is the service MODX downloads packages from, and how to add one."
 ---
 
-## What is a Transport Provider?
+A transport provider is a remote service that MODX downloads packages from. MODX ships with the modx.com provider. A site can keep as many providers as it needs.
 
-Transport Providers in MODX are remote sources that one can download Transport Packages from. Simply by specifying a service URL, you can easily hook into the Transport Provider and grab the latest Transport Packages easily from it.
+## What a Provider Is
 
-MODX supports an unlimited number of Transport Providers, and each one can be from any source.
+A provider is the address MODX downloads packages from.
 
-MODX recommends not downloading Transport Packages from providers you cannot verify or do not trust. We recommend the modx.com Official Provider at: [https://rest.modx.com/extras/](https://rest.modx.com/extras/)
+The modx.com provider is the service at `https://rest.modx.com/extras/`. Enter that address in **Service URL**.
 
-## Usage
+> [!WARNING]
+> Download packages only from providers you trust. A provider serves the code that runs on your site.
 
-To setup a Transport Provider, simply go to the Package Management page, and from there click on the 'Providers' panel heading at the bottom. This will open up a grid of Providers, which you can manage easily.
+## Adding a Provider
 
-![](providers.png)
+Open **Extras** in the top menu, then **Installer**, then **Providers**. **Create** opens the window.
 
-From there, you can click "Add New Provider" to add another, or right-click on any provider to get more options. Providers must be valid JSON files, web-accessible, and in the correct Provider format. Note that the Extras section of modx.com is a Provider.
+| Field | What you enter |
+| --- | --- |
+| **Name** | the provider's name in the list |
+| **Service URL** | the service address |
+| **Username** | the name for this provider |
+| **API Key** | the key for this provider |
+| **Description** | free text |
 
-The Service URL is the actual, absolute location of the provider file.
+MODX checks the provider when you save. If the service does not confirm the address, MODX does not save the record.
 
-Once you have a provider, you can connect to it by going up to the Packages grid, clicking "Add New Provider", and then select the "Select a Provider" option. This will bring up a dropdown of Provider options: ![](selprovider.png)
+Each request sends:
 
-Once you've selected your provider, click Next, and the download tree will be populated with the contents of that Provider's payload (ie, data). This will show you a tree of Package Versions you can download:
+- the **Username** and the **API Key** from this window
+- an installation identifier, the database type and the MODX version
+- the host, the PHP version and the manager's language
 
-![](pkgdownload.png)
+## Downloading from a Provider
 
-## Related Pages
+1. In the **Download Extras** menu, choose **Select a Provider**.
+2. Pick the provider.
+3. Confirm with **Save and go to Package Browser**.
 
-1. [Transport Packages](extending-modx/transport-packages)
-2. [Providers](building-sites/extras/providers)
-3. [Creating a 3rd Party Component Build Script](extending-modx/transport-packages/build-script)
+The Package Browser opens. That provider's categories are on the left, the packages on the right.
+
+## See Also
+
+1. [Package Management](building-sites/extras)
+2. [Transport Packages](extending-modx/transport-packages)
+3. [Creating a Third Party Component Build Script](extending-modx/transport-packages/build-script)
