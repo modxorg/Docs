@@ -17,7 +17,6 @@ There are also third-party sources and marketplaces available, which typically o
 | [modx.com/extras/](https://modx.com/extras/)                                | Over **800** add-ons | [Community forum](https://community.modx.com/)                                    |
 | [modstore.pro](https://en.modstore.pro/) ([Russian](https://modstore.pro/)) | 100+ (EN), 400+ (RU) | [Community forum](https://modx.pro), and private ticketing for premium extras     |
 | [modmore.com](https://www.modmore.com/extras/)                              | 20+                  | [Community forum](https://forum.modmore.com) and email support for premium extras |
-| [extras.io](https://extras.io/extras/)                                      | 5                    | [Email support](https://extras.io/support/) for premium extras                    |
 | [bobsguides.com](https://bobsguides.com/guide-to-packages.html)             | 47                   | [Email support for Bob Ray's extras](https://bobsguides.com/contact-form.html)    |
 
 To use third party extra providers, you'll usually need to create an account in order to access their [Package Provider](building-sites/extras/providers). You can find more information on how to do that in the documentation for each of the mentioned vendors.
@@ -61,7 +60,7 @@ This does not mean however that these are your only options. Browse the reposito
 
 ### Multi-site, multi-lingual, multi-domain, contexts
 
-- [xRouting](https://modx.com/extras/package/xrouting) is a flexible context router that supports (sub)domains and directories with minimal configuration
+- [smartRouting](https://modx.com/extras/package/smartrouting) is a flexible context router that supports (sub)domains and directories with minimal configuration
 - [LangRouter](https://modx.com/extras/package/LangRouter) is a context router that chooses the context based on the visitors' language
 - [Babel](extras/babel) is used to connect translations in different contexts
 
