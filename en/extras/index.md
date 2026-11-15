@@ -85,7 +85,6 @@ This does not mean however that these are your only options. Browse the reposito
 ### Versioning & Workflow
 
 - [VersionX](extras/versionx) keeps a copy of changes to your resources and elements for an easy restore.
-- [Preview](https://extras.io/extras/preview/) and [Workflow](https://extras.io/extras/workflow/) (premium extras from Extras.io) provide previews and publishing workflows.
 - [MagicPreview](https://www.modmore.com/extras/magicpreview/) (free extra from modmore) gives you a preview button that allows you to see your resource changes, without the changes having to be saved.
 - [StageCoach](https://bobsguides.com/stagecoach-tutorial.html) allows staging of page changes so they will be applied at a future date.
 
