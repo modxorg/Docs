@@ -1,48 +1,55 @@
 ---
-title: "Using a GatewayManager Plugin"
-_old_id: "333"
-_old_uri: "2.x/administering-your-site/contexts/using-one-gateway-plugin-to-manage-multiple-domains"
+title: "Using a Gateway Plugin"
+description: "Serving several domains from one MODX installation: the Plugin that switches the context by host, and the approach with a virtual host and a directory for every domain."
 ---
 
-You have a choice when sharing a single database and manager across multiple domains. You can choose to use the primary front-end context (known as 'web') to handle all domains or you can create a unique gateway file for each domain to directly initialize a specific context. If you use a single gateway, you would use a plugin to switch contexts registered to the `OnHandleRequest` event, something like so:
+One installation can serve several domains. The request's context tells them apart. Two approaches do that:
+
+- **One virtual host, several domains.** Every domain points at the same virtual host. A Plugin on `OnHandleRequest` reads the host and switches the context. This page covers this approach.
+- **A virtual host and a directory for every domain.** Each domain gets its own virtual host and a gateway directory with its own `config.context.php`. See [Using Virtual Hosts](building-sites/contexts/virtual-host).
+
+The first approach needs only the Plugin.
+
+## Switching the Context by Host
+
+`OnHandleRequest` fires at the start of every request, on the front end and in the manager.
 
 ``` php
 <?php
-/* don't execute if in the Manager */
-if ($modx->context->get('key') == 'mgr') {
-        return;
+if ($modx->context->get('key') === 'mgr') {
+    return;
 }
 
-switch ($_SERVER['HTTP_HOST']) {
-        case 'domain2.tld':
-                // if the http_host is of a specific domain, switch the context
-                $modx->switchContext('domain2.tld');
-                break;
-        case 'domain3.tld':
-                // if the http_host is of a specific domain, switch the context
-                $modx->switchContext('domain3.tld');
-                break;
-        default:
-                // by default, don't do anything
-                break;
+$hosts = [
+    'domain2.tld' => 'domain2',
+    'domain3.tld' => 'domain3',
+];
+
+$host = $_SERVER['HTTP_HOST'] ?? '';
+if (isset($hosts[$host])) {
+    $modx->switchContext($hosts[$host]);
 }
-?>
 ```
 
-Alternatively, you would simply copy the index.php file from the default web context (along with the core.config.php and .htaccess for rewrite rules altered appropriately) to another directory and change the line
+The `return` keeps the manager in the `mgr` context.
+
+`switchContext($contextKey, $reload = false)` returns `false` when the context was not loaded, and when the key is already the current context. In the second case the context is not loaded again. Check the result before the rest of the request relies on the new context:
 
 ``` php
-$modx->initialize('web');
+if (!$modx->switchContext('domain2')) {
+    $modx->log(modX::LOG_LEVEL_ERROR, 'The context "domain2" was not found.');
+}
 ```
 
-to
+On a request that is already in `domain2`, that check also fails, because the context was not switched.
 
-``` php
-$modx->initialize('aContextNameOfYourChoice');
-```
+## The Session Handler
 
-Note that you could also just copy the index.php in the same directory and rename it to do this, but your rewrite rules would have to be smart enough to route requests to the appropriate context gateway, and you would need to configure the `request_controller` option in Context Settings appropriately.
+Switching the context at runtime does not load a custom session handler. It does not change the language, the locale or the session cookie. Those come from the context that `index.php` started in. A domain that needs its own language or cookie uses its own directory with `config.context.php`. See [Using Virtual Hosts](building-sites/contexts/virtual-host).
 
-You can also still use a custom core location in either of these scenarios; this is independent of the context-driven multi-site capabilities.
+## See Also
 
-Checkout the [GatewayManager component](extras/gatewaymanager)
+1. [Contexts](building-sites/contexts)
+2. [Using Virtual Hosts](building-sites/contexts/virtual-host)
+3. [OnHandleRequest](extending-modx/plugins/system-events/onhandlerequest)
+4. [GatewayManager](extras/gatewaymanager)
