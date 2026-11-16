@@ -5,15 +5,22 @@ _old_id: "208"
 _old_uri: "2.x/developing-in-modx/advanced-development/namespaces"
 ---
 
-A namespace is an organizational unit for Components. It maps a short name to a directory on disk, which lets MODX find that Component's lexicons, manager controllers, and model packages without hard-coded paths.
+A namespace maps a short name to a directory on disk. MODX uses that directory to find the Component's lexicons, manager controllers, and model packages without hard-coded paths.
 
-Lexicons and controllers resolve through a namespace. **Processors do not** — see [Processors](extending-modx/processors) for how they are located.
+Lexicons and controllers resolve through a namespace. **Processors do not.** See [Processors](extending-modx/processors) for how they are located.
 
 ## Usage
 
 A manager page is identified by two query parameters: `namespace` (default `core`) and `a`, which carries the action. Given `?a=some/action&namespace=quip`, MODX looks for the controller inside the `quip` namespace directory — most often `core/components/quip/controllers/some/action.class.php`.
 
 If a namespace "quip" has the path `/www/modx/core/components/quip/`, that file resolves to `/www/modx/core/components/quip/controllers/some/action.class.php`.
+
+The class inside the file is not the file name. MODX capitalizes the namespace and joins it to the action, then splits on `/`. Each piece is capitalized, and `.`, `_`, and `-` are removed.
+
+- namespace `quip`, action `home` → `QuiphomeManagerController`
+- namespace `quip`, action `some/action` → `QuipsomeActionManagerController`
+
+A class with another name is not the one the manager loads.
 
 Menu entries store the same pair: `modMenu` carries an `action` column and a `namespace` column (default `core`). There is no `controller` column — the 2.x `modAction` class and its `controller` field were removed in 3.0. The full resolution order lives under [Controllers and Menus](extending-modx/menus/actions "Controllers and Menus").
 
@@ -63,4 +70,4 @@ $modx->services->add('my_service', function($c) use ($modx) {
 });
 ```
 
-(Make sure your service name is properly unique.)
+The service name has to be unique.

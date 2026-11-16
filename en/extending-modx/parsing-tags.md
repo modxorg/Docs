@@ -5,7 +5,7 @@ description: Process MODX tags outside the normal parsing flow with modParser::p
 
 Use this when you need [snippet, chunk, or lexicon tags](building-sites/tag-syntax) parsed outside the normal page render: generating email bodies, or returning fully processed content from an API.
 
-[modX::getChunk](extending-modx/modx-class/reference/modx.getchunk) already runs the parser over a chunk. What it leaves behind are uncacheable tags — `[[!Wayfinder]]`, `[[!getResources?…]]` — because `modChunk::process()` passes the parser's `isProcessingUncacheable()` flag, and that flag is `false` outside a render.
+[modX::getChunk](extending-modx/modx-class/reference/modx.getchunk) already runs the parser over a chunk. It leaves uncacheable tags such as `[[!Wayfinder]]` and `[[!getResources?…]]`. `modChunk::process()` passes the parser's `isProcessingUncacheable()` flag, and that flag is `false` outside a render.
 
 `modParser::processElementTags()` is the way to finish the job.
 
@@ -43,7 +43,7 @@ return $content;
 ```
 
 > [!WARNING]
-> Each call to `processElementTags()` fires the `OnParseDocument` plugin event. The two-pass recipe above therefore triggers it twice — plugins on that event run their logic twice and can rewrite the content through the passed reference.
+> Each call to `processElementTags()` fires `OnParseDocument`, and the event fires again on every pass while tags are still being replaced. To change the content from a plugin, write `$modx->documentOutput`. A change to the event's `content` argument is discarded.
 
 ## Method reference
 
@@ -62,7 +62,7 @@ $processed = $parser->processElementTags(
 
 | Parameter | Role |
 | --- | --- |
-| `$parentTag` | Tag of the element being processed. A tag matching it is blanked out so the parser cannot consume its own delimiter; pass `''` to skip that check |
+| `$parentTag` | Tag of the element being processed. A tag matching it is blanked out, so the parser cannot consume its own delimiter. Pass `''` to skip that check |
 | `$content` | String being parsed. Passed **by reference** — the result is written back into the variable, not returned |
 | `$processUncacheable` | Process `[[!…]]` tags on this pass |
 | `$removeUnprocessed` | Strip tags that produced no output instead of leaving them in place |
@@ -86,7 +86,7 @@ The default is `10`.
 
 ## Why two passes
 
-[parser_recurse_uncacheable](building-sites/settings/parser_recurse_uncacheable) (a real system setting, enabled by default) stops the parser from writing uncacheable output into cacheable content. With it disabled, uncacheable element output can end up cached inside the surrounding cacheable content — which is why the uncacheable pass comes last.
+[parser_recurse_uncacheable](building-sites/settings/parser_recurse_uncacheable) (a real system setting, enabled by default) stops the parser from writing uncacheable output into cacheable content. With it disabled, uncacheable element output can end up cached inside the surrounding cacheable content. That is why the uncacheable pass comes last.
 
 ## See also
 

@@ -5,15 +5,11 @@ _old_id: "1728"
 _old_uri: "2.x/developing-in-modx/advanced-development/developing-rest-servers"
 ---
 
-MODX ships a small REST server stack built around `modRestService` and `modRestController`. You point HTTP requests at a bootstrap script, map URL paths to controller classes, and get CRUD behaviour over xPDO objects with hooks for auth, validation, and response shaping.
+MODX ships a small REST server built on `modRestService` and `modRestController`. Point HTTP requests at a bootstrap script, map URL paths to controller classes, and you get CRUD over xPDO objects, with hooks for auth, validation, and the response shape.
 
-This page covers MODX 2.x and MODX 3.x. Class locations changed in 3.x (`MODX\Revolution\Rest\*`). The public controller API matches across versions, the service config does not: 3.x adds `sanitize`, 2.x has `xmlDisableEntityLoader`.
+This page covers MODX 2.x and MODX 3.x. In 3.x the classes live in `MODX\Revolution\Rest\*`. The public controller API matches across versions. The service config does not: 3.x adds `sanitize`, 2.x has `xmlDisableEntityLoader`.
 
 > Outgoing HTTP from MODX to third-party APIs is a different stack. See [HTTP Client](extending-modx/services/http). The deprecated `modRest` client is documented under [Services](extending-modx/services/modrest).
-
-## Recommended reading
-
-Phil Sturgeon's *[Build APIs you won't hate](https://leanpub.com/build-apis-you-wont-hate)* is a solid primer on REST conventions before you wire controllers.
 
 ## In a nutshell
 
@@ -140,7 +136,7 @@ That 405 with the message `Method not allowed` means the router ran and found no
 
 | Option | Default | Role |
 | --- | --- | --- |
-| `basePath` | site `base_path` | Directory of controller files |
+| `basePath` | site `base_path` | Controller directory |
 | `controllerClassPrefix` | `modRestController` | Prefix prepended to the class loaded from the file name |
 | `controllerClassSeparator` | `''` | Joiner between prefix and class segment |
 | `controllerClassFilePostfix` | `.php` | Extension used when scanning directories |
@@ -156,10 +152,10 @@ That 405 with the message `Method not allowed` means the router ran and found no
 | `defaultSuccessStatusCode` / `defaultFailureStatusCode` | `200` / `200` | HTTP status codes used by `success()` / `failure()` |
 | `responseSuccessKey` / `responseMessageKey` / `responseObjectKey` / `responseErrorsKey` | `success` / `message` / `object` / `errors` | Keys in a controller response body |
 | `errorMessageSeparator` | `' '` | Separator between field errors |
-| `trimParameters` | `false` | Trim whitespace from string request parameters |
+| `trimParameters` | `false` | Does not trim the parsed body or query string. Trim strings in the controller |
 | `sanitize` | `false` | 3.x only: run parameters through `modX::sanitize()` |
 | `exitOnResponse` | `true` | End the script after sending the response |
-| `xmlRootNode` | `response` | Root node of XML output |
+| `xmlRootNode` | `response` | XML output root node |
 
 An unknown suffix is not an error — the request falls back to `defaultResponseFormat`. Service-level error codes (`400`, `401`, `405`, `500`) always carry the keys `success`, `message`, `object`, and `code`; the `response*Key` options do not affect them.
 
@@ -237,9 +233,16 @@ Load the package with `addPackage()` (or your Extra's service) before `process()
 
 The ID segment is copied onto `$this->primaryKeyField` (default `id`) before the method runs.
 
-A controller without a method for the requested verb returns `405 Unsupported HTTP method`. A class that cannot be instantiated (an abstract base, for instance) returns `400`. If the verb method never calls `success()`, `failure()`, or `collection()`, the service answers with a second `405` instead of your payload.
+A controller without a method for the requested verb returns status `405` and the message `Unsupported HTTP method get` (the verb is lowercase, at the end). A class that cannot be instantiated (an abstract base, for instance) returns `400`. If the verb method runs and never calls `success()`, `failure()`, or `collection()`, the service sends the controller response as it stands. It does not send a second `405`.
 
-Parameters are collected per verb: `GET` reads the query string only, `POST` merges the query string with the body, `PUT` uses `$_POST` and the body (query string ignored), `DELETE` merges the query string with the body.
+Parameters are collected per verb:
+
+| Verb | Source |
+| --- | --- |
+| `GET` | Query string only |
+| `POST` | Query string merged with the body |
+| `PUT` | `$_POST` and the body. Query string ignored |
+| `DELETE` | Query string merged with the body |
 
 ### List query parameters
 
@@ -290,7 +293,7 @@ Default `get` / `post` / `put` / `delete` already handle the happy path. Overrid
 - `beforePut()`
 - `beforeDelete()`
 
-The object sits on `$this->object`. A `null` return means "continue" in `beforePost()` and `beforePut()`, but not in `beforeDelete()`: there `null` aborts the request and reaches `failure()` with an empty message. Return `true` explicitly.
+The object sits on `$this->object`. In `beforePost()` and `beforePut()`, `null` and `true` both let the request continue. In `beforeDelete()`, only `true` continues. `null` there reaches `failure()` with an empty message. Return `true`.
 
 Set the text the client sees on a `false` return with `setErrorMessage()`; add or drop individual field errors with `addFieldError()` / `removeFieldError()`.
 
@@ -387,7 +390,7 @@ The format comes from a path suffix or from `defaultResponseFormat`. Three ship 
 
 Request bodies are parsed by `Content-Type`: `application/json`, `application/xml`, or `application/x-www-form-urlencoded` (the default). With `image/jpeg`, `image/png`, or `image/gif` the properties receive an open `filehandle` stream.
 
-When the service parses inbound XML request bodies, an empty XML element becomes an empty string (`''`) in the resulting PHP array, not an empty array. [#14305](https://github.com/modxcms/revolution/pull/14305) Controllers that treat "empty" with `empty()` or strict `=== ''` checks stay consistent with JSON clients sending `""`.
+When the service parses inbound XML request bodies, an empty XML element becomes an empty string (`''`) in the PHP array. It does not become an empty array. [#14305](https://github.com/modxcms/revolution/pull/14305) Controllers that treat "empty" with `empty()` or strict `=== ''` checks stay consistent with JSON clients sending `""`.
 
 `success()` and `failure()` bodies use the keys from the service config (`success`, `message`, `object`, plus `errors` when field errors exist) and always carry `code`. List calls use `results` and `total`.
 

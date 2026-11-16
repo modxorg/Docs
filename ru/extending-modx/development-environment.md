@@ -8,9 +8,9 @@ description: "Локальный MODX для разработки Extras, сни
 
 Здесь описана среда для разработки **Extras** (сниппеты, плагины, CMP, транспортные пакеты) на локальном сайте MODX Revolution.
 
-Если вы правите **ядро MODX**, смотрите [Contribute: среды разработки](contribute/code/development-environment) (форк, upstream, tooling).
+Если вы правите **ядро MODX**, смотрите [Contribute: среды разработки](contribute/code/development-environment) (форк, upstream, инструменты).
 
-Полный разбор одного Extra от сниппета до пакета — в [Создании дополнения](extending-modx/tutorials/developing-an-extra). Эта страница — чеклист окружения, на которое опирается тот учебник.
+Полный разбор одного Extra от сниппета до пакета в [Создании дополнения](extending-modx/tutorials/developing-an-extra).
 
 ## Что нужно
 
@@ -25,8 +25,8 @@ description: "Локальный MODX для разработки Extras, сни
 
 Два пути:
 
-1. **Обычный zip** — скачать с [modx.com/download](https://modx.com/download/), распаковать в веб-корень, запустить [Setup](getting-started/installation/standard). Быстрее всего для работы над Extra, если не нужен bleeding-edge core.
-2. **Из git** — клон ветки `3.x`, `composer install`, сборка core-пакета, затем Setup. Нужно, если вы ещё и вносите правки в ядро. См. [установку из Git](getting-started/installation/git).
+1. **Обычный zip.** Скачать с [modx.com/download](https://modx.com/download/), распаковать в веб-корень, запустить [Setup](getting-started/installation/standard). Быстрее всего для работы над Extra, если не нужно самое свежее ядро.
+2. **Из git.** Клон ветки `3.x`, `composer install`, сборка пакета ядра, затем Setup. Нужно, если вы ещё и вносите правки в ядро. См. [установку из Git](getting-started/installation/git).
 
 После Setup войдите в Менеджер и убедитесь, что сайт открывается. Чистите `core/cache/`, если эксперименты с путями и конфигом пошли криво.
 
@@ -39,7 +39,7 @@ description: "Локальный MODX для разработки Extras, сни
 Пример (пути под свою машину):
 
 ``` text
-/www/modx/                 ← установка MODX Revolution (веб-корень или vhost)
+/www/modx/                 ← установка MODX Revolution (веб-корень или виртуальный хост)
 /www/doodles/              ← проект Extra (свой Git-репозиторий)
   assets/components/doodles/
   core/components/doodles/
@@ -48,10 +48,10 @@ description: "Локальный MODX для разработки Extras, сни
 
 После установки транспортный пакет кладёт файлы в `core/components/yourpkg/` и `assets/components/yourpkg/` внутри сайта MODX. В разработке вы либо:
 
-- держите ту же раскладку в отдельном клоне и указываете MODX пути через Namespace / системные настройки, либо
+- держите ту же раскладку в отдельном клоне и указываете MODX пути через пространство имён и системные настройки, либо
 - делаете symlink или копируете в дерево MODX (работает, но Git и обновления усложняются)
 
-В [Создании дополнения](extending-modx/tutorials/developing-an-extra) проект лежит в `/www/doodles/`, а MODX смотрит на него через системные настройки путей. Так удобно работать командой.
+В [Создании дополнения](extending-modx/tutorials/developing-an-extra) проект лежит в `/www/doodles/`, а MODX смотрит на него через системные настройки путей.
 
 Типичные каталоги Extra:
 
@@ -61,17 +61,17 @@ description: "Локальный MODX для разработки Extras, сни
 | `assets/components/yourpkg/` | JS, CSS, картинки |
 | `_build/` | Скрипты сборки и данные пакета (в zip не входят) |
 
-Отдельного `connector.php` у компонента нет. AJAX менеджера идёт на единый `/connectors/index.php`, а параметр `namespace` в запросе направляет его в код вашего компонента в `core/components/yourpkg/`.
+Отдельного `connector.php` у компонента нет. AJAX менеджера идёт на `/connectors/index.php`. Процессор компонента вызывайте классом-наследником `MODX\Revolution\Processors\Processor` или передайте `processors_path` в `$modx->runProcessor()`. Параметр `namespace` выбирает страницу менеджера, а не коннектор.
 
 См. также [структуру компонента](extending-modx/creating-components/component-structure) и [транспортные пакеты](extending-modx/transport-packages).
 
 ## Подключить MODX к Extra
 
-1. Создайте в Менеджере **Namespace** (`yourpkg`) с путями на `core` и `assets` вашего проекта.
+1. Создайте в Менеджере **пространство имён** (`yourpkg`) с путями на `core` и `assets` вашего проекта.
 2. Добавьте системные настройки вроде `yourpkg.core_path` и `yourpkg.assets_url` (или те ключи, которые ждёт Extra), чтобы сниппеты и сервисы находили файлы вне `core/components/` по умолчанию.
 3. Зарегистрируйте элементы (сниппет, плагин, пункт меню CMP), которые ходят по этим путям, или поставьте их скриптом сборки/установки.
 
-Пока пути не сходятся, `$modx->getService()` и процессоры падают с ошибками «нет класса/файла». Сначала Namespace и настройки, потом очистка кэша.
+Пока пути не сходятся, `$modx->getService()` и процессоры падают с ошибками «нет класса или файла». Сначала пространство имён и настройки, потом очистка кэша.
 
 Если Extra открывается с другого локального пути, чем Менеджер (например Менеджер `/modx/manager/`, assets Extra `/doodles/`), поставьте [`session_cookie_path`](building-sites/settings/session_cookie_path) в `/`, чтобы сессия входа была общей. После смены очистите кэш и войдите снова.
 
@@ -79,17 +79,17 @@ description: "Локальный MODX для разработки Extras, сни
 
 | Настройка | Зачем |
 | --- | --- |
-| [`cache_noncore_lexicon_topics`](building-sites/settings/cache_noncore_lexicon_topics) = Нет | Правки лексикона из не-core пространств имён видны без кэша топиков. `cache_lexicon_topics` — другая настройка: она решает только, пишется ли файл кэша, поэтому устаревшие записи читаются в любом случае |
+| [`cache_noncore_lexicon_topics`](building-sites/settings/cache_noncore_lexicon_topics) = Нет | Правки лексикона из пространств имён вне ядра видны без кэша тем. `cache_lexicon_topics` другая настройка. Она решает только, пишется ли файл кэша, поэтому устаревшие записи читаются в любом случае |
 | [`session_name`](building-sites/settings/session_name) | Уникальное имя на каждый локальный сайт. По умолчанию пусто — остаётся имя сессии PHP |
-| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Общая сессия на разных локальных путях. По умолчанию пусто — подставляется `MODX_BASE_URL` |
+| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Общая сессия на разных локальных путях. По умолчанию пусто. Пустое значение заменяется на `base_url`, и только если пуст и он — на `MODX_BASE_URL` |
 
-Пока крутите PHP, после смены путей или class map чистите `core/cache/` или используйте «Контент → Очистить кэш». Меню «Управление» в 3.x нет — пункт лежит в меню сайта («Контент»). Для схемы/модели пересоберите карты скриптом Extra, затем снова очистите кэш.
+Пока крутите PHP, после смены путей или карты классов чистите `core/cache/` или используйте «Содержимое → Очистить кэш». Меню «Управление» в 3.x нет. Пункт лежит в меню сайта («Содержимое»). Для схемы и модели пересоберите карты скриптом Extra, затем снова очистите кэш.
 
 ## Упаковка
 
 Когда Extra работает из Менеджера:
 
-1. Оставьте `_build/` в репозитории Extra (resolvers, data vehicles, скрипт сборки)
+1. Оставьте `_build/` в репозитории Extra (резолверы, контейнеры данных, скрипт сборки)
 2. Соберите транспортный пакет в `core/packages/` (или куда пишет ваш build)
 3. Поставьте или обновите пакет на чистом локальном MODX для проверки
 

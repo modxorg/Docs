@@ -11,13 +11,13 @@ Use this when you build **Extras** (Snippets, Plugins, Custom Manager Pages, Tra
 
 If you change **MODX core** itself, follow [Contribute: Development Environments](contribute/code/development-environment) instead (fork, upstream remote, tooling).
 
-For a full walkthrough of one Extra from Snippet to package, use [Developing an Extra](extending-modx/tutorials/developing-an-extra). This page is the environment checklist that tutorial assumes.
+For a full walkthrough of one Extra from Snippet to package, use [Developing an Extra](extending-modx/tutorials/developing-an-extra).
 
 ## What you need
 
 - A local web server and PHP/MySQL that meet [Server Requirements](getting-started/server-requirements) for the MODX version you target (Revolution 3.x needs PHP 8.1+ and Composer for git installs)
 - A working local MODX site you can break and reinstall
-- An editor or IDE (PhpStorm, VS Code, and similar all work)
+- An editor or IDE (PhpStorm, VS Code, or another editor)
 - Optional but useful: Git for the Extra project, and Composer if you install MODX from git
 
 You do not need a second MODX install per Extra. One local site can host many Extras under development.
@@ -26,8 +26,8 @@ You do not need a second MODX install per Extra. One local site can host many Ex
 
 Pick one path:
 
-1. **Traditional zip** — download from [modx.com/download](https://modx.com/download/), extract under your web root, run [Setup](getting-started/installation/standard). Fastest for Extra work when you do not need bleeding-edge core.
-2. **From git** — clone the `3.x` branch, run `composer install`, build the core package, then Setup. Required if you also contribute to core. See [Git Installation](getting-started/installation/git).
+1. **Traditional zip.** Download from [modx.com/download](https://modx.com/download/), extract under your web root, run [Setup](getting-started/installation/standard). Fastest for Extra work when you do not need bleeding-edge core.
+2. **From git.** Clone the `3.x` branch, run `composer install`, build the core package, then Setup. Required if you also contribute to core. See [Git Installation](getting-started/installation/git).
 
 After Setup, log into the Manager and confirm the site loads. Clear `core/cache/` whenever config or path experiments go wrong.
 
@@ -52,7 +52,7 @@ After install, a Transport Package will place files under `core/components/yourp
 - develop in that layout **inside** a clone that mirrors the installed paths, then teach MODX where the files live with Namespace / System Settings, or
 - symlink or copy into the MODX tree (works, but Git and updates get messier)
 
-The [Developing an Extra](extending-modx/tutorials/developing-an-extra) tutorial uses a separate `/www/doodles/` project and points MODX at it with path System Settings. That pattern scales well for teams.
+The [Developing an Extra](extending-modx/tutorials/developing-an-extra) tutorial uses a separate `/www/doodles/` project and points MODX at it with path System Settings.
 
 Typical Extra folders:
 
@@ -62,7 +62,7 @@ Typical Extra folders:
 | `assets/components/yourpkg/` | JS, CSS, images |
 | `_build/` | Build scripts and packaging data (not shipped in the zip) |
 
-There is no per-Component `connector.php`. Manager AJAX goes to the single `/connectors/index.php`, and the `namespace` query parameter routes it to your Component's `core/components/yourpkg/` code.
+There is no per-Component `connector.php`. Manager AJAX goes to `/connectors/index.php`. Call a component processor as a subclass of `MODX\Revolution\Processors\Processor`, or pass `processors_path` to `$modx->runProcessor()`. The `namespace` query parameter selects a manager page, not a connector.
 
 See also [Creating Components: component structure](extending-modx/creating-components/component-structure) and [Transport Packages](extending-modx/transport-packages).
 
@@ -80,11 +80,11 @@ If the Extra is served from another local URL path than the Manager (for example
 
 | Setting | Why |
 | --- | --- |
-| [`cache_noncore_lexicon_topics`](building-sites/settings/cache_noncore_lexicon_topics) = No | Lexicon edits from non-core namespaces show up without a topic cache. `cache_lexicon_topics` is a different setting — it only decides whether the cache file is written, so stale entries keep being read either way |
+| [`cache_noncore_lexicon_topics`](building-sites/settings/cache_noncore_lexicon_topics) = No | Lexicon edits from non-core namespaces show up without a topic cache. `cache_lexicon_topics` is a different setting. It only decides whether the cache file is written, so stale entries keep being read either way |
 | [`session_name`](building-sites/settings/session_name) | Unique per local site. Empty by default, which leaves PHP's own session name in place |
-| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Shared session across local paths when needed. Empty by default, which falls back to `MODX_BASE_URL` |
+| [`session_cookie_path`](building-sites/settings/session_cookie_path) | Shared session across local paths when needed. Empty by default. An empty value is replaced with `base_url`, then with `MODX_BASE_URL` if `base_url` is empty too |
 
-While iterating PHP, clear `core/cache/` or use Content → Clear Cache after path or class map changes. There is no `manage` menu in 3.x — the entry lives under the site ("Content") menu. For schema/model work, regenerate maps with your Extra’s build schema script, then clear cache again.
+While iterating PHP, clear `core/cache/` or use Content → Clear Cache after path or class map changes. There is no `manage` menu in 3.x. The entry lives under the site ("Content") menu. For schema/model work, regenerate maps with your Extra’s build schema script, then clear cache again.
 
 ## Packaging
 
