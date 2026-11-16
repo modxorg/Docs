@@ -6,27 +6,19 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ## Image TV Output Type
 
-This output-type allows you to wrap an img-tag around the input (normally should be input-type: "image").
+This output type wraps the TV value in an `img` tag. Pair it with the Image input type.
 
-## Output Options
+## Output Properties
 
-It's output options look like:
+| Name | Description |
+| --- | --- |
+| Alternate Text | Text for the `alt` attribute. If you leave it empty, the tag still gets `alt=""`. |
+| ID | Value of the `id` attribute. |
+| Class | CSS class on the `img` tag. |
+| Style | CSS written into the `style` attribute. |
+| Attributes | Extra HTML attributes added to the tag. |
 
-![](tv-image-output-options2.png)
-
-| Name           | Description                                                           | Value |
-| -------------- | --------------------------------------------------------------------- | ----- |
-| Output type    | The option to be outputted to the frontend.                           | Image |
-| Alternate text | alternative text for the image to be displayed if img coudn't be load |       |
-| H Space        | horizontal space                                                      |       |
-| V Space        | vertical space                                                        |       |
-| Border Size    | size of the border the image should get                               |       |
-| Align          | align of the image (middle, top, bottom, center, left, right)         | none  |
-| Name           | name for the image tag                                                |       |
-| Class          | CSS class to attach the img tag                                       |       |
-| ID             | CSS ID to attach the img tag                                          |       |
-| Style          | Any CSS style-attributes to add to the tag                            |       |
-| Attributes     | any other HTML-attributes you want to add to the tag                  |       |
+If the stored value looks like `label==path`, the image address is the label, the part before `==`. The path after `==` is not used as `src`. Store the path on its own when that path should be the image address.
 
 ## See Also
 

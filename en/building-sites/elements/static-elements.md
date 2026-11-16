@@ -4,46 +4,77 @@ _old_id: "1753"
 _old_uri: "2.x/developing-in-modx/basic-development/static-elements"
 ---
 
-Since MODX Revolution 2.2 you can create Static Elements to make managing your elements easier. This feature is available for all elements, including Templates, Chunks, Snippets and Plugins.
+A Template, Template Variable, Chunk, Snippet, or Plugin can take its source from a file. Saving the element in the Manager writes that file.
 
-A static element is an element which gets its content from a file. When edited via the manager, the file will get updated. Similarly, when you edit the file via an IDE, it will get updated in MODX the next time the element is requested.
+## Creating a static element
 
-## Creating a Static Element
+Check **Is Static**, choose a **Media Source**, and put the file path in **Static File**. The path is relative to that media source.
 
-To create an element as a static element, simply check the _Is Static_ checkbox, select a Media Source, and add the path to the file relative to that media source to the _Static File_ input. You can also click the icon in the _Static File_ input to open the MODX Browser to select the file, rather than entering it manually.
+The folder icon in **Static File** opens the browser only when the media source is a file source. With **(None)**, the field is plain text. Type the path yourself.
 
 ![](static-template.png)
 
-This process is the same for all types of elements.
+The same fields are on every element type.
 
-### Creating a Static Element without a Media Source
+### Media source (None)
 
-Alternatively, you can create a static element and select `None` as the Media Source. 
+Choose **(None)** in **Media Source** when you want to type a path yourself.
 
-In this case, you can add a path relative to the MODX core components path (`MODX_CORE_PATH . 'components/'`) in the _Static File_ input, or you can create a system setting with the key `element_static_path` which will set the location your paths will be relative to.
+An absolute path is used as written when that file already exists. If the file is not there yet, MODX creates it under the system setting `element_static_path`. That setting is not included with MODX. Create it, or new files go in `core/components/`.
 
-You can also use absolute paths when the media source is set to `None`.
+`static_elements_basepath` is not that folder. It is the prefix written into **Static File** when automatic paths are on.
 
-## Files vs. Database
+## Files and the database
 
-Please be aware that MODX still stores the contents in the database as well, in order for the element to be processed normally. MODX only checks the contents of the file when the element is requested uncached, so be sure to clear the cache while developing. For this reason you might find static elements to be most useful when working on uncached snippets or plugins, and slightly less useful on templates and chunks.
+MODX still keeps a copy of the source in the database. A cached Chunk or Template inside a cached Resource keeps the old source until you clear the cache or call the element uncached (`[[!$name]]`). A Snippet or Plugin that actually runs picks up a newer file by its modification time. Plugins are not cached.
 
-To improve the editing experience with static elements, there are several Extras available that can help automatically create the elements in the MODX database, or that automatically clear the cache for you.
+Some extras create the element for you, or clear the cache. This page does not name them.
 
-## Automatic static elements creation
+## Automatic static files
 
-As of MODX 2.7 it is possible to automate the process of generating static elements in the core. It takes away the manual steps of creating a static element, such as marking an element as static, selecting your static elements media source and it automatically generates the filepath name for your static file.
+The Manager can mark the element static and fill in **Static File** for you.
 
-When an element is removed or renamed, the associated file is removed as well.
+Open **Admin** → **System Settings** and filter by **Static Elements**.
 
-### Setting up automatic static elements
+1. Turn on `static_elements_automate_templates`, `static_elements_automate_tvs`, `static_elements_automate_chunks`, `static_elements_automate_snippets`, or `static_elements_automate_plugins` for the types you want.
+2. Set `static_elements_default_mediasource` to the media source id you want on new elements.
+3. Set `static_elements_basepath` to the prefix inside that media source, for example `components/static/elements/`. With **(None)**, do not start this prefix with `components/` or the new file is created under `core/components/components/`.
+4. Optionally set `static_elements_default_category`.
 
-1. Go to System > System Settings. Select the Static Elements topic.
-2. Turn on automating static elements for each element type you want to use automate the static elements workflow for. For example, enable the `static_elements_automate_snippets` setting to use it for snippets, and `static_elements_automate_chunks` to use it for chunks.
-3. Select the default media source to use for static elements in the `static_elements_default_mediasource` setting.
-4. Provide your static elements basepath, which is where the files will go, in the `static_elements_basepath` setting. For example: `components/static/elements/`.
-5. Optionally select a default category to use for your static elements in the `static_elements_default_category` setting.
+### Where the file is written
 
-### File structure
+The path is `{basepath}/{type}/{category}/{name}{suffix}`.
 
-Files will be created at the path: `{static_elements_basepath}/{type}/{category}/{filename}.{extension}` within the specified media source. For example: `components/site/elements/chunks/html/footer.chunk.tpl`.
+The name and the category are lowercased, and spaces become `-`. A `--` in the category becomes `/`.
+
+| Type | Suffix |
+| --- | --- |
+| templates | `.template` plus `static_elements_html_extension` (default `.tpl`) |
+| tvs | `.tv` plus the same extension |
+| chunks | `.chunk` plus the same extension |
+| snippets | `.snippet.php` |
+| plugins | `.plugin.php` |
+
+`static_elements_html_extension` is not added to Snippets or Plugins.
+
+A Chunk named `my-footer` in the category `html`, with base path `components/site/elements/` and a file media source, is stored as `components/site/elements/chunks/html/my-footer.chunk.tpl`.
+
+### When the file is deleted
+
+With automation on for that type, saving a new path removes the previous file. Deleting the element removes the file only when automation is on and the media source is a file source. With **(None)**, the file stays on disk. Delete it yourself. If another element uses the same static file, the file is kept.
+
+After you drag the element to another category, the file can land in a different folder than the form would use. Open the element and save it so the Manager recalculates the path.
+
+## Static element settings
+
+| Setting | Default | What it does |
+| --- | --- | --- |
+| `static_elements_automate_templates` | `false` | Fill in a static file for new Templates. |
+| `static_elements_automate_tvs` | `false` | Fill in a static file for new Template Variables. |
+| `static_elements_automate_chunks` | `false` | Fill in a static file for new Chunks. |
+| `static_elements_automate_snippets` | `false` | Fill in a static file for new Snippets. |
+| `static_elements_automate_plugins` | `false` | Fill in a static file for new Plugins. |
+| `static_elements_default_mediasource` | `0` | Media source id written on a new automatic element. |
+| `static_elements_default_category` | `0` | Category id written on a new automatic element. |
+| `static_elements_basepath` | `''` | Prefix written into **Static File**, inside the chosen media source. |
+| `static_elements_html_extension` | `.tpl` | Extension after `.template`, `.tv`, and `.chunk`. |

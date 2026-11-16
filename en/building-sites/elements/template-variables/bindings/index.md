@@ -4,29 +4,29 @@ _old_id: "33"
 _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/bindings"
 ---
 
-With at-bindings, you can define a dynamic data source for a template variable. Typically used for selectbox or checkbox TVs, where the editor can choose one or more relevant options that are dynamically shown.
+An @ binding sets the data source for a Template Variable. Editors usually meet it on a list or checkbox TV: the choices are loaded when the Resource is edited.
 
-For example:
+Sources include:
 
-- an externally generated file that is sent via FTP to the server
-- a database table accessible to MODX
-- a [Resource](building-sites/resources "Resources") in the resource tree
+- a file sent to the server, for example by FTP
+- a database table MODX can read
+- a [Resource](building-sites/resources "Resources") in the Resource tree
 - a [Chunk](building-sites/elements/chunks "Chunks") in the Elements tree
-- the result of an evaluated PHP script
+- the result of a PHP script
 
-These Data Sources can be tied (or "bound") to a Template Variable for formatting and displaying in document. In addition, the bound data in the TVs can be almost effortlessly formatted via the Display Controls within the TV system for some truly stunning results. The format for using the types of data source bindings available to all template variables follows:
+The commands are:
 
-- @FILE file\_path
-- @RESOURCE resource\_id
-- @CHUNK chunk\_name \[properties\_as\_json\]
-- @SNIPPET snippet\_name \[properties\_as\_json\]
-- @SELECT sql\_query
-- @DIRECTORY path\_relative\_to\_base\_path
+- @FILE file_path
+- @RESOURCE resource_id
+- @CHUNK chunk_name [properties as json]
+- @SNIPPET snippet_name [properties as json]
+- @SELECT sql_query
+- @DIRECTORY path_relative_to_base_path
+- @INHERIT
+- @DOCUMENT resource_id
 - @INLINE available in some Extras (e.g. getResources), this specifies a formatting chunk in-line as a string.
 
-These "@" commands or bindings will allow you to quickly and easily attach your template variables to virtually any database system available.
-
-The value returned from the data source can either be a string value (including numbers, dates, etc), an array or a recordset. The value returned is dependent on the type of binding used. Some display controls will attempt to either convert the returned value into a string or an array.
+The source can return a string (including a number or a date), an array, or a recordset. Which one you get depends on the binding. Some input types then try to turn that result into a string or an array.
 
 For example, controls that accept string values such as a radio button group or select list will attempt to convert a record set (rows and columns) into the following format:
 
@@ -34,11 +34,7 @@ For example, controls that accept string values such as a radio button group or 
 col1row1Value==col2row1Value||col1row2Value==col2row2Value,...
 ```
 
-> Note that @-bindings only work inside "Input Option Values" or "Default Value" fields.
-
-When placing @ bindings inside the "Input Option Values" field, they are used to format input options only when editing document within the Manager, for example to create a drop-down list of Cities or Countries.
-
-When placing @ bindings inside the "Default Value" field the returned value is used to render to the final web page. This makes it simple to build complex forms for data input on the web very quickly.
+A binding in **Input Option Values** builds the choices while you edit the Resource. A binding in **Default Value** fills the TV when that Resource has no value of its own. A binding saved on the Resource also runs when the page outputs `[[*tvName]]`, if the stored value starts with `@`.
 
 ## Types
 
@@ -49,6 +45,8 @@ When placing @ bindings inside the "Default Value" field the returned value is u
 - [@SNIPPET](building-sites/elements/template-variables/bindings/snippet-binding "SNIPPET Binding")
 - [@DIRECTORY](building-sites/elements/template-variables/bindings/directory-binding "DIRECTORY Binding")
 - [@INHERIT](building-sites/elements/template-variables/bindings/inherit-binding "INHERIT Binding")
+- [@DOCUMENT](building-sites/elements/template-variables/bindings/document-binding "DOCUMENT Binding")
+- [@INLINE](building-sites/elements/template-variables/bindings/inline-binding "INLINE Binding")
 
 Certain extras, such as [getResources](/extras/getresources "getResources"), support `@INLINE` or `@FILE` bindings for their chunks.
 

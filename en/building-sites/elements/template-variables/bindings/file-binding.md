@@ -14,25 +14,21 @@ The @FILE Binding returns the contents of any specified file.
 @FILE file_path
 ```
 
-Binds the variable to a file, where **_file\_path_** is the path and name of the file. The return value is a string containing the content of the file. The file path is the absolute path from the root of the server or your particular installation.
+Binds the variable to a file. MODX opens the path exactly as you write it. It does not add the site root the way `@DIRECTORY` does. A path such as `assets/news/headline_news.txt` works only when that path exists as written. If the file cannot be opened, the TV outputs ` Could not retrieve document '…'.`, with a space before `Could`.
 
-The **@FILE** command is very useful in cases where we might want to generate data that's available in file. By using the **||** and **==** characters as a delimiter we could interface with any external database application.
+The file may use `||` and `==` as separators between values.
 
 ## Usage
 
-For example: Let's say we have a text file called headline\_news.txt that is external to our database system. This file is constantly being updated with up-to-the-minute news items by another external system. We want to display these news items on our website for our visitors to see. How can we do that?
-
-First, we might create a new Template Variable. We then add the @FILE command inside the default value of the TV. This will point to where the headline\_news.txt is located in our example. Our default value might look like this:
+Create a Template Variable and put `@FILE` in **Default Value**, pointing at the file:
 
 > @FILE assets/news/headline\_news.txt
 
-Let's say each headline in the headline\_news.txt file is separated by a new-line (lf or \\n) character. We can use the Delimiter render to separate each item and display them one at a time. Our fields will look like this:
+The binding returns the file as one string. A newline in the file stays a newline. The Delimiter output type splits that string on `||`.
 
 ![](tv-file-input-opt.png)
 
 ![](tv-file-output-opt.png)
-
-And voila! We have our dynamically rendering @FILE binding.
 
 ## See Also
 

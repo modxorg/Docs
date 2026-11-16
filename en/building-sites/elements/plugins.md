@@ -4,6 +4,6 @@ sortorder: "5"
 note: "This document is a stub and needs to be expanded."
 ---
 
-Plugins are PHP code that fire when _Events_ are fired. The MODX core has lots of events that fire at different points during the parsing and interacting with objects in the manager.
+A plugin is PHP that runs when an event fires. A plugin you write runs when **Deactivate Plugin** is unchecked and the event is checked on the **System Events** tab.
 
-When building sites, you'll usually only use existing plugins that are available as installable packages, but if you're confident in PHP you can also write your own.
+When you build a site you will mostly install plugins as packages. If you are comfortable with PHP, you can write your own.

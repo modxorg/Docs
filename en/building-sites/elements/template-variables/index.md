@@ -7,42 +7,41 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables"
 
 ## What is a Template Variable?
 
-**A Template Variable (TV) is a custom field**, or more specifically, it is custom field for a MODX Resource. TVs are used to extend the default attributes available for a Resource (e.g. for a Page or WebLink). A normal MODX Resource has a certain number of default fields: pagetitle, content, description, etc. If you need to add some custom fields to your pages, e.g. a second content area or a dropdown list of month names, or any other bit of custom data, you do this by adding a Template Variable to your template. MODX allows you to have a virtually unlimited number of TVs.
+A Template Variable (TV) is a custom field on a Resource. A Resource already has fields such as `pagetitle`, `content`, and `description`. Add a TV when you need another field, for example a second content area or a list of month names.
 
-**Why is it called a Template Variable**
-Other content management systems call these simply "Custom Fields", so why does MODX call these "Template Variables"? Well, any time you have customized content, you will also have customized templates. Your MODX templates already have placeholders for **content** or **longtitle** because those are the built-in fields for a standard MODX "page"; the information and the template used to display that information go hand in hand. If you have a manager form with a field for entering a special date, then it stands to reason that your HTML template that you use to display that page would also have a bit dedicated to displaying that date. Likewise, you wouldn't build HTML templates with divs and tables for formatting bits of data unless the manager offered some way to edit that data. So the content is inexorably tied to the template, thus the name **Template Variable**.
+You can add TVs. On save, MODX does not check how many already exist.
 
-When a [Resource](building-sites/resources "Resources") is displayed on the web, TV tags are replaced with the actual value entered by the user. TVs are [Template](building-sites/elements/templates "Templates")-specific, meaning they can only be used in [Templates](building-sites/elements/templates "Templates") that they are assigned to.
+When a [Resource](building-sites/resources "Resources") is shown on the site, `[[*name]]` is replaced with the TV value. In the Resource form, the field appears only when that Resource's Template has the TV assigned. On any other page the same tag still prints the default, or a value already saved for that Resource.
 
-Template Variable Output Filters make it easier for users to add special visual effects to their web sites. With just a few clicks you can add an Image, URL or custom render to your website.
+Output types format that value, for example as an image or a URL.
 
 ## Usage
 
-Let's say we have a TV named 'bio', that is a textarea TV that we've created. We've assigned it to our 'Biography Pages' Template, and want to show it on our page. To do so, we'd simply place this tag into our templates:
+A textarea TV named `bio`, assigned to the Biography Pages Template, is printed with:
 
 ```php
 [[*bio]]
 ```
 
-To add a TV to a page, you have to think back to its template (these are _Template_ variables, remember?). Make sure you've defined the TV and attached it to the template that you're using. See the page on [Creating a Template Variable](building-sites/elements/template-variables/step-by-step "Creating a Template Variable").
+Define the TV and attach it to the Template the Resource uses. See [Creating a Template Variable](building-sites/elements/template-variables/step-by-step "Creating a Template Variable").
 
 ### Advanced Usage
 
-TVs can also have Properties. Say you had a TV called 'intromsg' with the value:
+A TV can take properties. A TV named `intromsg`:
 
 > Hello `[[+name]]`, you have `[[+messageCount]]` messages.
 
-You could fill the data with the call:
+Fill the placeholders in the call:
 
 ```php
 [[*intromsg?name=`George` &messageCount=`123`]]
 ```
 
-Which would output:
+Output:
 
 > Hello George, you have 123 messages.
 
-[Output Filters](building-sites/elements/template-variables/step-by-step "Input and Output Filters (Output Modifiers)") are also great tools to be applied to TVs. Say you wanted to limit a TV's output to 100 chars. You'd simply use the 'limit' output filter:
+An [output filter](building-sites/elements/template-variables/step-by-step "Input and Output Filters (Output Modifiers)") can change the printed value. Limit it to 100 characters:
 
 ```php
 [[*bioMessage:limit=`100`]]

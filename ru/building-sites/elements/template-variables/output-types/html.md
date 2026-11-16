@@ -1,30 +1,31 @@
 ---
-title: "Тип вывода TV - HTML тег"
+title: "Тип вывода TV - HTML-тег"
 translation: "building-sites/elements/template-variables/output-types/html"
 ---
 
-## Тип вывода TV - HTML тег
+## Тип вывода TV - HTML-тег
 
-Этот тип позволяет вам оборачивать тег HTML вокруг ввода. Он специально предназначен для использования с типом ввода тегагде отдельные значения тега разделяются знаком ||.
+Этот тип вывода оборачивает каждую часть значения TV в HTML-тег. Сохранённое значение он режет по `||`.
+
+**Check Box** и **Listbox (Multi-Select)** хранят `||` между вариантами, поэтому этот тип их разделяет. **Tag** и **Auto-Tag** хранят список через запятую, поэтому этот тип их не разделяет.
 
 ## Свойства вывода
 
-Эти выходные свойства выглядят как:
+| Имя | Описание |
+| --- | --- |
+| Название тега | Имя элемента, например `div` или `span`. Если поле пустое, тег будет `div`. |
+| ID | Задумано как `id` тега. До тега не доходит. |
+| Класс | CSS-класс тега. |
+| Стиль | CSS в атрибуте `style`. |
+| Атрибуты | Дополнительные HTML-атрибуты. До тега не доходят. |
 
-![](tvot.htmltag.png)
+> [!WARNING]
+> **ID** и **Атрибуты** до тега не доходят. **Название тега**, **Класс** и **Стиль** доходят. Соберите нужный атрибут сниппетом или фильтром вывода.
 
-| Имя        | Описание                                                  |
-| ---------- | --------------------------------------------------------- |
-| Tag Name   | Тег для создания, такой как div, img, span, и другие.     |
-| Tag ID     | DOM идентификатор тега.                                   |
-| Class      | Любые CSS класс для добавления к тегу.                    |
-| Style      | Любые атрибуты стиля для добавления к тегу.               |
-| Attributes | Любые другие атрибуты, которые вы хотите добавить к тегу. |
+## См. также
 
-## Смотрите также
-
-1. [Тип вывода TV - Дата](building-sites/elements/template-variables/output-types/date)
-2. [Тип вывода TV - Разделитель](building-sites/elements/template-variables/output-types/delimiter)
-3. [Тип вывода TV - HTML тег](building-sites/elements/template-variables/output-types/html)
-4. [Тип вывода TV - Изображение](building-sites/elements/template-variables/output-types/image)
-5. [Тип вывода TV - URL](building-sites/elements/template-variables/output-types/url)
+1. [Тип вывода Date](building-sites/elements/template-variables/output-types/date)
+2. [Тип вывода Delimiter](building-sites/elements/template-variables/output-types/delimiter)
+3. [Тип вывода HTML Tag](building-sites/elements/template-variables/output-types/html)
+4. [Тип вывода Image](building-sites/elements/template-variables/output-types/image)
+5. [Тип вывода URL](building-sites/elements/template-variables/output-types/url)

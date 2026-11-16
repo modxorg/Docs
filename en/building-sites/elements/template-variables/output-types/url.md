@@ -6,23 +6,24 @@ _old_uri: "2.x/making-sites-with-modx/customizing-content/template-variables/tem
 
 ## URL TV Output Type
 
-This output-type allows you to wrap an link (a-tag) around the input (normally should be input-type: "text").
+This output type wraps the TV value in a link.
 
-## Output Options
+A whole number in the value becomes a link to that Resource, written as `[[~id]]`. Several values separated by `||` become several links, with `<br />` between them.
 
-It's output options look like:
+## Output Properties
 
-![](tv-url-output.png)
+| Name | Description |
+| --- | --- |
+| Display Text | Link text. If you leave it empty, the value is the link text. |
+| Title | The `title` attribute. If you leave it empty, the link text is used. |
+| ID | The `id` attribute. |
+| Class(es) | CSS class on the link. |
+| Style | CSS written into the `style` attribute. |
+| Target | Where the link opens. The field starts at `_self`. The choices are `_blank`, `_self`, `_parent`, and `_top`. |
+| Attributes | Extra HTML attributes. They do not reach the link. |
 
-| Name         | Description                                                     |
-| ------------ | --------------------------------------------------------------- |
-| Output type  | The option to be outputted to the frontend. Value: URL          |
-| Display text | text that is displayed as link text instead of the URL          |
-| Title        | title tag for the link-title                                    |
-| Class        | CSS class to attach the img tag                                 |
-| Style        | Any CSS style-attributes to add to the tag                      |
-| Target       | target of the link, should be left blank but could be "\_blank" |
-| Attributes   | any other HTML-attributes you want to add to the tag            |
+> [!WARNING]
+> What you type in **Attributes** does not appear on the link. **Display Text**, **Title**, **ID**, **Class(es)**, **Style**, and **Target** do. There is no field on this output type that adds an arbitrary attribute.
 
 ## See Also
 
