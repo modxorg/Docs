@@ -1,20 +1,19 @@
 ---
-title: "Видимая вкладка"
+title: "Видимость области"
 translation: "building-sites/client-proofing/form-customization/rules/tab-visible"
+description: "Правило «Видимость области» набора настройки формы в MODX: как оно прячет область формы."
 ---
 
-## Правило видимой вкладки
+## Что делает правило
 
-Правило видимости вкладки, если установлено значение 0, скрывает вкладку от пользователя.
+Прячет область формы менеджера. Область — это целая вкладка формы или её часть; список областей есть на странице [Настройка вкладок](building-sites/client-proofing/form-customization/tabs "Настройка вкладок").
 
-## Примеры
+## Где задаётся
 
-Пример правила скрытия вкладки «Параметры страницы» для всех [пользователей](building-sites/client-proofing/security/users "пользователей") будет выглядеть следующим образом:
-
-![](/2.x/en/building-sites/client-proofing/form-customization/rules/fc-tabvisible.png)
+Вкладка **Regions** набора, колонка **Visible**. Снятая отметка у области создаёт правило; поставленная обратно — удаляет его.
 
 ## Смотрите также
 
-```php
-[[getResources@section? &parents=`301` &context=`revolution`]]
-```
+1. [Правила настройки формы](building-sites/client-proofing/form-customization/rules)
+2. [Наборы настроек формы](building-sites/client-proofing/form-customization/sets)
+3. [Настройка вкладок](building-sites/client-proofing/form-customization/tabs)

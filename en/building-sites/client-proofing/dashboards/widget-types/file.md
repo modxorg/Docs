@@ -1,13 +1,15 @@
 ---
 title: "File"
+description: "The File Dashboard Widget of MODX: the ways a file can return the content of a widget, and the variables it has available."
 _old_id: "85"
 _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-file"
 ---
 
-The File Dashboard Widget Type runs a file on the filesystem, which can either:
+The File Dashboard Widget Type runs a file on the filesystem. The file can return the content of the widget in three ways:
 
-- Return the output of the file, rendering it in the content pane of the widget
-- Return the name of a class that extends modDashboardWidgetInterface, a MODX-provided abstract class, that has a render() method that will return the output to render to the content pane of the widget
+- Return the output of the file, which is rendered in the content pane of the widget.
+- Print the output of the file and return nothing.
+- Return the name of a class that extends `modDashboardWidgetInterface`, the abstract class that MODX provides for widgets. The class has a `render()` method that returns the output.
 
 ## Usage
 
@@ -19,20 +21,34 @@ Simply place the name of the file in the content textarea of the widget. You can
 - `[[++assets_path]]`
 - `[[++manager_theme]]`
 
+**Use an absolute path**
+A relative path is resolved against the working directory of the PHP process, not against the root of MODX. It does not survive a move of the installation. Build the path from `[[++manager_path]]` and the like.
+
 ### Returning the Output
 
-There are two methods in your external file to return the content of the widget. The first is simply returning the output, like so:
+The first way to return the content of the widget is to return the output, like so:
 
 ``` php
 <?php
 return 'Hello, world!';
 ```
 
-Will render "Hello, world!" in the content panel of the widget.
+The widget renders "Hello, world!" in its content panel.
+
+### Printing the Output
+
+A file that prints its output and returns nothing works as well:
+
+``` php
+<?php
+echo 'Hello, world!';
+```
+
+The output of the file is captured and rendered in the content panel of the widget.
 
 ### Returning a Class Name
 
-You can also return a class name of a class you have defined in your external file that extends the class modDashboardWidgetInterface, which is an abstract class provided by MODX for rendering of widgets. This is useful for widget developers who want an OOP approach that unit tests can be run against.
+You can also return the name of a class that you have defined in your external file and that extends `modDashboardWidgetInterface`. This is useful for widget developers who want an OOP approach that unit tests can be run against.
 
 An example class-based widget would look like this:
 
@@ -48,7 +64,7 @@ class modDashboardWidgetHelloWorld extends modDashboardWidgetInterface {
 return 'modDashboardWidgetHelloWorld';
 ```
 
-This widget would return as its content:
+This widget returns as its content:
 
 > Hello, World! Version: 1.0
 

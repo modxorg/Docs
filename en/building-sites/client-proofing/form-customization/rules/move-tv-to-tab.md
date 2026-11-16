@@ -1,34 +1,25 @@
 ---
 title: "Move TV to Tab"
+description: "The Move TV to Tab rule of a Form Customization set in MODX: how it moves a template variable into another region."
 _old_id: "1353"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/move-tv-to-tab"
 ---
 
-## The Move TV to Tab Rule
+## What the Rule Does
 
-The Move TV to Tab rule will move any TV to the tab you specify.
+Moves a TV of the form of the manager into another region. The TV is drawn in that region instead of the one it belonged to.
 
-## Usage
+## Where It Is Set
 
-Specify the ID of the tab to move to in the "name" field of the Rule. Then specify the TV's ID prefixed with 'tv' in the "value" field.
+The **Template Variables** tab of the set, in the **Region** column. Put the id of the region you want the TV moved into.
 
-The list of available tabs is:
+**The id is not checked**
+Whatever you type into the cell is taken as it is. A typo does nothing, and there is no message about it. Take the id from the list of the regions on [Customizing Tabs](building-sites/client-proofing/form-customization/tabs "Customizing Tabs"). The **Region (ID)** column of the **Regions** tab of the same set has them as well.
 
-| ID                     | Description                                 |
-| ---------------------- | ------------------------------------------- |
-| modx-resource-settings | The first tab, or Create/Edit resource tab. |
-| modx-page-settings     | The second tab, or Page Settings tab.       |
-
-You can also create a tab with the [New Tab](building-sites/client-proofing/form-customization/rules/new-tab "New Tab") rule and move a TV there.
-
-## Examples
-
-An example rule for moving the TV 1 to the first tab in the Resource create page would look like so:
-
-![](rule-tvmove.png)
+The **Region Rank** column next to it sets the order of the variables inside the region.
 
 ## See Also
 
-``` php
-[[getResources@section? &parents=`1353` &context=`revolution`]]
-```
+1. [Form Customization Rules](building-sites/client-proofing/form-customization/rules)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+3. [Customizing Tabs](building-sites/client-proofing/form-customization/tabs)

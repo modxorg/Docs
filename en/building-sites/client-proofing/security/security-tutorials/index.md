@@ -1,5 +1,6 @@
 ---
 title: "Security Tutorials"
+description: "The tutorials of the security section of MODX: member-only pages, managers, the anonymous user and the access to the elements."
 _old_id: "271"
 _old_uri: "2.x/administering-your-site/security/security-tutorials"
 ---

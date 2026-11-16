@@ -1,5 +1,6 @@
 ---
 title: "Troubleshooting Security"
+description: "What to check when the access of MODX does not behave as it should."
 _old_id: "490"
 _old_uri: "2.x/administering-your-site/security/troubleshooting-security"
 ---

@@ -1,102 +1,111 @@
 ---
 title: "Ограничение Element для пользователей"
 translation: "building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users"
+description: "Скрыть элемент MODX от пользователей, которым нельзя его править, через доступ к его категории."
 ---
 
-## Введение
+## Кратко
 
-Урок показывает, как скрыть любой Element (Template, Snippet и т. д.) в менеджере MODX. Для этого используют Element Category ACL: они защищают Elements в Categories от просмотра. Пользователи группы Editors увидят элементы. Пользователи вне группы их не увидят.
+Элемент (Template, Snippet и другие) скрывает ACL его категории. Пользователи группы Editors его видят. Остальные нет.
 
-### Кратко
-
-1. Создайте Category или возьмите существующую
-2. Поместите Element, который нужно защитить, в эту Category
-3. Создайте User Group или выберите существующую
-4. Добавьте пользователей, которым нужен Element, в группу с ролью Member
-5. На вкладке Element Category Access добавьте Element Category ACL (context: mgr, minimum role: Member (9999), access policy: Element)
-6. Выполните Flush permissions и перезагрузите
+1. Создайте категорию или возьмите существующую
+2. Поместите элемент, который нужно защитить, в эту категорию
+3. Создайте группу пользователей или выберите существующую
+4. Добавьте пользователей, которым нужен элемент, в группу с ролью Member
+5. На вкладке Element Category Access добавьте ACL категории (context: mgr, minimum role: Member (9999), access policy: Element)
+6. Откройте **Перезагрузить права доступа** и обновите страницу
 
 ## Пошагово
 
-### 1. Создайте Category
+### 1. Создайте категорию
 
-На вкладке Elements в левом дереве нажмите иконку Category на панели или правым кликом по "Categories" внизу выберите "New Category". Создайте и сохраните категорию. Можно взять уже существующую Category.
+На вкладке Elements в левом дереве нажмите иконку Category на панели. Или правым кликом по "Categories" внизу выберите "New Category". Сохраните категорию. Можно взять уже существующую.
 
-### 2. Поместите Element в Category
+### 2. Поместите элемент в категорию
 
-Отредактируйте Element и задайте ему Category из шага 1.
+Отредактируйте элемент и задайте ему категорию из шага 1.
 
-### 3. Создайте User Group
+### 3. Создайте группу пользователей
 
-Откройте Security -> Access Controls в верхнем меню, вкладка "User Groups". Создайте новую группу или выберите существующую. Правым кликом по группе выберите "Update User Group".
+Откройте иконку замка → **Контроль доступа**, вкладка **Группы пользователей & Пользователи**. Создайте группу или выберите существующую. Щёлкните её правой кнопкой и выберите **Редактировать группу пользователя**.
 
-В Revolution 2.3.x пункт Access Control Lists лежит в меню Admin (значок шестерёнки).
+В форме Access Wizard в поле Context дайте группе "mgr", а категорию укажите в Element Categories. В поле Users можно перечислить пользователей для добавления в группу. Без мастера обновите новую группу правым кликом.
 
-Если используете форму Access Wizard, в поле Context дайте группе доступ "mgr", а Category укажите в Element Categories. В поле Users можно перечислить пользователей для добавления в группу. Если wizard не используете, обновите новую группу правым кликом.
+### 4. Добавьте пользователей в группу
 
-### 4. Добавьте пользователей в User Group
+На экране группы откройте вкладку Users и добавьте пользователей, которым нужен элемент. Дайте роль **не слабее** Member. Или добавьте пользователя со страницы его редактирования, вкладка Access Permission.
 
-На экране обновления группы откройте вкладку Users и добавьте пользователей, которым нужен Element. Дайте роль **не слабее** Member. Либо добавляйте пользователей в группу со страницы редактирования пользователя, вкладка Access Permission.
+### 5. Добавьте ACL категории элемента
 
-### 5. Добавьте Element Category ACL
-
-Откройте вкладку "Element Category Access". В Revolution 2.3.x она в боковой панели вкладки Permissions группы пользователей.
+Откройте вкладку "Element Category Access". Она в панели группы, рядом с другими вкладками доступа.
 
 Нажмите "Add Category" над таблицей. Выберите:
 
-- Category: ваша Category из шагов выше
+- Category: категория из шагов выше
 - Minimum Role: Member
 - Access Policy: Element
 - Context: mgr
 - Нажмите "Save" в диалоге
 - Нажмите "Save" справа вверху
 
-### 6. Flush Permissions
+### 6. Перезагрузите права доступа
 
-В верхнем меню: "Security -> Flush Permissions". В Revolution 2.3.x это Manage -> Logout All Users.
+Откройте иконку замка → **Перезагрузить права доступа**, затем **Завершить все сеансы**.
 
-Всех заставят войти снова. Element Category теперь защищена от пользователей вне группы Editors.
+После этого все входят заново. Категория элемента закрыта от пользователей вне группы Editors.
 
-## Скрытие конкретных Elements от части пользователей
+## Скрытие отдельных элементов
 
-Иногда нужно скрыть элементы от всех, кто не в группе Administrator. Положите элементы в категорию как выше, но привяжите её к группе Administrator:
+Иногда нужно скрыть элементы от всех, кто не в группе Administrator. Положите элементы в категорию, как выше, и привяжите её к группе Administrator:
 
-- Откройте редактирование группы Administrator (Security -> Access Controls -> User Groups -> правый клик по "Administrator" -> Update User Group). В Revolution 2.3.x это Access Control Lists в меню Admin (шестерёнка).
+- Откройте редактирование группы Administrator (иконка замка в меню пользователя → **Контроль доступа** → вкладка **Группы пользователей & Пользователи** → правый клик по "Administrator" → **Редактировать группу пользователя**)
 - Откройте вкладку Element Category Access
 - Добавьте ACL через "Add Category":
-    - Category: ваша Category из шагов выше
-    - Minimum Role: admin Super User
+    - Category: категория из шагов выше
+    - Minimum Role: Super User
     - Access Policy: Element
     - Context: mgr
     - Нажмите "Save" в диалоге
 - Нажмите "Save" справа вверху
+- В верхнем меню: **Завершить все сеансы**
 
-- В верхнем меню: Security -> Flush All Sessions. В Revolution 2.3.x это Manage -> Logout All Users.
+Теперь элементы видит только admin Super User.
 
-Теперь Elements видит только admin Super User.
+## Особый случай для Template
 
-## Особый случай для Templates
+Вы ограничили Template способом выше. Другая группа пользователей должна править ресурсы с этим Template, но не создавать их. Она должна видеть TV шаблона, хотя доступа к самому Template у неё нет. Эта группа (назовём её Editors) видит ресурс. В списке Template показан его ID, а TV не видны. Нужна ещё одна ACL на группу Editors, чтобы загружались Template и его TV.
 
-Допустим, вы ограничили Template способом выше. Другой User Group без доступа к Template всё же должна править (но не создавать) Resources с этим Template и видеть TV шаблона. Сейчас вторая группа (назовём её Editors) видит Resource, в combobox Template показывает ID, но TV не видит. Нужна ещё одна ACL для группы Editors, чтобы загружались Template и связанные TV.
-
-- Откройте редактирование группы Editors (Security -> Access Controls -> User Groups -> правый клик по "Editors" -> Update User Group)
+- Откройте редактирование группы Editors (иконка замка в меню пользователя → **Контроль доступа** → вкладка **Группы пользователей & Пользователи** → правый клик по "Editors" → **Редактировать группу пользователя**)
 - Откройте вкладку Element Category Access
 - Добавьте ACL через "Add Category":
-    - Category: ваша Category из шагов выше
+    - Category: категория из шагов выше
     - Minimum Role: Member
     - Access Policy: Load Only
     - Context: mgr
     - Нажмите "Save" в диалоге
 - Нажмите "Save" справа вверху
+- Пользователи Editors выходят и входят снова, либо нажмите **Завершить все сеансы** в верхнем меню
 
-- Пользователи Editors должны выйти и войти снова, либо Security -> Flush Sessions в верхнем меню
-
-Готово. Editors увидят и будут править TV для Template в защищённой Category. Пользователи вне Editors их не увидят.
+Editors увидят и будут править TV для Template в защищённой категории. Template остаётся скрыт от пользователей не из группы Editors.
 
 ## Смотрите также
 
-1. [Доступ пользователя к менеджеру](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
-2. [Страницы только для участников](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
-3. [Второй пользователь Super Admin](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
-4. [Ограничение Element для пользователей](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
-5. [Подробнее о группе Anonymous](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
+1. [Безопасность (ACLs)](building-sites/client-proofing/security)
+2. [Пользователи](building-sites/client-proofing/security/users)
+3. [Группы пользователей](building-sites/client-proofing/security/user-groups)
+4. [Группы ресурсов](building-sites/client-proofing/security/resource-groups)
+5. [Роли](building-sites/client-proofing/security/roles)
+6. [Политики](building-sites/client-proofing/security/policies)
+    1. [Разрешения](building-sites/client-proofing/security/policies/permissions)
+        1. [Политика администратора](building-sites/client-proofing/security/policies/permissions/administrator-policy)
+        2. [Ресурсная политика](building-sites/client-proofing/security/policies/permissions/resource-policy)
+    2. [ACL](building-sites/client-proofing/security/policies/acls)
+    3. [Шаблоны политик](building-sites/client-proofing/security/policies/policytemplates)
+7. [Учебники по безопасности](building-sites/client-proofing/security/security-tutorials)
+    1. [Доступ менеджера](building-sites/client-proofing/security/security-tutorials/giving-a-user-manager-access)
+    2. [Страницы только для участников](building-sites/client-proofing/security/security-tutorials/making-member-only-pages)
+    3. [Второй суперпользователь](building-sites/client-proofing/security/security-tutorials/creating-a-second-super-admin-user)
+    4. [Ограничение элемента](building-sites/client-proofing/security/security-tutorials/restricting-an-element-from-users)
+    5. [Об анонимном пользователе](building-sites/client-proofing/security/security-tutorials/more-on-the-anonymous-user-group)
+8. [Диагностика безопасности](building-sites/client-proofing/security/troubleshooting-security)
+    1. [Ручной сброс пароля пользователя](building-sites/client-proofing/security/troubleshooting-security/resetting-a-user-password-manually)

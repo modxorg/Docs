@@ -1,44 +1,29 @@
 ---
 title: "New Tab"
+description: "The New Tab rule of a Form Customization set in MODX: how it adds a region of your own to the form."
 _old_id: "209"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/new-tab"
 ---
 
- The following is relevant to older versions of MODX. See [Customizing Tabs via Form Customization](building-sites/client-proofing/form-customization/tabs#CustomizingTabsviaFormCustomization-AddingNewTabs) for instructions for newer versions of MODX.
+## What the Rule Does
 
-## The New Tab Rule
+Adds a region of your own to the form of the manager. The region appears in the form as a tab of its own, next to the regions of the form of the resource.
 
- The New Tab Rule, when set, will create a new tab in the panel.
+## Where It Is Set
 
-## Usage
+The **Regions** tab of the set. Press **Create** to add a row to the grid, and fill in two fields:
 
-- Specify the ID of this new tab in the "Name" field.
-- Specify the tabpanel ID in the "Containing Panel" field
-- Set the Rule to "New Tab"
-- Set the title of the new tab in the "Value" field
+- **Region (ID)** — the id of the region, for example `my-new-tab`. The id has to be unique within the set, and it is what you refer to when you move a TV into the region.
+- **Title** — the text on the tab.
 
-### Available TabPanels
+The row can be deleted again with the **Delete** item of its context menu. Only a region that was created this way can be deleted; the regions of the form itself cannot.
 
- Here are the IDs for the corresponding tab panels on various manager pages.
+## Where the Region Appears
 
-| ID                  | Corresponding Page             |
-| ------------------- | ------------------------------ |
-| modx-resource-tabs  | The Resource edit/create page. |
-| modx-chunk-tabs     | The Chunk page.                |
-| modx-snippet-tabs   | The Snippet page.              |
-| modx-plugin-tabs    | The Plugin page.               |
-| modx-template-tabs  | The Template page.             |
-| modx-tv-tabs        | The Template Variable page.    |
-| modx-user-tabs      | The User page.                 |
-| modx-usergroup-tabs | The User Group page.           |
-| modx-context-tabs   | The Context page.              |
-
- Tab Panels on non-Resource pages are only available in 2.0.0-pl and up.
-
-## Examples
-
- An example rule for creating a new tab in the Resource edit page would look like so:
-
- ![](rule-tabnew.png)
+A region of your own is added to the form of the resource. It cannot be added to the form of another element. Form Customization does not cover the page of a chunk, a snippet, a user or a user group.
 
 ## See Also
+
+1. [Form Customization Rules](building-sites/client-proofing/form-customization/rules)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+3. [Customizing Tabs](building-sites/client-proofing/form-customization/tabs)

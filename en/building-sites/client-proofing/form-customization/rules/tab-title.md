@@ -1,32 +1,22 @@
 ---
 title: "Tab Title"
+description: "The Tab Title rule of a Form Customization set in MODX: how it renames a region of the form."
 _old_id: "300"
 _old_uri: "2.x/administering-your-site/form-customization/form-customization-rules/tab-title"
 ---
 
-## The Tab Title Rule
+## What the Rule Does
 
-The Tab Title Rule will change the title of any Tab.
+Replaces the title of a region of the form with a text of your own. The region keeps its place in the form; only the text on its tab changes.
 
-## Usage
+## Where It Is Set
 
-The values for the Rule should be as follows:
+The **Regions** tab of the set, in the **Title** column. A region with a title of its own gets the rule; an empty cell keeps the standard title.
 
-- **Name**: The ID of the tab to change.
-- **Containing Panel**: The ID of the tabpanel to change.
-- **Rule**: Tab Title
-- **Value**: The new text to change the tab title to.
-
-For a list of tabs available for each page, see [Form Customization Pages](building-sites/client-proofing/form-customization "Form Customization Pages").
-
-## Examples
-
-An example Rule of changing the title for the Page Settings tab for all [Users](building-sites/client-proofing/security/users "Users") to "Custom Fields" would look like this:
-
-![](fc-tabtitle.png)
+The regions of the form always belong to the panel of the resource. A region of your own, created with the [New Tab](building-sites/client-proofing/form-customization/rules/new-tab "New Tab") rule, gets its title from the same column.
 
 ## See Also
 
-``` php
-[[getResources@section? &parents=`300` &context=`revolution`]]
-```
+1. [Form Customization Rules](building-sites/client-proofing/form-customization/rules)
+2. [Form Customization Sets](building-sites/client-proofing/form-customization/sets)
+3. [Customizing Tabs](building-sites/client-proofing/form-customization/tabs)

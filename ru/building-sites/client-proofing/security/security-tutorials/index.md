@@ -1,6 +1,7 @@
 ---
 title: "Учебники по безопасности"
 translation: "building-sites/client-proofing/security/security-tutorials"
+description: "Учебники раздела безопасности MODX: страницы только для участников, менеджеры, анонимный пользователь и доступ к элементам."
 ---
 
 ## Учебники по безопасности

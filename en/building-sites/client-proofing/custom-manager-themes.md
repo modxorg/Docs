@@ -1,21 +1,60 @@
 ---
 title: "Custom Manager Themes"
-_old_id: "365"
-_old_uri: "2.x/administering-your-site/customizing-the-manager/manager-templates-and-themes"
+description: "Override the files of the MODX Manager with a theme of your own: how the theme is chosen, what it has to contain, and how to override a single file or a controller."
 ---
 
-**Heads up**: when you use custom Manager theme you need to check that everything still works as expected after upgrading MODX. A custom Manager theme can conflict with or be missing important core changes that come in new MODX releases.
+> [!IMPORTANT]
+> Check a custom manager theme after every upgrade of MODX. A theme can conflict with the changes of a new release, and the files that a release adds are never picked up by the theme.
 
-The MODX Manager uses a template similar to regular MODX pages. By default, the Manager template files live inside the `manager/templates/default` directory. By updating the MODX system setting for `manager\_theme` to point to a new directory, you can override any single file by copying its directory structure and adding just the templates you wish to override. You can override as few or as many templates as you desire, as long as you maintain identical directory layouts. The Manager will fall back to the `default` theme templates for any that have not been overridden.
+## How a Theme Works
 
-For example, to customize only the Manager Login page, you copy the following file into a new directory:
+The manager is built on Smarty templates. The default theme's files live in `manager/templates/default`. The system setting `manager_theme` holds a directory name inside `manager/templates/`. The manager reads that theme's files first, and falls back to `default` for every file the theme does not have.
 
->manager/templates/default/security/login.tpl
+Only the `default` theme ships with MODX 3. Other themes come with a build, an extra, or your own files.
 
-To create a custom Manager login theme called **my-brand**, copy that file into a new directory:
+The theme covers more than the manager pages. Dashboard widget templates, TV templates, and Resource controllers are resolved from it as well.
 
->manager/templates/**my-brand**/security/login.tpl
+## Overriding a Single File
 
-Then update your system setting for `manager\_theme` to point to the newly created `my-brand` directory. The version of the file from the `my-brand` directory will override the version of the file from the default directory.
+To theme only the manager login page, copy the file:
 
-While far less common, you can similarly override the Controllers in the same way, replacing "templates" with "controllers" per above. If you don't know what that means, you don’t need to do so.
+`manager/templates/default/security/login.tpl` → `manager/templates/my-brand/security/login.tpl`
+
+Then set `manager_theme` to `my-brand`. The file from `my-brand` wins over the file from `default`.
+
+**Create the directory before you pick the theme**
+The setting is a combo box that lists the directories of `manager/templates/`, and it cannot be typed by hand. Create `manager/templates/my-brand/` first, then pick it in **Admin → System Settings**.
+
+## What a Theme Has to Carry
+
+These files are read from the directory of the theme, with no fallback to `default`:
+
+| File | What breaks without it |
+| --- | --- |
+| `images/modx-icon-color.svg` | The icon of the site in the header of the manager. |
+| `images/modx-logo-color.svg` | The logo on the login page. |
+| `images/login/default-background.jpg` | The background of the login page. |
+| `email/default.tpl` | Creating a user: the template of the letter is not found. |
+
+**The login page stylesheet is not themed**
+`security/login.tpl` links the `default` theme's stylesheet by a fixed path. To theme it, put `css/login.css` into the theme directory and fix the link in your copy of `security/login.tpl`. The same holds for the file browser: its `browser/index.tpl` links the `default` theme's `css/index.css`.
+
+The manager stylesheet is themed. Put `css/index.css` into the theme directory, and the header picks it up through the `{$indexCss}` placeholder.
+
+## Where the Theme Has to Live
+
+The theme directory is resolved inside `manager/templates/`, which is part of the installation and is overwritten by an update. Keep the theme files in a repository of your own and restore them after an update.
+
+**An update from Evolution resets the theme**
+When the installer upgrades a site from Evolution, `setup/includes/upgrade.install.php` sets `manager_theme` back to `default`. An update inside MODX 3 leaves the setting as it is.
+
+## Overriding a Controller
+
+A controller is overridden the same way, with `controllers` in place of `templates`. The file in the theme must have the same name as in `default` (`<action>.class.php`). The class inside it must be named `<Action>ManagerController` in the global namespace, for example `SecurityLoginManagerController`.
+
+## See Also
+
+1. [Client-proofing the manager](building-sites/client-proofing)
+2. [Custom Manager Themes](building-sites/client-proofing/custom-manager-themes)
+3. [Customizing the Login](building-sites/client-proofing/manager-login)
+4. [Dashboards](building-sites/client-proofing/dashboards)

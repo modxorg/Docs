@@ -1,5 +1,6 @@
 ---
 title: "HTML"
+description: "The HTML dashboard widget of MODX: straight HTML in the content of the widget."
 _old_id: "86"
 _old_uri: "2.x/administering-your-site/dashboards/dashboard-widget-types/dashboard-widget-type-html"
 ---
@@ -22,7 +23,7 @@ To output the username of the logged-in user. You can also call Snippets, like s
 [[MyDashboardSnippet]]
 ```
 
-Note that in snippets there is no "active resource", so snippets referencing `$modx->resource` will have issues.
+Note that on the Dashboard there is no active resource, so a snippet that references `$modx->resource` will have issues.
 
 ## See Also
 

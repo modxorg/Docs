@@ -1,6 +1,7 @@
 ---
 title: "Устранение проблем безопасности"
 translation: "building-sites/client-proofing/security/troubleshooting-security"
+description: "Что проверить, если доступ в MODX работает не так, как ожидается."
 ---
 
 ## Устранение проблем безопасности
